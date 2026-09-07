@@ -64,7 +64,8 @@ if (completionService.canonical_source_sha !== sourceSha) fail("completion servi
 if (completion.properties?.completion_contract_id?.const !== cid) fail("completion contract id drift");
 if (completionService.completion_contract_id !== cid) fail("completion service contract id drift");
 if (canon.counted_core?.word_count !== 705) fail("canonical counted core must be 705 words");
-if (assets.release_ready !== false) fail("assets cannot be release ready before registry reconciliation");
+if (assets.release_ready !== false) fail("assets cannot be release ready before final production approval");
+if (pack.asset_reconciliation?.state !== "RECONCILED_NOT_RELEASE_READY") fail("asset reconciliation state drift");
 if (audio.profiles?.theta_432?.status !== "CANONICAL_MAPPING_PENDING") fail("Theta/432 mapping was invented or changed");
 if (safety.global_rules?.subjective_phenomenon_required !== false) fail("subjective phenomenon cannot become a completion requirement");
 if (episteme.protocol_id !== "HNK-EP-1.1") fail("epistemic protocol drift");
@@ -75,9 +76,15 @@ for (const blocker of [
   "EDITORIAL-001-VOICE",
   "AUDIO-001-THETA-432",
   "BACKEND-001-COMPLETION-V2",
-  "ASSET-001-REGISTRY-RESOLUTION",
+  "ASSET-001-CROWN-DERIVATIVE",
+  "ASSET-001-KEY-ART",
+  "ASSET-001-PROCEDURAL-EXTRACTION",
+  "ASSET-001-SOUL-MIRROR-FINAL",
 ]) {
   if (!blockerIds.has(blocker)) fail(`missing release blocker: ${blocker}`);
+}
+if (blockerIds.has("ASSET-001-REGISTRY-RESOLUTION")) {
+  fail("obsolete generic asset reconciliation blocker must not remain after inventory freeze");
 }
 
 for (const entry of checksums.entries) {
