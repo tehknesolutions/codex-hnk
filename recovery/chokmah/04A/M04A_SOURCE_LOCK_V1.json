@@ -1,0 +1,25 @@
+{
+  "lock_id": "M04A_SOURCE_LOCK_V1",
+  "classification": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+  "source_authority": "capitulo_2_plano_escrita.md",
+  "range": "037-041",
+  "cycle": {
+    "angel": "Cahetel",
+    "focus": "O Sopro Receptivo de Cahetel",
+    "pnl": "Introdução prática ao Modelo Milton; Pacing & Leading",
+    "attributes": ["HIP +1", "PER +1"],
+    "psalm": "Salmo 11:7",
+    "formula": "KAPH-HE-TAV (CA-HE-TEL)"
+  },
+  "locked_titles": {
+    "37": "A Receptividade de Chokmah",
+    "38": "O Pacing de Pensamentos",
+    "39": "O Canal Bioenergético Central (Ki)",
+    "40": "A Auto-Indução Ocular Básica",
+    "41": "A Captura da Intuição Zoe"
+  },
+  "locked_xp": {"37":100,"38":100,"39":100,"40":150,"41":150},
+  "original_rc1_equivalence_claim": false,
+  "literary_prose_status": "RECONSTRUCTED_AND_VALIDATED",
+  "release_scope": "RECOVERY_BRANCH_ONLY"
+}

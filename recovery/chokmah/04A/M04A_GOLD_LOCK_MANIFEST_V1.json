@@ -1,0 +1,15 @@
+{
+  "manifest_id": "M04A_GOLD_LOCK_MANIFEST_V1",
+  "batch": "04A",
+  "range": "037-041",
+  "cycle": "Cahetel",
+  "status": "GOLD_LOCKED",
+  "folios": "5/5",
+  "words": "3525/3525",
+  "source_lock": "PASS",
+  "editorial_qa": "PASS",
+  "original_rc1_claim": false,
+  "main_merge_allowed": false,
+  "next_batch": "04B · 042-046 · Haziel",
+  "aggregate_lock_sha256": "64ebb492168a20f93ebc7237862d18aca0362cedb257413bea49bf4775cd7aba"
+}

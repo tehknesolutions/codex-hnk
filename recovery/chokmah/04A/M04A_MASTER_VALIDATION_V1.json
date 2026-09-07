@@ -1,0 +1,27 @@
+{
+  "validation_id": "REMOTE-MIGRATION-04A-CAHETEL-BATCH-VALIDATION-V1",
+  "batch": "04A",
+  "range": "037-041",
+  "cycle": "Cahetel",
+  "day_results": [
+    {"day":37,"words":705,"pass":true},
+    {"day":38,"words":705,"pass":true},
+    {"day":39,"words":705,"pass":true},
+    {"day":40,"words":705,"pass":true},
+    {"day":41,"words":705,"pass":true}
+  ],
+  "batch_words": 3525,
+  "checks": {
+    "five_folios": true,
+    "range_037_041": true,
+    "all_days_pass": true,
+    "batch_words_3525": true,
+    "titles_locked": true,
+    "xp_locked": true,
+    "cycle_cahetel": true,
+    "formula_locked": true,
+    "no_original_rc1_claim": true,
+    "editorial_safety_all": true
+  },
+  "pass": true
+}

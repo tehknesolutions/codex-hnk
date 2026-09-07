@@ -1,10 +1,10 @@
 {
   "state_id": "HNK_FAST_LANE_STATE_V1",
   "mode": "BATCH_FIRST_FAIL_FAST",
-  "current_batch": "04A",
-  "current_range": "037-041",
-  "current_cycle": "Cahetel",
-  "completed_gold_batches": [],
+  "current_batch": "04B",
+  "current_range": "042-046",
+  "current_cycle": "Haziel",
+  "completed_gold_batches": ["04A"],
   "main_merge_allowed": false,
-  "next_transition": "04A_PASS -> 04B_AUTOSTART"
+  "next_transition": "04B_PASS -> 04C_AUTOSTART"
 }
