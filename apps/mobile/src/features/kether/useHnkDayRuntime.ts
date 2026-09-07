@@ -24,8 +24,10 @@ import {
 } from '@hnk/supabase-client';
 import { useHnkAuth } from '../auth/AuthContext';
 
-function remoteSafeEvidence(evidence: SafeEvidence): Record<string, number | boolean | null> {
-  const safe: Record<string, number | boolean | null> = {};
+type RemoteSafeRecord = Record<string, number | boolean | null>;
+
+function remoteSafeEvidence(evidence: SafeEvidence): RemoteSafeRecord {
+  const safe: RemoteSafeRecord = {};
   for (const [key, value] of Object.entries(evidence)) {
     if (typeof value === 'string') {
       throw new Error(`categorical_evidence_adapter_required:${key}`);
@@ -36,8 +38,15 @@ function remoteSafeEvidence(evidence: SafeEvidence): Record<string, number | boo
 }
 
 export interface SealDayInput {
+  /** Runtime evidence used for local contract validation. */
   evidence?: SafeEvidence;
-  metrics?: Record<string, number | boolean | null>;
+  /**
+   * Optional privacy-safe projection sent to Practice Record storage when the
+   * runtime contract contains categorical strings. This must remain strictly
+   * number/boolean/null; free text still belongs in the encrypted Vault.
+   */
+  remoteEvidence?: RemoteSafeRecord;
+  metrics?: RemoteSafeRecord;
   durationSeconds?: number | null;
   localRecordHash?: string | null;
 }
@@ -158,7 +167,7 @@ export function useHnkDayRuntime(definition: DayDefinition) {
     try {
       const withPatch = input.evidence ? mergeEvidence(runtime, input.evidence) : runtime;
       const pending = markEvidencePending(withPatch, definition);
-      const evidence = remoteSafeEvidence(pending.evidence);
+      const evidence = input.remoteEvidence ?? remoteSafeEvidence(pending.evidence);
 
       await savePracticeRecord(auth.client, {
         sessionId: practice.id,
