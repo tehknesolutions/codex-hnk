@@ -25,6 +25,7 @@ const quest = json("day-001.quest.json");
 const canon = json("day-001.canon-blocks.json");
 const renderer = json("day-001.renderer-profile.json");
 const visual = json("day-001.visual.manifest.json");
+const artDirection = json("day-001.art-direction.json");
 const evidence = json("day-001.evidence.schema.json");
 const completion = json("day-001.completion.schema.json");
 const completionService = json("day-001.completion.service.json");
@@ -48,6 +49,7 @@ for (const [label, value] of [
   ["quest", quest.id],
   ["renderer", renderer.quest_definition_id],
   ["visual", visual.quest_definition_id],
+  ["art direction", artDirection.quest_definition_id],
   ["completion service", completionService.quest_definition_id],
   ["assets", assets.quest_definition_id],
   ["audio", audio.quest_definition_id],
@@ -66,9 +68,16 @@ if (completionService.completion_contract_id !== cid) fail("completion service c
 if (canon.counted_core?.word_count !== 705) fail("canonical counted core must be 705 words");
 if (assets.release_ready !== false) fail("assets cannot be release ready before final production approval");
 if (assets.visual_contract !== "day-001.visual.manifest.json") fail("visual contract pointer drift");
+if (assets.art_direction !== "day-001.art-direction.json") fail("art direction pointer drift");
 if (visual.policy?.server_authoritative_first_spark !== true) fail("visual First Spark authority drift");
+if (visual.static_assets?.length !== 2) fail("static visual asset count drift");
+if (artDirection.approval_state !== "PRODUCT_V1_FROZEN") fail("art direction freeze drift");
+if (artDirection.epistemic_boundary?.canonical_kether_sigil_is_distinct !== true) fail("canonical/product visual boundary drift");
 if (pack.asset_reconciliation?.state !== "RECONCILED_NOT_RELEASE_READY") fail("asset reconciliation state drift");
+if (pack.asset_reconciliation?.approved_canonical_migrated !== 1) fail("canonical migrated asset count drift");
+if (pack.asset_reconciliation?.approved_product_derived !== 2) fail("product-derived asset count drift");
 if (pack.asset_reconciliation?.procedural_contract_ready !== 6) fail("procedural visual contract count drift");
+if (pack.asset_reconciliation?.needs_derivative_or_visual_review !== 1) fail("remaining visual review count drift");
 if (!pack.runtime_capabilities?.required?.includes("VISUAL_CONTRACT")) fail("Quest Pack must require VISUAL_CONTRACT capability");
 if (audio.profiles?.theta_432?.status !== "CANONICAL_MAPPING_PENDING") fail("Theta/432 mapping was invented or changed");
 if (safety.global_rules?.subjective_phenomenon_required !== false) fail("subjective phenomenon cannot become a completion requirement");
@@ -80,15 +89,18 @@ for (const blocker of [
   "EDITORIAL-001-VOICE",
   "AUDIO-001-THETA-432",
   "BACKEND-001-COMPLETION-V2",
-  "ASSET-001-CROWN-DERIVATIVE",
-  "ASSET-001-KEY-ART",
   "ASSET-001-PROCEDURAL-ADAPTER",
   "ASSET-001-SOUL-MIRROR-FINAL",
 ]) {
   if (!blockerIds.has(blocker)) fail(`missing release blocker: ${blocker}`);
 }
-for (const obsolete of ["ASSET-001-REGISTRY-RESOLUTION", "ASSET-001-PROCEDURAL-EXTRACTION"]) {
-  if (blockerIds.has(obsolete)) fail(`obsolete asset blocker remains: ${obsolete}`);
+for (const obsolete of [
+  "ASSET-001-CROWN-DERIVATIVE",
+  "ASSET-001-KEY-ART",
+  "ASSET-001-REGISTRY-RESOLUTION",
+  "ASSET-001-PROCEDURAL-EXTRACTION",
+]) {
+  if (blockerIds.has(obsolete)) fail(`resolved/obsolete asset blocker remains: ${obsolete}`);
 }
 
 for (const entry of checksums.entries) {
@@ -99,8 +111,9 @@ for (const entry of checksums.entries) {
 
 const packPaths = new Set(pack.files.map((file) => file.path));
 for (const entry of checksums.entries) if (!packPaths.has(entry.path)) fail(`checksum artifact not declared by pack: ${entry.path}`);
-if (!packPaths.has("day-001.visual.manifest.json")) fail("Quest Pack must declare visual manifest");
-if (!packPaths.has("day-001.checksums.json")) fail("pack must declare repository integrity index");
+for (const requiredPath of ["day-001.visual.manifest.json", "day-001.art-direction.json", "day-001.checksums.json"]) {
+  if (!packPaths.has(requiredPath)) fail(`Quest Pack missing required artifact: ${requiredPath}`);
+}
 
 if (!process.exitCode) {
   console.log(`DAY001 QUEST PACK PASS (${checksums.entries.length} source artifacts, release BLOCKED by ${pack.blockers.length} explicit blockers)`);
