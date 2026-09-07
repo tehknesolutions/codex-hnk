@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-VISUAL-V1",
   "kind": "hnk.visual_manifest",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "source": {
     "repository": "Tehkne-Solutions/codex-hnk-app",
@@ -12,8 +12,29 @@
     "canonical_claim": false,
     "semantic_tokens_required": true,
     "reduced_motion_required": true,
-    "server_authoritative_first_spark": true
+    "server_authoritative_first_spark": true,
+    "mutable_copy_must_not_be_baked_into_art": true
   },
+  "static_assets": [
+    {
+      "asset_key": "kether-crown-symbol",
+      "id": "HNK-D001-CROWN-MARK-V1",
+      "path": "assets/derived/kether/day001-crown-mark-v1.svg",
+      "sha256": "62643446db75e6f22c492a07bc7cb434c0aa365429417795fa414c29b9a08801",
+      "state": "APPROVED_PRODUCT_DERIVATIVE_V1",
+      "canonical_asset": false,
+      "reference_only": "assets/canonical/kether/kether-sigil-v1.svg"
+    },
+    {
+      "asset_key": "day001-key-art",
+      "id": "HNK-D001-KEY-ART-V1",
+      "path": "assets/derived/kether/day001-key-art-v1.svg",
+      "sha256": "e194a43156aaed6034eed144e83eb49651629c3aa1858f98503d957730662579",
+      "state": "APPROVED_PRODUCT_KEY_ART_V1",
+      "canonical_asset": false,
+      "text_free": true
+    }
+  ],
   "primitives": [
     {
       "id": "HNK-D001-VIS-ORIGIN-COSMOS-V1",
