@@ -11,11 +11,7 @@ import {
   useAudioStream,
 } from 'expo-audio';
 import * as FileSystem from 'expo-file-system/legacy';
-import {
-  analyzeFloat32Pcm,
-  decodeFloat32Pcm,
-  type AcousticAnalysis,
-} from '@hnk/day-runtime/audio-analysis';
+import { analyzeFloat32Pcm, decodeFloat32Pcm, type AcousticAnalysis } from '@hnk/day-runtime/audio-analysis';
 import type { Json } from '@hnk/database';
 import { loadCanonicalDay, type CanonicalDaySnapshot } from './canonical-day';
 import { ELEMIAH_DAY_019 } from './runtime-definitions/elemiah';
@@ -113,9 +109,11 @@ export function ElemiahDay019AcousticLab() {
   const [recordingUri, setRecordingUri] = useState<string | null>(null);
   const [recordingCreated, setRecordingCreated] = useState(false);
   const [recordingDeleted, setRecordingDeleted] = useState(false);
+  const [captureActive, setCaptureActive] = useState(false);
   const [paused, setPaused] = useState(false);
   const [pauseMarkers, setPauseMarkers] = useState(0);
   const [segmentMarkers, setSegmentMarkers] = useState(0);
+  const [finalDurationSeconds, setFinalDurationSeconds] = useState(0);
   const [stability, setStability] = useState(5);
   const [comfort, setComfort] = useState(5);
   const [stabilitySet, setStabilitySet] = useState(false);
@@ -143,9 +141,8 @@ export function ElemiahDay019AcousticLab() {
         sumSquares += sample * sample;
         peak = Math.max(peak, Math.abs(sample));
       }
-      const nextSamples = aggregate.samples + mono.length;
       aggregateRef.current = {
-        samples: nextSamples,
+        samples: aggregate.samples + mono.length,
         sumSquares,
         peak,
         loudestRms: analysis.rms > aggregate.loudestRms ? analysis.rms : aggregate.loudestRms,
@@ -154,7 +151,6 @@ export function ElemiahDay019AcousticLab() {
         centroidWeight: aggregate.centroidWeight + mono.length,
         sampleRateHz: buffer.sampleRate,
       };
-
       const now = Date.now();
       if (now - lastUiUpdateRef.current >= 100) {
         lastUiUpdateRef.current = now;
@@ -191,24 +187,29 @@ export function ElemiahDay019AcousticLab() {
   }, [controller.auth.client, controller.practice?.id]);
 
   const stopCapture = useCallback(async () => {
+    if (!captureActive && !paused) return;
     setLocalError(null);
     try {
-      if (streamResult.isStreaming) streamResult.stream.stop();
-      if (recorderState.isRecording || paused) await recorder.stop();
+      const duration = Math.min(180, Math.max(recorder.currentTime, recorderState.durationMillis / 1000));
+      streamResult.stream.stop();
+      if (recorder.isRecording || paused) await recorder.stop();
+      await setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true });
       const uri = recorder.uri;
       if (!uri) throw new Error('recording_uri_missing');
+      setFinalDurationSeconds(duration);
       setRecordingUri(uri);
       setRecordingCreated(true);
+      setCaptureActive(false);
       setPaused(false);
       await loadPrevious();
     } catch (cause) {
       setLocalError(cause instanceof Error ? cause.message : 'acoustic_capture_stop_failed');
     }
-  }, [loadPrevious, paused, recorder, recorderState.isRecording, streamResult.isStreaming, streamResult.stream]);
+  }, [captureActive, loadPrevious, paused, recorder, recorderState.durationMillis, streamResult.stream]);
 
   useEffect(() => {
-    if (recorderState.isRecording && recorderState.durationMillis >= 180_000) void stopCapture();
-  }, [recorderState.durationMillis, recorderState.isRecording, stopCapture]);
+    if (captureActive && !paused && recorderState.durationMillis >= 180_000) void stopCapture();
+  }, [captureActive, paused, recorderState.durationMillis, stopCapture]);
 
   useEffect(() => () => {
     try { streamResult.stream.stop(); } catch { /* best-effort release */ }
@@ -230,20 +231,29 @@ export function ElemiahDay019AcousticLab() {
       setRecordingUri(null);
       setRecordingDeleted(false);
       setRecordingCreated(false);
+      setFinalDurationSeconds(0);
       setPauseMarkers(0);
       setSegmentMarkers(0);
       await recorder.prepareToRecordAsync();
-      recorder.record({ forDuration: Math.min(180, intendedSeconds) });
+      recorder.record();
       await streamResult.stream.start();
+      setCaptureActive(true);
+      setPaused(false);
     } catch (cause) {
+      setCaptureActive(false);
       setLocalError(cause instanceof Error ? cause.message : 'acoustic_capture_start_failed');
     }
   };
 
   const togglePause = async () => {
+    if (!captureActive) return;
     setLocalError(null);
     try {
       if (paused) {
+        if (recorder.currentTime >= 180) {
+          await stopCapture();
+          return;
+        }
         recorder.record();
         await streamResult.stream.start();
         setPaused(false);
@@ -275,12 +285,11 @@ export function ElemiahDay019AcousticLab() {
     }
   };
 
-  if (controller.loading) {
-    return <View style={styles.loading}><Text style={styles.loadingText}>ABRINDO O LABORATÓRIO ACÚSTICO</Text></View>;
-  }
+  if (controller.loading) return <View style={styles.loading}><Text style={styles.loadingText}>ABRINDO O LABORATÓRIO ACÚSTICO</Text></View>;
 
   const phase = controller.phase?.id;
-  const aggregate = aggregateResult(aggregateRef.current, recorderState.durationMillis / 1000, latest);
+  const liveDuration = Math.min(180, recorderState.durationMillis / 1000);
+  const aggregate = aggregateResult(aggregateRef.current, recordingCreated ? finalDurationSeconds : liveDuration, latest);
   const controlsReady = distance !== null && environment !== null && intensitySet;
   const observationsReady = stabilitySet && comfortSet;
 
@@ -306,7 +315,7 @@ export function ElemiahDay019AcousticLab() {
 
       {phase === 'acoustic-lab' ? (
         <RuntimeCard label="ACOUSTIC LAB · LOCAL" title="Gravação de até três minutos">
-          <Text style={runtimeTextStyles.body}>Antes da captura, registre as condições que afetam comparabilidade. O microfone só será solicitado ao tocar em INICIAR CAPTURA.</Text>
+          <Text style={runtimeTextStyles.body}>Registre as condições que afetam comparabilidade. A duração pretendida é contexto, não cronômetro compulsório; você pode encerrar antes e o hard-stop é 180 s.</Text>
           <Text style={styles.fieldLabel}>DISTÂNCIA APROXIMADA DO MICROFONE</Text>
           <View style={runtimeTextStyles.row}>
             <RuntimeChoice selected={distance === 'near'} label="< 10 CM" onPress={() => setDistance('near')} />
@@ -320,17 +329,13 @@ export function ElemiahDay019AcousticLab() {
             <RuntimeChoice selected={environment === 'reverberant'} label="REVERBERANTE" onPress={() => setEnvironment('reverberant')} />
           </View>
           <Text style={styles.fieldLabel}>DURAÇÃO PRETENDIDA</Text>
-          <View style={runtimeTextStyles.row}>
-            {[30, 60, 120, 180].map((seconds) => <RuntimeChoice key={seconds} selected={intendedSeconds === seconds} label={`${seconds}s`} onPress={() => setIntendedSeconds(seconds)} />)}
-          </View>
+          <View style={runtimeTextStyles.row}>{[30, 60, 120, 180].map((seconds) => <RuntimeChoice key={seconds} selected={intendedSeconds === seconds} label={`${seconds}s`} onPress={() => setIntendedSeconds(seconds)} />)}</View>
           <RuntimeScale label="INTENSIDADE VOCAL AUTOAVALIADA" value={selfIntensity} onChange={(value) => { setSelfIntensity(value); setIntensitySet(true); }} />
-
           {permission === 'denied' ? <RuntimeNotice title="MICROFONE RECUSADO">A leitura continua disponível e não há punição. A subatividade de gravação pode ser retomada depois.</RuntimeNotice> : null}
-
-          {!recorderState.isRecording && !paused && !recordingCreated ? <RuntimePrimary label="INICIAR CAPTURA LOCAL" disabled={!controlsReady} onPress={() => void startCapture()} /> : null}
-          {recorderState.isRecording || paused ? (
+          {!captureActive && !recordingCreated ? <RuntimePrimary label="INICIAR CAPTURA LOCAL" disabled={!controlsReady} onPress={() => void startCapture()} /> : null}
+          {captureActive ? (
             <View style={styles.capturePanel}>
-              <Text style={styles.timer}>{Math.min(180, Math.floor(recorderState.durationMillis / 1000))}s / 180s</Text>
+              <Text style={styles.timer}>{Math.floor(liveDuration)}s / 180s</Text>
               <Text style={styles.captureMeta}>PCM · {aggregate.sampleRateHz} Hz · dBFS RELATIVO {aggregate.rmsDbfs.toFixed(1)}</Text>
               <SignalBars values={latest?.waveform ?? []} kind="waveform" />
               <View style={styles.controlRow}>
@@ -340,7 +345,6 @@ export function ElemiahDay019AcousticLab() {
               </View>
             </View>
           ) : null}
-
           {recordingCreated ? (
             <>
               <RuntimeNotice title="ARQUIVO LOCAL">A gravação bruta permanece no cache local. O Practice Record não recebe URI nem áudio bruto.</RuntimeNotice>
@@ -359,7 +363,7 @@ export function ElemiahDay019AcousticLab() {
           <Text style={styles.fieldLabel}>ESPECTRO REAL · MAGNITUDE RELATIVA</Text>
           <SignalBars values={latest?.spectrum ?? []} kind="spectrum" />
           <RuntimeNotice title="LEITURA CORRETA">dBFS aqui é relativo ao ganho/dispositivo, não SPL calibrado. “Bin dominante” e “centroide espectral” descrevem o sinal; não detectam frequência espiritual, entidade, diagnóstico ou estado cerebral.</RuntimeNotice>
-          {previous ? <Comparison current={aggregate} previous={previous} /> : <RuntimeNotice title="COMPARAÇÃO LONGITUDINAL">Nenhuma sessão anterior estruturada do Dia 019 foi encontrada. A primeira conclusão continua válida; revisitas poderão ser comparadas sem ranking.</RuntimeNotice>}
+          {previous ? <Comparison current={aggregate} previous={previous} /> : <RuntimeNotice title="COMPARAÇÃO LONGITUDINAL">Nenhuma sessão anterior estruturada do Dia 019 foi encontrada. Revisitas poderão ser comparadas sem ranking.</RuntimeNotice>}
           <RuntimeScale label="OBSERVAÇÃO 1 · ESTABILIDADE PERCEBIDA" value={stability} onChange={(value) => { setStability(value); setStabilitySet(true); }} />
           <RuntimeScale label="OBSERVAÇÃO 2 · CONFORTO VOCAL" value={comfort} onChange={(value) => { setComfort(value); setComfortSet(true); }} />
           <Pressable style={[styles.ack, analysisAcknowledged && styles.ackSelected]} onPress={() => setAnalysisAcknowledged((value) => !value)}>
@@ -374,14 +378,14 @@ export function ElemiahDay019AcousticLab() {
 
       {phase === 'grounding' ? (
         <RuntimeCard label="RETORNO" title="Fechar o laboratório antes do selo">
-          <Text style={runtimeTextStyles.body}>Pare qualquer vocalização, mova mãos e pés, respire normalmente, olhe ao redor e confirme que a sessão terminou. Se houver dor, falta de ar, vertigem, pânico, zumbido forte ou desconforto relevante, encerre a prática.</Text>
+          <Text style={runtimeTextStyles.body}>Pare qualquer vocalização, mova mãos e pés, respire normalmente, olhe ao redor e confirme que a sessão terminou. Dor, falta de ar, vertigem, pânico, zumbido forte ou desconforto relevante encerram a prática.</Text>
           <RuntimePrimary label="ESTOU ORIENTADO E DE VOLTA" onPress={() => { controller.setReturnConfirmed(); controller.nextPhase(); }} />
         </RuntimeCard>
       ) : null}
 
       {phase === 'seal' ? (
         <RuntimeCard label="SELO SERVER-SIDE" title="Somente métricas estruturadas saem do dispositivo">
-          <RuntimeNotice title="PRIVACIDADE">O URI local e o áudio bruto não fazem parte de evidence/metrics. Apagar o arquivo não apaga o Practice Record e não invalida a observação já realizada.</RuntimeNotice>
+          <RuntimeNotice title="PRIVACIDADE">O URI local e o áudio bruto não fazem parte de evidence/metrics. Apagar o arquivo não apaga o Practice Record.</RuntimeNotice>
           <RuntimePrimary label={controller.busy ? 'SELANDO…' : 'SELAR ELEMIAH 4/5'} disabled={controller.busy} onPress={() => void (async () => {
             setLocalError(null);
             try {
@@ -389,14 +393,7 @@ export function ElemiahDay019AcousticLab() {
               const environmentOrdinal = environment === 'quiet' ? 0 : environment === 'normal' ? 1 : 2;
               await controller.seal({
                 durationSeconds: Math.round(aggregate.durationSeconds),
-                evidence: {
-                  protocol_completed: true,
-                  return_confirmed: true,
-                  recording_created: true,
-                  analysis_viewed: true,
-                  observations_logged_count: 2,
-                  interpretation_held_open: true,
-                },
+                evidence: { protocol_completed: true, return_confirmed: true, recording_created: true, analysis_viewed: true, observations_logged_count: 2, interpretation_held_open: true },
                 metrics: {
                   duration_seconds: Math.round(aggregate.durationSeconds),
                   sample_rate_hz: aggregate.sampleRateHz,
@@ -446,9 +443,7 @@ function SignalBars({ values, kind }: { values: number[]; kind: 'waveform' | 'sp
   const fallback = Array.from({ length: kind === 'waveform' ? 48 : 36 }, () => 0);
   return (
     <View style={styles.bars} accessibilityLabel={`${kind} acústico medido`}>
-      {(values.length ? values : fallback).map((value, index) => (
-        <View key={index} style={[styles.bar, { height: Math.max(2, 6 + Math.min(1, Math.abs(value)) * (kind === 'waveform' ? 54 : 72)) }]} />
-      ))}
+      {(values.length ? values : fallback).map((value, index) => <View key={index} style={[styles.bar, { height: Math.max(2, 6 + Math.min(1, Math.abs(value)) * (kind === 'waveform' ? 54 : 72)) }]} />)}
     </View>
   );
 }
