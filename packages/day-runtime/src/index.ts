@@ -37,6 +37,8 @@ export interface DayPhaseDefinition {
 }
 
 export interface DayEvidenceContract {
+  /** Fields that must exist in the evidence object, even when false/zero are valid observations. */
+  requiredPresent?: readonly string[];
   /** Boolean flags that must be true before a first completion can be submitted. */
   requiredTrue?: readonly string[];
   /** Numeric fields that must meet a minimum value. */
@@ -90,6 +92,7 @@ export interface DayRuntimeState {
 
 export interface EvidenceValidationResult {
   valid: boolean;
+  missingPresent: string[];
   missingTrue: string[];
   belowMinimum: Array<{ key: string; expected: number; actual: number | null }>;
   invalidCategory: Array<{ key: string; actual: string | null; allowed: readonly string[] }>;
@@ -175,6 +178,7 @@ export function validateEvidence(
   evidence: SafeEvidence,
   contract: DayEvidenceContract,
 ): EvidenceValidationResult {
+  const missingPresent = (contract.requiredPresent ?? []).filter((key) => !Object.prototype.hasOwnProperty.call(evidence, key));
   const missingTrue = (contract.requiredTrue ?? []).filter((key) => evidence[key] !== true);
 
   const belowMinimum = Object.entries(contract.minimums ?? {}).flatMap(([key, expected]) => {
@@ -190,7 +194,8 @@ export function validateEvidence(
   });
 
   return {
-    valid: missingTrue.length === 0 && belowMinimum.length === 0 && invalidCategory.length === 0,
+    valid: missingPresent.length === 0 && missingTrue.length === 0 && belowMinimum.length === 0 && invalidCategory.length === 0,
+    missingPresent,
     missingTrue,
     belowMinimum,
     invalidCategory,
