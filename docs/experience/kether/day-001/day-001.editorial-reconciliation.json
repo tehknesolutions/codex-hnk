@@ -1,0 +1,52 @@
+{
+  "id": "HNK-KETHER-D001-EDITORIAL-RECONCILIATION-V1",
+  "kind": "hnk.editorial_reconciliation",
+  "version": "1.0.0",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "canonical_source": {
+    "repository": "Tehkne-Solutions/hnk-codex-365",
+    "path": "canon/capitulo-01-kether/dia-001.md",
+    "git_blob_sha1": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29",
+    "counted_core_words": 705
+  },
+  "universal_entry": {
+    "blocker_id": "EDITORIAL-001-UNIVERSAL-ENTRY",
+    "state": "RESOLVED_PRODUCT_LAYER",
+    "canonical_source_change_required": false,
+    "mechanism": [
+      "S002 voluntary experience pact before canonical reading",
+      "S003 private Meaning Anchor with non-ranking options",
+      "CANON/GUIDE/SYSTEM voice separation",
+      "no belief assent required for completion",
+      "no religion-based XP, Grade, access or attribute change"
+    ],
+    "rule": "The product may faithfully present HNK canonical spiritual language while clearly distinguishing participation in the experience from assent to metaphysical claims."
+  },
+  "middle_voice_ordalia": {
+    "blocker_id": "EDITORIAL-001-VOICE",
+    "state": "CANONICAL_AMENDMENT_PREPARED_SOURCE_WRITE_PENDING",
+    "canonical_source_change_required": true,
+    "target_block": "middle-ordalia",
+    "target_words": 26,
+    "current_problem": [
+      "recording is phrased as mandatory",
+      "the text implies an additional +150 XP reward",
+      "both conflict with the frozen product completion contract"
+    ],
+    "replacement_26_words": "Registre, se desejar, sua prática vocal no cofre criptografado do HNK; a gravação é opcional, e a conclusão do Dia não depende dela nem de intensidade.",
+    "replacement_word_count": 26,
+    "product_invariants": {
+      "voice_practice_required": true,
+      "voice_recording_required": false,
+      "voice_recording_opt_in_only": true,
+      "day001_first_completion_xp": 150,
+      "extra_xp_for_recording": 0
+    },
+    "patch_document": "../../../editorial-drafts/DAY001_CANONICAL_AMENDMENT_V1.md"
+  },
+  "execution_boundary": {
+    "canonical_text_may_not_be_silently_rewritten_by_renderer": true,
+    "system_safety_copy_may_constrain_unsafe_execution": true,
+    "canonical_amendment_must_update_source_sha_before_release": true
+  }
+}
