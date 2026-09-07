@@ -1,0 +1,55 @@
+{
+  "manifest_id": "HNK_TRIAD_I_RECONSTRUCTED_MASTER_BLUEPRINT_V1",
+  "phase": "REMOTE-MIGRATION-03C",
+  "range": "001-109",
+  "folio_count": 109,
+  "status": "BLUEPRINT_COVERAGE_109_OF_109",
+  "original_rc1_restored": false,
+  "evidence_classes": {
+    "KETHER_001_036": {
+      "count": 36,
+      "classification": "RECOVERED_EXECUTABLE_EVIDENCE",
+      "master_validation": "36/36 PASS",
+      "words_per_folio": 705,
+      "literary_words": 25380,
+      "compiled_portal": 36
+    },
+    "CHOKMAH_037_073": {
+      "count": 37,
+      "classification": "RECONSTRUCTED_SOURCE_LOCK_BLUEPRINT",
+      "blueprint_validation": "PASS",
+      "literary_content_authored_in_rebuild": 0,
+      "literary_word_target": 26085,
+      "portal_days": [72, 73]
+    },
+    "BINAH_074_109": {
+      "count": 36,
+      "classification": "RECONSTRUCTED_SOURCE_LOCK_BLUEPRINT",
+      "blueprint_validation": "PASS",
+      "literary_content_authored_in_rebuild": 0,
+      "literary_word_target": 25380,
+      "portal_days": [109]
+    }
+  },
+  "editorial_matrix": {
+    "words_per_folio": 705,
+    "formula": "3 * (137 + 72 + 26)",
+    "triad_i_literary_word_target": 76845
+  },
+  "coverage": {
+    "structural": "109/109",
+    "recovered_executable_folios": 36,
+    "reconstructed_blueprint_only_folios": 73,
+    "recovered_compiled_portals": [36],
+    "blueprint_only_portals": [72, 73, 109]
+  },
+  "promotion_gates": {
+    "main_merge_allowed": false,
+    "runtime_release_allowed": false,
+    "can_call_this_original_rc1": false,
+    "can_claim_109_109_structural_coverage": true,
+    "can_claim_109_109_compiled_content": false
+  },
+  "artifact_03c_aggregate_sha256": "47b7567c4e3f3391f0d258fd2ce06cd4676d82b08d4fe3a5e5d564e6383b5e0d",
+  "next_phase": "REMOTE-MIGRATION-04 · CHOKMAH AUTHORING & VALIDATION PIPELINE"
+}
