@@ -1,0 +1,35 @@
+{
+  "id": "HNK-KETHER-D001-AUDIO-V1",
+  "kind": "hnk.audio_manifest",
+  "version": "1.0.0",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "profiles": {
+    "ritual_528": {
+      "operator": "RITUAL_TONE",
+      "frequency_hz": 528,
+      "required_for_completion": true,
+      "delivery": "RUNTIME_SYNTHESIS",
+      "status": "CONTRACT_READY_RUNTIME_ADAPTER_REQUIRED",
+      "minimum_duration_seconds": null,
+      "autoplay": false,
+      "volume_user_controlled": true
+    },
+    "theta_432": {
+      "operator": "BINAURAL_PROFILE",
+      "base_hz": 432,
+      "target_label": "Theta",
+      "binaural_difference_hz": null,
+      "required_for_completion": false,
+      "included_in_release_payload": false,
+      "status": "CANONICAL_MAPPING_PENDING"
+    }
+  },
+  "rules": {
+    "never_invent_pending_mapping": true,
+    "stop_on_significant_discomfort": true,
+    "silence_fallback_allowed_for_optional_audio_only": true
+  },
+  "release_blockers": [
+    "AUDIO-001-THETA-432"
+  ]
+}
