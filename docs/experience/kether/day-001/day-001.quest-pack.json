@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-PACK-V1",
   "kind": "hnk.quest_pack",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "day": 1,
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
@@ -30,6 +30,7 @@
     {"logical_id":"renderer","path":"day-001.renderer-profile.json","role":"RENDERER_PROFILE","required":true},
     {"logical_id":"visual","path":"day-001.visual.manifest.json","role":"VISUAL_MANIFEST","required":true},
     {"logical_id":"art-direction","path":"day-001.art-direction.json","role":"ART_DIRECTION","required":true},
+    {"logical_id":"editorial","path":"day-001.editorial-reconciliation.json","role":"EDITORIAL_RECONCILIATION","required":true},
     {"logical_id":"evidence","path":"day-001.evidence.schema.json","role":"EVIDENCE_SCHEMA","required":true},
     {"logical_id":"completion","path":"day-001.completion.schema.json","role":"COMPLETION_SCHEMA","required":true},
     {"logical_id":"completion-service","path":"day-001.completion.service.json","role":"COMPLETION_SERVICE_PROFILE","required":true},
@@ -48,6 +49,7 @@
       "EXPERIENCE_DIRECTOR",
       "RENDERER_LAYER",
       "VISUAL_CONTRACT",
+      "EDITORIAL_RECONCILIATION",
       "PRACTICE_CONTRACT",
       "VAULT",
       "COMPLETION_CONTRACT",
@@ -66,12 +68,17 @@
     "needs_derivative_or_visual_review": 0,
     "adapter_pending": 7
   },
+  "editorial_reconciliation": {
+    "state": "PARTIAL_CANON_WRITE_PENDING",
+    "manifest": "day-001.editorial-reconciliation.json",
+    "universal_entry": "RESOLVED_PRODUCT_LAYER",
+    "voice_ordalia": "CANONICAL_AMENDMENT_PREPARED_SOURCE_WRITE_PENDING"
+  },
   "blockers": [
-    {"id":"EDITORIAL-001-UNIVERSAL-ENTRY","scope":"GLOBAL_CANON","reason":"Universal Entry framing still requires canonical editorial reconciliation."},
-    {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"Canonical wording still requires recording while product contract makes recording optional."},
+    {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"A 26-word canonical amendment is prepared, but the source-of-truth repository still carries mandatory recording and extra-XP wording."},
     {"id":"AUDIO-001-THETA-432","scope":"DAY001_AUDIO","reason":"Exact Theta/432 binaural mapping is not canonically defined."},
     {"id":"BACKEND-001-COMPLETION-V2","scope":"SERVER","reason":"complete_codex_day_v2 exists as adoption-ready draft but is not yet active in the migrated Supabase scaffold."},
-    {"id":"ASSET-001-PROCEDURAL-ADAPTER","scope":"ASSETS","reason":"All Day 001 visual decisions are frozen; Web/Expo adapters still depend on shell migration."}
+    {"id":"ASSET-001-PROCEDURAL-ADAPTER","scope":"ASSETS","reason":"All Day 001 visual decisions and adapter interfaces are frozen; concrete Web/Expo implementations await shell migration."}
   ],
   "ci": {
     "workflow": ".github/workflows/day001-golden.yml",
