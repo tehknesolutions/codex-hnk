@@ -5,6 +5,7 @@ import { KetherCycle01 } from './KetherCycle01';
 import { KetherCycle02Jeliel } from './KetherCycle02Jeliel';
 import { KetherCycle03Sitael } from './KetherCycle03Sitael';
 import { KetherCycle04Elemiah } from './KetherCycle04Elemiah';
+import { KetherCycle05Mahasiah } from './KetherCycle05Mahasiah';
 
 export function KetherJourney() {
   const auth = useHnkAuth();
@@ -43,6 +44,7 @@ export function KetherJourney() {
   if (currentDay <= 10) return <KetherCycle02Jeliel />;
   if (currentDay <= 15) return <KetherCycle03Sitael />;
   if (currentDay <= 20) return <KetherCycle04Elemiah />;
+  if (currentDay <= 25) return <KetherCycle05Mahasiah />;
 
   return (
     <View style={styles.threshold}>
