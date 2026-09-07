@@ -1,0 +1,62 @@
+{
+  "id": "HNK-KETHER-D001-ART-DIRECTION-V1",
+  "kind": "hnk.art_direction",
+  "version": "1.0.0",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "experience_title": "A Coroa Antes da Forma",
+  "approval_state": "PRODUCT_V1_FROZEN",
+  "epistemic_boundary": {
+    "canonical_kether_sigil_is_distinct": true,
+    "day001_crown_is_product_derivative": true,
+    "historical_or_traditional_seal_claim": false,
+    "supernatural_detector_or_transmitter_claim": false
+  },
+  "crown_mark": {
+    "id": "HNK-D001-CROWN-MARK-V1",
+    "path": "assets/derived/kether/day001-crown-mark-v1.svg",
+    "sha256": "62643446db75e6f22c492a07bc7cb434c0aa365429417795fa414c29b9a08801",
+    "status": "APPROVED_PRODUCT_DERIVATIVE_V1",
+    "derived_from_language": "assets/canonical/kether/kether-sigil-v1.svg",
+    "derived_from_asset_not_cropped": true,
+    "invariants": [
+      "fixed north orientation",
+      "origin point",
+      "single north axis",
+      "three-ray crown",
+      "no 36 day marks",
+      "no 12 gates",
+      "no representation as Portal 036 sigil"
+    ]
+  },
+  "key_art": {
+    "id": "HNK-D001-KEY-ART-V1",
+    "path": "assets/derived/kether/day001-key-art-v1.svg",
+    "sha256": "e194a43156aaed6034eed144e83eb49651629c3aa1858f98503d957730662579",
+    "status": "APPROVED_PRODUCT_KEY_ART_V1",
+    "aspect_ratio": "3:4",
+    "text_free": true,
+    "mutable_ui_copy_embedded": false,
+    "xp_embedded": false,
+    "achievement_copy_embedded": false,
+    "composition": [
+      "dark cosmic field",
+      "point of origin",
+      "three concentric emergence rings",
+      "north axis",
+      "three-ray crown",
+      "subtle non-semantic star field"
+    ],
+    "runtime_rule": "All Day title, XP, achievement and progress copy are rendered by UI layers, never baked into key art."
+  },
+  "palette_roles": {
+    "void": "near-black / indigo",
+    "origin": "warm white",
+    "material": "luminous gold",
+    "secondary_field": "desaturated deep violet"
+  },
+  "motion": {
+    "key_art_default": "STILL",
+    "crown_reveal": "REVEAL",
+    "reduced_motion": "STATIC_OR_FADE_ONLY"
+  }
+}
