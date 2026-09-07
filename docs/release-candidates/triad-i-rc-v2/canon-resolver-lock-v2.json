@@ -1,0 +1,14 @@
+{
+  "lock_id": "HNK_TRIAD_I_CANON_RESOLVER_LOCK_V2",
+  "source_pack_sha256": "f2bd3d4dd53927c9b0dcb716f8703b49cb66f7742fb1ab8732e57e2719f80106",
+  "generated_docs_tree_sha256": "80d105ea788281bd3a42f369bbc47e601bb0bdcc24ae75f6d7dd6547583c0768",
+  "word_count_contract": "split_on_unicode_whitespace",
+  "source_identity_contract": "git_blob_sha",
+  "block_integrity": "sha256",
+  "generated_days": "73/73",
+  "canon_blocks": 657,
+  "github_golden_day037_source_blob_sha": "f59a1f86a90b902d2cc4bb0082866408aadb2a4b",
+  "bulk_materialization_state": "PENDING_REMOTE_MIGRATION_10B",
+  "runtime_completion_enabled": false,
+  "pass": true
+}
