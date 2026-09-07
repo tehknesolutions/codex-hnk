@@ -1,0 +1,28 @@
+{
+  "manifest_id": "TRIAD_I_RC_V2_ON_CURRENT_MAIN",
+  "base_main_sha": "d6ab2f14ba30e37cccedc197f302d467d0fefc54",
+  "base_main_message": "test(day001): validate completion service contract",
+  "provenance": {
+    "kether_001_036": "RECOVERED_EXECUTABLE_EVIDENCE",
+    "chokmah_037_073": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+    "binah_074_109": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+    "original_rc1_restored": false
+  },
+  "coverage": {
+    "folios": "109/109",
+    "literary_words": "76845/76845",
+    "recovered_kether": "36/36",
+    "reconstructed_validated": "73/73"
+  },
+  "artifact_locks": {
+    "triad_i_master": "a6f68c68ff118a8ccde831a23013296a41a820b2ac26a1365f648f963d48e8d5",
+    "global_qa_v2": "54f6be2dda3c1d7e5cb07185566cbfecbe2d2a8a07a1af5c30905550de7c1ec4",
+    "preview_rc_v2": "69773583aebdaa2338f58cc004cce66d120eeb43b7d78c9108a187830fabaa79",
+    "deployment_smoke_gate": "8c3c0eda7303a73db8cca3f122737034c05aaebeee81ca1e60822558c16225af"
+  },
+  "technical_gate": "PASS_WITH_VISUAL_SMOKE_PENDING",
+  "content_overlay_applied_to_current_main": false,
+  "human_release_signoff": "ABSENT",
+  "main_merge_allowed": false,
+  "runtime_release_allowed": false
+}
