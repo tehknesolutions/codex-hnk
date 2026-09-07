@@ -1,0 +1,33 @@
+{
+  "schema_version": "rebuild-authored-v1",
+  "classification": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+  "original_rc1_claim": false,
+  "day": 37,
+  "id": "day-037",
+  "kind": "STANDARD_DAY",
+  "title": "A Receptividade de Chokmah",
+  "world": "Atziluth",
+  "sephira": "Chokmah",
+  "level": "2 - Iniciado",
+  "xp_reward": 100,
+  "cycle": {
+    "number": 1,
+    "angel_id": 8,
+    "angel": "Cahetel",
+    "cycle_title": "O Sopro Receptivo de Cahetel",
+    "pnl_focus": "Introdução prática ao Modelo Milton; Pacing & Leading",
+    "attribute_emphasis": ["HIP +1","PER +1"],
+    "psalm": "Salmo 11:7",
+    "formula": "KAPH-HE-TAV (CA-HE-TEL)"
+  },
+  "oracles": {"tarot":"Arcano I — O Mago","rune":"Uruz","iching":"Hexagrama 2 — O Receptivo"},
+  "source_authority": "capitulo_2_plano_escrita.md",
+  "source_intent": "Entrar em silêncio de Atziluth, abrir VAKOG e registrar percepções sem rotulá-las imediatamente.",
+  "pillars": [
+    {"id":"JACHIN","doctrine":{"target_words":137,"text":"Jachin abre Chokmah como uma escola de receptividade consciente. O Day 037 não exige apagar a razão, fabricar visões ou abandonar discernimento; propõe suspender por alguns minutos o impulso de nomear tudo imediatamente. Cahetel inaugura a passagem da Coroa para a Sabedoria pela imagem do receptáculo que recebe antes de organizar. Na linguagem do Codex, Zoe indica vida recebida de Deus e Psuche nomeia a atividade mental que comenta, compara e antecipa. Sons, luzes, temperatura, contato dos pés e movimento da respiração podem ser percebidos antes de virarem história. Essa pequena diferença entre perceber e interpretar é o laboratório do dia. Misericórdia significa permitir que cada sensação apareça sem cobrança por experiência extraordinária. A prática vale quando aumenta presença, humildade, liberdade responsável e capacidade de retornar ao cotidiano com atenção mais limpa, sem transformar símbolos em garantias."},"kavanah":{"target_words":72,"text":"Sente-se em local seguro, com postura confortável e olhos abertos ou suavemente fechados. Percorra VAKOG sem buscar fenômenos especiais: note primeiro três sons, depois três formas ou contrastes de luz, três pontos de contato corporal, um cheiro presente e um sabor percebido. Quando surgir um nome, julgamento ou explicação, reconheça mentalmente “interpretação” e volte à sensação direta. Termine olhando ao redor, movendo mãos e pés e registrando cinco observações concretas no diário."},"ordeal":{"target_words":26,"text":"Ordália do Day 37 em JACHIN aplique Entrar em silêncio de Atziluth abrir VAKOG e registrar percepções sem rotulá-las imediatamente Registre fato interpretação e alternativa Preserve."}},
+    {"id":"BOAZ","doctrine":{"target_words":137,"text":"Boaz protege a receptividade contra dois excessos opostos. O primeiro é tratar qualquer impressão interna como revelação infalível; o segundo é desprezar toda experiência subjetiva porque não pode ser medida. O rigor de Chokmah mantém uma terceira posição: perceber com abertura e registrar com precisão, deixando interpretação para depois. O Modelo Milton aparece aqui apenas como objeto de aprendizagem linguística e autorregulação, não como licença para manipular pessoas ou contornar consentimento. Pacing significa reconhecer honestamente o estado presente; leading, quando usado consigo mesmo, pode organizar uma transição voluntária para maior calma ou concentração. Nenhuma técnica garante transe, intuição sobrenatural ou mudança neurológica específica. Se surgir desconforto, tontura, ansiedade ou sensação de perda de controle, interrompa a prática e retorne ao ambiente comum. Discernimento não diminui o símbolo; dá a ele limites que preservam autonomia, responsabilidade e verdade."},"kavanah":{"target_words":72,"text":"Escolha um pensamento presente, como “estou distraído”, e pratique pacing consigo mesmo: reconheça exatamente o que acontece sem exagerar nem negar. Depois formule um leading simples e voluntário: “enquanto percebo distração, posso retornar ao próximo som”. Repita lentamente três vezes, observando se a atenção muda. Não tente induzir incapacidade, amnésia ou perda de escolha. Se nada mudar, aceite o resultado. Anote a frase usada, a resposta percebida e qualquer desconforto relevante observado."},"ordeal":{"target_words":26,"text":"Ordália do Day 37 em BOAZ aplique Entrar em silêncio de Atziluth abrir VAKOG e registrar percepções sem rotulá-las imediatamente Registre fato interpretação e alternativa Preserve."}},
+    {"id":"EQUILIBRIUM","doctrine":{"target_words":137,"text":"O pilar de Equilíbrio reúne percepção e discernimento. Chokmah representa sabedoria, mas o Day 037 começa com algo modesto: aprender a diferenciar dado sensorial, pensamento e significado atribuído. Essa tríade evita que uma experiência seja confundida com prova universal. A fórmula KAPH-HE-TAV e o Salmo 11:7 permanecem como elementos devocionais recebidos da fonte do capítulo; podem orientar oração e memória simbólica sem funcionar como demonstração científica. O Mago, Uruz e o Hexagrama do Receptivo também operam como mapas de leitura do percurso, não como mecanismos obrigatórios do mundo físico. Ao registrar o exercício, use três colunas: “percebi”, “pensei” e “interpretei”. Essa separação transforma receptividade em método de autoconhecimento verificável pelo próprio praticante. O fruto esperado não é espetáculo psíquico, mas uma atenção mais paciente, linguagem mais precisa e disposição para corrigir conclusões quando novas evidências aparecem atentamente."},"kavanah":{"target_words":72,"text":"Abra uma página do diário e trace três colunas: “percebi”, “pensei” e “interpretei”. Releia as cinco observações da primeira prática e distribua cada trecho na coluna adequada. Se uma frase misturar sensação e conclusão, reescreva-a separando ambas. Depois escolha uma interpretação e escreva duas alternativas igualmente possíveis. Encerre com uma oração baseada no Salmo 11:7, pedindo justiça, clareza e humildade. Guarde o registro como referência para comparar futuros Days de Chokmah calmamente."},"ordeal":{"target_words":26,"text":"Ordália do Day 37 em EQUILIBRIUM aplique Entrar em silêncio de Atziluth abrir VAKOG e registrar percepções sem rotulá-las imediatamente Registre fato interpretação e alternativa Preserve."}}
+  ],
+  "expected_total_words":705,
+  "editorial_qa":{"source_drift":[],"unsupported_claims":[],"safety_flags":[],"epistemic_rewrite_applied":true,"reader_autonomy_preserved":true,"review_state":"GOLD_PROOF_CANDIDATE"}
+}
