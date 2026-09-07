@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "HNK Codex",
+    "slug": "codex-hnk",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "hnk",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tehknesolutions.codexhnk"
+    },
+    "android": {
+      "package": "com.tehknesolutions.codexhnk"
+    },
+    "web": {
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
