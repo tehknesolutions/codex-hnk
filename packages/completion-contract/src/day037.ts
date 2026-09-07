@@ -2,9 +2,9 @@ import type { CompleteDayRequestV1 } from "./types.js";
 
 export const DAY037_COMPLETION = Object.freeze({
   day: 37,
-  completionContractId: "HNK-CHOKHMAH-D037-COMP-RC2",
-  questDefinitionId: "HNK-CHOKHMAH-D037-RC2",
-  canonicalSourceSha: "70c0218e6ee41020a4146a73a87b0db02876f7fd650677da675fdebdb905fbf6",
+  completionContractId: "HNK-CHOKHMAH-D037-COMP-RC3",
+  questDefinitionId: "HNK-CHOKHMAH-D037-RC3",
+  canonicalSourceSha: "2d1d7ef1766d4a181389a3af94b9516f7b34a6eb",
   canonicalXp: 100,
 });
 
