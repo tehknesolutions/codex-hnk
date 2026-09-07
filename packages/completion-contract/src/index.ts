@@ -2,6 +2,7 @@ export * from "./types.js";
 export * from "./errors.js";
 export * from "./day001.js";
 export * from "./day037.js";
+export * from "./generated-days.js";
 export * from "./progression-v2.js";
 export * from "./service.js";
 export * from "./service-v2.js";
