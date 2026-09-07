@@ -1,0 +1,17 @@
+{
+  "name": "@hnk/audio-contract",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node -e \"console.log('audio-contract: schema only; no ritual preset published')\"",
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  }
+}
