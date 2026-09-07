@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #08090c; color: #fffdf4; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+body { min-height: 100vh; }
+.shell { min-height: 100vh; display: grid; align-content: center; max-width: 920px; margin: 0 auto; padding: 48px 28px; }
+.eyebrow { color: #a99654; letter-spacing: .22em; font-size: 12px; }
+h1 { font-size: clamp(64px, 12vw, 144px); line-height: .9; margin: 18px 0; }
+.lead { color: #b9bac0; font-size: 20px; max-width: 620px; }
+.card { margin-top: 36px; padding: 24px; border: 1px solid #5b4e27; border-radius: 24px; background: #101116; color: #f6e7a1; }
+.card p { color: #b9bac0; margin-bottom: 0; }
