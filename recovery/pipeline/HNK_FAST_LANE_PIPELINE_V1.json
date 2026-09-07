@@ -1,0 +1,70 @@
+{
+  "pipeline_id": "HNK_FAST_LANE_PIPELINE_V1",
+  "mode": "BATCH_FIRST_FAIL_FAST",
+  "project": "HNK CODEX M90 RECOVERY",
+  "branch_policy": "recovery branch only until master gates pass",
+  "user_approval_policy": {
+    "per_folio_approval": false,
+    "per_cycle_approval": false,
+    "automatic_progression_after_pass": true,
+    "stop_only_on": [
+      "SOURCE_DRIFT",
+      "UNRESOLVED_PROVENANCE",
+      "EDITORIAL_SAFETY_BLOCKER",
+      "LEXICAL_MATRIX_UNRECOVERABLE",
+      "PORTAL_CONTRACT_FAILURE",
+      "USER_INTERRUPT"
+    ]
+  },
+  "unit_of_work": {
+    "standard_batch": "5 folios / one angelic cycle",
+    "portal_batch": "portal folios as one gate",
+    "reporting_granularity": "cycle-level",
+    "checkpoint_granularity": "cycle-level"
+  },
+  "folio_contract": {
+    "target_words": 705,
+    "pillars": ["JACHIN","BOAZ","EQUILIBRIUM"],
+    "per_pillar": {"doctrine":137,"kavanah":72,"ordeal":26,"total":235},
+    "formula": "3 * (137 + 72 + 26) = 705"
+  },
+  "batch_stages": [
+    "SOURCE_LOCK_LOAD",
+    "AUTHOR_ALL_FOLIOS_IN_BATCH",
+    "LEXICAL_VALIDATE_ALL",
+    "PATCH_ONLY_FAILED_SEGMENTS",
+    "SOURCE_DRIFT_AUDIT",
+    "EDITORIAL_QA",
+    "BATCH_COHERENCE_AUDIT",
+    "GOLD_LOCK_MANIFEST",
+    "RECOVERY_BRANCH_CHECKPOINT",
+    "AUTO_ADVANCE_NEXT_BATCH"
+  ],
+  "efficiency_rules": [
+    "Never rewrite a passing segment to fix another segment.",
+    "Count words at segment level before full-folio validation.",
+    "Persist source metadata separately from literary prose.",
+    "Validate all folios in one batch invocation.",
+    "Generate one cycle manifest instead of one user-facing checkpoint per folio.",
+    "Do not create intermediate ZIPs unless they are a cycle GOLD LOCK, portal lock, or master checkpoint.",
+    "Keep main blocked until reconstructed master validation passes."
+  ],
+  "recovery_sequence": [
+    {"batch":"04A","range":"037-041","cycle":"Cahetel"},
+    {"batch":"04B","range":"042-046","cycle":"Haziel"},
+    {"batch":"04C","range":"047-051","cycle":"Aladiah"},
+    {"batch":"04D","range":"052-056","cycle":"Lauviah"},
+    {"batch":"04E","range":"057-061","cycle":"Hahaiah"},
+    {"batch":"04F","range":"062-066","cycle":"Iezalel"},
+    {"batch":"04G","range":"067-071","cycle":"Mebahel"},
+    {"batch":"04H","range":"072-073","cycle":"Portal Chokmah -> Binah"},
+    {"batch":"05A-05G","range":"074-108","cycle":"Binah cycles"},
+    {"batch":"05H","range":"109","cycle":"Portal Atziluth -> Beriah"},
+    {"batch":"MASTER","range":"001-109","cycle":"Triad I reconstructed master"}
+  ],
+  "evidence_boundary": {
+    "reconstructed_content_label_required": true,
+    "original_rc1_equivalence_claim": false,
+    "compiled_109_109_claim_before_master": false
+  }
+}
