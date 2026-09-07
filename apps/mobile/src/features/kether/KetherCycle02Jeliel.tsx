@@ -3,6 +3,7 @@ import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-nati
 import { getKetherCrownState } from '@hnk/supabase-client';
 import { useHnkAuth } from '../auth/AuthContext';
 import { JelielDay006Experience } from './JelielDay006Experience';
+import { JelielDays007to010Experience } from './JelielDays007to010Experience';
 
 type ProgressState = {
   currentDay: number;
@@ -53,7 +54,7 @@ export function KetherCycle02Jeliel() {
         if (typeof value === 'number') setFragmentsLit(value);
       }
     } catch {
-      // Crown remains presentation-only here; canonical Day gating still lives on the server.
+      // Crown is presentation-only here; canonical Day gating remains server-authoritative.
     }
 
     setLoading(false);
@@ -65,7 +66,7 @@ export function KetherCycle02Jeliel() {
 
   useEffect(() => {
     if (!live) return;
-    const id = setInterval(() => void refresh(), 6000);
+    const id = setInterval(() => void refresh(), 4000);
     return () => clearInterval(id);
   }, [live, refresh]);
 
@@ -118,17 +119,8 @@ export function KetherCycle02Jeliel() {
         </View>
       </View>
 
-      {displayDay === 6 ? (
-        <JelielDay006Experience />
-      ) : (
-        <View style={styles.pending}>
-          <Text style={styles.pendingEyebrow}>RUNTIME CONTRACT READY</Text>
-          <Text style={styles.pendingTitle}>DIA {String(displayDay).padStart(3, '0')}</Text>
-          <Text style={styles.pendingBody}>
-            O contrato executável deste Dia já está congelado no catálogo de Jeliel. A experiência visual específica será conectada à mesma Day Runtime Shell na próxima unidade de produção; nenhum conteúdo canônico será inventado para preencher a lacuna.
-          </Text>
-        </View>
-      )}
+      {displayDay === 6 ? <JelielDay006Experience /> : null}
+      {displayDay >= 7 && displayDay <= 10 ? <JelielDays007to010Experience day={displayDay as 7 | 8 | 9 | 10} /> : null}
     </View>
   );
 }
@@ -153,8 +145,4 @@ const styles = StyleSheet.create({
   heading: { color: '#e8dfc2', fontSize: 14, letterSpacing: 2.1, marginTop: 5 },
   stats: { alignItems: 'flex-end', gap: 3 },
   stat: { color: '#777970', fontSize: 8, letterSpacing: 1 },
-  pending: { margin: 24, borderWidth: 1, borderColor: '#292a2f', borderRadius: 24, padding: 24, backgroundColor: '#08090d' },
-  pendingEyebrow: { color: '#8d7f4f', fontSize: 8, letterSpacing: 1.4 },
-  pendingTitle: { color: '#f2e8ca', fontSize: 26, fontWeight: '300', marginTop: 8 },
-  pendingBody: { color: '#8f918d', fontSize: 13, lineHeight: 21, marginTop: 12 },
 });
