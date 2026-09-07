@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "HNK-L05-K9-HUMAN-SIGNOFF-SCHEMA-V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lesson_id","evidence_export_sha256","reviewer_name","decision","review_note","explicit_runtime_change_requested"],
+  "properties": {
+    "lesson_id": {"const":"HNK-L05"},
+    "evidence_export_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "reviewer_name": {"type":"string","minLength":1},
+    "decision": {"enum":["APPROVE_FOR_NEXT_PROMOTION_PHASE","REJECT_OR_REVISE"]},
+    "review_note": {"type":"string","minLength":1},
+    "explicit_runtime_change_requested": {"const":false}
+  }
+}

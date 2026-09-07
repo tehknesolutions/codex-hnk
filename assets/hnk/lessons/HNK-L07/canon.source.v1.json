@@ -1,0 +1,5 @@
+{
+  "schema_version":"1.0.0","phase":"M03-M.2","lesson_id":"HNK-L07","namespace":"HNK-L07-malkuth","status":"HISTORICAL-CURRENT-CURRICULUM-DRIFT","mode":"SOURCE-LOCK-ONLY","runtime_eligible":false,
+  "current_curriculum":{"authority":"CURRENT_CURRICULUM_MATRIX","sefirah":"Malkuth","focus":"Checkpoint I (Review L1-L6)","objective":"Consolidar a fluência e selar o aprendizado.","content_payload_status":"LOCKED_MAPPING_ONLY"},
+  "human_evidence_claimed":false
+}

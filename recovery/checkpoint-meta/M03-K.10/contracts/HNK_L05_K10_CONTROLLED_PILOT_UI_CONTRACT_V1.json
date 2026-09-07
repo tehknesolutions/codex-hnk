@@ -1,0 +1,19 @@
+{
+  "contract_id": "HNK_L05_K10_CONTROLLED_PILOT_UI_CONTRACT_V1",
+  "phase": "M03-K.10",
+  "lesson_id": "HNK-L05",
+  "parent_k9_lock_sha256": "23aa6950c0915a1c9d19a2c66168175297348abb5c4c9e6893a1930a13797b50",
+  "public_runtime_enabled": false,
+  "controlled_pilot_only": true,
+  "human_evidence_generation": "USER_ACTION_ONLY",
+  "session_output_contract": "K8-v1 / K.9 capture_session.py compatible",
+  "must_not": [
+    "auto-submit evidence",
+    "fabricate participant data",
+    "enable public lesson runtime",
+    "generate new HNK forms",
+    "change canonical L05 counts",
+    "change frozen narrative",
+    "promote evidence without human review"
+  ]
+}

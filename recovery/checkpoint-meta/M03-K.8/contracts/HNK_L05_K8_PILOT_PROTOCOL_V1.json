@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "phase": "M03-K.8",
+  "lesson_id": "HNK-L05",
+  "namespace": "HNK-L05-gevurah",
+  "title": "Lesson 5: The Horizon of Plans",
+  "historical_focus": "Planejamento e Futuro (Going to)",
+  "system_mode": "EVOLUTIONARY",
+  "candidate_state": "INTEGRATED_CANDIDATE_RUNTIME_DISABLED",
+  "pilot_status": "READY_FOR_CONTROLLED_HUMAN_EVIDENCE",
+  "runtime_enabled": false,
+  "human_promotion_required": true,
+  "frozen_content": {
+    "narrative": ["I am going to travel to California.","I am going to see my parents.","We are going to have a party."],
+    "focus_phrases": ["I am going to travel","I am going to see","We are going to have"],
+    "vocabulary_order": ["Travel","Parents","Party","California","See"],
+    "approved_fifth_structure": "I'm not going to…"
+  },
+  "bridge_integrity_contract": {
+    "phrase_count": 3,
+    "language_count": 5,
+    "bridge_cells_expected": 15,
+    "transliterations_expected": 15,
+    "scholarly_anchors_expected": 12,
+    "california_treatment": "MODERN_TOPONYM",
+    "bridge_role": "FUNCTIONAL_COMPARATIVE_SUPPORT",
+    "no_new_hnk_forms_during_pilot": true
+  },
+  "pilot_sample_v1": {"minimum_total_sessions":12,"minimum_learner_sessions":8,"minimum_teacher_or_reviewer_sessions":4,"note":"K.8 acceptance design v1. Passing the automated gate is necessary but never sufficient for promotion."},
+  "human_promotion_required": true
+}

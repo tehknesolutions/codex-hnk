@@ -1,0 +1,9 @@
+{
+  "manifest_id": "HNK_L05_K8_MANIFEST_V1",
+  "phase": "M03-K.8",
+  "lesson_id": "HNK-L05",
+  "status": "PILOT_EVIDENCE_GATE_DESIGNED",
+  "validation_pass": true,
+  "files": [],
+  "aggregate_lock_sha256": "638ffe314a7eb65918223fbcb112a13e233ba9e391820192e449d1de1f989e76"
+}

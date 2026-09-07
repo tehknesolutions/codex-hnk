@@ -1,0 +1,5 @@
+{
+  "schema_version":"1.0.0","phase":"M03-L.2","lesson_id":"HNK-L06","namespace":"HNK-L06-yesod","status":"HISTORICAL-CURRENT-CURRICULUM-DRIFT","mode":"SOURCE-LOCK-ONLY","runtime_eligible":false,
+  "current_curriculum":{"authority":"CURRENT_CURRICULUM_MATRIX","sefirah":"Yesod","focus":"Estado Passado (Was/Were)","objective":"Fundamentar a percepção de experiências.","content_payload_status":"LOCKED_MAPPING_ONLY"},
+  "human_evidence_claimed":false
+}

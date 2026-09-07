@@ -1,0 +1,12 @@
+{
+  "manifest_id": "HNK_L05_K10_MANIFEST_V1",
+  "phase": "M03-K.10",
+  "lesson_id": "HNK-L05",
+  "status": "CONTROLLED_PILOT_UI_READY",
+  "parent_k9_lock_sha256": "23aa6950c0915a1c9d19a2c66168175297348abb5c4c9e6893a1930a13797b50",
+  "validation_pass": true,
+  "public_runtime_enabled": false,
+  "human_sessions_packaged": 0,
+  "files": [],
+  "aggregate_lock_sha256": "2398bda02f06ce92abdea111e5002316350f462250c8f86e9252892d1fe08de6"
+}

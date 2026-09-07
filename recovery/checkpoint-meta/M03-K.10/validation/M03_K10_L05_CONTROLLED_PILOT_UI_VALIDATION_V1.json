@@ -1,0 +1,22 @@
+{
+  "validation_id": "M03-K.10-L05-CONTROLLED-PILOT-UI-VALIDATION-V1",
+  "phase": "M03-K.10",
+  "checks": {
+    "phase_is_k10": true,
+    "lesson_is_l05": true,
+    "namespace_is_gevurah": true,
+    "public_runtime_off": true,
+    "cards_8": true,
+    "drills_24": true,
+    "assessment_8": true,
+    "negative_exact": true,
+    "narrative_preserved": true,
+    "lesson_total_139": true,
+    "opi_10": true,
+    "structures_5": true,
+    "activation_72": true,
+    "review_22": true,
+    "parent_k9_bound": true
+  },
+  "pass": true
+}

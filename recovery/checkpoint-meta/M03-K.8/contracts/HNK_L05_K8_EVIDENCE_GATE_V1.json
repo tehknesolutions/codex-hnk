@@ -1,0 +1,24 @@
+{
+  "gate_id": "HNK-L05-K8-EVIDENCE-GATE-V1",
+  "lesson_id": "HNK-L05",
+  "phase": "M03-K.8",
+  "decision_states": [
+    "HOLD_INSUFFICIENT_EVIDENCE",
+    "HOLD_CRITICAL_REGRESSION",
+    "HOLD_METRIC_FAILURE",
+    "READY_FOR_HUMAN_REVIEW",
+    "HUMAN_APPROVED_FOR_PROMOTION",
+    "HUMAN_REJECTED_OR_REVISION_REQUIRED"
+  ],
+  "initial_state": "HOLD_INSUFFICIENT_EVIDENCE",
+  "automated_decision_logic": [
+    {"when":"total_sessions < 12 OR learner_sessions < 8 OR teacher_or_reviewer_sessions < 4","decision":"HOLD_INSUFFICIENT_EVIDENCE"},
+    {"when":"critical_regressions > 0","decision":"HOLD_CRITICAL_REGRESSION"},
+    {"when":"any metric below its threshold","decision":"HOLD_METRIC_FAILURE"},
+    {"when":"sample minima met AND all thresholds met AND critical_regressions == 0","decision":"READY_FOR_HUMAN_REVIEW"}
+  ],
+  "non_automatable_rule": "READY_FOR_HUMAN_REVIEW never enables runtime.",
+  "runtime_requires": "HUMAN_APPROVED_FOR_PROMOTION plus explicit runtime change in a later phase.",
+  "human_evidence_claimed": false,
+  "runtime_promotion_allowed": false
+}

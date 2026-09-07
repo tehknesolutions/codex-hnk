@@ -1,0 +1,23 @@
+{
+  "guard_id": "HNK-L05-K8-CYCLE1-NUMERICAL-GUARD-V1",
+  "lesson_id": "HNK-L05",
+  "cycle_id": "CYCLE-1",
+  "target_lesson_total": 139,
+  "approved_change": {
+    "before": 138,
+    "after": 139,
+    "delta": 1,
+    "category": "structures",
+    "fifth_structure": "I'm not going to…"
+  },
+  "invariants": {
+    "opi": 10,
+    "story": 5,
+    "qa": 4,
+    "structures": 5,
+    "activation": 72,
+    "review": 22
+  },
+  "cycle_target": 1008,
+  "rule": "Pilot instrumentation must not mutate canonical item counts."
+}

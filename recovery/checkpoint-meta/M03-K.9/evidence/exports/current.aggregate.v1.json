@@ -1,0 +1,14 @@
+{
+  "aggregate_id": "HNK-L05-K9-CURRENT-EVIDENCE-V1",
+  "lesson_id": "HNK-L05",
+  "phase": "M03-K.9",
+  "instrument_version": "K8-v1",
+  "human_evidence_claimed": false,
+  "sessions": [],
+  "counts": {"total_sessions":0,"learner_sessions":0,"teacher_or_reviewer_sessions":0},
+  "metrics": {"M1":null,"M2":null,"M3":null,"M4":null,"M5":null,"M6":null,"M7":null,"M8":null},
+  "watch_confusions": {},
+  "critical_regressions": [],
+  "automated_decision": "HOLD_INSUFFICIENT_EVIDENCE",
+  "runtime_promotion_allowed": false
+}
