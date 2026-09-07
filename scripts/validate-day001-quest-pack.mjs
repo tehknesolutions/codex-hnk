@@ -66,18 +66,20 @@ if (completionService.canonical_source_sha !== sourceSha) fail("completion servi
 if (completion.properties?.completion_contract_id?.const !== cid) fail("completion contract id drift");
 if (completionService.completion_contract_id !== cid) fail("completion service contract id drift");
 if (canon.counted_core?.word_count !== 705) fail("canonical counted core must be 705 words");
-if (assets.release_ready !== false) fail("assets cannot be release ready before final production approval");
+if (assets.release_ready !== false) fail("assets cannot be release ready before renderer adapters land");
 if (assets.visual_contract !== "day-001.visual.manifest.json") fail("visual contract pointer drift");
 if (assets.art_direction !== "day-001.art-direction.json") fail("art direction pointer drift");
 if (visual.policy?.server_authoritative_first_spark !== true) fail("visual First Spark authority drift");
-if (visual.static_assets?.length !== 2) fail("static visual asset count drift");
+if (visual.static_assets?.length !== 3) fail("static visual asset count drift");
 if (artDirection.approval_state !== "PRODUCT_V1_FROZEN") fail("art direction freeze drift");
 if (artDirection.epistemic_boundary?.canonical_kether_sigil_is_distinct !== true) fail("canonical/product visual boundary drift");
+if (artDirection.soul_mirror_field?.status !== "APPROVED_PRODUCT_VISUAL_V1") fail("Soul Mirror product freeze drift");
 if (pack.asset_reconciliation?.state !== "RECONCILED_NOT_RELEASE_READY") fail("asset reconciliation state drift");
 if (pack.asset_reconciliation?.approved_canonical_migrated !== 1) fail("canonical migrated asset count drift");
-if (pack.asset_reconciliation?.approved_product_derived !== 2) fail("product-derived asset count drift");
+if (pack.asset_reconciliation?.approved_product_assets !== 3) fail("product asset count drift");
 if (pack.asset_reconciliation?.procedural_contract_ready !== 6) fail("procedural visual contract count drift");
-if (pack.asset_reconciliation?.needs_derivative_or_visual_review !== 1) fail("remaining visual review count drift");
+if (pack.asset_reconciliation?.needs_derivative_or_visual_review !== 0) fail("visual review backlog must be zero");
+if (pack.asset_reconciliation?.adapter_pending !== 7) fail("visual adapter backlog drift");
 if (!pack.runtime_capabilities?.required?.includes("VISUAL_CONTRACT")) fail("Quest Pack must require VISUAL_CONTRACT capability");
 if (audio.profiles?.theta_432?.status !== "CANONICAL_MAPPING_PENDING") fail("Theta/432 mapping was invented or changed");
 if (safety.global_rules?.subjective_phenomenon_required !== false) fail("subjective phenomenon cannot become a completion requirement");
@@ -90,13 +92,13 @@ for (const blocker of [
   "AUDIO-001-THETA-432",
   "BACKEND-001-COMPLETION-V2",
   "ASSET-001-PROCEDURAL-ADAPTER",
-  "ASSET-001-SOUL-MIRROR-FINAL",
 ]) {
   if (!blockerIds.has(blocker)) fail(`missing release blocker: ${blocker}`);
 }
 for (const obsolete of [
   "ASSET-001-CROWN-DERIVATIVE",
   "ASSET-001-KEY-ART",
+  "ASSET-001-SOUL-MIRROR-FINAL",
   "ASSET-001-REGISTRY-RESOLUTION",
   "ASSET-001-PROCEDURAL-EXTRACTION",
 ]) {
