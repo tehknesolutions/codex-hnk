@@ -1,0 +1,17 @@
+{
+  "name": "@hnk/quest-engine",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "test": "node -e \"console.log('quest-engine: contract/runtime core; integration tests live at repo level')\""
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  }
+}
