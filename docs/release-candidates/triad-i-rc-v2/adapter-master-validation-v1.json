@@ -1,0 +1,25 @@
+{
+  "validation_id": "REMOTE-MIGRATION-10-EXPERIENCE-ADAPTER-MASTER-VALIDATION-V1",
+  "input_pack_sha256": "f13288e62885360007320f4e9190a885f26cfa1eba62ef8016899ab96e8acddf",
+  "range": "037-109",
+  "generated_days": "73/73",
+  "contracts_per_day": 6,
+  "generated_contract_files": 438,
+  "typescript_binding_strategy": "ONE_GENERATED_REGISTRY_PLUS_GENERIC_BUILDER",
+  "typescript_compile": true,
+  "errors": [],
+  "checks": {
+    "generator_execution": true,
+    "registry_73": true,
+    "day_rows_73": true,
+    "contract_files_438": true,
+    "typescript_registry_compile": true,
+    "portal_days_exact": true,
+    "namespace_chokhmah_normalized": true,
+    "namespace_binah_stable": true,
+    "zero_errors": true
+  },
+  "pass": true,
+  "spec_layer_status": "PASS_73_OF_73",
+  "runtime_completion_status": "BLOCKED_PENDING_SERVER_V2_REGISTRY_AND_EVIDENCE_VALIDATION"
+}
