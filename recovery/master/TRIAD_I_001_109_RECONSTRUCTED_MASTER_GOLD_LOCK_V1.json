@@ -1,0 +1,54 @@
+{
+  "manifest_id": "HNK_TRIAD_I_001_109_RECONSTRUCTED_MASTER_GOLD_LOCK_V1",
+  "status": "RECONSTRUCTED_MASTER_GOLD_LOCK",
+  "range": "001-109",
+  "coverage": {
+    "folios": "109/109",
+    "literary_words": 76845,
+    "expected_literary_words": 76845,
+    "words_per_folio": 705,
+    "recovered_executable_folios": 36,
+    "reconstructed_validated_folios": 73
+  },
+  "evidence_classes": {
+    "KETHER_001_036": {
+      "classification": "RECOVERED_EXECUTABLE_EVIDENCE",
+      "status": "36/36 VALIDATED",
+      "literary_words": 25380,
+      "compiled_portal_036_recovered": true
+    },
+    "CHOKMAH_037_073": {
+      "classification": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+      "status": "GOLD_LOCKED",
+      "folios": "37/37",
+      "literary_words": 26085,
+      "aggregate_lock_sha256": "da16644e06a0a51380189837c1263fa8f4f7049ccd4afd63fbc7e5d1273782be"
+    },
+    "BINAH_074_109": {
+      "classification": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+      "status": "GOLD_LOCKED",
+      "folios": "36/36",
+      "literary_words": 25380,
+      "aggregate_lock_sha256": "069b9c8819d6e2f544915ce6f68fb46a4a4a27b901911c148ad233e51781104d"
+    }
+  },
+  "provenance_boundary": {
+    "original_rc1_restored": false,
+    "can_claim_structural_109_109": true,
+    "can_claim_recovered_or_reconstructed_literary_109_109": true,
+    "can_claim_original_compiled_rc1_109_109": false
+  },
+  "release_gates": {
+    "main_merge_allowed": false,
+    "runtime_release_allowed": false,
+    "pending": [
+      "release shell",
+      "crypto validation",
+      "renderer integration",
+      "global provenance/editorial QA",
+      "final reconstructed 109/109 release validation"
+    ]
+  },
+  "local_master_artifact_sha256": "a6f68c68ff118a8ccde831a23013296a41a820b2ac26a1365f648f963d48e8d5",
+  "next_phase": "REMOTE-MIGRATION-06"
+}
