@@ -1,0 +1,62 @@
+{
+  "recovery_id": "HNK_M90_TRIADE_I_BASELINE_RECOVERY_V1",
+  "target_baseline": "HNK_M90_TRIADE_I_FINAL_RC1",
+  "branch": "recovery/post-df51662-checkpoint-v1",
+  "main_mutated": false,
+  "status": "RECOVERY_IN_PROGRESS",
+  "areas": {
+    "kether_001_036": {
+      "source_plan": "FOUND",
+      "canonical_schema": "FOUND",
+      "source_lock": "FOUND",
+      "master_validation": "FOUND",
+      "validated_days": 36,
+      "expected_days": 36,
+      "portal_render": "FOUND_PORTAL_036",
+      "renderer_validation": "RENDERER_V1_2_PORTAL_AWARE_PASS",
+      "recovery_confidence": "HIGH_EXECUTABLE_CANON_EVIDENCE"
+    },
+    "chokmah_037_073": {
+      "source_plan": "FOUND",
+      "canonical_schema": "FOUND_SHARED",
+      "master_validation": "NOT_YET_FOUND",
+      "authored_fixtures": "NOT_YET_FOUND",
+      "portal_render": "NOT_YET_FOUND",
+      "recovery_confidence": "SOURCE_PLAN_ONLY"
+    },
+    "binah_074_109": {
+      "source_plan": "FOUND",
+      "canonical_schema": "FOUND_SHARED",
+      "master_validation": "NOT_YET_FOUND",
+      "authored_fixtures": "NOT_YET_FOUND",
+      "portal_render": "NOT_YET_FOUND",
+      "day_109_plan": "FOUND",
+      "recovery_confidence": "SOURCE_PLAN_ONLY"
+    },
+    "triad_global": {
+      "claimed_target_days": 109,
+      "validated_days_recovered": 36,
+      "original_109_109_validation": "NOT_YET_FOUND",
+      "release_shell": "NOT_YET_FOUND",
+      "cryptographic_validation": "NOT_YET_FOUND",
+      "original_bundle": "NOT_YET_FOUND",
+      "rc1_recovery_complete": false
+    }
+  },
+  "safety_rules": {
+    "no_silent_regeneration": true,
+    "no_plan_to_rc1_promotion": true,
+    "no_fabricated_validation": true,
+    "main_remains_frozen": true
+  },
+  "next_search_targets": [
+    "Portal 073 compiled artifact",
+    "Chapter 2 master validation",
+    "Portal 109 compiled artifact",
+    "Chapter 3 master validation",
+    "Triad I 109/109 global validation",
+    "release shell",
+    "cryptographic validation",
+    "HNK_M90_TRIADE_I_FINAL_RC1 bundle or archive"
+  ]
+}
