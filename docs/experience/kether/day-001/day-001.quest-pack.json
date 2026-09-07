@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-PACK-V1",
   "kind": "hnk.quest_pack",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "day": 1,
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
@@ -27,6 +27,7 @@
     {"logical_id":"quest","path":"day-001.quest.json","role":"QUEST_DEFINITION","required":true},
     {"logical_id":"canon","path":"day-001.canon-blocks.json","role":"CANON_BLOCKS","required":true},
     {"logical_id":"renderer","path":"day-001.renderer-profile.json","role":"RENDERER_PROFILE","required":true},
+    {"logical_id":"visual","path":"day-001.visual.manifest.json","role":"VISUAL_MANIFEST","required":true},
     {"logical_id":"evidence","path":"day-001.evidence.schema.json","role":"EVIDENCE_SCHEMA","required":true},
     {"logical_id":"completion","path":"day-001.completion.schema.json","role":"COMPLETION_SCHEMA","required":true},
     {"logical_id":"completion-service","path":"day-001.completion.service.json","role":"COMPLETION_SERVICE_PROFILE","required":true},
@@ -44,6 +45,7 @@
       "QUEST_ENGINE",
       "EXPERIENCE_DIRECTOR",
       "RENDERER_LAYER",
+      "VISUAL_CONTRACT",
       "PRACTICE_CONTRACT",
       "VAULT",
       "COMPLETION_CONTRACT",
@@ -51,16 +53,13 @@
       "RITUAL_TONE_528",
       "REDUCED_MOTION"
     ],
-    "optional": [
-      "MICROPHONE_RECORDING",
-      "THETA_432_PROFILE"
-    ]
+    "optional": ["MICROPHONE_RECORDING", "THETA_432_PROFILE"]
   },
   "asset_reconciliation": {
     "state": "RECONCILED_NOT_RELEASE_READY",
     "inventory": "day-001.asset-reconciliation.json",
     "approved_migrated": 1,
-    "procedural_source_found": 6,
+    "procedural_contract_ready": 6,
     "needs_derivative_or_visual_review": 3
   },
   "blockers": [
@@ -70,7 +69,12 @@
     {"id":"BACKEND-001-COMPLETION-V2","scope":"SERVER","reason":"complete_codex_day_v2 exists as adoption-ready draft but is not yet active in the migrated Supabase scaffold."},
     {"id":"ASSET-001-CROWN-DERIVATIVE","scope":"ASSETS","reason":"Day 001 crown visual still needs an approved derivative/semantic decision."},
     {"id":"ASSET-001-KEY-ART","scope":"ASSETS","reason":"Current key-art mockups contain outdated mutable copy and are reference-only."},
-    {"id":"ASSET-001-PROCEDURAL-EXTRACTION","scope":"ASSETS","reason":"Recovered procedural Kether primitives must be extracted from the legacy shell into shared renderer assets."},
-    {"id":"ASSET-001-SOUL-MIRROR-FINAL","scope":"ASSETS","reason":"Soul Mirror visual field requires final production approval without outdated reward copy."}
-  ]
+    {"id":"ASSET-001-PROCEDURAL-ADAPTER","scope":"ASSETS","reason":"Headless visual contract is extracted; Web/Expo adapters still depend on shell migration."},
+    {"id":"ASSET-001-SOUL-MIRROR-FINAL","scope":"ASSETS","reason":"Soul Mirror visual contract exists but requires final production approval."}
+  ],
+  "ci": {
+    "workflow": ".github/workflows/day001-golden.yml",
+    "current_state": "INFRASTRUCTURE_BLOCKED_NO_RUNNER",
+    "note": "The first GitHub Actions run ended before any step with runner_id=0; no validator result is inferred from that infrastructure failure."
+  }
 }
