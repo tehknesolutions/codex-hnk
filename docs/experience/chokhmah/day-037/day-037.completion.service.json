@@ -1,15 +1,1 @@
-{
-  "id": "HNK-CHOKHMAH-D037-COMPLETION-SERVICE-RC2",
-  "quest_definition_id": "HNK-CHOKHMAH-D037-RC3",
-  "completion_contract_id": "HNK-CHOKHMAH-D037-COMP-RC3",
-  "canonical_source_sha": "2d1d7ef1766d4a181389a3af94b9516f7b34a6eb",
-  "canonical_source_sha256": "cffd98f7eafccc5392994eb035a1492f51886502aaea6e8297c4478b69ce2e64",
-  "transport": {"kind":"supabase_rpc","rpc":"complete_codex_day_v2","server_authoritative":true},
-  "request": {
-    "required": ["day","session_id","completion_contract_id","quest_definition_id","canonical_source_sha","client_completion_id"],
-    "optional": ["local_record_hash","client_completed_at"],
-    "forbidden_authority_fields": ["xp_awarded","xp_total","initiatory_grade","progression_events","sephirah_state"]
-  },
-  "rules": {"canonical_xp":100,"replay_expected_xp":0,"next_day":38},
-  "runtime_status": "SPEC_READY__BACKEND_COMPLETION_BLOCKED"
-}
+{"id":"HNK-CHOKHMAH-D037-COMPLETION-SERVICE-RC2","quest_definition_id":"HNK-CHOKHMAH-D037-RC3","completion_contract_id":"HNK-CHOKHMAH-D037-COMP-RC3","canonical_source_sha":"f59a1f86a90b902d2cc4bb0082866408aadb2a4b","transport":{"kind":"supabase_rpc","rpc":"complete_codex_day_v2","server_authoritative":true},"request":{"required":["day","session_id","completion_contract_id","quest_definition_id","canonical_source_sha","client_completion_id"],"optional":["local_record_hash","client_completed_at"],"forbidden_authority_fields":["xp_awarded","xp_total","initiatory_grade","progression_events","sephirah_state"]},"rules":{"canonical_xp":100,"replay_expected_xp":0,"next_day":38},"runtime_status":"SPEC_READY__BACKEND_COMPLETION_BLOCKED"}
