@@ -33,6 +33,13 @@ function hexToBytes(hex: string): Uint8Array {
   return bytes;
 }
 
+/**
+ * Encode native byte results ourselves instead of asking AESSealedData for
+ * base64. Expo Crypto 57's public TS surface calls the ciphertext option
+ * `encoding`, while the Android native record currently calls it
+ * `outputFormat`. Reading the documented/default byte form keeps this proof
+ * independent of that adapter mismatch and compares the exact AES-GCM bytes.
+ */
 function bytesToBase64(bytes: Uint8Array): string {
   let output = '';
   for (let offset = 0; offset < bytes.length; offset += 3) {
@@ -51,6 +58,13 @@ function bytesToBase64(bytes: Uint8Array): string {
   return output;
 }
 
+/**
+ * Executes the public, deterministic HNK Vault interoperability fixture through
+ * the real Expo Crypto AES implementation. It never reads/writes SecureStore,
+ * Supabase, journal_vault or production Vault state.
+ *
+ * A PASS is meaningful only when Platform.OS is android or ios.
+ */
 export async function runNativeVaultInteropVector(): Promise<NativeVaultInteropResult> {
   const platform = Platform.OS;
   if (platform !== 'android' && platform !== 'ios') {
