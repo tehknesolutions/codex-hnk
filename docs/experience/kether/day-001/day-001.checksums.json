@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-CHECKSUMS-V1",
   "kind": "hnk.repository_integrity_index",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "algorithm": "git_blob_sha1",
   "scope": "authored Quest Pack source artifacts; runtime pack builder emits SHA-256 over payload bytes",
   "entries": [
@@ -10,6 +10,7 @@
     {"path":"day-001.renderer-profile.json","sha":"2360cdb2eb102bc8601eb8f77f8febf0d294f485"},
     {"path":"day-001.visual.manifest.json","sha":"2666c5fd79c5394ccc8a7a171ac61cacc3227ff5"},
     {"path":"day-001.art-direction.json","sha":"17d1fcde0503d8a913c8f43ca2bcd5c90028aee1"},
+    {"path":"day-001.editorial-reconciliation.json","sha":"a6ce7c6652669fa01af02c0a494902e38d4039c0"},
     {"path":"day-001.evidence.schema.json","sha":"56d2df21e0985f0246624899ff42a2e89b7beff5"},
     {"path":"day-001.completion.schema.json","sha":"5edd2567afd3c798605c5d2cc2227dac36175cde"},
     {"path":"day-001.completion.service.json","sha":"2cdb443dde57967d3a5dcf0d7f57c29c278dd490"},
