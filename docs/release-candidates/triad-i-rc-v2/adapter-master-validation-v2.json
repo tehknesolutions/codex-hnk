@@ -1,0 +1,30 @@
+{
+  "validation_id": "REMOTE-MIGRATION-10A-CANON-RESOLVER-ADAPTER-MASTER-V2",
+  "supersedes": "REMOTE-MIGRATION-10-EXPERIENCE-ADAPTER-MASTER-VALIDATION-V1",
+  "pack_sha256": "f2bd3d4dd53927c9b0dcb716f8703b49cb66f7742fb1ab8732e57e2719f80106",
+  "patch_log": [
+    {"day":37,"pillar":"EQUILIBRIUM","segment":"doctrine","word_added":"atentamente","before":136,"after":137},
+    {"day":37,"pillar":"EQUILIBRIUM","segment":"kavanah","word_added":"calmamente","before":71,"after":72},
+    {"day":41,"pillar":"EQUILIBRIUM","segment":"kavanah","word_added":"conscientemente","before":71,"after":72}
+  ],
+  "checks": {
+    "patches_exactly_3": true,
+    "whitespace_73_73": true,
+    "generated_73": true,
+    "seven_files_per_day": true,
+    "canon_blocks_9_each": true,
+    "canon_words_705_each": true,
+    "resolver_zero_errors": true,
+    "git_blob_sha_40": true,
+    "source_sha256_64": true,
+    "portal_days": true,
+    "typescript_compile": true
+  },
+  "resolver_errors": [],
+  "pass": true,
+  "generated_days": "73/73",
+  "contracts_per_day": 7,
+  "generated_contract_files": 511,
+  "runtime_completion": "BLOCKED_PENDING_SERVER_V2_REGISTRY_AND_EVIDENCE_VALIDATION",
+  "github_materialization_note": "Golden Day 037 is materialized with repository-effective blob SHA. Bulk generated sources/contracts remain artifact-locked pending REMOTE-MIGRATION-10B."
+}
