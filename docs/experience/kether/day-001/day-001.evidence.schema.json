@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hnk.local/schemas/day-001.evidence.schema.json",
+  "title": "HNK Day 001 Evidence V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "source_sha",
+    "session_id",
+    "jachin",
+    "ritual_tone_528",
+    "boaz",
+    "middle",
+    "soul_mirror",
+    "voluntary_completion_confirmed"
+  ],
+  "properties": {
+    "protocol_version": {"const": "HNK-KETHER-D001-V2"},
+    "source_sha": {"const": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29"},
+    "session_id": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["first_completion", "revisit"]},
+    "jachin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["started", "completed", "duration_seconds", "return_confirmed"],
+      "properties": {
+        "started": {"const": true},
+        "completed": {"const": true},
+        "duration_seconds": {"type": "integer", "minimum": 0},
+        "attention_returns": {"type": "integer", "minimum": 0},
+        "focus_rating": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "silence_rating": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "comfort_rating": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "return_confirmed": {"const": true}
+      }
+    },
+    "ritual_tone_528": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["started"],
+      "properties": {
+        "started": {"const": true},
+        "duration_seconds": {"type": ["integer", "null"], "minimum": 0},
+        "stopped_for_discomfort": {"type": "boolean"}
+      }
+    },
+    "boaz": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["started", "completed", "duration_seconds", "environment_distractions_count", "return_confirmed"],
+      "properties": {
+        "started": {"const": true},
+        "completed": {"const": true},
+        "duration_seconds": {"type": "integer", "minimum": 0},
+        "relaxation_rating": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "subjective_depth_rating": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "comfort_rating": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "environment_distractions_count": {"type": "integer", "minimum": 3},
+        "vault_entry_ref": {"type": ["string", "null"]},
+        "return_confirmed": {"const": true}
+      }
+    },
+    "middle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["voice_practice_completed", "duration_seconds", "voice_recorded", "return_confirmed"],
+      "properties": {
+        "voice_practice_completed": {"const": true},
+        "duration_seconds": {"type": "integer", "minimum": 0},
+        "voice_recorded": {"type": "boolean"},
+        "encrypted_voice_ref": {"type": ["string", "null"]},
+        "return_confirmed": {"const": true}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"voice_recorded": {"const": true}}},
+          "then": {"required": ["encrypted_voice_ref"]}
+        }
+      ]
+    },
+    "phenomenology": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "MANY_THOUGHTS", "SLEEPINESS", "CALM", "AGITATION", "IMAGES",
+          "BODY_SENSATIONS", "SILENCE", "STRONG_EMOTION", "NOTHING_SPECIAL", "OTHER"
+        ]
+      }
+    },
+    "soul_mirror": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completed"],
+      "properties": {
+        "completed": {"const": true},
+        "state_before": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "state_after": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "difficulty_rating": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "vault_entry_ref": {"type": ["string", "null"]}
+      }
+    },
+    "voluntary_completion_confirmed": {"const": true},
+    "safety_stop_occurred": {"type": "boolean"}
+  }
+}
