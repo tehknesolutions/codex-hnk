@@ -1,0 +1,65 @@
+{
+  "id": "HNK-KETHER-D001-PACK-V1",
+  "kind": "hnk.quest_pack",
+  "version": "1.0.0",
+  "day": 1,
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
+  "canonical_source_sha": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29",
+  "integrity_state": "PASS_CONTRACTS",
+  "release_state": "BLOCKED",
+  "offline": {
+    "practice_capable": true,
+    "canonical_text_packaged": true,
+    "structured_evidence_queueable": true,
+    "private_vault_local_first": true,
+    "canonical_completion_requires_server": true,
+    "binary_assets_ready": false
+  },
+  "integrity_policy": {
+    "repository_artifacts": "git_blob_sha1",
+    "runtime_pack_payload": "sha256",
+    "canonical_blocks": "sha256_per_block",
+    "canonical_source": "git_blob_sha1"
+  },
+  "files": [
+    {"logical_id":"quest","path":"day-001.quest.json","role":"QUEST_DEFINITION","required":true},
+    {"logical_id":"canon","path":"day-001.canon-blocks.json","role":"CANON_BLOCKS","required":true},
+    {"logical_id":"renderer","path":"day-001.renderer-profile.json","role":"RENDERER_PROFILE","required":true},
+    {"logical_id":"evidence","path":"day-001.evidence.schema.json","role":"EVIDENCE_SCHEMA","required":true},
+    {"logical_id":"completion","path":"day-001.completion.schema.json","role":"COMPLETION_SCHEMA","required":true},
+    {"logical_id":"completion-service","path":"day-001.completion.service.json","role":"COMPLETION_SERVICE_PROFILE","required":true},
+    {"logical_id":"completion-rpc-request","path":"day-001.completion.rpc.request.schema.json","role":"RPC_REQUEST_SCHEMA","required":true},
+    {"logical_id":"completion-rpc-response","path":"day-001.completion.rpc.response.schema.json","role":"RPC_RESPONSE_SCHEMA","required":true},
+    {"logical_id":"assets","path":"day-001.assets.manifest.json","role":"ASSET_MANIFEST","required":true},
+    {"logical_id":"audio","path":"day-001.audio.manifest.json","role":"AUDIO_MANIFEST","required":true},
+    {"logical_id":"safety","path":"day-001.safety.policy.json","role":"SAFETY_POLICY","required":true},
+    {"logical_id":"episteme","path":"day-001.episteme.manifest.json","role":"EPISTEME_MANIFEST","required":true},
+    {"logical_id":"checksums","path":"day-001.checksums.json","role":"REPOSITORY_INTEGRITY_INDEX","required":true}
+  ],
+  "runtime_capabilities": {
+    "required": [
+      "CANON_RESOLVER",
+      "QUEST_ENGINE",
+      "EXPERIENCE_DIRECTOR",
+      "RENDERER_LAYER",
+      "PRACTICE_CONTRACT",
+      "VAULT",
+      "COMPLETION_CONTRACT",
+      "SERVER_COMPLETION",
+      "RITUAL_TONE_528",
+      "REDUCED_MOTION"
+    ],
+    "optional": [
+      "MICROPHONE_RECORDING",
+      "THETA_432_PROFILE"
+    ]
+  },
+  "blockers": [
+    {"id":"EDITORIAL-001-UNIVERSAL-ENTRY","scope":"GLOBAL_CANON","reason":"Universal Entry framing still requires canonical editorial reconciliation."},
+    {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"Canonical wording still requires recording while product contract makes recording optional."},
+    {"id":"AUDIO-001-THETA-432","scope":"DAY001_AUDIO","reason":"Exact Theta/432 binaural mapping is not canonically defined."},
+    {"id":"BACKEND-001-COMPLETION-V2","scope":"SERVER","reason":"complete_codex_day_v2 exists as adoption-ready draft but is not yet active in the migrated Supabase scaffold."},
+    {"id":"ASSET-001-REGISTRY-RESOLUTION","scope":"ASSETS","reason":"Required Day 001 visual assets have not yet been resolved into the new repository Asset Registry."}
+  ]
+}
