@@ -1,0 +1,43 @@
+{
+  "validation_id": "REMOTE-MIGRATION-11-SERVER-REGISTRY-GENERIC-PROGRESSION-VALIDATION-V1",
+  "production_snapshot": {
+    "project": "codex-hnk-app",
+    "project_ref": "czgqjrxkveatlnyjiwds",
+    "codex_days_current": "36/36 Kether only",
+    "complete_codex_day_v2_currently_deployed": false,
+    "legacy_complete_codex_day_deployed": true
+  },
+  "catalog_rows": 73,
+  "registry_rows": 73,
+  "static_checks": {
+    "73_catalog_rows": true,
+    "73_registry_rows": true,
+    "catalog_reviewed_only": true,
+    "registry_draft_literal": true,
+    "no_legacy_revoke": true,
+    "security_definer_pinned": true,
+    "generic_state_response": true,
+    "crown_compatibility": true,
+    "day73_grade_transition": true,
+    "day109_no_grade4_invention": true,
+    "post109_chased_to_chesed": true,
+    "post_kether_contracts_not_active": true,
+    "post_kether_catalog_not_canon": true
+  },
+  "model_checks": {
+    "sequential_37_109_passes": true,
+    "day72_blocks_without_full_37_71": true,
+    "day109_blocks_without_full_74_108": true,
+    "portal72_passes_with_35_prior": true,
+    "portal109_passes_with_35_prior": true
+  },
+  "pass": true,
+  "applied_to_production": false,
+  "production_runtime_changed": false,
+  "release_boundary": {
+    "days_37_109_status": "reviewed",
+    "contracts_37_109_status": "draft",
+    "runtime_completion_enabled": false,
+    "promotion_requires_separate_migration": true
+  }
+}
