@@ -1,0 +1,101 @@
+{
+  "id": "HNK-KETHER-D001-VISUAL-V1",
+  "kind": "hnk.visual_manifest",
+  "version": "1.0.0",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "source": {
+    "repository": "Tehkne-Solutions/codex-hnk-app",
+    "path": "apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx",
+    "git_blob_sha1": "c5f37b1ea2ca985575f497fe4843c0c8f1db006d"
+  },
+  "policy": {
+    "canonical_claim": false,
+    "semantic_tokens_required": true,
+    "reduced_motion_required": true,
+    "server_authoritative_first_spark": true
+  },
+  "primitives": [
+    {
+      "id": "HNK-D001-VIS-ORIGIN-COSMOS-V1",
+      "kind": "ORIGIN_COSMOS",
+      "source_symbol": "OriginCosmos",
+      "motion": "BREATHING",
+      "reduced_motion_strategy": "REMOVE_GLOW",
+      "geometry": {
+        "height": 330,
+        "axis_height": 270,
+        "ring_diameters": [270, 178, 86],
+        "point_diameter": 10,
+        "glow_radius": 30
+      }
+    },
+    {
+      "id": "HNK-D001-VIS-BOAZ-AXIS-V1",
+      "kind": "BOAZ_AXIS",
+      "source_symbol": "BoazAxis",
+      "motion": "CONTRACTION",
+      "reduced_motion_strategy": "STATIC_GEOMETRY",
+      "geometry": {
+        "width": 100,
+        "height": 220,
+        "line": {"left": 49, "top": 10, "height": 200, "width": 1},
+        "node": {"left": 39, "size": 20, "rotation_degrees": 45, "tops": [24, 104, 184]}
+      }
+    },
+    {
+      "id": "HNK-D001-VIS-CONVERGENCE-V1",
+      "kind": "CONVERGENCE",
+      "source_symbol": "ConvergenceGeometry",
+      "motion": "CONVERGENCE",
+      "reduced_motion_strategy": "STATIC_GEOMETRY",
+      "geometry": {
+        "height": 120,
+        "line_width": 140,
+        "left_offset": 25,
+        "right_offset": 25,
+        "left_rotation_degrees": 9,
+        "right_rotation_degrees": -9,
+        "center_diameter": 24
+      }
+    },
+    {
+      "id": "HNK-D001-VIS-TREE-FIELD-V1",
+      "kind": "TREE_FIELD",
+      "source_symbol": "TreeField",
+      "motion": "SEAL",
+      "reduced_motion_strategy": "REMOVE_GLOW",
+      "geometry": {
+        "width": 300,
+        "height": 470,
+        "stem": {"left": 149, "top": 30, "height": 410, "width": 1},
+        "node_diameter": 22,
+        "nodes": [[150,34],[94,96],[206,96],[76,174],[224,174],[150,220],[86,300],[214,300],[150,366],[150,430]],
+        "kether_node_index": 0,
+        "glow_radius": 26
+      },
+      "state": {
+        "lit_node_is_server_derived": true,
+        "first_spark_event": "KETHER_FIRST_SPARK"
+      }
+    },
+    {
+      "id": "HNK-D001-VIS-REFLECTION-FIELD-V1",
+      "kind": "REFLECTION_FIELD",
+      "source_symbol": "ReflectionField/reflectionField styles",
+      "motion": "STILL",
+      "reduced_motion_strategy": "STATIC_GEOMETRY",
+      "geometry": {"padding": 12, "min_input_height": 100, "large_input_height": 150},
+      "privacy": {"prose_destination": "VAULT_ONLY"},
+      "approval_state": "DRAFT_FINAL_VISUAL_PENDING"
+    }
+  ],
+  "bindings": [
+    {"asset_key":"kether-origin-background","primitive_id":"HNK-D001-VIS-ORIGIN-COSMOS-V1","usage":"BACKGROUND","adapter_required":true},
+    {"asset_key":"kether-tree-node","primitive_id":"HNK-D001-VIS-TREE-FIELD-V1","usage":"NODE","adapter_required":true},
+    {"asset_key":"day001-jachin-field","primitive_id":"HNK-D001-VIS-ORIGIN-COSMOS-V1","usage":"FIELD","adapter_required":true},
+    {"asset_key":"day001-boaz-field","primitive_id":"HNK-D001-VIS-BOAZ-AXIS-V1","usage":"FIELD","adapter_required":true},
+    {"asset_key":"day001-middle-field","primitive_id":"HNK-D001-VIS-CONVERGENCE-V1","usage":"FIELD","adapter_required":true},
+    {"asset_key":"soul-mirror-background","primitive_id":"HNK-D001-VIS-REFLECTION-FIELD-V1","usage":"REFLECTION","adapter_required":true},
+    {"asset_key":"first-spark-animation","primitive_id":"HNK-D001-VIS-TREE-FIELD-V1","usage":"ANIMATION","adapter_required":true}
+  ]
+}
