@@ -1,0 +1,167 @@
+{
+  "id": "HNK-KETHER-D001-ASSET-RECONCILIATION-V1",
+  "kind": "hnk.asset_reconciliation",
+  "version": "1.0.0",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "audited_sources": [
+    "Tehkne-Solutions/codex-hnk-app@main",
+    "Tehkne-Solutions/hnk-codex-365@main",
+    "current project session visual candidates"
+  ],
+  "canonical_masters": [
+    {
+      "id": "oracle-dai-ko-myo-usui-hnk-master-v1",
+      "role": "DAI_KOO_MYO",
+      "state": "APPROVED_MIGRATED",
+      "canonical_source": "canon/references/approved/DAI_KOO_MYO_USUI_HNK_V1.md",
+      "canonical_asset": "canon/references/assets/dai-koo-myo-usui-hnk-master-v1.svg",
+      "source_git_blob_sha1": "973ed0e6da0bc1d48990970a9e10d7e811dc785c",
+      "sha256": "25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0",
+      "migrated_path": "assets/canonical/kether/dai-koo-myo-usui-hnk-master-v1.svg",
+      "migrated_git_blob_sha1": "973ed0e6da0bc1d48990970a9e10d7e811dc785c",
+      "byte_identical": true
+    },
+    {
+      "id": "hnk.kether.sigil.v1.master",
+      "role": "KETHER_SIGIL_REFERENCE",
+      "state": "APPROVED_MIGRATED_REFERENCE",
+      "canonical_source": "canon/references/approved/KETHER_SIGIL_V1.md",
+      "canonical_asset": "canon/references/assets/kether-sigil-v1.svg",
+      "source_git_blob_sha1": "303af75e50ccf5dfd0f4be606143ae06739da4eb",
+      "sha256": "7792ad999497f502d29c4377d3497c02241421701e5762ed247c5351fb24320a",
+      "migrated_path": "assets/canonical/kether/kether-sigil-v1.svg",
+      "migrated_git_blob_sha1": "303af75e50ccf5dfd0f4be606143ae06739da4eb",
+      "byte_identical": true,
+      "slot_warning": "The approved full Kether sigil is scoped to Kether/Portal 036 and must not be silently reduced to a Day 001 crown icon."
+    }
+  ],
+  "legacy_procedural_source": {
+    "repository": "Tehkne-Solutions/codex-hnk-app",
+    "path": "apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx",
+    "git_blob_sha1": "c5f37b1ea2ca985575f497fe4843c0c8f1db006d",
+    "components": [
+      "OriginCosmos",
+      "BoazAxis",
+      "ConvergenceGeometry",
+      "TreeField",
+      "reflectionField styles"
+    ],
+    "migration_state": "SOURCE_FOUND_SHELL_MIGRATION_PENDING"
+  },
+  "visual_candidates": [
+    {
+      "filename": "códex_cósmico_a_coroa_da_jornada.png",
+      "sha256": "25fdb5f89ef5c4679a1903a1bf49d95f57dfc8641b0826e18a05a813e8f88a66",
+      "candidate_for": ["day001-key-art", "kether-origin-background"],
+      "state": "REVIEW_REFERENCE_ONLY",
+      "blocking_findings": ["embedded +50 XP conflicts with canonical +150", "Codex Lab/mission copy is not the frozen Golden Day contract"]
+    },
+    {
+      "filename": "codex_lab_001_a_coroa_antes_da_forma.png",
+      "sha256": "c8697c92f0c5684de6c572a14f2e29652464f41b4725c1cbfc41b16612d5b0ed",
+      "candidate_for": ["day001-key-art"],
+      "state": "REVIEW_REFERENCE_ONLY",
+      "blocking_findings": ["embedded +50 XP conflicts with canonical +150", "contains old focus-scoring language", "screen architecture predates Quest V2"]
+    },
+    {
+      "filename": "temporizador_cósmico_da_prática_de_silêncio.png",
+      "sha256": "cefd528aabbfbfce8a0c1fd2e7e7c0a71801ca65929019afc8b50fd37b4ebeb8",
+      "candidate_for": ["day001-jachin-field"],
+      "state": "REVIEW_REFERENCE_ONLY",
+      "blocking_findings": ["+1 FOCO per return conflicts with non-scoring attention-return policy", "visual can inspire composition but not runtime rules"]
+    },
+    {
+      "filename": "jornada_cósmica_antes_da_prática.png",
+      "sha256": "dbd6755660e224eb23db07f5df769dd495cbaaa34380f2600c77023737fc6178",
+      "candidate_for": ["kether-origin-background", "meaning-anchor visual reference"],
+      "state": "REVIEW_REFERENCE_ONLY",
+      "blocking_findings": ["predates canonical identity notice", "not a final runtime asset"]
+    },
+    {
+      "filename": "codex_lab_espelho_da_alma.png",
+      "sha256": "5d0d4d0c7dc47155563f2b98b6672882188b3d65b0c33b4be24b307455c17aff",
+      "candidate_for": ["soul-mirror-background", "first-spark visual reference"],
+      "state": "REVIEW_REFERENCE_ONLY",
+      "blocking_findings": ["embedded +50 XP conflicts with canonical +150", "achievement set is not the frozen Day 001 reward contract"]
+    }
+  ],
+  "slots": [
+    {
+      "key": "kether-origin-background",
+      "classification": "FOUND_PROCEDURAL_SOURCE",
+      "source": "Day001ImmersiveMobileVerticalSlice.tsx::OriginCosmos",
+      "runtime_kind_recommended": "PROCEDURAL_SCENE",
+      "next_action": "extract into shared asset/renderer primitive when shell migrates"
+    },
+    {
+      "key": "kether-crown-symbol",
+      "classification": "NEEDS_CANONICAL_DERIVATIVE_REVIEW",
+      "candidate_reference": "assets/canonical/kether/kether-sigil-v1.svg",
+      "next_action": "approve a Day 001 crown derivative or explicitly change slot semantics; do not crop the Portal 036 sigil silently"
+    },
+    {
+      "key": "kether-tree-node",
+      "classification": "FOUND_PROCEDURAL_SOURCE",
+      "source": "Day001ImmersiveMobileVerticalSlice.tsx::TreeField",
+      "runtime_kind_recommended": "PROCEDURAL_SCENE",
+      "next_action": "extract node primitive with server-derived lit state"
+    },
+    {
+      "key": "day001-key-art",
+      "classification": "CANDIDATES_NEED_REVIEW",
+      "runtime_kind_recommended": "IMAGE_OR_ART_ONLY",
+      "next_action": "produce/finalize artwork without embedded mutable XP/UI copy; current generated candidates remain reference-only"
+    },
+    {
+      "key": "dai-koo-myo-approved",
+      "classification": "APPROVED_MIGRATED",
+      "runtime_kind_recommended": "SVG",
+      "path": "assets/canonical/kether/dai-koo-myo-usui-hnk-master-v1.svg",
+      "sha256": "25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0",
+      "must_not_be_ai_improvised": true
+    },
+    {
+      "key": "day001-jachin-field",
+      "classification": "SOURCE_FOUND_NEEDS_EXTRACTION",
+      "source": "Day001ImmersiveMobileVerticalSlice.tsx + OriginCosmos/PracticeChamber visual grammar",
+      "runtime_kind_recommended": "PROCEDURAL_SCENE",
+      "next_action": "extract expansion/focus scene; do not import obsolete +1 FOCO mockup logic"
+    },
+    {
+      "key": "day001-boaz-field",
+      "classification": "FOUND_PROCEDURAL_SOURCE",
+      "source": "Day001ImmersiveMobileVerticalSlice.tsx::BoazAxis",
+      "runtime_kind_recommended": "PROCEDURAL_SCENE",
+      "next_action": "extract contraction/axis primitive"
+    },
+    {
+      "key": "day001-middle-field",
+      "classification": "FOUND_PROCEDURAL_SOURCE",
+      "source": "Day001ImmersiveMobileVerticalSlice.tsx::ConvergenceGeometry",
+      "runtime_kind_recommended": "PROCEDURAL_SCENE",
+      "next_action": "extract convergence primitive"
+    },
+    {
+      "key": "soul-mirror-background",
+      "classification": "SOURCE_FOUND_NEEDS_EXTRACTION",
+      "source": "Day001ImmersiveMobileVerticalSlice.tsx::reflectionField visual grammar",
+      "runtime_kind_recommended": "PROCEDURAL_OR_TEXTURE",
+      "next_action": "build reflective field without embedding outdated XP/reward copy"
+    },
+    {
+      "key": "first-spark-animation",
+      "classification": "FOUND_PROCEDURAL_SOURCE",
+      "source": "Day001ImmersiveMobileVerticalSlice.tsx::TreeField(sealed)",
+      "runtime_kind_recommended": "PROCEDURAL_ANIMATION",
+      "reduced_motion_fallback_required": true,
+      "next_action": "extract state transition; server completion remains authoritative"
+    }
+  ],
+  "summary": {
+    "required_slots": 10,
+    "approved_migrated": 1,
+    "procedural_source_found": 6,
+    "needs_derivative_or_visual_review": 3,
+    "final_release_ready": false
+  }
+}
