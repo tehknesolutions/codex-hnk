@@ -1,13 +1,15 @@
 {
   "id": "HNK-KETHER-D001-ASSETS-V1",
   "kind": "hnk.asset_manifest",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "release_ready": false,
   "policy": "APPROVED_OR_PUBLISHED_ONLY",
   "visual_contract": "day-001.visual.manifest.json",
+  "art_direction": "day-001.art-direction.json",
   "asset_model": [
     "CANONICAL_VECTOR",
+    "PRODUCT_VECTOR_DERIVATIVE",
     "PROCEDURAL_SCENE",
     "PROCEDURAL_ANIMATION",
     "IMAGE_ART",
@@ -24,10 +26,13 @@
     {
       "key": "kether-crown-symbol",
       "required": true,
-      "status": "NEEDS_CANONICAL_DERIVATIVE_REVIEW",
-      "kind": "CANONICAL_VECTOR_DERIVATIVE",
+      "status": "APPROVED_PRODUCT_DERIVATIVE_V1",
+      "kind": "PRODUCT_VECTOR_DERIVATIVE",
+      "path": "assets/derived/kether/day001-crown-mark-v1.svg",
+      "sha256": "62643446db75e6f22c492a07bc7cb434c0aa365429417795fa414c29b9a08801",
       "reference_path": "assets/canonical/kether/kether-sigil-v1.svg",
-      "note": "The approved Portal 036 sigil must not be silently cropped or redefined as a Day 001 crown icon."
+      "canonical_asset": false,
+      "note": "Day 001 product mark derived from Kether visual language; not the canonical Portal 036 sigil."
     },
     {
       "key": "kether-tree-node",
@@ -39,9 +44,13 @@
     {
       "key": "day001-key-art",
       "required": true,
-      "status": "CANDIDATES_NEED_REVIEW",
+      "status": "APPROVED_PRODUCT_KEY_ART_V1",
       "kind": "IMAGE_ART",
-      "note": "Existing mockups contain outdated mutable copy/XP and remain visual references only."
+      "path": "assets/derived/kether/day001-key-art-v1.svg",
+      "sha256": "e194a43156aaed6034eed144e83eb49651629c3aa1858f98503d957730662579",
+      "text_free": true,
+      "mutable_copy_embedded": false,
+      "xp_embedded": false
     },
     {
       "key": "dai-koo-myo-approved",
@@ -94,14 +103,13 @@
   ],
   "reconciliation": {
     "required_slots": 10,
-    "approved_migrated": 1,
+    "approved_canonical_migrated": 1,
+    "approved_product_derived": 2,
     "procedural_contract_ready": 6,
-    "needs_derivative_or_visual_review": 3,
+    "needs_derivative_or_visual_review": 1,
     "inventory": "day-001.asset-reconciliation.json"
   },
   "release_blockers": [
-    "ASSET-001-CROWN-DERIVATIVE",
-    "ASSET-001-KEY-ART",
     "ASSET-001-PROCEDURAL-ADAPTER",
     "ASSET-001-SOUL-MIRROR-FINAL"
   ]
