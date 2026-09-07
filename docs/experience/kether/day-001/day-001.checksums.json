@@ -1,20 +1,21 @@
 {
   "id": "HNK-KETHER-D001-CHECKSUMS-V1",
   "kind": "hnk.repository_integrity_index",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "algorithm": "git_blob_sha1",
   "scope": "authored Quest Pack source artifacts; runtime pack builder emits SHA-256 over payload bytes",
   "entries": [
     {"path":"day-001.quest.json","sha":"f57a41d5ccfbd90debca37d5e067315c336d5d5e"},
     {"path":"day-001.canon-blocks.json","sha":"7a4d10da081a04b3c94b6e8fad98b9f3766ad73e"},
     {"path":"day-001.renderer-profile.json","sha":"2360cdb2eb102bc8601eb8f77f8febf0d294f485"},
-    {"path":"day-001.visual.manifest.json","sha":"826200abc36c33226ac74d0624d91cf0159dc67a"},
+    {"path":"day-001.visual.manifest.json","sha":"532a46e4e3bc87f9a87b96e8fb2569aabeec85f6"},
+    {"path":"day-001.art-direction.json","sha":"5cf07ab30c41c79d221a35a111ff6a5ee4451eab"},
     {"path":"day-001.evidence.schema.json","sha":"56d2df21e0985f0246624899ff42a2e89b7beff5"},
     {"path":"day-001.completion.schema.json","sha":"5edd2567afd3c798605c5d2cc2227dac36175cde"},
     {"path":"day-001.completion.service.json","sha":"2cdb443dde57967d3a5dcf0d7f57c29c278dd490"},
     {"path":"day-001.completion.rpc.request.schema.json","sha":"5ca1041e74a5db35d0c36e5a0cef28b19c42ab35"},
     {"path":"day-001.completion.rpc.response.schema.json","sha":"a290cb74bd84f4fe8f52c2dc44708dbd2b250a3b"},
-    {"path":"day-001.assets.manifest.json","sha":"657cd71b58dc70d22622c2093bbff446f1d49d3d"},
+    {"path":"day-001.assets.manifest.json","sha":"7c16c2483738a1ba42fe4910145a4d69a1a6b6de"},
     {"path":"day-001.audio.manifest.json","sha":"8a902d1451a2dd68f2c9037e12ce5433f3ccc4b2"},
     {"path":"day-001.safety.policy.json","sha":"ac300fea10135a8a772d7ed0efdab6a5f78078d3"},
     {"path":"day-001.episteme.manifest.json","sha":"d843dd92d425287d08700e0073fac29caa4fab8d"}
@@ -34,6 +35,18 @@
       "path": "assets/canonical/kether/kether-sigil-v1.svg",
       "git_blob_sha1": "303af75e50ccf5dfd0f4be606143ae06739da4eb",
       "sha256": "7792ad999497f502d29c4377d3497c02241421701e5762ed247c5351fb24320a"
+    }
+  ],
+  "product_derived_assets": [
+    {
+      "path": "assets/derived/kether/day001-crown-mark-v1.svg",
+      "git_blob_sha1": "a238932ad8afb80e7135a41e1e5016240ecd8e63",
+      "sha256": "62643446db75e6f22c492a07bc7cb434c0aa365429417795fa414c29b9a08801"
+    },
+    {
+      "path": "assets/derived/kether/day001-key-art-v1.svg",
+      "git_blob_sha1": "8c79a2b60df22a1d457732a2f643dc912716391e",
+      "sha256": "e194a43156aaed6034eed144e83eb49651629c3aa1858f98503d957730662579"
     }
   ]
 }
