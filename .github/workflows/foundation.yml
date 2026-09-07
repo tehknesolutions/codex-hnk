@@ -1,0 +1,110 @@
+name: HNK Platform Foundation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+
+      - name: Install workspace
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Validate architecture baseline
+        run: pnpm validate:architecture
+
+      - name: Validate HNK UI tokens
+        run: pnpm validate:ui
+
+      - name: Validate Day 001 master slice
+        run: pnpm validate:day001
+
+      - name: Validate HNK Experience QA Gate
+        run: pnpm validate:experience
+
+      - name: Validate HNK Audio Contract V1
+        run: pnpm validate:audio
+
+      - name: Validate Kether canonical references
+        run: pnpm validate:kether-references
+
+      - name: Validate Board Factory
+        run: pnpm validate:boards
+
+      - name: Validate Web Vault Crypto Lab boundary
+        run: pnpm validate:vault-web-crypto
+
+      - name: Validate Native Vault interop contract
+        run: pnpm validate:vault-native-interop
+
+      - name: Validate recovery-envelope adapter boundary
+        run: pnpm validate:vault-envelope-adapter
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+      - name: Report versions
+        if: always()
+        run: |
+          node --version
+          pnpm --version
+
+  kether-p0-db:
+    name: Kether P0 DB Acceptance
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Ensure PostgreSQL client
+        run: |
+          if ! command -v psql >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y postgresql-client
+          fi
+          psql --version
+          jq --version
+
+      - name: Start local Supabase
+        run: supabase start
+
+      - name: Run Kether P0 pgTAP acceptance suite
+        run: supabase test db
+
+      - name: Run Kether P0 real concurrency proof
+        run: bash supabase/tests/kether_p0_concurrency.sh
+
+      - name: Stop local Supabase
+        if: always()
+        run: supabase stop --no-backup
