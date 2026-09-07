@@ -1,0 +1,71 @@
+name: Day 001 Golden Gate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/experience/kether/day-001/**'
+      - 'docs/backend-drafts/**'
+      - 'packages/quest-engine/**'
+      - 'packages/completion-contract/**'
+      - 'packages/practice-contract/**'
+      - 'packages/canon-resolver/**'
+      - 'packages/quest-pack/**'
+      - 'assets/canonical/kether/**'
+      - 'scripts/validate-day001-*.mjs'
+      - 'scripts/validate-practice-contract.mjs'
+      - 'scripts/validate-completion-backend-draft.mjs'
+      - 'scripts/verify-day001-canon-source.mjs'
+      - '.github/workflows/day001-golden.yml'
+  pull_request:
+    paths:
+      - 'docs/experience/kether/day-001/**'
+      - 'docs/backend-drafts/**'
+      - 'packages/quest-engine/**'
+      - 'packages/completion-contract/**'
+      - 'packages/practice-contract/**'
+      - 'packages/canon-resolver/**'
+      - 'packages/quest-pack/**'
+      - 'assets/canonical/kether/**'
+      - 'scripts/validate-day001-*.mjs'
+      - 'scripts/validate-practice-contract.mjs'
+      - 'scripts/validate-completion-backend-draft.mjs'
+      - 'scripts/verify-day001-canon-source.mjs'
+      - '.github/workflows/day001-golden.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  golden-day-001:
+    name: Golden Day 001
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout HNK Codex
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch canonical Day 001 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            'https://raw.githubusercontent.com/Tehkne-Solutions/hnk-codex-365/main/canon/capitulo-01-kether/dia-001.md' \
+            --output "$RUNNER_TEMP/day001-canon.md"
+          test -s "$RUNNER_TEMP/day001-canon.md"
+
+      - name: Run Golden Day integrity gate
+        shell: bash
+        env:
+          HNK_DAY001_CANON_SOURCE: ${{ runner.temp }}/day001-canon.md
+        run: |
+          set -euo pipefail
+          node scripts/validate-day001-golden.mjs
