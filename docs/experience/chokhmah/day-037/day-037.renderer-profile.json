@@ -1,1 +1,23 @@
-{"id":"HNK-CHOKHMAH-D037-RENDERER-RC1","quest_definition_id":"HNK-CHOKHMAH-D037-RC2","renderer_contract":"HNK_RENDERER_LAYER_V1","default_surface":"mobile-first","phase_renderers":{"NARRATIVE":"NarrativeScene","INSTRUCTION":"InstructionScene","TERM_REVEAL":"TermRevealScene","READ":"CanonReadingScene","FOCUS":"FocusPracticeScene","RETURN":"ReturnGateScene","JOURNAL":"VaultJournalScene","STRUCTURED_JOURNAL":"SoulMirrorScene","CORRESPONDENCE_REVEAL":"CorrespondenceScene","COMPLETION":"CompletionBoundaryScene","UNLOCK":"UnlockScene"},"policies":{"completion":{"client_may_award_xp":false,"client_may_mark_complete_directly":false,"requires_server_confirmation":true},"accessibility":{"reduced_motion_required":true,"stop_control_required_for_practice":true},"privacy":{"free_text_default":"VAULT_ONLY","analytics_free_text":false}},"signature_moments":{"chokhmah_reveal":"WisdomFieldEmergence","jachin_vakog":"VAKOGObservation","equilibrium_three_column":"PerceiveThinkInterpretReveal","next_day":"CahetelProgress"}}
+{
+  "id": "HNK-CHOKHMAH-D037-RENDERER-RC2",
+  "quest_definition_id": "HNK-CHOKHMAH-D037-RC3",
+  "renderer_contract": "HNK_RENDERER_LAYER_V1",
+  "default_surface": "mobile-first",
+  "phase_renderers": {
+    "NARRATIVE": "NarrativeScene",
+    "INSTRUCTION": "InstructionScene",
+    "TERM_REVEAL": "TermRevealScene",
+    "READ": "CanonReadingScene",
+    "FOCUS": "FocusPracticeScene",
+    "RETURN": "ReturnGateScene",
+    "STRUCTURED_JOURNAL": "SoulMirrorScene",
+    "COMPLETION": "CompletionBoundaryScene",
+    "UNLOCK": "UnlockScene"
+  },
+  "policies": {
+    "completion": {"client_may_award_xp": false,"client_may_mark_complete_directly": false,"requires_server_confirmation": true},
+    "canon": {"resolver_required": true,"manifest": "day-037.canon-blocks.json"},
+    "accessibility": {"reduced_motion_required": true,"stop_control_required_for_practice": true},
+    "privacy": {"free_text_default": "VAULT_ONLY","analytics_free_text": false}
+  }
+}
