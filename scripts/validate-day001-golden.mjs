@@ -9,6 +9,7 @@ const checks = [
   "validate-practice-contract.mjs",
   "validate-day001-completion-service.mjs",
   "validate-completion-backend-draft.mjs",
+  "validate-day001-assets.mjs",
   "validate-day001-quest-pack.mjs",
 ];
 
