@@ -24,6 +24,7 @@ const checksums = json("day-001.checksums.json");
 const quest = json("day-001.quest.json");
 const canon = json("day-001.canon-blocks.json");
 const renderer = json("day-001.renderer-profile.json");
+const visual = json("day-001.visual.manifest.json");
 const evidence = json("day-001.evidence.schema.json");
 const completion = json("day-001.completion.schema.json");
 const completionService = json("day-001.completion.service.json");
@@ -41,13 +42,12 @@ if (pack.quest_definition_id !== qid) fail("pack quest id drift");
 if (pack.completion_contract_id !== cid) fail("pack completion id drift");
 if (pack.canonical_source_sha !== sourceSha) fail("pack canonical SHA drift");
 if (pack.release_state !== "BLOCKED") fail("pack must remain BLOCKED while release blockers exist");
-if (!pack.offline?.practice_capable || !pack.offline?.canonical_completion_requires_server) {
-  fail("offline policy drift");
-}
+if (!pack.offline?.practice_capable || !pack.offline?.canonical_completion_requires_server) fail("offline policy drift");
 
 for (const [label, value] of [
   ["quest", quest.id],
   ["renderer", renderer.quest_definition_id],
+  ["visual", visual.quest_definition_id],
   ["completion service", completionService.quest_definition_id],
   ["assets", assets.quest_definition_id],
   ["audio", audio.quest_definition_id],
@@ -65,7 +65,11 @@ if (completion.properties?.completion_contract_id?.const !== cid) fail("completi
 if (completionService.completion_contract_id !== cid) fail("completion service contract id drift");
 if (canon.counted_core?.word_count !== 705) fail("canonical counted core must be 705 words");
 if (assets.release_ready !== false) fail("assets cannot be release ready before final production approval");
+if (assets.visual_contract !== "day-001.visual.manifest.json") fail("visual contract pointer drift");
+if (visual.policy?.server_authoritative_first_spark !== true) fail("visual First Spark authority drift");
 if (pack.asset_reconciliation?.state !== "RECONCILED_NOT_RELEASE_READY") fail("asset reconciliation state drift");
+if (pack.asset_reconciliation?.procedural_contract_ready !== 6) fail("procedural visual contract count drift");
+if (!pack.runtime_capabilities?.required?.includes("VISUAL_CONTRACT")) fail("Quest Pack must require VISUAL_CONTRACT capability");
 if (audio.profiles?.theta_432?.status !== "CANONICAL_MAPPING_PENDING") fail("Theta/432 mapping was invented or changed");
 if (safety.global_rules?.subjective_phenomenon_required !== false) fail("subjective phenomenon cannot become a completion requirement");
 if (episteme.protocol_id !== "HNK-EP-1.1") fail("epistemic protocol drift");
@@ -78,13 +82,13 @@ for (const blocker of [
   "BACKEND-001-COMPLETION-V2",
   "ASSET-001-CROWN-DERIVATIVE",
   "ASSET-001-KEY-ART",
-  "ASSET-001-PROCEDURAL-EXTRACTION",
+  "ASSET-001-PROCEDURAL-ADAPTER",
   "ASSET-001-SOUL-MIRROR-FINAL",
 ]) {
   if (!blockerIds.has(blocker)) fail(`missing release blocker: ${blocker}`);
 }
-if (blockerIds.has("ASSET-001-REGISTRY-RESOLUTION")) {
-  fail("obsolete generic asset reconciliation blocker must not remain after inventory freeze");
+for (const obsolete of ["ASSET-001-REGISTRY-RESOLUTION", "ASSET-001-PROCEDURAL-EXTRACTION"]) {
+  if (blockerIds.has(obsolete)) fail(`obsolete asset blocker remains: ${obsolete}`);
 }
 
 for (const entry of checksums.entries) {
@@ -94,9 +98,8 @@ for (const entry of checksums.entries) {
 }
 
 const packPaths = new Set(pack.files.map((file) => file.path));
-for (const entry of checksums.entries) {
-  if (!packPaths.has(entry.path)) fail(`checksum artifact not declared by pack: ${entry.path}`);
-}
+for (const entry of checksums.entries) if (!packPaths.has(entry.path)) fail(`checksum artifact not declared by pack: ${entry.path}`);
+if (!packPaths.has("day-001.visual.manifest.json")) fail("Quest Pack must declare visual manifest");
 if (!packPaths.has("day-001.checksums.json")) fail("pack must declare repository integrity index");
 
 if (!process.exitCode) {
