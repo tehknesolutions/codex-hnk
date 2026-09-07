@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { getKetherCrownState } from '@hnk/supabase-client';
 import { useHnkAuth } from '../auth/AuthContext';
+import { ElemiahDay019AcousticLab } from './ElemiahDay019AcousticLab';
 import { ElemiahDays016to020Experience } from './ElemiahDays016to020Experience';
 
 export function KetherCycle04Elemiah() {
@@ -97,7 +98,9 @@ export function KetherCycle04Elemiah() {
         </View>
       </View>
 
-      <ElemiahDays016to020Experience day={displayDay as 16 | 17 | 18 | 19 | 20} />
+      {displayDay === 19
+        ? <ElemiahDay019AcousticLab />
+        : <ElemiahDays016to020Experience day={displayDay as 16 | 17 | 18 | 20} />}
     </View>
   );
 }
