@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"HNK-L05-K9-SESSION-SCHEMA-V1","title":"HNK L05 Pilot Session","type":"object","additionalProperties":false,
+  "required":["lesson_id","instrument_version","session_id","role","completed_cards","completed_drills","responses","watch_confusions","critical_regressions","participant_note","facilitator_notes","synthetic_test_fixture"],
+  "properties":{
+    "lesson_id":{"const":"HNK-L05"},"instrument_version":{"const":"K8-v1"},"session_id":{"type":"string","minLength":1,"maxLength":120},"role":{"enum":["learner","teacher","reviewer"]},"completed_cards":{"type":"integer","minimum":0,"maximum":8},"completed_drills":{"type":"integer","minimum":0,"maximum":24},
+    "responses":{"type":"object","additionalProperties":false,"required":["A1","A2","A3","A4","A5","A6","A7","A8"],"properties":{"A1":{"type":["number","null"],"minimum":0,"maximum":100},"A2":{"type":["number","null"],"minimum":0,"maximum":100},"A3":{"type":["number","null"],"minimum":0,"maximum":100},"A4":{"type":["number","null"],"minimum":0,"maximum":100},"A5":{"type":["boolean","null"]},"A6":{"type":["boolean","null"]},"A7":{"type":["boolean","null"]},"A8":{"type":["number","null"],"minimum":1,"maximum":5}}},
+    "watch_confusions":{"type":"array","uniqueItems":true,"items":{"enum":["GOING_TO_VS_PRESENT","GOING_TO_NEGATIVE","NARRATIVE_ORDER","TRAVEL_VS_SEE_ACTION","PARENTS_REFERENT","PARTY_EVENT","CALIFORNIA_TOPONYM","MULTILINGUAL_BRIDGE_ALIGNMENT","TRANSLITERATION","PROVENANCE","OTHER"]}},
+    "critical_regressions":{"type":"array","uniqueItems":true,"items":{"enum":["FABRICATED_HNK_FORM","FABRICATED_HUMAN_EVIDENCE","BRIDGE_CELL_MISSING","TRANSLITERATION_MISSING","SCHOLARLY_ANCHOR_MISSING","CALIFORNIA_ANACHRONISTIC_EQUIVALENCE","GOING_TO_SEMANTIC_DRIFT","NEGATIVE_STRUCTURE_DRIFT","FROZEN_NARRATIVE_DRIFT","PROVENANCE_BREAK"]}},
+    "participant_note":{"type":"string"},"facilitator_notes":{"type":"string"},"synthetic_test_fixture":{"type":"boolean"}
+  }
+}

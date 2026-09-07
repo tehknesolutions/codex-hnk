@@ -1,0 +1,21 @@
+{
+  "instrument_id": "HNK-L05-K8-PILOT-INSTRUMENT-V1",
+  "phase": "M03-K.8",
+  "lesson_id": "HNK-L05",
+  "roles_allowed": ["learner","teacher","reviewer"],
+  "session_required_fields": ["session_id","role","instrument_version","completed_cards","completed_drills","responses","watch_confusions","participant_note","facilitator_notes"],
+  "instrument_version": "K8-v1",
+  "pilot_workload": {"cards":8,"sampled_activation_drills":24,"note":"Pilot samples the candidate; it does not replace the canonical 72 Activation invariant."},
+  "assessment_prompts": [
+    {"id":"A1","metric":"M1","type":"scored","content_scope":"going-to future intention"},
+    {"id":"A2","metric":"M2","type":"scored","content_scope":"approved negative structure"},
+    {"id":"A3","metric":"M3","type":"scored","content_scope":"three-sentence frozen narrative sequencing"},
+    {"id":"A4","metric":"M4","type":"scored","content_scope":"three frozen focus phrases"},
+    {"id":"A5","metric":"M5","type":"integrity_check","content_scope":"15 multilingual bridge cells"},
+    {"id":"A6","metric":"M6","type":"integrity_check","content_scope":"15 transliterations + 12 scholarly anchors"},
+    {"id":"A7","metric":"M7","type":"integrity_check","content_scope":"California modern-toponym + provenance"},
+    {"id":"A8","metric":"M8","type":"rating_1_to_5","content_scope":"clarity/usability"}
+  ],
+  "watch_confusions": ["GOING_TO_VS_PRESENT","GOING_TO_NEGATIVE","NARRATIVE_ORDER","TRAVEL_VS_SEE_ACTION","PARENTS_REFERENT","PARTY_EVENT","CALIFORNIA_TOPONYM","MULTILINGUAL_BRIDGE_ALIGNMENT","TRANSLITERATION","PROVENANCE","OTHER"],
+  "content_generation_policy": "NO_NEW_HNK_LEXEMES_OR_BRIDGES_IN_PILOT"
+}

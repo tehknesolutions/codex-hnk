@@ -1,0 +1,25 @@
+{
+  "instrument_id": "HNK-L05-K9-CAPTURE-HARNESS-V1",
+  "lesson_id": "HNK-L05",
+  "phase": "M03-K.9",
+  "extends_contract": "M03-K.8",
+  "k8_aggregate_lock_sha256": "638ffe314a7eb65918223fbcb112a13e233ba9e391820192e449d1de1f989e76",
+  "runtime_enabled": false,
+  "human_evidence_claimed": false,
+  "canonical_activation_count": 72,
+  "pilot_sampled_activation_drills": 24,
+  "cards": 8,
+  "metric_mapping": {
+    "A1": {"metric": "M1", "encoding": "percentage_0_100"},
+    "A2": {"metric": "M2", "encoding": "percentage_0_100"},
+    "A3": {"metric": "M3", "encoding": "percentage_0_100"},
+    "A4": {"metric": "M4", "encoding": "percentage_0_100"},
+    "A5": {"metric": "M5", "encoding": "boolean_integrity", "false_is_critical_gate_failure": true},
+    "A6": {"metric": "M6", "encoding": "boolean_integrity", "false_is_critical_gate_failure": true},
+    "A7": {"metric": "M7", "encoding": "boolean_integrity", "false_is_critical_gate_failure": true},
+    "A8": {"metric": "M8", "encoding": "rating_1_5_converted_to_percent"}
+  },
+  "thresholds": {"M1":80,"M2":80,"M3":80,"M4":80,"M5":100,"M6":100,"M7":100,"M8":80},
+  "sample_minima": {"total_sessions":12,"learner_sessions":8,"teacher_or_reviewer_sessions":4},
+  "evidence_safety": {"synthetic_test_fixture_must_never_enter_evidence":true,"duplicate_session_id_is_hard_failure":true,"missing_metric_is_not_auto_pass":true,"ready_for_human_review_never_enables_runtime":true,"no_new_hnk_content":true}
+}
