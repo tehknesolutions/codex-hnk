@@ -4,7 +4,7 @@ export const DAY037_COMPLETION = Object.freeze({
   day: 37,
   completionContractId: "HNK-CHOKHMAH-D037-COMP-RC3",
   questDefinitionId: "HNK-CHOKHMAH-D037-RC3",
-  canonicalSourceSha: "2d1d7ef1766d4a181389a3af94b9516f7b34a6eb",
+  canonicalSourceSha: "f59a1f86a90b902d2cc4bb0082866408aadb2a4b",
   canonicalXp: 100,
 });
 
