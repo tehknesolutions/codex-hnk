@@ -1,0 +1,47 @@
+.mobileFlow {
+  min-height: 100dvh;
+}
+
+@media (max-width: 760px) {
+  .mobileFlow {
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .mobileFlow :global([data-relic-header]) {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .mobileFlow :global([data-relic-chamber]) {
+    min-height: auto;
+    align-items: stretch;
+  }
+
+  .mobileFlow :global([data-relic-stage]) {
+    min-height: min(42vh, 360px);
+  }
+
+  .mobileFlow :global([data-relic-copy]) {
+    padding-bottom: 12px;
+  }
+
+  .mobileFlow :global([data-relic-progress]) {
+    margin-bottom: 6px;
+  }
+
+  .mobileFlow :global([data-relic-actions]) {
+    margin-bottom: 8px;
+  }
+
+  .mobileFlow :global([data-relic-disclaimer]) {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(180deg, rgba(4, 3, 2, .86), #020202);
+  }
+}
