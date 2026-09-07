@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-ART-DIRECTION-V1",
   "kind": "hnk.art_direction",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "experience_title": "A Coroa Antes da Forma",
   "approval_state": "PRODUCT_V1_FROZEN",
@@ -48,6 +48,22 @@
     ],
     "runtime_rule": "All Day title, XP, achievement and progress copy are rendered by UI layers, never baked into key art."
   },
+  "soul_mirror_field": {
+    "id": "HNK-D001-SOUL-MIRROR-FIELD-V1",
+    "path": "assets/derived/kether/day001-soul-mirror-field-v1.svg",
+    "sha256": "c0370b159d4ce54b3a81ef2c15256667b27b5c9b9f6a6e4c559edeb023c985cc",
+    "status": "APPROVED_PRODUCT_VISUAL_V1",
+    "text_free": true,
+    "private_content_embedded": false,
+    "composition": [
+      "symmetrical dark reflective field",
+      "central mirror axis",
+      "soft gold horizon",
+      "three subtle reflection ellipses",
+      "single neutral center point"
+    ],
+    "privacy_rule": "Journal prose, ratings and private reflections are rendered by the Vault-aware UI layer and are never baked into the background asset."
+  },
   "palette_roles": {
     "void": "near-black / indigo",
     "origin": "warm white",
@@ -57,6 +73,7 @@
   "motion": {
     "key_art_default": "STILL",
     "crown_reveal": "REVEAL",
+    "soul_mirror": "STILL",
     "reduced_motion": "STATIC_OR_FADE_ONLY"
   }
 }
