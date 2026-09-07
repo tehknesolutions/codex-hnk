@@ -1,0 +1,121 @@
+{
+  "id": "HNK-KETHER-D001-CANON-BLOCKS-V1",
+  "kind": "hnk.canon_block_manifest",
+  "version": "1.0.0",
+  "source": {
+    "repository": "Tehkne-Solutions/hnk-codex-365",
+    "path": "canon/capitulo-01-kether/dia-001.md",
+    "blob_sha": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29",
+    "editorial_version": "1.0",
+    "day": 1,
+    "target_words": 705
+  },
+  "normalization": {
+    "line_endings": "LF",
+    "trim_outer_whitespace": true,
+    "preserve_internal_whitespace": true,
+    "word_count": "split_on_unicode_whitespace"
+  },
+  "counted_core": {
+    "block_ids": [
+      "jachin-doctrine",
+      "jachin-kavanah",
+      "jachin-ordalia",
+      "boaz-doctrine",
+      "boaz-kavanah",
+      "boaz-ordalia",
+      "middle-doctrine",
+      "middle-kavanah",
+      "middle-ordalia"
+    ],
+    "word_count": 705
+  },
+  "blocks": [
+    {
+      "id": "jachin-doctrine",
+      "kind": "COUNTED",
+      "target_words": 137,
+      "word_count": 137,
+      "sha256": "5d159318111c898f33bfc2e78633990b0e8e17dfd6aaab0dde07254b4ac21931",
+      "text": "No primeiro dia da sua travessia, você depara-se com o abismo silencioso de Kether, a Coroa inacessível onde a existência repousa antes de qualquer forma. Aqui não há pensamentos, conceitos ou imagens; existe apenas a pulsação pura da Vida Zoe, o sopro divino incriado que sustenta a realidade inteira. O Louco ergue o seu bastão à beira do precipício, convidando-o a dar o salto de fé em direção ao absoluto esvaziamento da mente lógica. Para que a luz perpétua possa preencher o seu templo, a sua Psuche deve render-se de forma voluntária ao silêncio. Esqueça tudo o que aprendeu; apague as definições mundanas e as amarras intelectuais que limitam a sua percepção espiritual. Hoje, sintonizamos o símbolo mestre Dai Koo Myo, abrindo todos os canais sutis para receber a torrente ilimitada do Espírito Santo na terra sagrada."
+    },
+    {
+      "id": "jachin-kavanah",
+      "kind": "COUNTED",
+      "target_words": 72,
+      "word_count": 72,
+      "sha256": "cea5eb15172f9c129cc651091c7915aac97c75480ee12041dd6f8f61b6e2f07b",
+      "text": "Sente-se em postura ereta, respirando de forma profunda e pausada. Feche os olhos e visualize o símbolo Dai Koo Myo brilhando em ouro incandescente no topo da sua cabeça. Sinta a luz fluir para baixo, inundando o seu cérebro e silenciando o fluxo de palavras. Mantenha o foco fixo nesse ponto de luz por dez minutos, permitindo que a sua consciência se expanda até fundir-se com o vazio primordial divino e eterno."
+    },
+    {
+      "id": "jachin-ordalia",
+      "kind": "COUNTED",
+      "target_words": 26,
+      "word_count": 26,
+      "sha256": "3466e72a0d8ef52f14110f15e343c127129517206e7ded9560162ed98814a1df",
+      "text": "Abra o aplicativo HNK, escaneie o código do dia e ative o som solfeggio de 528Hz para selar a sua sintonia espiritual no banco de dados."
+    },
+    {
+      "id": "boaz-doctrine",
+      "kind": "COUNTED",
+      "target_words": 137,
+      "word_count": 137,
+      "sha256": "f2a878eef41141a0add796b104925009f20a3b8f0a1a05b807c57039e58c05ad",
+      "text": "A descida da força exige um vaso purificado e estruturado sob as leis do Rigor. No pilar de Boaz, compreendemos que a mente racional é o guardião cioso que impede o livre fluxo da verdade interior. O Fator Crítico ergue barreiras lógicas para proteger o ego decaído, mantendo-o preso aos condicionamentos mundanos da carne. Para desarmar essa fortaleza sem gerar conflito biológico, aplicamos o método de auto-hipnose de Dave Elman, provocando a fadiga pálpebral e o relaxamento muscular profundo. Esta restrição voluntária desliga a tagarelice da Psuche e prepara o terreno biológico para o descanso onírico consciente. O silêncio físico é o selo que protege a sua bioenergia das larvas e dispersões do cotidiano. Guarde a sua mente com severidade, eliminando todas as distrações, dúvidas, medos e ruídos desnecessários que tentarem invadir o seu próprio templo sagrado."
+    },
+    {
+      "id": "boaz-kavanah",
+      "kind": "COUNTED",
+      "target_words": 72,
+      "word_count": 72,
+      "sha256": "add9f3e070e64ba18c6a01c1bebc006482e0cbad33115b83ec27b1db6e420a7d",
+      "text": "Deite-se confortavelmente em um quarto totalmente escuro e silencioso. Force o relaxamento completo dos músculos ao redor dos seus olhos, certificando-se de que é impossível abrir as pálpebras de forma voluntária. Transfira essa sensação de paralisia muscular para o resto do corpo, descendo em transe profundo por cinco minutos. Ao final, determine mentalmente que todos os seus sonhos desta noite serão recordados com nitidez absoluta no seu próprio diário de bordo pessoal."
+    },
+    {
+      "id": "boaz-ordalia",
+      "kind": "COUNTED",
+      "target_words": 26,
+      "word_count": 26,
+      "sha256": "360e98592bbbcb5094954b7d2e0c4e72644d3f8baf515d2df045da0fe4ea1b72",
+      "text": "Escreva agora no seu diário de bordo digital as três principais distrações do seu ambiente físico que você irá banir e afastar a partir de hoje."
+    },
+    {
+      "id": "middle-doctrine",
+      "kind": "COUNTED",
+      "target_words": 137,
+      "word_count": 137,
+      "sha256": "67ca6f18bbcbdec34db35b0cdf7f080ef99ebc100a3c6aac0ea5d82b5f269b8f",
+      "text": "No pilar central de Tiphereth, os extremos se encontram para selar a aliança eterna entre a força e a forma. A energia do Arcano do Louco fertiliza a terra árida com a riqueza espiritual de Fehu, o fogo do Hexagrama 1 que inicia o ciclo da criação cósmica. Para fundir a expansão de Jachin com o rigor de Boaz, recorremos à glossolália espiritual como um atalho neurológico de alta performance. Ao emitir sons desprovidos de sentido lógico, você desliga o hemisfério esquerdo e permite que a Vida Zoe jorre sem filtros intelectuais sobre o seu sistema nervoso. O equilíbrio reside na união da disciplina corporal com a liberdade do espírito. O Mestre e o discípulo se tornam um só no centro geométrico do seu próprio templo de oração e do poder supremo da sua consciência divina ativa."
+    },
+    {
+      "id": "middle-kavanah",
+      "kind": "COUNTED",
+      "target_words": 72,
+      "word_count": 72,
+      "sha256": "de6d7416c313bc41baf327a5b65ff9d4a027d1bec83872eeedd394da88922172",
+      "text": "Respire ritmadamente em quatro tempos. Em estado de transe leve, comece a vocalizar sons rápidos, rítmicos e sem lógica racional por três minutos contínuos. Não tente controlar a pronúncia; deixe que a sua laringe vibre livremente, expressando a energia sutil do seu subconsciente. Sinta o calor bioenergético subir pela sua coluna vertebral, acendendo um sol dourado e brilhante no centro geométrico do seu próprio peito no plano sutil totalmente divino e maravilhoso."
+    },
+    {
+      "id": "middle-ordalia",
+      "kind": "COUNTED",
+      "target_words": 26,
+      "word_count": 26,
+      "sha256": "37823e1c2b5ac4fff62d45cfacf436d793a861a01275cb32ce2d0272a56e3129",
+      "text": "Valide agora o seu primeiro registro vocal de glossolália no cofre criptografado do aplicativo HNK para receber mais cento e cinquenta pontos de experiência do Codex."
+    },
+    {
+      "id": "qr-code-interativo",
+      "kind": "SECTION",
+      "word_count": 30,
+      "sha256": "04675a9beb3d46c77f70e30270fc3290d21e2ba6276ceea8ad3efcc7bbd713e7",
+      "text": "- Scan para acionar o player de batidas binaurais nativo (ondas Theta / 432Hz base) no app HNK.\n- Sintoniza o primeiro nó d'Árvore da Vida em WebGL no smartphone."
+    },
+    {
+      "id": "espelho-da-alma",
+      "kind": "SECTION",
+      "word_count": 13,
+      "sha256": "b6417232694d4aa4bc96292fa31e19a9af63954436942cd3c0f6f8425670fbef",
+      "text": "Registre no diário físico ou criptografado os sinais, percepções e aprendizados do dia."
+    }
+  ]
+}
