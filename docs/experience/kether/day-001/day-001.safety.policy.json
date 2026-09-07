@@ -1,0 +1,44 @@
+{
+  "id": "HNK-KETHER-D001-SAFETY-V1",
+  "kind": "hnk.safety_policy",
+  "version": "1.0.0",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "global_rules": {
+    "pause_available": true,
+    "stop_available": true,
+    "safety_stop_available": true,
+    "progress_loss_on_safety_stop": false,
+    "subjective_phenomenon_required": false,
+    "reduced_motion_supported": true
+  },
+  "return_gate_required_after": [
+    "jachin_practice",
+    "boaz_practice",
+    "middle_voice_practice"
+  ],
+  "practice_guidance": {
+    "boaz": [
+      "Do not force eyelid muscles.",
+      "Do not induce pain or distress.",
+      "The user remains in voluntary control.",
+      "Stop if significant discomfort occurs."
+    ],
+    "audio": [
+      "Volume remains under user control.",
+      "Stop playback if significant auditory discomfort occurs."
+    ]
+  },
+  "safety_stop_signals": [
+    "PAIN",
+    "SHORTNESS_OF_BREATH",
+    "VERTIGO",
+    "PANIC",
+    "DISORIENTATION",
+    "SIGNIFICANT_AUDITORY_DISCOMFORT"
+  ],
+  "voice_priority": [
+    "SAFETY",
+    "INTERACTION",
+    "OPTIONAL_PRESENTATION"
+  ]
+}

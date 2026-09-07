@@ -1,0 +1,27 @@
+{
+  "id": "HNK-KETHER-D001-EPISTEME-V1",
+  "kind": "hnk.episteme_manifest",
+  "version": "1.0.0",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "protocol_id": "HNK-EP-1.1",
+  "domains": {
+    "E1": "instrumental",
+    "E2": "psychophysiological_behavioral",
+    "E3": "phenomenological",
+    "E4": "traditional_theurgic",
+    "E5": "theological"
+  },
+  "phase_annotations": {
+    "jachin_reading": ["E5", "E4", "E3"],
+    "ritual_tone_528": ["E4"],
+    "boaz_reading": ["E2", "E4", "E5"],
+    "middle_reading": ["E3", "E4", "E5", "OPERATIONAL_HYPOTHESIS"],
+    "phenomenology": ["E3"]
+  },
+  "rules": {
+    "canonical_claims_are_not_automatically_external_scientific_facts": true,
+    "phenomenology_does_not_prove_causation": true,
+    "operational_hypothesis_label_required_when_external_confirmation_is_insufficient": true,
+    "guide_may_explain_but_must_not_rewrite_canon": true
+  }
+}
