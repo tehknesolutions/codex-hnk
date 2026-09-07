@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-CHECKSUMS-V1",
   "kind": "hnk.repository_integrity_index",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "algorithm": "git_blob_sha1",
   "scope": "authored Quest Pack source artifacts; runtime pack builder emits SHA-256 over payload bytes",
   "entries": [
@@ -13,7 +13,7 @@
     {"path":"day-001.completion.service.json","sha":"2cdb443dde57967d3a5dcf0d7f57c29c278dd490"},
     {"path":"day-001.completion.rpc.request.schema.json","sha":"5ca1041e74a5db35d0c36e5a0cef28b19c42ab35"},
     {"path":"day-001.completion.rpc.response.schema.json","sha":"a290cb74bd84f4fe8f52c2dc44708dbd2b250a3b"},
-    {"path":"day-001.assets.manifest.json","sha":"bd2c11af602302e11560bd1994b05714e4840ec8"},
+    {"path":"day-001.assets.manifest.json","sha":"d14bd1810305838e02da53ab815dbea107e84e10"},
     {"path":"day-001.audio.manifest.json","sha":"8a902d1451a2dd68f2c9037e12ce5433f3ccc4b2"},
     {"path":"day-001.safety.policy.json","sha":"ac300fea10135a8a772d7ed0efdab6a5f78078d3"},
     {"path":"day-001.episteme.manifest.json","sha":"d843dd92d425287d08700e0073fac29caa4fab8d"}
@@ -22,5 +22,17 @@
     "repository": "Tehkne-Solutions/hnk-codex-365",
     "path": "canon/capitulo-01-kether/dia-001.md",
     "git_blob_sha1": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29"
-  }
+  },
+  "canonical_assets": [
+    {
+      "path": "assets/canonical/kether/dai-koo-myo-usui-hnk-master-v1.svg",
+      "git_blob_sha1": "973ed0e6da0bc1d48990970a9e10d7e811dc785c",
+      "sha256": "25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0"
+    },
+    {
+      "path": "assets/canonical/kether/kether-sigil-v1.svg",
+      "git_blob_sha1": "303af75e50ccf5dfd0f4be606143ae06739da4eb",
+      "sha256": "7792ad999497f502d29c4377d3497c02241421701e5762ed247c5351fb24320a"
+    }
+  ]
 }
