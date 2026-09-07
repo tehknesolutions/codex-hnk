@@ -1,0 +1,112 @@
+codex:
+  id: hnk-codex-365
+  title: HNK Codex Interativo 365
+  source_of_truth: canon
+  total_days: 365
+  editorial_standard: "137/72/26 x 3 = 705"
+  epistemic_protocol: HNK-EP-1.1
+  epistemic_protocol_path: "canon/HNK_PROTOCOLO_EPISTEMICO.md"
+  epistemic_scope: "retroactive-all-canon"
+  status: active
+
+progress:
+  written: 39
+  reviewed: 39
+  canon_in_repo: 39
+
+migration:
+  status: complete
+  source_days: "1-7"
+  note: "Dias 1-7 normalizados no template canônico e gravados em canon/."
+
+current:
+  chapter: 2
+  chapter_name: Chokmah
+  world: Atziluth
+  cycle: Cahetel
+  level: 2
+  level_title: Iniciado
+  last_written_day: 39
+  last_canon_day: 39
+  next_day: 40
+  next_topic: "A Auto-Indução Ocular Básica"
+
+chapters:
+  - id: 1
+    name: Kether
+    range: "1-36"
+    status: complete
+    written: 36
+    canon_in_repo: 36
+  - id: 2
+    name: Chokmah
+    range: "37-73"
+    status: active
+    written: 3
+    canon_in_repo: 3
+  - id: 3
+    name: Binah
+    range: "74-109"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+  - id: 4
+    name: Chesed
+    range: "110-146"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+  - id: 5
+    name: Geburah
+    range: "147-182"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+  - id: 6
+    name: Tiphereth
+    range: "183-219"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+  - id: 7
+    name: Netzach
+    range: "220-255"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+  - id: 8
+    name: Hod
+    range: "256-292"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+  - id: 9
+    name: Yesod
+    range: "293-328"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+  - id: 10
+    name: Malkuth
+    range: "329-365"
+    status: locked
+    written: 0
+    canon_in_repo: 0
+
+states:
+  allowed:
+    - draft
+    - reviewed
+    - canon
+
+attributes:
+  canonical:
+    - HIP
+    - VNT
+    - PER
+    - SIN
+    - BIO
+    - INT
+    - DIS
+  derived:
+    - EQU
