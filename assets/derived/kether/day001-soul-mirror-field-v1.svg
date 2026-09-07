@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+<title id="title">HNK Day 001 Soul Mirror Field V1</title>
+<desc id="desc">Text-free reflective field for the Day 001 Soul Mirror. A symmetrical dark field, soft gold horizon and central mirror axis; private journal content is rendered separately by the Vault-aware UI.</desc>
+<defs>
+  <linearGradient id="mirrorVoid" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#030309"/>
+    <stop offset="43%" stop-color="#0a0814"/>
+    <stop offset="50%" stop-color="#161126"/>
+    <stop offset="57%" stop-color="#0a0814"/>
+    <stop offset="100%" stop-color="#030309"/>
+  </linearGradient>
+  <radialGradient id="mirrorGlow" cx="50%" cy="48%" r="55%">
+    <stop offset="0%" stop-color="#f1d98d" stop-opacity=".14"/>
+    <stop offset="42%" stop-color="#6b5d92" stop-opacity=".08"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="horizonGold" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#d7b85f" stop-opacity="0"/>
+    <stop offset="35%" stop-color="#e5ca79" stop-opacity=".22"/>
+    <stop offset="50%" stop-color="#fff1bb" stop-opacity=".48"/>
+    <stop offset="65%" stop-color="#e5ca79" stop-opacity=".22"/>
+    <stop offset="100%" stop-color="#d7b85f" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="mirrorBlur" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="28"/>
+  </filter>
+</defs>
+
+<rect width="1200" height="1600" fill="url(#mirrorVoid)"/>
+<ellipse cx="600" cy="770" rx="420" ry="500" fill="url(#mirrorGlow)" filter="url(#mirrorBlur)"/>
+
+<line x1="600" y1="190" x2="600" y2="1410" stroke="#f6e6ac" stroke-width="2" opacity=".18"/>
+<line x1="180" y1="800" x2="1020" y2="800" stroke="url(#horizonGold)" stroke-width="3"/>
+
+<g fill="none" stroke="#d8ba68" stroke-width="2" opacity=".14">
+  <ellipse cx="600" cy="800" rx="360" ry="470"/>
+  <ellipse cx="600" cy="800" rx="270" ry="360"/>
+  <ellipse cx="600" cy="800" rx="180" ry="245"/>
+</g>
+
+<g fill="none" stroke="#f2dda0" stroke-linecap="round" opacity=".12">
+  <path d="M310 590 C430 500 500 510 600 595 C700 510 770 500 890 590" stroke-width="2"/>
+  <path d="M310 1010 C430 1100 500 1090 600 1005 C700 1090 770 1100 890 1010" stroke-width="2"/>
+</g>
+
+<circle cx="600" cy="800" r="8" fill="#fff0b5" opacity=".72"/>
+<circle cx="600" cy="800" r="36" fill="none" stroke="#e8cd7c" stroke-width="2" opacity=".18"/>
+</svg>
