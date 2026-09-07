@@ -1,0 +1,142 @@
+name: MIG-01 Import Frozen Public Sources
+
+on:
+  push:
+    branches:
+      - migration/m90-unified-v2
+    paths:
+      - .github/workflows/migrate-public-sources.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mig-01-public-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    env:
+      APP_REPO: https://github.com/Tehkne-Solutions/codex-hnk-app.git
+      APP_SHA: 4b63e2916ca2b0c9f654718d27e344851f9718d1
+      CODEX_REPO: https://github.com/Tehkne-Solutions/hnk-codex-365.git
+      CODEX_SHA: 4a5a88cc014308d3d2e27b581dd26be70b9d7cf4
+    steps:
+      - name: Checkout destination
+        uses: actions/checkout@v4
+        with:
+          ref: migration/m90-unified-v2
+          fetch-depth: 0
+
+      - name: Fetch frozen upstream snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/hnk-mig
+          mkdir -p /tmp/hnk-mig
+
+          git clone --quiet "$APP_REPO" /tmp/hnk-mig/app
+          git -C /tmp/hnk-mig/app checkout --quiet "$APP_SHA"
+
+          git clone --quiet "$CODEX_REPO" /tmp/hnk-mig/codex
+          git -C /tmp/hnk-mig/codex checkout --quiet "$CODEX_SHA"
+
+          test "$(git -C /tmp/hnk-mig/app rev-parse HEAD)" = "$APP_SHA"
+          test "$(git -C /tmp/hnk-mig/codex rev-parse HEAD)" = "$CODEX_SHA"
+
+      - name: Import platform without activating legacy workflows
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs/upstream/codex-hnk-app
+
+          cp /tmp/hnk-mig/app/README.md docs/upstream/codex-hnk-app/README.md
+          if [ -d /tmp/hnk-mig/app/.github ]; then
+            mkdir -p docs/upstream/codex-hnk-app/.github
+            rsync -a /tmp/hnk-mig/app/.github/ docs/upstream/codex-hnk-app/.github/
+          fi
+
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='README.md' \
+            /tmp/hnk-mig/app/ ./
+
+      - name: Preserve editorial upstream verbatim
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf content/upstream/hnk-codex-365
+          mkdir -p content/upstream/hnk-codex-365
+          rsync -a --exclude='.git/' /tmp/hnk-mig/codex/ content/upstream/hnk-codex-365/
+
+          mkdir -p content/canon
+          cat > content/canon/README.md <<'EOF'
+          # Canon reconciliado
+
+          Este diretório só recebe conteúdo promovido após reconciliação explícita com a RC1 M90 de 109 fólios.
+
+          O snapshot público de 39 dias permanece preservado em `content/upstream/hnk-codex-365/` e não deve ser confundido com a RC1.
+          EOF
+
+      - name: Write provenance manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs/migration
+          cat > docs/migration/UPSTREAM-PROVENANCE.json <<EOF
+          {
+            "generated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "destination": {
+              "repository": "tehknesolutions/codex-hnk",
+              "branch": "migration/m90-unified-v2"
+            },
+            "sources": [
+              {
+                "repository": "Tehkne-Solutions/codex-hnk-app",
+                "commit": "$APP_SHA",
+                "role": "platform-public-history",
+                "import_mode": "root-excluding-readme-and-active-workflows"
+              },
+              {
+                "repository": "Tehkne-Solutions/hnk-codex-365",
+                "commit": "$CODEX_SHA",
+                "role": "editorial-public-history",
+                "import_mode": "content/upstream/hnk-codex-365"
+              }
+            ],
+            "rc1_109_status": "not-restored-yet",
+            "release_promotion_allowed": false
+          }
+          EOF
+
+      - name: Sanity checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f package.json
+          test -f pnpm-workspace.yaml
+          test -d apps
+          test -d packages
+          test -d supabase
+          test -f content/upstream/hnk-codex-365/CODEX_MANIFEST.yaml
+          test -f content/upstream/hnk-codex-365/canon/capitulo-01-kether/dia-001.md
+          test -f docs/migration/UPSTREAM-PROVENANCE.json
+
+      - name: Commit imported snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "hnk-migration-bot"
+          git config user.email "tehknesolutions@gmail.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(migration): import frozen public HNK sources [skip ci]"
+          git push origin HEAD:migration/m90-unified-v2
