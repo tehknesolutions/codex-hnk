@@ -24,6 +24,13 @@
         {
           "configureAndroidBackup": true
         }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Permitir que o HNK Codex use o microfone somente quando você iniciar uma prática de áudio, como o Acoustic Lab.",
+          "enableBackgroundRecording": false
+        }
       ]
     ],
     "experiments": {
