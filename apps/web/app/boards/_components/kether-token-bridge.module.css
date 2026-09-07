@@ -1,0 +1,25 @@
+.kether {
+  color: var(--hnk-kether-text-primary);
+  background-color: var(--hnk-kether-void);
+  font-family: var(--hnk-font-editorial-body);
+}
+
+.kether h1,
+.kether h2,
+.kether h3 {
+  font-family: var(--hnk-font-sacred-display);
+}
+
+.kether code,
+.kether kbd,
+.kether samp {
+  font-family: var(--hnk-font-system);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kether *,
+  .kether *::before,
+  .kether *::after {
+    scroll-behavior: auto !important;
+  }
+}
