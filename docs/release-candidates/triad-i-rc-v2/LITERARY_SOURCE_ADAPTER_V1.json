@@ -1,0 +1,73 @@
+{
+  "adapter_id": "HNK_TRIAD_I_LITERARY_SOURCE_ADAPTER_V1",
+  "purpose": "Integrate reconstructed literary source without replacing the current quest/completion/evidence architecture.",
+  "base_main_sha": "d6ab2f14ba30e37cccedc197f302d467d0fefc54",
+  "current_reference_contract": "docs/experience/kether/day-001/day-001.quest.json",
+  "source_layers": {
+    "001-036": {
+      "mode": "RECOVERED_EXECUTABLE_EVIDENCE",
+      "policy": "Do not synthesize missing full literary payloads. Rehydrate only from recovered canonical artifacts."
+    },
+    "037-073": {
+      "mode": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+      "source_authority": "capitulo_2_plano_escrita.md",
+      "global_qa": "V2_PASS"
+    },
+    "074-109": {
+      "mode": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+      "source_authority": "capitulo_3_plano_escrita.md",
+      "global_qa": "V2_PASS"
+    }
+  },
+  "literary_block_mapping": {
+    "JACHIN.doctrine": "jachin-doctrine",
+    "JACHIN.kavanah": "jachin-kavanah",
+    "JACHIN.ordeal": "jachin-ordalia",
+    "BOAZ.doctrine": "boaz-doctrine",
+    "BOAZ.kavanah": "boaz-kavanah",
+    "BOAZ.ordeal": "boaz-ordalia",
+    "EQUILIBRIUM.doctrine": "middle-doctrine",
+    "EQUILIBRIUM.kavanah": "middle-kavanah",
+    "EQUILIBRIUM.ordeal": "middle-ordalia"
+  },
+  "canonical_metadata_mapping": [
+    "day",
+    "title",
+    "sephira",
+    "world",
+    "xp_reward",
+    "cycle.angel",
+    "cycle.psalm",
+    "cycle.formula",
+    "oracles.tarot",
+    "oracles.rune",
+    "oracles.iching"
+  ],
+  "runtime_contract_policy": {
+    "quest_definition": "GENERATE_OR_AUTHOR_SEPARATELY_FROM_LITERARY_SOURCE",
+    "renderer_profile": "GENERATE_OR_AUTHOR_SEPARATELY_FROM_LITERARY_SOURCE",
+    "evidence_schema": "GENERATE_OR_AUTHOR_SEPARATELY_FROM_LITERARY_SOURCE",
+    "completion_schema": "GENERATE_OR_AUTHOR_SEPARATELY_FROM_LITERARY_SOURCE",
+    "completion_service": "GENERATE_OR_AUTHOR_SEPARATELY_FROM_LITERARY_SOURCE",
+    "rpc_schemas": "GENERATE_OR_AUTHOR_SEPARATELY_FROM_LITERARY_SOURCE",
+    "client_must_not_authorize_xp": true,
+    "canonical_source_sha_required": true
+  },
+  "epistemic_policy": {
+    "preserve_global_qa_v2_rewrites": true,
+    "spiritual_symbolism_is_not_empirical_guarantee": true,
+    "reader_autonomy_required": true,
+    "stop_and_return_gates_required_when_practice_can_alter_attention": true,
+    "no_medical_or_neurological_guarantees": true
+  },
+  "provenance_policy": {
+    "original_rc1_equivalence_claim": false,
+    "reconstructed_label_must_be_visible_in_source_metadata": true,
+    "do_not_mutate_day001_current_contracts": true
+  },
+  "promotion": {
+    "content_overlay_applied": false,
+    "runtime_contracts_037_109_generated": false,
+    "main_merge_allowed": false
+  }
+}
