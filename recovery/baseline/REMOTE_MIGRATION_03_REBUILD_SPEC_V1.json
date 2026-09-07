@@ -1,0 +1,76 @@
+{
+  "phase": "REMOTE-MIGRATION-03",
+  "status": "SOURCE_BASED_REBUILD_SPEC_FROZEN",
+  "branch": "recovery/post-df51662-checkpoint-v1",
+  "classification": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+  "must_never_be_labeled": [
+    "ORIGINAL_RC1",
+    "RECOVERED_RC1",
+    "BYTE_IDENTICAL_TO_HNK_M90_TRIADE_I_FINAL_RC1"
+  ],
+  "technical_template": {
+    "authority": "Recovered Kether implementation contracts",
+    "day_schema": "HnkCodexDayV1-compatible",
+    "literary_words_per_folio": 705,
+    "pillar_formula": "3 * (137 + 72 + 26)",
+    "pillar_components": {
+      "doctrine": 137,
+      "kavanah": 72,
+      "ordeal": 26,
+      "per_pillar": 235,
+      "pillars": 3
+    },
+    "renderer_requirement": "PORTAL_AWARE",
+    "source_lock_required": true,
+    "schema_validation_required": true,
+    "semantic_validation_required": true,
+    "provenance_required": true
+  },
+  "chokmah": {
+    "range": "037-073",
+    "folio_count": 37,
+    "literary_word_target": 26085,
+    "source_authority": "capitulo_2_plano_escrita.md",
+    "sephira": "Chokmah",
+    "world": "Atziluth",
+    "level": "2 - Iniciado",
+    "portal_days": [72, 73],
+    "portal_route": "Chokmah -> Binah",
+    "rebuild_state": "SPEC_READY_CONTENT_NOT_REBUILT"
+  },
+  "binah": {
+    "range": "074-109",
+    "folio_count": 36,
+    "literary_word_target": 25380,
+    "source_authority": "capitulo_3_plano_escrita.md",
+    "sephira": "Binah",
+    "world": "Atziluth",
+    "level": "3 - Teurgo",
+    "portal_days": [109],
+    "portal_route": "Atziluth -> Beriah / Chesed unlock",
+    "rebuild_state": "SPEC_READY_CONTENT_NOT_REBUILT"
+  },
+  "triad_i": {
+    "range": "001-109",
+    "folio_count": 109,
+    "literary_word_target": 76845,
+    "kether_recovered_count": 36,
+    "chokmah_rebuild_count": 37,
+    "binah_rebuild_count": 36,
+    "global_validation_name": "TRIAD_I_RECONSTRUCTED_MASTER_VALIDATION_V1",
+    "original_rc1_equivalence_claim_allowed": false
+  },
+  "hard_gates": [
+    "Every reconstructed folio must validate to exactly 705 literary words",
+    "Every pillar must validate 137 doctrine + 72 kavanah + 26 ordeal",
+    "No missing source fact may be silently filled as canonical",
+    "Any inferred field must carry explicit inferred/reconstructed provenance",
+    "Portal 073 and Portal 109 must be generated from source definitions and separately validated",
+    "Renderer must pass portal-aware regression",
+    "Chokmah must reach 37/37 before Binah promotion",
+    "Binah must reach 36/36 before Triad I global validation",
+    "No reconstructed artifact may overwrite recovered original Kether evidence",
+    "Main branch remains untouched until reconstructed master validation passes"
+  ],
+  "next_stage": "REMOTE-MIGRATION-03A · CHOKMAH 037-073 REBUILD BLUEPRINT"
+}
