@@ -1,10 +1,11 @@
 {
   "id": "HNK-KETHER-D001-ASSETS-V1",
   "kind": "hnk.asset_manifest",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "release_ready": false,
   "policy": "APPROVED_OR_PUBLISHED_ONLY",
+  "visual_contract": "day-001.visual.manifest.json",
   "asset_model": [
     "CANONICAL_VECTOR",
     "PROCEDURAL_SCENE",
@@ -16,9 +17,9 @@
     {
       "key": "kether-origin-background",
       "required": true,
-      "status": "SOURCE_FOUND_MIGRATION_PENDING",
+      "status": "VISUAL_CONTRACT_READY_ADAPTER_PENDING",
       "kind": "PROCEDURAL_SCENE",
-      "legacy_source": "Tehkne-Solutions/codex-hnk-app/apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx::OriginCosmos"
+      "visual_primitive_id": "HNK-D001-VIS-ORIGIN-COSMOS-V1"
     },
     {
       "key": "kether-crown-symbol",
@@ -31,9 +32,9 @@
     {
       "key": "kether-tree-node",
       "required": true,
-      "status": "SOURCE_FOUND_MIGRATION_PENDING",
+      "status": "VISUAL_CONTRACT_READY_ADAPTER_PENDING",
       "kind": "PROCEDURAL_SCENE",
-      "legacy_source": "Tehkne-Solutions/codex-hnk-app/apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx::TreeField"
+      "visual_primitive_id": "HNK-D001-VIS-TREE-FIELD-V1"
     },
     {
       "key": "day001-key-art",
@@ -55,38 +56,38 @@
     {
       "key": "day001-jachin-field",
       "required": true,
-      "status": "SOURCE_FOUND_MIGRATION_PENDING",
+      "status": "VISUAL_CONTRACT_READY_ADAPTER_PENDING",
       "kind": "PROCEDURAL_SCENE",
-      "legacy_source": "Day001ImmersiveMobileVerticalSlice.tsx::OriginCosmos + PracticeChamber",
+      "visual_primitive_id": "HNK-D001-VIS-ORIGIN-COSMOS-V1",
       "note": "Do not import obsolete +1 FOCO scoring from prior visual mockups."
     },
     {
       "key": "day001-boaz-field",
       "required": true,
-      "status": "SOURCE_FOUND_MIGRATION_PENDING",
+      "status": "VISUAL_CONTRACT_READY_ADAPTER_PENDING",
       "kind": "PROCEDURAL_SCENE",
-      "legacy_source": "Tehkne-Solutions/codex-hnk-app/apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx::BoazAxis"
+      "visual_primitive_id": "HNK-D001-VIS-BOAZ-AXIS-V1"
     },
     {
       "key": "day001-middle-field",
       "required": true,
-      "status": "SOURCE_FOUND_MIGRATION_PENDING",
+      "status": "VISUAL_CONTRACT_READY_ADAPTER_PENDING",
       "kind": "PROCEDURAL_SCENE",
-      "legacy_source": "Tehkne-Solutions/codex-hnk-app/apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx::ConvergenceGeometry"
+      "visual_primitive_id": "HNK-D001-VIS-CONVERGENCE-V1"
     },
     {
       "key": "soul-mirror-background",
       "required": true,
-      "status": "SOURCE_FOUND_NEEDS_FINAL_VISUAL",
+      "status": "VISUAL_CONTRACT_DRAFT_FINAL_APPROVAL_PENDING",
       "kind": "PROCEDURAL_SCENE",
-      "legacy_source": "Tehkne-Solutions/codex-hnk-app/apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx::reflectionField"
+      "visual_primitive_id": "HNK-D001-VIS-REFLECTION-FIELD-V1"
     },
     {
       "key": "first-spark-animation",
       "required": true,
-      "status": "SOURCE_FOUND_MIGRATION_PENDING",
+      "status": "VISUAL_CONTRACT_READY_ADAPTER_PENDING",
       "kind": "PROCEDURAL_ANIMATION",
-      "legacy_source": "Tehkne-Solutions/codex-hnk-app/apps/mobile/src/features/kether/Day001ImmersiveMobileVerticalSlice.tsx::TreeField(sealed)",
+      "visual_primitive_id": "HNK-D001-VIS-TREE-FIELD-V1",
       "reduced_motion_fallback_required": true,
       "server_authoritative_trigger": true
     }
@@ -94,14 +95,14 @@
   "reconciliation": {
     "required_slots": 10,
     "approved_migrated": 1,
-    "procedural_source_found": 6,
+    "procedural_contract_ready": 6,
     "needs_derivative_or_visual_review": 3,
     "inventory": "day-001.asset-reconciliation.json"
   },
   "release_blockers": [
     "ASSET-001-CROWN-DERIVATIVE",
     "ASSET-001-KEY-ART",
-    "ASSET-001-PROCEDURAL-EXTRACTION",
+    "ASSET-001-PROCEDURAL-ADAPTER",
     "ASSET-001-SOUL-MIRROR-FINAL"
   ]
 }
