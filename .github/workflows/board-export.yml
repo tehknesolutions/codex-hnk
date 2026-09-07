@@ -1,0 +1,125 @@
+name: HNK Board Export
+
+on:
+  workflow_dispatch:
+    inputs:
+      board_id:
+        description: Stable HNK board id
+        required: true
+        default: kether-chapter-overview-v1
+      route:
+        description: Web route that renders the board
+        required: true
+        default: /boards/kether
+      output_dir:
+        description: Repository-relative export directory
+        required: true
+        default: assets/boards/chapter/kether/v1
+      slug:
+        description: Export filename without extension
+        required: true
+        default: kether-chapter-overview
+  push:
+    branches: [main]
+    paths:
+      - 'packages/assets/src/board.ts'
+      - 'packages/assets/src/catalog.ts'
+      - 'packages/assets/src/boards/**'
+      - 'apps/web/app/boards/**'
+      - 'assets/boards/**/README.md'
+      - 'scripts/export-board.mjs'
+      - '.github/workflows/board-export.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  export-kether-board:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BOARD_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.board_id || 'kether-chapter-overview-v1' }}
+      BOARD_ROUTE: ${{ github.event_name == 'workflow_dispatch' && inputs.route || '/boards/kether' }}
+      BOARD_OUT: ${{ github.event_name == 'workflow_dispatch' && inputs.output_dir || 'assets/boards/chapter/kether/v1' }}
+      BOARD_SLUG: ${{ github.event_name == 'workflow_dispatch' && inputs.slug || 'kether-chapter-overview' }}
+      HNK_BOARD_BASE_URL: http://127.0.0.1:3000
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+
+      - name: Install workspace
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Validate Board Factory
+        run: pnpm validate:boards
+
+      - name: Build web board renderer
+        run: pnpm --filter @hnk/web build
+
+      - name: Start web renderer
+        run: |
+          pnpm --filter @hnk/web exec next start -H 127.0.0.1 -p 3000 > /tmp/hnk-board-web.log 2>&1 &
+          echo $! > /tmp/hnk-board-web.pid
+
+      - name: Wait for renderer
+        run: |
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent "${HNK_BOARD_BASE_URL}${BOARD_ROUTE}" > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/hnk-board-web.log
+          exit 1
+
+      - name: Export PNG, mobile PNG and PDF
+        run: |
+          pnpm export:board -- \
+            --id "$BOARD_ID" \
+            --route "$BOARD_ROUTE" \
+            --out "$BOARD_OUT" \
+            --slug "$BOARD_SLUG"
+
+      - name: Verify export manifest
+        run: |
+          test -s "$BOARD_OUT/$BOARD_SLUG.png"
+          test -s "$BOARD_OUT/$BOARD_SLUG-mobile-390.png"
+          test -s "$BOARD_OUT/$BOARD_SLUG.pdf"
+          test -s "$BOARD_OUT/export-manifest.json"
+          grep -q '"target": "mobile-390"' "$BOARD_OUT/export-manifest.json"
+          cat "$BOARD_OUT/export-manifest.json"
+
+      - name: Upload board export artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hnk-${{ env.BOARD_ID }}
+          path: |
+            ${{ env.BOARD_OUT }}/${{ env.BOARD_SLUG }}.png
+            ${{ env.BOARD_OUT }}/${{ env.BOARD_SLUG }}-mobile-390.png
+            ${{ env.BOARD_OUT }}/${{ env.BOARD_SLUG }}.pdf
+            ${{ env.BOARD_OUT }}/export-manifest.json
+            ${{ env.BOARD_OUT }}/README.md
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Stop web renderer
+        if: always()
+        run: |
+          if [ -f /tmp/hnk-board-web.pid ]; then
+            kill "$(cat /tmp/hnk-board-web.pid)" || true
+          fi
