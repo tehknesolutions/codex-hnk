@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">HNK Day 001 Crown Mark V1</title>
+<desc id="desc">Product-level Kether crown mark for Day 001. HNK-original derivative language: origin point, north axis and three-ray crown. Not the Portal 036 Kether sigil and not a historical seal.</desc>
+<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <line id="north-axis" x1="256" y1="402" x2="256" y2="258" stroke-width="8"/>
+  <path id="three-ray-crown" d="M120 230 L178 154 L228 214 L256 94 L284 214 L334 154 L392 230" stroke-width="10"/>
+  <line id="crown-base" x1="152" y1="250" x2="360" y2="250" stroke-width="6"/>
+  <circle id="origin-halo" cx="256" cy="414" r="28" stroke-width="4" opacity=".42"/>
+</g>
+<circle id="origin" cx="256" cy="414" r="9" fill="currentColor"/>
+</svg>
