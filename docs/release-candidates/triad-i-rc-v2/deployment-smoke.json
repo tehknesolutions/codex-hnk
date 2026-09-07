@@ -1,0 +1,24 @@
+{
+  "deployment_id": "dpl_HgdVczAbEuovFeWjNQoXrrj2E1aY",
+  "project_id": "prj_P1KMOndjw7w02ossHhpsCBX4i3jB",
+  "url": "https://hnk-triad-i-rc-v2-audit.vercel.app",
+  "isolated_from_codex_hnk_app": true,
+  "ready_state": "READY",
+  "routes": {
+    "/": 200,
+    "/day/001": 200,
+    "/day/036": 200,
+    "/day/037": 200,
+    "/day/072": 200,
+    "/day/073": 200,
+    "/day/074": 200,
+    "/day/109": 200
+  },
+  "build_errors": 0,
+  "runtime_errors_last_hour": 0,
+  "x_robots_tag": "noindex, nofollow",
+  "http_smoke": "PASS",
+  "browser_visual_smoke": "NOT_RUN",
+  "human_signoff": "ABSENT",
+  "release_decision": "HOLD_VISUAL_REVIEW_AND_CONTENT_OVERLAY_RECONCILIATION"
+}
