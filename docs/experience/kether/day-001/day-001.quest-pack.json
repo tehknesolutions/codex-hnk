@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-PACK-V1",
   "kind": "hnk.quest_pack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "day": 1,
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
@@ -20,7 +20,8 @@
     "repository_artifacts": "git_blob_sha1",
     "runtime_pack_payload": "sha256",
     "canonical_blocks": "sha256_per_block",
-    "canonical_source": "git_blob_sha1"
+    "canonical_source": "git_blob_sha1",
+    "canonical_assets": "git_blob_sha1_plus_sha256"
   },
   "files": [
     {"logical_id":"quest","path":"day-001.quest.json","role":"QUEST_DEFINITION","required":true},
@@ -55,11 +56,21 @@
       "THETA_432_PROFILE"
     ]
   },
+  "asset_reconciliation": {
+    "state": "RECONCILED_NOT_RELEASE_READY",
+    "inventory": "day-001.asset-reconciliation.json",
+    "approved_migrated": 1,
+    "procedural_source_found": 6,
+    "needs_derivative_or_visual_review": 3
+  },
   "blockers": [
     {"id":"EDITORIAL-001-UNIVERSAL-ENTRY","scope":"GLOBAL_CANON","reason":"Universal Entry framing still requires canonical editorial reconciliation."},
     {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"Canonical wording still requires recording while product contract makes recording optional."},
     {"id":"AUDIO-001-THETA-432","scope":"DAY001_AUDIO","reason":"Exact Theta/432 binaural mapping is not canonically defined."},
     {"id":"BACKEND-001-COMPLETION-V2","scope":"SERVER","reason":"complete_codex_day_v2 exists as adoption-ready draft but is not yet active in the migrated Supabase scaffold."},
-    {"id":"ASSET-001-REGISTRY-RESOLUTION","scope":"ASSETS","reason":"Required Day 001 visual assets have not yet been resolved into the new repository Asset Registry."}
+    {"id":"ASSET-001-CROWN-DERIVATIVE","scope":"ASSETS","reason":"Day 001 crown visual still needs an approved derivative/semantic decision."},
+    {"id":"ASSET-001-KEY-ART","scope":"ASSETS","reason":"Current key-art mockups contain outdated mutable copy and are reference-only."},
+    {"id":"ASSET-001-PROCEDURAL-EXTRACTION","scope":"ASSETS","reason":"Recovered procedural Kether primitives must be extracted from the legacy shell into shared renderer assets."},
+    {"id":"ASSET-001-SOUL-MIRROR-FINAL","scope":"ASSETS","reason":"Soul Mirror visual field requires final production approval without outdated reward copy."}
   ]
 }
