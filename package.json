@@ -1,0 +1,33 @@
+{
+  "name": "codex-hnk-app",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.1.0",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "validate:architecture": "node scripts/validate-architecture.mjs",
+    "validate:ui": "node scripts/validate-ui-tokens.mjs",
+    "validate:day001": "node scripts/validate-day001-master.mjs",
+    "validate:experience": "node scripts/validate-experience-qa.mjs",
+    "validate:audio": "node scripts/validate-audio-contract.mjs",
+    "validate:kether-references": "node scripts/validate-kether-canonical-references.mjs",
+    "validate:boards": "node scripts/validate-boards.mjs",
+    "validate:vault-web-crypto": "node scripts/validate-vault-web-crypto-lab.mjs",
+    "validate:vault-native-interop": "node scripts/validate-vault-native-interop.mjs",
+    "validate:vault-envelope-adapter": "node scripts/validate-vault-envelope-adapter.mjs",
+    "export:board": "node scripts/export-board.mjs",
+    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && turbo run lint typecheck test"
+  },
+  "devDependencies": {
+    "playwright": "1.55.0",
+    "prettier": "3.9.6",
+    "turbo": "2.10.12"
+  }
+}
