@@ -11,6 +11,7 @@ const checks = [
   "validate-completion-backend-draft.mjs",
   "validate-day001-visual-contract.mjs",
   "validate-day001-assets.mjs",
+  "validate-day001-editorial.mjs",
   "validate-day001-quest-pack.mjs",
 ];
 
