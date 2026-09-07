@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-ASSETS-V1",
   "kind": "hnk.asset_manifest",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "release_ready": false,
   "policy": "APPROVED_OR_PUBLISHED_ONLY",
@@ -87,9 +87,13 @@
     {
       "key": "soul-mirror-background",
       "required": true,
-      "status": "VISUAL_CONTRACT_DRAFT_FINAL_APPROVAL_PENDING",
-      "kind": "PROCEDURAL_SCENE",
-      "visual_primitive_id": "HNK-D001-VIS-REFLECTION-FIELD-V1"
+      "status": "APPROVED_PRODUCT_VISUAL_V1",
+      "kind": "IMAGE_ART",
+      "path": "assets/derived/kether/day001-soul-mirror-field-v1.svg",
+      "sha256": "c0370b159d4ce54b3a81ef2c15256667b27b5c9b9f6a6e4c559edeb023c985cc",
+      "visual_primitive_id": "HNK-D001-VIS-REFLECTION-FIELD-V1",
+      "text_free": true,
+      "private_content_embedded": false
     },
     {
       "key": "first-spark-animation",
@@ -104,13 +108,12 @@
   "reconciliation": {
     "required_slots": 10,
     "approved_canonical_migrated": 1,
-    "approved_product_derived": 2,
+    "approved_product_assets": 3,
     "procedural_contract_ready": 6,
-    "needs_derivative_or_visual_review": 1,
+    "needs_derivative_or_visual_review": 0,
     "inventory": "day-001.asset-reconciliation.json"
   },
   "release_blockers": [
-    "ASSET-001-PROCEDURAL-ADAPTER",
-    "ASSET-001-SOUL-MIRROR-FINAL"
+    "ASSET-001-PROCEDURAL-ADAPTER"
   ]
 }
