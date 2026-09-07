@@ -94,12 +94,10 @@ export const JELIEL_DAY_009 = base(
     { id: 'complete', label: 'Jeliel 4/5', kind: 'complete' },
   ],
   {
+    requiredPresent: ['dream_recalled'],
     requiredTrue: ['protocol_completed', 'return_confirmed', 'capture_completed'],
     minimums: {
       sleep_quality: 0,
-    },
-    categories: {
-      dream_recall_state: ['recalled', 'no_recall'],
     },
   },
 );
