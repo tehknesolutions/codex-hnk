@@ -1,0 +1,20 @@
+name: MIG-01 Actions Smoke
+
+on:
+  push:
+    branches:
+      - migration/m90-unified-v2
+    paths:
+      - .github/workflows/actions-smoke.yml
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Runner alive
+        run: |
+          echo "runner-ok"
+          uname -a
