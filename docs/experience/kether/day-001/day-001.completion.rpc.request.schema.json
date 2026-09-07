@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hnk.local/schemas/day-001.completion.rpc.request.schema.json",
+  "title": "HNK Day 001 Completion RPC Request V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "day",
+    "session_id",
+    "completion_contract_id",
+    "quest_definition_id",
+    "canonical_source_sha",
+    "client_completion_id"
+  ],
+  "properties": {
+    "day": {"const": 1},
+    "session_id": {"type": "string", "minLength": 1},
+    "completion_contract_id": {"const": "HNK-KETHER-D001-COMP-V2"},
+    "quest_definition_id": {"const": "HNK-KETHER-D001-V2"},
+    "canonical_source_sha": {"const": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29"},
+    "client_completion_id": {"type": "string", "minLength": 1},
+    "local_record_hash": {"type": ["string", "null"]},
+    "client_completed_at": {"type": ["string", "null"], "format": "date-time"}
+  }
+}
