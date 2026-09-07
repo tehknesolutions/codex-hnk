@@ -1,0 +1,67 @@
+name: HNK Native Vault iOS Interop Proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/mobile/src/features/vault/NativeVaultInteropHarness.ts'
+      - 'apps/mobile/src/app/index.tsx'
+      - 'apps/mobile/src/app/labs/vault-interop.tsx'
+      - 'apps/mobile/app.json'
+      - 'apps/mobile/package.json'
+      - 'packages/vault-interop-vectors/**'
+      - 'scripts/validate-vault-native-interop.mjs'
+      - 'scripts/run-vault-native-ios-interop.sh'
+      - '.github/workflows/vault-native-ios-interop.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  ios-native-interop:
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      CI: 'true'
+      NODE_ENV: production
+      EXPO_PUBLIC_HNK_NATIVE_INTEROP_AUTORUN: '1'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+
+      - name: Install workspace
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Validate shared Native interop contract
+        run: pnpm validate:vault-native-interop
+
+      - name: Report Apple toolchain
+        run: |
+          xcodebuild -version
+          pod --version
+          xcrun simctl list runtimes
+
+      - name: Execute frozen vector in iOS Simulator native runtime
+        run: sh scripts/run-vault-native-ios-interop.sh
+
+      - name: Upload redacted iOS interop proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hnk-native-vault-ios-interop-v1
+          path: artifacts/native-ios-interop
+          retention-days: 30
+          if-no-files-found: warn
