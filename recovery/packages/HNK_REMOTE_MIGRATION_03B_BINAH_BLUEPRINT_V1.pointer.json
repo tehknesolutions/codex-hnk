@@ -1,0 +1,14 @@
+{
+  "artifact": "HNK_REMOTE_MIGRATION_03B_BINAH_BLUEPRINT_V1.zip",
+  "phase": "REMOTE-MIGRATION-03B",
+  "classification": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+  "range": "074-109",
+  "fixtures": 36,
+  "literary_content_authored": false,
+  "validation": "PASS",
+  "internal_aggregate_sha256": "df4bf2cc542d811b9ed8327882149b356b14acbf2269295ee91fb8649094a96d",
+  "zip_sha256": "10bc1203d21d8f2ce39483e7cb023ed405900239311e8b8e934ebf94a01fd13c",
+  "source_authority": "capitulo_3_plano_escrita.md",
+  "original_rc1_equivalence_claim": false,
+  "note": "This pointer fingerprints the generated 03B artifact. The authoritative recovery classification remains source-based reconstruction, not original RC1 recovery."
+}
