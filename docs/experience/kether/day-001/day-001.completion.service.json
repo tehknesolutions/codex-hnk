@@ -1,0 +1,66 @@
+{
+  "id": "HNK-KETHER-D001-COMPLETION-SERVICE-V1",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
+  "canonical_source_sha": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29",
+  "transport": {
+    "kind": "supabase_rpc",
+    "rpc": "complete_codex_day_v2",
+    "server_authoritative": true
+  },
+  "request": {
+    "required": [
+      "day",
+      "session_id",
+      "completion_contract_id",
+      "quest_definition_id",
+      "canonical_source_sha",
+      "client_completion_id"
+    ],
+    "optional": ["local_record_hash", "client_completed_at"],
+    "forbidden_authority_fields": ["xp_awarded", "xp_total", "initiatory_grade", "crown", "progression_events"]
+  },
+  "response": {
+    "required": [
+      "day",
+      "completion_contract_id",
+      "quest_definition_id",
+      "canonical_source_sha",
+      "first_completion",
+      "xp_awarded",
+      "xp_total",
+      "initiatory_grade",
+      "initiatory_title",
+      "crown",
+      "progress",
+      "progression_events",
+      "server_completed_at"
+    ]
+  },
+  "day001_rules": {
+    "canonical_xp": 150,
+    "first_completion_expected_xp": 150,
+    "replay_expected_xp": 0,
+    "first_progression_event": "KETHER_FIRST_SPARK",
+    "vehuiah_progress_after_first_completion": "1/5",
+    "fragment_awarded_after_day001": false
+  },
+  "offline_replay": {
+    "queue_key": "client_completion_id",
+    "sequence": [
+      "sync_practice_session",
+      "sync_structured_evidence",
+      "call_complete_codex_day_v2",
+      "accept_server_state",
+      "remove_queue_item_on_terminal_result"
+    ],
+    "duplicate_completion_is_success": true,
+    "duplicate_completion_must_not_replay_reward_animation": true
+  },
+  "migration": {
+    "current_rpc": "complete_codex_day",
+    "current_limitation": "checks evidence non-empty but does not validate the versioned completion contract",
+    "strategy": "introduce complete_codex_day_v2, migrate clients, then revoke authenticated execute on legacy RPC",
+    "legacy_rpc_must_not_remain_a_v2_bypass": true
+  }
+}
