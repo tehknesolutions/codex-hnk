@@ -1,0 +1,35 @@
+{
+  "validation_id": "REMOTE-MIGRATION-08-DEPLOYMENT-SMOKE-V1",
+  "release_candidate": "TRIAD-I-RC-V2",
+  "audit_deployment": {
+    "deployment_id": "dpl_HgdVczAbEuovFeWjNQoXrrj2E1aY",
+    "project_id": "prj_P1KMOndjw7w02ossHhpsCBX4i3jB",
+    "project_name": "hnk-triad-i-rc-v2-audit",
+    "url": "https://hnk-triad-i-rc-v2-audit.vercel.app",
+    "isolated_from": "codex-hnk-app",
+    "ready_state": "READY",
+    "robots": "noindex,nofollow"
+  },
+  "critical_routes": {
+    "/": 200,
+    "/day/001": 200,
+    "/day/036": 200,
+    "/day/037": 200,
+    "/day/072": 200,
+    "/day/073": 200,
+    "/day/074": 200,
+    "/day/109": 200
+  },
+  "build_errors": 0,
+  "runtime_errors_last_hour": 0,
+  "http_deployment_smoke": "PASS",
+  "browser_visual_smoke": "NOT_RUN",
+  "browser_visual_smoke_reason": "Browser automation executable unavailable in the current execution environment; no visual PASS is claimed.",
+  "global_qa_v2": "PASS",
+  "original_rc1_restored": false,
+  "main_merge_allowed": false,
+  "runtime_release_allowed": false,
+  "human_release_signoff": "ABSENT",
+  "decision": "READY_FOR_HUMAN_RELEASE_SIGNOFF_WITH_VISUAL_SMOKE_PENDING",
+  "artifact_lock_sha256": "8c3c0eda7303a73db8cca3f122737034c05aaebeee81ca1e60822558c16225af"
+}
