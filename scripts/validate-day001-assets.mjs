@@ -51,9 +51,20 @@ const keyArtPath = path.join(root, keyArt?.path ?? "");
 if (!fs.existsSync(keyArtPath)) fail("Day 001 key art missing");
 else {
   if (sha256(keyArtPath) !== "e194a43156aaed6034eed144e83eb49651629c3aa1858f98503d957730662579") fail("Day 001 key art SHA-256 drift");
-  const keyArtText = fs.readFileSync(keyArtPath, "utf8");
-  if (/<text\b/i.test(keyArtText)) fail("Day 001 key art must not contain SVG text nodes");
-  if (/\+?\d+\s*XP/i.test(keyArtText)) fail("Day 001 key art must not bake XP copy");
+  const text = fs.readFileSync(keyArtPath, "utf8");
+  if (/<text\b/i.test(text)) fail("Day 001 key art must not contain SVG text nodes");
+  if (/\+?\d+\s*XP/i.test(text)) fail("Day 001 key art must not bake XP copy");
+}
+
+const mirror = byKey.get("soul-mirror-background");
+if (mirror?.status !== "APPROVED_PRODUCT_VISUAL_V1") fail("Soul Mirror visual approval drift");
+if (mirror?.text_free !== true || mirror?.private_content_embedded !== false) fail("Soul Mirror privacy/art guard drift");
+const mirrorPath = path.join(root, mirror?.path ?? "");
+if (!fs.existsSync(mirrorPath)) fail("Soul Mirror field missing");
+else {
+  if (sha256(mirrorPath) !== "c0370b159d4ce54b3a81ef2c15256667b27b5c9b9f6a6e4c559edeb023c985cc") fail("Soul Mirror SHA-256 drift");
+  const text = fs.readFileSync(mirrorPath, "utf8");
+  if (/<text\b/i.test(text)) fail("Soul Mirror background must not contain SVG text nodes");
 }
 
 for (const key of [
@@ -69,22 +80,22 @@ for (const key of [
   if (!entry?.visual_primitive_id) fail(`${key} visual primitive id missing`);
 }
 
-if (byKey.get("soul-mirror-background")?.status !== "VISUAL_CONTRACT_DRAFT_FINAL_APPROVAL_PENDING") fail("Soul Mirror must retain final visual approval gate");
 if (manifest.visual_contract !== "day-001.visual.manifest.json") fail("asset manifest visual contract pointer drift");
 if (manifest.art_direction !== "day-001.art-direction.json") fail("asset manifest art direction pointer drift");
-if (manifest.release_ready !== false) fail("asset manifest must remain non-release-ready while visual blockers exist");
+if (manifest.release_ready !== false) fail("asset manifest must remain non-release-ready until renderer adapters land");
 if (visual.bindings?.length !== 7) fail("visual manifest procedural binding count drift");
-if (visual.static_assets?.length !== 2) fail("visual manifest static asset count drift");
+if (visual.static_assets?.length !== 3) fail("visual manifest static asset count drift");
+if (visual.primitives?.find((entry) => entry.id === "HNK-D001-VIS-REFLECTION-FIELD-V1")?.approval_state !== "APPROVED_PRODUCT_VISUAL_V1") fail("Soul Mirror primitive approval drift");
 if (artDirection.approval_state !== "PRODUCT_V1_FROZEN") fail("Day 001 art direction freeze drift");
 if (artDirection.epistemic_boundary?.canonical_kether_sigil_is_distinct !== true) fail("Kether sigil distinction guard missing");
+if (artDirection.soul_mirror_field?.status !== "APPROVED_PRODUCT_VISUAL_V1") fail("Soul Mirror art-direction freeze drift");
 
 const blockerSet = new Set(manifest.release_blockers ?? []);
-for (const blocker of ["ASSET-001-PROCEDURAL-ADAPTER", "ASSET-001-SOUL-MIRROR-FINAL"]) {
-  if (!blockerSet.has(blocker)) fail(`missing asset blocker: ${blocker}`);
-}
+if (!blockerSet.has("ASSET-001-PROCEDURAL-ADAPTER")) fail("renderer adapter blocker missing");
 for (const obsolete of [
   "ASSET-001-CROWN-DERIVATIVE",
   "ASSET-001-KEY-ART",
+  "ASSET-001-SOUL-MIRROR-FINAL",
   "ASSET-001-PROCEDURAL-EXTRACTION",
   "ASSET-001-REGISTRY-RESOLUTION",
 ]) {
@@ -93,10 +104,11 @@ for (const obsolete of [
 
 if (reconciliation.summary?.required_slots !== 10) fail("reconciliation slot total drift");
 if (reconciliation.summary?.approved_canonical_migrated !== 1) fail("approved canonical migrated count drift");
-if (reconciliation.summary?.approved_product_derived !== 2) fail("approved product derived count drift");
+if (reconciliation.summary?.approved_product_assets !== 3) fail("approved product asset count drift");
 if (reconciliation.summary?.procedural_contract_ready !== 6) fail("procedural contract count drift");
-if (reconciliation.summary?.needs_derivative_or_visual_review !== 1) fail("visual review count drift");
+if (reconciliation.summary?.needs_derivative_or_visual_review !== 0) fail("visual review backlog must be zero after V1 freeze");
+if (reconciliation.summary?.adapter_pending !== 7) fail("adapter-pending binding count drift");
 
 if (!process.exitCode) {
-  console.log("DAY001 ASSETS PASS (1 canonical asset, 2 product-derived assets, 6 procedural contracts, 1 final visual approval pending)");
+  console.log("DAY001 ASSETS PASS (1 canonical asset, 3 product assets, 6 procedural contracts; only renderer adapters pending)");
 }
