@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-PACK-V1",
   "kind": "hnk.quest_pack",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "day": 1,
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
@@ -75,6 +75,6 @@
   "ci": {
     "workflow": ".github/workflows/day001-golden.yml",
     "current_state": "INFRASTRUCTURE_BLOCKED_NO_RUNNER",
-    "note": "The first GitHub Actions run ended before any step with runner_id=0; no validator result is inferred from that infrastructure failure."
+    "note": "Repeated GitHub Actions runs have ended before any step with runner_id=0; no validator result is inferred from this infrastructure failure."
   }
 }
