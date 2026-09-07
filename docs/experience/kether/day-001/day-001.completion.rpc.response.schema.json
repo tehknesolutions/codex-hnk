@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hnk.local/schemas/day-001.completion.rpc.response.schema.json",
+  "title": "HNK Day 001 Completion RPC Response V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "day",
+    "completion_contract_id",
+    "quest_definition_id",
+    "canonical_source_sha",
+    "first_completion",
+    "xp_awarded",
+    "xp_total",
+    "initiatory_grade",
+    "initiatory_title",
+    "crown",
+    "progress",
+    "progression_events",
+    "server_completed_at"
+  ],
+  "properties": {
+    "day": {"const": 1},
+    "completion_contract_id": {"const": "HNK-KETHER-D001-COMP-V2"},
+    "quest_definition_id": {"const": "HNK-KETHER-D001-V2"},
+    "canonical_source_sha": {"const": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29"},
+    "first_completion": {"type": "boolean"},
+    "xp_awarded": {"type": "integer", "minimum": 0, "maximum": 150},
+    "xp_total": {"type": "integer", "minimum": 0},
+    "initiatory_grade": {"type": "integer", "minimum": 1},
+    "initiatory_title": {"type": "string", "minLength": 1},
+    "crown": {
+      "type": "object",
+      "required": ["sephira", "days_completed", "fragments_lit", "fragments_total", "portal_unlocked", "kether_complete", "cycles"],
+      "properties": {
+        "sephira": {"const": "Kether"},
+        "days_completed": {"type": "integer", "minimum": 0, "maximum": 36},
+        "fragments_lit": {"type": "integer", "minimum": 0, "maximum": 7},
+        "fragments_total": {"const": 7},
+        "portal_unlocked": {"type": "boolean"},
+        "kether_complete": {"type": "boolean"},
+        "cycles": {"type": "array"}
+      }
+    },
+    "progress": {
+      "type": "object",
+      "required": ["current_day", "current_chapter", "current_sephira", "initiatory_grade", "initiatory_title", "xp_total"],
+      "properties": {
+        "current_day": {"type": "integer", "minimum": 1, "maximum": 365},
+        "current_chapter": {"type": "integer", "minimum": 1},
+        "current_sephira": {"type": "string"},
+        "initiatory_grade": {"type": "integer", "minimum": 1},
+        "initiatory_title": {"type": "string"},
+        "xp_total": {"type": "integer", "minimum": 0}
+      }
+    },
+    "progression_events": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "KETHER_FIRST_SPARK",
+          "KETHER_FRAGMENT_LIT",
+          "KETHER_PORTAL_UNLOCKED",
+          "KETHER_COMPLETE",
+          "INITIATORY_GRADE_CHANGED",
+          "NEXT_DAY_UNLOCKED"
+        ]
+      }
+    },
+    "server_completed_at": {"type": "string", "format": "date-time"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"first_completion": {"const": false}}, "required": ["first_completion"]},
+      "then": {"properties": {"xp_awarded": {"const": 0}}}
+    }
+  ]
+}
