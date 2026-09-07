@@ -1,6 +1,14 @@
 import type { QuestDefinition, QuestRunState, SessionSnapshot } from "./types.js";
 import { ExperienceDirector } from "./experience-director.js";
 
+function isCheckpoint(definition: QuestDefinition, phaseId: string): boolean {
+  return Boolean(
+    definition.runtime.checkpoint_states?.some(
+      (checkpointId) => checkpointId.toLowerCase() === phaseId.toLowerCase(),
+    ),
+  );
+}
+
 export class QuestRuntime {
   private state: QuestRunState = "IDLE";
   private currentPhaseId?: string;
@@ -25,9 +33,14 @@ export class QuestRuntime {
       throw new Error(`Cannot complete ${phaseId}; current phase is ${this.currentPhaseId ?? "none"}`);
     }
 
+    const current = this.director.getPhase(phaseId);
+    if (current.type === "COMPLETION") {
+      throw new Error("COMPLETION is a server boundary; use confirmServerCompletion() after backend validation");
+    }
+
     this.completed.add(phaseId);
 
-    if (this.definition.runtime.checkpoint_states?.includes(phaseId)) {
+    if (isCheckpoint(this.definition, phaseId)) {
       this.checkpointPhaseId = phaseId;
     }
 
@@ -39,6 +52,7 @@ export class QuestRuntime {
     }
 
     this.currentPhaseId = next.id;
+    this.state = next.type === "COMPLETION" ? "EVIDENCE_PENDING" : "ACTIVE";
     return this.snapshot();
   }
 
@@ -67,12 +81,32 @@ export class QuestRuntime {
     return this.snapshot();
   }
 
-  markComplete(): SessionSnapshot {
+  confirmServerCompletion(): SessionSnapshot {
+    if (this.state !== "EVIDENCE_PENDING") {
+      throw new Error(`Cannot confirm server completion while state=${this.state}`);
+    }
+    if (!this.currentPhaseId) throw new Error("No completion phase is active");
+
+    const completionPhase = this.director.getPhase(this.currentPhaseId);
+    if (completionPhase.type !== "COMPLETION") {
+      throw new Error(`Expected COMPLETION phase, got ${completionPhase.type}`);
+    }
     if (!this.director.canRequestCompletion(this.snapshot())) {
       const missing = this.director.getMissingRequiredPhases(this.snapshot()).map((phase) => phase.id);
       throw new Error(`Required phases still missing: ${missing.join(", ")}`);
     }
-    this.state = "COMPLETE";
+
+    this.completed.add(completionPhase.id);
+    const next = this.director.getNextPhase(completionPhase.id, this.snapshot());
+
+    if (!next) {
+      this.currentPhaseId = undefined;
+      this.state = "COMPLETE";
+      return this.snapshot();
+    }
+
+    this.currentPhaseId = next.id;
+    this.state = "ACTIVE";
     return this.snapshot();
   }
 
