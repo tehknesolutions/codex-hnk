@@ -1,0 +1,22 @@
+{
+  "name": "@hnk/vault-web-crypto-lab",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./indexeddb": "./src/indexeddb.ts",
+    "./vectors": "./src/vectors.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hnk/vault-interop-vectors": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  }
+}
