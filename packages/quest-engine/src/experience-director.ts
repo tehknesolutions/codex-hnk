@@ -68,8 +68,21 @@ export class ExperienceDirector {
   }
 
   getResumePhase(session: SessionSnapshot): QuestPhase {
-    if (session.checkpointPhaseId) return this.getPhase(session.checkpointPhaseId);
-    if (session.currentPhaseId) return this.getPhase(session.currentPhaseId);
+    if (session.currentPhaseId && !session.completedPhaseIds.includes(session.currentPhaseId)) {
+      return this.getPhase(session.currentPhaseId);
+    }
+
+    if (session.checkpointPhaseId) {
+      const checkpointIndex = this.quest.phases.findIndex(
+        (phase) => phase.id === session.checkpointPhaseId,
+      );
+      if (checkpointIndex >= 0) {
+        const nextIncomplete = this.quest.phases
+          .slice(checkpointIndex + 1)
+          .find((phase) => !session.completedPhaseIds.includes(phase.id));
+        if (nextIncomplete) return nextIncomplete;
+      }
+    }
 
     const firstIncomplete = this.quest.phases.find(
       (phase) => !session.completedPhaseIds.includes(phase.id),
@@ -91,7 +104,10 @@ export class ExperienceDirector {
 
   getMissingRequiredPhases(session: SessionSnapshot): QuestPhase[] {
     return this.quest.phases.filter(
-      (phase) => phase.required_for_completion && !session.completedPhaseIds.includes(phase.id),
+      (phase) =>
+        phase.type !== "COMPLETION" &&
+        phase.required_for_completion &&
+        !session.completedPhaseIds.includes(phase.id),
     );
   }
 
