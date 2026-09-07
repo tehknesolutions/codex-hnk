@@ -1,1 +1,18 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://hnk.local/schemas/day-037.completion.schema.json","title":"HNK Day 037 Completion Contract RC2","type":"object","additionalProperties":false,"required":["completion_contract_id","quest_definition_id","day","session_id","evidence","voluntary_completion_confirmed"],"properties":{"completion_contract_id":{"const":"HNK-CHOKHMAH-D037-COMP-RC2"},"quest_definition_id":{"const":"HNK-CHOKHMAH-D037-RC2"},"day":{"const":37},"session_id":{"type":"string","minLength":1},"evidence":{"$ref":"day-037.evidence.schema.json"},"voluntary_completion_confirmed":{"const":true},"client_completion_id":{"type":["string","null"]},"client_completed_at":{"type":["string","null"],"format":"date-time"}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hnk.local/schemas/day-037.completion.schema.json",
+  "title": "HNK Day 037 Completion Contract RC3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["completion_contract_id","quest_definition_id","day","session_id","evidence","voluntary_completion_confirmed"],
+  "properties": {
+    "completion_contract_id": {"const": "HNK-CHOKHMAH-D037-COMP-RC3"},
+    "quest_definition_id": {"const": "HNK-CHOKHMAH-D037-RC3"},
+    "day": {"const": 37},
+    "session_id": {"type": "string","minLength": 1},
+    "evidence": {"$ref": "day-037.evidence.schema.json"},
+    "voluntary_completion_confirmed": {"const": true},
+    "client_completion_id": {"type": ["string","null"]},
+    "client_completed_at": {"type": ["string","null"],"format": "date-time"}
+  }
+}
