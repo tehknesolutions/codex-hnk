@@ -1,0 +1,17 @@
+{
+  "lock_id": "HNK_TRIAD_I_RECONSTRUCTED_CORPUS_037_109_V2_LOCK",
+  "range": "037-109",
+  "folio_count": 73,
+  "classification": "RECONSTRUCTED_FROM_RECOVERED_SOURCES",
+  "original_rc1_equivalence_claim": false,
+  "global_qa": "V2_PASS",
+  "source_pack_sha256": "f13288e62885360007320f4e9190a885f26cfa1eba62ef8016899ab96e8acddf",
+  "adapter_docs_determinism_sha256": "a0226334ddb7543420e4108a4e101a4194dcd3e17ed809bdaca67280f10fe4f1",
+  "artifact": {
+    "name": "HNK_REMOTE_MIGRATION_10_EXPERIENCE_ADAPTER_GENERATOR_V1.zip",
+    "zip_sha256": "53fa7285303ad8b5cf754d61879e2ceedb43583849281198ccd85f428301f6ac"
+  },
+  "repository_ingest_state": "GENERATOR_AND_BINDINGS_COMMITTED__FULL_438_GENERATED_OUTPUTS_NOT_MATERIALIZED_IN_REPO",
+  "reason": "Generated outputs are reproducible from the locked source pack; integration branch avoids hundreds of hand-authored generated commits.",
+  "runtime_completion_enabled": false
+}
