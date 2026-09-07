@@ -1,0 +1,50 @@
+{
+  "id": "HNK-KETHER-D001-RENDERER-V1",
+  "quest_definition_id": "HNK-KETHER-D001-V2",
+  "renderer_contract": "HNK_RENDERER_LAYER_V1",
+  "default_surface": "mobile-first",
+  "phase_renderers": {
+    "NARRATIVE": "NarrativeScene",
+    "INSTRUCTION": "InstructionScene",
+    "TERM_REVEAL": "TermRevealScene",
+    "READ": "CanonReadingScene",
+    "FOCUS": "FocusPracticeScene",
+    "AUDIO": "AudioPracticeScene",
+    "RETURN": "ReturnGateScene",
+    "RELAXATION": "RelaxationScene",
+    "JOURNAL": "VaultJournalScene",
+    "VOICE": "VoicePracticeScene",
+    "PHENOMENOLOGY_CAPTURE": "PhenomenologyScene",
+    "STRUCTURED_JOURNAL": "SoulMirrorScene",
+    "CORRESPONDENCE_REVEAL": "CorrespondenceScene",
+    "COMPLETION": "CompletionBoundaryScene",
+    "UNLOCK": "UnlockScene"
+  },
+  "policies": {
+    "completion": {
+      "client_may_award_xp": false,
+      "client_may_mark_complete_directly": false,
+      "requires_server_confirmation": true
+    },
+    "voice": {
+      "microphone_required": false,
+      "recording_optional": true,
+      "no_capture_fallback": "VoicePracticeScene"
+    },
+    "audio": {
+      "optional_unavailable_can_skip": true,
+      "required_unavailable_blocks": true,
+      "never_invent_pending_preset": true
+    },
+    "accessibility": {
+      "reduced_motion_required": true,
+      "stop_control_required_for_practice": true
+    }
+  },
+  "signature_moments": {
+    "kether_reveal": "CrownEmergence",
+    "jachin_practice": "AttentionReturn",
+    "soul_mirror": "SoulMirrorReveal",
+    "first_spark": "KetherFirstSpark"
+  }
+}
