@@ -1,1 +1,15 @@
-{"id":"HNK-CHOKHMAH-D037-COMPLETION-SERVICE-RC1","quest_definition_id":"HNK-CHOKHMAH-D037-RC2","completion_contract_id":"HNK-CHOKHMAH-D037-COMP-RC2","canonical_source_sha":"70c0218e6ee41020a4146a73a87b0db02876f7fd650677da675fdebdb905fbf6","canonical_source_hash_algorithm":"sha256","transport":{"kind":"supabase_rpc","rpc":"complete_codex_day_v2","server_authoritative":true},"request":{"required":["day","session_id","completion_contract_id","quest_definition_id","canonical_source_sha","client_completion_id"],"optional":["local_record_hash","client_completed_at"],"forbidden_authority_fields":["xp_awarded","xp_total","initiatory_grade","progression_events","sephirah_state"]},"response":{"required_generic_identity":["day","completion_contract_id","quest_definition_id","canonical_source_sha","first_completion","xp_awarded","xp_total","initiatory_grade","initiatory_title","progress","progression_events","server_completed_at"],"progression_state_status":"BLOCKED_BY_KETHER_SPECIFIC_RESPONSE_TYPE"},"day037_rules":{"canonical_xp":100,"first_completion_expected_xp":100,"replay_expected_xp":0,"next_day":38,"source_classification":"RECONSTRUCTED_FROM_RECOVERED_SOURCES"},"offline_replay":{"queue_key":"client_completion_id","sequence":["sync_practice_session","sync_structured_evidence","call_complete_codex_day_v2","accept_server_state","remove_queue_item_on_terminal_result"],"duplicate_completion_is_success":true,"duplicate_completion_must_not_replay_reward_animation":true},"runtime_status":"SPEC_READY__BACKEND_COMPLETION_BLOCKED","blockers":["Generic progression state for post-Kether days","Server-side contract registry and evidence validator for Day 037"]}
+{
+  "id": "HNK-CHOKHMAH-D037-COMPLETION-SERVICE-RC2",
+  "quest_definition_id": "HNK-CHOKHMAH-D037-RC3",
+  "completion_contract_id": "HNK-CHOKHMAH-D037-COMP-RC3",
+  "canonical_source_sha": "2d1d7ef1766d4a181389a3af94b9516f7b34a6eb",
+  "canonical_source_sha256": "cffd98f7eafccc5392994eb035a1492f51886502aaea6e8297c4478b69ce2e64",
+  "transport": {"kind":"supabase_rpc","rpc":"complete_codex_day_v2","server_authoritative":true},
+  "request": {
+    "required": ["day","session_id","completion_contract_id","quest_definition_id","canonical_source_sha","client_completion_id"],
+    "optional": ["local_record_hash","client_completed_at"],
+    "forbidden_authority_fields": ["xp_awarded","xp_total","initiatory_grade","progression_events","sephirah_state"]
+  },
+  "rules": {"canonical_xp":100,"replay_expected_xp":0,"next_day":38},
+  "runtime_status": "SPEC_READY__BACKEND_COMPLETION_BLOCKED"
+}
