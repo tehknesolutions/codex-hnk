@@ -1,0 +1,83 @@
+.transitions :global(main[data-act]) {
+  --transition-light: rgba(233, 204, 126, .18);
+}
+
+.transitions :global(main[data-act])::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 28;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.transitions :global(main[data-act='revelacao'])::after {
+  background: radial-gradient(circle at 50% 48%, transparent 0 5%, rgba(235,204,119,.16) 5.2%, transparent 5.7% 18%, rgba(235,204,119,.07) 18.2%, transparent 18.7%);
+  animation: revelationEmanation .95s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.transitions :global(main[data-act='jachin'])::after {
+  inset: 0 50%;
+  border-left: 1px solid rgba(242,216,145,.34);
+  border-right: 1px solid rgba(242,216,145,.34);
+  background: linear-gradient(90deg, rgba(225,195,115,.04), rgba(255,248,220,.11), rgba(225,195,115,.04));
+  box-shadow: 0 0 90px rgba(226,188,82,.12);
+  animation: folioOpen 1s cubic-bezier(.16,.84,.24,1) both;
+}
+
+.transitions :global(main[data-act='boaz'])::after {
+  box-shadow: inset 0 0 0 0 rgba(0,0,0,0), inset 0 0 180px rgba(0,0,0,.9);
+  background: linear-gradient(90deg, rgba(0,0,0,.7), transparent 28%, transparent 72%, rgba(0,0,0,.7));
+  animation: boazContract .85s ease-out both;
+}
+
+.transitions :global(main[data-act='meio'])::after {
+  background:
+    linear-gradient(90deg, transparent 49.94%, rgba(242,216,145,.55) 50%, transparent 50.06%),
+    radial-gradient(circle at 50% 50%, rgba(231,194,92,.12), transparent 20%);
+  animation: axisConverge 1s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.transitions :global(main[data-act='selo'])::after {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,244,204,.34), rgba(232,198,107,.12) 7%, transparent 24%),
+    linear-gradient(180deg, rgba(239,210,132,.08), transparent 38%);
+  animation: lightTransfer 1.15s ease-out both;
+}
+
+@keyframes revelationEmanation {
+  0% { opacity: 0; transform: scale(.42); filter: blur(7px); }
+  35% { opacity: .9; }
+  100% { opacity: 0; transform: scale(2.3); filter: blur(0); }
+}
+
+@keyframes folioOpen {
+  0% { opacity: .72; inset: 0 50%; }
+  45% { opacity: .4; }
+  100% { opacity: 0; inset: 0 0; }
+}
+
+@keyframes boazContract {
+  0% { opacity: 0; transform: scale(1.08); }
+  45% { opacity: .72; }
+  100% { opacity: 0; transform: scale(.94); }
+}
+
+@keyframes axisConverge {
+  0% { opacity: 0; transform: scaleX(2.4); }
+  40% { opacity: .82; }
+  100% { opacity: 0; transform: scaleX(1); }
+}
+
+@keyframes lightTransfer {
+  0% { opacity: 0; transform: translateY(-8%); }
+  35% { opacity: .8; }
+  100% { opacity: 0; transform: translateY(18%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transitions :global(main[data-act])::after {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
