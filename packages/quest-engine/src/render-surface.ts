@@ -15,6 +15,8 @@ export type RenderControl =
   | "SKIP"
   | "START_AUDIO"
   | "STOP_AUDIO"
+  | "START_EXPERIMENT"
+  | "RECORD_OBSERVATION"
   | "START_ACTION"
   | "CHECK_IN"
   | "CONFIRM_RETURN"
@@ -49,17 +51,12 @@ export interface RenderSurface {
 
 function resolveVoice(kind: QuestSourceKind): RenderVoice {
   switch (kind) {
-    case "CANON":
-      return "CANON";
-    case "GUIDE_SAFETY":
-      return "GUIDE_SAFETY";
-    case "SYSTEM":
-      return "SYSTEM";
-    case "USER":
-      return "USER";
+    case "CANON": return "CANON";
+    case "GUIDE_SAFETY": return "GUIDE_SAFETY";
+    case "SYSTEM": return "SYSTEM";
+    case "USER": return "USER";
     case "PLATFORM_MICROCOPY":
-    case "PLATFORM_EXPERIENCE":
-      return "GUIDE";
+    case "PLATFORM_EXPERIENCE": return "GUIDE";
   }
 }
 
@@ -85,6 +82,8 @@ function controlsFor(directive: ExperienceDirective): RenderControl[] {
       return directive.canSkip
         ? ["START_AUDIO", "STOP_AUDIO", "SKIP", "COMPLETE_PHASE"]
         : ["START_AUDIO", "STOP_AUDIO", "COMPLETE_PHASE"];
+    case "EXPERIMENT":
+      return ["START_EXPERIMENT", "RECORD_OBSERVATION", "STOP", "COMPLETE_PHASE"];
     case "REAL_WORLD_ACTION":
       return ["START_ACTION", "CHECK_IN", "STOP", "COMPLETE_PHASE"];
     case "RETURN":
