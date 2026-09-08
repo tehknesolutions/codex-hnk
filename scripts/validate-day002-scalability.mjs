@@ -90,9 +90,12 @@ if (!activationMigration.includes("set status = 'active'")) fail('active registr
 
 if ((quest.release_blockers ?? []).length !== 0) fail('Quest still has blockers');
 if ((pack.blockers ?? []).length !== 0) fail('Quest Pack still has blockers');
+if (pack.version !== '0.4.1') fail('Quest Pack version drift');
+if (pack.release_state !== 'BACKEND_ACTIVE__AUDIO_PUBLISHED__RUNTIME_ADAPTERS_READY__DEVICE_QA_PENDING') fail('Quest Pack release state drift');
+if (pack.qa?.device_runtime !== 'PENDING' || pack.qa?.ci_is_release_evidence !== false) fail('Quest Pack QA boundary drift');
 if (pack.progression?.matrix_id !== 'HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1' || pack.progression?.attribute_DIS?.gain !== 1 || pack.progression?.client_may_apply_attribute_gain !== false) fail('Quest Pack progression drift');
 if (pack.reuse?.new_scene_classes !== 0 || pack.reuse?.new_practice_renderer_classes !== 0) fail('Quest Pack reuse proof drift');
 if (pack.server_completion?.contract_state !== 'DEPLOYED_ACTIVE') fail('Quest Pack completion state drift');
 if (pack.proof_result !== 'PASS_ARCHITECTURE_REUSE__PROGRESSION_FROZEN__AUDIO_PUBLISHED__COMPLETION_ACTIVE') fail('proof result drift');
 
-if (!process.exitCode) console.log('DAY002 SCALABILITY PASS: 705-word canon; generic registry; renderer reused; +1 DIS frozen server-side; audio published; completion active; zero blockers');
+if (!process.exitCode) console.log('DAY002 SCALABILITY PASS: 705-word canon; generic registry; renderer reused; +1 DIS frozen server-side; audio published; completion active; zero technical blockers; device QA pending');
