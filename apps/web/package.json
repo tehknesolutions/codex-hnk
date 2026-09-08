@@ -6,6 +6,7 @@
   "dependencies": {
     "@hnk/assets":"workspace:*",
     "@hnk/audio-contract":"workspace:*",
+    "@hnk/glyphs":"workspace:*",
     "@hnk/quest-engine":"workspace:*",
     "@hnk/quest-library":"workspace:*",
     "@hnk/real-world-action-contract":"workspace:*",
