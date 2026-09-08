@@ -75,7 +75,7 @@ for (const day of args.days) {
   if (!fs.existsSync(candidatePath)) die(`${label}: candidate missing`);
   if (fs.existsSync(canonPath)) die(`${label}: canonical file already exists; no silent overwrite allowed`);
 
-  const gateRow = new RegExp(`\\|\\s*${padded.replace(/^0+/, '')}\\s*\\|\\s*PASS\\s*\\|\\s*PASS\\s*\\|\\s*PASS\\s*\\|\\s*(?:PASS|N\\/A)\\s*\\|`);
+  const gateRow = new RegExp(`\\|\\s*0*${day}\\s*\\|\\s*PASS\\s*\\|\\s*PASS\\s*\\|\\s*PASS\\s*\\|\\s*(?:PASS|N\\/A)\\s*\\|`);
   if (!gateRow.test(review)) die(`${label}: review matrix does not prove G1/G2/G3 PASS and G4 PASS/N/A`);
 
   const candidateBuffer = fs.readFileSync(candidatePath);
