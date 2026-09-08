@@ -18,12 +18,14 @@ export interface QuestBehavioralExperimentPhaseProps {
 function initialRatings(fields: string[]): Record<string, number> {
   return Object.fromEntries(fields.map((field) => [field, 5]));
 }
-
+function stringFields(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : [];
+}
 function label(field: string): string { return field.replaceAll('_', ' ').toUpperCase(); }
 
 export function QuestBehavioralExperimentPhase({ directive, onResult, onCompletePhase, onSafetyStop }: QuestBehavioralExperimentPhaseProps) {
-  const beforeFields = useMemo(() => Array.isArray(directive.phase.interaction?.before_fields) ? directive.phase.interaction?.before_fields.filter((v): v is string => typeof v === 'string') : [], [directive]);
-  const afterFields = useMemo(() => Array.isArray(directive.phase.interaction?.after_fields) ? directive.phase.interaction?.after_fields.filter((v): v is string => typeof v === 'string') : [], [directive]);
+  const beforeFields = useMemo(() => stringFields(directive.phase.interaction?.before_fields), [directive]);
+  const afterFields = useMemo(() => stringFields(directive.phase.interaction?.after_fields), [directive]);
   const [before, setBefore] = useState<Record<string, number>>(() => initialRatings(beforeFields));
   const [after, setAfter] = useState<Record<string, number>>(() => initialRatings(afterFields));
   const [started, setStarted] = useState(false);
