@@ -1,16 +1,28 @@
 # HNK CODEX — Completion Backend Migration Spec V1
 
-**Status:** DRAFT EXECUTÁVEL / NÃO APLICAR AINDA  
-**Target future path:** `supabase/migrations/<timestamp>_completion_contract_v2.sql`  
-**Current draft path:** `docs/backend-drafts/20260907_complete_codex_day_v2.sql`
+**Status:** APPLIED / SUPERSEDED BY LIVE MIGRATION  
+**Applied migration:** `supabase/migrations/20260908011647_day001_completion_contract_v2.sql`  
+**Live Supabase project:** `codex-hnk-app`
 
-## Objetivo
+## Resultado
 
-Evoluir o RPC legado `public.complete_codex_day(...)` para uma fronteira de conclusão versionada sem perder as garantias já existentes de atomicidade, sequência, XP idempotente e Coroa derivada.
+O Completion Backend V2 deixou de ser apenas draft. A migration oficial `20260908011647_day001_completion_contract_v2` foi aplicada ao projeto Supabase vivo e está registrada no histórico de migrations.
+
+O RPC público ativo é:
+
+`public.complete_codex_day_v2(...)`
+
+Ele é `SECURITY INVOKER`. A operação privilegiada vive em:
+
+`hnk_private.complete_codex_day_v2_impl(...)`
+
+com `SECURITY DEFINER`, `search_path=''`, autenticação por `auth.uid()` e grants explícitos.
+
+O RPC legado `public.complete_codex_day(...)` permanece temporariamente disponível apenas para compatibilidade de clientes. Ele deve ser revogado em migration separada depois que Web + Expo usarem V2 e os testes E2E de replay/concorrência estiverem verdes.
 
 ## Baseline preservado
 
-A implementação anterior já oferece:
+A implementação anterior já oferecia:
 
 - `auth.uid()` como identidade autoritativa;
 - lock da `practice_session` com `FOR UPDATE`;
@@ -23,9 +35,9 @@ A implementação anterior já oferece:
 - atualização atômica de `user_progress`;
 - Coroa derivada por `get_kether_crown_state()`.
 
-V1 **não reescreve essas garantias**. Ele as envolve num contrato mais forte.
+V2 preserva essas garantias e acrescenta contrato versionado.
 
-## Delta V2
+## Delta V2 aplicado
 
 O novo RPC recebe e valida:
 
@@ -51,7 +63,7 @@ Liga:
 
 `Day → Quest Definition → Canon SHA → Completion Contract → validator_key`.
 
-O Day 001 é congelado como:
+Day 001 ativo:
 
 - `HNK-KETHER-D001-COMP-V2`
 - `HNK-KETHER-D001-V2`
@@ -60,78 +72,60 @@ O Day 001 é congelado como:
 
 ## Validação estrutural Day 001
 
-O backend exige:
+O backend vivo exige:
 
-- protocolo e SHA corretos;
-- Jachin iniciado/concluído/return;
+- protocolo, SHA e `session_id` corretos;
+- `session_id` da evidence igual à `practice_session` usada na conclusão;
+- tipos JSON reais para booleanos/números;
+- rejeição de campos desconhecidos para impedir prose privada em evidence;
+- Jachin iniciado/concluído/return + duração estruturada;
 - 528 iniciado;
-- Boaz iniciado/concluído/return;
-- três distrações;
-- prática vocal do Meio concluída;
-- return do Meio;
+- Boaz iniciado/concluído/return + três distrações;
+- prática vocal do Meio concluída + return;
+- gravação vocal opcional;
+- `encrypted_voice_ref` apenas quando gravação existe;
 - Espelho concluído;
+- ratings opcionais 0–10;
+- refs privadas opacas;
+- fenomenologia somente no enum permitido e sem duplicatas;
 - conclusão voluntária.
 
-**Não exige gravação vocal.**
+## Replay offline e concorrência
 
-## Replay offline
+`client_completion_id` é a chave de replay do cliente.
 
-`client_completion_id` é uma chave de replay do cliente.
+O servidor mantém receipt privado e serializa `user_id + client_completion_id` com advisory transaction lock. A proteção final fica em três camadas:
 
-O servidor salva um receipt privado. Repetir exatamente a mesma requisição devolve a resposta autoritativa original, permitindo:
+1. advisory lock para replay idêntico;
+2. `day_completions (user_id, day)` para impedir dois selos;
+3. `xp_events.idempotency_key` para impedir XP duplicado.
 
-`offline queue → retry → same result`.
+## Verificação executada no banco vivo
 
-O mesmo `client_completion_id` não pode ser reutilizado para outra identidade de requisição.
+- validator V2 aceitou evidence válida;
+- rejeitou boolean falso como string;
+- rejeitou campo privado desconhecido;
+- rejeitou gravação `true` sem ref cifrada;
+- rejeitou Boaz com menos de três distrações;
+- auth gate rejeitou chamada sem usuário autenticado;
+- advisors não apontaram novo alerta de segurança para V2;
+- FKs novas receberam índices de cobertura.
 
-Para proteger replays simultâneos da mesma chave, o draft também serializa `user_id + client_completion_id` com advisory transaction lock antes de ler/escrever o receipt.
+## Estado do rollout
 
-## Concorrência
+### Fase A — CONCLUÍDA
+Migration V2 aplicada mantendo RPC legado.
 
-A proteção fica em três camadas:
-
-1. advisory lock por `client_completion_id` estabiliza replay idêntico;
-2. `day_completions (user_id, day)` impede dois selos;
-3. `xp_events.idempotency_key` impede XP duplicado.
-
-## Resposta
-
-O RPC V2 devolve o contrato já congelado no app:
-
-- Day;
-- IDs e SHA ecoados;
-- `first_completion`;
-- `xp_awarded`;
-- `xp_total`;
-- Grade;
-- Crown;
-- Progress;
-- `progression_events`;
-- timestamp do servidor.
-
-Para Day 001 primeira conclusão:
-
-`KETHER_FIRST_SPARK` + `NEXT_DAY_UNLOCKED`.
-
-## Rollout
-
-### Fase A
-Aplicar migration V2 mantendo RPC legado executável.
-
-### Fase B
+### Fase B — PENDENTE
 Migrar Web + Expo para `complete_codex_day_v2`.
 
-### Fase C
-Rodar pgTAP + concurrency + replay tests.
+### Fase C — PENDENTE
+Rodar E2E autenticado de replay/concorrência a partir do shell migrado.
 
-### Fase D
-Auditar logs/telemetria sem conteúdo privado.
+### Fase D — PENDENTE
+Auditar telemetria sem conteúdo privado.
 
-### Fase E
+### Fase E — PENDENTE
 Revogar `EXECUTE` autenticado do RPC legado em migration separada.
 
-Nunca revogar o legado no mesmo commit que introduz V2.
-
-## Bloqueio atual
-
-Este draft **não deve ser movido para `supabase/` ainda**, porque o novo repo ainda não recebeu o scaffold canônico do backend. Até lá ele é especificação executável, não migration aplicada.
+O antigo draft `docs/backend-drafts/20260907_complete_codex_day_v2.sql` permanece somente como registro histórico de design e não é mais fonte operacional.
