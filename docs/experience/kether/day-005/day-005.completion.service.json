@@ -4,8 +4,9 @@
   "completion_contract_id":"HNK-KETHER-D005-COMP-V1",
   "canonical_source_sha":"eb9f078bdc7654135f83fbcdf0aa7d5d38412cff",
   "canonical_xp":100,
-  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"NOT_DEPLOYED"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"LIVE"},
   "progression":{"attribute":"VNT","gain":1,"application":"SERVER_SIDE_FIRST_COMPLETION_ONLY"},
   "cycle_seal":{"cycle":"Vehuiah","progress":"5/5","fragment_id":"KETHER-CROWN-FRAGMENT-I-VEHUIAH","event":"KETHER_FRAGMENT_LIT"},
-  "deployment":{"project":"codex-hnk-app","registry_status":"not_deployed","validator_key":"day005_v1"}
+  "deployment":{"project":"codex-hnk-app","registry_status":"active","validator_key":"day005_v1"},
+  "smoke":{"status":"PASS_ROLLBACK_ONLY","xp_awarded":100,"vnt_after":6,"xp_total_after":550,"fragment_event":"KETHER_FRAGMENT_LIT"}
 }
