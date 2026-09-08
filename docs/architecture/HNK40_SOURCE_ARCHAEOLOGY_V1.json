@@ -1,0 +1,152 @@
+{
+  "document_id": "HNK40-SOURCE-ARCHAEOLOGY-V1",
+  "date": "2026-09-08",
+  "status": "LEGACY_RUNTIME_MISSING_BUT_EXISTENCE_PROVEN",
+  "decision": {
+    "structural_namespace": "G01-G40_LOCKED",
+    "visual_glyph_source": "NOT_RECOVERED",
+    "pua_mapping": "UNVERIFIED",
+    "official_visual_canon": "BLOCKED",
+    "safe_rendering": "Gxx_IDS_ONLY",
+    "non_invention": true
+  },
+  "positive_evidence": [
+    {
+      "id": "EVID-001",
+      "source": "File Library index.html — HENUVOKODAN Lesson 1 Product v1",
+      "fact": "UI contains HNK INPUT SYSTEM / Sacred 10×4, keyboard grid, HNK output, transliteration, and loads ./hnk-runtime.js.",
+      "proves": "A real 40-position HNK input/runtime lineage existed.",
+      "does_not_prove": "The 40 drawings, codepoints, font cmap, SVG/path identities, world/protoglyph ordering."
+    },
+    {
+      "id": "EVID-002",
+      "source": "Google Drive folder HENUVOKODAN / PROJETO IDIOMA HNK",
+      "fact": "The language-project folder contains only the Google Doc 'Criação de Idiomas HNK'.",
+      "proves": "Current Drive language folder does not contain the physical runtime/font/keymap assets.",
+      "does_not_prove": "That such assets never existed elsewhere."
+    },
+    {
+      "id": "EVID-003",
+      "source": "Google Doc 'Criação de Idiomas HNK'",
+      "fact": "Describes phonetic inventories, phonetic grids, IPA as a bridge to binary encoding, combinatorial language design and glossolalia analysis.",
+      "proves": "Historical conceptual genealogy for sound→code architecture.",
+      "does_not_prove": "Current G01-G40 visual shapes, PUA codepoints, font family mapping, or exact root order."
+    },
+    {
+      "id": "EVID-004",
+      "source": "codex-hnk migration workflow migration/m90-unified-v2",
+      "fact": "Frozen upstreams are Tehkne-Solutions/codex-hnk-app@4b63e291... and Tehkne-Solutions/hnk-codex-365@4a5a88cc....",
+      "proves": "Exact public upstream snapshots used in the migration are known.",
+      "does_not_prove": "That the private HNK language runtime was included in those public upstreams."
+    },
+    {
+      "id": "EVID-005",
+      "source": "Tehkne-Solutions/hnk-cronicas-obra-viva commit 0a8c7ff...",
+      "fact": "HENUVOKODAN PACK-00 is a candidate visual foundation for a game runtime and includes elemental/UI assets.",
+      "proves": "A separate HENUVOKODAN visual-pack lineage existed.",
+      "does_not_prove": "That PACK-00 sigils are linguistic HNK40 root glyphs."
+    },
+    {
+      "id": "EVID-006",
+      "source": "Vercel hnk-english-app build/deployment archaeology",
+      "fact": "Flutter builds inspected expose standard Flutter icon fonts and do not expose the legacy Henuvokodan font/runtime as standalone current assets.",
+      "proves": "The legacy Sacred 10×4 runtime/font is not part of the inspected current Flutter packaging.",
+      "does_not_prove": "That the runtime never existed in a parallel static build or private source snapshot."
+    }
+  ],
+  "searched_targets": [
+    "hnk-runtime.js",
+    "HNK_INPUT_SYSTEM_SPEC.json",
+    "HNK_SACRED_10X4_KEYMAP.csv",
+    "HNK40_INPUT_MAP.json",
+    "hnk-input.mjs",
+    "HenuvokodanSimpleAlpha-Regular",
+    "Sacred 10x4",
+    "HNK INPUT SYSTEM",
+    "HENUVOKODAN glyph",
+    "HENUVOKODAN alphabet",
+    "HNK keymap"
+  ],
+  "searched_surfaces": [
+    "ChatGPT File Library",
+    "Google Drive HENUVOKODAN folder and language-project subfolder",
+    "GitHub current codex-hnk default branch",
+    "GitHub codex-hnk migration/recovery branches",
+    "Frozen public upstream snapshots codex-hnk-app and hnk-codex-365",
+    "Global GitHub commit/repository search",
+    "Tehkne-Solutions/hnk-cronicas-obra-viva",
+    "Vercel hnk-english-app deployment history",
+    "Vercel codex-hnk-app project",
+    "Vercel tehkne-hnk, v0-shimokodan-dev and hnk-labs-shimokodan-dev"
+  ],
+  "negative_evidence_boundary": {
+    "meaning": "No physical visual-alphabet source was recovered from currently connected/searchable sources.",
+    "not_a_claim": "This is not proof that the source never existed or cannot be recovered from an inaccessible private repository, local backup, expired artifact, old chat sandbox, or external archive."
+  },
+  "legacy_candidates": [
+    {
+      "name": "hnk-runtime.js",
+      "priority": "P0",
+      "state": "REFERENCE_PROVEN_FILE_MISSING",
+      "promotion_value": "Can potentially reveal runtime glyph registry and input mapping."
+    },
+    {
+      "name": "HNK_SACRED_10X4_KEYMAP.csv",
+      "priority": "P0",
+      "state": "HISTORICAL_METADATA_ONLY",
+      "promotion_value": "Would potentially establish 40-position key ordering."
+    },
+    {
+      "name": "HNK40_INPUT_MAP.json",
+      "priority": "P0",
+      "state": "HISTORICAL_METADATA_ONLY",
+      "promotion_value": "Would potentially establish G/root-to-input mapping."
+    },
+    {
+      "name": "HenuvokodanSimpleAlpha-Regular",
+      "priority": "P0",
+      "state": "HISTORICAL_METADATA_ONLY",
+      "promotion_value": "Could contain visual outlines and cmap, but no codepoint may be assigned before verification."
+    }
+  ],
+  "exclusions": [
+    {
+      "source": "HENUVOKODAN PACK-00 elemental/UI sigils",
+      "classification": "NON_ALPHABET_VISUAL_LINEAGE",
+      "rule": "Do not map fire/water/air/earth or other PACK-00 sigils to G01-G40."
+    },
+    {
+      "source": "Old 12 HENUVOKODAN portal-token PUA range",
+      "classification": "DIFFERENT_TOKEN_SYSTEM",
+      "rule": "Do not reuse or infer those codepoints for HNK40 roots."
+    }
+  ],
+  "next_recovery_paths": [
+    {
+      "priority": "P0",
+      "path": "Restore read access to private repository thales-da-vinci/hnk-english-app and inspect full history/tags/artifacts for the static HENUVOKODAN product."
+    },
+    {
+      "priority": "P0",
+      "path": "Search local computer/backups/downloads for exact historical filenames and font family name."
+    },
+    {
+      "priority": "P1",
+      "path": "Search archived chat-generated ZIPs/sandboxes or exported project bundles if made available."
+    },
+    {
+      "priority": "P1",
+      "path": "If a font is recovered, extract cmap/outline metadata, hash the source, and diff 40/40 against the current G01-G40 registry."
+    }
+  ],
+  "promotion_gate": {
+    "source_recovered": false,
+    "exactly_40_visual_assets": false,
+    "bijective_g01_g40_binding": false,
+    "phoneme_compatibility_40_of_40": false,
+    "pua_or_cmap_verified": false,
+    "provenance_hashes_recorded": false,
+    "cross_renderer_identity_test": false,
+    "human_visual_canon_approval": false
+  }
+}
