@@ -1,0 +1,35 @@
+{
+  "id":"HNK-KETHER-D002-RENDERER-V1",
+  "quest_definition_id":"HNK-KETHER-D002-V1",
+  "renderer_contract":"HNK_RENDERER_LAYER_V1",
+  "default_surface":"mobile-first",
+  "phase_renderers":{
+    "NARRATIVE":"NarrativeScene",
+    "TERM_REVEAL":"TermRevealScene",
+    "READ":"CanonReadingScene",
+    "FOCUS":"FocusPracticeScene",
+    "AUDIO":"AudioPracticeScene",
+    "RETURN":"ReturnGateScene",
+    "INSTRUCTION":"InstructionScene",
+    "JOURNAL":"VaultJournalScene",
+    "STRUCTURED_JOURNAL":"SoulMirrorScene",
+    "CORRESPONDENCE_REVEAL":"CorrespondenceScene",
+    "COMPLETION":"CompletionBoundaryScene",
+    "UNLOCK":"UnlockScene"
+  },
+  "policies":{
+    "completion":{"client_may_award_xp":false,"client_may_mark_complete_directly":false,"requires_server_confirmation":true},
+    "audio":{"required_unavailable_blocks":true,"never_invent_pending_preset":true},
+    "focus":{"counter_component":"ATTENTION_RETURN","counter_alias_supported":true,"counter_alias_day002":"IMPULSO_PERCEBIDO","counter_has_xp":false,"counter_has_failure_state":false},
+    "safety":{"absolute_immobility_not_enforced_by_renderer":true,"movement_allowed":true,"natural_breathing_required":true,"pain_numbness_dizziness_breathlessness_stop":true},
+    "privacy":{"journal_free_text":"VAULT_ONLY","voice_recording_optional":true,"analytics_private_text":false},
+    "accessibility":{"reduced_motion_required":true,"stop_control_required_for_practice":true}
+  },
+  "signature_moments":{
+    "kether_reentry":"KetherReentry",
+    "boaz_asana":"ImpulseWitness",
+    "soul_mirror":"SoulMirrorReveal",
+    "vehuiah_progress":"VehuiahSecondMark"
+  },
+  "scalability_assertion":{"new_scene_classes":[],"new_renderer_code_required":false,"reuses_day001_renderer_contract":true}
+}
