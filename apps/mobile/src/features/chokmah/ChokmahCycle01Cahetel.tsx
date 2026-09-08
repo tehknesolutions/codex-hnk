@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useHnkAuth } from '../auth/AuthContext';
 import { CahetelDays037to039Experience } from './CahetelDays037to039Experience';
+import { CahetelDays040to041Experience } from './CahetelDays040to041Experience';
 
 export function ChokmahCycle01Cahetel() {
   const auth = useHnkAuth();
@@ -52,10 +53,9 @@ export function ChokmahCycle01Cahetel() {
           const done = index < completed;
           const available = day <= currentDay;
           const active = displayDay === day;
-          const draftOnly = day >= 40;
           return (
             <Pressable key={day} disabled={!available} onPress={() => setDisplayDay(day)} style={styles.nodeWrap}>
-              <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked, draftOnly && styles.nodeDraft]}>
+              <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked]}>
                 <Text style={[styles.nodeText, (done || active) && styles.nodeTextActive]}>{done ? '✓' : day}</Text>
               </View>
               <Text style={[styles.nodeLabel, active && styles.nodeLabelActive]}>{day === 37 ? 'RECEBER' : day === 38 ? 'ACOMPANHAR' : day === 39 ? 'SENTIR' : day === 40 ? 'INDUZIR' : 'INTUIR'}</Text>
@@ -69,19 +69,9 @@ export function ChokmahCycle01Cahetel() {
         <View style={styles.stats}><Text style={styles.stat}>{title.toUpperCase()}</Text><Text style={styles.stat}>{xpTotal} XP</Text><Text style={styles.stat}>LEVEL 2</Text></View>
       </View>
 
-      {displayDay <= 39 ? <CahetelDays037to039Experience day={displayDay as 37 | 38 | 39} /> : <EditorialDraftGate day={displayDay as 40 | 41} />}
-    </View>
-  );
-}
-
-function EditorialDraftGate({ day }: { day: 40 | 41 }) {
-  return (
-    <View style={styles.pendingWrap}>
-      <View style={styles.pendingCard}>
-        <Text style={styles.pendingLabel}>EDITORIAL_DRAFT_PENDING_CANON</Text>
-        <Text style={styles.pendingTitle}>Dia {String(day).padStart(3, '0')} já foi escrito, mas ainda não é cânone publicado.</Text>
-        <Text style={styles.pendingBody}>O draft está preservado no staging editorial com 705 palavras estruturais exatas. Esta tela não abre Practice Session, não envia evidence e não concede XP até promoção explícita no repositório canônico.</Text>
-      </View>
+      {displayDay <= 39
+        ? <CahetelDays037to039Experience day={displayDay as 37 | 38 | 39} />
+        : <CahetelDays040to041Experience day={displayDay as 40 | 41} />}
     </View>
   );
 }
@@ -97,7 +87,6 @@ const styles = StyleSheet.create({
   nodeDone: { borderColor: '#5292ad', backgroundColor: '#0a202c' },
   nodeActive: { borderColor: '#9ce4ff', backgroundColor: '#123447' },
   nodeLocked: { opacity: 0.3 },
-  nodeDraft: { borderStyle: 'dashed' },
   nodeText: { color: '#668695', fontSize: 8, fontWeight: '700' },
   nodeTextActive: { color: '#d9f5ff' },
   nodeLabel: { color: '#4e6974', fontSize: 6, letterSpacing: 0.7 },
@@ -107,9 +96,4 @@ const styles = StyleSheet.create({
   heading: { color: '#e6f7ff', fontSize: 14, letterSpacing: 2.1, marginTop: 5 },
   stats: { alignItems: 'flex-end', gap: 3 },
   stat: { color: '#6f8c98', fontSize: 8, letterSpacing: 1 },
-  pendingWrap: { flex: 1, padding: 24, justifyContent: 'center' },
-  pendingCard: { borderWidth: 1, borderStyle: 'dashed', borderColor: '#34596a', borderRadius: 24, padding: 24, backgroundColor: '#050d13', gap: 12 },
-  pendingLabel: { color: '#6ca2b7', fontSize: 9, letterSpacing: 1.4, fontWeight: '700' },
-  pendingTitle: { color: '#e4f4fb', fontSize: 23, lineHeight: 30, fontWeight: '300' },
-  pendingBody: { color: '#89a0aa', fontSize: 13, lineHeight: 21 },
 });

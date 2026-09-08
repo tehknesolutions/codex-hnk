@@ -63,4 +63,61 @@ export const CAHETEL_DAY_039 = cahetel(39, 3, [
   minimums: { neutral_seconds: 180, symbolic_seconds: 240 },
 });
 
-export const CAHETEL_CANON_RUNTIME = [CAHETEL_DAY_037, CAHETEL_DAY_038, CAHETEL_DAY_039] as const;
+export const CAHETEL_DAY_040 = cahetel(40, 4, [
+  { id: 'threshold', label: 'Limiar da Autoindução', kind: 'threshold' },
+  { id: 'verbal', label: 'Truísmos + sugestão permissiva', kind: 'practice' },
+  { id: 'silent', label: 'Condição silenciosa', kind: 'comparison' },
+  { id: 'compare', label: 'Comparar sem escolher vencedor', kind: 'review' },
+  { id: 'grounding', label: 'Retorno ocular e ambiental', kind: 'grounding', requiresReturnConfirmation: true },
+  { id: 'seal', label: 'Selo', kind: 'seal' },
+  { id: 'complete', label: 'Cahetel 4/5', kind: 'complete' },
+], {
+  requiredTrue: [
+    'protocol_completed',
+    'return_confirmed',
+    'verbal_condition_completed',
+    'silent_condition_completed',
+    'comparison_completed',
+    'autonomy_preserved',
+  ],
+  minimums: {
+    verbal_seconds: 360,
+    silent_seconds: 360,
+    truisms_logged: 3,
+    suggestions_logged: 1,
+  },
+});
+
+export const CAHETEL_DAY_041 = cahetel(41, 5, [
+  { id: 'threshold', label: 'Limiar da Intuição Zoe', kind: 'threshold' },
+  { id: 'question', label: 'Pergunta espiritual não urgente', kind: 'instruction' },
+  { id: 'active', label: 'Recepção com pergunta', kind: 'practice' },
+  { id: 'open', label: 'Recepção aberta', kind: 'comparison' },
+  { id: 'discernment', label: 'Experiência · interpretação · alternativa · verificação', kind: 'review' },
+  { id: 'grounding', label: 'Retorno ao ambiente', kind: 'grounding', requiresReturnConfirmation: true },
+  { id: 'seal', label: 'Selo do ciclo', kind: 'seal' },
+  { id: 'complete', label: 'Cahetel 5/5', kind: 'complete' },
+], {
+  requiredTrue: [
+    'protocol_completed',
+    'return_confirmed',
+    'question_defined',
+    'active_reception_completed',
+    'open_reception_completed',
+    'interpretation_delayed',
+    'alternative_recorded',
+    'verification_defined',
+  ],
+  minimums: {
+    active_reception_seconds: 420,
+    open_reception_seconds: 420,
+  },
+});
+
+export const CAHETEL_CANON_RUNTIME = [
+  CAHETEL_DAY_037,
+  CAHETEL_DAY_038,
+  CAHETEL_DAY_039,
+  CAHETEL_DAY_040,
+  CAHETEL_DAY_041,
+] as const;
