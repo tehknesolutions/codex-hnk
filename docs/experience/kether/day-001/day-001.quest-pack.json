@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-PACK-V1",
   "kind": "hnk.quest_pack",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "day": 1,
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
@@ -14,7 +14,8 @@
     "structured_evidence_queueable": true,
     "private_vault_local_first": true,
     "canonical_completion_requires_server": true,
-    "binary_assets_ready": false
+    "binary_assets_ready": true,
+    "visual_contract_ready": true
   },
   "integrity_policy": {
     "repository_artifacts": "git_blob_sha1",
@@ -59,14 +60,29 @@
     ],
     "optional": ["MICROPHONE_RECORDING", "THETA_432_PROFILE"]
   },
+  "server_completion": {
+    "state": "ACTIVE",
+    "project": "codex-hnk-app",
+    "rpc": "complete_codex_day_v2",
+    "migration": "20260908011647_day001_completion_contract_v2",
+    "public_rpc_security": "INVOKER",
+    "privileged_impl_schema": "hnk_private",
+    "legacy_rpc_still_enabled": true,
+    "legacy_retirement_gate": "WEB_EXPO_V2_CUTOVER_AND_E2E_REPLAY_CONCURRENCY_GREEN"
+  },
   "asset_reconciliation": {
-    "state": "RECONCILED_NOT_RELEASE_READY",
+    "state": "ASSET_LAYER_READY",
     "inventory": "day-001.asset-reconciliation.json",
     "approved_canonical_migrated": 1,
     "approved_product_assets": 3,
     "procedural_contract_ready": 6,
-    "needs_derivative_or_visual_review": 0,
-    "adapter_pending": 7
+    "needs_derivative_or_visual_review": 0
+  },
+  "runtime_integration": {
+    "state": "SHELL_MIGRATION_PENDING",
+    "visual_adapter_bindings": 7,
+    "completion_rpc_client_cutover": "PENDING",
+    "apps_present_in_consolidation_repo": false
   },
   "editorial_reconciliation": {
     "state": "PARTIAL_CANON_WRITE_PENDING",
@@ -77,8 +93,7 @@
   "blockers": [
     {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"A 26-word canonical amendment is prepared, but the source-of-truth repository still carries mandatory recording and extra-XP wording."},
     {"id":"AUDIO-001-THETA-432","scope":"DAY001_AUDIO","reason":"Exact Theta/432 binaural mapping is not canonically defined."},
-    {"id":"BACKEND-001-COMPLETION-V2","scope":"SERVER","reason":"complete_codex_day_v2 exists as adoption-ready draft but is not yet active in the migrated Supabase scaffold."},
-    {"id":"ASSET-001-PROCEDURAL-ADAPTER","scope":"ASSETS","reason":"All Day 001 visual decisions and adapter interfaces are frozen; concrete Web/Expo implementations await shell migration."}
+    {"id":"RUNTIME-001-SHELL-INTEGRATION","scope":"WEB_EXPO_RUNTIME","reason":"The headless runtime, assets, visual adapter contract and live Completion V2 backend are ready, but the official Web/Expo shell has not yet been consolidated into this repository."}
   ],
   "ci": {
     "workflow": ".github/workflows/day001-golden.yml",
