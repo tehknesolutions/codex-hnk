@@ -12,7 +12,10 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "validate:day001": "node scripts/validate-day001-golden.mjs",
-    "check": "pnpm validate:day001 && turbo run typecheck test"
+    "validate:day002": "node scripts/validate-day002-scalability.mjs",
+    "validate:catalog": "node scripts/validate-quest-catalog-scalability.mjs",
+    "validate:scalability": "pnpm validate:day002 && pnpm validate:catalog",
+    "check": "pnpm validate:day001 && pnpm validate:scalability && turbo run typecheck test"
   },
   "devDependencies": {
     "turbo": "2.10.12"
