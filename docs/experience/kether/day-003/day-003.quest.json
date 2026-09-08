@@ -1,8 +1,8 @@
 {
   "id":"HNK-KETHER-D003-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.1.0",
-  "status":"CONFIG_COMPILED__DEFERRED_ORDALIA_CONTRACT_PENDING",
+  "version":"0.2.0",
+  "status":"CONFIG_COMPILED__SERVER_ACTION_REVIEWED__RUNTIME_ADAPTER_PENDING",
   "day":3,
   "title":"Despolarização do Ego",
   "canonical":{
@@ -49,7 +49,7 @@
     {"id":"boaz_safety_overlay","type":"INSTRUCTION","source":{"kind":"GUIDE_SAFETY"},"content_intent":["Self-hypnosis is voluntary relaxation and directed attention in this product layer.","Do not force eyelids or muscles.","A mental answer is introspective material, not automatically factual or supernatural information.","Stop if there is panic, dizziness, pain or significant disorientation."],"required_for_completion":false},
     {"id":"boaz_relaxation","type":"RELAXATION","source":{"kind":"CANON","block_ids":["boaz-kavanah"]},"interaction":{"user_paced":true,"components":["RELAXATION_GUIDE","BEFORE_AFTER"],"pause":true,"stop":true},"safety":{"return_gate":true,"stop_always_visible":true,"voluntary_control_required":true},"required_for_completion":true},
     {"id":"boaz_inquiry","type":"JOURNAL","source":{"kind":"CANON","block_ids":["boaz-kavanah"]},"privacy":{"free_text_destination":"VAULT_ONLY","structured_evidence":["protective_intention_inquiry_completed"]},"required_for_completion":true},
-    {"id":"boaz_24h_action","type":"REAL_WORLD_ACTION","source":{"kind":"CANON","block_ids":["boaz-ordalia"]},"interaction":{"server_start_required":true,"target_elapsed_seconds":86400,"consecutive_window":true,"check_in_supported":true,"lapse_policy":"RESTART_WINDOW_WITHOUT_PUNISHMENT","event_label":"QUEIXA_PERCEBIDA","completion_requires_server_elapsed_window":true},"safety":{"no_failure_state":true,"no_shame_copy":true,"user_may_stop_or_restart":true},"privacy":{"free_text_destination":"VAULT_ONLY","structured_evidence":["challenge_started_at_server","challenge_qualified_at_server","restart_count"]},"required_for_completion":true},
+    {"id":"boaz_24h_action","type":"REAL_WORLD_ACTION","source":{"kind":"CANON","block_ids":["boaz-ordalia"]},"interaction":{"action_contract_id":"HNK-KETHER-D003-BOAZ-24H-V1","server_contract_state":"DEPLOYED_ACTIVE","server_start_required":true,"target_elapsed_seconds":86400,"consecutive_window":true,"check_in_supported":true,"lapse_policy":"RESTART_WINDOW_WITHOUT_PUNISHMENT","event_label":"QUEIXA_PERCEBIDA","completion_requires_server_elapsed_window":true},"safety":{"no_failure_state":true,"no_shame_copy":true,"user_may_stop_or_restart":true},"privacy":{"free_text_destination":"VAULT_ONLY","structured_evidence":["real_world_action_id","restart_count"]},"required_for_completion":true},
     {"id":"boaz_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
     {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"epistemic_overlays":[{"domain":"E5","scope":"Spirit Holy and theological framing"},{"domain":"E4","scope":"subtle-energy and Tiphereth correspondence model"},{"domain":"E3","scope":"subjective peace/vitality experience"}],"required_for_completion":true},
     {"id":"middle_practice","type":"FOCUS","source":{"kind":"CANON","block_ids":["middle-kavanah"]},"interaction":{"user_paced":true,"components":["FOCUS_ORB","VISUALIZATION_GUIDE"],"pause":true,"stop":true},"safety":{"return_gate":true,"stop_always_visible":true},"required_for_completion":true},
@@ -57,12 +57,11 @@
     {"id":"attribute_notice","type":"INSTRUCTION","source":{"kind":"SYSTEM"},"content_intent":["The Canon uses language of elevating Sintonia Espiritual.","Attribute Progression Matrix V1 classifies Day 003 as INT/HIP training with zero numerical attribute gain.","No client or server attribute event is awarded for Day 003 V1."],"attribute_effect":{"primary_attribute":"INT","secondary_attribute":"HIP","gain":0,"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","client_may_apply":false},"required_for_completion":false},
     {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","voice_recording_optional":true,"voice_recording_destination":"LOCAL_ENCRYPTED_VAULT"},"required_for_completion":true},
     {"id":"correspondence_reveal","type":"CORRESPONDENCE_REVEAL","source":{"kind":"PLATFORM_EXPERIENCE"},"items":["Kether","Atziluth","Vehuiah","O Louco","Fehu","Hexagrama 1"],"required_for_completion":false},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D003-COMP-V1","completion_contract_state":"NOT_DEPLOYED_DEFERRED_ORDALIA_PENDING","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D003-COMP-V1","completion_contract_state":"DEPLOYED_REVIEWED_RUNTIME_ADAPTER_PENDING","client_may_award_xp":false,"required_for_completion":true},
     {"id":"vehuiah_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Vehuiah","cycle_progress":"3/5","fragment_awarded":false},"required_for_completion":false}
   ],
   "scalability_proof":{"reuses_quest_catalog":true,"reuses_audio_runtime_port":true,"new_phase_types":["REAL_WORLD_ACTION"],"new_generic_renderer_contract_required":true,"day_specific_engine_branch_required":false,"signature_moment":"24H_WITNESS_WINDOW"},
   "release_blockers":[
-    {"id":"COMPLETION-003-DEFERRED-ORDALIA","scope":"DAY003_BOAZ_24H","reason":"Server must authoritatively start and qualify the 24-hour consecutive action window before Day 003 completion can be active."},
-    {"id":"RUNTIME-003-REAL-WORLD-ACTION-ADAPTER","scope":"WEB_EXPO_RENDERER","reason":"Web/Expo need one reusable RealWorldAction renderer/controller before Day 003 can execute end-to-end."}
+    {"id":"RUNTIME-003-REAL-WORLD-ACTION-ADAPTER","scope":"WEB_EXPO_RENDERER","reason":"Generic Web/Expo RealWorldAction renderer exists but must be wired into the Day 003 routes before Completion Contract activation."}
   ]
 }
