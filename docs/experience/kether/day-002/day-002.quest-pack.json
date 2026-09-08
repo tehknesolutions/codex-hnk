@@ -1,14 +1,14 @@
 {
   "id":"HNK-KETHER-D002-PACK-V1",
   "kind":"hnk.quest_pack",
-  "version":"0.4.1",
+  "version":"0.5.0",
   "day":2,
   "quest_definition_id":"HNK-KETHER-D002-V1",
   "completion_contract_id":"HNK-KETHER-D002-COMP-V1",
   "canonical_source_sha":"71019573414493ee9e5521f4d27ed744748c0d2b",
   "canonical_xp":100,
   "integrity_state":"SCALABILITY_PROOF_CONFIG_COMPILED",
-  "release_state":"BACKEND_ACTIVE__AUDIO_PUBLISHED__RUNTIME_ADAPTERS_READY__DEVICE_QA_PENDING",
+  "release_state":"WEB_EXPO_RUNTIME_INTEGRATED__DEVICE_AND_AUTHENTICATED_QA_PENDING",
   "files":[
     {"path":"day-002.canon-blocks.json","role":"CANON_BLOCKS","required":true},
     {"path":"day-002.quest.json","role":"QUEST_DEFINITION","required":true},
@@ -18,13 +18,14 @@
     {"path":"day-002.renderer-profile.json","role":"RENDERER_PROFILE","required":true},
     {"path":"day-002.audio.manifest.json","role":"AUDIO_MANIFEST","required":true}
   ],
-  "reuse":{"renderer_contract":"HNK_RENDERER_LAYER_V1","quest_registry":"HNK_QUEST_REGISTRY_V1","new_scene_classes":0,"new_practice_renderer_classes":0,"day001_scene_contract_reused":true,"counter_strategy":"ATTENTION_RETURN aliased as IMPULSO_PERCEBIDO","primary_mechanic":"ASANA_OBSERVATION","secondary_mechanic":"IMPULSE_COUNT","signature_moment":"ImpulseWitness"},
+  "reuse":{"renderer_contract":"HNK_RENDERER_LAYER_V1","quest_registry":"HNK_QUEST_REGISTRY_V1","quest_library":"HNK_BUNDLED_QUEST_LIBRARY_V1","new_scene_classes":0,"new_practice_renderer_classes":0,"day001_scene_contract_reused":true,"counter_strategy":"ATTENTION_RETURN aliased as IMPULSO_PERCEBIDO","primary_mechanic":"ASANA_OBSERVATION","secondary_mechanic":"IMPULSE_COUNT","signature_moment":"ImpulseWitness"},
+  "runtime_integration":{"state":"INTEGRATED_CODE_QA_PENDING","quest_loader":"@hnk/quest-library","catalog_api":"QuestCatalog.requireDay(2)","engine":"QuestRuntime + ExperienceDirector","audio_port":"AudioRuntimePort","audio_registry":"AudioRuntimeRegistry","web_route":"/day-002","web_surface":"apps/web/app/day-002/Day002GoldenV1Web.tsx","expo_route":"/day-002","expo_surface":"apps/mobile/src/features/kether/Day002GoldenV1Mobile.tsx","generic_web_audio_renderer":"apps/web/app/_runtime/QuestAudioPhase.tsx","generic_expo_audio_renderer":"apps/mobile/src/runtime/QuestAudioPhase.tsx","structured_completion_client":"packages/supabase-client/src/day002-v1.ts","private_prose_in_structured_evidence":false},
   "server_completion":{"contract_state":"DEPLOYED_ACTIVE","project":"codex-hnk-app","rpc":"complete_codex_day_v2","registry_status":"active","migration":"20260908184234_activate_day002_audio_and_completion_v1","client_may_award_xp":false},
   "audio":{"profile_id":"HNK-KETHER-D002-AUDIO-V1","status":"published","left_carrier_hz":432,"right_carrier_hz":438,"binaural_difference_hz":6,"ritual_tone_hz":528,"render_sha256":"f2d62825612af7e79b62965dbc28d9066dfb032e71c59d2973706d329f84cf46","web_adapter":"apps/web/app/day-002/day002-audio-runtime.ts","expo_adapter":"apps/mobile/src/features/kether/day002-audio-runtime.ts","neurological_state_claim":false},
   "privacy":{"boaz_free_text":"VAULT_ONLY","soul_mirror_free_text":"VAULT_ONLY","voice_recording_optional":true,"structured_evidence_private_text":false},
   "safety":{"canon_preserved":true,"product_overlay_required":true,"absolute_immobility_enforced":false,"movement_allowed":true,"natural_breathing_required":true,"significant_discomfort_stop":true,"impulse_is_not_failure":true,"audio_autoplay":false,"audio_immediate_stop":true,"headphones_required_for_binaural_difference":true},
   "progression":{"xp":100,"server_authoritative":true,"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","migration":"20260908173643_attribute_progression_matrix_v1_kether","attribute_DIS":{"canonical_reference":true,"gain":1,"secondary_attribute":"PER","state":"FROZEN_SERVER_SIDE_FIRST_COMPLETION_ONLY","cap":20},"client_may_apply_attribute_gain":false,"vehuiah_after_first_completion":"2/5","fragment_awarded":false},
   "blockers":[],
-  "qa":{"device_runtime":"PENDING","ci_latest_run":34265450105,"ci_latest_result":"RUNNER_FAILED_BEFORE_STEPS","ci_is_release_evidence":false},
-  "proof_result":"PASS_ARCHITECTURE_REUSE__PROGRESSION_FROZEN__AUDIO_PUBLISHED__COMPLETION_ACTIVE"
+  "qa":{"code_integration":"STATIC_GATES_VERSIONED","browser_runtime":"PENDING","expo_device_runtime":"PENDING","authenticated_first_completion":"PENDING","authenticated_revisit":"PENDING","concurrency_idempotency":"PENDING","ci_latest_known_result":"RUNNER_FAILED_BEFORE_STEPS","ci_is_release_evidence":false},
+  "proof_result":"PASS_ARCHITECTURE_REUSE__PROGRESSION_FROZEN__AUDIO_PUBLISHED__COMPLETION_ACTIVE__WEB_EXPO_INTEGRATED"
 }
