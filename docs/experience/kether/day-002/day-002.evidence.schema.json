@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://hnk.local/schemas/day-002.evidence.schema.json",
+  "title":"HNK Day 002 Evidence V1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["protocol_version","source_sha","session_id","jachin","audio_528_binaural","boaz","middle","soul_mirror","voluntary_completion_confirmed"],
+  "properties":{
+    "protocol_version":{"const":"HNK-KETHER-D002-V1"},
+    "source_sha":{"const":"71019573414493ee9e5521f4d27ed744748c0d2b"},
+    "session_id":{"type":"string","minLength":1},
+    "mode":{"enum":["first_completion","revisit"]},
+    "jachin":{"type":"object","additionalProperties":false,"required":["completed","duration_seconds","return_confirmed"],"properties":{"completed":{"const":true},"duration_seconds":{"type":"integer","minimum":0},"comfort_rating":{"type":["integer","null"],"minimum":0,"maximum":10},"return_confirmed":{"const":true}}},
+    "audio_528_binaural":{"type":"object","additionalProperties":false,"required":["started","profile_id"],"properties":{"started":{"const":true},"profile_id":{"type":"string","minLength":1},"duration_seconds":{"type":["integer","null"],"minimum":0},"stopped_for_discomfort":{"type":"boolean"}},"description":"Schema reserves evidence for the future approved Day 002 audio profile. Current production mapping is blocked and must not fabricate profile_id."},
+    "boaz":{"type":"object","additionalProperties":false,"required":["completed","duration_seconds","impulse_count","first_five_minutes_reflection_completed","return_confirmed"],"properties":{"completed":{"const":true},"duration_seconds":{"type":"integer","minimum":0},"impulse_count":{"type":"integer","minimum":0},"first_five_minutes_reflection_completed":{"const":true},"comfort_rating":{"type":["integer","null"],"minimum":0,"maximum":10},"vault_entry_ref":{"type":["string","null"]},"return_confirmed":{"const":true}}},
+    "middle":{"type":"object","additionalProperties":false,"required":["completed","duration_seconds","return_confirmed"],"properties":{"completed":{"const":true},"duration_seconds":{"type":"integer","minimum":0},"comfort_rating":{"type":["integer","null"],"minimum":0,"maximum":10},"return_confirmed":{"const":true}}},
+    "phenomenology":{"type":"array","uniqueItems":true,"items":{"enum":["MOVEMENT_IMPULSES","ITCHING","CALM","AGITATION","BODY_SENSATIONS","SILENCE","NOTHING_SPECIAL","OTHER"]}},
+    "soul_mirror":{"type":"object","additionalProperties":false,"required":["completed"],"properties":{"completed":{"const":true},"difficulty_rating":{"type":["integer","null"],"minimum":0,"maximum":10},"vault_entry_ref":{"type":["string","null"]}}},
+    "attribute_progression":{"type":"object","additionalProperties":false,"required":["dis_gain_applied"],"properties":{"dis_gain_applied":{"const":false},"reason":{"const":"ATTRIBUTE_PROGRESSION_MATRIX_V1_PENDING"}}},
+    "voluntary_completion_confirmed":{"const":true},
+    "safety_stop_occurred":{"type":"boolean"}
+  }
+}
