@@ -5,6 +5,8 @@ on:
     branches:
       - main
     paths:
+      - 'apps/web/**'
+      - 'apps/mobile/**'
       - 'docs/experience/kether/day-001/**'
       - 'docs/backend-drafts/**'
       - 'packages/quest-engine/**'
@@ -13,6 +15,8 @@ on:
       - 'packages/canon-resolver/**'
       - 'packages/quest-pack/**'
       - 'packages/visual-contract/**'
+      - 'packages/supabase-client/**'
+      - 'packages/ritual-tone/**'
       - 'assets/canonical/kether/**'
       - 'assets/derived/kether/**'
       - 'supabase/**'
@@ -20,9 +24,14 @@ on:
       - 'scripts/validate-practice-contract.mjs'
       - 'scripts/validate-completion-backend-v2.mjs'
       - 'scripts/verify-day001-canon-source.mjs'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - 'turbo.json'
       - '.github/workflows/day001-golden.yml'
   pull_request:
     paths:
+      - 'apps/web/**'
+      - 'apps/mobile/**'
       - 'docs/experience/kether/day-001/**'
       - 'docs/backend-drafts/**'
       - 'packages/quest-engine/**'
@@ -31,6 +40,8 @@ on:
       - 'packages/canon-resolver/**'
       - 'packages/quest-pack/**'
       - 'packages/visual-contract/**'
+      - 'packages/supabase-client/**'
+      - 'packages/ritual-tone/**'
       - 'assets/canonical/kether/**'
       - 'assets/derived/kether/**'
       - 'supabase/**'
@@ -38,6 +49,9 @@ on:
       - 'scripts/validate-practice-contract.mjs'
       - 'scripts/validate-completion-backend-v2.mjs'
       - 'scripts/verify-day001-canon-source.mjs'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - 'turbo.json'
       - '.github/workflows/day001-golden.yml'
   workflow_dispatch:
 
@@ -46,7 +60,7 @@ permissions:
 
 jobs:
   golden-day-001:
-    name: Golden Day 001
+    name: Golden Day 001 contracts
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -57,7 +71,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Fetch canonical Day 001 source
         shell: bash
@@ -75,3 +89,48 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/validate-day001-golden.mjs
+
+  runtime-build:
+    name: Golden Day 001 runtime build
+    needs: golden-day-001
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout HNK Codex
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install workspace
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Typecheck contracts and adapters
+        run: |
+          pnpm --filter @hnk/completion-contract typecheck
+          pnpm --filter @hnk/practice-contract typecheck
+          pnpm --filter @hnk/ritual-tone typecheck
+          pnpm --filter @hnk/supabase-client typecheck
+
+      - name: Test ritual tone
+        run: pnpm --filter @hnk/ritual-tone test
+
+      - name: Typecheck active clients
+        run: |
+          pnpm --filter @hnk/web typecheck
+          pnpm --filter @hnk/mobile typecheck
+
+      - name: Build Web Golden V2
+        run: pnpm --filter @hnk/web build
+
+      - name: Build Mobile Golden V2 web export
+        run: pnpm --filter @hnk/mobile build
