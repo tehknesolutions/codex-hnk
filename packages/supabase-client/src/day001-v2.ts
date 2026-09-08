@@ -134,10 +134,15 @@ export async function sealDay001V2(
     clientCompletedAt: input.clientCompletedAt ?? new Date().toISOString(),
   });
 
+  const rpc = client.rpc.bind(client) as unknown as (
+    name: 'complete_codex_day_v2',
+    args: CompletionRpcArgsV2,
+  ) => Promise<{ data: Json; error: { message: string; code?: string } | null }>;
+
   const service = new CompletionService({
     async completeCodexDayV2(args: CompletionRpcArgsV2): Promise<CompleteDayResponseV1> {
-      const { data, error } = await client.rpc('complete_codex_day_v2', args);
-      if (error) throw error;
+      const { data, error } = await rpc('complete_codex_day_v2', args);
+      if (error) throw new Error(error.message || error.code || 'completion_rpc_failed');
       return parseDay001V2Response(data);
     },
   });
