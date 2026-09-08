@@ -5,3 +5,4 @@ export * from "./render-surface.js";
 export * from "./runtime.js";
 export * from "./registry.js";
 export * from "./catalog.js";
+export * from "./audio-runtime.js";
