@@ -8,5 +8,5 @@
     "noEmit": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts", "../../docs/experience/kether/day-001/*.json", "../../docs/experience/kether/day-002/*.json"]
+  "include": ["src/**/*.ts", "../../docs/experience/kether/day-001/*.json", "../../docs/experience/kether/day-002/*.json", "../../docs/experience/kether/day-003/*.json"]
 }
