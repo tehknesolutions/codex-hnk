@@ -1,6 +1,6 @@
 import { Redirect } from 'expo-router';
 import { AtriumGate } from '../features/auth/AtriumGate';
-import { KetherJourney } from '../features/kether/KetherJourney';
+import { AtziluthJourney } from '../features/atziluth/AtziluthJourney';
 
 const NATIVE_INTEROP_AUTORUN = process.env.EXPO_PUBLIC_HNK_NATIVE_INTEROP_AUTORUN === '1';
 
@@ -11,7 +11,7 @@ export default function HomeScreen() {
 
   return (
     <AtriumGate>
-      <KetherJourney />
+      <AtziluthJourney />
     </AtriumGate>
   );
 }
