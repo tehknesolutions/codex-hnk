@@ -1,0 +1,1 @@
+create index if not exists attribute_progression_gain_rules_day_idx on hnk_private.attribute_progression_gain_rules(day);
