@@ -1,0 +1,32 @@
+{
+  "id":"HNK-KETHER-D004-RENDERER-V1",
+  "quest_definition_id":"HNK-KETHER-D004-V1",
+  "renderer_contract":"HNK_RENDERER_LAYER_V1",
+  "default_surface":"mobile-first",
+  "phase_renderers":{
+    "NARRATIVE":"NarrativeScene",
+    "TERM_REVEAL":"TermRevealScene",
+    "READ":"CanonReadingScene",
+    "EXPERIMENT":"BehavioralExperimentScene",
+    "FOCUS":"FocusPracticeScene",
+    "AUDIO":"AudioPracticeScene",
+    "RETURN":"ReturnGateScene",
+    "INSTRUCTION":"InstructionScene",
+    "JOURNAL":"VaultJournalScene",
+    "STRUCTURED_JOURNAL":"SoulMirrorScene",
+    "CORRESPONDENCE_REVEAL":"CorrespondenceScene",
+    "COMPLETION":"CompletionBoundaryScene",
+    "UNLOCK":"UnlockScene"
+  },
+  "policies":{
+    "completion":{"client_may_award_xp":false,"requires_server_confirmation":true},
+    "experiment":{"before_after_required":true,"self_report_is_observation_not_causal_proof":true,"no_noticeable_change_is_valid":true,"free_text":"VAULT_ONLY","medical_claims_disallowed":true,"metaphysical_causality_not_inferred":true},
+    "audio":{"profile_id":"HNK-THETA432-BINAURAL-V1","neurological_state_claim":false,"autoplay":false},
+    "focus":{"thought_suppression_not_required_by_product_layer":true,"notice_label_return_supported":true},
+    "privacy":{"free_text":"VAULT_ONLY","voice_recording_optional":true,"analytics_private_text":false},
+    "safety":{"voluntary_control_required":true,"stop_control_required":true,"subjective_effect_required":false},
+    "accessibility":{"reduced_motion_required":true}
+  },
+  "signature_moments":{"placebo_baseline":"ParadigmLensBefore","swish_experiment":"ParadigmLensAfter","soul_mirror":"SoulMirrorReveal","vehuiah_progress":"VehuiahFourthMark"},
+  "scalability_assertion":{"new_scene_classes":["BehavioralExperimentScene"],"new_scene_is_generic":true,"day_specific_engine_branch_required":false,"reuses_audio_runtime_port":true,"reuses_quest_catalog":true}
+}
