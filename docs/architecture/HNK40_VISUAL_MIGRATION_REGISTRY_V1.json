@@ -2,6 +2,19 @@
   "document_id": "HNK40-VISUAL-MIGRATION-REGISTRY-V1",
   "date": "2026-09-08",
   "status": "VISUAL_SOURCE_BLOCKED",
+  "recovery_state": "REMOTE_CONNECTED_SOURCE_ARCHAEOLOGY_EXHAUSTED",
+  "archaeology": {
+    "document": "docs/architecture/HNK40_SOURCE_ARCHAEOLOGY_V1.json",
+    "human_report": "docs/architecture/HNK40_SOURCE_ARCHAEOLOGY_V1.md",
+    "classification": "LEGACY_RUNTIME_MISSING_BUT_EXISTENCE_PROVEN",
+    "remote_connected_sources_exhausted": true,
+    "remaining_recovery_classes": [
+      "private_repository_access",
+      "local_backup_or_download",
+      "expired_ci_or_chat_artifact",
+      "external_source_archive"
+    ]
+  },
   "structural_namespace": {
     "glyph_ids": "G01-G40",
     "root_count": 40,
@@ -54,5 +67,10 @@
     "hnk-input.mjs",
     "HenuvokodanSimpleAlpha-Regular"
   ],
+  "explicit_exclusions": [
+    "old 12-token HENUVOKODAN PUA mappings",
+    "HENUVOKODAN PACK-00 elemental/game sigils"
+  ],
+  "next_state": "VISUAL_RECONSTITUTION_DECISION_GATE",
   "non_invention_rule": "No Unicode/PUA character, font glyph, SVG, path or drawn symbol may be labeled the official HNK40 visual glyph until its 1:1 binding to the current G01-G40 registry is evidenced and promoted."
 }
