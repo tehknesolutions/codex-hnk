@@ -31,6 +31,22 @@
           "microphonePermission": "Permitir que o HNK Codex use o microfone somente quando você iniciar uma prática de áudio, como o Acoustic Lab.",
           "enableBackgroundRecording": false
         }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir que o HNK Codex use a câmera somente quando você iniciar a experiência AR do Dia 025.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "@reactvision/react-viro",
+        {
+          "android": {
+            "xRMode": "AR"
+          }
+        }
       ]
     ],
     "experiments": {
