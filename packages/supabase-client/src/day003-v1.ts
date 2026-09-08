@@ -73,6 +73,22 @@ export async function startDay003PracticeSessionV1(
   return data;
 }
 
+export async function loadDay003PracticeSessionV1(client: HnkSupabaseClient, sessionId: string) {
+  if (!sessionId.trim()) throw new Error('practice_session_id_required');
+  const { data: authData, error: authError } = await client.auth.getUser();
+  if (authError) throw authError;
+  if (!authData.user?.id) throw new Error('authentication_required');
+
+  const { data, error } = await client.from('practice_sessions')
+    .select('id,user_id,day,client_session_id,mode,state,started_at,ended_at,duration_seconds,metrics,evidence')
+    .eq('id', sessionId)
+    .eq('user_id', authData.user.id)
+    .eq('day', 3)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
+}
+
 export async function sealDay003V1(client: HnkSupabaseClient, input: SealDay003V1Input): Promise<CompletionResult> {
   const evidence = buildDay003EvidenceV1(input.evidence);
   const sessionId = evidence.session_id;
