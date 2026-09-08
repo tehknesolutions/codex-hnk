@@ -1,0 +1,26 @@
+{
+  "document_id": "HNK40-V2-CANDIDATE-C-HUMAN-REVIEW",
+  "date": "2026-09-08",
+  "candidate": "V2-RECONSTITUTED-C",
+  "status": "PENDING_HUMAN_40_OF_40",
+  "automated_prerequisites": {
+    "confusion_gate": "PASS",
+    "small_size_legibility": "PASS"
+  },
+  "review_dimensions": [
+    "silhouette distinction",
+    "manual handwriting feasibility",
+    "16-32px readability",
+    "family coherence across W1-W4",
+    "word-flow without punctuation-like clutter"
+  ],
+  "review_policy": "Each G01-G40 must receive explicit APPROVE or REVISE before SVG path freeze.",
+  "semantic_policy": "W1-W4 are structural family labels only; semantic world names remain pending explicit approval.",
+  "promotion_after_approval": [
+    "freeze SVG paths",
+    "cross-render identity test",
+    "renderer binding",
+    "PUA/font assignment only after freeze",
+    "explicit VISUAL-CANON promotion"
+  ]
+}
