@@ -1,0 +1,21 @@
+{
+  "id":"HNK-KETHER-D005-RENDERER-V1",
+  "quest_definition_id":"HNK-KETHER-D005-V1",
+  "scene_bindings":{
+    "NARRATIVE":"NarrativeScene",
+    "TERM_REVEAL":"TermRevealScene",
+    "READ":"CanonReadingScene",
+    "EXPERIMENT":"BehavioralExperimentScene",
+    "FOCUS":"FocusPracticeScene",
+    "INSTRUCTION":"InstructionScene",
+    "AUDIO":"AudioPracticeScene",
+    "RETURN":"ReturnGateScene",
+    "JOURNAL":"JournalScene",
+    "STRUCTURED_JOURNAL":"SoulMirrorScene",
+    "COMPLETION":"CompletionBoundaryScene",
+    "UNLOCK":"UnlockScene"
+  },
+  "day005_rules":{"camera_optional":true,"camera_fallback":"START_AUDIO_MANUALLY","empty_hand_gesture_only":true,"forced_exhalation_prohibited":true,"dai_koo_myo_asset":"HNK-KETHER-DAI-KOO-MYO-USUI-MASTER-V1","cycle_seal_event":"KETHER_FRAGMENT_LIT"},
+  "new_scene_classes_required":[],
+  "new_practice_renderers_required":[]
+}
