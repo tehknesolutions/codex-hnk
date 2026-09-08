@@ -13,9 +13,10 @@
     "validate:day002": "node scripts/validate-day002-scalability.mjs",
     "validate:audio002": "node scripts/validate-day002-audio.mjs",
     "validate:audio-runtime": "node scripts/validate-quest-audio-runtime.mjs",
+    "validate:runtime002": "node scripts/validate-day002-runtime-integration.mjs",
     "validate:catalog": "node scripts/validate-quest-catalog-scalability.mjs",
     "validate:attributes": "node scripts/validate-attribute-progression-matrix.mjs",
-    "validate:scalability": "pnpm validate:day002 && pnpm validate:audio002 && pnpm validate:audio-runtime && pnpm validate:catalog && pnpm validate:attributes",
+    "validate:scalability": "pnpm validate:day002 && pnpm validate:audio002 && pnpm validate:audio-runtime && pnpm validate:runtime002 && pnpm validate:catalog && pnpm validate:attributes",
     "check": "pnpm validate:day001 && pnpm validate:scalability && turbo run typecheck test"
   },
   "devDependencies": {"turbo": "2.10.12"}
