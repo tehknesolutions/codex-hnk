@@ -1,8 +1,8 @@
 {
   "id":"HNK-KETHER-D002-V1",
   "kind":"hnk.quest_definition",
-  "version":"1.0.0",
-  "status":"SCALABILITY_PROOF__CANON_VALID__RELEASE_BLOCKERS_EXPLICIT",
+  "version":"1.1.0",
+  "status":"SCALABILITY_PROOF__COMPLETION_CONTRACT_REVIEWED__AUDIO_PROGRESS_BLOCKED",
   "day":2,
   "title":"Asana do Louco",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-002.md","source_sha":"71019573414493ee9e5521f4d27ed744748c0d2b","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Vehuiah","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"],"correspondences":{"tarot":"O Louco","rune":"Fehu","iching":"Hexagrama 1 — O Criativo"}},
@@ -26,13 +26,12 @@
     {"id":"attribute_notice","type":"INSTRUCTION","source":{"kind":"SYSTEM"},"content_intent":["The Canon names Disciplina as an attribute outcome.","No DIS attribute gain is applied until ATTRIBUTE_PROGRESSION_MATRIX_V1 is frozen."],"attribute_effect":{"attribute":"DIS","state":"PENDING_MATRIX","gain":null},"required_for_completion":false},
     {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","voice_recording_optional":true,"voice_recording_destination":"LOCAL_ENCRYPTED_VAULT"},"required_for_completion":true},
     {"id":"correspondence_reveal","type":"CORRESPONDENCE_REVEAL","source":{"kind":"PLATFORM_EXPERIENCE"},"items":["Kether","Atziluth","Vehuiah","O Louco","Fehu","Hexagrama 1"],"required_for_completion":false},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_state":"DAY002_CONTRACT_NOT_YET_FROZEN","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D002-COMP-V1","completion_contract_state":"DEPLOYED_REVIEWED_INACTIVE_PENDING_AUDIO","client_may_award_xp":false,"required_for_completion":true},
     {"id":"vehuiah_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Vehuiah","cycle_progress":"2/5","fragment_awarded":false},"required_for_completion":false}
   ],
   "scalability_proof":{"new_phase_types":[],"reused_phase_types":["NARRATIVE","TERM_REVEAL","READ","FOCUS","AUDIO","RETURN","INSTRUCTION","JOURNAL","STRUCTURED_JOURNAL","CORRESPONDENCE_REVEAL","COMPLETION","UNLOCK"],"new_renderer_required":false,"new_practice_renderer_required":false,"counter_reuses":"ATTENTION_RETURN with BODY_IMPULSE semantics"},
   "release_blockers":[
     {"id":"AUDIO-002-BINAURAL-528","reason":"Canon says binaural 528 but does not define carrier/difference semantics; Day 001 pure 528 runtime tone must not be silently reused as equivalent."},
-    {"id":"PROGRESSION-002-DIS-MATRIX","reason":"Canon says update Disciplina, but ATTRIBUTE_PROGRESSION_MATRIX_V1 is not frozen; no attribute gain may be invented."},
-    {"id":"COMPLETION-002-CONTRACT","reason":"Day 002 server completion/evidence contract has not yet been frozen and deployed."}
+    {"id":"PROGRESSION-002-DIS-MATRIX","reason":"Canon says update Disciplina, but ATTRIBUTE_PROGRESSION_MATRIX_V1 is not frozen; no attribute gain may be invented."}
   ]
 }
