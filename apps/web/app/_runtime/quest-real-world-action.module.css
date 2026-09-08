@@ -1,0 +1,7 @@
+.panel{display:grid;gap:1rem;padding:1.25rem;border:1px solid rgba(212,175,55,.28);border-radius:24px;background:rgba(10,11,24,.84);box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.eyebrow{margin:0;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+.time{font-variant-numeric:tabular-nums;font-size:clamp(2rem,8vw,4rem);font-weight:700;letter-spacing:.06em}
+.notice{padding:.9rem 1rem;border-radius:16px;background:rgba(255,255,255,.05);line-height:1.55}
+.controls,.actions{display:flex;flex-wrap:wrap;gap:.75rem}.controls button,.actions button{min-height:44px;padding:.75rem 1rem;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;color:inherit;cursor:pointer}.controls button:disabled,.actions button:disabled{opacity:.45;cursor:not-allowed}
+.complete{background:linear-gradient(135deg,rgba(212,175,55,.28),rgba(255,255,255,.06))!important}.safety{border-color:rgba(255,190,140,.35)!important}.error{color:#ffb0a5}
+@media (prefers-reduced-motion: reduce){.panel,.controls button,.actions button{scroll-behavior:auto;transition:none!important;animation:none!important}}
