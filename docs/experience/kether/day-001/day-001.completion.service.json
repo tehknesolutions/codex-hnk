@@ -6,7 +6,16 @@
   "transport": {
     "kind": "supabase_rpc",
     "rpc": "complete_codex_day_v2",
-    "server_authoritative": true
+    "server_authoritative": true,
+    "deployment_state": "LIVE"
+  },
+  "deployment": {
+    "project": "codex-hnk-app",
+    "postgres_major": 17,
+    "migration": "20260908011647_day001_completion_contract_v2",
+    "public_rpc_security": "INVOKER",
+    "privileged_impl_schema": "hnk_private",
+    "legacy_rpc_still_enabled": true
   },
   "request": {
     "required": [
@@ -57,10 +66,21 @@
     "duplicate_completion_is_success": true,
     "duplicate_completion_must_not_replay_reward_animation": true
   },
+  "validator_hardening": {
+    "json_boolean_types_enforced": true,
+    "unknown_fields_rejected": true,
+    "private_prose_in_evidence_rejected": true,
+    "opaque_refs_only": true,
+    "session_id_match_enforced_by_completion_impl": true,
+    "voice_recording_optional": true,
+    "voice_ref_required_only_when_recorded": true
+  },
   "migration": {
-    "current_rpc": "complete_codex_day",
-    "current_limitation": "checks evidence non-empty but does not validate the versioned completion contract",
-    "strategy": "introduce complete_codex_day_v2, migrate clients, then revoke authenticated execute on legacy RPC",
+    "legacy_rpc": "complete_codex_day",
+    "legacy_limitation": "checks evidence non-empty but does not validate the versioned completion contract",
+    "v2_rpc": "complete_codex_day_v2",
+    "v2_server_state": "ACTIVE",
+    "remaining_strategy": "migrate Web and Expo clients to V2, run end-to-end replay/concurrency tests, then revoke authenticated execute on the legacy RPC",
     "legacy_rpc_must_not_remain_a_v2_bypass": true
   }
 }
