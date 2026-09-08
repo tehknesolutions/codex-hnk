@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://hnk.local/schemas/day-005.completion.schema.json",
+  "title":"HNK Day 005 Completion Contract V1",
+  "type":"object",
+  "required":["completion_contract_id","quest_definition_id","canonical_source_sha","canonical_xp","attribute_progression","cycle_seal"],
+  "properties":{
+    "completion_contract_id":{"const":"HNK-KETHER-D005-COMP-V1"},
+    "quest_definition_id":{"const":"HNK-KETHER-D005-V1"},
+    "canonical_source_sha":{"const":"eb9f078bdc7654135f83fbcdf0aa7d5d38412cff"},
+    "canonical_xp":{"const":100},
+    "attribute_progression":{"type":"object","required":["matrix_id","attribute","gain","application"],"properties":{"matrix_id":{"const":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1"},"attribute":{"const":"VNT"},"gain":{"const":1},"application":{"const":"SERVER_SIDE_FIRST_COMPLETION_ONLY"}}},
+    "cycle_seal":{"type":"object","required":["cycle","progress","fragment_id","event"],"properties":{"cycle":{"const":"Vehuiah"},"progress":{"const":"5/5"},"fragment_id":{"const":"KETHER-CROWN-FRAGMENT-I-VEHUIAH"},"event":{"const":"KETHER_FRAGMENT_LIT"}}}
+  }
+}
