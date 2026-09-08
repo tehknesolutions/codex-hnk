@@ -66,7 +66,7 @@ const expected = ['NARRATIVE','TERM_REVEAL','READ','FOCUS','AUDIO','RETURN','INS
 for (const type of expected) if (!phaseTypes.has(type)) fail(`expected reused phase type missing: ${type}`);
 if (quest.scalability_proof?.new_renderer_required !== false || quest.scalability_proof?.new_practice_renderer_required !== false) fail('Day 002 renderer reuse assertion drift');
 if ((pack.blockers ?? []).length !== 0) fail('technical blockers reappeared in Day 002 pack');
-if (pack.version !== '0.5.0') fail('runtime-integrated Quest Pack version drift');
+if (pack.version !== '0.5.1') fail('runtime-integrated Quest Pack version drift');
 if (pack.release_state !== 'WEB_EXPO_RUNTIME_INTEGRATED__DEVICE_AND_AUTHENTICATED_QA_PENDING') fail('runtime-integrated release state drift');
 if (pack.runtime_integration?.catalog_api !== 'QuestCatalog.requireDay(2)') fail('Quest Pack catalog binding drift');
 if (pack.qa?.browser_runtime !== 'PENDING' || pack.qa?.expo_device_runtime !== 'PENDING') fail('device/browser QA must remain pending until executed');
