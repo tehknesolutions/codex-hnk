@@ -5,12 +5,13 @@ import type { ExperienceDirective } from '@hnk/quest-engine';
 import type { RealWorldActionPort, RealWorldActionSnapshot } from '@hnk/real-world-action-contract';
 import styles from './quest-real-world-action.module.css';
 
-export function QuestRealWorldActionPhase({ directive, port, clientActionId, onCompletePhase, onSafetyStop }: {
+export function QuestRealWorldActionPhase({ directive, port, clientActionId, onCompletePhase, onSafetyStop, onSnapshotChange }: {
   directive: ExperienceDirective;
   port: RealWorldActionPort;
   clientActionId: string;
   onCompletePhase: (phaseId: string) => void | Promise<void>;
   onSafetyStop: (reason?: string) => void | Promise<void>;
+  onSnapshotChange?: (snapshot: RealWorldActionSnapshot) => void;
 }) {
   const contractId = directive.phase.interaction?.action_contract_id;
   if (typeof contractId !== 'string' || !contractId.trim()) throw new Error('real_world_action_contract_id_missing');
@@ -21,9 +22,13 @@ export function QuestRealWorldActionPhase({ directive, port, clientActionId, onC
 
   async function run(action: () => Promise<RealWorldActionSnapshot>): Promise<void> {
     setBusy(true); setError(null);
-    try { setSnapshot(await action()); }
-    catch (cause) { setError(cause instanceof Error ? cause.message : 'real_world_action_failed'); }
-    finally { setBusy(false); }
+    try {
+      const next = await action();
+      setSnapshot(next);
+      onSnapshotChange?.(next);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'real_world_action_failed');
+    } finally { setBusy(false); }
   }
 
   const qualified = snapshot?.state === 'qualified';
