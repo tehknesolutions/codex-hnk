@@ -12,7 +12,9 @@
     "build": "tsc --noEmit"
   },
   "dependencies": {
+    "@hnk/completion-contract": "workspace:*",
     "@hnk/database": "workspace:*",
+    "@hnk/practice-contract": "workspace:*",
     "@supabase/supabase-js": "2.112.4"
   },
   "devDependencies": {
