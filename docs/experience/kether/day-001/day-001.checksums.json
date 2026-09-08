@@ -1,7 +1,7 @@
 {
   "id": "HNK-KETHER-D001-CHECKSUMS-V1",
   "kind": "hnk.repository_integrity_index",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "algorithm": "git_blob_sha1",
   "scope": "authored Quest Pack source artifacts; runtime pack builder emits SHA-256 over payload bytes",
   "entries": [
@@ -13,10 +13,10 @@
     {"path":"day-001.editorial-reconciliation.json","sha":"a6ce7c6652669fa01af02c0a494902e38d4039c0"},
     {"path":"day-001.evidence.schema.json","sha":"56d2df21e0985f0246624899ff42a2e89b7beff5"},
     {"path":"day-001.completion.schema.json","sha":"5edd2567afd3c798605c5d2cc2227dac36175cde"},
-    {"path":"day-001.completion.service.json","sha":"2cdb443dde57967d3a5dcf0d7f57c29c278dd490"},
+    {"path":"day-001.completion.service.json","sha":"077abd3ddd915a0d91b7eaa8d22998d682c2490c"},
     {"path":"day-001.completion.rpc.request.schema.json","sha":"5ca1041e74a5db35d0c36e5a0cef28b19c42ab35"},
     {"path":"day-001.completion.rpc.response.schema.json","sha":"a290cb74bd84f4fe8f52c2dc44708dbd2b250a3b"},
-    {"path":"day-001.assets.manifest.json","sha":"761f042cca9c4bd3f1cf346fc764b1fd11fe4692"},
+    {"path":"day-001.assets.manifest.json","sha":"18d933bfe3175b55bae1408230d8f96195c5900e"},
     {"path":"day-001.audio.manifest.json","sha":"8a902d1451a2dd68f2c9037e12ce5433f3ccc4b2"},
     {"path":"day-001.safety.policy.json","sha":"ac300fea10135a8a772d7ed0efdab6a5f78078d3"},
     {"path":"day-001.episteme.manifest.json","sha":"d843dd92d425287d08700e0073fac29caa4fab8d"}
