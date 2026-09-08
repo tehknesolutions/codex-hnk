@@ -1,0 +1,20 @@
+{
+  "name": "codex-hnk",
+  "version": "0.2.0",
+  "private": true,
+  "packageManager": "pnpm@12.1.0",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "validate:day001": "node scripts/validate-day001-golden.mjs",
+    "check": "pnpm validate:day001 && turbo run typecheck test"
+  },
+  "devDependencies": {
+    "turbo": "2.10.12"
+  }
+}

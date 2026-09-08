@@ -1,0 +1,21 @@
+{
+  "name": "@hnk/supabase-client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/*.test.ts",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hnk/database": "workspace:*",
+    "@supabase/supabase-js": "2.112.4"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  }
+}

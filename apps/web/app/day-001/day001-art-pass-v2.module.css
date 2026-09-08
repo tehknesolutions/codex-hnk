@@ -1,0 +1,311 @@
+.artPass {
+  display: contents;
+}
+
+.artPass :global(main[data-hnk-theme='kether']) {
+  --hnk-art-gold-deep: #6f5524;
+  --hnk-art-gold-mid: #b89545;
+  --hnk-art-gold-light: #efd991;
+  --hnk-art-ivory: #eee3c2;
+  --hnk-art-ink: #080704;
+  --hnk-art-obsidian: #090806;
+  --hnk-art-bronze: #8a6930;
+}
+
+/* The Origin is deliberately preserved. The materiality pass begins after the threshold. */
+.artPass :global(main[data-act='revelacao'] > section),
+.artPass :global(main[data-act='jachin'] > section),
+.artPass :global(main[data-act='boaz'] > section),
+.artPass :global(main[data-act='meio'] > section),
+.artPass :global(main[data-act='selo'] > section) {
+  isolation: isolate;
+}
+
+.artPass :global(main[data-act='revelacao'] > section)::before,
+.artPass :global(main[data-act='jachin'] > section)::before,
+.artPass :global(main[data-act='boaz'] > section)::before,
+.artPass :global(main[data-act='meio'] > section)::before,
+.artPass :global(main[data-act='selo'] > section)::before {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  z-index: -1;
+  pointer-events: none;
+  border: 1px solid rgba(232, 207, 142, .07);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* REVELATION — three symbolic keys become a cabinet of instruments, not SaaS cards. */
+.artPass :global(main[data-act='revelacao'] > section) {
+  background:
+    radial-gradient(circle at 76% 38%, rgba(239, 211, 132, .10), transparent 23rem),
+    radial-gradient(circle at 76% 38%, rgba(239, 211, 132, .035) 0 1px, transparent 1.4px),
+    linear-gradient(135deg, transparent 0 58%, rgba(194, 154, 68, .035) 58% 58.15%, transparent 58.15%),
+    transparent;
+  background-size: auto, 36px 36px, auto, auto;
+}
+
+.artPass :global(main[data-act='revelacao'] > section article) {
+  border-color: rgba(231, 202, 125, .28) !important;
+  background:
+    radial-gradient(circle at 78% 44%, rgba(235, 207, 130, .08), transparent 18rem),
+    linear-gradient(145deg, rgba(228, 205, 147, .045), rgba(14, 12, 8, .20)) !important;
+  box-shadow:
+    inset 0 0 0 8px rgba(233, 205, 133, .018),
+    inset 0 0 70px rgba(222, 186, 94, .025),
+    0 44px 110px rgba(0, 0, 0, .36);
+}
+
+.artPass :global(main[data-act='revelacao'] > section article)::before {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  pointer-events: none;
+  border: 1px solid rgba(235, 208, 135, .07);
+  background:
+    linear-gradient(90deg, rgba(237, 211, 145, .12), transparent 18%) top left / 96px 1px no-repeat,
+    linear-gradient(180deg, rgba(237, 211, 145, .12), transparent 18%) top left / 1px 96px no-repeat,
+    linear-gradient(270deg, rgba(237, 211, 145, .12), transparent 18%) bottom right / 96px 1px no-repeat,
+    linear-gradient(0deg, rgba(237, 211, 145, .12), transparent 18%) bottom right / 1px 96px no-repeat;
+}
+
+.artPass :global(main[data-act='revelacao'] button) {
+  border-radius: 0 !important;
+}
+
+/* JACHIN — the manuscript becomes an illuminated dark folio. */
+.artPass :global(main[data-act='jachin'] > section) {
+  background:
+    radial-gradient(ellipse at 19% 28%, rgba(235, 209, 141, .075), transparent 33rem),
+    linear-gradient(90deg, rgba(229, 201, 126, .025), transparent 22%, transparent 78%, rgba(229, 201, 126, .018));
+}
+
+.artPass :global(main[data-act='jachin'] article) {
+  overflow: hidden;
+  border-color: rgba(229, 205, 143, .30) !important;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(255, 244, 205, .075), transparent 22rem),
+    repeating-linear-gradient(0deg, rgba(239, 218, 160, .018) 0 1px, transparent 1px 7px),
+    linear-gradient(145deg, rgba(104, 82, 39, .14), rgba(13, 11, 7, .52) 62%, rgba(53, 41, 21, .13)) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(250, 229, 170, .035),
+    inset 0 0 95px rgba(202, 159, 66, .045),
+    0 48px 130px rgba(0, 0, 0, .48) !important;
+}
+
+.artPass :global(main[data-act='jachin'] article)::after {
+  content: 'I';
+  position: absolute;
+  right: clamp(18px, 3vw, 44px);
+  top: 16px;
+  color: rgba(238, 211, 140, .055);
+  font-family: Georgia, serif;
+  font-size: clamp(92px, 13vw, 190px);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.artPass :global(main[data-act='jachin'] article h3) {
+  text-shadow: 0 1px 0 rgba(255, 242, 205, .05), 0 0 34px rgba(229, 193, 102, .06);
+}
+
+.artPass :global(main[data-act='jachin'] article p)::first-letter {
+  float: left;
+  margin: .04em .13em 0 0;
+  color: var(--hnk-art-gold-light);
+  font-family: Georgia, serif;
+  font-size: 3.7em;
+  line-height: .72;
+  text-shadow: 0 0 22px rgba(232, 199, 112, .15);
+}
+
+.artPass :global(main[data-act='jachin'] aside > div) {
+  position: relative;
+  padding: 18px 16px 18px 22px !important;
+  border-left: 0 !important;
+  background: linear-gradient(90deg, rgba(191, 149, 60, .065), transparent 82%);
+}
+
+.artPass :global(main[data-act='jachin'] aside > div)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  bottom: 5px;
+  width: 1px;
+  background: linear-gradient(transparent, rgba(236, 205, 127, .62), transparent);
+  box-shadow: 0 0 14px rgba(224, 182, 84, .18);
+}
+
+.artPass :global(main[data-act='jachin'] button),
+.artPass :global(main[data-act='jachin'] [role='button']) {
+  border-radius: 0 !important;
+}
+
+/* BOAZ — visual contraction: obsidian, verticality, blades and a stricter instrument field. */
+.artPass :global(main[data-act='boaz'] > section) {
+  background:
+    linear-gradient(90deg, rgba(116, 85, 35, .055), transparent 16%, transparent 84%, rgba(116, 85, 35, .03)),
+    radial-gradient(ellipse at 50% 36%, rgba(145, 104, 41, .045), transparent 30rem),
+    #040403;
+}
+
+.artPass :global(main[data-act='boaz'] article) {
+  border-color: rgba(154, 116, 54, .38) !important;
+  background:
+    linear-gradient(115deg, rgba(190, 145, 62, .045), transparent 29%),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(222, 180, 91, .018) 47px 48px),
+    linear-gradient(160deg, #0b0906, #050504 72%) !important;
+  box-shadow: inset 13px 0 0 rgba(143, 103, 42, .045), 0 36px 100px rgba(0,0,0,.48) !important;
+}
+
+.artPass :global(main[data-act='boaz'] textarea) {
+  border: 0 !important;
+  border-left: 1px solid rgba(215, 170, 75, .34) !important;
+  border-bottom: 1px solid rgba(215, 170, 75, .12) !important;
+  background:
+    linear-gradient(100deg, rgba(197, 150, 57, .055), transparent 62%) !important;
+  clip-path: polygon(0 0, 96% 0, 100% 12%, 100% 100%, 4% 100%, 0 88%);
+  transition: border-color .35s ease, background .35s ease, transform .35s ease;
+}
+
+.artPass :global(main[data-act='boaz'] textarea:focus) {
+  outline: none;
+  border-left-color: rgba(240, 204, 116, .76) !important;
+  background: linear-gradient(100deg, rgba(204, 157, 63, .09), transparent 68%) !important;
+  transform: translateX(3px);
+}
+
+.artPass :global(main[data-act='boaz'] button) {
+  border-radius: 0 !important;
+}
+
+/* MIDDLE — luminous instrument chamber. Force and form finally share one axis. */
+.artPass :global(main[data-act='meio'] > section) {
+  background:
+    radial-gradient(circle at 50% 31%, rgba(244, 219, 151, .09), transparent 20rem),
+    linear-gradient(90deg, transparent 49.93%, rgba(237, 208, 131, .13) 50%, transparent 50.07%),
+    radial-gradient(ellipse at 50% 70%, rgba(180, 132, 42, .045), transparent 32rem);
+}
+
+.artPass :global(main[data-act='meio'] article) {
+  border-color: rgba(237, 209, 139, .30) !important;
+  background:
+    radial-gradient(circle at 50% 0, rgba(246, 224, 163, .06), transparent 17rem),
+    linear-gradient(145deg, rgba(222, 193, 124, .045), rgba(7, 6, 4, .30)) !important;
+  box-shadow: 0 0 100px rgba(214, 171, 75, .045), inset 0 0 70px rgba(237, 210, 143, .025) !important;
+}
+
+.artPass :global(main[data-act='meio'] textarea) {
+  background: linear-gradient(180deg, rgba(239, 217, 155, .025), rgba(0,0,0,.12)) !important;
+  border-color: rgba(232, 201, 124, .19) !important;
+  box-shadow: inset 0 0 34px rgba(223, 184, 93, .018);
+}
+
+.artPass :global(main[data-act='meio'] button) {
+  border-radius: 0 !important;
+}
+
+.artPass :global(main[data-act='meio'] > section)::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: min(42vw, 520px);
+  aspect-ratio: 1;
+  left: 50%;
+  top: 18%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(237, 211, 143, .06);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 42px rgba(237, 211, 143, .012),
+    0 0 0 84px rgba(237, 211, 143, .008),
+    0 0 120px rgba(207, 160, 61, .025);
+  pointer-events: none;
+}
+
+/* PASSAGE — not a status card: a spatial memory of the first traversal. */
+.artPass :global(main[data-act='selo'] > section) {
+  min-height: calc(100vh - 84px);
+  background:
+    radial-gradient(circle at 27% 45%, rgba(245, 221, 151, .085), transparent 22rem),
+    radial-gradient(circle at 27% 45%, rgba(245, 221, 151, .03) 0 1px, transparent 1.4px),
+    linear-gradient(90deg, rgba(181, 139, 54, .025), transparent 44%, rgba(181, 139, 54, .02));
+  background-size: auto, 31px 31px, auto;
+}
+
+.artPass :global(main[data-act='selo'] > section > div:first-child) {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 40px rgba(232, 198, 108, .08));
+}
+
+.artPass :global(main[data-act='selo'] > section > div:first-child i) {
+  box-shadow: 0 0 0 6px rgba(218, 184, 99, .012), 0 0 24px rgba(218, 184, 99, .035);
+}
+
+.artPass :global(main[data-act='selo'] > section > div:first-child i:first-of-type) {
+  box-shadow:
+    0 0 0 8px rgba(238, 211, 139, .035),
+    0 0 0 22px rgba(238, 211, 139, .018),
+    0 0 70px rgba(240, 207, 122, .22) !important;
+}
+
+.artPass :global(main[data-act='selo'] strong) {
+  text-shadow: 0 0 34px rgba(237, 204, 116, .17);
+}
+
+.artPass :global(main[data-act='selo'] button) {
+  border-radius: 0 !important;
+}
+
+/* Material transitions: only after a state change, and reduced-motion remains sovereign. */
+@media (prefers-reduced-motion: no-preference) {
+  .artPass :global(main[data-act='revelacao'] article),
+  .artPass :global(main[data-act='jachin'] article),
+  .artPass :global(main[data-act='boaz'] article),
+  .artPass :global(main[data-act='meio'] article) {
+    animation: hnkMaterialEmerge .8s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  .artPass :global(main[data-act='selo'] > section > div:first-child) {
+    animation: hnkTreeArrive 1.2s cubic-bezier(.16,.84,.32,1) both;
+  }
+}
+
+@keyframes hnkMaterialEmerge {
+  from { opacity: 0; transform: translateY(12px) scale(.992); filter: blur(2px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes hnkTreeArrive {
+  from { opacity: .22; transform: scale(.94); filter: blur(4px) drop-shadow(0 0 0 rgba(0,0,0,0)); }
+  to { opacity: 1; transform: scale(1.06); filter: blur(0) drop-shadow(0 0 40px rgba(232, 198, 108, .08)); }
+}
+
+@media (max-width: 760px) {
+  .artPass :global(main[data-act='revelacao'] > section)::before,
+  .artPass :global(main[data-act='jachin'] > section)::before,
+  .artPass :global(main[data-act='boaz'] > section)::before,
+  .artPass :global(main[data-act='meio'] > section)::before,
+  .artPass :global(main[data-act='selo'] > section)::before {
+    inset: 10px;
+  }
+
+  .artPass :global(main[data-act='jachin'] article)::after {
+    font-size: 94px;
+    right: 14px;
+  }
+
+  .artPass :global(main[data-act='jachin'] article p)::first-letter {
+    font-size: 3em;
+  }
+
+  .artPass :global(main[data-act='meio'] > section)::after {
+    width: 82vw;
+    top: 24%;
+  }
+
+  .artPass :global(main[data-act='selo'] > section > div:first-child) {
+    transform: scale(1);
+  }
+}

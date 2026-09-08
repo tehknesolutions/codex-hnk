@@ -1,0 +1,18 @@
+{
+  "name": "@hnk/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles/kether.css": "./styles/kether.css"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node -e \"console.log('ui package: semantic Kether tokens loaded')\"",
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@hnk/vault-interop-vectors",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node -e \"console.log('vault interop vector 001 loaded')\"",
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  }
+}

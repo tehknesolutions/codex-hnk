@@ -1,0 +1,40 @@
+/*
+ * Kether semantic design tokens.
+ * Direction roles are frozen; concrete values remain provisional until formal token/family approval.
+ * No sacred symbol or doctrinal correspondence is encoded here.
+ */
+
+[data-hnk-theme='kether'] {
+  --hnk-kether-void: #030405;
+  --hnk-kether-surface: #07080a;
+  --hnk-kether-surface-raised: #0a0b0f;
+  --hnk-kether-text-primary: #f7f3e7;
+  --hnk-kether-text-secondary: #aaa89f;
+  --hnk-kether-text-muted: #77766f;
+  --hnk-kether-gold-material: #cbb06d;
+  --hnk-kether-gold-bright: #d4b66a;
+  --hnk-kether-origin-white: #fffdf4;
+
+  --hnk-font-sacred-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --hnk-font-editorial-body: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --hnk-font-system: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --hnk-rhythm-3: 3px;
+  --hnk-rhythm-6: 6px;
+  --hnk-rhythm-12: 12px;
+  --hnk-rhythm-24: 24px;
+  --hnk-rhythm-36: 36px;
+  --hnk-rhythm-72: 72px;
+
+  --hnk-geometry-hairline: 1px;
+  --hnk-kether-node-desktop: 72px;
+  --hnk-kether-node-mobile: 54px;
+  --hnk-kether-origin-point: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hnk-theme='kether'] {
+    --hnk-motion-continuous-enabled: 0;
+    --hnk-motion-decorative-glow-enabled: 0;
+  }
+}
