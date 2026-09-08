@@ -1,0 +1,83 @@
+.panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+  border-radius: 1rem;
+  background: color-mix(in srgb, black 82%, transparent);
+}
+
+.panel h3 {
+  margin: 0.2rem 0;
+  font-size: 1.25rem;
+}
+
+.panel code {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  overflow-wrap: anywhere;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  opacity: 0.72;
+}
+
+.notice {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  line-height: 1.55;
+}
+
+.volume {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.controls,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.controls button,
+.actions button {
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.controls button:disabled,
+.actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+}
+
+.error {
+  margin: 0;
+  color: #ffb4b4;
+}
+
+.safety {
+  opacity: 0.82;
+}
+
+.complete {
+  font-weight: 700;
+}
