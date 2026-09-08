@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hnk/assets": "workspace:*",
+    "@hnk/audio-contract": "workspace:*",
     "@hnk/supabase-client": "workspace:*",
     "@hnk/ui": "workspace:*",
     "@hnk/vault-web-crypto-lab": "workspace:*",
