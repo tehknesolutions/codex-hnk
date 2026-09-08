@@ -18,6 +18,7 @@ const mobileJourney = read('apps/mobile/src/features/kether/Day002GoldenV1Mobile
 const mobileAudioRenderer = read('apps/mobile/src/runtime/QuestAudioPhase.tsx');
 const mobileAudioRegistry = read('apps/mobile/src/runtime/quest-audio-runtime.ts');
 const day2Client = read('packages/supabase-client/src/day002-v1.ts');
+const smokeSql = read('supabase/tests/day002_completion_v1_smoke.sql');
 const quest = JSON.parse(read('docs/experience/kether/day-002/day-002.quest.json'));
 const pack = JSON.parse(read('docs/experience/kether/day-002/day-002.quest-pack.json'));
 
@@ -61,14 +62,22 @@ if (!webAudioRegistry.includes('.register(DAY002_AUDIO_PRESET_V1.id') || !mobile
 if (!day2Client.includes("'complete_codex_day_v2'")) fail('Day 002 client is not using complete_codex_day_v2');
 if (!day2Client.includes('buildDay002EvidenceV1')) fail('Day 002 client missing Evidence V1 builder');
 
+if (!smokeSql.includes("qa_day002_first_completion_failed") || !smokeSql.includes("qa_day002_revisit_reward_failed")) fail('rollback-only backend smoke assertions missing');
+if (!smokeSql.includes('rollback;')) fail('backend smoke must be rollback-only');
+
 const phaseTypes = new Set(quest.phases.map((phase) => phase.type));
 const expected = ['NARRATIVE','TERM_REVEAL','READ','FOCUS','AUDIO','RETURN','INSTRUCTION','JOURNAL','STRUCTURED_JOURNAL','CORRESPONDENCE_REVEAL','COMPLETION','UNLOCK'];
 for (const type of expected) if (!phaseTypes.has(type)) fail(`expected reused phase type missing: ${type}`);
 if (quest.scalability_proof?.new_renderer_required !== false || quest.scalability_proof?.new_practice_renderer_required !== false) fail('Day 002 renderer reuse assertion drift');
 if ((pack.blockers ?? []).length !== 0) fail('technical blockers reappeared in Day 002 pack');
-if (pack.version !== '0.5.1') fail('runtime-integrated Quest Pack version drift');
+if (pack.version !== '0.5.2') fail('runtime-integrated Quest Pack version drift');
 if (pack.release_state !== 'WEB_EXPO_RUNTIME_INTEGRATED__DEVICE_AND_AUTHENTICATED_QA_PENDING') fail('runtime-integrated release state drift');
 if (pack.runtime_integration?.catalog_api !== 'QuestCatalog.requireDay(2)') fail('Quest Pack catalog binding drift');
+if (pack.qa?.backend_transactional_smoke !== 'PASS_ROLLBACK_ONLY') fail('backend transactional smoke ledger drift');
+if (pack.qa?.authenticated_first_completion !== 'PASS_DB_TRANSACTION') fail('first completion QA ledger drift');
+if (pack.qa?.authenticated_revisit !== 'PASS_DB_TRANSACTION') fail('revisit QA ledger drift');
+if (pack.qa?.same_client_replay_idempotency !== 'PASS_DB_TRANSACTION') fail('same-client replay QA ledger drift');
+if (pack.qa?.concurrency_idempotency !== 'PARTIAL_REPLAY_PASS__TRUE_TWO_CONNECTION_TEST_PENDING') fail('concurrency QA boundary drift');
 if (pack.qa?.browser_runtime !== 'PENDING' || pack.qa?.expo_device_runtime !== 'PENDING') fail('device/browser QA must remain pending until executed');
 
-if (!process.exitCode) console.log('DAY002 RUNTIME INTEGRATION PASS: QuestCatalog + QuestRuntime + bundled Canon + generic AUDIO renderer + Web/Expo Completion V2 wiring; device/authenticated QA pending');
+if (!process.exitCode) console.log('DAY002 RUNTIME INTEGRATION PASS: QuestCatalog + QuestRuntime + bundled Canon + generic AUDIO renderer + Web/Expo Completion V2 wiring + rollback backend smoke; device/two-connection QA pending');
