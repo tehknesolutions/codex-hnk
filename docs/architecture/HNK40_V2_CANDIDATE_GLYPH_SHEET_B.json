@@ -1,0 +1,73 @@
+{
+  "document_id": "HNK40-V2-RECONSTITUTED-CANDIDATE-B",
+  "date": "2026-09-08",
+  "status": "CANDIDATE_NOT_OFFICIAL",
+  "structural_target": "G01-G40",
+  "architecture": {
+    "protoglyph_columns": 10,
+    "worlds": 4,
+    "total_glyphs": 40,
+    "world_transforms": {
+      "I": "identity + lower baseline marker",
+      "II": "rotate90 + left rail marker",
+      "III": "mirrorX + upper rail marker",
+      "IV": "rotate180 + right rail marker"
+    }
+  },
+  "quality_gate": {
+    "metric": "fixed-canvas binary Jaccard similarity",
+    "high_risk_threshold": 0.72,
+    "max_observed_similarity": 0.6537,
+    "high_risk_pair_count": 0,
+    "result": "PASS"
+  },
+  "non_invention": {
+    "lexical_semantics": "NONE",
+    "pua": "UNASSIGNED",
+    "unicode": "UNASSIGNED",
+    "font_cmap": "UNASSIGNED",
+    "legacy_identity": "NOT_CLAIMED"
+  },
+  "entries": [
+    {"glyph_id":"G01","phoneme_ipa":"/a/","world":"I","world_name":"Criação","protoglyph_column":1,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G02","phoneme_ipa":"/e/","world":"I","world_name":"Criação","protoglyph_column":2,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G03","phoneme_ipa":"/i/","world":"I","world_name":"Criação","protoglyph_column":3,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G04","phoneme_ipa":"/o/","world":"I","world_name":"Criação","protoglyph_column":4,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G05","phoneme_ipa":"/u/","world":"I","world_name":"Criação","protoglyph_column":5,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G06","phoneme_ipa":"/ə/","world":"I","world_name":"Criação","protoglyph_column":6,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G07","phoneme_ipa":"/h/","world":"I","world_name":"Criação","protoglyph_column":7,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G08","phoneme_ipa":"/ʔ/","world":"I","world_name":"Criação","protoglyph_column":8,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G09","phoneme_ipa":"/ʕ/","world":"I","world_name":"Criação","protoglyph_column":9,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G10","phoneme_ipa":"/ħ/","world":"I","world_name":"Criação","protoglyph_column":10,"world_transform":"identity","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G11","phoneme_ipa":"/m/","world":"II","world_name":"Vida","protoglyph_column":1,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G12","phoneme_ipa":"/n/","world":"II","world_name":"Vida","protoglyph_column":2,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G13","phoneme_ipa":"/ŋ/","world":"II","world_name":"Vida","protoglyph_column":3,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G14","phoneme_ipa":"/l/","world":"II","world_name":"Vida","protoglyph_column":4,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G15","phoneme_ipa":"/r/","world":"II","world_name":"Vida","protoglyph_column":5,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G16","phoneme_ipa":"/j/","world":"II","world_name":"Vida","protoglyph_column":6,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G17","phoneme_ipa":"/w/","world":"II","world_name":"Vida","protoglyph_column":7,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G18","phoneme_ipa":"/b/","world":"II","world_name":"Vida","protoglyph_column":8,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G19","phoneme_ipa":"/d/","world":"II","world_name":"Vida","protoglyph_column":9,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G20","phoneme_ipa":"/g/","world":"II","world_name":"Vida","protoglyph_column":10,"world_transform":"rotate90","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G21","phoneme_ipa":"/p/","world":"III","world_name":"Ação","protoglyph_column":1,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G22","phoneme_ipa":"/t/","world":"III","world_name":"Ação","protoglyph_column":2,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G23","phoneme_ipa":"/k/","world":"III","world_name":"Ação","protoglyph_column":3,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G24","phoneme_ipa":"/q/","world":"III","world_name":"Ação","protoglyph_column":4,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G25","phoneme_ipa":"/f/","world":"III","world_name":"Ação","protoglyph_column":5,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G26","phoneme_ipa":"/s/","world":"III","world_name":"Ação","protoglyph_column":6,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G27","phoneme_ipa":"/ʃ/","world":"III","world_name":"Ação","protoglyph_column":7,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G28","phoneme_ipa":"/x/","world":"III","world_name":"Ação","protoglyph_column":8,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G29","phoneme_ipa":"/θ/","world":"III","world_name":"Ação","protoglyph_column":9,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G30","phoneme_ipa":"/ts/","world":"III","world_name":"Ação","protoglyph_column":10,"world_transform":"mirrorX","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G31","phoneme_ipa":"/v/","world":"IV","world_name":"Consciência","protoglyph_column":1,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G32","phoneme_ipa":"/z/","world":"IV","world_name":"Consciência","protoglyph_column":2,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G33","phoneme_ipa":"/ʒ/","world":"IV","world_name":"Consciência","protoglyph_column":3,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G34","phoneme_ipa":"/ð/","world":"IV","world_name":"Consciência","protoglyph_column":4,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G35","phoneme_ipa":"/tʃ/","world":"IV","world_name":"Consciência","protoglyph_column":5,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G36","phoneme_ipa":"/dʒ/","world":"IV","world_name":"Consciência","protoglyph_column":6,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G37","phoneme_ipa":"/sˤ/","world":"IV","world_name":"Consciência","protoglyph_column":7,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G38","phoneme_ipa":"/tˤ/","world":"IV","world_name":"Consciência","protoglyph_column":8,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G39","phoneme_ipa":"/ɣ/","world":"IV","world_name":"Consciência","protoglyph_column":9,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"},
+    {"glyph_id":"G40","phoneme_ipa":"/y/","world":"IV","world_name":"Consciência","protoglyph_column":10,"world_transform":"rotate180","visual_status":"CANDIDATE_B_NOT_OFFICIAL"}
+  ]
+}
