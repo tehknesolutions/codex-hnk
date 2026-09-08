@@ -1,12 +1,12 @@
 {
   "id": "HNK-KETHER-D001-PACK-V1",
   "kind": "hnk.quest_pack",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "day": 1,
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
   "canonical_source_sha": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29",
-  "integrity_state": "PASS_CONTRACTS",
+  "integrity_state": "PASS_CONTRACTS_RUNTIME_INTEGRATED",
   "release_state": "BLOCKED",
   "offline": {
     "practice_capable": true,
@@ -79,10 +79,15 @@
     "needs_derivative_or_visual_review": 0
   },
   "runtime_integration": {
-    "state": "SHELL_MIGRATION_PENDING",
+    "state": "ACTIVE_GOLDEN_V2",
     "visual_adapter_bindings": 7,
-    "completion_rpc_client_cutover": "PENDING",
-    "apps_present_in_consolidation_repo": false
+    "completion_rpc_client_cutover": "COMPLETE_WEB_EXPO_V2",
+    "apps_present_in_consolidation_repo": true,
+    "web_entry": "apps/web/app/day-001/page.tsx -> Day001GoldenV2Web",
+    "mobile_entry": "apps/mobile/src/features/kether/Day001LiveVerticalSlice.tsx -> Day001GoldenV2Mobile",
+    "completion_adapter": "packages/supabase-client/src/day001-v2.ts",
+    "runtime_gate": "scripts/validate-day001-runtime-integration.mjs",
+    "ritual_tone_528": "RUNTIME_SYNTHESIS_ACTIVE_WEB_EXPO"
   },
   "editorial_reconciliation": {
     "state": "PARTIAL_CANON_WRITE_PENDING",
@@ -92,12 +97,14 @@
   },
   "blockers": [
     {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"A 26-word canonical amendment is prepared, but the source-of-truth repository still carries mandatory recording and extra-XP wording."},
-    {"id":"AUDIO-001-THETA-432","scope":"DAY001_AUDIO","reason":"Exact Theta/432 binaural mapping is not canonically defined."},
-    {"id":"RUNTIME-001-SHELL-INTEGRATION","scope":"WEB_EXPO_RUNTIME","reason":"The headless runtime, assets, visual adapter contract and live Completion V2 backend are ready, but the official Web/Expo shell has not yet been consolidated into this repository."}
+    {"id":"AUDIO-001-THETA-432","scope":"DAY001_AUDIO","reason":"Exact Theta/432 binaural mapping is not canonically defined."}
+  ],
+  "resolved_blockers": [
+    {"id":"RUNTIME-001-SHELL-INTEGRATION","resolved_by":"Web/Expo Golden V2 shells are present in the consolidation repo, active entrypoints use Evidence/Completion V2, and the 528 Hz runtime operator is wired without enabling pending Theta/432."}
   ],
   "ci": {
     "workflow": ".github/workflows/day001-golden.yml",
     "current_state": "INFRASTRUCTURE_BLOCKED_NO_RUNNER",
-    "note": "Repeated GitHub Actions runs have ended before any step with runner_id=0; no validator result is inferred from this infrastructure failure."
+    "note": "GitHub Actions run 51 on 2026-09-08 ended before any step; the contracts job exposed no steps/log blob and the dependent runtime-build job was skipped. No typecheck/build result is inferred from this infrastructure failure. Static runtime integration is guarded by scripts/validate-day001-runtime-integration.mjs."
   }
 }
