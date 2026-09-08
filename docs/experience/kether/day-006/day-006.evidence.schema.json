@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://hnk.local/schemas/day-006.evidence.schema.json",
+  "title":"HNK Day 006 Evidence V1",
+  "type":"object","additionalProperties":false,
+  "required":["protocol_version","source_sha","session_id","jachin","boaz","middle","soul_mirror","voluntary_completion_confirmed"],
+  "properties":{
+    "protocol_version":{"const":"HNK-KETHER-D006-V1"},
+    "source_sha":{"const":"923c43ae0a68d63a4c88f67d83076b72e0b06c39"},
+    "session_id":{"type":"string","minLength":1},
+    "mode":{"enum":["first_completion","revisit"]},
+    "jachin":{"type":"object","additionalProperties":false,"required":["listening_completed","duration_seconds","sounds_noted_count","return_confirmed"],"properties":{"listening_completed":{"const":true},"duration_seconds":{"type":"integer","minimum":0},"sounds_noted_count":{"type":"integer","minimum":0},"distractions_noted":{"type":"integer","minimum":0},"return_confirmed":{"const":true}}},
+    "boaz":{"type":"object","additionalProperties":false,"required":["silence_practice_completed","duration_seconds","thought_returns","difficulties_recorded_count","return_confirmed"],"properties":{"silence_practice_completed":{"const":true},"duration_seconds":{"type":"integer","minimum":0},"thought_returns":{"type":"integer","minimum":0},"difficulties_recorded_count":{"type":"integer","minimum":3},"difficulties_vault_entry_ref":{"type":["string","null"]},"return_confirmed":{"const":true}}},
+    "middle":{"type":"object","additionalProperties":false,"required":["voice_practice_completed","voice_recorded","return_confirmed"],"properties":{"voice_practice_completed":{"const":true},"voice_recorded":{"type":"boolean"},"encrypted_voice_ref":{"type":["string","null"]},"return_confirmed":{"const":true}},"allOf":[{"if":{"properties":{"voice_recorded":{"const":true}}},"then":{"required":["encrypted_voice_ref"]}}]},
+    "phenomenology":{"type":"array","uniqueItems":true,"items":{"enum":["MANY_THOUGHTS","CALM","AGITATION","SOUNDS_CLEAR","SILENCE","BODY_SENSATIONS","NO_NOTICEABLE_CHANGE","OTHER"]}},
+    "soul_mirror":{"type":"object","additionalProperties":false,"required":["completed"],"properties":{"completed":{"const":true},"difficulty_rating":{"type":["integer","null"],"minimum":0,"maximum":10},"vault_entry_ref":{"type":["string","null"]}}},
+    "voluntary_completion_confirmed":{"const":true},
+    "safety_stop_occurred":{"type":"boolean"}
+  }
+}
