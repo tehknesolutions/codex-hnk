@@ -1,6 +1,7 @@
+-- Applied Supabase migration: 20260908214958_extend_atziluth_progression_v3
 -- HNK Atziluth progression hardening: Kether 001-036, Chokmah 037-073,
--- Binah 074-109. This migration preserves server authority over XP/grade and
--- closes the sequence gap that previously existed after Day 036.
+-- Binah 074-109. Preserves server authority over XP/grade and closes the
+-- sequence gap that previously existed after Day 036.
 
 alter table public.practice_sessions
   drop constraint if exists practice_sessions_mode_check;
@@ -75,8 +76,6 @@ begin
   end if;
 
   if not v_existing then
-    -- Portal gates are stronger than a simple previous-Day check. They also
-    -- protect accounts whose historical completion rows may be incomplete.
     if p_day = 36 then
       select count(*)::integer into v_prior_count
       from public.day_completions

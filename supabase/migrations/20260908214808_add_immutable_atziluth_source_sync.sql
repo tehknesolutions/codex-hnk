@@ -1,29 +1,50 @@
-create or replace function hnk_private.atziluth_canon_source_path(p_day integer)
+-- Applied Supabase migration: 20260908214808_add_immutable_atziluth_source_sync
+-- Immutable Atziluth sync with an explicit allowlist of canonical sources.
+-- Historical canon remains in Tehkne-Solutions/hnk-codex-365; successor canon
+-- is versioned in tehknesolutions/codex-hnk under content/canon/atziluth/.
+
+create or replace function hnk_private.atziluth_source_path(
+  p_day integer,
+  p_source_kind text
+)
 returns text
 language plpgsql
 immutable
 set search_path = ''
 as $$
 begin
-  if p_day between 1 and 36 then
-    return format('canon/capitulo-01-kether/dia-%s.md', lpad(p_day::text, 3, '0'));
-  elsif p_day between 37 and 73 then
-    return format('canon/capitulo-02-chokmah/dia-%s.md', lpad(p_day::text, 3, '0'));
-  elsif p_day between 74 and 109 then
-    return format('canon/capitulo-03-binah/dia-%s.md', lpad(p_day::text, 3, '0'));
+  if p_source_kind = 'historical' then
+    if p_day between 1 and 36 then
+      return format('canon/capitulo-01-kether/dia-%s.md', lpad(p_day::text, 3, '0'));
+    elsif p_day between 37 and 73 then
+      return format('canon/capitulo-02-chokmah/dia-%s.md', lpad(p_day::text, 3, '0'));
+    elsif p_day between 74 and 109 then
+      return format('canon/capitulo-03-binah/dia-%s.md', lpad(p_day::text, 3, '0'));
+    end if;
+  elsif p_source_kind = 'successor' then
+    if p_day between 1 and 36 then
+      return format('content/canon/atziluth/kether/dia-%s.md', lpad(p_day::text, 3, '0'));
+    elsif p_day between 37 and 73 then
+      return format('content/canon/atziluth/chokmah/dia-%s.md', lpad(p_day::text, 3, '0'));
+    elsif p_day between 74 and 109 then
+      return format('content/canon/atziluth/binah/dia-%s.md', lpad(p_day::text, 3, '0'));
+    end if;
+  else
+    raise exception 'invalid_source_kind';
   end if;
 
   raise exception 'atziluth_day_out_of_range';
 end;
 $$;
 
-revoke all on function hnk_private.atziluth_canon_source_path(integer)
+revoke all on function hnk_private.atziluth_source_path(integer, text)
 from public, anon, authenticated;
 
-create or replace function hnk_private.sync_codex_range(
+create or replace function hnk_private.sync_atziluth_codex_range(
   p_start_day integer,
   p_end_day integer,
-  p_source_commit_sha text
+  p_source_commit_sha text,
+  p_source_kind text
 )
 returns table(imported_day smallint, blob_sha text)
 language plpgsql
@@ -32,6 +53,7 @@ set search_path = ''
 as $$
 declare
   i integer;
+  v_repo text;
   v_url text;
   v_source_path text;
   v_http_status integer;
@@ -60,20 +82,27 @@ begin
     raise exception 'invalid_source_commit_sha';
   end if;
 
+  if p_source_kind = 'historical' then
+    v_repo := 'Tehkne-Solutions/hnk-codex-365';
+  elsif p_source_kind = 'successor' then
+    v_repo := 'tehknesolutions/codex-hnk';
+  else
+    raise exception 'invalid_source_kind';
+  end if;
+
   insert into public.codex_import_runs(id, source_sha, days_imported, status)
   values (v_import_id, p_source_commit_sha, 0, 'started');
 
   for i in p_start_day..p_end_day loop
-    v_source_path := hnk_private.atziluth_canon_source_path(i);
-    -- Critical provenance rule: fetch the immutable commit, never moving `main`.
-    v_url := 'https://raw.githubusercontent.com/Tehkne-Solutions/hnk-codex-365/' || p_source_commit_sha || '/' || v_source_path;
+    v_source_path := hnk_private.atziluth_source_path(i, p_source_kind);
+    v_url := 'https://raw.githubusercontent.com/' || v_repo || '/' || p_source_commit_sha || '/' || v_source_path;
 
     select h.status, h.content
       into v_http_status, v_content
       from extensions.http_get(v_url) h;
 
     if v_http_status <> 200 or v_content is null then
-      raise exception 'Failed to fetch day % from canonical commit %: HTTP %', i, p_source_commit_sha, v_http_status;
+      raise exception 'Failed to fetch day % from % commit %: HTTP %', i, p_source_kind, p_source_commit_sha, v_http_status;
     end if;
 
     v_frontmatter := split_part(v_content, '---', 2);
@@ -101,10 +130,18 @@ begin
       raise exception 'Missing required canonical metadata on day %', i;
     end if;
 
+    if v_world <> 'Atziluth' then
+      raise exception 'Atziluth world mismatch on day %: %', i, v_world;
+    end if;
+
     if (i between 1 and 36 and (v_chapter <> 1 or v_sephira <> 'Kether'))
        or (i between 37 and 73 and (v_chapter <> 2 or v_sephira <> 'Chokmah'))
        or (i between 74 and 109 and (v_chapter <> 3 or v_sephira <> 'Binah')) then
       raise exception 'Atziluth chapter/sephira mismatch on day %: chapter %, sephira %', i, v_chapter, v_sephira;
+    end if;
+
+    if v_source_status <> 'canon' then
+      raise exception 'Source day % is not canon: status %', i, v_source_status;
     end if;
 
     v_blob_sha := encode(
@@ -131,6 +168,8 @@ begin
         'frontmatter', v_frontmatter,
         'heading', v_heading,
         'source_url', v_url,
+        'source_repository', v_repo,
+        'source_kind', p_source_kind,
         'source_commit_sha', p_source_commit_sha
       ),
       now()
@@ -165,13 +204,52 @@ begin
   update public.codex_import_runs
     set status = 'success', finished_at = now()
     where id = v_import_id;
-exception
-  when others then
-    update public.codex_import_runs
-      set status = 'failed', error_message = sqlerrm, finished_at = now()
-      where id = v_import_id;
-    raise;
 end;
 $$;
 
-revoke all on function hnk_private.sync_codex_range(integer, integer, text) from public, anon, authenticated;
+revoke all on function hnk_private.sync_atziluth_codex_range(integer, integer, text, text)
+from public, anon, authenticated;
+
+create or replace function hnk_private.sync_codex_range(
+  p_start_day integer,
+  p_end_day integer,
+  p_source_commit_sha text
+)
+returns table(imported_day smallint, blob_sha text)
+language sql
+security invoker
+set search_path = ''
+as $$
+  select *
+  from hnk_private.sync_atziluth_codex_range(
+    p_start_day,
+    p_end_day,
+    p_source_commit_sha,
+    'historical'
+  );
+$$;
+
+revoke all on function hnk_private.sync_codex_range(integer, integer, text)
+from public, anon, authenticated;
+
+create or replace function hnk_private.sync_codex_successor_range(
+  p_start_day integer,
+  p_end_day integer,
+  p_source_commit_sha text
+)
+returns table(imported_day smallint, blob_sha text)
+language sql
+security invoker
+set search_path = ''
+as $$
+  select *
+  from hnk_private.sync_atziluth_codex_range(
+    p_start_day,
+    p_end_day,
+    p_source_commit_sha,
+    'successor'
+  );
+$$;
+
+revoke all on function hnk_private.sync_codex_successor_range(integer, integer, text)
+from public, anon, authenticated;
