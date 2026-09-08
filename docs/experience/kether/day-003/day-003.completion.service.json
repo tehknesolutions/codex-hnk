@@ -4,15 +4,9 @@
   "completion_contract_id":"HNK-KETHER-D003-COMP-V1",
   "canonical_source_sha":"3cb60ed208c24ee885cbe95d974c7468419120aa",
   "canonical_xp":100,
-  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"REVIEWED_NOT_ACTIVE"},
-  "deferred_action":{
-    "action_contract_id":"HNK-KETHER-D003-BOAZ-24H-V1",
-    "target_elapsed_seconds":86400,
-    "server_clock_authoritative":true,
-    "qualification_rpc":"refresh_real_world_action_v1",
-    "restart_rpc":"restart_real_world_action_v1",
-    "stop_rpc":"stop_real_world_action_v1"
-  },
-  "deployment":{"project":"codex-hnk-app","migration":"20260908204001_day003_real_world_action_contract_v1_reviewed","registry_status":"reviewed","validator_key":"day003_v1"},
-  "activation_gate":"WEB_EXPO_REAL_WORLD_ACTION_ADAPTER_AND_DAY003_RUNTIME_QA"
+  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"LIVE"},
+  "deferred_action":{"action_contract_id":"HNK-KETHER-D003-BOAZ-24H-V1","target_elapsed_seconds":86400,"server_clock_authoritative":true,"qualification_rpc":"refresh_real_world_action_v1","restart_rpc":"restart_real_world_action_v1","stop_rpc":"stop_real_world_action_v1"},
+  "deployment":{"project":"codex-hnk-app","reviewed_migration":"20260908204001_day003_real_world_action_contract_v1_reviewed","activation_migration":"20260908215043_activate_day003_completion_and_generic_validator_dispatch","registry_status":"active","validator_key":"day003_v1","dispatcher":"hnk_private.validate_completion_contract_v2"},
+  "qa":{"transactional_smoke":"PASS_ROLLBACK_ONLY","first_completion_xp":100,"revisit_xp":0,"attribute_events":0,"same_client_replay_stable":true},
+  "activation_gate":null
 }
