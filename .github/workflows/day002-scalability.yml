@@ -6,22 +6,32 @@ on:
       - main
     paths:
       - 'docs/experience/kether/day-002/**'
+      - 'docs/progression/**'
+      - 'docs/architecture/HNK_ATTRIBUTE_PROGRESSION_MATRIX_V1.md'
       - 'packages/quest-engine/**'
       - 'packages/completion-contract/**'
+      - 'packages/progression/**'
       - 'supabase/migrations/*day002*'
+      - 'supabase/migrations/*attribute_progression*'
       - 'scripts/validate-day002-scalability.mjs'
       - 'scripts/validate-quest-catalog-scalability.mjs'
+      - 'scripts/validate-attribute-progression-matrix.mjs'
       - 'scripts/verify-day002-canon-source.mjs'
       - 'package.json'
       - '.github/workflows/day002-scalability.yml'
   pull_request:
     paths:
       - 'docs/experience/kether/day-002/**'
+      - 'docs/progression/**'
+      - 'docs/architecture/HNK_ATTRIBUTE_PROGRESSION_MATRIX_V1.md'
       - 'packages/quest-engine/**'
       - 'packages/completion-contract/**'
+      - 'packages/progression/**'
       - 'supabase/migrations/*day002*'
+      - 'supabase/migrations/*attribute_progression*'
       - 'scripts/validate-day002-scalability.mjs'
       - 'scripts/validate-quest-catalog-scalability.mjs'
+      - 'scripts/validate-attribute-progression-matrix.mjs'
       - 'scripts/verify-day002-canon-source.mjs'
       - 'package.json'
       - '.github/workflows/day002-scalability.yml'
@@ -54,9 +64,11 @@ jobs:
         run: node scripts/validate-day002-scalability.mjs
       - name: Validate multi-day Quest Catalog
         run: node scripts/validate-quest-catalog-scalability.mjs
+      - name: Validate Attribute Progression Matrix V1
+        run: node scripts/validate-attribute-progression-matrix.mjs
 
   engine-typecheck:
-    name: Generic Quest Engine typecheck
+    name: Generic engine and progression typecheck
     needs: scalability-contracts
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -72,3 +84,4 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm --filter @hnk/quest-engine typecheck
       - run: pnpm --filter @hnk/completion-contract typecheck
+      - run: pnpm --filter @hnk/progression typecheck
