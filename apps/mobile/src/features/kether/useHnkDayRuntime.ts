@@ -39,13 +39,7 @@ function remoteSafeEvidence(evidence: SafeEvidence): RemoteSafeRecord {
 }
 
 export interface SealDayInput {
-  /** Runtime evidence used for local contract validation. */
   evidence?: SafeEvidence;
-  /**
-   * Optional privacy-safe projection sent to Practice Record storage when the
-   * runtime contract contains categorical strings. This must remain strictly
-   * number/boolean/null; free text still belongs in the encrypted Vault.
-   */
   remoteEvidence?: RemoteSafeRecord;
   metrics?: RemoteSafeRecord;
   durationSeconds?: number | null;
@@ -162,35 +156,45 @@ export function useHnkDayRuntime(definition: DayDefinition) {
     setRuntime((current) => current ? mergeEvidence(confirmReturn(current), { return_confirmed: true }) : current);
   }, []);
 
-  const interrupt = useCallback(() => {
-    setRuntime((current) => current ? interruptDayRuntime(current) : current);
-  }, []);
-
-  const interruptPersisted = useCallback(async (input: InterruptDayInput = {}) => {
-    // Safety/agency is local-first: the attempt stops immediately even if the
-    // network is unavailable. Server persistence is best-effort but explicit.
-    setRuntime((current) => current ? interruptDayRuntime(current) : current);
-
+  const persistInterruption = useCallback(async (input: InterruptDayInput = {}) => {
     if (!practice) return null;
     if (!auth.client || auth.phase !== 'signed-in') return null;
 
+    const session = await interruptPracticeSession(auth.client, {
+      sessionId: practice.id,
+      durationSeconds: input.durationSeconds ?? null,
+      metrics: input.metrics ?? {},
+      evidence: input.evidence ?? {},
+      endedAt: new Date().toISOString(),
+      localRecordHash: input.localRecordHash ?? null,
+    });
+    setPractice(session);
+    return session;
+  }, [auth.client, auth.phase, practice]);
+
+  /**
+   * Default safety/agency stop. It is deliberately local-first: the runtime
+   * becomes interrupted immediately. When online, server persistence follows
+   * best-effort and never blocks the user's ability to stop.
+   */
+  const interrupt = useCallback((input: InterruptDayInput = {}) => {
+    setRuntime((current) => current ? interruptDayRuntime(current) : current);
+    void persistInterruption(input).catch((cause) => {
+      setError(cause instanceof Error ? cause.message : 'practice_interrupt_persist_failed');
+    });
+  }, [persistInterruption]);
+
+  /** Awaitable variant for flows that need to know server persistence finished. */
+  const interruptPersisted = useCallback(async (input: InterruptDayInput = {}) => {
+    setRuntime((current) => current ? interruptDayRuntime(current) : current);
     setError(null);
     try {
-      const session = await interruptPracticeSession(auth.client, {
-        sessionId: practice.id,
-        durationSeconds: input.durationSeconds ?? null,
-        metrics: input.metrics ?? {},
-        evidence: input.evidence ?? {},
-        endedAt: new Date().toISOString(),
-        localRecordHash: input.localRecordHash ?? null,
-      });
-      setPractice(session);
-      return session;
+      return await persistInterruption(input);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'practice_interrupt_persist_failed');
       throw cause;
     }
-  }, [auth.client, auth.phase, practice]);
+  }, [persistInterruption]);
 
   const seal = useCallback(async (input: SealDayInput = {}) => {
     if (!runtime || !practice) throw new Error('practice_session_required');
