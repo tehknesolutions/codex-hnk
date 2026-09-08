@@ -1,0 +1,9 @@
+{
+  "document_id":"HNK40-V2-CANDIDATE-D-CHOICE-GATE",
+  "date":"2026-09-08",
+  "candidate_c":{"max_similarity":0.578,"high_pairs":0,"medium_pairs":0,"small_size_legibility":"PASS","design_character":"family rotation/mirror"},
+  "candidate_d":{"max_similarity":0.549,"high_pairs":0,"medium_pairs":0,"small_size_legibility":"PASS","design_character":"common upright writing axis"},
+  "decision_gate":"HUMAN_CHOICE_C_VS_D",
+  "recommendation":"D for continuous-script flow; C remains retained as alternate branch.",
+  "promotion":"NO_VISUAL_CANON_PROMOTION_UNTIL_EXPLICIT_HUMAN_APPROVAL"
+}
