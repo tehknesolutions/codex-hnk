@@ -2,11 +2,7 @@ import type { QuestDefinition, QuestRunState, SessionSnapshot } from "./types.js
 import { ExperienceDirector } from "./experience-director.js";
 
 function isCheckpoint(definition: QuestDefinition, phaseId: string): boolean {
-  return Boolean(
-    definition.runtime.checkpoint_states?.some(
-      (checkpointId) => checkpointId.toLowerCase() === phaseId.toLowerCase(),
-    ),
-  );
+  return Boolean(definition.runtime.checkpoint_states?.some((checkpointId) => checkpointId.toLowerCase() === phaseId.toLowerCase()));
 }
 
 export class QuestRuntime {
@@ -27,22 +23,39 @@ export class QuestRuntime {
     return this.snapshot();
   }
 
+  restore(snapshot: SessionSnapshot): SessionSnapshot {
+    const validStates: QuestRunState[] = ["IDLE","ACTIVE","PAUSED","INTERRUPTED","SAFETY_STOP","EVIDENCE_PENDING","COMPLETE"];
+    if (!validStates.includes(snapshot.runState)) throw new Error('quest_restore_invalid_state');
+
+    const phaseIds = new Set(this.definition.phases.map((phase) => phase.id));
+    for (const phaseId of snapshot.completedPhaseIds) {
+      if (!phaseIds.has(phaseId)) throw new Error(`quest_restore_unknown_completed_phase:${phaseId}`);
+    }
+    if (snapshot.currentPhaseId && !phaseIds.has(snapshot.currentPhaseId)) throw new Error(`quest_restore_unknown_current_phase:${snapshot.currentPhaseId}`);
+    if (snapshot.checkpointPhaseId && !phaseIds.has(snapshot.checkpointPhaseId)) throw new Error(`quest_restore_unknown_checkpoint:${snapshot.checkpointPhaseId}`);
+
+    this.completed.clear();
+    for (const phaseId of snapshot.completedPhaseIds) this.completed.add(phaseId);
+    this.state = snapshot.runState;
+    this.currentPhaseId = snapshot.currentPhaseId;
+    this.checkpointPhaseId = snapshot.checkpointPhaseId;
+
+    if (this.state === 'EVIDENCE_PENDING' && this.currentPhaseId) {
+      const phase = this.director.getPhase(this.currentPhaseId);
+      if (phase.type !== 'COMPLETION') throw new Error('quest_restore_evidence_pending_without_completion_phase');
+    }
+    return this.snapshot();
+  }
+
   completePhase(phaseId: string): SessionSnapshot {
     if (this.state !== "ACTIVE") throw new Error(`Cannot complete phase while state=${this.state}`);
-    if (this.currentPhaseId !== phaseId) {
-      throw new Error(`Cannot complete ${phaseId}; current phase is ${this.currentPhaseId ?? "none"}`);
-    }
+    if (this.currentPhaseId !== phaseId) throw new Error(`Cannot complete ${phaseId}; current phase is ${this.currentPhaseId ?? "none"}`);
 
     const current = this.director.getPhase(phaseId);
-    if (current.type === "COMPLETION") {
-      throw new Error("COMPLETION is a server boundary; use confirmServerCompletion() after backend validation");
-    }
+    if (current.type === "COMPLETION") throw new Error("COMPLETION is a server boundary; use confirmServerCompletion() after backend validation");
 
     this.completed.add(phaseId);
-
-    if (isCheckpoint(this.definition, phaseId)) {
-      this.checkpointPhaseId = phaseId;
-    }
+    if (isCheckpoint(this.definition, phaseId)) this.checkpointPhaseId = phaseId;
 
     const next = this.director.getNextPhase(phaseId, this.snapshot());
     if (!next) {
@@ -82,15 +95,11 @@ export class QuestRuntime {
   }
 
   confirmServerCompletion(): SessionSnapshot {
-    if (this.state !== "EVIDENCE_PENDING") {
-      throw new Error(`Cannot confirm server completion while state=${this.state}`);
-    }
+    if (this.state !== "EVIDENCE_PENDING") throw new Error(`Cannot confirm server completion while state=${this.state}`);
     if (!this.currentPhaseId) throw new Error("No completion phase is active");
 
     const completionPhase = this.director.getPhase(this.currentPhaseId);
-    if (completionPhase.type !== "COMPLETION") {
-      throw new Error(`Expected COMPLETION phase, got ${completionPhase.type}`);
-    }
+    if (completionPhase.type !== "COMPLETION") throw new Error(`Expected COMPLETION phase, got ${completionPhase.type}`);
     if (!this.director.canRequestCompletion(this.snapshot())) {
       const missing = this.director.getMissingRequiredPhases(this.snapshot()).map((phase) => phase.id);
       throw new Error(`Required phases still missing: ${missing.join(", ")}`);
@@ -98,24 +107,17 @@ export class QuestRuntime {
 
     this.completed.add(completionPhase.id);
     const next = this.director.getNextPhase(completionPhase.id, this.snapshot());
-
     if (!next) {
       this.currentPhaseId = undefined;
       this.state = "COMPLETE";
       return this.snapshot();
     }
-
     this.currentPhaseId = next.id;
     this.state = "ACTIVE";
     return this.snapshot();
   }
 
   snapshot(): SessionSnapshot {
-    return {
-      runState: this.state,
-      currentPhaseId: this.currentPhaseId,
-      completedPhaseIds: [...this.completed],
-      checkpointPhaseId: this.checkpointPhaseId,
-    };
+    return { runState: this.state, currentPhaseId: this.currentPhaseId, completedPhaseIds: [...this.completed], checkpointPhaseId: this.checkpointPhaseId };
   }
 }
