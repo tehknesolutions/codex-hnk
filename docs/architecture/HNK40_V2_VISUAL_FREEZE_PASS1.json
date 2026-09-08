@@ -1,0 +1,34 @@
+{
+  "document_id": "HNK40-V2-VISUAL-FREEZE-PASS1",
+  "date": "2026-09-08",
+  "status": "VISUAL_FROZEN_CANDIDATE_40_OF_40",
+  "source_candidate": "HNK40-V2-RECONSTITUTED-CANDIDATE-D",
+  "official_visual_canon": false,
+  "promotion_state": "READY_FOR_FINAL_HUMAN_PROMOTION",
+  "structural_binding": {
+    "glyph_ids": "G01-G40",
+    "ipa_binding_changed": false,
+    "pua": "UNASSIGNED",
+    "unicode": "UNASSIGNED",
+    "font_cmap": "UNASSIGNED",
+    "legacy_identity": "NOT_CLAIMED"
+  },
+  "automated_evidence": {
+    "confusion_max_similarity": 0.549,
+    "confusion_high_pairs": 0,
+    "confusion_medium_pairs": 0,
+    "small_size_legibility": "PASS",
+    "freeze_pass_count": 40,
+    "freeze_fail_count": 0
+  },
+  "integrity": {
+    "sprite_sha256": "87ee43f3785165397752a21eaceffcda8b3240748125062ca275bf8d46234ca4",
+    "ordered_glyph_set_sha256": "78668df0f707952b7c280de52526abaa2b7900597fb8ff362a3a08641fd1bce5",
+    "hash_algorithm": "SHA-256",
+    "rule": "Any change to a frozen symbol source invalidates Freeze Pass 1 for that glyph until re-audited."
+  },
+  "glyph_state": {
+    "G01-G40": "VISUAL_FROZEN_CANDIDATE"
+  },
+  "next_gate": "FINAL_HUMAN_VISUAL_PROMOTION"
+}
