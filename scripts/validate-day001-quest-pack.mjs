@@ -38,13 +38,16 @@ const episteme = json("day-001.episteme.manifest.json");
 const qid = "HNK-KETHER-D001-V2";
 const cid = "HNK-KETHER-D001-COMP-V2";
 const sourceSha = "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29";
+const backendMigration = "20260908011647_day001_completion_contract_v2";
 
 if (pack.id !== "HNK-KETHER-D001-PACK-V1") fail("unexpected pack id");
+if (pack.version !== "1.5.0") fail("Quest Pack version drift");
 if (pack.quest_definition_id !== qid) fail("pack quest id drift");
 if (pack.completion_contract_id !== cid) fail("pack completion id drift");
 if (pack.canonical_source_sha !== sourceSha) fail("pack canonical SHA drift");
 if (pack.release_state !== "BLOCKED") fail("pack must remain BLOCKED while release blockers exist");
 if (!pack.offline?.practice_capable || !pack.offline?.canonical_completion_requires_server) fail("offline policy drift");
+if (pack.offline?.binary_assets_ready !== true || pack.offline?.visual_contract_ready !== true) fail("offline asset readiness drift");
 
 for (const [label, value] of [
   ["quest", quest.id],
@@ -68,7 +71,18 @@ if (completionService.canonical_source_sha !== sourceSha) fail("completion servi
 if (completion.properties?.completion_contract_id?.const !== cid) fail("completion contract id drift");
 if (completionService.completion_contract_id !== cid) fail("completion service contract id drift");
 if (canon.counted_core?.word_count !== 705) fail("canonical counted core must be 705 words");
-if (assets.release_ready !== false) fail("assets cannot be release ready before renderer adapters land");
+
+if (completionService.transport?.deployment_state !== "LIVE") fail("Completion Service V2 must be live");
+if (completionService.deployment?.migration !== backendMigration) fail("Completion backend migration id drift");
+if (completionService.deployment?.public_rpc_security !== "INVOKER") fail("public Completion V2 security mode drift");
+if (completionService.deployment?.privileged_impl_schema !== "hnk_private") fail("private Completion implementation boundary drift");
+if (pack.server_completion?.state !== "ACTIVE") fail("Quest Pack server completion state drift");
+if (pack.server_completion?.migration !== backendMigration) fail("Quest Pack backend migration drift");
+if (pack.server_completion?.public_rpc_security !== "INVOKER") fail("Quest Pack public RPC security drift");
+if (pack.server_completion?.legacy_rpc_still_enabled !== true) fail("legacy RPC rollout state drift");
+
+if (assets.asset_layer_ready !== true || assets.release_ready !== true) fail("asset layer readiness drift");
+if ((assets.release_blockers ?? []).length !== 0) fail("asset layer must not carry runtime shell blockers");
 if (assets.visual_contract !== "day-001.visual.manifest.json") fail("visual contract pointer drift");
 if (assets.art_direction !== "day-001.art-direction.json") fail("art direction pointer drift");
 if (visual.policy?.server_authoritative_first_spark !== true) fail("visual First Spark authority drift");
@@ -76,16 +90,22 @@ if (visual.static_assets?.length !== 3) fail("static visual asset count drift");
 if (artDirection.approval_state !== "PRODUCT_V1_FROZEN") fail("art direction freeze drift");
 if (artDirection.epistemic_boundary?.canonical_kether_sigil_is_distinct !== true) fail("canonical/product visual boundary drift");
 if (artDirection.soul_mirror_field?.status !== "APPROVED_PRODUCT_VISUAL_V1") fail("Soul Mirror product freeze drift");
+
 if (editorial.universal_entry?.state !== "RESOLVED_PRODUCT_LAYER") fail("Universal Entry reconciliation drift");
 if (editorial.middle_voice_ordalia?.state !== "CANONICAL_AMENDMENT_PREPARED_SOURCE_WRITE_PENDING") fail("voice amendment state drift");
 if (pack.editorial_reconciliation?.universal_entry !== "RESOLVED_PRODUCT_LAYER") fail("Quest Pack editorial state drift");
-if (pack.asset_reconciliation?.state !== "RECONCILED_NOT_RELEASE_READY") fail("asset reconciliation state drift");
+
+if (pack.asset_reconciliation?.state !== "ASSET_LAYER_READY") fail("asset reconciliation state drift");
 if (pack.asset_reconciliation?.approved_canonical_migrated !== 1) fail("canonical migrated asset count drift");
 if (pack.asset_reconciliation?.approved_product_assets !== 3) fail("product asset count drift");
 if (pack.asset_reconciliation?.procedural_contract_ready !== 6) fail("procedural visual contract count drift");
 if (pack.asset_reconciliation?.needs_derivative_or_visual_review !== 0) fail("visual review backlog must be zero");
-if (pack.asset_reconciliation?.adapter_pending !== 7) fail("visual adapter backlog drift");
-for (const capability of ["VISUAL_CONTRACT", "EDITORIAL_RECONCILIATION"]) {
+if (pack.runtime_integration?.state !== "SHELL_MIGRATION_PENDING") fail("runtime shell integration state drift");
+if (pack.runtime_integration?.visual_adapter_bindings !== 7) fail("visual adapter backlog drift");
+if (pack.runtime_integration?.completion_rpc_client_cutover !== "PENDING") fail("Completion V2 client-cutover state drift");
+if (pack.runtime_integration?.apps_present_in_consolidation_repo !== false) fail("consolidation app-shell presence drift");
+
+for (const capability of ["VISUAL_CONTRACT", "EDITORIAL_RECONCILIATION", "SERVER_COMPLETION"]) {
   if (!pack.runtime_capabilities?.required?.includes(capability)) fail(`Quest Pack missing capability: ${capability}`);
 }
 if (audio.profiles?.theta_432?.status !== "CANONICAL_MAPPING_PENDING") fail("Theta/432 mapping was invented or changed");
@@ -96,13 +116,15 @@ const blockerIds = new Set(pack.blockers.map((entry) => entry.id));
 for (const blocker of [
   "EDITORIAL-001-VOICE",
   "AUDIO-001-THETA-432",
-  "BACKEND-001-COMPLETION-V2",
-  "ASSET-001-PROCEDURAL-ADAPTER",
+  "RUNTIME-001-SHELL-INTEGRATION",
 ]) {
   if (!blockerIds.has(blocker)) fail(`missing release blocker: ${blocker}`);
 }
+if (blockerIds.size !== 3) fail(`expected exactly 3 remaining blockers, got ${blockerIds.size}`);
 for (const obsolete of [
   "EDITORIAL-001-UNIVERSAL-ENTRY",
+  "BACKEND-001-COMPLETION-V2",
+  "ASSET-001-PROCEDURAL-ADAPTER",
   "ASSET-001-CROWN-DERIVATIVE",
   "ASSET-001-KEY-ART",
   "ASSET-001-SOUL-MIRROR-FINAL",
@@ -130,5 +152,5 @@ for (const requiredPath of [
 }
 
 if (!process.exitCode) {
-  console.log(`DAY001 QUEST PACK PASS (${checksums.entries.length} source artifacts, release BLOCKED by ${pack.blockers.length} explicit blockers)`);
+  console.log(`DAY001 QUEST PACK PASS (${checksums.entries.length} source artifacts, backend LIVE, assets READY, ${pack.blockers.length} release blockers remain)`);
 }
