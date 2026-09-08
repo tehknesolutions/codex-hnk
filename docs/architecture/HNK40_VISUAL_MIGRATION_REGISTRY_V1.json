@@ -1,0 +1,58 @@
+{
+  "document_id": "HNK40-VISUAL-MIGRATION-REGISTRY-V1",
+  "date": "2026-09-08",
+  "status": "VISUAL_SOURCE_BLOCKED",
+  "structural_namespace": {
+    "glyph_ids": "G01-G40",
+    "root_count": 40,
+    "hnk64_root_slot_range_hex": "00-27",
+    "state": "LOCKED"
+  },
+  "evidence": {
+    "sacred_10x4_ui_confirmed": true,
+    "hnk_runtime_reference": "./hnk-runtime.js",
+    "hnk_runtime_recovered": false,
+    "official_visual_drawings_recovered": false,
+    "pua_mapping_verified": false,
+    "safe_rendering_now": "canonical Gxx glyph IDs only"
+  },
+  "root_phonemes": {
+    "G01": "/a/", "G02": "/e/", "G03": "/i/", "G04": "/o/", "G05": "/u/",
+    "G06": "/ə/", "G07": "/h/", "G08": "/ʔ/", "G09": "/ʕ/", "G10": "/ħ/",
+    "G11": "/m/", "G12": "/n/", "G13": "/ŋ/", "G14": "/l/", "G15": "/r/",
+    "G16": "/j/", "G17": "/w/", "G18": "/b/", "G19": "/d/", "G20": "/g/",
+    "G21": "/p/", "G22": "/t/", "G23": "/k/", "G24": "/q/", "G25": "/f/",
+    "G26": "/s/", "G27": "/ʃ/", "G28": "/x/", "G29": "/θ/", "G30": "/ts/",
+    "G31": "/v/", "G32": "/z/", "G33": "/ʒ/", "G34": "/ð/", "G35": "/tʃ/",
+    "G36": "/dʒ/", "G37": "/sˤ/", "G38": "/tˤ/", "G39": "/ɣ/", "G40": "/y/"
+  },
+  "visual_binding_defaults": {
+    "visual_state": "BLOCKED",
+    "visual_artifact_ref": null,
+    "pua_codepoint": null,
+    "font_family": null,
+    "svg_path": null,
+    "world": null,
+    "protoglyph": null,
+    "promoted_visual_canon": false
+  },
+  "promotion_gate": {
+    "source_recovered": false,
+    "exactly_40_assets": false,
+    "bijective_g_binding": false,
+    "phoneme_match_40_of_40": false,
+    "pua_verified": false,
+    "provenance_hashes_recorded": false,
+    "cross_renderer_test": false,
+    "human_visual_canon_approval": false
+  },
+  "recovery_targets": [
+    "hnk-runtime.js",
+    "HNK_SACRED_10X4_KEYMAP.csv",
+    "HNK40_INPUT_MAP.json",
+    "HNK_INPUT_SYSTEM_SPEC.json",
+    "hnk-input.mjs",
+    "HenuvokodanSimpleAlpha-Regular"
+  ],
+  "non_invention_rule": "No Unicode/PUA character, font glyph, SVG, path or drawn symbol may be labeled the official HNK40 visual glyph until its 1:1 binding to the current G01-G40 registry is evidenced and promoted."
+}
