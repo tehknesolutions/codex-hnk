@@ -1,0 +1,143 @@
+.shell {
+  min-height: 100vh;
+  padding: 2rem clamp(1rem, 4vw, 4rem) 5rem;
+  color: #f6f0df;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217, 183, 99, 0.14), transparent 30rem),
+    linear-gradient(180deg, #06070b 0%, #0a0b13 55%, #06070b 100%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 860px;
+  margin: 0 auto 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(246, 240, 223, 0.14);
+}
+
+.header div:first-child {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.header span,
+.eyebrow,
+.status {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  opacity: 0.7;
+}
+
+.panel {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(1.1rem, 3vw, 2rem);
+  border: 1px solid rgba(217, 183, 99, 0.24);
+  border-radius: 1.4rem;
+  background: rgba(10, 11, 19, 0.86);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32);
+}
+
+.panel h1,
+.panel h2 {
+  margin: 0;
+  font-weight: 550;
+}
+
+.panel button {
+  min-height: 2.9rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(246, 240, 223, 0.42);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.panel button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.primary {
+  justify-self: start;
+  font-weight: 750;
+}
+
+.canon {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+  border-left: 2px solid rgba(217, 183, 99, 0.55);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.canon p,
+.system p,
+.panel > p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.system,
+.practice {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.practice strong {
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  font-weight: 300;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tags span {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(246, 240, 223, 0.22);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.rating {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.rating button {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.4rem;
+}
+
+.rating button[data-active='true'] {
+  background: rgba(217, 183, 99, 0.2);
+  border-color: rgba(217, 183, 99, 0.8);
+}
+
+.error {
+  max-width: 860px;
+  margin: 0 auto 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  color: #ffd0d0;
+  background: rgba(120, 25, 25, 0.25);
+}
+
+@media (max-width: 640px) {
+  .header {
+    display: grid;
+  }
+}
