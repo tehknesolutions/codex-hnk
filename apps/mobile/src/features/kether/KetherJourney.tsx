@@ -6,6 +6,7 @@ import { KetherCycle02Jeliel } from './KetherCycle02Jeliel';
 import { KetherCycle03Sitael } from './KetherCycle03Sitael';
 import { KetherCycle04Elemiah } from './KetherCycle04Elemiah';
 import { KetherCycle05Mahasiah } from './KetherCycle05Mahasiah';
+import { KetherCycle06Lelahel } from './KetherCycle06Lelahel';
 
 export function KetherJourney() {
   const auth = useHnkAuth();
@@ -45,12 +46,13 @@ export function KetherJourney() {
   if (currentDay <= 15) return <KetherCycle03Sitael />;
   if (currentDay <= 20) return <KetherCycle04Elemiah />;
   if (currentDay <= 25) return <KetherCycle05Mahasiah />;
+  if (currentDay <= 30) return <KetherCycle06Lelahel />;
 
   return (
     <View style={styles.threshold}>
       <Text style={styles.eyebrow}>KETHER · RUNTIME EXPANSION</Text>
       <Text style={styles.title}>DIA {String(Math.min(currentDay, 36)).padStart(3, '0')}</Text>
-      <Text style={styles.body}>A progressão server-side já alcançou este ponto. O próximo ciclo será conectado ao mesmo runtime; nenhuma tela substituta é tratada como prática canônica.</Text>
+      <Text style={styles.body}>A progressão server-side alcançou Achaiah. O Ciclo VII será conectado ao mesmo runtime; nenhuma tela substituta é tratada como prática canônica.</Text>
     </View>
   );
 }
