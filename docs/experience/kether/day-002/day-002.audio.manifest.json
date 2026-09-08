@@ -1,0 +1,42 @@
+{
+  "id": "HNK-KETHER-D002-AUDIO-V1",
+  "kind": "hnk.audio_preset_manifest",
+  "version": "1.0.0",
+  "status": "PUBLISHED",
+  "day": 2,
+  "canonical_source": {
+    "repository": "Tehkne-Solutions/hnk-codex-365",
+    "path": "canon/capitulo-01-kether/dia-002.md",
+    "source_sha": "71019573414493ee9e5521f4d27ed744748c0d2b",
+    "raw_wording": "áudio binaural em frequência Solfeggio de 528Hz"
+  },
+  "mapping": {
+    "classification": "HNK_PRODUCT_DECISION_V1",
+    "left_carrier_hz": 432,
+    "right_carrier_hz": 438,
+    "binaural_difference_hz": 6,
+    "ritual_tone_hz": 528,
+    "waveform": "sine",
+    "binaural_gain": 0.06,
+    "ritual_gain": 0.04,
+    "sample_rate_hz": 44100,
+    "loop_seconds": 1,
+    "reference_render_sha256": "f2d62825612af7e79b62965dbc28d9066dfb032e71c59d2973706d329f84cf46"
+  },
+  "safety": {
+    "autoplay": false,
+    "user_volume_control": true,
+    "immediate_stop": true,
+    "max_output_gain": 0.12,
+    "fade_in_seconds": 5,
+    "fade_out_seconds": 10,
+    "headphones_required_for_binaural_difference": true,
+    "neurological_state_claim": false,
+    "therapeutic_claim": false,
+    "spiritual_effect_claim": false
+  },
+  "approval": {
+    "approval_ref": "docs/audio/HNK_DAY002_AUDIO_FREEZE_V1.md",
+    "provenance_ref": "docs/audio/HNK_AUDIO_PRESET_CONTRACT_V1.md"
+  }
+}
