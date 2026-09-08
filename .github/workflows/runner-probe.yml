@@ -1,0 +1,20 @@
+name: Hosted Runner Probe
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/runner-probe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Runner assigned
+        run: |
+          echo "RUNNER_PROBE_PASS"
+          uname -a
