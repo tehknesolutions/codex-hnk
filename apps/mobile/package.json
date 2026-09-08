@@ -1,6 +1,6 @@
 {
   "name": "@hnk/mobile",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
@@ -12,10 +12,12 @@
     "test": "node --test"
   },
   "dependencies": {
+    "@hnk/ritual-tone": "workspace:*",
     "@hnk/supabase-client": "workspace:*",
     "@hnk/ui": "workspace:*",
     "@hnk/vault-interop-vectors": "workspace:*",
     "expo": "~57.0.19",
+    "expo-audio": "~57.0.4",
     "expo-constants": "~57.0.17",
     "expo-crypto": "~57.0.2",
     "expo-file-system": "~57.0.6",
