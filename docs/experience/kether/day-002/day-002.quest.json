@@ -1,0 +1,38 @@
+{
+  "id":"HNK-KETHER-D002-V1",
+  "kind":"hnk.quest_definition",
+  "version":"1.0.0",
+  "status":"SCALABILITY_PROOF__CANON_VALID__RELEASE_BLOCKERS_EXPLICIT",
+  "day":2,
+  "title":"Asana do Louco",
+  "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-002.md","source_sha":"71019573414493ee9e5521f4d27ed744748c0d2b","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Vehuiah","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"],"correspondences":{"tarot":"O Louco","rune":"Fehu","iching":"Hexagrama 1 — O Criativo"}},
+  "design_goal":"Prove that Day 002 changes mechanics primarily by configuration while reusing the Day 001 renderer layer.",
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"checkpoint_states":["JACHIN_RETURN","BOAZ_RETURN","MIDDLE_RETURN","SOUL_MIRROR"],"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "phases":[
+    {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"required_for_completion":false},
+    {"id":"kether_reentry","type":"TERM_REVEAL","source":{"kind":"PLATFORM_MICROCOPY"},"terms":["Kether","Atziluth","Vehuiah","Asana"],"required_for_completion":false},
+    {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"epistemic_overlays":[{"domain":"E4","scope":"HNK subtle-energy and ritual language"},{"domain":"E3","scope":"subjective heat/light experience"}],"required_for_completion":true},
+    {"id":"jachin_practice","type":"FOCUS","source":{"kind":"CANON","block_ids":["jachin-kavanah"]},"interaction":{"duration_seconds":300,"components":["RITUAL_TIMER","FOCUS_ORB"],"pause":true,"stop":true},"safety":{"return_gate":true,"stop_always_visible":true,"natural_breathing_required":true},"required_for_completion":true},
+    {"id":"audio_528_binaural","type":"AUDIO","source":{"kind":"CANON","block_ids":["jachin-ordalia"]},"audio":{"canonical_wording":"áudio binaural em frequência Solfeggio de 528Hz","operator":"PENDING_CANONICAL_TECHNICAL_MAPPING","frequency_hz":528,"binaural_difference_hz":null,"production_enabled":false,"autoplay":false,"volume_user_controlled":true},"required_for_completion":true},
+    {"id":"jachin_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"boaz_reading","type":"READ","source":{"kind":"CANON","block_ids":["boaz-doctrine","boaz-kavanah","boaz-ordalia"]},"epistemic_overlays":[{"domain":"E4","scope":"Psuche, subtle-world and HNK magical framing"},{"domain":"E2","status":"NOT_ESTABLISHED_AS_WRITTEN","scope":"reptilian-brain, paralysis and neurological claims"}],"required_for_completion":true},
+    {"id":"boaz_safety_overlay","type":"INSTRUCTION","source":{"kind":"GUIDE_SAFETY"},"content_intent":["Do not force absolute immobility.","Do not ignore pain, numbness, dizziness, breathlessness or significant discomfort.","A movement impulse may be noticed and counted without being treated as failure.","Natural breathing is required; almost-imperceptible breathing is not a product instruction.","The user may move, pause or stop at any time."],"required_for_completion":false},
+    {"id":"boaz_asana","type":"FOCUS","source":{"kind":"CANON","block_ids":["boaz-kavanah"]},"interaction":{"duration_seconds":900,"components":["RITUAL_TIMER","ATTENTION_RETURN"],"counter_semantics":{"component":"ATTENTION_RETURN","event_label":"IMPULSO_PERCEBIDO","meaning":"Count a noticed movement/itch impulse without reward, punishment or failure framing."},"pause":true,"stop":true},"safety":{"return_gate":true,"stop_always_visible":true,"movement_allowed":true,"pain_is_stop_signal":true},"required_for_completion":true},
+    {"id":"boaz_ordalia","type":"JOURNAL","source":{"kind":"CANON","block_ids":["boaz-ordalia"]},"privacy":{"free_text_destination":"VAULT_ONLY","structured_evidence":["impulse_count","first_five_minutes_reflection_completed"]},"required_for_completion":true},
+    {"id":"boaz_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"epistemic_overlays":[{"domain":"E4","scope":"bioenergetic, angelic and subtle-body HNK model"},{"domain":"E2","status":"NOT_ESTABLISHED_AS_WRITTEN","scope":"left-frontal-lobe and nervous-system rejuvenation claims"}],"required_for_completion":true},
+    {"id":"middle_practice","type":"FOCUS","source":{"kind":"CANON","block_ids":["middle-kavanah"]},"interaction":{"duration_seconds":180,"components":["RITUAL_TIMER","FOCUS_ORB"],"pause":true,"stop":true},"safety":{"return_gate":true,"stop_always_visible":true},"required_for_completion":true},
+    {"id":"middle_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"attribute_notice","type":"INSTRUCTION","source":{"kind":"SYSTEM"},"content_intent":["The Canon names Disciplina as an attribute outcome.","No DIS attribute gain is applied until ATTRIBUTE_PROGRESSION_MATRIX_V1 is frozen."],"attribute_effect":{"attribute":"DIS","state":"PENDING_MATRIX","gain":null},"required_for_completion":false},
+    {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","voice_recording_optional":true,"voice_recording_destination":"LOCAL_ENCRYPTED_VAULT"},"required_for_completion":true},
+    {"id":"correspondence_reveal","type":"CORRESPONDENCE_REVEAL","source":{"kind":"PLATFORM_EXPERIENCE"},"items":["Kether","Atziluth","Vehuiah","O Louco","Fehu","Hexagrama 1"],"required_for_completion":false},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_state":"DAY002_CONTRACT_NOT_YET_FROZEN","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"vehuiah_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Vehuiah","cycle_progress":"2/5","fragment_awarded":false},"required_for_completion":false}
+  ],
+  "scalability_proof":{"new_phase_types":[],"reused_phase_types":["NARRATIVE","TERM_REVEAL","READ","FOCUS","AUDIO","RETURN","INSTRUCTION","JOURNAL","STRUCTURED_JOURNAL","CORRESPONDENCE_REVEAL","COMPLETION","UNLOCK"],"new_renderer_required":false,"new_practice_renderer_required":false,"counter_reuses":"ATTENTION_RETURN with BODY_IMPULSE semantics"},
+  "release_blockers":[
+    {"id":"AUDIO-002-BINAURAL-528","reason":"Canon says binaural 528 but does not define carrier/difference semantics; Day 001 pure 528 runtime tone must not be silently reused as equivalent."},
+    {"id":"PROGRESSION-002-DIS-MATRIX","reason":"Canon says update Disciplina, but ATTRIBUTE_PROGRESSION_MATRIX_V1 is not frozen; no attribute gain may be invented."},
+    {"id":"COMPLETION-002-CONTRACT","reason":"Day 002 server completion/evidence contract has not yet been frozen and deployed."}
+  ]
+}
