@@ -1,11 +1,11 @@
 {
   "id": "HNK-KETHER-D001-CHECKSUMS-V1",
   "kind": "hnk.repository_integrity_index",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "algorithm": "git_blob_sha1",
   "scope": "authored Quest Pack source artifacts; runtime pack builder emits SHA-256 over payload bytes",
   "entries": [
-    {"path":"day-001.quest.json","sha":"f57a41d5ccfbd90debca37d5e067315c336d5d5e"},
+    {"path":"day-001.quest.json","sha":"09a7aa7b9ba57e16e3a5d275f1a6719e6fc465ab"},
     {"path":"day-001.canon-blocks.json","sha":"7a4d10da081a04b3c94b6e8fad98b9f3766ad73e"},
     {"path":"day-001.renderer-profile.json","sha":"2360cdb2eb102bc8601eb8f77f8febf0d294f485"},
     {"path":"day-001.visual.manifest.json","sha":"2666c5fd79c5394ccc8a7a171ac61cacc3227ff5"},
@@ -17,7 +17,7 @@
     {"path":"day-001.completion.rpc.request.schema.json","sha":"5ca1041e74a5db35d0c36e5a0cef28b19c42ab35"},
     {"path":"day-001.completion.rpc.response.schema.json","sha":"a290cb74bd84f4fe8f52c2dc44708dbd2b250a3b"},
     {"path":"day-001.assets.manifest.json","sha":"18d933bfe3175b55bae1408230d8f96195c5900e"},
-    {"path":"day-001.audio.manifest.json","sha":"8a902d1451a2dd68f2c9037e12ce5433f3ccc4b2"},
+    {"path":"day-001.audio.manifest.json","sha":"8f0811e7e25affd352842170c29bf5f10fef9ac9"},
     {"path":"day-001.safety.policy.json","sha":"ac300fea10135a8a772d7ed0efdab6a5f78078d3"},
     {"path":"day-001.episteme.manifest.json","sha":"d843dd92d425287d08700e0073fac29caa4fab8d"}
   ],
@@ -27,32 +27,12 @@
     "git_blob_sha1": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29"
   },
   "canonical_assets": [
-    {
-      "path": "assets/canonical/kether/dai-koo-myo-usui-hnk-master-v1.svg",
-      "git_blob_sha1": "973ed0e6da0bc1d48990970a9e10d7e811dc785c",
-      "sha256": "25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0"
-    },
-    {
-      "path": "assets/canonical/kether/kether-sigil-v1.svg",
-      "git_blob_sha1": "303af75e50ccf5dfd0f4be606143ae06739da4eb",
-      "sha256": "7792ad999497f502d29c4377d3497c02241421701e5762ed247c5351fb24320a"
-    }
+    {"path":"assets/canonical/kether/dai-koo-myo-usui-hnk-master-v1.svg","git_blob_sha1":"973ed0e6da0bc1d48990970a9e10d7e811dc785c","sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0"},
+    {"path":"assets/canonical/kether/kether-sigil-v1.svg","git_blob_sha1":"303af75e50ccf5dfd0f4be606143ae06739da4eb","sha256":"7792ad999497f502d29c4377d3497c02241421701e5762ed247c5351fb24320a"}
   ],
   "product_assets": [
-    {
-      "path": "assets/derived/kether/day001-crown-mark-v1.svg",
-      "git_blob_sha1": "a238932ad8afb80e7135a41e1e5016240ecd8e63",
-      "sha256": "62643446db75e6f22c492a07bc7cb434c0aa365429417795fa414c29b9a08801"
-    },
-    {
-      "path": "assets/derived/kether/day001-key-art-v1.svg",
-      "git_blob_sha1": "8c79a2b60df22a1d457732a2f643dc912716391e",
-      "sha256": "e194a43156aaed6034eed144e83eb49651629c3aa1858f98503d957730662579"
-    },
-    {
-      "path": "assets/derived/kether/day001-soul-mirror-field-v1.svg",
-      "git_blob_sha1": "d9ad81483530436394fd334630df3ef70e4fe9eb",
-      "sha256": "c0370b159d4ce54b3a81ef2c15256667b27b5c9b9f6a6e4c559edeb023c985cc"
-    }
+    {"path":"assets/derived/kether/day001-crown-mark-v1.svg","git_blob_sha1":"a238932ad8afb80e7135a41e1e5016240ecd8e63","sha256":"62643446db75e6f22c492a07bc7cb434c0aa365429417795fa414c29b9a08801"},
+    {"path":"assets/derived/kether/day001-key-art-v1.svg","git_blob_sha1":"8c79a2b60df22a1d457732a2f643dc912716391e","sha256":"e194a43156aaed6034eed144e83eb49651629c3aa1858f98503d957730662579"},
+    {"path":"assets/derived/kether/day001-soul-mirror-field-v1.svg","git_blob_sha1":"d9ad81483530436394fd334630df3ef70e4fe9eb","sha256":"c0370b159d4ce54b3a81ef2c15256667b27b5c9b9f6a6e4c559edeb023c985cc"}
   ]
 }
