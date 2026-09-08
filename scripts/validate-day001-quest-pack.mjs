@@ -41,10 +41,11 @@ const sourceSha = "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29";
 const backendMigration = "20260908011647_day001_completion_contract_v2";
 
 if (pack.id !== "HNK-KETHER-D001-PACK-V1") fail("unexpected pack id");
-if (pack.version !== "1.5.0") fail("Quest Pack version drift");
+if (pack.version !== "1.6.0") fail("Quest Pack version drift");
 if (pack.quest_definition_id !== qid) fail("pack quest id drift");
 if (pack.completion_contract_id !== cid) fail("pack completion id drift");
 if (pack.canonical_source_sha !== sourceSha) fail("pack canonical SHA drift");
+if (pack.integrity_state !== "PASS_CONTRACTS_RUNTIME_INTEGRATED") fail("pack runtime integrity state drift");
 if (pack.release_state !== "BLOCKED") fail("pack must remain BLOCKED while release blockers exist");
 if (!pack.offline?.practice_capable || !pack.offline?.canonical_completion_requires_server) fail("offline policy drift");
 if (pack.offline?.binary_assets_ready !== true || pack.offline?.visual_contract_ready !== true) fail("offline asset readiness drift");
@@ -100,12 +101,17 @@ if (pack.asset_reconciliation?.approved_canonical_migrated !== 1) fail("canonica
 if (pack.asset_reconciliation?.approved_product_assets !== 3) fail("product asset count drift");
 if (pack.asset_reconciliation?.procedural_contract_ready !== 6) fail("procedural visual contract count drift");
 if (pack.asset_reconciliation?.needs_derivative_or_visual_review !== 0) fail("visual review backlog must be zero");
-if (pack.runtime_integration?.state !== "SHELL_MIGRATION_PENDING") fail("runtime shell integration state drift");
-if (pack.runtime_integration?.visual_adapter_bindings !== 7) fail("visual adapter backlog drift");
-if (pack.runtime_integration?.completion_rpc_client_cutover !== "PENDING") fail("Completion V2 client-cutover state drift");
-if (pack.runtime_integration?.apps_present_in_consolidation_repo !== false) fail("consolidation app-shell presence drift");
 
-for (const capability of ["VISUAL_CONTRACT", "EDITORIAL_RECONCILIATION", "SERVER_COMPLETION"]) {
+if (pack.runtime_integration?.state !== "ACTIVE_GOLDEN_V2") fail("runtime shell integration state drift");
+if (pack.runtime_integration?.visual_adapter_bindings !== 7) fail("visual adapter binding count drift");
+if (pack.runtime_integration?.completion_rpc_client_cutover !== "COMPLETE_WEB_EXPO_V2") fail("Completion V2 client-cutover state drift");
+if (pack.runtime_integration?.apps_present_in_consolidation_repo !== true) fail("consolidation app-shell presence drift");
+if (pack.runtime_integration?.runtime_gate !== "scripts/validate-day001-runtime-integration.mjs") fail("runtime validation pointer drift");
+if (pack.runtime_integration?.ritual_tone_528 !== "RUNTIME_SYNTHESIS_ACTIVE_WEB_EXPO") fail("runtime 528 state drift");
+if (!pack.runtime_integration?.web_entry?.includes("Day001GoldenV2Web")) fail("Web Golden V2 entrypoint drift");
+if (!pack.runtime_integration?.mobile_entry?.includes("Day001GoldenV2Mobile")) fail("Mobile Golden V2 entrypoint drift");
+
+for (const capability of ["VISUAL_CONTRACT", "EDITORIAL_RECONCILIATION", "SERVER_COMPLETION", "RITUAL_TONE_528"]) {
   if (!pack.runtime_capabilities?.required?.includes(capability)) fail(`Quest Pack missing capability: ${capability}`);
 }
 if (audio.profiles?.theta_432?.status !== "CANONICAL_MAPPING_PENDING") fail("Theta/432 mapping was invented or changed");
@@ -113,15 +119,12 @@ if (safety.global_rules?.subjective_phenomenon_required !== false) fail("subject
 if (episteme.protocol_id !== "HNK-EP-1.1") fail("epistemic protocol drift");
 
 const blockerIds = new Set(pack.blockers.map((entry) => entry.id));
-for (const blocker of [
-  "EDITORIAL-001-VOICE",
-  "AUDIO-001-THETA-432",
-  "RUNTIME-001-SHELL-INTEGRATION",
-]) {
+for (const blocker of ["EDITORIAL-001-VOICE", "AUDIO-001-THETA-432"]) {
   if (!blockerIds.has(blocker)) fail(`missing release blocker: ${blocker}`);
 }
-if (blockerIds.size !== 3) fail(`expected exactly 3 remaining blockers, got ${blockerIds.size}`);
-for (const obsolete of [
+if (blockerIds.size !== 2) fail(`expected exactly 2 remaining blockers, got ${blockerIds.size}`);
+for (const resolved of [
+  "RUNTIME-001-SHELL-INTEGRATION",
   "EDITORIAL-001-UNIVERSAL-ENTRY",
   "BACKEND-001-COMPLETION-V2",
   "ASSET-001-PROCEDURAL-ADAPTER",
@@ -131,8 +134,12 @@ for (const obsolete of [
   "ASSET-001-REGISTRY-RESOLUTION",
   "ASSET-001-PROCEDURAL-EXTRACTION",
 ]) {
-  if (blockerIds.has(obsolete)) fail(`resolved/obsolete blocker remains: ${obsolete}`);
+  if (blockerIds.has(resolved)) fail(`resolved/obsolete blocker remains: ${resolved}`);
 }
+const resolvedIds = new Set((pack.resolved_blockers ?? []).map((entry) => entry.id));
+if (!resolvedIds.has("RUNTIME-001-SHELL-INTEGRATION")) fail("resolved runtime blocker ledger missing");
+
+if (pack.ci?.current_state !== "INFRASTRUCTURE_BLOCKED_NO_RUNNER") fail("CI infrastructure state drift");
 
 for (const entry of checksums.entries) {
   const content = read(entry.path);
@@ -152,5 +159,5 @@ for (const requiredPath of [
 }
 
 if (!process.exitCode) {
-  console.log(`DAY001 QUEST PACK PASS (${checksums.entries.length} source artifacts, backend LIVE, assets READY, ${pack.blockers.length} release blockers remain)`);
+  console.log(`DAY001 QUEST PACK PASS (${checksums.entries.length} source artifacts, runtime integrated, backend LIVE, assets READY, ${pack.blockers.length} release blockers remain)`);
 }
