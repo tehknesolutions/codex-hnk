@@ -65,7 +65,7 @@ function normalizeError(error: unknown): string {
   return 'Não foi possível concluir a autenticação do Átrio Web.';
 }
 
-export function WebDay001RuntimeProvider({ children }: PropsWithChildren) {
+export function WebDay001RuntimeProvider({ children, redirectPath = '/day-001' }: PropsWithChildren<{ redirectPath?: string }>) {
   const client = useMemo<HnkSupabaseClient | null>(() => {
     if (!webSupabaseConfigured) return null;
     return createHnkSupabaseClient(supabaseUrl, publishableKey, {
@@ -179,7 +179,7 @@ export function WebDay001RuntimeProvider({ children }: PropsWithChildren) {
     async signUp(inputEmail, password) {
       if (!client) throw new Error('supabase_not_configured');
       setMessage(null);
-      const redirect = typeof window === 'undefined' ? undefined : `${window.location.origin}/day-001`;
+      const redirect = typeof window === 'undefined' ? undefined : `${window.location.origin}${redirectPath}`;
       const { data, error } = await client.auth.signUp({
         email: inputEmail.trim(),
         password,
@@ -202,7 +202,7 @@ export function WebDay001RuntimeProvider({ children }: PropsWithChildren) {
       }
       setMessage(null);
     },
-  }), [phase, userId, email, accessToken, client, message]);
+  }), [phase, userId, email, accessToken, client, message, redirectPath]);
 
   return <RuntimeContext.Provider value={value}>{children}</RuntimeContext.Provider>;
 }
