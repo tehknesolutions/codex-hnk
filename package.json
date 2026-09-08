@@ -12,6 +12,7 @@
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
+    "canon:promote": "node scripts/promote-canonical-days.mjs",
     "validate:architecture": "node scripts/validate-architecture.mjs",
     "validate:ui": "node scripts/validate-ui-tokens.mjs",
     "validate:day001": "node scripts/validate-day001-master.mjs",
