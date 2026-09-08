@@ -11,6 +11,7 @@ export * from './day002-v1';
 export * from './kether-cycle01';
 export * from './practice-record';
 export * from './promotion-sync';
+export * from './real-world-action-v1';
 export * from './vault';
 export * from './vault-key-envelopes';
 
