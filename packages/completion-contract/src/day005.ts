@@ -6,7 +6,7 @@ export const DAY005_COMPLETION = {
   questDefinitionId: 'HNK-KETHER-D005-V1',
   canonicalSourceSha: 'eb9f078bdc7654135f83fbcdf0aa7d5d38412cff',
   canonicalXp: 100,
-  deploymentState: 'not_deployed',
+  deploymentState: 'active',
 } as const;
 
 export function buildDay005CompletionRequest(input: {
