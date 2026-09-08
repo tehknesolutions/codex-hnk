@@ -5,6 +5,7 @@ import {
   DAY002_AUDIO_PRESET_V1,
   createDay002AudioLoopWavBase64,
 } from '@hnk/audio-contract';
+import type { AudioRuntimePort, AudioRuntimeSnapshot, AudioRuntimeStatus } from '@hnk/quest-engine';
 
 async function resolveDay002AudioSource(): Promise<string> {
   const base64 = createDay002AudioLoopWavBase64();
@@ -15,46 +16,70 @@ async function resolveDay002AudioSource(): Promise<string> {
   return uri;
 }
 
-export class Day002ExpoAudioRuntime {
+function clampVolume(value: number): number {
+  if (!Number.isFinite(value)) return 0;
+  return Math.max(0, Math.min(1, value));
+}
+
+export class Day002ExpoAudioRuntime implements AudioRuntimePort {
   private player: AudioPlayer | null = null;
   private started = false;
+  private status: AudioRuntimeStatus = 'IDLE';
+  private volume = 0.5;
 
   get profileId(): string {
     return DAY002_AUDIO_PRESET_V1.id;
   }
 
-  get isStarted(): boolean {
-    return this.started;
+  snapshot(): AudioRuntimeSnapshot {
+    return {
+      profileId: this.profileId,
+      status: this.status,
+      started: this.started,
+      volume: this.volume,
+    };
   }
 
   async start(volume = 0.5): Promise<void> {
-    let player = this.player;
-    if (!player) {
-      player = createAudioPlayer(await resolveDay002AudioSource());
-      player.loop = true;
-      this.player = player;
+    this.volume = clampVolume(volume);
+    try {
+      let player = this.player;
+      if (!player) {
+        player = createAudioPlayer(await resolveDay002AudioSource());
+        player.loop = true;
+        this.player = player;
+      }
+      player.volume = this.volume;
+      player.play();
+      this.started = true;
+      this.status = 'PLAYING';
+    } catch (error) {
+      this.status = 'ERROR';
+      throw error;
     }
-    player.volume = Math.max(0, Math.min(1, Number.isFinite(volume) ? volume : 0));
-    player.play();
-    this.started = true;
   }
 
   pause(): void {
     this.player?.pause();
+    if (this.started) this.status = 'PAUSED';
   }
 
   resume(): void {
     this.player?.play();
+    if (this.started) this.status = 'PLAYING';
   }
 
   setVolume(volume: number): void {
-    if (this.player) this.player.volume = Math.max(0, Math.min(1, Number.isFinite(volume) ? volume : 0));
+    this.volume = clampVolume(volume);
+    if (this.player) this.player.volume = this.volume;
   }
 
   stop(): void {
-    if (!this.player) return;
-    try { this.player.pause(); } catch { /* noop */ }
-    try { this.player.release(); } catch { /* noop */ }
-    this.player = null;
+    if (this.player) {
+      try { this.player.pause(); } catch { /* noop */ }
+      try { this.player.release(); } catch { /* noop */ }
+      this.player = null;
+    }
+    this.status = 'STOPPED';
   }
 }
