@@ -1,7 +1,7 @@
 {
   "document_id": "HNK40-VISUAL-MIGRATION-REGISTRY-V1",
   "date": "2026-09-08",
-  "status": "VISUAL_SOURCE_BLOCKED",
+  "status": "VISUAL_RECONSTITUTION_ACTIVE",
   "recovery_state": "REMOTE_CONNECTED_SOURCE_ARCHAEOLOGY_EXHAUSTED",
   "archaeology": {
     "document": "docs/architecture/HNK40_SOURCE_ARCHAEOLOGY_V1.json",
@@ -49,11 +49,35 @@
     "protoglyph": null,
     "promoted_visual_canon": false
   },
+  "reconstitution": {
+    "track": "V2-RECONSTITUTED",
+    "legacy_identity_claimed": false,
+    "candidate_a": {
+      "state": "REJECTED_FOR_CONFUSION",
+      "reason": "multiple pairwise visual similarities exceeded the high-risk threshold"
+    },
+    "candidate_b": {
+      "state": "ACTIVE_CANDIDATE",
+      "document": "docs/architecture/HNK40_V2_CANDIDATE_GLYPH_SHEET_B.json",
+      "vector_sheet": "docs/architecture/HNK40_V2_CANDIDATE_GLYPH_SHEET_B.svg",
+      "confusion_report": "docs/architecture/HNK40_V2_CANDIDATE_B_CONFUSION_REPORT.csv",
+      "architecture": "10 protoglyph columns x 4 deterministic world transforms",
+      "quality_gate": {
+        "metric": "fixed-canvas binary Jaccard similarity",
+        "high_risk_threshold": 0.72,
+        "max_observed_similarity": 0.6537,
+        "high_risk_pair_count": 0,
+        "result": "PASS"
+      },
+      "visual_state": "CANDIDATE_NOT_OFFICIAL"
+    }
+  },
   "promotion_gate": {
     "source_recovered": false,
-    "exactly_40_assets": false,
-    "bijective_g_binding": false,
-    "phoneme_match_40_of_40": false,
+    "exactly_40_assets": true,
+    "bijective_g_binding": true,
+    "phoneme_match_40_of_40": true,
+    "automated_confusion_gate": true,
     "pua_verified": false,
     "provenance_hashes_recorded": false,
     "cross_renderer_test": false,
@@ -71,6 +95,6 @@
     "old 12-token HENUVOKODAN PUA mappings",
     "HENUVOKODAN PACK-00 elemental/game sigils"
   ],
-  "next_state": "VISUAL_RECONSTITUTION_DECISION_GATE",
+  "next_state": "HUMAN_40_OF_40_VISUAL_REVIEW",
   "non_invention_rule": "No Unicode/PUA character, font glyph, SVG, path or drawn symbol may be labeled the official HNK40 visual glyph until its 1:1 binding to the current G01-G40 registry is evidenced and promoted."
 }
