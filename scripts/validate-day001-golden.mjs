@@ -13,6 +13,7 @@ const checks = [
   "validate-day001-assets.mjs",
   "validate-day001-editorial.mjs",
   "validate-day001-quest-pack.mjs",
+  "validate-day001-runtime-integration.mjs",
 ];
 
 for (const check of checks) {
