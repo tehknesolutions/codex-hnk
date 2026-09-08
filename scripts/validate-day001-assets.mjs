@@ -76,13 +76,16 @@ for (const key of [
   "first-spark-animation",
 ]) {
   const entry = byKey.get(key);
-  if (entry?.status !== "VISUAL_CONTRACT_READY_ADAPTER_PENDING") fail(`${key} must be bound to the extracted visual contract`);
+  if (entry?.status !== "VISUAL_CONTRACT_READY") fail(`${key} must be frozen as a ready visual contract`);
   if (!entry?.visual_primitive_id) fail(`${key} visual primitive id missing`);
 }
 
 if (manifest.visual_contract !== "day-001.visual.manifest.json") fail("asset manifest visual contract pointer drift");
 if (manifest.art_direction !== "day-001.art-direction.json") fail("asset manifest art direction pointer drift");
-if (manifest.release_ready !== false) fail("asset manifest must remain non-release-ready until renderer adapters land");
+if (manifest.asset_layer_ready !== true || manifest.release_ready !== true) fail("asset layer must remain ready after visual freeze");
+if ((manifest.release_blockers ?? []).length !== 0) fail("runtime adapter work must not remain classified as an asset blocker");
+if (manifest.runtime_integration?.state !== "SHELL_ADAPTERS_PENDING") fail("runtime integration handoff drift");
+if (manifest.runtime_integration?.required_bindings !== 7) fail("runtime adapter binding count drift");
 if (visual.bindings?.length !== 7) fail("visual manifest procedural binding count drift");
 if (visual.static_assets?.length !== 3) fail("visual manifest static asset count drift");
 if (visual.primitives?.find((entry) => entry.id === "HNK-D001-VIS-REFLECTION-FIELD-V1")?.approval_state !== "APPROVED_PRODUCT_VISUAL_V1") fail("Soul Mirror primitive approval drift");
@@ -90,25 +93,14 @@ if (artDirection.approval_state !== "PRODUCT_V1_FROZEN") fail("Day 001 art direc
 if (artDirection.epistemic_boundary?.canonical_kether_sigil_is_distinct !== true) fail("Kether sigil distinction guard missing");
 if (artDirection.soul_mirror_field?.status !== "APPROVED_PRODUCT_VISUAL_V1") fail("Soul Mirror art-direction freeze drift");
 
-const blockerSet = new Set(manifest.release_blockers ?? []);
-if (!blockerSet.has("ASSET-001-PROCEDURAL-ADAPTER")) fail("renderer adapter blocker missing");
-for (const obsolete of [
-  "ASSET-001-CROWN-DERIVATIVE",
-  "ASSET-001-KEY-ART",
-  "ASSET-001-SOUL-MIRROR-FINAL",
-  "ASSET-001-PROCEDURAL-EXTRACTION",
-  "ASSET-001-REGISTRY-RESOLUTION",
-]) {
-  if (blockerSet.has(obsolete)) fail(`resolved/obsolete asset blocker remains: ${obsolete}`);
-}
-
+if (reconciliation.asset_layer_ready !== true) fail("asset reconciliation must be closed at asset layer");
 if (reconciliation.summary?.required_slots !== 10) fail("reconciliation slot total drift");
 if (reconciliation.summary?.approved_canonical_migrated !== 1) fail("approved canonical migrated count drift");
 if (reconciliation.summary?.approved_product_assets !== 3) fail("approved product asset count drift");
 if (reconciliation.summary?.procedural_contract_ready !== 6) fail("procedural contract count drift");
 if (reconciliation.summary?.needs_derivative_or_visual_review !== 0) fail("visual review backlog must be zero after V1 freeze");
-if (reconciliation.summary?.adapter_pending !== 7) fail("adapter-pending binding count drift");
+if (reconciliation.summary?.runtime_adapter_bindings_pending !== 7) fail("runtime adapter binding count drift");
 
 if (!process.exitCode) {
-  console.log("DAY001 ASSETS PASS (1 canonical asset, 3 product assets, 6 procedural contracts; only renderer adapters pending)");
+  console.log("DAY001 ASSETS PASS (asset layer ready; 7 shell adapter bindings tracked as runtime integration)");
 }
