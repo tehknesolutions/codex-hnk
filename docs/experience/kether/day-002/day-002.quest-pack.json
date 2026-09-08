@@ -1,7 +1,7 @@
 {
   "id":"HNK-KETHER-D002-PACK-V1",
   "kind":"hnk.quest_pack",
-  "version":"0.5.1",
+  "version":"0.5.2",
   "day":2,
   "quest_definition_id":"HNK-KETHER-D002-V1",
   "completion_contract_id":"HNK-KETHER-D002-COMP-V1",
@@ -26,6 +26,6 @@
   "safety":{"canon_preserved":true,"product_overlay_required":true,"absolute_immobility_enforced":false,"movement_allowed":true,"natural_breathing_required":true,"significant_discomfort_stop":true,"impulse_is_not_failure":true,"audio_autoplay":false,"audio_immediate_stop":true,"headphones_required_for_binaural_difference":true},
   "progression":{"xp":100,"server_authoritative":true,"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","migration":"20260908173643_attribute_progression_matrix_v1_kether","attribute_DIS":{"canonical_reference":true,"gain":1,"secondary_attribute":"PER","state":"FROZEN_SERVER_SIDE_FIRST_COMPLETION_ONLY","cap":20},"client_may_apply_attribute_gain":false,"vehuiah_after_first_completion":"2/5","fragment_awarded":false},
   "blockers":[],
-  "qa":{"code_integration":"STATIC_GATES_VERSIONED","static_gates":["validate-day002-scalability.mjs","validate-day002-audio.mjs","validate-quest-audio-runtime.mjs","validate-day002-runtime-integration.mjs","validate-quest-catalog-scalability.mjs","validate-attribute-progression-matrix.mjs"],"browser_runtime":"PENDING","expo_device_runtime":"PENDING","authenticated_first_completion":"PENDING","authenticated_revisit":"PENDING","concurrency_idempotency":"PENDING","ci_latest_known_result":"RUNNER_FAILED_BEFORE_STEPS","ci_is_release_evidence":false},
-  "proof_result":"PASS_ARCHITECTURE_REUSE__PROGRESSION_FROZEN__AUDIO_PUBLISHED__COMPLETION_ACTIVE__WEB_EXPO_INTEGRATED"
+  "qa":{"code_integration":"STATIC_GATES_VERSIONED","static_gates":["validate-day002-scalability.mjs","validate-day002-audio.mjs","validate-quest-audio-runtime.mjs","validate-day002-runtime-integration.mjs","validate-quest-catalog-scalability.mjs","validate-attribute-progression-matrix.mjs"],"backend_transactional_smoke":"PASS_ROLLBACK_ONLY","backend_smoke_test":"supabase/tests/day002_completion_v1_smoke.sql","authenticated_first_completion":"PASS_DB_TRANSACTION","authenticated_revisit":"PASS_DB_TRANSACTION","same_client_replay_idempotency":"PASS_DB_TRANSACTION","concurrency_idempotency":"PARTIAL_REPLAY_PASS__TRUE_TWO_CONNECTION_TEST_PENDING","browser_runtime":"PENDING","expo_device_runtime":"PENDING","ci_latest_known_result":"RUNNER_FAILED_BEFORE_STEPS","ci_is_release_evidence":false},
+  "proof_result":"PASS_ARCHITECTURE_REUSE__PROGRESSION_FROZEN__AUDIO_PUBLISHED__COMPLETION_ACTIVE__WEB_EXPO_INTEGRATED__BACKEND_SMOKE_PASS"
 }
