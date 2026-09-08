@@ -1,7 +1,7 @@
 import type { Json } from '@hnk/database';
 import type { HnkSupabaseClient } from './index';
 
-export type PracticeState = 'active' | 'evidence_pending' | 'complete';
+export type PracticeState = 'active' | 'interrupted' | 'evidence_pending' | 'complete';
 
 export type SafePracticeMetricValue = number | boolean | null;
 export type SafePracticeDraftValue = SafePracticeMetricValue | undefined;
@@ -40,6 +40,15 @@ export interface SavePracticeInput {
   localRecordHash?: string | null;
 }
 
+export interface InterruptPracticeInput {
+  sessionId: string;
+  durationSeconds?: number | null;
+  metrics?: SafePracticeMetrics;
+  evidence?: SafePracticeEvidence;
+  endedAt?: string | null;
+  localRecordHash?: string | null;
+}
+
 export interface CompletionResult {
   day: number;
   firstCompletion: boolean;
@@ -68,6 +77,12 @@ function assertDay(day: number): void {
 
 function assertClientSessionId(value: string): void {
   if (!value.trim()) throw new Error('client_session_id_required');
+}
+
+function assertDurationSeconds(value: number | null | undefined): void {
+  if (value != null && (!Number.isInteger(value) || value < 0)) {
+    throw new Error('invalid_duration_seconds');
+  }
 }
 
 /**
@@ -172,9 +187,7 @@ export async function savePracticeRecord(
   input: SavePracticeInput,
 ): Promise<PracticeSessionRecord> {
   if (!input.sessionId.trim()) throw new Error('practice_session_id_required');
-  if (input.durationSeconds != null && (!Number.isInteger(input.durationSeconds) || input.durationSeconds < 0)) {
-    throw new Error('invalid_duration_seconds');
-  }
+  assertDurationSeconds(input.durationSeconds);
 
   const metrics = normalizeSafeRecord(input.metrics, 'metrics');
   const evidence = normalizeSafeRecord(input.evidence, 'evidence');
@@ -191,6 +204,38 @@ export async function savePracticeRecord(
       evidence,
       state: input.readyForCompletion ? 'evidence_pending' : 'active',
       ended_at: input.endedAt ?? null,
+      local_record_hash: input.localRecordHash ?? null,
+    })
+    .eq('id', input.sessionId)
+    .select(SESSION_SELECT)
+    .single();
+
+  if (error) throw error;
+  return toSessionRecord(data);
+}
+
+/**
+ * Persists a voluntary/safety interruption without converting the attempt into
+ * completion evidence. Existing canonical progress remains untouched.
+ */
+export async function interruptPracticeSession(
+  client: HnkSupabaseClient,
+  input: InterruptPracticeInput,
+): Promise<PracticeSessionRecord> {
+  if (!input.sessionId.trim()) throw new Error('practice_session_id_required');
+  assertDurationSeconds(input.durationSeconds);
+
+  const metrics = normalizeSafeRecord(input.metrics ?? {}, 'metrics');
+  const evidence = normalizeSafeRecord(input.evidence ?? {}, 'evidence');
+
+  const { data, error } = await client
+    .from('practice_sessions')
+    .update({
+      duration_seconds: input.durationSeconds ?? null,
+      metrics,
+      evidence,
+      state: 'interrupted',
+      ended_at: input.endedAt ?? new Date().toISOString(),
       local_record_hash: input.localRecordHash ?? null,
     })
     .eq('id', input.sessionId)
