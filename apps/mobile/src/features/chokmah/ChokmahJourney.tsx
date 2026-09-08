@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { useHnkAuth } from '../auth/AuthContext';
 import { ChokmahCycle01Cahetel } from './ChokmahCycle01Cahetel';
+import { ChokmahCycle02Haziel } from './ChokmahCycle02Haziel';
 
 export function ChokmahJourney() {
   const auth = useHnkAuth();
@@ -31,12 +32,13 @@ export function ChokmahJourney() {
   }
 
   if (currentDay <= 41) return <ChokmahCycle01Cahetel />;
+  if (currentDay <= 46) return <ChokmahCycle02Haziel />;
 
   return (
     <View style={styles.threshold}>
-      <Text style={styles.eyebrow}>CHOKMAH · ESTEIRA EDITORIAL</Text>
+      <Text style={styles.eyebrow}>CHOKMAH · FRONTEIRA CANÔNICA</Text>
       <Text style={styles.title}>DIA {String(Math.min(currentDay, 73)).padStart(3, '0')}</Text>
-      <Text style={styles.body}>A progressão server-side alcançou este ponto, mas o próximo ciclo só será executável depois que seu conteúdo passar de draft para cânone e receber runtime validado.</Text>
+      <Text style={styles.body}>O próximo ciclo só será executável quando a cadeia G5 → G6 → G7 estiver concluída. Conteúdo editorial ou promotion candidate nunca substitui o cânone sincronizado.</Text>
     </View>
   );
 }
