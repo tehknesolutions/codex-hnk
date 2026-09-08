@@ -1,41 +1,13 @@
 {
   "id":"HNK-KETHER-D003-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.2.0",
-  "status":"CONFIG_COMPILED__SERVER_ACTION_REVIEWED__RUNTIME_ADAPTER_PENDING",
+  "version":"0.3.0",
+  "status":"CONFIG_COMPILED__SERVER_ACTION_ACTIVE__WEB_EXPO_RUNTIME_INTEGRATED__COMPLETION_REVIEWED",
   "day":3,
   "title":"Despolarização do Ego",
-  "canonical":{
-    "repository":"Tehkne-Solutions/hnk-codex-365",
-    "path":"canon/capitulo-01-kether/dia-003.md",
-    "source_sha":"3cb60ed208c24ee885cbe95d974c7468419120aa",
-    "editorial_version":"1.0",
-    "sephira":"Kether",
-    "world":"Atziluth",
-    "angel":"Vehuiah",
-    "initiatory_grade":1,
-    "initiatory_title":"Neófito",
-    "xp":100,
-    "tracks":["TEURG-101","COMP-101","BIO-101"],
-    "correspondences":{"tarot":"O Louco","rune":"Fehu","iching":"Hexagrama 1 — O Criativo"}
-  },
-  "progression":{
-    "matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1",
-    "matrix_version":"1.0.0",
-    "primary_attribute":"INT",
-    "secondary_attribute":"HIP",
-    "attribute_gain":0,
-    "application":"NO_NUMERIC_GAIN_DAY003_V1",
-    "canon_sintonia_language":"NARRATIVE_OUTCOME_NOT_NUMERIC_ATTRIBUTE_EVENT"
-  },
-  "runtime":{
-    "entry_state":"AVAILABLE",
-    "completion_state":"COMPLETE",
-    "resumable":true,
-    "offline_first":true,
-    "checkpoint_states":["JACHIN_RETURN","BOAZ_24H_ACTION","BOAZ_RETURN","MIDDLE_RETURN","SOUL_MIRROR"],
-    "interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]
-  },
+  "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-003.md","source_sha":"3cb60ed208c24ee885cbe95d974c7468419120aa","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Vehuiah","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"],"correspondences":{"tarot":"O Louco","rune":"Fehu","iching":"Hexagrama 1 — O Criativo"}},
+  "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","primary_attribute":"INT","secondary_attribute":"HIP","attribute_gain":0,"application":"NO_NUMERIC_GAIN_DAY003_V1","canon_sintonia_language":"NARRATIVE_OUTCOME_NOT_NUMERIC_ATTRIBUTE_EVENT"},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"checkpoint_states":["JACHIN_RETURN","BOAZ_24H_ACTION","BOAZ_RETURN","MIDDLE_RETURN","SOUL_MIRROR"],"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
   "phases":[
     {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"required_for_completion":false},
     {"id":"kether_reentry","type":"TERM_REVEAL","source":{"kind":"PLATFORM_MICROCOPY"},"terms":["Kether","Atziluth","Vehuiah","Despolarização","Auto-observação"],"required_for_completion":false},
@@ -57,11 +29,9 @@
     {"id":"attribute_notice","type":"INSTRUCTION","source":{"kind":"SYSTEM"},"content_intent":["The Canon uses language of elevating Sintonia Espiritual.","Attribute Progression Matrix V1 classifies Day 003 as INT/HIP training with zero numerical attribute gain.","No client or server attribute event is awarded for Day 003 V1."],"attribute_effect":{"primary_attribute":"INT","secondary_attribute":"HIP","gain":0,"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","client_may_apply":false},"required_for_completion":false},
     {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","voice_recording_optional":true,"voice_recording_destination":"LOCAL_ENCRYPTED_VAULT"},"required_for_completion":true},
     {"id":"correspondence_reveal","type":"CORRESPONDENCE_REVEAL","source":{"kind":"PLATFORM_EXPERIENCE"},"items":["Kether","Atziluth","Vehuiah","O Louco","Fehu","Hexagrama 1"],"required_for_completion":false},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D003-COMP-V1","completion_contract_state":"DEPLOYED_REVIEWED_RUNTIME_ADAPTER_PENDING","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D003-COMP-V1","completion_contract_state":"DEPLOYED_REVIEWED_ACTIVATION_PENDING","client_may_award_xp":false,"required_for_completion":true},
     {"id":"vehuiah_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Vehuiah","cycle_progress":"3/5","fragment_awarded":false},"required_for_completion":false}
   ],
-  "scalability_proof":{"reuses_quest_catalog":true,"reuses_audio_runtime_port":true,"new_phase_types":["REAL_WORLD_ACTION"],"new_generic_renderer_contract_required":true,"day_specific_engine_branch_required":false,"signature_moment":"24H_WITNESS_WINDOW"},
-  "release_blockers":[
-    {"id":"RUNTIME-003-REAL-WORLD-ACTION-ADAPTER","scope":"WEB_EXPO_RENDERER","reason":"Generic Web/Expo RealWorldAction renderer exists but must be wired into the Day 003 routes before Completion Contract activation."}
-  ]
+  "scalability_proof":{"reuses_quest_catalog":true,"reuses_audio_runtime_port":true,"reuses_snapshot_persistence":true,"new_phase_types":["REAL_WORLD_ACTION"],"new_generic_renderer_contract_required":true,"day_specific_engine_branch_required":false,"signature_moment":"24H_WITNESS_WINDOW"},
+  "release_blockers":[{"id":"COMPLETION-003-ACTIVATION","scope":"SERVER_COMPLETION","reason":"Web/Expo runtime is integrated; activate HNK-KETHER-D003-COMP-V1 only after the static integration gate passes."}]
 }
