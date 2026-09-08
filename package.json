@@ -3,9 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "packageManager": "pnpm@12.1.0",
-  "engines": {
-    "node": "22.x"
-  },
+  "engines": {"node": "22.x"},
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
@@ -14,10 +12,9 @@
     "validate:day001": "node scripts/validate-day001-golden.mjs",
     "validate:day002": "node scripts/validate-day002-scalability.mjs",
     "validate:catalog": "node scripts/validate-quest-catalog-scalability.mjs",
-    "validate:scalability": "pnpm validate:day002 && pnpm validate:catalog",
+    "validate:attributes": "node scripts/validate-attribute-progression-matrix.mjs",
+    "validate:scalability": "pnpm validate:day002 && pnpm validate:catalog && pnpm validate:attributes",
     "check": "pnpm validate:day001 && pnpm validate:scalability && turbo run typecheck test"
   },
-  "devDependencies": {
-    "turbo": "2.10.12"
-  }
+  "devDependencies": {"turbo": "2.10.12"}
 }
