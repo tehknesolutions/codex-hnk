@@ -1,0 +1,74 @@
+name: Day 002 Scalability Gate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/experience/kether/day-002/**'
+      - 'packages/quest-engine/**'
+      - 'packages/completion-contract/**'
+      - 'supabase/migrations/*day002*'
+      - 'scripts/validate-day002-scalability.mjs'
+      - 'scripts/validate-quest-catalog-scalability.mjs'
+      - 'scripts/verify-day002-canon-source.mjs'
+      - 'package.json'
+      - '.github/workflows/day002-scalability.yml'
+  pull_request:
+    paths:
+      - 'docs/experience/kether/day-002/**'
+      - 'packages/quest-engine/**'
+      - 'packages/completion-contract/**'
+      - 'supabase/migrations/*day002*'
+      - 'scripts/validate-day002-scalability.mjs'
+      - 'scripts/validate-quest-catalog-scalability.mjs'
+      - 'scripts/verify-day002-canon-source.mjs'
+      - 'package.json'
+      - '.github/workflows/day002-scalability.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scalability-contracts:
+    name: Day 002 configuration reuse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch canonical Day 002 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            'https://raw.githubusercontent.com/Tehkne-Solutions/hnk-codex-365/main/canon/capitulo-01-kether/dia-002.md' \
+            --output "$RUNNER_TEMP/day002-canon.md"
+          test -s "$RUNNER_TEMP/day002-canon.md"
+      - name: Verify raw Day 002 Canon
+        run: node scripts/verify-day002-canon-source.mjs "$RUNNER_TEMP/day002-canon.md"
+      - name: Validate Day 002 scalability
+        run: node scripts/validate-day002-scalability.mjs
+      - name: Validate multi-day Quest Catalog
+        run: node scripts/validate-quest-catalog-scalability.mjs
+
+  engine-typecheck:
+    name: Generic Quest Engine typecheck
+    needs: scalability-contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm --filter @hnk/quest-engine typecheck
+      - run: pnpm --filter @hnk/completion-contract typecheck
