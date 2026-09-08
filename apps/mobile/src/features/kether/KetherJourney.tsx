@@ -7,6 +7,7 @@ import { KetherCycle03Sitael } from './KetherCycle03Sitael';
 import { KetherCycle04Elemiah } from './KetherCycle04Elemiah';
 import { KetherCycle05Mahasiah } from './KetherCycle05Mahasiah';
 import { KetherCycle06Lelahel } from './KetherCycle06Lelahel';
+import { KetherCycle07Achaiah } from './KetherCycle07Achaiah';
 
 export function KetherJourney() {
   const auth = useHnkAuth();
@@ -47,12 +48,13 @@ export function KetherJourney() {
   if (currentDay <= 20) return <KetherCycle04Elemiah />;
   if (currentDay <= 25) return <KetherCycle05Mahasiah />;
   if (currentDay <= 30) return <KetherCycle06Lelahel />;
+  if (currentDay <= 35) return <KetherCycle07Achaiah />;
 
   return (
     <View style={styles.threshold}>
-      <Text style={styles.eyebrow}>KETHER · RUNTIME EXPANSION</Text>
-      <Text style={styles.title}>DIA {String(Math.min(currentDay, 36)).padStart(3, '0')}</Text>
-      <Text style={styles.body}>A progressão server-side alcançou Achaiah. O Ciclo VII será conectado ao mesmo runtime; nenhuma tela substituta é tratada como prática canônica.</Text>
+      <Text style={styles.eyebrow}>KETHER · COROA 7/7 · PORTAL DISPONÍVEL</Text>
+      <Text style={styles.title}>PORTAL 036</Text>
+      <Text style={styles.body}>Os Dias 001–035 chegaram ao limiar do Portal. Coroa 7/7 não promove Grau: o estado canônico permanece Neófito até a conclusão válida do Dia 036 no backend.</Text>
     </View>
   );
 }
