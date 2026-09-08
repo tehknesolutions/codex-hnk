@@ -1,0 +1,33 @@
+{
+  "document_id": "HNK40-V2-CANDIDATE-D-AUTOMATED-GATE",
+  "date": "2026-09-08",
+  "candidate": "V2-RECONSTITUTED-D",
+  "status": "PASS_HUMAN_CHOICE_PENDING",
+  "structural_target": "G01-G40",
+  "design_goal": "Common upright writing axis across W1-W4.",
+  "confusion_gate": {
+    "metric": "fixed-canvas binary Jaccard",
+    "high_threshold": 0.72,
+    "medium_threshold": 0.58,
+    "max_similarity": 0.549,
+    "high_pairs": 0,
+    "medium_pairs": 0,
+    "result": "PASS"
+  },
+  "small_size_legibility": {
+    "sizes_px": [16, 24, 32, 48],
+    "blank_glyphs": 0,
+    "exact_raster_collisions": 0,
+    "unique_glyphs_each_size": 40,
+    "result": "PASS"
+  },
+  "non_invention": {
+    "lexical_semantics": "RECOVERED_CORPUS_ONLY",
+    "pua": "UNASSIGNED",
+    "unicode": "UNASSIGNED",
+    "font_cmap": "UNASSIGNED",
+    "legacy_identity": "NOT_CLAIMED",
+    "world_semantics": "NOT_CANONIZED"
+  },
+  "next_gate": "HUMAN_CHOICE_C_VS_D"
+}
