@@ -23,8 +23,9 @@
     "validate:vault-native-interop": "node scripts/validate-vault-native-interop.mjs",
     "validate:vault-envelope-adapter": "node scripts/validate-vault-envelope-adapter.mjs",
     "validate:mahasiah-ar": "node scripts/validate-mahasiah-day025-ar.mjs",
+    "validate:lelahel": "node scripts/validate-lelahel-runtime.mjs",
     "export:board": "node scripts/export-board.mjs",
-    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && turbo run lint typecheck test"
+    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && pnpm validate:lelahel && turbo run lint typecheck test"
   },
   "devDependencies": {
     "playwright": "1.55.0",
