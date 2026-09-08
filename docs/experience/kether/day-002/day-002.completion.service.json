@@ -1,0 +1,30 @@
+{
+  "id": "HNK-KETHER-D002-COMPLETION-SERVICE-V1",
+  "quest_definition_id": "HNK-KETHER-D002-V1",
+  "completion_contract_id": "HNK-KETHER-D002-COMP-V1",
+  "canonical_source_sha": "71019573414493ee9e5521f4d27ed744748c0d2b",
+  "canonical_xp": 100,
+  "transport": {
+    "rpc": "complete_codex_day_v2",
+    "deployment_state": "DEPLOYED_REVIEWED_INACTIVE",
+    "client_may_award_xp": false,
+    "server_authoritative": true
+  },
+  "deployment": {
+    "project": "codex-hnk-app",
+    "migration": "20260908164103_day002_completion_contract_v1_reviewed",
+    "registry_status": "reviewed",
+    "validator_key": "day002_v1",
+    "activation_gate": "AUDIO-002-BINAURAL-528",
+    "activation_requires_followup_migration": true
+  },
+  "invariants": {
+    "previous_day_required": true,
+    "xp_from_codex_days": true,
+    "idempotent_day_completion": true,
+    "idempotent_xp": true,
+    "attribute_gain_applied": false,
+    "attribute_gain_reason": "ATTRIBUTE_PROGRESSION_MATRIX_V1_PENDING",
+    "arbitrary_audio_profile_may_not_activate_contract": true
+  }
+}
