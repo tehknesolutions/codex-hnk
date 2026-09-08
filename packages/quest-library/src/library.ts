@@ -8,6 +8,9 @@ import day002PackJson from '../../../docs/experience/kether/day-002/day-002.ques
 import day003QuestJson from '../../../docs/experience/kether/day-003/day-003.quest.json';
 import day003CanonJson from '../../../docs/experience/kether/day-003/day-003.canon-blocks.json';
 import day003PackJson from '../../../docs/experience/kether/day-003/day-003.quest-pack.json';
+import day004QuestJson from '../../../docs/experience/kether/day-004/day-004.quest.json';
+import day004CanonJson from '../../../docs/experience/kether/day-004/day-004.canon-blocks.json';
+import day004PackJson from '../../../docs/experience/kether/day-004/day-004.quest-pack.json';
 import type { RuntimeCanonManifest, RuntimeQuestBundle, RuntimeQuestBundleLoader } from './types.js';
 
 function asQuest(value: unknown): QuestDefinition { return value as QuestDefinition; }
@@ -18,6 +21,7 @@ const BUNDLES = new Map<number, RuntimeQuestBundle>([
   [1, { day: 1, quest: asQuest(day001QuestJson), canon: asCanon(day001CanonJson), pack: asPack(day001PackJson) }],
   [2, { day: 2, quest: asQuest(day002QuestJson), canon: asCanon(day002CanonJson), pack: asPack(day002PackJson) }],
   [3, { day: 3, quest: asQuest(day003QuestJson), canon: asCanon(day003CanonJson), pack: asPack(day003PackJson) }],
+  [4, { day: 4, quest: asQuest(day004QuestJson), canon: asCanon(day004CanonJson), pack: asPack(day004PackJson) }],
 ]);
 
 function validateBundle(bundle: RuntimeQuestBundle): RuntimeQuestBundle {
