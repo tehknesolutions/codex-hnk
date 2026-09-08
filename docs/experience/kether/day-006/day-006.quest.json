@@ -1,0 +1,34 @@
+{
+  "id":"HNK-KETHER-D006-V1",
+  "kind":"hnk.quest_definition",
+  "version":"0.1.0",
+  "status":"CONFIG_COMPILED__RUNTIME_COMPLETION_PENDING",
+  "day":6,
+  "title":"O Silêncio da Psuche",
+  "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-006.md","source_sha":"923c43ae0a68d63a4c88f67d83076b72e0b06c39","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Jeliel","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"]},
+  "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","primary_attribute":"PER","secondary_attribute":"DIS","attribute_gain":1,"application":"SERVER_SIDE_FIRST_COMPLETION_ONLY","client_may_apply":false,"source_basis":"EXPERIENCE_MATRIX_CHECKPOINT"},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"checkpoint_states":["JACHIN_RETURN","BOAZ_RETURN","MIDDLE_RETURN","SOUL_MIRROR"],"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "phases":[
+    {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["Begin the Jeliel cycle by shifting from doing to listening."],"required_for_completion":false},
+    {"id":"jeliel_reveal","type":"TERM_REVEAL","source":{"kind":"PLATFORM_MICROCOPY"},"terms":["Jeliel","Escuta pura","Silêncio interno","IOD-LAMED-IOD"],"required_for_completion":false},
+    {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"epistemic_overlays":[{"domain":"E5","scope":"Zoe and divine-silence theology"},{"domain":"E2","status":"NOT_ESTABLISHED_AS_WRITTEN","scope":"claims that internal verbal noise makes spiritual intuition impossible or that silence fills neurological structures with subtle energy"}],"required_for_completion":true},
+    {"id":"listening_practice","type":"FOCUS","source":{"kind":"CANON","block_ids":["jachin-kavanah","jachin-ordalia"]},"interaction":{"duration_seconds":600,"components":["RITUAL_TIMER","SOUND_MAP","ATTENTION_RETURN"],"event_label":"SOM_PERCEBIDO","classification_optional":true,"pause":true,"stop":true},"safety":{"eyes_may_remain_open":true,"movement_allowed_for_comfort":true,"natural_breathing_required":true,"subjective_silence_not_required":true,"stop_always_visible":true},"required_for_completion":true},
+    {"id":"jachin_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"boaz_reading","type":"READ","source":{"kind":"CANON","block_ids":["boaz-doctrine","boaz-kavanah","boaz-ordalia"]},"epistemic_overlays":[{"domain":"E2","status":"PRODUCT_SAFETY_REFRAME","scope":"thoughts are noticed and released; they are not forcibly suppressed or treated as hostile failures"},{"domain":"E4","scope":"Atziluth currents and subtle-body framing"}],"required_for_completion":true},
+    {"id":"boaz_safety_overlay","type":"INSTRUCTION","source":{"kind":"GUIDE_SAFETY"},"content_intent":["Absolute immobility is not required.","Do not force thoughts away. Notice a thought, let the bubble image pass if useful, and return to listening.","Movement for comfort and safety is allowed.","Stop for pain, numbness, dizziness, breathlessness or significant distress."],"required_for_completion":false},
+    {"id":"boaz_silence","type":"FOCUS","source":{"kind":"CANON","block_ids":["boaz-kavanah"]},"interaction":{"duration_seconds":600,"components":["RITUAL_TIMER","ATTENTION_RETURN","BUBBLE_VISUALIZATION"],"counter_semantics":{"event_label":"PENSAMENTO_PERCEBIDO","meaning":"Notice and return without failure framing."},"pause":true,"stop":true},"safety":{"absolute_immobility_not_required":true,"thought_suppression_not_required":true,"return_gate":true},"required_for_completion":true},
+    {"id":"boaz_journal","type":"JOURNAL","source":{"kind":"CANON","block_ids":["boaz-ordalia"]},"privacy":{"free_text_destination":"VAULT_ONLY","structured_evidence":["difficulties_recorded_count"]},"interaction":{"minimum_structured_count":3},"required_for_completion":true},
+    {"id":"boaz_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"epistemic_overlays":[{"domain":"E4","scope":"angelic vibration and subtle-resonance framing"},{"domain":"E2","status":"NOT_ESTABLISHED_AS_WRITTEN","scope":"claims of neurological friction disintegration or subconscious-superconscious unification"}],"required_for_completion":true},
+    {"id":"jeliel_voice","type":"VOICE","source":{"kind":"CANON","block_ids":["middle-kavanah","middle-ordalia"]},"interaction":{"vocalization":"IOD-LAMED-IOD","user_paced":true,"recording_optional":true,"practice_without_recording_allowed":true,"recording_destination":"LOCAL_ENCRYPTED_VAULT","upload":false,"automatic_transcription":false},"safety":{"volume_user_controlled":true,"stop_for_voice_or_audio_discomfort":true,"return_gate":true},"privacy":{"recording_consent_required":true,"recording_not_required_for_completion":true},"required_for_completion":true},
+    {"id":"middle_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","voice_recording_optional":true,"voice_recording_destination":"LOCAL_ENCRYPTED_VAULT"},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D006-COMP-V1","completion_contract_state":"NOT_DEPLOYED","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"jeliel_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Jeliel","cycle_progress":"1/5","fragment_awarded":false,"next_day":7},"required_for_completion":false}
+  ],
+  "privacy_mediation":{"canon_mentions_audio_record_validation":true,"platform_policy":"VOICE_RECORDING_OPT_IN_NOT_REQUIRED_FOR_XP","reason":"Private voice media remains optional and local-first; execution of the vocal practice is the completion evidence."},
+  "release_blockers":[
+    {"id":"RUNTIME-006-JELIEL-INTEGRATION","scope":"WEB_EXPO","reason":"Day006 listening/voice surfaces must be integrated."},
+    {"id":"COMPLETION-006-CONTRACT","scope":"SERVER_COMPLETION","reason":"Day006 validator/registry are not yet deployed."}
+  ]
+}
