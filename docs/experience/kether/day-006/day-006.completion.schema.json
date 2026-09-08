@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://hnk.local/schemas/day-006.completion.schema.json",
+  "title":"HNK Day 006 Completion Contract V1",
+  "type":"object",
+  "required":["completion_contract_id","quest_definition_id","canonical_source_sha","canonical_xp","attribute_progression"],
+  "properties":{
+    "completion_contract_id":{"const":"HNK-KETHER-D006-COMP-V1"},
+    "quest_definition_id":{"const":"HNK-KETHER-D006-V1"},
+    "canonical_source_sha":{"const":"923c43ae0a68d63a4c88f67d83076b72e0b06c39"},
+    "canonical_xp":{"const":100},
+    "attribute_progression":{"type":"object","required":["matrix_id","attribute","gain","application"],"properties":{"matrix_id":{"const":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1"},"attribute":{"const":"PER"},"gain":{"const":1},"application":{"const":"SERVER_SIDE_FIRST_COMPLETION_ONLY"}}}
+  }
+}
