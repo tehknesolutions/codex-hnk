@@ -8,6 +8,7 @@ import { KetherCycle04Elemiah } from './KetherCycle04Elemiah';
 import { KetherCycle05Mahasiah } from './KetherCycle05Mahasiah';
 import { KetherCycle06Lelahel } from './KetherCycle06Lelahel';
 import { KetherCycle07Achaiah } from './KetherCycle07Achaiah';
+import { KetherPortal036Experience } from './KetherPortal036Experience';
 
 export function KetherJourney() {
   const auth = useHnkAuth();
@@ -49,12 +50,13 @@ export function KetherJourney() {
   if (currentDay <= 25) return <KetherCycle05Mahasiah />;
   if (currentDay <= 30) return <KetherCycle06Lelahel />;
   if (currentDay <= 35) return <KetherCycle07Achaiah />;
+  if (currentDay === 36) return <KetherPortal036Experience />;
 
   return (
     <View style={styles.threshold}>
-      <Text style={styles.eyebrow}>KETHER · COROA 7/7 · PORTAL DISPONÍVEL</Text>
-      <Text style={styles.title}>PORTAL 036</Text>
-      <Text style={styles.body}>Os Dias 001–035 chegaram ao limiar do Portal. Coroa 7/7 não promove Grau: o estado canônico permanece Neófito até a conclusão válida do Dia 036 no backend.</Text>
+      <Text style={styles.eyebrow}>KETHER 36/36 · COROA 7/7</Text>
+      <Text style={styles.title}>LEVEL 2 · INICIADO</Text>
+      <Text style={styles.body}>Chokmah está desbloqueado pelo backend. Esta tela não cria nem inicia o Dia 037 automaticamente; a próxima Sephira deve montar sua própria jornada canônica.</Text>
     </View>
   );
 }
