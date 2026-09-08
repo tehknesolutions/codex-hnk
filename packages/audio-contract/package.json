@@ -1,9 +1,12 @@
 {
   "name": "@hnk/audio-contract",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "exports": {".": "./src/index.ts"},
+  "exports": {
+    ".": "./src/index.ts",
+    "./theta432": "./src/theta432.ts"
+  },
   "scripts": {"typecheck": "tsc -p tsconfig.json --noEmit"},
   "devDependencies": {"typescript": "^5.9.2"}
 }
