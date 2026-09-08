@@ -8,7 +8,7 @@ const checks = [
   "validate-day001-canon-resolver.mjs",
   "validate-practice-contract.mjs",
   "validate-day001-completion-service.mjs",
-  "validate-completion-backend-draft.mjs",
+  "validate-completion-backend-v2.mjs",
   "validate-day001-visual-contract.mjs",
   "validate-day001-assets.mjs",
   "validate-day001-editorial.mjs",
