@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://hnk.local/schemas/day-005.evidence.schema.json",
+  "title":"HNK Day 005 Evidence V1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["protocol_version","source_sha","session_id","baseline","jachin","audio_theta432","boaz","middle","soul_mirror","voluntary_completion_confirmed"],
+  "properties":{
+    "protocol_version":{"const":"HNK-KETHER-D005-V1"},
+    "source_sha":{"const":"eb9f078bdc7654135f83fbcdf0aa7d5d38412cff"},
+    "session_id":{"type":"string","minLength":1},
+    "mode":{"enum":["first_completion","revisit"]},
+    "baseline":{"type":"object","additionalProperties":false,"required":["tension_before","tension_after"],"properties":{"tension_before":{"type":"integer","minimum":0,"maximum":10},"tension_after":{"type":"integer","minimum":0,"maximum":10}}},
+    "jachin":{"type":"object","additionalProperties":false,"required":["breath_completed","duration_seconds","natural_breathing_confirmed","return_confirmed"],"properties":{"breath_completed":{"const":true},"duration_seconds":{"type":"integer","minimum":0},"natural_breathing_confirmed":{"const":true},"camera_qr_used":{"type":"boolean"},"return_confirmed":{"const":true}}},
+    "audio_theta432":{"type":"object","additionalProperties":false,"required":["started","profile_id"],"properties":{"started":{"const":true},"profile_id":{"const":"HNK-THETA432-BINAURAL-V1"},"duration_seconds":{"type":["integer","null"],"minimum":0},"stopped_for_discomfort":{"type":"boolean"}}},
+    "boaz":{"type":"object","additionalProperties":false,"required":["gesture_completed","empty_hand_confirmed","forced_exhalation_avoided","journal_entry_recorded","return_confirmed"],"properties":{"gesture_completed":{"const":true},"empty_hand_confirmed":{"const":true},"forced_exhalation_avoided":{"const":true},"journal_entry_recorded":{"const":true},"journal_vault_entry_ref":{"type":["string","null"]},"return_confirmed":{"const":true}}},
+    "middle":{"type":"object","additionalProperties":false,"required":["dai_koo_myo_focus_completed","duration_seconds","asset_id","return_confirmed"],"properties":{"dai_koo_myo_focus_completed":{"const":true},"duration_seconds":{"type":"integer","minimum":0},"asset_id":{"const":"HNK-KETHER-DAI-KOO-MYO-USUI-MASTER-V1"},"return_confirmed":{"const":true}}},
+    "phenomenology":{"type":"array","uniqueItems":true,"items":{"enum":["CALM","TENSION_REDUCED","TENSION_UNCHANGED","WARMTH","IMAGERY","AGITATION","BODY_SENSATIONS","NO_NOTICEABLE_CHANGE","OTHER"]}},
+    "soul_mirror":{"type":"object","additionalProperties":false,"required":["completed"],"properties":{"completed":{"const":true},"difficulty_rating":{"type":["integer","null"],"minimum":0,"maximum":10},"vault_entry_ref":{"type":["string","null"]}}},
+    "voluntary_completion_confirmed":{"const":true},
+    "safety_stop_occurred":{"type":"boolean"}
+  }
+}
