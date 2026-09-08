@@ -21,11 +21,15 @@
   },
   "policies":{
     "completion":{"client_may_award_xp":false,"client_may_mark_complete_directly":false,"requires_server_confirmation":true},
-    "real_world_action":{"server_clock_authoritative":true,"client_cannot_self_qualify":true,"restart_without_punishment":true,"check_in_supported":true,"stop_supported":true},
+    "real_world_action":{"server_clock_authoritative":true,"client_cannot_self_qualify":true,"qualified_state_required_before_phase_completion":true,"restart_without_punishment":true,"check_in_supported":true,"stop_supported":true,"quest_snapshot_persistence_required":true,"practice_session_persistence_required":true},
     "audio":{"profile_driven":true,"autoplay":false,"neurological_state_claim":false},
-    "privacy":{"journal_free_text":"VAULT_ONLY","structured_evidence_private_text":false},
+    "privacy":{"journal_free_text":"VAULT_ONLY","real_world_private_prose":"VAULT_ONLY","structured_evidence_private_text":false},
     "accessibility":{"reduced_motion_required":true,"stop_control_required_for_practice":true}
   },
+  "platform_integration":{
+    "web":{"route":"/day-003","component":"Day003GoldenV1Web","snapshot_store":"localStorage via QuestSnapshotStore","practice_session_store":"localStorage id only","real_world_action_renderer":"QuestRealWorldActionPhase"},
+    "expo":{"route":"/day-003","component":"Day003GoldenV1Mobile","snapshot_store":"SecureStore via QuestSnapshotStore","practice_session_store":"SecureStore id only","real_world_action_renderer":"QuestRealWorldActionPhase"}
+  },
   "signature_moments":{"belief_witness":"BeliefWitness","boaz_24h_action":"TwentyFourHourWitness","soul_mirror":"SoulMirrorReveal","vehuiah_progress":"VehuiahThirdMark"},
-  "scalability_assertion":{"new_scene_classes":["RealWorldActionScene"],"new_scene_is_generic":true,"day_specific_engine_branch_required":false}
+  "scalability_assertion":{"new_scene_classes":["RealWorldActionScene"],"new_scene_is_generic":true,"day_specific_engine_branch_required":false,"reuses_quest_catalog":true,"reuses_audio_runtime_port":true,"reuses_snapshot_persistence":true}
 }
