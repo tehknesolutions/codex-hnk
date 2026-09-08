@@ -10,9 +10,14 @@ const fail = (message) => { console.error(`DAY002 SCALABILITY FAIL: ${message}`)
 const quest = read(d2, 'day-002.quest.json');
 const canon = read(d2, 'day-002.canon-blocks.json');
 const evidence = read(d2, 'day-002.evidence.schema.json');
+const completion = read(d2, 'day-002.completion.schema.json');
+const completionService = read(d2, 'day-002.completion.service.json');
 const renderer = read(d2, 'day-002.renderer-profile.json');
 const pack = read(d2, 'day-002.quest-pack.json');
 const day1Renderer = read(d1, 'day-001.renderer-profile.json');
+const registrySource = fs.readFileSync(path.join(root, 'packages', 'quest-engine', 'src', 'registry.ts'), 'utf8');
+const day2CompletionSource = fs.readFileSync(path.join(root, 'packages', 'completion-contract', 'src', 'day002.ts'), 'utf8');
+const migrationSource = fs.readFileSync(path.join(root, 'supabase', 'migrations', '20260908164103_day002_completion_contract_v1_reviewed.sql'), 'utf8');
 
 const WORD_RE = /[0-9A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-’'][0-9A-Za-zÀ-ÖØ-öø-ÿ]+)*/gu;
 function officialCount(text) {
@@ -24,6 +29,7 @@ function officialCount(text) {
 }
 
 if (quest.id !== 'HNK-KETHER-D002-V1') fail('quest id drift');
+if (quest.version !== '1.1.0') fail('quest version drift');
 if (quest.canonical?.source_sha !== '71019573414493ee9e5521f4d27ed744748c0d2b') fail('source SHA drift');
 if (quest.canonical?.xp !== 100) fail('canonical XP must be 100');
 if (canon.source?.counter !== 'scripts/validate_pages.py') fail('official counter pointer missing');
@@ -53,6 +59,11 @@ if (renderer.scalability_assertion?.new_renderer_code_required !== false) fail('
 if (renderer.scalability_assertion?.reuses_day001_renderer_contract !== true) fail('Day 001 renderer contract reuse not asserted');
 if (quest.scalability_proof?.new_renderer_required !== false) fail('quest says new renderer required');
 if ((quest.scalability_proof?.new_phase_types ?? []).length !== 0) fail('quest declares new phase type');
+
+if (!registrySource.includes('export class QuestRegistry')) fail('generic QuestRegistry missing');
+if (!registrySource.includes('resolveDay(day: number)')) fail('QuestRegistry day resolver missing');
+if (!registrySource.includes('requireDay(day: number)')) fail('QuestRegistry required day resolver missing');
+if (/HNK-KETHER-D00[12]/.test(registrySource)) fail('QuestRegistry must not hardcode Day 001/002 ids');
 
 const audio = quest.phases.find((phase) => phase.id === 'audio_528_binaural');
 if (!audio) fail('Day 002 canonical audio phase missing');
@@ -86,11 +97,26 @@ for (const privateKey of ['distraction_text', 'journal_text', 'soul_mirror_text'
 }
 if (evidence.properties?.boaz?.properties?.impulse_count?.minimum !== 0) fail('impulse_count must be non-punitive and allow zero');
 
+const completionPhase = quest.phases.find((phase) => phase.id === 'completion');
+if (completionPhase?.completion_contract_id !== 'HNK-KETHER-D002-COMP-V1') fail('quest completion contract binding drift');
+if (completionPhase?.completion_contract_state !== 'DEPLOYED_REVIEWED_INACTIVE_PENDING_AUDIO') fail('quest completion deployment state drift');
+if (completion.properties?.completion_contract_id?.const !== 'HNK-KETHER-D002-COMP-V1') fail('completion schema id drift');
+if (completion.properties?.quest_definition_id?.const !== quest.id) fail('completion schema quest id drift');
+if (completionService.deployment?.migration !== '20260908164103_day002_completion_contract_v1_reviewed') fail('completion migration id drift');
+if (completionService.deployment?.registry_status !== 'reviewed') fail('Day 002 contract must remain reviewed until audio approval');
+if (completionService.deployment?.activation_gate !== 'AUDIO-002-BINAURAL-528') fail('audio activation gate drift');
+if (!day2CompletionSource.includes('HNK-KETHER-D002-COMP-V1')) fail('typed Day 002 completion contract missing');
+if (!migrationSource.includes("'day002_v1', 'reviewed'")) fail('reviewed registry binding missing from migration');
+if (!migrationSource.includes('validate_day002_completion_v1')) fail('Day 002 database validator missing');
+
 const blockerIds = new Set(pack.blockers.map((entry) => entry.id));
-for (const id of ['AUDIO-002-BINAURAL-528', 'PROGRESSION-002-DIS-MATRIX', 'COMPLETION-002-CONTRACT']) {
+for (const id of ['AUDIO-002-BINAURAL-528', 'PROGRESSION-002-DIS-MATRIX']) {
   if (!blockerIds.has(id)) fail(`missing explicit Day 002 blocker ${id}`);
 }
+if (blockerIds.has('COMPLETION-002-CONTRACT')) fail('resolved completion contract blocker still present');
+if (blockerIds.size !== 2) fail(`expected exactly 2 Day 002 blockers, got ${blockerIds.size}`);
+if (pack.server_completion?.contract_state !== 'DEPLOYED_REVIEWED_INACTIVE') fail('Quest Pack completion state drift');
 if (pack.reuse?.new_scene_classes !== 0 || pack.reuse?.new_practice_renderer_classes !== 0) fail('Quest Pack reuse proof drift');
-if (pack.proof_result !== 'PASS_ARCHITECTURE_REUSE__RELEASE_NOT_READY') fail('proof result drift');
+if (pack.proof_result !== 'PASS_ARCHITECTURE_REUSE__COMPLETION_CONTRACT_DEPLOYED_REVIEWED__RELEASE_NOT_READY') fail('proof result drift');
 
-if (!process.exitCode) console.log('DAY002 SCALABILITY PASS: 705-word canon valid; Day 001 renderer reused; 3 release blockers explicit');
+if (!process.exitCode) console.log('DAY002 SCALABILITY PASS: 705-word canon; generic registry; Day 001 renderer reused; completion contract reviewed; 2 blockers remain');
