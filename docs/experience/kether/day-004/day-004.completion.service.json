@@ -4,8 +4,8 @@
   "completion_contract_id":"HNK-KETHER-D004-COMP-V1",
   "canonical_source_sha":"376964a263f3d4f07542fcf55ca3bf2c18c5fd94",
   "canonical_xp":100,
-  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"REVIEWED_NOT_ACTIVE"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"ACTIVE"},
   "evidence_policy":{"experiment_self_report":"STRUCTURED_ONLY","private_observation":"VAULT_ONLY","no_subjective_effect_required":true,"attribute_gain":0},
-  "deployment":{"project":"codex-hnk-app","registry_status":"reviewed","validator_key":"day004_v1","migration":"20260908222937_day004_completion_contract_v1_reviewed"},
-  "activation_gate":"DAY004_RUNTIME_GATE_THEN_REGISTRY_ACTIVE"
+  "deployment":{"project":"codex-hnk-app","registry_status":"active","validator_key":"day004_v1","reviewed_migration":"20260908222937_day004_completion_contract_v1_reviewed","activation_migration":"20260908223553_activate_day004_completion_v1"},
+  "qa":{"validator_positive":true,"validator_negative_rating_guard":true,"transactional_smoke":"PASS_ROLLBACK_ONLY"}
 }
