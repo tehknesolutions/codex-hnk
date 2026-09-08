@@ -1,0 +1,29 @@
+{
+  "id":"HNK-KETHER-D003-PACK-V1",
+  "kind":"hnk.quest_pack",
+  "version":"0.1.0",
+  "day":3,
+  "quest_definition_id":"HNK-KETHER-D003-V1",
+  "completion_contract_id":"HNK-KETHER-D003-COMP-V1",
+  "canonical_source_sha":"3cb60ed208c24ee885cbe95d974c7468419120aa",
+  "canonical_xp":100,
+  "integrity_state":"CANON_705_CONFIG_COMPILED_BACKEND_REVIEWED",
+  "release_state":"REAL_WORLD_ACTION_RUNTIME_ADAPTER_PENDING",
+  "files":[
+    {"path":"day-003.canon-blocks.json","role":"CANON_BLOCKS","required":true},
+    {"path":"day-003.quest.json","role":"QUEST_DEFINITION","required":true},
+    {"path":"day-003.evidence.schema.json","role":"EVIDENCE_SCHEMA","required":true},
+    {"path":"day-003.completion.schema.json","role":"COMPLETION_SCHEMA","required":true},
+    {"path":"day-003.completion.service.json","role":"COMPLETION_SERVICE_PROFILE","required":true},
+    {"path":"day-003.renderer-profile.json","role":"RENDERER_PROFILE","required":true}
+  ],
+  "reuse":{"quest_registry":"HNK_QUEST_REGISTRY_V1","quest_catalog":"QuestCatalog.requireDay(3)","audio_profile":"HNK-THETA432-BINAURAL-V1","day_specific_engine_branch_required":false},
+  "new_generic_capability":{"phase_type":"REAL_WORLD_ACTION","renderer":"RealWorldActionScene","contract_package":"@hnk/real-world-action-contract","transport":"@hnk/supabase-client","action_contract_id":"HNK-KETHER-D003-BOAZ-24H-V1"},
+  "server":{"project":"codex-hnk-app","migration":"20260908204001_day003_real_world_action_contract_v1_reviewed","action_contract_status":"active","completion_contract_status":"reviewed","server_clock_authoritative":true,"boundary_smoke":"PASS_ROLLBACK_ONLY"},
+  "progression":{"xp":100,"attribute_gain":0,"primary_attribute":"INT","secondary_attribute":"HIP","matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1"},
+  "privacy":{"beliefs_text":"VAULT_ONLY","protective_inquiry_text":"VAULT_ONLY","soul_mirror_text":"VAULT_ONLY","structured_evidence_private_text":false},
+  "safety":{"lapse_policy":"RESTART_WINDOW_WITHOUT_PUNISHMENT","failure_state":false,"user_may_stop":true,"return_gates":true},
+  "blockers":[{"id":"RUNTIME-003-REAL-WORLD-ACTION-ADAPTER","reason":"Generic Web/Expo RealWorldAction renderer must be wired before Completion Contract activation."}],
+  "qa":{"server_23h59m59s_active":true,"server_24h_qualified":true,"restart_count_verified":true,"unqualified_validator_rejection":true,"qualified_validator_acceptance":true,"web_runtime":"PENDING","expo_runtime":"PENDING"},
+  "proof_result":"PASS_CANON_AND_SERVER_TEMPORAL_BOUNDARY__RUNTIME_ADAPTER_PENDING"
+}
