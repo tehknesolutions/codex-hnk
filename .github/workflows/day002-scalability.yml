@@ -6,14 +6,21 @@ on:
       - main
     paths:
       - 'docs/experience/kether/day-002/**'
+      - 'docs/audio/**'
       - 'docs/progression/**'
       - 'docs/architecture/HNK_ATTRIBUTE_PROGRESSION_MATRIX_V1.md'
       - 'packages/quest-engine/**'
       - 'packages/completion-contract/**'
+      - 'packages/practice-contract/**'
       - 'packages/progression/**'
+      - 'packages/audio-contract/**'
+      - 'packages/supabase-client/**'
+      - 'apps/web/app/day-002/**'
+      - 'apps/mobile/src/features/kether/day002-audio-runtime.ts'
       - 'supabase/migrations/*day002*'
       - 'supabase/migrations/*attribute_progression*'
       - 'scripts/validate-day002-scalability.mjs'
+      - 'scripts/validate-day002-audio.mjs'
       - 'scripts/validate-quest-catalog-scalability.mjs'
       - 'scripts/validate-attribute-progression-matrix.mjs'
       - 'scripts/verify-day002-canon-source.mjs'
@@ -22,14 +29,21 @@ on:
   pull_request:
     paths:
       - 'docs/experience/kether/day-002/**'
+      - 'docs/audio/**'
       - 'docs/progression/**'
       - 'docs/architecture/HNK_ATTRIBUTE_PROGRESSION_MATRIX_V1.md'
       - 'packages/quest-engine/**'
       - 'packages/completion-contract/**'
+      - 'packages/practice-contract/**'
       - 'packages/progression/**'
+      - 'packages/audio-contract/**'
+      - 'packages/supabase-client/**'
+      - 'apps/web/app/day-002/**'
+      - 'apps/mobile/src/features/kether/day002-audio-runtime.ts'
       - 'supabase/migrations/*day002*'
       - 'supabase/migrations/*attribute_progression*'
       - 'scripts/validate-day002-scalability.mjs'
+      - 'scripts/validate-day002-audio.mjs'
       - 'scripts/validate-quest-catalog-scalability.mjs'
       - 'scripts/validate-attribute-progression-matrix.mjs'
       - 'scripts/verify-day002-canon-source.mjs'
@@ -42,7 +56,7 @@ permissions:
 
 jobs:
   scalability-contracts:
-    name: Day 002 configuration reuse
+    name: Day 002 configuration and audio contracts
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -62,13 +76,15 @@ jobs:
         run: node scripts/verify-day002-canon-source.mjs "$RUNNER_TEMP/day002-canon.md"
       - name: Validate Day 002 scalability
         run: node scripts/validate-day002-scalability.mjs
+      - name: Validate deterministic Day 002 audio
+        run: node scripts/validate-day002-audio.mjs
       - name: Validate multi-day Quest Catalog
         run: node scripts/validate-quest-catalog-scalability.mjs
       - name: Validate Attribute Progression Matrix V1
         run: node scripts/validate-attribute-progression-matrix.mjs
 
   engine-typecheck:
-    name: Generic engine and progression typecheck
+    name: Day 002 engine and runtime typecheck
     needs: scalability-contracts
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -84,4 +100,9 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm --filter @hnk/quest-engine typecheck
       - run: pnpm --filter @hnk/completion-contract typecheck
+      - run: pnpm --filter @hnk/practice-contract typecheck
       - run: pnpm --filter @hnk/progression typecheck
+      - run: pnpm --filter @hnk/audio-contract typecheck
+      - run: pnpm --filter @hnk/supabase-client typecheck
+      - run: pnpm --filter @hnk/web typecheck
+      - run: pnpm --filter @hnk/mobile typecheck
