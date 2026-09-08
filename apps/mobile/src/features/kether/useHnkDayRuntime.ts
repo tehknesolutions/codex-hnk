@@ -18,6 +18,7 @@ import {
 } from '@hnk/day-runtime';
 import {
   completeCodexDay,
+  interruptPracticeSession,
   savePracticeRecord,
   startPracticeSession,
   type PracticeSessionRecord,
@@ -46,6 +47,13 @@ export interface SealDayInput {
    * number/boolean/null; free text still belongs in the encrypted Vault.
    */
   remoteEvidence?: RemoteSafeRecord;
+  metrics?: RemoteSafeRecord;
+  durationSeconds?: number | null;
+  localRecordHash?: string | null;
+}
+
+export interface InterruptDayInput {
+  evidence?: RemoteSafeRecord;
   metrics?: RemoteSafeRecord;
   durationSeconds?: number | null;
   localRecordHash?: string | null;
@@ -158,6 +166,32 @@ export function useHnkDayRuntime(definition: DayDefinition) {
     setRuntime((current) => current ? interruptDayRuntime(current) : current);
   }, []);
 
+  const interruptPersisted = useCallback(async (input: InterruptDayInput = {}) => {
+    // Safety/agency is local-first: the attempt stops immediately even if the
+    // network is unavailable. Server persistence is best-effort but explicit.
+    setRuntime((current) => current ? interruptDayRuntime(current) : current);
+
+    if (!practice) return null;
+    if (!auth.client || auth.phase !== 'signed-in') return null;
+
+    setError(null);
+    try {
+      const session = await interruptPracticeSession(auth.client, {
+        sessionId: practice.id,
+        durationSeconds: input.durationSeconds ?? null,
+        metrics: input.metrics ?? {},
+        evidence: input.evidence ?? {},
+        endedAt: new Date().toISOString(),
+        localRecordHash: input.localRecordHash ?? null,
+      });
+      setPractice(session);
+      return session;
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'practice_interrupt_persist_failed');
+      throw cause;
+    }
+  }, [auth.client, auth.phase, practice]);
+
   const seal = useCallback(async (input: SealDayInput = {}) => {
     if (!runtime || !practice) throw new Error('practice_session_required');
     if (!auth.client || auth.phase !== 'signed-in') throw new Error('authentication_required');
@@ -222,6 +256,7 @@ export function useHnkDayRuntime(definition: DayDefinition) {
     setEvidence,
     setReturnConfirmed,
     interrupt,
+    interruptPersisted,
     seal,
   };
 }
