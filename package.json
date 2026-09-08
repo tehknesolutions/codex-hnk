@@ -26,8 +26,9 @@
     "validate:lelahel": "node scripts/validate-lelahel-runtime.mjs",
     "validate:achaiah": "node scripts/validate-achaiah-runtime.mjs",
     "validate:portal036": "node scripts/validate-portal036-runtime.mjs",
+    "validate:editorial": "node scripts/validate-editorial-drafts.mjs",
     "export:board": "node scripts/export-board.mjs",
-    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && pnpm validate:lelahel && pnpm validate:achaiah && pnpm validate:portal036 && turbo run lint typecheck test"
+    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && pnpm validate:lelahel && pnpm validate:achaiah && pnpm validate:portal036 && pnpm validate:editorial && turbo run lint typecheck test"
   },
   "devDependencies": {
     "playwright": "1.55.0",
