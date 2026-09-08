@@ -1,0 +1,11 @@
+{
+  "id":"HNK-KETHER-D006-COMPLETION-SERVICE-V1",
+  "quest_definition_id":"HNK-KETHER-D006-V1",
+  "completion_contract_id":"HNK-KETHER-D006-COMP-V1",
+  "canonical_source_sha":"923c43ae0a68d63a4c88f67d83076b72e0b06c39",
+  "canonical_xp":100,
+  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"NOT_DEPLOYED"},
+  "progression":{"attribute":"PER","gain":1,"application":"SERVER_SIDE_FIRST_COMPLETION_ONLY"},
+  "deployment":{"project":"codex-hnk-app","registry_status":"not_deployed","validator_key":"day006_v1"},
+  "privacy":{"voice_practice_required":true,"voice_recording_required":false,"recording_destination":"LOCAL_ENCRYPTED_VAULT"}
+}
