@@ -2,29 +2,19 @@
   "name": "@hnk/web",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "typecheck": "tsc --noEmit",
-    "test": "node --test"
-  },
+  "scripts": {"dev":"next dev","build":"next build","start":"next start","typecheck":"tsc --noEmit","test":"node --test"},
   "dependencies": {
-    "@hnk/assets": "workspace:*",
-    "@hnk/audio-contract": "workspace:*",
-    "@hnk/quest-engine": "workspace:*",
-    "@hnk/quest-library": "workspace:*",
-    "@hnk/supabase-client": "workspace:*",
-    "@hnk/ui": "workspace:*",
-    "@hnk/vault-web-crypto-lab": "workspace:*",
-    "next": "16.3.3",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "@hnk/assets":"workspace:*",
+    "@hnk/audio-contract":"workspace:*",
+    "@hnk/quest-engine":"workspace:*",
+    "@hnk/quest-library":"workspace:*",
+    "@hnk/real-world-action-contract":"workspace:*",
+    "@hnk/supabase-client":"workspace:*",
+    "@hnk/ui":"workspace:*",
+    "@hnk/vault-web-crypto-lab":"workspace:*",
+    "next":"16.3.3",
+    "react":"19.2.3",
+    "react-dom":"19.2.3"
   },
-  "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "~19.2.2",
-    "@types/react-dom": "~19.2.3",
-    "typescript": "~6.0.3"
-  }
+  "devDependencies":{"@types/node":"^22","@types/react":"~19.2.2","@types/react-dom":"~19.2.3","typescript":"~6.0.3"}
 }
