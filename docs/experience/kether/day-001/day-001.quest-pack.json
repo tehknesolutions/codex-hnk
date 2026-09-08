@@ -1,12 +1,12 @@
 {
   "id": "HNK-KETHER-D001-PACK-V1",
   "kind": "hnk.quest_pack",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "day": 1,
   "quest_definition_id": "HNK-KETHER-D001-V2",
   "completion_contract_id": "HNK-KETHER-D001-COMP-V2",
   "canonical_source_sha": "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29",
-  "integrity_state": "PASS_CONTRACTS_RUNTIME_INTEGRATED",
+  "integrity_state": "PASS_CONTRACTS_RUNTIME_INTEGRATED_AUDIO_RESOLVED",
   "release_state": "BLOCKED",
   "offline": {
     "practice_capable": true,
@@ -87,7 +87,23 @@
     "mobile_entry": "apps/mobile/src/features/kether/Day001LiveVerticalSlice.tsx -> Day001GoldenV2Mobile",
     "completion_adapter": "packages/supabase-client/src/day001-v2.ts",
     "runtime_gate": "scripts/validate-day001-runtime-integration.mjs",
-    "ritual_tone_528": "RUNTIME_SYNTHESIS_ACTIVE_WEB_EXPO"
+    "ritual_tone_528": "RUNTIME_SYNTHESIS_ACTIVE_WEB_EXPO",
+    "theta_432_profile": "HNK-THETA432-BINAURAL-V1",
+    "theta_432_runtime": "PUBLISHED_OPTIONAL_WEB_EXPO"
+  },
+  "audio": {
+    "ritual_528": {"required": true, "state": "RUNTIME_ACTIVE_WEB_EXPO"},
+    "theta_432": {
+      "required": false,
+      "profile_id": "HNK-THETA432-BINAURAL-V1",
+      "left_hz": 432,
+      "right_hz": 438,
+      "difference_hz": 6,
+      "mapping_classification": "HNK_PRODUCT_DECISION_V1",
+      "render_sha256": "381e06f1ae0ef4a97c063635d8d80d387b4c009ff604b7b188ffcdabcc902785",
+      "state": "PUBLISHED_OPTIONAL",
+      "neurological_state_claim": false
+    }
   },
   "editorial_reconciliation": {
     "state": "PARTIAL_CANON_WRITE_PENDING",
@@ -96,15 +112,15 @@
     "voice_ordalia": "CANONICAL_AMENDMENT_PREPARED_SOURCE_WRITE_PENDING"
   },
   "blockers": [
-    {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"A 26-word canonical amendment is prepared, but the source-of-truth repository still carries mandatory recording and extra-XP wording."},
-    {"id":"AUDIO-001-THETA-432","scope":"DAY001_AUDIO","reason":"Exact Theta/432 binaural mapping is not canonically defined."}
+    {"id":"EDITORIAL-001-VOICE","scope":"DAY001_MIDDLE_ORDALIA","reason":"A 26-word canonical amendment is prepared, but the source-of-truth repository still carries mandatory recording and extra-XP wording."}
   ],
   "resolved_blockers": [
-    {"id":"RUNTIME-001-SHELL-INTEGRATION","resolved_by":"Web/Expo Golden V2 shells are present in the consolidation repo, active entrypoints use Evidence/Completion V2, and the 528 Hz runtime operator is wired without enabling pending Theta/432."}
+    {"id":"RUNTIME-001-SHELL-INTEGRATION","resolved_by":"Web/Expo Golden V2 shells are present in the consolidation repo, active entrypoints use Evidence/Completion V2, and the 528 Hz runtime operator is wired."},
+    {"id":"AUDIO-001-THETA-432","resolved_by":"Generic HNK product profile HNK-THETA432-BINAURAL-V1 freezes 432/438 Hz with 6 Hz difference, no 528 layer, no neurological-state claim, and is registered in Web/Expo as optional audio."}
   ],
   "ci": {
     "workflow": ".github/workflows/day001-golden.yml",
     "current_state": "INFRASTRUCTURE_BLOCKED_NO_RUNNER",
-    "note": "GitHub Actions run 51 on 2026-09-08 ended before any step; the contracts job exposed no steps/log blob and the dependent runtime-build job was skipped. No typecheck/build result is inferred from this infrastructure failure. Static runtime integration is guarded by scripts/validate-day001-runtime-integration.mjs."
+    "note": "GitHub Actions continues to end before any step. No typecheck/build result is inferred from this infrastructure failure; static gates remain versioned in-repo."
   }
 }
