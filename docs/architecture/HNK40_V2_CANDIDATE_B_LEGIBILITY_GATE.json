@@ -1,0 +1,12 @@
+{
+  "document_id": "HNK40-V2-CANDIDATE-B-LEGIBILITY-GATE",
+  "method": "SVG raster alpha-channel uniqueness and non-blank test",
+  "sizes": [
+    {"size_px":16,"blank_glyphs":0,"exact_raster_collisions":0,"unique_rasters":40,"min_ink_pixels":56,"max_ink_pixels":76,"result":"PASS"},
+    {"size_px":24,"blank_glyphs":0,"exact_raster_collisions":0,"unique_rasters":40,"min_ink_pixels":95,"max_ink_pixels":137,"result":"PASS"},
+    {"size_px":32,"blank_glyphs":0,"exact_raster_collisions":0,"unique_rasters":40,"min_ink_pixels":135,"max_ink_pixels":205,"result":"PASS"},
+    {"size_px":48,"blank_glyphs":0,"exact_raster_collisions":0,"unique_rasters":40,"min_ink_pixels":292,"max_ink_pixels":402,"result":"PASS"}
+  ],
+  "overall": "PASS",
+  "note": "Machine gate for blank/collision detection only; human readability review remains mandatory."
+}
