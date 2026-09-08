@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@hnk/audio-contract": "workspace:*",
+    "@hnk/quest-engine": "workspace:*",
     "@hnk/ritual-tone": "workspace:*",
     "@hnk/supabase-client": "workspace:*",
     "@hnk/ui": "workspace:*",
