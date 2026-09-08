@@ -1,0 +1,31 @@
+{
+  "id":"HNK-KETHER-D003-RENDERER-V1",
+  "quest_definition_id":"HNK-KETHER-D003-V1",
+  "renderer_contract":"HNK_RENDERER_LAYER_V1",
+  "default_surface":"mobile-first",
+  "phase_renderers":{
+    "NARRATIVE":"NarrativeScene",
+    "TERM_REVEAL":"TermRevealScene",
+    "READ":"CanonReadingScene",
+    "FOCUS":"FocusPracticeScene",
+    "AUDIO":"AudioPracticeScene",
+    "RETURN":"ReturnGateScene",
+    "INSTRUCTION":"InstructionScene",
+    "RELAXATION":"RelaxationPracticeScene",
+    "JOURNAL":"VaultJournalScene",
+    "STRUCTURED_JOURNAL":"SoulMirrorScene",
+    "REAL_WORLD_ACTION":"RealWorldActionScene",
+    "CORRESPONDENCE_REVEAL":"CorrespondenceScene",
+    "COMPLETION":"CompletionBoundaryScene",
+    "UNLOCK":"UnlockScene"
+  },
+  "policies":{
+    "completion":{"client_may_award_xp":false,"client_may_mark_complete_directly":false,"requires_server_confirmation":true},
+    "real_world_action":{"server_clock_authoritative":true,"client_cannot_self_qualify":true,"restart_without_punishment":true,"check_in_supported":true,"stop_supported":true},
+    "audio":{"profile_driven":true,"autoplay":false,"neurological_state_claim":false},
+    "privacy":{"journal_free_text":"VAULT_ONLY","structured_evidence_private_text":false},
+    "accessibility":{"reduced_motion_required":true,"stop_control_required_for_practice":true}
+  },
+  "signature_moments":{"belief_witness":"BeliefWitness","boaz_24h_action":"TwentyFourHourWitness","soul_mirror":"SoulMirrorReveal","vehuiah_progress":"VehuiahThirdMark"},
+  "scalability_assertion":{"new_scene_classes":["RealWorldActionScene"],"new_scene_is_generic":true,"day_specific_engine_branch_required":false}
+}
