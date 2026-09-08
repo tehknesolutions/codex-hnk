@@ -61,12 +61,20 @@
       "document": "docs/architecture/HNK40_V2_CANDIDATE_GLYPH_SHEET_B.json",
       "vector_sheet": "docs/architecture/HNK40_V2_CANDIDATE_GLYPH_SHEET_B.svg",
       "confusion_report": "docs/architecture/HNK40_V2_CANDIDATE_B_CONFUSION_REPORT.csv",
+      "legibility_gate": "docs/architecture/HNK40_V2_CANDIDATE_B_LEGIBILITY_GATE.json",
       "architecture": "10 protoglyph columns x 4 deterministic world transforms",
       "quality_gate": {
         "metric": "fixed-canvas binary Jaccard similarity",
         "high_risk_threshold": 0.72,
         "max_observed_similarity": 0.6537,
         "high_risk_pair_count": 0,
+        "result": "PASS"
+      },
+      "small_size_gate": {
+        "sizes_px": [16,24,32,48],
+        "blank_glyphs": 0,
+        "exact_raster_collisions": 0,
+        "unique_rasters_per_size": 40,
         "result": "PASS"
       },
       "visual_state": "CANDIDATE_NOT_OFFICIAL"
@@ -78,6 +86,7 @@
     "bijective_g_binding": true,
     "phoneme_match_40_of_40": true,
     "automated_confusion_gate": true,
+    "small_size_legibility_gate": true,
     "pua_verified": false,
     "provenance_hashes_recorded": false,
     "cross_renderer_test": false,
