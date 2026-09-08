@@ -1,14 +1,14 @@
 {
   "id":"HNK-KETHER-D004-PACK-V1",
   "kind":"hnk.quest_pack",
-  "version":"0.2.0",
+  "version":"0.3.0",
   "day":4,
   "quest_definition_id":"HNK-KETHER-D004-V1",
   "completion_contract_id":"HNK-KETHER-D004-COMP-V1",
   "canonical_source_sha":"376964a263f3d4f07542fcf55ca3bf2c18c5fd94",
   "canonical_xp":100,
-  "integrity_state":"CANON_705_CONFIG_COMPILED_EXPERIMENT_RUNTIME_INTEGRATED",
-  "release_state":"COMPLETION_REVIEWED_NOT_ACTIVE",
+  "integrity_state":"PASS_CANON_705_RUNTIME_BACKEND",
+  "release_state":"TECHNICALLY_ACTIVE_DEVICE_BROWSER_QA_PENDING",
   "files":[
     {"path":"day-004.canon-blocks.json","role":"CANON_BLOCKS","required":true},
     {"path":"day-004.quest.json","role":"QUEST_DEFINITION","required":true},
@@ -20,10 +20,11 @@
   "reuse":{"quest_catalog":"QuestCatalog.requireDay(4)","audio_profile":"HNK-THETA432-BINAURAL-V1","completion_service":"complete_codex_day_v2","day_specific_engine_branch_required":false},
   "new_generic_capability":{"phase_type":"EXPERIMENT","renderer":"BehavioralExperimentScene","controls":["START_EXPERIMENT","RECORD_OBSERVATION","STOP","COMPLETE_PHASE"],"design":"BEFORE_AFTER","web_component":"QuestBehavioralExperimentPhase","expo_component":"QuestBehavioralExperimentPhase"},
   "runtime":{"web_route":"/day-004","expo_route":"/day-004","web_component":"Day004GoldenV1Web","expo_component":"Day004GoldenV1Mobile","quest_library":true,"typed_evidence":true},
-  "server":{"project":"codex-hnk-app","completion_contract_status":"reviewed","validator_key":"day004_v1","validator_positive_test":true,"validator_rejects_rating_gt_10":true},
+  "server":{"project":"codex-hnk-app","completion_contract_status":"active","validator_key":"day004_v1","reviewed_migration":"20260908222937_day004_completion_contract_v1_reviewed","activation_migration":"20260908223553_activate_day004_completion_v1","validator_positive_test":true,"validator_rejects_rating_gt_10":true,"transactional_smoke":"PASS_ROLLBACK_ONLY","first_completion_xp":100,"revisit_xp":0,"attribute_events":0,"expected_total_xp_after_days_1_4":450},
   "progression":{"xp":100,"attribute_gain":0,"primary_attribute":"HIP","secondary_attribute":"INT","matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","basis":"NO_EXECUTABLE_GAIN_RULE_DAY004_V1"},
   "epistemic_boundary":{"self_report_is_observation_not_causal_proof":true,"no_noticeable_change_is_valid":true,"canonical_scientific_quantum_bioenergy_claims_not_promoted_to_platform_facts":true},
   "privacy":{"experiment_free_observation":"VAULT_ONLY","boaz_trigger_text":"VAULT_ONLY","soul_mirror_text":"VAULT_ONLY","structured_evidence_private_text":false},
-  "blockers":[{"id":"COMPLETION-004-CONTRACT","reason":"Validator/registry are deployed reviewed and await activation after runtime gate."}],
-  "proof_result":"PASS_CANON_705_RUNTIME_INTEGRATED_VALIDATOR_REVIEWED"
+  "blockers":[],
+  "qa":{"static_runtime_contract":"VERSIONED","backend_smoke":"PASS_ROLLBACK_ONLY","browser_real":"PENDING","expo_device":"PENDING"},
+  "proof_result":"PASS_TECHNICAL__DEVICE_BROWSER_QA_PENDING"
 }
