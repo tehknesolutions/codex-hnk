@@ -68,10 +68,13 @@ if (service.deployment?.registry_status !== 'active' || service.deployment?.migr
 if (!activationMigration.includes("when 'day002_v1'") || !activationMigration.includes("set status = 'active'")) fail('backend activation migration drift');
 
 if ((quest.release_blockers ?? []).length !== 0 || (pack.blockers ?? []).length !== 0) fail('technical blocker reappeared');
-if (pack.version !== '0.5.1') fail('Quest Pack version drift');
+if (pack.version !== '0.5.2') fail('Quest Pack version drift');
 if (pack.release_state !== 'WEB_EXPO_RUNTIME_INTEGRATED__DEVICE_AND_AUTHENTICATED_QA_PENDING') fail('Quest Pack release state drift');
 if (pack.runtime_integration?.catalog_api !== 'QuestCatalog.requireDay(2)' || pack.runtime_integration?.audio_port !== 'AudioRuntimePort') fail('runtime integration ledger drift');
+if (pack.qa?.backend_transactional_smoke !== 'PASS_ROLLBACK_ONLY') fail('backend smoke ledger drift');
+if (pack.qa?.same_client_replay_idempotency !== 'PASS_DB_TRANSACTION') fail('replay idempotency ledger drift');
+if (pack.qa?.concurrency_idempotency !== 'PARTIAL_REPLAY_PASS__TRUE_TWO_CONNECTION_TEST_PENDING') fail('true concurrency must remain explicitly pending');
 if (pack.qa?.browser_runtime !== 'PENDING' || pack.qa?.expo_device_runtime !== 'PENDING' || pack.qa?.ci_is_release_evidence !== false) fail('QA boundary drift');
 if (renderer.scalability_assertion?.new_scene_classes?.length !== 0) fail('renderer-profile scene class drift');
 
-if (!process.exitCode) console.log('DAY002 SCALABILITY PASS: 705 Canon; renderer reuse; profile-driven audio; server +1 DIS; Completion V2 active; Web/Expo integrated; runtime QA pending');
+if (!process.exitCode) console.log('DAY002 SCALABILITY PASS: 705 Canon; renderer reuse; profile-driven audio; server +1 DIS; Completion V2 active; Web/Expo integrated; rollback backend smoke pass; browser/device/two-connection QA pending');
