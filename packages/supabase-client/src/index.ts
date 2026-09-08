@@ -7,6 +7,7 @@ import type { Database } from '@hnk/database';
 
 export * from './auth-callback';
 export * from './day001-v2';
+export * from './day002-v1';
 export * from './kether-cycle01';
 export * from './practice-record';
 export * from './promotion-sync';
