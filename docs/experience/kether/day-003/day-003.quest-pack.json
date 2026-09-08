@@ -1,14 +1,14 @@
 {
   "id":"HNK-KETHER-D003-PACK-V1",
   "kind":"hnk.quest_pack",
-  "version":"0.2.0",
+  "version":"0.3.0",
   "day":3,
   "quest_definition_id":"HNK-KETHER-D003-V1",
   "completion_contract_id":"HNK-KETHER-D003-COMP-V1",
   "canonical_source_sha":"3cb60ed208c24ee885cbe95d974c7468419120aa",
   "canonical_xp":100,
-  "integrity_state":"CANON_705_CONFIG_COMPILED_SERVER_TEMPORAL_PASS_RUNTIME_INTEGRATED",
-  "release_state":"COMPLETION_ACTIVATION_PENDING",
+  "integrity_state":"CANON_705_CONFIG_COMPILED_SERVER_TEMPORAL_PASS_RUNTIME_INTEGRATED_COMPLETION_ACTIVE",
+  "release_state":"TECHNICAL_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "files":[
     {"path":"day-003.canon-blocks.json","role":"CANON_BLOCKS","required":true},
     {"path":"day-003.quest.json","role":"QUEST_DEFINITION","required":true},
@@ -17,14 +17,14 @@
     {"path":"day-003.completion.service.json","role":"COMPLETION_SERVICE_PROFILE","required":true},
     {"path":"day-003.renderer-profile.json","role":"RENDERER_PROFILE","required":true}
   ],
-  "reuse":{"quest_registry":"HNK_QUEST_REGISTRY_V1","quest_catalog":"QuestCatalog.requireDay(3)","audio_profile":"HNK-THETA432-BINAURAL-V1","snapshot_store":"QuestSnapshotStore","completion_service":"complete_codex_day_v2","day_specific_engine_branch_required":false},
+  "reuse":{"quest_registry":"HNK_QUEST_REGISTRY_V1","quest_catalog":"QuestCatalog.requireDay(3)","audio_profile":"HNK-THETA432-BINAURAL-V1","snapshot_store":"QuestSnapshotStore","completion_service":"complete_codex_day_v2","validator_dispatcher":"hnk_private.validate_completion_contract_v2","day_specific_engine_branch_required":false},
   "new_generic_capability":{"phase_type":"REAL_WORLD_ACTION","renderer":"RealWorldActionScene","contract_package":"@hnk/real-world-action-contract","transport":"@hnk/supabase-client","action_contract_id":"HNK-KETHER-D003-BOAZ-24H-V1"},
-  "server":{"project":"codex-hnk-app","migration":"20260908204001_day003_real_world_action_contract_v1_reviewed","action_contract_status":"active","completion_contract_status":"reviewed","server_clock_authoritative":true,"boundary_smoke":"PASS_ROLLBACK_ONLY"},
+  "server":{"project":"codex-hnk-app","reviewed_migration":"20260908204001_day003_real_world_action_contract_v1_reviewed","activation_migration":"20260908215043_activate_day003_completion_and_generic_validator_dispatch","action_contract_status":"active","completion_contract_status":"active","server_clock_authoritative":true,"boundary_smoke":"PASS_ROLLBACK_ONLY","completion_smoke":"PASS_ROLLBACK_ONLY"},
   "runtime":{"web_route":"/day-003","web_component":"Day003GoldenV1Web","expo_route":"/day-003","expo_component":"Day003GoldenV1Mobile","web_snapshot_persistence":"localStorage","expo_snapshot_persistence":"SecureStore","practice_session_persistence":true,"real_world_action_snapshot_callback":true,"client_cannot_self_qualify":true},
   "progression":{"xp":100,"attribute_gain":0,"primary_attribute":"INT","secondary_attribute":"HIP","matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1"},
   "privacy":{"beliefs_text":"VAULT_ONLY","protective_inquiry_text":"VAULT_ONLY","soul_mirror_text":"VAULT_ONLY","real_world_private_prose":"VAULT_ONLY","structured_evidence_private_text":false},
   "safety":{"lapse_policy":"RESTART_WINDOW_WITHOUT_PUNISHMENT","failure_state":false,"user_may_stop":true,"return_gates":true},
-  "blockers":[{"id":"COMPLETION-003-ACTIVATION","reason":"Runtime is integrated on Web/Expo; activate HNK-KETHER-D003-COMP-V1 only after the static integration gate confirms wiring."}],
-  "qa":{"server_23h59m59s_active":true,"server_24h_qualified":true,"restart_count_verified":true,"unqualified_validator_rejection":true,"qualified_validator_acceptance":true,"web_runtime":"STATIC_INTEGRATED","expo_runtime":"STATIC_INTEGRATED","device_runtime":"PENDING","browser_runtime":"PENDING"},
-  "proof_result":"PASS_CANON_SERVER_TEMPORAL_AND_STATIC_RUNTIME__COMPLETION_ACTIVATION_PENDING"
+  "blockers":[],
+  "qa":{"server_23h59m59s_active":true,"server_24h_qualified":true,"restart_count_verified":true,"unqualified_validator_rejection":true,"qualified_validator_acceptance":true,"first_completion_xp":100,"revisit_xp":0,"same_client_replay_stable":true,"attribute_events":0,"xp_total_after_seeded_day1_day2":350,"web_runtime":"STATIC_INTEGRATED","expo_runtime":"STATIC_INTEGRATED","device_runtime":"PENDING","browser_runtime":"PENDING"},
+  "proof_result":"PASS_CANON_SERVER_TEMPORAL_STATIC_RUNTIME_AND_COMPLETION__DEVICE_BROWSER_QA_PENDING"
 }
