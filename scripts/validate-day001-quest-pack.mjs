@@ -4,19 +4,12 @@ import path from "node:path";
 
 const root = process.cwd();
 const base = path.join(root, "docs", "experience", "kether", "day-001");
-const fail = (message) => {
-  console.error(`DAY001 QUEST PACK FAIL: ${message}`);
-  process.exitCode = 1;
-};
-
+const fail = (message) => { console.error(`DAY001 QUEST PACK FAIL: ${message}`); process.exitCode = 1; };
 const read = (name) => fs.readFileSync(path.join(base, name), "utf8");
 const json = (name) => JSON.parse(read(name));
 const gitBlobSha = (content) => {
   const bytes = Buffer.from(content, "utf8");
-  return createHash("sha1")
-    .update(Buffer.from(`blob ${bytes.length}\0`, "utf8"))
-    .update(bytes)
-    .digest("hex");
+  return createHash("sha1").update(Buffer.from(`blob ${bytes.length}\0`, "utf8")).update(bytes).digest("hex");
 };
 
 const pack = json("day-001.quest-pack.json");
@@ -39,32 +32,26 @@ const qid = "HNK-KETHER-D001-V2";
 const cid = "HNK-KETHER-D001-COMP-V2";
 const sourceSha = "a01d13b43cbddb92236fc1e3b6c2a7e140d87d29";
 const backendMigration = "20260908011647_day001_completion_contract_v2";
+const thetaProfile = "HNK-THETA432-BINAURAL-V1";
 
 if (pack.id !== "HNK-KETHER-D001-PACK-V1") fail("unexpected pack id");
-if (pack.version !== "1.6.0") fail("Quest Pack version drift");
+if (pack.version !== "1.7.0") fail("Quest Pack version drift");
 if (pack.quest_definition_id !== qid) fail("pack quest id drift");
 if (pack.completion_contract_id !== cid) fail("pack completion id drift");
 if (pack.canonical_source_sha !== sourceSha) fail("pack canonical SHA drift");
-if (pack.integrity_state !== "PASS_CONTRACTS_RUNTIME_INTEGRATED") fail("pack runtime integrity state drift");
-if (pack.release_state !== "BLOCKED") fail("pack must remain BLOCKED while release blockers exist");
+if (pack.integrity_state !== "PASS_CONTRACTS_RUNTIME_INTEGRATED_AUDIO_RESOLVED") fail("pack runtime/audio integrity state drift");
+if (pack.release_state !== "BLOCKED") fail("pack must remain BLOCKED while editorial blocker exists");
 if (!pack.offline?.practice_capable || !pack.offline?.canonical_completion_requires_server) fail("offline policy drift");
 if (pack.offline?.binary_assets_ready !== true || pack.offline?.visual_contract_ready !== true) fail("offline asset readiness drift");
 
 for (const [label, value] of [
-  ["quest", quest.id],
-  ["renderer", renderer.quest_definition_id],
-  ["visual", visual.quest_definition_id],
-  ["art direction", artDirection.quest_definition_id],
-  ["editorial", editorial.quest_definition_id],
-  ["completion service", completionService.quest_definition_id],
-  ["assets", assets.quest_definition_id],
-  ["audio", audio.quest_definition_id],
-  ["safety", safety.quest_definition_id],
-  ["episteme", episteme.quest_definition_id],
-]) {
-  if (value !== qid) fail(`${label} quest id drift`);
-}
+  ["quest", quest.id], ["renderer", renderer.quest_definition_id], ["visual", visual.quest_definition_id],
+  ["art direction", artDirection.quest_definition_id], ["editorial", editorial.quest_definition_id],
+  ["completion service", completionService.quest_definition_id], ["assets", assets.quest_definition_id],
+  ["audio", audio.quest_definition_id], ["safety", safety.quest_definition_id], ["episteme", episteme.quest_definition_id],
+]) if (value !== qid) fail(`${label} quest id drift`);
 
+if (quest.version !== "2.1.0") fail("Quest version drift");
 if (quest.canonical?.source_sha !== sourceSha) fail("quest canonical SHA drift");
 if (canon.source?.blob_sha !== sourceSha) fail("canon manifest SHA drift");
 if (evidence.properties?.source_sha?.const !== sourceSha) fail("evidence canonical SHA drift");
@@ -77,15 +64,13 @@ if (completionService.transport?.deployment_state !== "LIVE") fail("Completion S
 if (completionService.deployment?.migration !== backendMigration) fail("Completion backend migration id drift");
 if (completionService.deployment?.public_rpc_security !== "INVOKER") fail("public Completion V2 security mode drift");
 if (completionService.deployment?.privileged_impl_schema !== "hnk_private") fail("private Completion implementation boundary drift");
-if (pack.server_completion?.state !== "ACTIVE") fail("Quest Pack server completion state drift");
-if (pack.server_completion?.migration !== backendMigration) fail("Quest Pack backend migration drift");
+if (pack.server_completion?.state !== "ACTIVE" || pack.server_completion?.migration !== backendMigration) fail("Quest Pack server completion drift");
 if (pack.server_completion?.public_rpc_security !== "INVOKER") fail("Quest Pack public RPC security drift");
 if (pack.server_completion?.legacy_rpc_still_enabled !== true) fail("legacy RPC rollout state drift");
 
 if (assets.asset_layer_ready !== true || assets.release_ready !== true) fail("asset layer readiness drift");
 if ((assets.release_blockers ?? []).length !== 0) fail("asset layer must not carry runtime shell blockers");
-if (assets.visual_contract !== "day-001.visual.manifest.json") fail("visual contract pointer drift");
-if (assets.art_direction !== "day-001.art-direction.json") fail("art direction pointer drift");
+if (assets.visual_contract !== "day-001.visual.manifest.json" || assets.art_direction !== "day-001.art-direction.json") fail("asset/visual pointers drift");
 if (visual.policy?.server_authoritative_first_spark !== true) fail("visual First Spark authority drift");
 if (visual.static_assets?.length !== 3) fail("static visual asset count drift");
 if (artDirection.approval_state !== "PRODUCT_V1_FROZEN") fail("art direction freeze drift");
@@ -108,56 +93,41 @@ if (pack.runtime_integration?.completion_rpc_client_cutover !== "COMPLETE_WEB_EX
 if (pack.runtime_integration?.apps_present_in_consolidation_repo !== true) fail("consolidation app-shell presence drift");
 if (pack.runtime_integration?.runtime_gate !== "scripts/validate-day001-runtime-integration.mjs") fail("runtime validation pointer drift");
 if (pack.runtime_integration?.ritual_tone_528 !== "RUNTIME_SYNTHESIS_ACTIVE_WEB_EXPO") fail("runtime 528 state drift");
+if (pack.runtime_integration?.theta_432_profile !== thetaProfile || pack.runtime_integration?.theta_432_runtime !== "PUBLISHED_OPTIONAL_WEB_EXPO") fail("runtime Theta/432 profile drift");
 if (!pack.runtime_integration?.web_entry?.includes("Day001GoldenV2Web")) fail("Web Golden V2 entrypoint drift");
 if (!pack.runtime_integration?.mobile_entry?.includes("Day001GoldenV2Mobile")) fail("Mobile Golden V2 entrypoint drift");
 
 for (const capability of ["VISUAL_CONTRACT", "EDITORIAL_RECONCILIATION", "SERVER_COMPLETION", "RITUAL_TONE_528"]) {
   if (!pack.runtime_capabilities?.required?.includes(capability)) fail(`Quest Pack missing capability: ${capability}`);
 }
-if (audio.profiles?.theta_432?.status !== "CANONICAL_MAPPING_PENDING") fail("Theta/432 mapping was invented or changed");
+const theta = audio.profiles?.theta_432;
+if (audio.version !== "1.1.0" || (audio.release_blockers ?? []).length !== 0) fail("Day 001 audio manifest still blocked");
+if (theta?.profile_id !== thetaProfile || theta?.status !== "PUBLISHED") fail("Theta/432 published profile drift");
+if (theta?.base_hz !== 432 || theta?.left_carrier_hz !== 432 || theta?.right_carrier_hz !== 438 || theta?.binaural_difference_hz !== 6) fail("Theta/432 frequency mapping drift");
+if (theta?.mapping_classification !== "HNK_PRODUCT_DECISION_V1" || theta?.neurological_state_claim !== false) fail("Theta/432 epistemic boundary drift");
+if (theta?.required_for_completion !== false || theta?.autoplay !== false || theta?.volume_user_controlled !== true) fail("Theta/432 optional/safety policy drift");
+if (pack.audio?.theta_432?.profile_id !== thetaProfile || pack.audio?.theta_432?.neurological_state_claim !== false) fail("Quest Pack audio ledger drift");
 if (safety.global_rules?.subjective_phenomenon_required !== false) fail("subjective phenomenon cannot become a completion requirement");
 if (episteme.protocol_id !== "HNK-EP-1.1") fail("epistemic protocol drift");
 
 const blockerIds = new Set(pack.blockers.map((entry) => entry.id));
-for (const blocker of ["EDITORIAL-001-VOICE", "AUDIO-001-THETA-432"]) {
-  if (!blockerIds.has(blocker)) fail(`missing release blocker: ${blocker}`);
-}
-if (blockerIds.size !== 2) fail(`expected exactly 2 remaining blockers, got ${blockerIds.size}`);
-for (const resolved of [
-  "RUNTIME-001-SHELL-INTEGRATION",
-  "EDITORIAL-001-UNIVERSAL-ENTRY",
-  "BACKEND-001-COMPLETION-V2",
-  "ASSET-001-PROCEDURAL-ADAPTER",
-  "ASSET-001-CROWN-DERIVATIVE",
-  "ASSET-001-KEY-ART",
-  "ASSET-001-SOUL-MIRROR-FINAL",
-  "ASSET-001-REGISTRY-RESOLUTION",
-  "ASSET-001-PROCEDURAL-EXTRACTION",
-]) {
-  if (blockerIds.has(resolved)) fail(`resolved/obsolete blocker remains: ${resolved}`);
-}
+if (!blockerIds.has("EDITORIAL-001-VOICE") || blockerIds.size !== 1) fail(`expected exactly editorial voice blocker, got ${[...blockerIds].join(',')}`);
+if (blockerIds.has("AUDIO-001-THETA-432")) fail("resolved audio blocker remains active");
 const resolvedIds = new Set((pack.resolved_blockers ?? []).map((entry) => entry.id));
-if (!resolvedIds.has("RUNTIME-001-SHELL-INTEGRATION")) fail("resolved runtime blocker ledger missing");
+for (const resolved of ["RUNTIME-001-SHELL-INTEGRATION", "AUDIO-001-THETA-432"]) {
+  if (!resolvedIds.has(resolved)) fail(`resolved blocker ledger missing: ${resolved}`);
+}
 
 if (pack.ci?.current_state !== "INFRASTRUCTURE_BLOCKED_NO_RUNNER") fail("CI infrastructure state drift");
-
 for (const entry of checksums.entries) {
   const content = read(entry.path);
   const actual = gitBlobSha(content);
   if (actual !== entry.sha) fail(`git blob checksum drift: ${entry.path}`);
 }
-
 const packPaths = new Set(pack.files.map((file) => file.path));
 for (const entry of checksums.entries) if (!packPaths.has(entry.path)) fail(`checksum artifact not declared by pack: ${entry.path}`);
-for (const requiredPath of [
-  "day-001.visual.manifest.json",
-  "day-001.art-direction.json",
-  "day-001.editorial-reconciliation.json",
-  "day-001.checksums.json",
-]) {
+for (const requiredPath of ["day-001.visual.manifest.json", "day-001.art-direction.json", "day-001.editorial-reconciliation.json", "day-001.checksums.json"]) {
   if (!packPaths.has(requiredPath)) fail(`Quest Pack missing required artifact: ${requiredPath}`);
 }
 
-if (!process.exitCode) {
-  console.log(`DAY001 QUEST PACK PASS (${checksums.entries.length} source artifacts, runtime integrated, backend LIVE, assets READY, ${pack.blockers.length} release blockers remain)`);
-}
+if (!process.exitCode) console.log(`DAY001 QUEST PACK PASS (${checksums.entries.length} source artifacts, runtime integrated, audio resolved, backend LIVE, assets READY, ${pack.blockers.length} editorial blocker remains)`);
