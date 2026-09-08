@@ -1,8 +1,8 @@
 {
   "id":"HNK-KETHER-D004-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.2.0",
-  "status":"CONFIG_COMPILED__EXPERIMENT_RUNTIME_INTEGRATED__COMPLETION_REVIEWED",
+  "version":"0.3.0",
+  "status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "day":4,
   "title":"Efeito Placebo Intencional",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-004.md","source_sha":"376964a263f3d4f07542fcf55ca3bf2c18c5fd94","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Vehuiah","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"],"correspondences":{"tarot":"O Louco","rune":"Fehu","iching":"Hexagrama 1 — O Criativo"}},
@@ -28,9 +28,9 @@
     {"id":"mastery_notice","type":"INSTRUCTION","source":{"kind":"SYSTEM"},"content_intent":["The Canon uses Maestria Hipnótica language in the Day 004 Ordália.","The current Attribute Progression Matrix has no executable gain rule for Day 004, so no numeric attribute event is awarded.","Experiment completion may support future track mastery analytics without changing Grade or attribute values."],"required_for_completion":false},
     {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","voice_recording_optional":true,"voice_recording_destination":"LOCAL_ENCRYPTED_VAULT"},"required_for_completion":true},
     {"id":"correspondence_reveal","type":"CORRESPONDENCE_REVEAL","source":{"kind":"PLATFORM_EXPERIENCE"},"items":["Kether","Atziluth","Vehuiah","O Louco","Fehu","Hexagrama 1"],"required_for_completion":false},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D004-COMP-V1","completion_contract_state":"DEPLOYED_REVIEWED_RUNTIME_INTEGRATED","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D004-COMP-V1","completion_contract_state":"DEPLOYED_ACTIVE","client_may_award_xp":false,"required_for_completion":true},
     {"id":"vehuiah_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Vehuiah","cycle_progress":"4/5","fragment_awarded":false},"required_for_completion":false}
   ],
   "scalability_proof":{"reuses_quest_catalog":true,"reuses_audio_runtime_port":true,"new_phase_types":["EXPERIMENT"],"new_generic_renderer_contract_required":true,"day_specific_engine_branch_required":false,"signature_moment":"PARADIGM_LENS_BEFORE_AFTER"},
-  "release_blockers":[{"id":"COMPLETION-004-CONTRACT","scope":"SERVER_COMPLETION","reason":"Day004 validator is deployed reviewed; activate only after final runtime gate."}]
+  "release_blockers":[]
 }
