@@ -1,0 +1,38 @@
+{
+  "kind": "hnk.canonical_reference_registry",
+  "version": "1.0.0",
+  "status": "frozen",
+  "entries": [
+    {
+      "id": "HNK-REF-THURISAZ-V1",
+      "label": "Thurisaz HNK Master V1",
+      "asset": "assets/canonical/binah/thurisaz-hnk-master-v1.svg",
+      "sha256": "c7e0967c30f084a9b57f864342613d1af6209de148bf9ae9b941896b6c3980ea",
+      "freeze": "docs/design/canonical-references/HNK_THURISAZ_REFERENCE_FREEZE_V1.md",
+      "scope": ["binah:079"],
+      "orientation": "upright-no-mirror",
+      "runtime_status": "qa_pending"
+    },
+    {
+      "id": "HNK-REF-GNEO-GEO-V1",
+      "label": "Cockpit Gneo Geo HNK Master V1",
+      "asset": "assets/canonical/shared/gneo-geo/cockpit-gneo-geo-hnk-master-v1.svg",
+      "sha256": "9b3c8f3f8292100d148e7a698e8a8d978adee6f1779412a1ba833603c7fc62e6",
+      "freeze": "docs/design/canonical-references/HNK_GNEO_GEO_REFERENCE_FREEZE_V1.md",
+      "scope": ["kether:028", "chokmah:066"],
+      "orientation": "source-recovered-coordinate-system",
+      "runtime_status": "qa_pending"
+    },
+    {
+      "id": "HNK-REF-TETRAGRAMMATON-D070-V1",
+      "label": "Pantáculo Tetragrammaton HNK Master V1",
+      "asset": "assets/canonical/chokmah/pantaculo-tetragrammaton-hnk-master-v1.svg",
+      "sha256": "16cd1d9ff1cc256f570d526bc6c6bfd249d06957d972f87f51168011cb78451b",
+      "freeze": "docs/design/canonical-references/HNK_TETRAGRAMMATON_D070_REFERENCE_FREEZE_V1.md",
+      "scope": ["chokmah:070"],
+      "orientation": "upright-no-mirror",
+      "source_evidence_sha256": "f2daf9345b54556d517ab1f2d5fbf8e1c236248e0629cbe7e27134f97feb1a27",
+      "runtime_status": "qa_pending"
+    }
+  ]
+}
