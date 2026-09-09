@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"HNK-KETHER-D008-COMP-V1",
+  "title":"HNK Day 008 Completion Contract V1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["completion_contract_id","quest_definition_id","canonical_source_sha","canonical_xp","evidence_schema_id","completion_requirements","progression"],
+  "properties":{
+    "completion_contract_id":{"const":"HNK-KETHER-D008-COMP-V1"},
+    "quest_definition_id":{"const":"HNK-KETHER-D008-V1"},
+    "canonical_source_sha":{"const":"df7c39ced019ead6eb0be817a1ac638789d40c3c"},
+    "canonical_xp":{"const":150},
+    "evidence_schema_id":{"const":"HNK-KETHER-D008-EVIDENCE-V1"},
+    "completion_requirements":{"type":"object","additionalProperties":false,"required":["body_relaxation","three_countdowns","return_gates","soul_mirror","voluntary_completion"],"properties":{"body_relaxation":{"const":true},"three_countdowns":{"const":true},"return_gates":{"const":true},"soul_mirror":{"const":true},"voluntary_completion":{"const":true},"must_reach_one":{"const":false},"phenomenon_required":{"const":false}}},
+    "progression":{"type":"object","additionalProperties":false,"required":["attribute_gain"],"properties":{"attribute_gain":{"const":0},"application":{"const":"NO_EXECUTABLE_GAIN_RULE"}}}
+  }
+}
