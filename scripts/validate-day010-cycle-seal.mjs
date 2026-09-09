@@ -1,0 +1,35 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root=process.cwd();
+const read=(p)=>fs.readFileSync(path.join(root,p),'utf8');
+const json=(p)=>JSON.parse(read(p));
+const fail=(m)=>{console.error(`DAY010 CYCLE SEAL FAIL: ${m}`);process.exitCode=1};
+const quest=json('docs/experience/kether/day-010/day-010.quest.json');
+const canon=json('docs/experience/kether/day-010/day-010.canon-blocks.json');
+const pack=json('docs/experience/kether/day-010/day-010.quest-pack.json');
+const service=json('docs/experience/kether/day-010/day-010.completion.service.json');
+const completion=read('packages/completion-contract/src/day010.ts');
+const practice=read('packages/practice-contract/src/day010.ts');
+const client=read('packages/supabase-client/src/day010-v1.ts');
+const cycle=read('packages/supabase-client/src/kether-cycle02.ts');
+const library=read('packages/quest-library/src/library.ts');
+const migration=read('supabase/migrations/20260909154500_day010_completion_contract_v1_reviewed_and_active.sql');
+
+if(quest.day!==10||canon.source.day!==10)fail('day mismatch');
+if(quest.canonical.source_sha!=='167b3380e029456be1571f1d6dc3d491775acec5'||canon.source.blob_sha!==quest.canonical.source_sha)fail('canonical source SHA drift');
+if(canon.counted_words!==705)fail('canon must remain 705 counted words');
+if(quest.canonical.xp!==100||quest.progression.attribute_gain!==0)fail('progression must be +100 XP / +0 attribute');
+if(!completion.includes("deploymentState:'active'"))fail('completion contract not active');
+if(!practice.includes("'STRONG'|'WEAK'|'ABSENT'"))fail('neutral response triad missing');
+if(!practice.includes('somatic_vault_entry_ref')||!practice.includes('responsible_use_vault_entry_ref'))fail('private evidence must use Vault refs');
+if(!client.includes('startDay010PracticeSessionV1')||!client.includes('sealDay010V1'))fail('Day010 Supabase client missing');
+if(!cycle.includes("fragment: 2")||!cycle.includes("angel: 'Jeliel'")||!cycle.includes('completedDays !== 5'))fail('Jeliel authoritative fragment guard missing');
+if(!library.includes('day010QuestJson')||!library.includes('[10,{day:10'))fail('Quest Library Day010 bundle missing');
+if(!migration.includes("'day010_v1'")||!migration.includes("'HNK-KETHER-D010-COMP-V1'")||!migration.includes("'active'"))fail('reviewed backend migration missing');
+if(service.smoke?.xp_awarded!==100||service.smoke?.xp_after!==1100||service.smoke?.current_day!==11)fail('rollback smoke XP/day proof drift');
+if(service.smoke?.jeliel?.completed_days!==5||service.smoke?.jeliel?.lit!==true||service.smoke?.fragments_lit!==2)fail('Jeliel 5/5 fragment-2 proof missing');
+if(!service.smoke?.progression_events?.includes('KETHER_FRAGMENT_LIT'))fail('fragment progression event missing');
+if(pack.cycle_seal?.client_may_light_fragment!==false)fail('client must never self-award crown fragment');
+if(quest.completion_semantics?.absent_response_valid!==true||quest.completion_semantics?.extraordinary_sensation_required!==false)fail('responsible completion semantics drift');
+if(!process.exitCode)console.log('DAY010 CYCLE SEAL PASS (backend active · +100 XP · 0 attribute · Jeliel 5/5 · Crown fragment 2 lit · Web/Expo runtime pending)');
