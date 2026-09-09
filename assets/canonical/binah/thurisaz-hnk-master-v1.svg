@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-labelledby="title desc">
+  <title id="title">HNK Thurisaz Master V1</title>
+  <desc id="desc">Canonical HNK vector rendering of Unicode U+16A6 RUNIC LETTER THURISAZ THURS THORN. Upright, not mirrored.</desc>
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M60 20 V220 M60 68 L148 120 L60 172" stroke="#111111" stroke-width="24"/>
+    <path d="M60 20 V220 M60 68 L148 120 L60 172" stroke="#B3192E" stroke-width="10"/>
+  </g>
+</svg>
