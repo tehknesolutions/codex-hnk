@@ -1,0 +1,11 @@
+{
+  "id":"HNK-KETHER-D009-RENDERER-V1",
+  "quest_definition_id":"HNK-KETHER-D009-V1",
+  "version":"1.0.0",
+  "required_scene_types":["NarrativeScene","TermRevealScene","CanonReadingScene","InstructionScene","DreamJournalScene","ReturnGateScene","SoulMirrorScene","CompletionBoundaryScene","UnlockScene"],
+  "phase_bindings":{"NARRATIVE":"NarrativeScene","TERM_REVEAL":"TermRevealScene","READ":"CanonReadingScene","INSTRUCTION":"InstructionScene","JOURNAL":"DreamJournalScene","RETURN":"ReturnGateScene","STRUCTURED_JOURNAL":"SoulMirrorScene","COMPLETION":"CompletionBoundaryScene","UNLOCK":"UnlockScene"},
+  "dream_policy":{"no_recall_valid":true,"voice_capture_optional":true,"voice_capture_v1_available":false,"text_capture_requires_encrypted_vault":true,"interpretation_is_hypothesis":true,"universal_symbol_claims_prohibited":true},
+  "privacy":{"plaintext_server_side":false,"vault_refs_only":true,"analytics_excludes_private_content":true,"device_bound_recovery_warning_required":true},
+  "safety":{"sleep_deprivation_prohibited":true,"sleep_paralysis_induction_prohibited":true,"repeated_uncomfortable_awakenings_prohibited":true},
+  "completion":{"server_authoritative":true,"canonical_xp":150,"attribute_gain":0,"cycle_progress":"Jeliel 4/5","fragment_awarded":false}
+}
