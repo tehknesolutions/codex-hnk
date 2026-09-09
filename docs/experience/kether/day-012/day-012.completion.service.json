@@ -1,0 +1,10 @@
+{
+  "id":"HNK-KETHER-D012-COMPLETION-SERVICE-V1",
+  "day":12,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D012-COMP-V1","quest_definition_id":"HNK-KETHER-D012-V1","validator_key":"day012_v1","status":"draft","review":"PENDING"},
+  "canonical":{"source_sha":"a3be33e6d390b6c507e284d6dad6aaf94ebd4294","xp":100},
+  "progression":{"matrix_version":"1.0.0","primary_attribute":"PER","secondary_attribute":"DIS","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+}
