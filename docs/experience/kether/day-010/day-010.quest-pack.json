@@ -1,15 +1,16 @@
 {
   "id":"HNK-KETHER-D010-PACK-V1",
   "kind":"hnk.quest_pack",
-  "version":"0.1.0",
+  "version":"0.2.0",
   "day":10,
   "quest_id":"HNK-KETHER-D010-V1",
   "canonical_source_sha":"167b3380e029456be1571f1d6dc3d491775acec5",
-  "release_state":"BACKEND_ACTIVE__WEB_EXPO_RUNTIME_PENDING",
+  "release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":100,"attribute_gain":0,"angel":"Jeliel"},
-  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"completion_receives":"OPAQUE_UUID_VAULT_REFS_ONLY"},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","completion_receives":"OPAQUE_UUID_VAULT_REFS_ONLY"},
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","web_route":"/day-010","expo_route":"/day-010","vault_sync_before_seal":true,"server_crown_assert":true},
   "cycle_seal":{"cycle":"Jeliel","days":[6,7,8,9,10],"required_completed_days":5,"fragment":2,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
   "backend":{"completion_contract":"HNK-KETHER-D010-COMP-V1","validator":"day010_v1","registry":"active","smoke":{"rollback_only":true,"xp_before":1000,"xp_awarded":100,"xp_after":1100,"current_day":11,"attribute_gain_rule_count":0,"jeliel_completed_days":5,"jeliel_lit":true,"fragments_lit":2,"events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT"]}},
-  "release_blockers":["WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],
-  "proof":"PASS_BACKEND_ACTIVE__JELIEL_5_OF_5__FRAGMENT_2_LIT__RUNTIME_PENDING"
+  "release_blockers":["DEVICE_BROWSER_QA"],
+  "proof":"PASS_TECHNICALLY_ACTIVE__WEB_EXPO_E2EE__JELIEL_5_OF_5__FRAGMENT_2_LIT__DEVICE_QA_PENDING"
 }
