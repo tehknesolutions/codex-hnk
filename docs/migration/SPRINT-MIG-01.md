@@ -99,6 +99,32 @@ Regras:
 - [ ] Tag candidata: `v0.90.0-rc.1` somente após reconciliação completa.
 - [ ] Publicar manifesto + SHA-256 + prova de gates.
 
+## Fronteira operacional — Atziluth / Chokmah
+
+Estado auditado em 2026-09-08 (America/Sao_Paulo):
+
+```text
+CANON + SUPABASE G6
+037–044  ✅
+045      ⛔ #10 áudio Haziel
+046–065  ✅
+066      ⛔ #3 Gneo Geo
+067–069  ✅
+070      ⛔ #18 Pantáculo
+071–072  ✅
+073      ⛔ #19 Portal
+```
+
+- Maior Dia armazenado como successor canon: **072**.
+- Fronteira executável contínua para primeira conclusão/XP: **044**.
+- Commit imutável da última promoção Chokmah: `19da2e2d4e3a636cfef21b15c6c5928967e8268a`.
+- Dias 066, 070 e 073 permanecem ausentes do root canônico e de `public.codex_days`.
+- Dia 045 continua bloqueado: há diferença binaural de 12 Hz no plano, mas nenhum carrier/base aprovado; nenhum par foi inventado.
+- Promotion record da última unidade: `docs/editorial/promotions/HNK_CHOKMAH_MEBAHEL_067_073_CANONICAL_PROMOTION_RECORD_V1.md`.
+- Supabase migration de correção de proveniência: `20260909013809_fix_atziluth_import_run_source_repo`.
+- Próxima frente editorial G4→G5→G6: **Binah 074–109**.
+- A passagem para Binah não altera a fronteira executável até o blocker 045 ser resolvido.
+
 ## Próxima sprint — MIG-02
 
 Após o merge seguro:
