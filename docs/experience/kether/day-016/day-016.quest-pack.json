@@ -1,9 +1,10 @@
 {
-  "id":"HNK-KETHER-D016-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":16,"quest_id":"HNK-KETHER-D016-V1","canonical_source_sha":"cc19245af2b1b23c56bc337b6ec1bce5ead7b2e3","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "id":"HNK-KETHER-D016-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":16,"quest_id":"HNK-KETHER-D016-V1","canonical_source_sha":"cc19245af2b1b23c56bc337b6ec1bce5ead7b2e3","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":100,"attribute_gain":0,"angel":"Elemiah"},
   "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","audio_recording":"NOT_ENABLED_V1"},
   "epistemic":{"language_remains_useful":true,"preverbal_experience_not_external_fact":true,"personal_association_not_external_fact":true,"neurotheurgical_hypothesis":"OPERATIONAL_HYPOTHESIS_NOT_ESTABLISHED_SCIENCE"},
-  "cycle_progress":{"cycle":"Elemiah","days":[16,17,18,19,20],"expected_after_day":1,"fragment":4,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D016-COMP-V1","validator":"day016_v1","registry":"pending"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","foreground_only_timing":true,"active_timer_persisted":false,"middle_segments_seconds":[120,120,60],"vault_flush_before_seal":true,"vault_ref_resolution_before_evidence":true,"authoritative_elemiah_assert":1},
+  "cycle_progress":{"cycle":"Elemiah","days":[16,17,18,19,20],"expected_after_day":1,"fragment":4,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false,"smoke":{"completed_days":1,"lit":false,"fragments_lit":3,"xp_awarded":100,"current_day":17,"attribute_event_count":0}},
+  "backend":{"completion_contract":"HNK-KETHER-D016-COMP-V1","validator":"day016_v1","registry":"active","migration":"20260909232128_day016_completion_contract_v1_reviewed_and_active.sql"},
+  "release_blockers":["DEVICE_BROWSER_QA"],"proof":"PASS_ACTIVE_WEB_EXPO_E2EE__ELEMIAH_1_OF_5__DEVICE_BROWSER_QA_PENDING"
 }
