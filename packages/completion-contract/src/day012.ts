@@ -7,7 +7,7 @@ export const DAY012_COMPLETION={
  canonicalSourceSha:'a3be33e6d390b6c507e284d6dad6aaf94ebd4294',
  canonicalXp:100,
  attributeProgression:{matrixVersion:'1.0.0',primaryAttribute:'PER',secondaryAttribute:'DIS',requestedGain:1,application:'SERVER_XP_EVENT_TRIGGER',cap:20},
- deploymentState:'draft',
+ deploymentState:'active',
 } as const;
 
 export function buildDay012CompletionRequest(input:{sessionId:string;clientCompletionId:string;localRecordHash?:string;clientCompletedAt?:string}):CompleteDayRequestV1{return{
