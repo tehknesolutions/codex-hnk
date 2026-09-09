@@ -31,8 +31,9 @@
     "validate:promotion": "node scripts/validate-promotion-candidates.mjs",
     "validate:canon": "node scripts/validate-canonical-successor.mjs",
     "validate:chokmah": "node scripts/validate-chokmah-runtime-v2.mjs",
+    "validate:aladiah": "node scripts/validate-aladiah-runtime.mjs",
     "export:board": "node scripts/export-board.mjs",
-    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && pnpm validate:lelahel && pnpm validate:achaiah && pnpm validate:portal036 && pnpm validate:editorial && pnpm validate:promotion && pnpm validate:canon && pnpm validate:chokmah && turbo run lint typecheck test"
+    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && pnpm validate:lelahel && pnpm validate:achaiah && pnpm validate:portal036 && pnpm validate:editorial && pnpm validate:promotion && pnpm validate:canon && pnpm validate:chokmah && pnpm validate:aladiah && turbo run lint typecheck test"
   },
   "devDependencies": {
     "playwright": "1.55.0",
