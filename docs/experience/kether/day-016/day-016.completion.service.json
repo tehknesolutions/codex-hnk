@@ -1,8 +1,9 @@
 {
   "id":"HNK-KETHER-D016-COMPLETION-SERVICE-V1","day":16,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D016-COMP-V1","quest_definition_id":"HNK-KETHER-D016-V1","validator_key":"day016_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D016-COMP-V1","quest_definition_id":"HNK-KETHER-D016-V1","validator_key":"day016_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"cc19245af2b1b23c56bc337b6ec1bce5ead7b2e3","xp":100,"attribute_gain":0},
-  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","audio_recording":"NOT_ENABLED_V1"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID","audio_recording":"NOT_ENABLED_V1","offline_queue":"CIPHERTEXT_ONLY"},
+  "validator_tests":{"valid":"PASS","plaintext":"REJECTED_day016_jachin_unknown_field","wrong_299":"REJECTED_day016_jachin_duration_invalid","wrong_segment":"REJECTED_day016_middle_segments_invalid","association_boundary_missing":"REJECTED_day016_epistemic_boundary_required","prelabel_count_wrong":"REJECTED_day016_three_prelabel_perceptions_required"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":100,"xp_after":1100,"current_day":17,"day16_completion_count":1,"day16_xp_event_count":1,"attribute_gain_rule_count":0,"attribute_event_count":0,"elemiah":{"completed_days":1,"lit":false,"fragment":4},"fragments_lit":3,"progression_events":["NEXT_DAY_UNLOCKED"],"synthetic_user_persisted":false}
 }
