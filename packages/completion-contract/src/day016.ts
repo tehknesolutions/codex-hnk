@@ -7,7 +7,7 @@ export const DAY016_COMPLETION={
  canonicalSourceSha:'cc19245af2b1b23c56bc337b6ec1bce5ead7b2e3',
  canonicalXp:100,
  attributeProgression:{matrixVersion:'1.0.0',requestedGain:0,application:'NO_EXECUTABLE_GAIN_RULE'},
- deploymentState:'draft',
+ deploymentState:'active',
 } as const;
 
 export function buildDay016CompletionRequest(input:{sessionId:string;clientCompletionId:string;localRecordHash?:string;clientCompletedAt?:string}):CompleteDayRequestV1{return{
