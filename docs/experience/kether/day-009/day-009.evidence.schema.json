@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"HNK-KETHER-D009-EVIDENCE-V1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["protocol_version","source_sha","session_id","pre_sleep","wake","boaz","middle","soul_mirror","voluntary_completion_confirmed"],
+  "properties":{
+    "protocol_version":{"const":"HNK-KETHER-D009-V1"},
+    "source_sha":{"const":"bb0c3fa790a5945e53114ced4c354195111bea96"},
+    "session_id":{"type":"string","minLength":1},
+    "mode":{"enum":["first_completion","revisit"]},
+    "pre_sleep":{"type":"object","additionalProperties":false,"required":["intention_set","sleep_episode_confirmed"],"properties":{"intention_set":{"const":true},"sleep_episode_confirmed":{"const":true}}},
+    "wake":{"type":"object","additionalProperties":false,"required":["recall_status","capture_method","emotion_recorded","scenario_recorded","first_detail_recorded"],"properties":{"recall_status":{"enum":["REMEMBERED","NO_RECALL"]},"capture_method":{"enum":["TEXT_VAULT","NO_RECALL"]},"dream_vault_entry_ref":{"type":["string","null"],"maxLength":256,"pattern":"^[^\\s]+$"},"emotion_recorded":{"type":"boolean"},"scenario_recorded":{"type":"boolean"},"first_detail_recorded":{"type":"boolean"}}},
+    "boaz":{"type":"object","additionalProperties":false,"required":["separation_completed","interpretation_is_hypothesis_confirmed","sleep_protection_confirmed"],"properties":{"separation_completed":{"const":true},"interpretation_is_hypothesis_confirmed":{"const":true},"sleep_protection_confirmed":{"const":true}}},
+    "middle":{"type":"object","additionalProperties":false,"required":["associations_count","analysis_stopped_confirmed"],"properties":{"associations_count":{"type":"integer","minimum":0,"maximum":3},"reflection_vault_entry_ref":{"type":["string","null"],"maxLength":256,"pattern":"^[^\\s]+$"},"analysis_stopped_confirmed":{"const":true}}},
+    "soul_mirror":{"type":"object","additionalProperties":false,"required":["completed","wake_time_recorded","sleep_quality_recorded","keyword_recorded"],"properties":{"completed":{"const":true},"wake_time_recorded":{"const":true},"sleep_quality_recorded":{"const":true},"keyword_recorded":{"type":"boolean"}}},
+    "voluntary_completion_confirmed":{"const":true},
+    "safety_stop_occurred":{"type":"boolean"}
+  },
+  "allOf":[
+    {"if":{"properties":{"wake":{"properties":{"recall_status":{"const":"REMEMBERED"}}}}},"then":{"properties":{"wake":{"required":["dream_vault_entry_ref"],"properties":{"capture_method":{"const":"TEXT_VAULT"},"emotion_recorded":{"const":true},"scenario_recorded":{"const":true},"first_detail_recorded":{"const":true}}},"middle":{"required":["reflection_vault_entry_ref"],"properties":{"associations_count":{"const":3}}}}}},
+    {"if":{"properties":{"wake":{"properties":{"recall_status":{"const":"NO_RECALL"}}}}},"then":{"properties":{"wake":{"properties":{"capture_method":{"const":"NO_RECALL"}}},"middle":{"properties":{"associations_count":{"const":0}}}}}}
+  ]
+}
