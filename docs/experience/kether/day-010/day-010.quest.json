@@ -1,0 +1,22 @@
+{
+  "id":"HNK-KETHER-D010-V1",
+  "kind":"hnk.quest_definition",
+  "version":"0.1.0",
+  "status":"BACKEND_ACTIVE__WEB_EXPO_RUNTIME_PENDING",
+  "day":10,
+  "title":"Âncora da Coroa — Associação Aprendida e Cycle Seal de Jeliel",
+  "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-010.md","source_sha":"167b3380e029456be1571f1d6dc3d491775acec5","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","sephira":"Kether","world":"Atziluth","angel":"Jeliel","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"]},
+  "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","primary_attribute":null,"secondary_attribute":null,"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE","client_may_apply":false,"source_basis":"NO_FROZEN_GAIN_RULE_FOR_DAY010"},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false},
+  "phases":[
+    {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["A Âncora da Coroa é uma associação aprendida; não é botão mágico, garantia clínica ou selo espiritual irreversível."],"required_for_completion":false},
+    {"id":"jachin","type":"PRACTICE","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"interaction":{"calm_score_before":true,"calm_score_after":true,"anchor_pairing_seconds":10,"private_somatic_description":"VAULT_ENCRYPTED"},"epistemic_overlays":[{"domain":"E2","scope":"conditioned cue and measurable before/after response"},{"domain":"E3","scope":"subjective calm is personal experience, not external proof"}],"required_for_completion":true},
+    {"id":"boaz","type":"NEUTRAL_TEST","source":{"kind":"CANON","block_ids":["boaz-doctrine","boaz-kavanah","boaz-ordalia"]},"interaction":{"responses":["STRONG","WEAK","ABSENT"],"all_responses_valid":true,"suppression_avoidance_confirmation":true,"non_infallibility_confirmation":true},"safety":{"safe_neutral_context_required":true,"emotion_suppression_prohibited":true,"absence_is_not_failure":true},"required_for_completion":true},
+    {"id":"middle","type":"INTEGRATION","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"interaction":{"final_pairing_confirmation":true,"psalm_22_19_prayer_confirmation":true,"extraordinary_sensation_not_required_confirmation":true},"epistemic_overlays":[{"domain":"E4","scope":"Âncora da Coroa as HNK cycle symbol"},{"domain":"E5","scope":"Psalm 22:19 as devotional prayer, not automatic divine signal"}],"required_for_completion":true},
+    {"id":"soul_mirror","type":"JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"interaction":{"response_recorded":true,"responsible_use_statement":"VAULT_ENCRYPTED"},"privacy":{"free_text_destination":"VAULT_ONLY","offline_persistence":"CIPHERTEXT_ONLY","server_receives":"OPAQUE_VAULT_REF_ONLY"},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D010-COMP-V1","completion_contract_state":"ACTIVE","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"jeliel_cycle_seal","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Jeliel","authoritative_cycle_days":[6,7,8,9,10],"required_progress":"5/5","fragment":2,"fragment_awarded_by":"SERVER_CROWN_STATE","next_day":11},"required_for_completion":false}
+  ],
+  "completion_semantics":{"strong_response_required":false,"weak_response_valid":true,"absent_response_valid":true,"private_text_server_side":false,"extraordinary_sensation_required":false,"cycle_fragment_client_computed":false},
+  "release_blockers":["WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+}
