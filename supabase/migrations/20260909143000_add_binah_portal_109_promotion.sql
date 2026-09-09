@@ -6,6 +6,7 @@
 --   Day 109 closes Binah / Atziluth.
 --   Day 110 opens Chesed / Beriah as Level 4 — Praticante.
 -- This migration does NOT make Day 109 canon and does NOT resolve its audio/asset gates.
+-- It preserves the existing completion contract version/idempotency semantics (v3).
 
 create or replace function public.complete_codex_day(
   p_day smallint,
@@ -122,7 +123,7 @@ begin
     ) values (
       v_uid,
       p_day,
-      '4',
+      '3',
       p_local_record_hash,
       p_client_completed_at,
       p_session_id
@@ -145,10 +146,10 @@ begin
         p_day,
         'canonical_day_completion',
         v_xp,
-        v_uid::text || ':day:' || p_day::text || ':completion:v4',
+        v_uid::text || ':day:' || p_day::text || ':completion:v3',
         jsonb_build_object(
           'practice_session_id', p_session_id,
-          'completion_version', '4'
+          'completion_version', '3'
         )
       )
       on conflict (idempotency_key) do nothing
