@@ -1,9 +1,10 @@
 {
   "id":"HNK-KETHER-D013-COMPLETION-SERVICE-V1","day":13,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D013-COMP-V1","quest_definition_id":"HNK-KETHER-D013-V1","validator_key":"day013_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D013-COMP-V1","quest_definition_id":"HNK-KETHER-D013-V1","validator_key":"day013_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"b8203e7443af20298679c8f4ca84339e7815438a","xp":100},
-  "progression":{"matrix_version":"1.0.0","primary_attribute":"INT","secondary_attribute":"DIS","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20},
+  "progression":{"matrix_version":"1.0.0","primary_attribute":"INT","secondary_attribute":"DIS","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20,"client_may_apply":false},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "validator_tests":{"valid":"PASS","plaintext_in_jachin":"REJECTED_DAY013_JACHIN_UNKNOWN_FIELD","invalid_sequence":"REJECTED_DAY013_JACHIN_NUMBER_INVALID","fractional_score":"REJECTED_DAY013_ATTENTION_SCORE_INVALID","relaxed_body_missing":"REJECTED_DAY013_BOAZ_METHOD_REQUIRED","unknown_top":"REJECTED_DAY013_UNKNOWN_TOP_FIELD"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":100,"xp_after":1100,"current_day":14,"int_before":5,"int_after":6,"per_before":5,"per_after":5,"dis_before":5,"dis_after":5,"attribute_event_count":1,"attribute_event_code":"INT","attribute_event_amount":1,"secondary_attribute_metadata":"DIS","sitael_completed_days":3,"sitael_lit":false,"fragments_lit":2,"progression_events":["NEXT_DAY_UNLOCKED"],"synthetic_user_persisted":false}
 }
