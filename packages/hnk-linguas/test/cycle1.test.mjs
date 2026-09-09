@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   HNK_CYCLE1_BOUND_LEXEMES,
+  HNK_CYCLE1_CURRICULUM_REBINDS,
   HNK_CYCLE1_EMPTY_LESSONS,
   HNK_CYCLE1_LANGUAGE_COVERAGE,
   HNK_CYCLE1_LANGUAGE_GATE,
@@ -27,12 +28,18 @@ test('recovered registry bindings are measured without claiming curricular compl
   assert.deepEqual(HNK_CYCLE1_LANGUAGE_GATE.unboundForms, ['VAMATAYA','KALIFORNIA']);
 });
 
-test('lesson binding counts preserve current recovery boundary', () => {
+test('lesson binding counts preserve recovered provenance plus explicit curriculum rebinds', () => {
   assert.deepEqual(
     Object.fromEntries(HNK_CYCLE1_LANGUAGE_COVERAGE.map((lesson) => [lesson.lessonId,lesson.lexemeCount])),
-    {L01:9,L02:11,L03:8,L04:9,L05:0,L06:0,L07:0},
+    {L01:10,L02:11,L03:8,L04:9,L05:0,L06:0,L07:0},
   );
   assert.deepEqual(HNK_CYCLE1_EMPTY_LESSONS, ['L05','L06','L07']);
+  assert.deepEqual(HNK_CYCLE1_CURRICULUM_REBINDS.L01, ['LEX-013']);
+  const l01=HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson)=>lesson.lessonId==='L01');
+  assert.deepEqual(l01.governedRebindLexemeIds, ['LEX-013']);
+  assert.ok(l01.recoveredLexemeIds.includes('LEX-003'));
+  assert.ok(!l01.recoveredLexemeIds.includes('LEX-013'));
+  assert.ok(l01.lexemeIds.includes('LEX-013'));
 });
 
 test('L03 and L04 authority mix remains non-canonical where required', () => {
