@@ -2,6 +2,7 @@ import type { Json } from '@hnk/database';
 import { CompletionService, buildDay010CompletionRequest, type CompleteDayResponseV1, type CompletionRpcArgsV2, type CompletionResult } from '@hnk/completion-contract';
 import { buildDay010EvidenceV1, buildDay010SafeMetrics, type Day010EvidenceInput } from '@hnk/practice-contract';
 import type { HnkSupabaseClient } from './index';
+export type { Day010AnchorResponse } from '@hnk/practice-contract';
 
 export interface SealDay010V1Input{evidence:Day010EvidenceInput;totalDurationSeconds:number;localRecordHash?:string|null;clientCompletedAt?:string;clientCompletionId?:string}
 function asJson(v:unknown):Json{return v as Json}
