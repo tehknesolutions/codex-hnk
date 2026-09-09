@@ -1,0 +1,10 @@
+{
+  "id":"HNK-KETHER-D007-RENDERER-V1",
+  "quest_definition_id":"HNK-KETHER-D007-V1",
+  "version":"1.0.0",
+  "required_scene_types":["NarrativeScene","TermRevealScene","CanonReadingScene","FocusPracticeScene","JournalScene","BehavioralExperimentScene","ReturnGateScene","SoulMirrorScene","CompletionBoundaryScene","UnlockScene"],
+  "phase_bindings":{"NARRATIVE":"NarrativeScene","TERM_REVEAL":"TermRevealScene","READ":"CanonReadingScene","FOCUS":"FocusPracticeScene","JOURNAL":"JournalScene","EXPERIMENT":"BehavioralExperimentScene","RETURN":"ReturnGateScene","STRUCTURED_JOURNAL":"SoulMirrorScene","COMPLETION":"CompletionBoundaryScene","UNLOCK":"UnlockScene"},
+  "hypnosis_policy":{"voluntary":true,"reversible":true,"catalepsy_required":false,"no_catalepsy_valid":true,"force_prohibited":true,"release_required":true},
+  "safety":{"eyes_may_open_at_any_time":true,"stop_for_pain_dizziness_anxiety":true,"second_attempt_optional":true,"stop_always_visible":true},
+  "completion":{"server_authoritative":true,"canonical_xp":150,"attribute_gain":{"attribute":"HIP","amount":1,"server_side_first_completion_only":true},"cycle_progress":"Jeliel 2/5","fragment_awarded":false}
+}
