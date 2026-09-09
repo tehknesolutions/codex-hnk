@@ -6,6 +6,7 @@ const must = (text, token, label) => { if (!text.includes(token)) throw new Erro
 const quest = JSON.parse(read('docs/experience/kether/day-006/day-006.quest.json'));
 const canon = JSON.parse(read('docs/experience/kether/day-006/day-006.canon-blocks.json'));
 const pack = JSON.parse(read('docs/experience/kether/day-006/day-006.quest-pack.json'));
+const service = JSON.parse(read('docs/experience/kether/day-006/day-006.completion.service.json'));
 const library = read('packages/quest-library/src/library.ts');
 const client = read('packages/supabase-client/src/day006-v1.ts');
 const web = read('apps/web/app/day-006/Day006GoldenV1Web.tsx');
@@ -27,5 +28,7 @@ must(client, "day:6", 'client_day'); must(client, 'sealDay006V1', 'client_seal')
 must(web, 'catalog.requireDay(6)', 'web_catalog'); must(web, 'QuestVoicePhase', 'web_voice_renderer'); must(web, 'sealDay006V1', 'web_seal');
 must(mobile, 'catalog.requireDay(6)', 'mobile_catalog'); must(mobile, 'QuestVoicePhase', 'mobile_voice_renderer'); must(mobile, 'sealDay006V1', 'mobile_seal');
 must(voiceWeb, 'CONCLUIR PRÁTICA SEM GRAVAR', 'web_optional_recording'); must(voiceMobile, 'CONCLUIR PRÁTICA SEM GRAVAR', 'mobile_optional_recording');
-if ((pack.blockers ?? []).length !== 2) throw new Error('DAY006_RUNTIME_FAIL:pre_activation_pack_state');
-console.log('DAY006 RUNTIME INTEGRATION PASS (Web + Expo + optional voice + PER server-side)');
+if ((pack.blockers ?? []).length !== 0 || pack.runtime?.backend_status !== 'ACTIVE') throw new Error('DAY006_RUNTIME_FAIL:active_pack_state');
+if (service.transport?.deployment_state !== 'LIVE' || service.deployment?.registry_status !== 'active') throw new Error('DAY006_RUNTIME_FAIL:completion_service_state');
+if (pack.backend_smoke?.xp_awarded !== 100 || pack.backend_smoke?.per_after !== 6 || pack.backend_smoke?.crown_fragments_lit !== 1 || pack.backend_smoke?.jeliel_completed_days !== 1) throw new Error('DAY006_RUNTIME_FAIL:smoke_ledger');
+console.log('DAY006 RUNTIME INTEGRATION PASS (ACTIVE · Web + Expo + optional voice + PER server-side · Jeliel 1/5)');
