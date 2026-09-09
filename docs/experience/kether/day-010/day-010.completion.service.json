@@ -1,0 +1,9 @@
+{
+  "id":"HNK-KETHER-D010-COMPLETION-SERVICE-V1",
+  "day":10,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D010-COMP-V1","quest_definition_id":"HNK-KETHER-D010-V1","validator_key":"day010_v1","status":"active","review":"REVIEWED_AND_TESTED"},
+  "canonical":{"source_sha":"167b3380e029456be1571f1d6dc3d491775acec5","xp":100,"attribute_gain":0},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":100,"xp_after":1100,"current_day":11,"attribute_gain_rule_count":0,"day10_completion_count":1,"jeliel":{"completed_days":5,"lit":true,"fragment":2},"fragments_lit":2,"progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT"],"synthetic_user_persisted":false}
+}
