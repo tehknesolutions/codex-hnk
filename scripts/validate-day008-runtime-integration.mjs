@@ -4,6 +4,8 @@ const must=(t,x,l)=>{if(!t.includes(x))throw new Error(`DAY008_RUNTIME_FAIL:${l}
 const quest=JSON.parse(read('docs/experience/kether/day-008/day-008.quest.json'));
 const canon=JSON.parse(read('docs/experience/kether/day-008/day-008.canon-blocks.json'));
 const pack=JSON.parse(read('docs/experience/kether/day-008/day-008.quest-pack.json'));
+const service=JSON.parse(read('docs/experience/kether/day-008/day-008.completion.service.json'));
+const completion=read('packages/completion-contract/src/day008.ts');
 const library=read('packages/quest-library/src/library.ts');
 const client=read('packages/supabase-client/src/day008-v1.ts');
 const web=read('apps/web/app/day-008/Day008GoldenV1Web.tsx');
@@ -13,8 +15,11 @@ const countdownMobile=read('apps/mobile/src/runtime/QuestCountdownPhase.tsx');
 if(quest.day!==8||quest.id!=='HNK-KETHER-D008-V1')throw new Error('DAY008_RUNTIME_FAIL:quest_identity');
 if(quest.canonical.source_sha!==canon.source.blob_sha||canon.counted_words!==705)throw new Error('DAY008_RUNTIME_FAIL:canon_integrity');
 if(quest.canonical.xp!==150||quest.progression?.attribute_gain!==0)throw new Error('DAY008_RUNTIME_FAIL:progression');
+if(quest.status!=='TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING'||(quest.release_blockers??[]).length!==0)throw new Error('DAY008_RUNTIME_FAIL:quest_active_state');
 if(quest.completion_semantics?.must_reach_one!==false||quest.completion_semantics?.lost_count_is_failure!==false||quest.completion_semantics?.phenomenon_required!==false)throw new Error('DAY008_RUNTIME_FAIL:completion_semantics');
 for(const id of ['jachin_countdown','boaz_countdown','middle_countdown']){const p=quest.phases.find(x=>x.id===id);if(!p||p.type!=='FOCUS'||!(p.interaction?.components??[]).includes('COUNTDOWN_DISSOLVE')||p.interaction?.must_reach_one!==false)throw new Error(`DAY008_RUNTIME_FAIL:${id}`)}
-must(library,'day008QuestJson','library_import');must(library,'[8,{day:8','library_registry');must(client,'sealDay008V1','client_seal');must(client,'complete_codex_day_v2','client_rpc');must(web,'catalog.requireDay(8)','web_catalog');must(web,'QuestCountdownPhase','web_countdown');must(mobile,'catalog.requireDay(8)','mobile_catalog');must(mobile,'QuestCountdownPhase','mobile_countdown');must(countdownWeb,'Você não precisa chegar a 1','web_no_reach_one');must(countdownMobile,'Você não precisa chegar a 1','mobile_no_reach_one');
-if((pack.blockers??[]).length!==2)throw new Error('DAY008_RUNTIME_FAIL:pre_activation_pack_state');
-console.log('DAY008 RUNTIME INTEGRATION PASS (PRE-ACTIVATION · Web + Expo · user-paced countdown · no attribute gain)');
+must(library,'day008QuestJson','library_import');must(client,'sealDay008V1','client_seal');must(client,'complete_codex_day_v2','client_rpc');must(web,'catalog.requireDay(8)','web_catalog');must(web,'QuestCountdownPhase','web_countdown');must(mobile,'catalog.requireDay(8)','mobile_catalog');must(mobile,'QuestCountdownPhase','mobile_countdown');must(countdownWeb,'Você não precisa chegar a 1','web_no_reach_one');must(countdownMobile,'Você não precisa chegar a 1','mobile_no_reach_one');must(completion,"deploymentState: 'active'",'completion_active');
+if(pack.release_state!=='TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING'||(pack.blockers??[]).length!==0)throw new Error('DAY008_RUNTIME_FAIL:pack_active_state');
+if(pack.backend_smoke?.status!=='PASS_ROLLBACK_ONLY'||pack.backend_smoke?.xp_total_after!==950||pack.backend_smoke?.attribute_events!==0)throw new Error('DAY008_RUNTIME_FAIL:backend_smoke');
+if(service.transport?.deployment_state!=='LIVE'||service.deployment?.registry_status!=='active')throw new Error('DAY008_RUNTIME_FAIL:service_active_state');
+console.log('DAY008 RUNTIME INTEGRATION PASS (ACTIVE · Web + Expo · user-paced countdown · no attribute gain · Jeliel 3/5)');
