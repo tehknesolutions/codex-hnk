@@ -1,0 +1,30 @@
+{
+  "id":"HNK-KETHER-D006-PACK-V1",
+  "kind":"hnk.quest_pack",
+  "version":"0.1.0",
+  "day":6,
+  "quest_definition_id":"HNK-KETHER-D006-V1",
+  "completion_contract_id":"HNK-KETHER-D006-COMP-V1",
+  "canonical_source_sha":"923c43ae0a68d63a4c88f67d83076b72e0b06c39",
+  "canonical_xp":100,
+  "integrity_state":"PASS_CANON_705_CONFIG_COMPILED",
+  "release_state":"RUNTIME_AND_COMPLETION_PENDING",
+  "files":[
+    {"path":"day-006.canon-blocks.json","role":"CANON_BLOCKS","required":true},
+    {"path":"day-006.quest.json","role":"QUEST_DEFINITION","required":true},
+    {"path":"day-006.evidence.schema.json","role":"EVIDENCE_SCHEMA","required":true},
+    {"path":"day-006.completion.schema.json","role":"COMPLETION_SCHEMA","required":true},
+    {"path":"day-006.completion.service.json","role":"COMPLETION_SERVICE_PROFILE","required":true},
+    {"path":"day-006.renderer-profile.json","role":"RENDERER_PROFILE","required":true}
+  ],
+  "reuse":{"quest_catalog":"QuestCatalog.requireDay(6)","completion_service":"complete_codex_day_v2","voice_renderer":"QuestVoicePhase","day_specific_engine_branch_required":false},
+  "progression":{"xp":100,"attribute_gain":1,"attribute":"PER","matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","application":"SERVER_SIDE_FIRST_COMPLETION_ONLY"},
+  "cycle":{"angel":"Jeliel","progress_after":"1/5","fragment_awarded":false,"crown_fragments_lit_after":1},
+  "privacy":{"voice_recording_optional":true,"voice_recording_not_required_for_xp":true,"free_text_vault_only":true},
+  "safety":{"perfect_silence_not_required":true,"absolute_immobility_not_required":true,"thought_suppression_not_required":true,"movement_for_comfort_allowed":true},
+  "blockers":[
+    {"id":"RUNTIME-006-JELIEL-INTEGRATION","reason":"Web/Expo Day006 routes must be integrated."},
+    {"id":"COMPLETION-006-CONTRACT","reason":"Day006 validator/registry are not yet deployed."}
+  ],
+  "proof_result":"PASS_CANON_705_AND_CONFIG__RUNTIME_COMPLETION_PENDING"
+}
