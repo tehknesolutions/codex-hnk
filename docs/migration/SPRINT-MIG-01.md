@@ -101,8 +101,6 @@ Regras:
 
 ## Fronteira operacional — Atziluth / Chokmah
 
-Estado auditado em 2026-09-08 (America/Sao_Paulo):
-
 ```text
 CANON + SUPABASE G6
 037–044  ✅
@@ -116,34 +114,82 @@ CANON + SUPABASE G6
 ```
 
 - Maior Dia armazenado no fechamento de Chokmah: **072**.
-- Fronteira executável contínua para primeira conclusão/XP: **044**.
 - Commit imutável da última promoção Chokmah: `19da2e2d4e3a636cfef21b15c6c5928967e8268a`.
 - Dias 066, 070 e 073 permanecem ausentes do root canônico e de `public.codex_days`.
-- Dia 045 continua bloqueado: há diferença binaural de 12 Hz no plano, mas nenhum carrier/base aprovado; nenhum par foi inventado.
-- Promotion record: `docs/editorial/promotions/HNK_CHOKMAH_MEBAHEL_067_073_CANONICAL_PROMOTION_RECORD_V1.md`.
-- Supabase migration de correção de proveniência: `20260909013809_fix_atziluth_import_run_source_repo`.
+- Dia 045 continua bloqueado: diferença binaural de 12 Hz, mas nenhum carrier/base aprovado; nenhum par foi inventado.
 
 ## Fronteira operacional — Atziluth / Binah
 
-Estado auditado após os dois primeiros ciclos de promoção:
+Estado final da esteira de promoção G5/G6 com a evidência atual:
 
 ```text
-074–078  ✅ Hariel — CANON + G6
-079      ⛔ Hakamiah — REFERENCE_REVIEW / Thurisaz
-080–082  ✅ Hakamiah — CANON + G6
-083      ⛔ Hakamiah — SAFETY_REVIEW / sal-carvão
-084      ⛔ Lauviah — SAFETY_REVIEW / espelho em baixa luz + vela
-085–109  ⏭️ ainda em revisão G4 por lote
+074–078  ✅ Hariel
+079      ⛔ REFERENCE_REVIEW — Thurisaz
+080–082  ✅ Hakamiah
+083      ⛔ SAFETY_REVIEW — sal/carvão
+084      ⛔ SAFETY_REVIEW — espelho em baixa luz + vela
+085–088  ✅ Lauviah
+089      ⛔ SAFETY_REVIEW — silêncio de 6 horas
+090–092  ✅ Caliel
+093      ⛔ SAFETY_REVIEW — respiração 4-4-4-4
+094–104  ✅ Leuviah + Pahaliah + Nelchael 104
+105      ⛔ REFERENCE_REVIEW — Rosa de 22 Pétalas / Cruz Hermética
+106      ✅ Nelchael
+107      ⛔ AUDIO_PRESET_PENDING — Saturno
+108      ✅ Nelchael
+109      ⛔ PORTAL RUNTIME BLOCKED
 ```
 
-- Maior Dia armazenado como successor canon: **082**.
-- Fronteira executável contínua permanece **044** por causa do Day 045.
-- Commit imutável Hariel 074–078: `166d109e7292edf0d12574cc85ff132573bca0ff`.
-- Commit imutável Hakamiah 080–082: `acd1a38af3a371a8121d14987f3bfde4e11e1d68`.
-- Dias 079 e 083 permanecem ausentes de `content/canon/atziluth/binah/` e `public.codex_days`.
-- O batch Lauviah mantém Day 084 em `SAFETY_REVIEW`; 085–088 são a próxima unidade candidata a G5/G6.
-- Promotion record: `docs/editorial/promotions/HNK_BINAH_HARIEL_HAKAMIAH_074_083_CANONICAL_PROMOTION_RECORD_V1.md`.
-- A existência de canon armazenado em Binah não altera a sequência server-side nem libera XP fora de ordem.
+Immutable G6 commits:
+
+- 074–078: `166d109e7292edf0d12574cc85ff132573bca0ff`;
+- 080–082: `acd1a38af3a371a8121d14987f3bfde4e11e1d68`;
+- 085–088: `e1f7cb48356979d572ca66a4d42373ad44840885`;
+- 090–092: `3e63916bb56ff8bf3bc91e249731040f119855e8`;
+- 094–098: `e1fa9d39ed956d31cdeb91904d191f9b7f28d658`;
+- 099–103: `ae9f78694d05d5c4a1f29909da53fd3bc86e23fc`;
+- 104, 106, 108: `530b8ce2e45ba5246b93a88753cb298264f08e61`.
+
+Audit result:
+
+- maior Dia armazenado como successor canon: **108**;
+- fronteira executável contínua para primeira conclusão/XP: **044**;
+- Dias ausentes de `public.codex_days` em Binah: **079, 083, 084, 089, 093, 105, 107, 109**;
+- todo successor canon auditado aponta para `source_repository = tehknesolutions/codex-hnk`;
+- todos os G6 retornaram blob SHA idêntico ao Git canônico do respectivo commit imutável;
+- nenhum placeholder, frequência inferida, geometria inventada ou fallback de segurança não revisado foi usado.
+
+Promotion records:
+
+- `docs/editorial/promotions/HNK_BINAH_HARIEL_HAKAMIAH_074_083_CANONICAL_PROMOTION_RECORD_V1.md`;
+- `docs/editorial/promotions/HNK_BINAH_084_109_CANONICAL_PROMOTION_RECORD_V1.md`.
+
+## Portal 109 — bloqueio final de Atziluth
+
+O Portal 109 permanece fora do cânone. Antes de G5/G6 são exigidos:
+
+1. Sintonizador Angelical aprovado + proveniência;
+2. preset Saturno→Júpiter aprovado com semântica de áudio precisa;
+3. assets visuais/sigilos de transição aprovados com versão/orientação;
+4. alternativa sem fogo revisada para destruição dos papéis;
+5. contrato E2E server-side comprovando sequência, idempotência, evidência, Vault e promoção atômica para o próximo mundo.
+
+## Próxima frente recomendada — Blocker Resolution Sprint
+
+A promoção em massa chegou ao limite seguro. A prioridade muda agora de drafting/promotion para resolução de blockers.
+
+Ordem recomendada:
+
+1. **Day 045 / Haziel áudio** — prioridade absoluta, pois sozinho mantém a fronteira executável em 044;
+2. Day 066 / Gneo Geo;
+3. Day 070 / Pantáculo;
+4. Day 073 / Portal Chokmah;
+5. Day 079 / Thurisaz;
+6. Days 083, 084, 089, 093 / safety dispositions;
+7. Day 105 / Rosa de 22 Pétalas;
+8. Day 107 / Saturn audio preset;
+9. Day 109 / Portal operators + E2E;
+10. Atziluth Gold audit e somente então Beriah unlock/release.
 
 ## Próxima sprint — MIG-02
 
@@ -155,4 +201,4 @@ Após o merge seguro:
 4. consolidar deploy Web/Vercel;
 5. normalizar ambientes;
 6. promover assets licenciados/aprovados;
-7. continuar os três primeiros níveis Kether–Chokmah–Binah como produto pronto para uso.
+7. concluir Kether–Chokmah–Binah como produto pronto para uso e auditado.
