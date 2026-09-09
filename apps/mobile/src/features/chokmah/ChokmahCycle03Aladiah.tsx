@@ -4,6 +4,7 @@ import { useHnkAuth } from '../auth/AuthContext';
 import { AladiahDay047VisualExperience } from './AladiahDay047VisualExperience';
 import { AladiahDay048NarrativeLoopsExperience } from './AladiahDay048NarrativeLoopsExperience';
 import { AladiahDay049InteroceptionExperience } from './AladiahDay049InteroceptionExperience';
+import { AladiahDay050ContourExperience } from './AladiahDay050ContourExperience';
 
 const ALADIAH_DAYS = [47, 48, 49, 50, 51] as const;
 type AladiahDay = (typeof ALADIAH_DAYS)[number];
@@ -46,18 +47,18 @@ export function ChokmahCycle03Aladiah() {
     return <View style={styles.loading}><ActivityIndicator color="#9fc6ff" /><Text style={styles.loadingText}>ABRINDO O CICLO DE ALADIAH</Text></View>;
   }
 
-  const completed = Math.max(0, Math.min(3, currentDay - 47));
+  const completed = Math.max(0, Math.min(4, currentDay - 47));
 
   return (
     <View style={styles.screen}>
       <View style={styles.rail}>
         <View style={styles.railLine} />
         {ALADIAH_DAYS.map((day, index) => {
-          const executable = day <= 49;
+          const executable = day <= 50;
           const done = executable && index < completed;
           const available = day <= currentDay;
           const active = displayDay === day;
-          const blocked = day >= 50;
+          const blocked = day >= 51;
           return (
             <Pressable key={day} disabled={!available} onPress={() => setDisplayDay(day)} style={styles.nodeWrap}>
               <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked, blocked && styles.nodeBlocked]}>
@@ -77,19 +78,19 @@ export function ChokmahCycle03Aladiah() {
       {displayDay === 47 ? <AladiahDay047VisualExperience /> : null}
       {displayDay === 48 ? <AladiahDay048NarrativeLoopsExperience /> : null}
       {displayDay === 49 ? <AladiahDay049InteroceptionExperience /> : null}
-      {displayDay >= 50 ? <AladiahRuntimePending day={displayDay} /> : null}
+      {displayDay === 50 ? <AladiahDay050ContourExperience /> : null}
+      {displayDay === 51 ? <AladiahRuntimePending /> : null}
     </View>
   );
 }
 
-function AladiahRuntimePending({ day }: { day: 50 | 51 }) {
-  const label = day === 50 ? 'CONSENTIMENTO/PRIVACIDADE' : 'VAULT DO SIGILO';
+function AladiahRuntimePending() {
   return (
     <View style={styles.blockWrap}>
       <View style={styles.blockCard}>
         <Text style={styles.blockLabel}>CANONICAL_STORAGE_READY · G7_RUNTIME_PENDING</Text>
-        <Text style={styles.blockTitle}>Dia {String(day).padStart(3, '0')} · {label}</Text>
-        <Text style={styles.blockBody}>O conteúdo está canônico, mas este runtime específico ainda não foi montado. Nenhuma Practice Session genérica é aberta e nenhum XP pode ser concedido por esta tela.</Text>
+        <Text style={styles.blockTitle}>Dia 051 · VAULT DO SIGILO</Text>
+        <Text style={styles.blockBody}>O conteúdo está canônico, mas o runtime específico de frase, redução, desenho privado e comparação textual ainda não foi montado. Nenhuma Practice Session genérica é aberta e nenhum XP pode ser concedido por esta tela.</Text>
       </View>
     </View>
   );
