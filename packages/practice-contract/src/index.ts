@@ -9,4 +9,5 @@ export * from "./day007.js";
 export * from "./day008.js";
 export * from "./day009.js";
 export * from "./day010.js";
+export * from "./day011.js";
 export * from "./sync.js";
