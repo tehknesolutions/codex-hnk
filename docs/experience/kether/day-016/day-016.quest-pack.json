@@ -1,0 +1,9 @@
+{
+  "id":"HNK-KETHER-D016-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":16,"quest_id":"HNK-KETHER-D016-V1","canonical_source_sha":"cc19245af2b1b23c56bc337b6ec1bce5ead7b2e3","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "canonical":{"counted_words":705,"xp":100,"attribute_gain":0,"angel":"Elemiah"},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","audio_recording":"NOT_ENABLED_V1"},
+  "epistemic":{"language_remains_useful":true,"preverbal_experience_not_external_fact":true,"personal_association_not_external_fact":true,"neurotheurgical_hypothesis":"OPERATIONAL_HYPOTHESIS_NOT_ESTABLISHED_SCIENCE"},
+  "cycle_progress":{"cycle":"Elemiah","days":[16,17,18,19,20],"expected_after_day":1,"fragment":4,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D016-COMP-V1","validator":"day016_v1","registry":"pending"},
+  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+}
