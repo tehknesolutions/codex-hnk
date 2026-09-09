@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useHnkAuth } from '../auth/AuthContext';
 import { HazielDays042to044Experience } from './HazielDays042to044Experience';
+import { HazielDay045AudioExperience } from './HazielDay045AudioExperience';
 
 const HAZIEL_DAYS = [42, 43, 44, 45, 46] as const;
 type HazielDay = (typeof HAZIEL_DAYS)[number];
@@ -45,18 +46,18 @@ export function ChokmahCycle02Haziel() {
     return <View style={styles.loading}><ActivityIndicator color="#9fc6ff" /><Text style={styles.loadingText}>ABRINDO O ESPELHO DE HAZIEL</Text></View>;
   }
 
-  const completed = Math.max(0, Math.min(3, currentDay - 42));
+  const completed = Math.max(0, Math.min(4, currentDay - 42));
 
   return (
     <View style={styles.screen}>
       <View style={styles.rail}>
         <View style={styles.railLine} />
         {HAZIEL_DAYS.map((day, index) => {
-          const executable = day <= 44;
+          const executable = day <= 45;
           const done = executable && index < completed;
           const available = day <= currentDay;
           const active = displayDay === day;
-          const blocked = day >= 45;
+          const blocked = day >= 46;
           return (
             <Pressable key={day} disabled={!available} onPress={() => setDisplayDay(day)} style={styles.nodeWrap}>
               <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked, blocked && styles.nodeBlocked]}>
@@ -74,31 +75,19 @@ export function ChokmahCycle02Haziel() {
       </View>
 
       {displayDay <= 44 ? <HazielDays042to044Experience day={displayDay as 42 | 43 | 44} /> : null}
-      {displayDay === 45 ? <Day045AudioBlocker /> : null}
-      {displayDay === 46 ? <Day046SequenceBlocker /> : null}
+      {displayDay === 45 ? <HazielDay045AudioExperience /> : null}
+      {displayDay === 46 ? <Day046RuntimePending /> : null}
     </View>
   );
 }
 
-function Day045AudioBlocker() {
+function Day046RuntimePending() {
   return (
     <View style={styles.blockWrap}>
       <View style={styles.blockCard}>
-        <Text style={styles.blockLabel}>AUDIO_PRESET_PENDING · ISSUE #10</Text>
-        <Text style={styles.blockTitle}>Dia 045 permanece fora do cânone executável.</Text>
-        <Text style={styles.blockBody}>O plano fixa 12 Hz como alvo de diferença binaural, mas carrier/base, condição controle, loudness, provenance e checksums ainda não foram congelados. Esta tela não abre Practice Session, não envia evidence e não concede XP.</Text>
-      </View>
-    </View>
-  );
-}
-
-function Day046SequenceBlocker() {
-  return (
-    <View style={styles.blockWrap}>
-      <View style={styles.blockCard}>
-        <Text style={styles.blockLabel}>SEQUENCE_BLOCKED_BY_DAY_045</Text>
-        <Text style={styles.blockTitle}>Dia 046 já possui fonte canônica, mas não pode furar a sequência.</Text>
-        <Text style={styles.blockBody}>O conteúdo foi promovido e sincronizado por SHA imutável, porém o primeiro completion exige o Dia 045. Nenhum runtime do Dia 046 é montado enquanto o blocker de áudio anterior permanecer aberto.</Text>
+        <Text style={styles.blockLabel}>CANONICAL_STORAGE_READY · G7_RUNTIME_PENDING</Text>
+        <Text style={styles.blockTitle}>Dia 046 está canônico e sequencialmente elegível após o selo do Dia 045.</Text>
+        <Text style={styles.blockBody}>O antigo blocker AUDIO_PRESET_PENDING foi removido. Esta tela permanece sem Practice Session porque a experiência específica do Dia 046 ainda não foi implementada no Mobile. O runtime não inventa uma experiência genérica apenas porque o conteúdo existe no banco.</Text>
       </View>
     </View>
   );
