@@ -1,13 +1,13 @@
 {
   "id":"HNK-KETHER-D012-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.2.0",
-  "status":"BACKEND_ACTIVE__WEB_EXPO_RUNTIME_PENDING",
+  "version":"0.3.0",
+  "status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "day":12,
   "title":"Trataka Primal — Foco sem Violência",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-012.md","source_sha":"a3be33e6d390b6c507e284d6dad6aaf94ebd4294","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","sephira":"Kether","world":"Atziluth","angel":"Sitael","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101"]},
   "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","competency":"Trataka Primal","primary_attribute":"PER","secondary_attribute":"DIS","attribute_gain":1,"application":"SERVER_XP_EVENT_TRIGGER_ONLY","client_may_apply":false,"cap":20,"source_basis":"EXPERIENCE_MATRIX_CHECKPOINT"},
-  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"session_max_seconds_per_block":600,"backend":"ACTIVE","interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"session_max_seconds_per_block":600,"backend":"ACTIVE","web":"ACTIVE","expo":"ACTIVE","foreground_only_active_timer":true,"active_timer_persisted":false,"completed_duration_persisted":true,"vault_sync_before_completion":true,"server_crown_assert":true,"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
   "phases":[
     {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["O Trataka treina retorno atencional; não exige ausência de pensamentos, olhos sem piscar ou resistência ao desconforto."],"required_for_completion":false},
     {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"epistemic_overlays":[{"domain":"E1","scope":"duration and distraction count"},{"domain":"E2","scope":"visual comfort, blinking and attentional return"},{"domain":"E3","scope":"subjective effort and presence do not establish universal scientific claims"}],"required_for_completion":true},
@@ -22,5 +22,5 @@
     {"id":"sitael_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Sitael","authoritative_cycle_days":[11,12,13,14,15],"cycle_progress":"2/5","fragment":3,"fragment_awarded":false,"fragment_state_source":"SERVER_CROWN_STATE","next_day":13},"required_for_completion":false}
   ],
   "completion_semantics":{"exact_ten_minutes_required":false,"absence_of_thought_required":false,"unblinking_gaze_required":false,"visual_discomfort_required":false,"safe_early_stop_valid":true,"flame_extinguished_required":true,"private_text_server_side":false,"attribute_gain_client_computed":false,"sitael_fragment_client_computed":false,"safety_stop_supported":true},
-  "release_blockers":[{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"DEVICE_BROWSER_QA"}]
 }
