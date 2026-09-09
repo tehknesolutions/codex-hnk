@@ -3,6 +3,7 @@ import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-nati
 import { useHnkAuth } from '../auth/AuthContext';
 import { AladiahDay047VisualExperience } from './AladiahDay047VisualExperience';
 import { AladiahDay048NarrativeLoopsExperience } from './AladiahDay048NarrativeLoopsExperience';
+import { AladiahDay049InteroceptionExperience } from './AladiahDay049InteroceptionExperience';
 
 const ALADIAH_DAYS = [47, 48, 49, 50, 51] as const;
 type AladiahDay = (typeof ALADIAH_DAYS)[number];
@@ -45,18 +46,18 @@ export function ChokmahCycle03Aladiah() {
     return <View style={styles.loading}><ActivityIndicator color="#9fc6ff" /><Text style={styles.loadingText}>ABRINDO O CICLO DE ALADIAH</Text></View>;
   }
 
-  const completed = Math.max(0, Math.min(2, currentDay - 47));
+  const completed = Math.max(0, Math.min(3, currentDay - 47));
 
   return (
     <View style={styles.screen}>
       <View style={styles.rail}>
         <View style={styles.railLine} />
         {ALADIAH_DAYS.map((day, index) => {
-          const executable = day <= 48;
+          const executable = day <= 49;
           const done = executable && index < completed;
           const available = day <= currentDay;
           const active = displayDay === day;
-          const blocked = day >= 49;
+          const blocked = day >= 50;
           return (
             <Pressable key={day} disabled={!available} onPress={() => setDisplayDay(day)} style={styles.nodeWrap}>
               <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked, blocked && styles.nodeBlocked]}>
@@ -75,13 +76,14 @@ export function ChokmahCycle03Aladiah() {
 
       {displayDay === 47 ? <AladiahDay047VisualExperience /> : null}
       {displayDay === 48 ? <AladiahDay048NarrativeLoopsExperience /> : null}
-      {displayDay >= 49 ? <AladiahRuntimePending day={displayDay} /> : null}
+      {displayDay === 49 ? <AladiahDay049InteroceptionExperience /> : null}
+      {displayDay >= 50 ? <AladiahRuntimePending day={displayDay} /> : null}
     </View>
   );
 }
 
-function AladiahRuntimePending({ day }: { day: 49 | 50 | 51 }) {
-  const label = day === 49 ? 'INTEROCEPÇÃO' : day === 50 ? 'CONSENTIMENTO/PRIVACIDADE' : 'VAULT DO SIGILO';
+function AladiahRuntimePending({ day }: { day: 50 | 51 }) {
+  const label = day === 50 ? 'CONSENTIMENTO/PRIVACIDADE' : 'VAULT DO SIGILO';
   return (
     <View style={styles.blockWrap}>
       <View style={styles.blockCard}>
