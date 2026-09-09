@@ -1,13 +1,13 @@
 {
   "id":"HNK-KETHER-D011-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.2.0",
-  "status":"BACKEND_ACTIVE__WEB_EXPO_RUNTIME_PENDING",
+  "version":"0.3.0",
+  "status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "day":11,
   "title":"Espelho do Observador — Ver Antes de Julgar",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-011.md","source_sha":"9b7140dee8d346a4ea81dd753d342e4c1f172b0d","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Sitael","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101"]},
   "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","primary_attribute":null,"secondary_attribute":null,"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE","client_may_apply":false,"source_basis":"NO_FROZEN_GAIN_RULE_FOR_DAY011"},
-  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"mirror_session_limit_seconds":300,"backend":"ACTIVE","interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"mirror_session_limit_seconds":300,"backend":"ACTIVE","web":"ACTIVE","expo":"ACTIVE","vault_sync_before_completion":true,"server_crown_assert":true,"snapshot_resume":true,"structural_draft_only":true,"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
   "phases":[
     {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["O espelho é superfície de observação, não tribunal, ídolo ou detector de fenômenos espirituais."],"required_for_completion":false},
     {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"epistemic_overlays":[{"domain":"E2","scope":"attention to visual features and automatic judgments"},{"domain":"E3","scope":"subjective relationship to the reflected image"}],"required_for_completion":true},
@@ -21,5 +21,5 @@
     {"id":"sitael_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Sitael","authoritative_cycle_days":[11,12,13,14,15],"cycle_progress":"1/5","fragment":3,"fragment_awarded":false,"fragment_state_source":"SERVER_CROWN_STATE","next_day":12},"required_for_completion":false}
   ],
   "completion_semantics":{"literally_empty_mind_required":false,"strange_visual_effect_required":false,"self_criticism_required":false,"three_five_minute_observations_required":true,"private_text_server_side":false,"sitael_fragment_client_computed":false,"safety_stop_supported":true},
-  "release_blockers":[{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"DEVICE_BROWSER_QA"}]
 }
