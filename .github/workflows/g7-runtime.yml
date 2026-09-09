@@ -1,0 +1,54 @@
+name: HNK G7 Runtime Validation
+
+on:
+  push:
+    branches:
+      - migration/m90-unified-v2
+    paths:
+      - 'apps/mobile/**'
+      - 'packages/audio-contract/**'
+      - 'scripts/validate-chokmah-runtime-v2.mjs'
+      - 'scripts/validate-audio-contract.mjs'
+      - 'supabase/migrations/**'
+      - '.github/workflows/g7-runtime.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mobile-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout migration branch
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+
+      - name: Install workspace
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Validate audio contract
+        run: pnpm validate:audio
+
+      - name: Validate Chokmah runtime contract
+        run: pnpm validate:chokmah
+
+      - name: Typecheck audio contract
+        run: pnpm --filter @hnk/audio-contract typecheck
+
+      - name: Typecheck Mobile
+        run: pnpm --filter @hnk/mobile typecheck
+
+      - name: Expo web export smoke
+        run: pnpm --filter @hnk/mobile build
