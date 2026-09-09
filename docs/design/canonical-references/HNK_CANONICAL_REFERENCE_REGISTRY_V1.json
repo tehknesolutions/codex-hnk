@@ -1,6 +1,6 @@
 {
   "kind": "hnk.canonical_reference_registry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "frozen",
   "entries": [
     {
@@ -32,6 +32,18 @@
       "scope": ["chokmah:070"],
       "orientation": "upright-no-mirror",
       "source_evidence_sha256": "f2daf9345b54556d517ab1f2d5fbf8e1c236248e0629cbe7e27134f97feb1a27",
+      "runtime_status": "qa_pending"
+    },
+    {
+      "id": "HNK-REF-ROSE22-D105-V1",
+      "label": "Rose of 22 Petals Regardie-aligned HNK Master V1",
+      "asset": "assets/canonical/binah/rose-22-regardie-hnk-master-v1.svg",
+      "sha256": "67c36d79c3fc788ab0866fa7082655209880a6b6b81b7751ad47bf75106b84de",
+      "freeze": "docs/design/canonical-references/HNK_ROSE_22_D105_REFERENCE_FREEZE_V1.md",
+      "scope": ["binah:105"],
+      "orientation": "heh-top-lamed-bottom-dalet-aligned-no-mirror",
+      "source_family": "Golden Dawn / Israel Regardie",
+      "source_license_context": "Wikimedia Commons Rose Cross Lamen.svg public-domain provenance",
       "runtime_status": "qa_pending"
     }
   ]
