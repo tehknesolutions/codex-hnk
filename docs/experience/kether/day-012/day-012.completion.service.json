@@ -1,10 +1,11 @@
 {
   "id":"HNK-KETHER-D012-COMPLETION-SERVICE-V1",
   "day":12,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D012-COMP-V1","quest_definition_id":"HNK-KETHER-D012-V1","validator_key":"day012_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D012-COMP-V1","quest_definition_id":"HNK-KETHER-D012-V1","validator_key":"day012_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"a3be33e6d390b6c507e284d6dad6aaf94ebd4294","xp":100},
-  "progression":{"matrix_version":"1.0.0","primary_attribute":"PER","secondary_attribute":"DIS","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20},
+  "progression":{"matrix_version":"1.0.0","primary_attribute":"PER","secondary_attribute":"DIS","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20,"smoke":{"per_before":5,"per_after":6,"dis_before":5,"dis_after":5,"attribute_event_count":1,"attribute_event_code":"PER","attribute_event_amount":1,"secondary_attribute_metadata":"DIS"}},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "validator_tests":{"valid":"PASS","plaintext_in_jachin":"REJECTED_DAY012_JACHIN_UNKNOWN_FIELD","flame_not_extinguished":"REJECTED_DAY012_MIDDLE_REQUIRED","supervision_missing":"REJECTED_DAY012_FIRE_SAFETY_REQUIRED","duration_over_600":"REJECTED_DAY012_BOAZ_DURATION_INVALID","fractional_score":"REJECTED_DAY012_ATTENTION_SCORE_INVALID"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":100,"xp_after":1100,"current_day":13,"attribute_gain_rule_count":1,"day12_completion_count":1,"day12_xp_event_count":1,"sitael":{"fragment":3,"completed_days":2,"lit":false},"fragments_lit":2,"progression_events":["NEXT_DAY_UNLOCKED"],"synthetic_user_persisted":false}
 }
