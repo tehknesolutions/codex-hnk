@@ -6,7 +6,7 @@ export const DAY010_COMPLETION={
  questDefinitionId:'HNK-KETHER-D010-V1',
  canonicalSourceSha:'167b3380e029456be1571f1d6dc3d491775acec5',
  canonicalXp:100,
- deploymentState:'draft',
+ deploymentState:'active',
 } as const;
 
 export function buildDay010CompletionRequest(input:{sessionId:string;clientCompletionId:string;localRecordHash?:string;clientCompletedAt?:string}):CompleteDayRequestV1{return{
