@@ -38,6 +38,25 @@ export type HnkStereoControlLayer = {
   gain: number;
 };
 
+export type HnkBinauralTransitionLayer = {
+  kind: 'binaural-transition';
+  startLeftHz: number;
+  endLeftHz: number;
+  differenceHz: number;
+  curve: 'linear';
+  durationSeconds: number;
+  gain: number;
+};
+
+export type HnkStereoControlTransitionLayer = {
+  kind: 'stereo-control-transition';
+  startHz: number;
+  endHz: number;
+  curve: 'linear';
+  durationSeconds: number;
+  gain: number;
+};
+
 export type HnkRitualToneLayer = {
   kind: 'ritual-tone';
   hz: number;
@@ -54,6 +73,8 @@ export type HnkAudioLayer =
   | HnkCarrierLayer
   | HnkBinauralLayer
   | HnkStereoControlLayer
+  | HnkBinauralTransitionLayer
+  | HnkStereoControlTransitionLayer
   | HnkRitualToneLayer
   | HnkAmbientLayer;
 
@@ -135,6 +156,28 @@ export function validateHnkAudioPreset(preset: HnkAudioPreset): string[] {
       }
     }
 
+    if (layer.kind === 'binaural-transition') {
+      if (!finitePositive(layer.startLeftHz) || !finitePositive(layer.endLeftHz) || !finitePositive(layer.differenceHz)) {
+        errors.push('binaural-transition frequencies must be > 0');
+      }
+      if (!finitePositive(layer.durationSeconds)) errors.push('binaural-transition.durationSeconds must be > 0');
+      if (layer.curve !== 'linear') errors.push('binaural-transition.curve must be linear');
+      if (preset.durationSeconds !== undefined && Math.abs(preset.durationSeconds - layer.durationSeconds) > 0.0001) {
+        errors.push('binaural-transition duration must match preset.durationSeconds');
+      }
+    }
+
+    if (layer.kind === 'stereo-control-transition') {
+      if (!finitePositive(layer.startHz) || !finitePositive(layer.endHz)) {
+        errors.push('stereo-control-transition frequencies must be > 0');
+      }
+      if (!finitePositive(layer.durationSeconds)) errors.push('stereo-control-transition.durationSeconds must be > 0');
+      if (layer.curve !== 'linear') errors.push('stereo-control-transition.curve must be linear');
+      if (preset.durationSeconds !== undefined && Math.abs(preset.durationSeconds - layer.durationSeconds) > 0.0001) {
+        errors.push('stereo-control-transition duration must match preset.durationSeconds');
+      }
+    }
+
     if (layer.kind === 'ambient' && !layer.assetId.trim()) errors.push('ambient.assetId is required');
   }
 
@@ -163,7 +206,7 @@ export function assertPublishableHnkAudioPreset(preset: HnkAudioPreset): HnkAudi
   return preset;
 }
 
-export const HNK_AUDIO_CONTRACT_VERSION = '1.1.0';
+export const HNK_AUDIO_CONTRACT_VERSION = '1.2.0';
 
 export {
   HNK_HAZIEL_D045_ACTIVE_PRESET_V1,
@@ -182,3 +225,10 @@ export {
   createNelchaelD107SaturnActiveLoopWavBytes,
   createNelchaelD107SaturnControlLoopWavBytes,
 } from './nelchael107.js';
+
+export {
+  HNK_PORTAL109_SATURN_JUPITER_ACTIVE_PRESET_V1,
+  HNK_PORTAL109_SATURN_JUPITER_CONTROL_PRESET_V1,
+  HNK_PORTAL109_SATURN_JUPITER_ACTIVE_RENDER_SHA256,
+  HNK_PORTAL109_SATURN_JUPITER_CONTROL_RENDER_SHA256,
+} from './portal109.js';
