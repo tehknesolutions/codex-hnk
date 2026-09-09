@@ -1,0 +1,11 @@
+{
+  "id":"HNK-KETHER-D008-RENDERER-V1",
+  "quest_definition_id":"HNK-KETHER-D008-V1",
+  "version":"1.0.0",
+  "required_scene_types":["NarrativeScene","TermRevealScene","CanonReadingScene","FocusPracticeScene","CountdownPracticeScene","JournalScene","ReturnGateScene","SoulMirrorScene","CompletionBoundaryScene","UnlockScene"],
+  "phase_bindings":{"NARRATIVE":"NarrativeScene","TERM_REVEAL":"TermRevealScene","READ":"CanonReadingScene","FOCUS":"FocusPracticeScene","JOURNAL":"JournalScene","RETURN":"ReturnGateScene","STRUCTURED_JOURNAL":"SoulMirrorScene","COMPLETION":"CompletionBoundaryScene","UNLOCK":"UnlockScene"},
+  "focus_component_bindings":{"COUNTDOWN_DISSOLVE":"CountdownPracticeScene","RELAXATION_GUIDE":"FocusPracticeScene","ATTENTION_RETURN":"FocusPracticeScene","SILENT_OBSERVATION":"FocusPracticeScene"},
+  "countdown_policy":{"starting_number":100,"must_reach_one":false,"user_paced":true,"lost_count_is_failure":false,"depth_or_unconsciousness_required":false},
+  "safety":{"stop_always_visible":true,"never_driving_or_operating_equipment":true,"movement_for_comfort_allowed":true,"loss_of_control_not_required":true},
+  "completion":{"server_authoritative":true,"canonical_xp":150,"attribute_gain":0,"cycle_progress":"Jeliel 3/5","fragment_awarded":false}
+}
