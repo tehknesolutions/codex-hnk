@@ -24,17 +24,16 @@ test('recovered registry and authored candidates remain separate metrics', () =>
   assert.equal(HNK_CYCLE1_VOCABULARY_TARGET, 144);
   assert.equal(HNK_CYCLE1_BOUND_LEXEMES.length, 31);
   assert.equal(HNK_CYCLE1_UNBOUND_LEXEMES.length, 2);
-  assert.equal(HNK_CYCLE1_AUTHORED_CANDIDATES.length, 1);
-  assert.equal(HNK_CYCLE1_AUTHORED_CANDIDATES[0].transliteration, 'KUVAN');
+  assert.deepEqual(HNK_CYCLE1_AUTHORED_CANDIDATES.map(x => x.transliteration), ['KUVAN','VALA']);
   assert.equal(HNK_CYCLE1_LANGUAGE_GATE.registryBoundRecoveredForms, 31);
-  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.authoredCandidateForms, 1);
-  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedUniqueLanguageAssets, 32);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.authoredCandidateForms, 2);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedUniqueLanguageAssets, 33);
   assert.equal(HNK_CYCLE1_LANGUAGE_GATE.recoveredProxyGap, 113);
   assert.equal(HNK_CYCLE1_LANGUAGE_GATE.recoveredProxyRatio, 0.2153);
-  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyGap, 112);
-  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyRatio, 0.2222);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyGap, 111);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyRatio, 0.2292);
   assert.deepEqual(HNK_CYCLE1_LANGUAGE_GATE.unboundRecoveredForms, ['VAMATAYA','KALIFORNIA']);
-  assert.deepEqual(HNK_CYCLE1_LANGUAGE_GATE.authoredCandidateFormsList, ['KUVAN']);
+  assert.deepEqual(HNK_CYCLE1_LANGUAGE_GATE.authoredCandidateFormsList, ['KUVAN','VALA']);
 });
 
 test('lesson binding counts preserve recovered provenance and governed additions', () => {
@@ -44,13 +43,13 @@ test('lesson binding counts preserve recovered provenance and governed additions
   );
   assert.deepEqual(
     Object.fromEntries(HNK_CYCLE1_LANGUAGE_COVERAGE.map((lesson) => [lesson.lessonId,lesson.authoredCandidateCount])),
-    {L01:1,L02:0,L03:0,L04:0,L05:0,L06:0,L07:0},
+    {L01:2,L02:0,L03:0,L04:0,L05:0,L06:0,L07:0},
   );
   const l01 = HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson) => lesson.lessonId === 'L01');
   assert.deepEqual(HNK_CYCLE1_CURRICULUM_REBINDS.L01, ['LEX-013']);
   assert.deepEqual(l01.governedRebindLexemeIds, ['LEX-013']);
-  assert.deepEqual(l01.authoredCandidateIds, ['AUTH-001']);
-  assert.equal(l01.languageAssetCount, 11);
+  assert.deepEqual(l01.authoredCandidateIds, ['AUTH-001','AUTH-002']);
+  assert.equal(l01.languageAssetCount, 12);
   assert.deepEqual(HNK_CYCLE1_EMPTY_LESSONS, ['L05','L06','L07']);
 });
 
