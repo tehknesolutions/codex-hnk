@@ -101,8 +101,38 @@ export const HAZIEL_DAY_044 = haziel(44, 3, [
   },
 });
 
+export const HAZIEL_DAY_045 = haziel(45, 4, [
+  { id: 'threshold', label: 'Limiar do Sintonizador Digital', kind: 'threshold' },
+  { id: 'active-audio', label: 'ACTIVE · 432/444 Hz', kind: 'practice' },
+  { id: 'rest', label: 'Descanso entre condições', kind: 'grounding' },
+  { id: 'control-audio', label: 'CONTROL · 432/432 Hz', kind: 'comparison' },
+  { id: 'silence', label: 'Silêncio posterior', kind: 'grounding' },
+  { id: 'compare', label: 'ACTIVE · CONTROL · interpretação', kind: 'review' },
+  { id: 'grounding', label: 'Retorno ambiental', kind: 'grounding', requiresReturnConfirmation: true },
+  { id: 'seal', label: 'Selo', kind: 'seal' },
+  { id: 'complete', label: 'Haziel 4/5', kind: 'complete' },
+], {
+  requiredTrue: [
+    'protocol_completed',
+    'return_confirmed',
+    'active_completed',
+    'control_completed',
+    'rest_confirmed',
+    'post_silence_completed',
+    'comparison_completed',
+    'interpretation_separated',
+    'safety_clear',
+  ],
+  minimums: {
+    active_seconds: 600,
+    control_seconds: 600,
+    post_silence_seconds: 60,
+  },
+});
+
 export const HAZIEL_CANON_RUNTIME = [
   HAZIEL_DAY_042,
   HAZIEL_DAY_043,
   HAZIEL_DAY_044,
+  HAZIEL_DAY_045,
 ] as const;
