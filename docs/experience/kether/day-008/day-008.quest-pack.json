@@ -1,0 +1,18 @@
+{
+  "id":"HNK-KETHER-D008-PACK-V1",
+  "kind":"hnk.quest_pack",
+  "version":"0.1.0",
+  "day":8,
+  "quest_definition_id":"HNK-KETHER-D008-V1",
+  "completion_contract_id":"HNK-KETHER-D008-COMP-V1",
+  "canonical_source_sha":"df7c39ced019ead6eb0be817a1ac638789d40c3c",
+  "canonical_xp":150,
+  "integrity_state":"PASS_CANON_705_CONFIG_COMPILED",
+  "release_state":"RUNTIME_AND_COMPLETION_PENDING",
+  "reuse":{"quest_catalog":"QuestCatalog.requireDay(8)","focus_renderer":"FocusPracticeScene","countdown_renderer":"QuestCountdownPhase","completion_service":"complete_codex_day_v2","day_specific_engine_branch_required":false},
+  "progression":{"xp":150,"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE"},
+  "cycle":{"angel":"Jeliel","progress_after":"3/5","fragment_awarded":false,"crown_fragments_lit_after":1},
+  "safety":{"must_reach_one":false,"lost_count_is_failure":false,"unconsciousness_not_goal":true,"never_driving_or_operating_equipment":true,"stop_always_visible":true},
+  "blockers":[{"id":"RUNTIME-008-COUNTDOWN-INTEGRATION","reason":"Generic countdown surface must be integrated in Web and Expo."},{"id":"COMPLETION-008-CONTRACT","reason":"Day008 validator/registry are not yet deployed."}],
+  "proof_result":"PASS_CANON_705_AND_CONFIG__RUNTIME_COMPLETION_PENDING"
+}
