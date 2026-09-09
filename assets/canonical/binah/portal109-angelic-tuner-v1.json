@@ -1,0 +1,19 @@
+{
+  "kind": "hnk.angelic_tuner_operator",
+  "id": "HNK-ANGELIC-TUNER-D109-V1",
+  "version": "1.0.0",
+  "portal_day": 109,
+  "engine": "@hnk/audio-contract",
+  "mode": "procedural-planetary-transition",
+  "active_preset_id": "HNK-PORTAL109-SATURN-JUPITER-ACTIVE-V1",
+  "control_preset_id": "HNK-PORTAL109-SATURN-JUPITER-CONTROL-V1",
+  "audio_freeze": "docs/audio/HNK_PORTAL109_SATURN_JUPITER_AUDIO_FREEZE_V1.md",
+  "source_plan_sha256": "79cf5b61f0dfb0e67bcba0afcb4ec534e21d5303fc135b9638519022fdecd832",
+  "psalm_binding": null,
+  "psalm_policy": "No new Psalm is assigned because the Day 109 source plan does not specify one.",
+  "autoplay": false,
+  "requires_explicit_start": true,
+  "requires_volume_control": true,
+  "requires_immediate_stop": true,
+  "runtime_status": "qa_pending"
+}
