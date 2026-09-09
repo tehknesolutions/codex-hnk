@@ -1,8 +1,8 @@
 {
   "id":"HNK-KETHER-D008-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.1.0",
-  "status":"CONFIG_COMPILED__RUNTIME_COMPLETION_PENDING",
+  "version":"0.3.0",
+  "status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "day":8,
   "title":"Dave Elman II — Contagem que Desaparece",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-008.md","source_sha":"df7c39ced019ead6eb0be817a1ac638789d40c3c","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Jeliel","initiatory_grade":1,"initiatory_title":"Neófito","xp":150,"tracks":["TEURG-101","COMP-101","BIO-101"]},
@@ -23,12 +23,9 @@
     {"id":"middle_countdown","type":"FOCUS","source":{"kind":"CANON","block_ids":["middle-kavanah"]},"interaction":{"components":["RELAXATION_GUIDE","COUNTDOWN_DISSOLVE","SILENT_OBSERVATION","RETURN_GATE"],"starting_number":100,"minimum_number":1,"user_paced":true,"must_reach_one":false,"silent_observation_seconds":60,"pause":true,"stop":true},"safety":{"stop_always_visible":true,"eyes_open_normally_after_practice":true,"movement_for_orientation_required_after":true,"loss_of_control_not_required":true},"required_for_completion":true},
     {"id":"middle_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
     {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["middle-ordalia","espelho-da-alma"]},"interaction":{"structured_fields":["final_number","relaxation_rating","attention_stability_rating","forcing_rating"]},"privacy":{"free_text_destination":"VAULT_ONLY"},"required_for_completion":true},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-KETHER-D008-COMP-V1","completion_contract_state":"NOT_DEPLOYED","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-KETHER-D008-COMP-V1","completion_contract_state":"ACTIVE","client_may_award_xp":false,"required_for_completion":true},
     {"id":"jeliel_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Jeliel","cycle_progress":"3/5","fragment_awarded":false,"next_day":9},"required_for_completion":false}
   ],
   "completion_semantics":{"must_reach_one":false,"lost_count_is_failure":false,"depth_or_unconsciousness_required":false,"phenomenon_required":false,"required_practice":"BODY_RELAXATION_PLUS_REVERSIBLE_COUNTDOWN_AND_RECORD"},
-  "release_blockers":[
-    {"id":"RUNTIME-008-COUNTDOWN-INTEGRATION","scope":"WEB_EXPO","reason":"Generic countdown surface must be integrated in Web and Expo."},
-    {"id":"COMPLETION-008-CONTRACT","scope":"SERVER_COMPLETION","reason":"Day008 validator/registry are not yet deployed."}
-  ]
+  "release_blockers":[]
 }
