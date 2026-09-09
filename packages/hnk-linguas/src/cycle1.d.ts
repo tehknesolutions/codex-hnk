@@ -1,4 +1,4 @@
-import type { LexiconAuthority, HnkLexeme } from './index.js';
+import type { LexiconAuthority, HnkLexeme } from './index.mjs';
 
 export type Cycle1LessonId = 'L01'|'L02'|'L03'|'L04'|'L05'|'L06'|'L07';
 export type Cycle1Sphere = 'Kether'|'Chokhmah'|'Binah'|'Chesed'|'Gevurah'|'Yesod'|'Malkuth';
