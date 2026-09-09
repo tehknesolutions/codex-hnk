@@ -1,5 +1,5 @@
 export type AuthoredCandidateAuthority = 'CANDIDATE';
-export type AuthoredCandidateCertainty = 'AUTHORED_DERIVATION'|'AUTHORED_BACK_ANALYSIS';
+export type AuthoredCandidateCertainty = 'AUTHORED_DERIVATION'|'AUTHORED_BACK_ANALYSIS'|'AUTHORED_DERIVATION_WITH_GATED_COMPONENT';
 export type AuthoredCandidateProductivity = 'CLOSED_LIST_ONLY'|'NON_PRODUCTIVE_SINGLE_CANDIDATE';
 
 export type HnkAuthoredCandidate = Readonly<{
