@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"HNK-KETHER-D007-EVIDENCE-V1",
+  "title":"HNK Day 007 Evidence V1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["protocol_version","source_sha","session_id","jachin","boaz","middle","soul_mirror","voluntary_completion_confirmed"],
+  "properties":{
+    "protocol_version":{"const":"HNK-KETHER-D007-V1"},
+    "source_sha":{"const":"bc12709d5a346870405cf41e62f99ac28d70186d"},
+    "session_id":{"type":"string","minLength":1},
+    "mode":{"enum":["first_completion","revisit"]},
+    "jachin":{"type":"object","additionalProperties":false,"required":["relaxation_completed","relaxation_rating","test_performed","release_confirmed","return_confirmed"],"properties":{"relaxation_completed":{"const":true},"relaxation_rating":{"type":"integer","minimum":0,"maximum":10},"test_performed":{"const":true},"catalepsy_reported":{"type":"boolean"},"facilitator_vault_entry_ref":{"type":["string","null"],"maxLength":256},"release_confirmed":{"const":true},"return_confirmed":{"const":true}}},
+    "boaz":{"type":"object","additionalProperties":false,"required":["comparison_completed","spontaneous_sensation_rating","muscular_effort_rating","second_attempt_performed","outcome","release_confirmed","return_confirmed"],"properties":{"comparison_completed":{"const":true},"spontaneous_sensation_rating":{"type":"integer","minimum":0,"maximum":10},"muscular_effort_rating":{"type":"integer","minimum":0,"maximum":10},"second_attempt_performed":{"type":"boolean"},"outcome":{"enum":["CATALEPSY_REPORTED","NO_CATALEPSY","UNCLEAR"]},"observation_vault_entry_ref":{"type":["string","null"],"maxLength":256},"release_confirmed":{"const":true},"return_confirmed":{"const":true}}},
+    "middle":{"type":"object","additionalProperties":false,"required":["sequence_completed","silent_observation_seconds","release_confirmed","return_confirmed"],"properties":{"sequence_completed":{"const":true},"silent_observation_seconds":{"type":"integer","minimum":60},"release_confirmed":{"const":true},"return_confirmed":{"const":true}}},
+    "soul_mirror":{"type":"object","additionalProperties":false,"required":["completed","relaxation_spontaneous_rating","muscular_effort_rating","perception_change_rating"],"properties":{"completed":{"const":true},"relaxation_spontaneous_rating":{"type":"integer","minimum":0,"maximum":10},"muscular_effort_rating":{"type":"integer","minimum":0,"maximum":10},"perception_change_rating":{"type":"integer","minimum":0,"maximum":10},"vault_entry_ref":{"type":["string","null"],"maxLength":256}}},
+    "voluntary_completion_confirmed":{"const":true},
+    "safety_stop_occurred":{"type":"boolean"}
+  }
+}
