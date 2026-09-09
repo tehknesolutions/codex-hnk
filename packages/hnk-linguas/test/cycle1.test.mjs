@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  HNK_CYCLE1_AUTHORED_CANDIDATES,
   HNK_CYCLE1_BOUND_LEXEMES,
   HNK_CYCLE1_CURRICULUM_REBINDS,
   HNK_CYCLE1_EMPTY_LESSONS,
@@ -19,27 +20,38 @@ test('Cycle 1 tree uses the reconciled seven-lesson mapping', () => {
   );
 });
 
-test('recovered registry bindings are measured without claiming curricular completion', () => {
+test('recovered registry and authored candidates remain separate metrics', () => {
   assert.equal(HNK_CYCLE1_VOCABULARY_TARGET, 144);
   assert.equal(HNK_CYCLE1_BOUND_LEXEMES.length, 31);
   assert.equal(HNK_CYCLE1_UNBOUND_LEXEMES.length, 2);
-  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.provisionalBindingGap, 113);
-  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.provisionalBindingRatio, 0.2153);
-  assert.deepEqual(HNK_CYCLE1_LANGUAGE_GATE.unboundForms, ['VAMATAYA','KALIFORNIA']);
+  assert.equal(HNK_CYCLE1_AUTHORED_CANDIDATES.length, 1);
+  assert.equal(HNK_CYCLE1_AUTHORED_CANDIDATES[0].transliteration, 'KUVAN');
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.registryBoundRecoveredForms, 31);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.authoredCandidateForms, 1);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedUniqueLanguageAssets, 32);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.recoveredProxyGap, 113);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.recoveredProxyRatio, 0.2153);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyGap, 112);
+  assert.equal(HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyRatio, 0.2222);
+  assert.deepEqual(HNK_CYCLE1_LANGUAGE_GATE.unboundRecoveredForms, ['VAMATAYA','KALIFORNIA']);
+  assert.deepEqual(HNK_CYCLE1_LANGUAGE_GATE.authoredCandidateFormsList, ['KUVAN']);
 });
 
-test('lesson binding counts preserve recovered provenance plus explicit curriculum rebinds', () => {
+test('lesson binding counts preserve recovered provenance and governed additions', () => {
   assert.deepEqual(
     Object.fromEntries(HNK_CYCLE1_LANGUAGE_COVERAGE.map((lesson) => [lesson.lessonId,lesson.lexemeCount])),
     {L01:10,L02:11,L03:8,L04:9,L05:0,L06:0,L07:0},
   );
-  assert.deepEqual(HNK_CYCLE1_EMPTY_LESSONS, ['L05','L06','L07']);
+  assert.deepEqual(
+    Object.fromEntries(HNK_CYCLE1_LANGUAGE_COVERAGE.map((lesson) => [lesson.lessonId,lesson.authoredCandidateCount])),
+    {L01:1,L02:0,L03:0,L04:0,L05:0,L06:0,L07:0},
+  );
+  const l01 = HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson) => lesson.lessonId === 'L01');
   assert.deepEqual(HNK_CYCLE1_CURRICULUM_REBINDS.L01, ['LEX-013']);
-  const l01=HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson)=>lesson.lessonId==='L01');
   assert.deepEqual(l01.governedRebindLexemeIds, ['LEX-013']);
-  assert.ok(l01.recoveredLexemeIds.includes('LEX-003'));
-  assert.ok(!l01.recoveredLexemeIds.includes('LEX-013'));
-  assert.ok(l01.lexemeIds.includes('LEX-013'));
+  assert.deepEqual(l01.authoredCandidateIds, ['AUTH-001']);
+  assert.equal(l01.languageAssetCount, 11);
+  assert.deepEqual(HNK_CYCLE1_EMPTY_LESSONS, ['L05','L06','L07']);
 });
 
 test('L03 and L04 authority mix remains non-canonical where required', () => {
