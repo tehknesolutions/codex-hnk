@@ -27,9 +27,10 @@
     "validate:day013": "node scripts/validate-day013-runtime-integration.mjs",
     "validate:day014": "node scripts/validate-day014-runtime-integration.mjs",
     "validate:day015": "node scripts/validate-day015-cycle-seal.mjs",
+    "validate:day016": "node scripts/validate-day016-runtime-integration.mjs",
     "validate:catalog": "node scripts/validate-quest-catalog-scalability.mjs",
     "validate:attributes": "node scripts/validate-attribute-progression-matrix.mjs",
-    "validate:scalability": "pnpm validate:day002 && pnpm validate:audio002 && pnpm validate:audio-runtime && pnpm validate:runtime002 && pnpm validate:day003 && pnpm validate:day004 && pnpm validate:day005 && pnpm validate:day006 && pnpm validate:day007 && pnpm validate:day008 && pnpm validate:day009 && pnpm validate:day010 && pnpm validate:day011 && pnpm validate:day012 && pnpm validate:day013 && pnpm validate:day014 && pnpm validate:day015 && pnpm validate:catalog && pnpm validate:attributes",
+    "validate:scalability": "pnpm validate:day002 && pnpm validate:audio002 && pnpm validate:audio-runtime && pnpm validate:runtime002 && pnpm validate:day003 && pnpm validate:day004 && pnpm validate:day005 && pnpm validate:day006 && pnpm validate:day007 && pnpm validate:day008 && pnpm validate:day009 && pnpm validate:day010 && pnpm validate:day011 && pnpm validate:day012 && pnpm validate:day013 && pnpm validate:day014 && pnpm validate:day015 && pnpm validate:day016 && pnpm validate:catalog && pnpm validate:attributes",
     "check": "pnpm validate:day001 && pnpm validate:scalability && turbo run typecheck test"
   },
   "devDependencies": {"turbo": "2.10.12"}
