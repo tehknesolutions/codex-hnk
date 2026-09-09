@@ -31,6 +31,13 @@ export type HnkBinauralLayer = {
   gain: number;
 };
 
+export type HnkStereoControlLayer = {
+  kind: 'stereo-control';
+  leftHz: number;
+  rightHz: number;
+  gain: number;
+};
+
 export type HnkRitualToneLayer = {
   kind: 'ritual-tone';
   hz: number;
@@ -43,7 +50,12 @@ export type HnkAmbientLayer = {
   gain: number;
 };
 
-export type HnkAudioLayer = HnkCarrierLayer | HnkBinauralLayer | HnkRitualToneLayer | HnkAmbientLayer;
+export type HnkAudioLayer =
+  | HnkCarrierLayer
+  | HnkBinauralLayer
+  | HnkStereoControlLayer
+  | HnkRitualToneLayer
+  | HnkAmbientLayer;
 
 export type HnkAudioSafety = {
   maxOutputGain: number;
@@ -63,6 +75,7 @@ export type HnkAudioPreset = {
   sourceReferences: HnkAudioSourceReference[];
   unresolvedReferences: string[];
   targetStateLabel?: string;
+  durationSeconds?: number;
   approvalRef?: string;
   provenanceRef?: string;
   renderChecksumSha256?: string;
@@ -87,6 +100,7 @@ export function validateHnkAudioPreset(preset: HnkAudioPreset): string[] {
   if (!preset.id.trim()) errors.push('preset.id is required');
   if (!preset.version.trim()) errors.push('preset.version is required');
   if (!preset.label.trim()) errors.push('preset.label is required');
+  if (preset.durationSeconds !== undefined && !finitePositive(preset.durationSeconds)) errors.push('durationSeconds must be > 0');
   if (!gainValid(preset.safety.maxOutputGain)) errors.push('safety.maxOutputGain must be between 0 and 1');
   if (!Number.isFinite(preset.safety.fadeInSeconds) || preset.safety.fadeInSeconds < 0) errors.push('safety.fadeInSeconds must be >= 0');
   if (!Number.isFinite(preset.safety.fadeOutSeconds) || preset.safety.fadeOutSeconds < 0) errors.push('safety.fadeOutSeconds must be >= 0');
@@ -109,6 +123,15 @@ export function validateHnkAudioPreset(preset: HnkAudioPreset): string[] {
       const calculatedDifference = Math.abs(layer.rightHz - layer.leftHz);
       if (Math.abs(calculatedDifference - layer.differenceHz) > 0.0001) {
         errors.push('binaural.differenceHz must equal |rightHz - leftHz|');
+      }
+    }
+
+    if (layer.kind === 'stereo-control') {
+      if (!finitePositive(layer.leftHz) || !finitePositive(layer.rightHz)) {
+        errors.push('stereo-control frequencies must be > 0');
+      }
+      if (Math.abs(layer.rightHz - layer.leftHz) > 0.0001) {
+        errors.push('stereo-control requires equal leftHz and rightHz');
       }
     }
 
@@ -140,4 +163,13 @@ export function assertPublishableHnkAudioPreset(preset: HnkAudioPreset): HnkAudi
   return preset;
 }
 
-export const HNK_AUDIO_CONTRACT_VERSION = '1.0.0';
+export const HNK_AUDIO_CONTRACT_VERSION = '1.1.0';
+
+export {
+  HNK_HAZIEL_D045_ACTIVE_PRESET_V1,
+  HNK_HAZIEL_D045_CONTROL_PRESET_V1,
+  HNK_HAZIEL_D045_ACTIVE_RENDER_SHA256,
+  HNK_HAZIEL_D045_CONTROL_RENDER_SHA256,
+  createHazielD045ActiveLoopWavBytes,
+  createHazielD045ControlLoopWavBytes,
+} from './haziel45.js';
