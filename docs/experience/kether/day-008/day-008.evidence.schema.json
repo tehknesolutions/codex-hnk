@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"HNK-KETHER-D008-EVIDENCE-V1",
+  "title":"HNK Day 008 Evidence V1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["protocol_version","source_sha","session_id","jachin","boaz","middle","soul_mirror","voluntary_completion_confirmed"],
+  "properties":{
+    "protocol_version":{"const":"HNK-KETHER-D008-V1"},
+    "source_sha":{"const":"df7c39ced019ead6eb0be817a1ac638789d40c3c"},
+    "session_id":{"type":"string","minLength":1},
+    "mode":{"enum":["first_completion","revisit"]},
+    "jachin":{"type":"object","additionalProperties":false,"required":["body_relaxation_completed","countdown_completed","final_number","attention_returns","return_confirmed"],"properties":{"body_relaxation_completed":{"const":true},"countdown_completed":{"const":true},"final_number":{"type":"integer","minimum":1,"maximum":100},"attention_returns":{"type":"integer","minimum":0},"easiest_body_region_vault_ref":{"type":["string","null"],"maxLength":256},"return_confirmed":{"const":true}}},
+    "boaz":{"type":"object","additionalProperties":false,"required":["countdown_completed","final_number","distractions_noted_count","adjustment_recorded","return_confirmed"],"properties":{"countdown_completed":{"const":true},"final_number":{"type":"integer","minimum":1,"maximum":100},"distractions_noted_count":{"type":"integer","minimum":0},"adjustment_recorded":{"const":true},"adjustment_vault_entry_ref":{"type":["string","null"],"maxLength":256},"return_confirmed":{"const":true}}},
+    "middle":{"type":"object","additionalProperties":false,"required":["sequence_completed","final_number","silent_observation_seconds","return_confirmed"],"properties":{"sequence_completed":{"const":true},"final_number":{"type":"integer","minimum":1,"maximum":100},"silent_observation_seconds":{"type":"integer","minimum":60},"return_confirmed":{"const":true}}},
+    "soul_mirror":{"type":"object","additionalProperties":false,"required":["completed","relaxation_rating","attention_stability_rating","forcing_rating"],"properties":{"completed":{"const":true},"relaxation_rating":{"type":"integer","minimum":0,"maximum":10},"attention_stability_rating":{"type":"integer","minimum":0,"maximum":10},"forcing_rating":{"type":"integer","minimum":0,"maximum":10},"vault_entry_ref":{"type":["string","null"],"maxLength":256}}},
+    "voluntary_completion_confirmed":{"const":true},
+    "safety_stop_occurred":{"type":"boolean"}
+  }
+}
