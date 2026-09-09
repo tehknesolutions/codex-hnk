@@ -1,8 +1,9 @@
 {
   "id":"HNK-KETHER-D015-COMPLETION-SERVICE-V1","day":15,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D015-COMP-V1","quest_definition_id":"HNK-KETHER-D015-V1","validator_key":"day015_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D015-COMP-V1","quest_definition_id":"HNK-KETHER-D015-V1","validator_key":"day015_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"2a5037afce694753bef1b89da89d2746850ef4a1","xp":150,"attribute_gain":0},
-  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID","offline_queue":"CIPHERTEXT_ONLY"},
+  "validator_tests":{"tear_valid":"PASS","burn_safe_valid":"PASS","plaintext_in_jachin":"REJECTED_day015_jachin_unknown_field","burn_without_safety":"REJECTED_day015_burn_safety_required","non_burn_with_burn_safety":"REJECTED_day015_burn_safety_for_non_burn_forbidden"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":150,"xp_after":1150,"current_day":16,"day15_completion_count":1,"day15_xp_event_count":1,"attribute_gain_rule_count":0,"attribute_event_count":0,"sitael":{"completed_days":5,"lit":true,"fragment":3},"fragments_lit":3,"progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT"],"synthetic_user_persisted":false}
 }
