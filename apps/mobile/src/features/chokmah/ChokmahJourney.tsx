@@ -3,6 +3,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { useHnkAuth } from '../auth/AuthContext';
 import { ChokmahCycle01Cahetel } from './ChokmahCycle01Cahetel';
 import { ChokmahCycle02Haziel } from './ChokmahCycle02Haziel';
+import { ChokmahCycle03Aladiah } from './ChokmahCycle03Aladiah';
 
 export function ChokmahJourney() {
   const auth = useHnkAuth();
@@ -33,12 +34,13 @@ export function ChokmahJourney() {
 
   if (currentDay <= 41) return <ChokmahCycle01Cahetel />;
   if (currentDay <= 46) return <ChokmahCycle02Haziel />;
+  if (currentDay <= 51) return <ChokmahCycle03Aladiah />;
 
   return (
     <View style={styles.threshold}>
-      <Text style={styles.eyebrow}>CHOKMAH · FRONTEIRA CANÔNICA</Text>
+      <Text style={styles.eyebrow}>CHOKMAH · FRONTEIRA G7</Text>
       <Text style={styles.title}>DIA {String(Math.min(currentDay, 73)).padStart(3, '0')}</Text>
-      <Text style={styles.body}>O próximo ciclo só será executável quando a cadeia G5 → G6 → G7 estiver concluída. Conteúdo editorial ou promotion candidate nunca substitui o cânone sincronizado.</Text>
+      <Text style={styles.body}>O próximo ciclo só será executável quando seu runtime específico e evidence contract fail-closed estiverem implementados. Conteúdo canônico no banco não abre uma prática genérica nem concede XP por si só.</Text>
     </View>
   );
 }
