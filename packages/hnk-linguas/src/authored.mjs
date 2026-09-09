@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.0.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.1.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-09';
 
@@ -32,6 +32,34 @@ const RAW_AUTHORED_CANDIDATES = [
       'New governed authorship; not recovered historical HNK.',
       'Starts at CANDIDATE and must not be promoted silently.',
       'Does not retroactively define KU as WHERE or VAN as globally productive.',
+    ],
+  },
+  {
+    id: 'AUTH-002',
+    transliteration: 'VALA',
+    meaning: {
+      pt: 'atividade / ação realizada; núcleo nominal genérico de atividade',
+      en: 'activity / performed action; generic activity nominal head',
+    },
+    authority: 'CANDIDATE',
+    certainty: 'AUTHORED_BACK_ANALYSIS',
+    sourceClass: 'AUTHORING_PROPOSAL',
+    historicalRecoveryClaim: false,
+    lessons: ['L01'],
+    morphology: {
+      schema: 'BACK_ANALYSIS: VAMAVALA + VALI family evidence -> VALA',
+      leftState: 'VAMAVALA_WATCH_CONTAINS_VALA_ACTIVITY_DOMAIN',
+      rightState: 'VALI_FROZEN_ACTION_WORK_DOMAIN',
+      productivity: 'NON_PRODUCTIVE_SINGLE_CANDIDATE',
+    },
+    provenance: [
+      'simpleway-hnk/proposals/language/HNK_VALA_ACTIVITY_NOUN_PROPOSAL_V1.json',
+      'simpleway-hnk/proposals/language/HNK_MORPHOLOGY_HYPOTHESES_V1.md',
+    ],
+    notes: [
+      'New governed authorship; VALA is not claimed as a recovered historical morpheme.',
+      'Does not establish A=noun or I=verb as universal morphology.',
+      'Primary test use is L01 OPI 6 through the contextual frame EN KU VALA KE.',
     ],
   },
 ];
@@ -91,6 +119,15 @@ export function validateHnkAuthoredRegistry() {
     if (JSON.stringify(kuvan.glyphIds) !== JSON.stringify(['G23','G05','G31','G01','G12'])) errors.push('KUVAN glyph sequence drift');
     if (kuvan.morphology.productivity !== 'CLOSED_LIST_ONLY') errors.push('KUVAN productivity gate drift');
     if (!kuvan.lessons.includes('L01')) errors.push('KUVAN L01 binding missing');
+  }
+
+  const vala = HNK_AUTHORED_CANDIDATES_BY_FORM.VALA;
+  if (!vala) errors.push('VALA candidate missing');
+  else {
+    if (JSON.stringify(vala.glyphIds) !== JSON.stringify(['G31','G01','G14','G01'])) errors.push('VALA glyph sequence drift');
+    if (vala.morphology.productivity !== 'NON_PRODUCTIVE_SINGLE_CANDIDATE') errors.push('VALA productivity gate drift');
+    if (!vala.lessons.includes('L01')) errors.push('VALA L01 binding missing');
+    if (vala.historicalRecoveryClaim !== false) errors.push('VALA recovery boundary drift');
   }
 
   return { ok: errors.length === 0, errors };
