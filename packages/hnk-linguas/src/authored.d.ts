@@ -1,11 +1,13 @@
 export type AuthoredCandidateAuthority = 'CANDIDATE';
+export type AuthoredCandidateCertainty = 'AUTHORED_DERIVATION'|'AUTHORED_BACK_ANALYSIS';
+export type AuthoredCandidateProductivity = 'CLOSED_LIST_ONLY'|'NON_PRODUCTIVE_SINGLE_CANDIDATE';
 
 export type HnkAuthoredCandidate = Readonly<{
   id: string;
   transliteration: string;
   meaning: Readonly<{ pt: string; en: string }>;
   authority: AuthoredCandidateAuthority;
-  certainty: 'AUTHORED_DERIVATION';
+  certainty: AuthoredCandidateCertainty;
   sourceClass: 'AUTHORING_PROPOSAL';
   historicalRecoveryClaim: false;
   lessons: readonly string[];
@@ -13,7 +15,7 @@ export type HnkAuthoredCandidate = Readonly<{
     schema: string;
     leftState: string;
     rightState: string;
-    productivity: 'CLOSED_LIST_ONLY';
+    productivity: AuthoredCandidateProductivity;
   }>;
   provenance: readonly string[];
   notes: readonly string[];
