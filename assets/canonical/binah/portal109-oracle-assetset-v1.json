@@ -1,0 +1,38 @@
+{
+  "kind": "hnk.portal_oracle_asset_set",
+  "id": "HNK-PORTAL109-ORACLE-ASSETSET-V1",
+  "version": "1.0.0",
+  "portal_day": 109,
+  "rune_transition": {
+    "from": {
+      "id": "HNK-REF-THURISAZ-V1",
+      "unicode": "U+16A6",
+      "label": "Thurisaz",
+      "asset": "assets/canonical/binah/thurisaz-hnk-master-v1.svg",
+      "sha256": "c7e0967c30f084a9b57f864342613d1af6209de148bf9ae9b941896b6c3980ea"
+    },
+    "to": {
+      "id": "HNK-REF-ANSUZ-V1",
+      "unicode": "U+16A8",
+      "label": "Ansuz",
+      "asset": "assets/canonical/shared/runes/ansuz-hnk-master-v1.svg",
+      "sha256": "79449e97af47e731f66155ca3ad4847e06fd937ef7953ed837323a02fae3f97a"
+    }
+  },
+  "arcana_transition": {
+    "from": {
+      "id": "TAROT-MAJOR-II",
+      "label_pt": "A Sacerdotisa",
+      "artwork": null
+    },
+    "to": {
+      "id": "TAROT-MAJOR-III",
+      "label_pt": "A Imperatriz",
+      "artwork": null
+    },
+    "rendering_policy": "text-and-identifier-only-until-card-art-provenance-is-frozen"
+  },
+  "orientation": "upright-no-mirror",
+  "source_plan_sha256": "79cf5b61f0dfb0e67bcba0afcb4ec534e21d5303fc135b9638519022fdecd832",
+  "epistemic_note": "Oracular transition is symbolic; no image or coincidence is treated as proof of an external mechanism."
+}
