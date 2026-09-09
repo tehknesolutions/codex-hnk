@@ -173,3 +173,12 @@ export {
   createHazielD045ActiveLoopWavBytes,
   createHazielD045ControlLoopWavBytes,
 } from './haziel45.js';
+
+export {
+  HNK_NELCHAEL_D107_SATURN_ACTIVE_PRESET_V1,
+  HNK_NELCHAEL_D107_SATURN_CONTROL_PRESET_V1,
+  HNK_NELCHAEL_D107_SATURN_ACTIVE_RENDER_SHA256,
+  HNK_NELCHAEL_D107_SATURN_CONTROL_RENDER_SHA256,
+  createNelchaelD107SaturnActiveLoopWavBytes,
+  createNelchaelD107SaturnControlLoopWavBytes,
+} from './nelchael107.js';
