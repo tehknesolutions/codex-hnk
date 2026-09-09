@@ -1,0 +1,34 @@
+{
+  "id":"HNK-KETHER-D008-V1",
+  "kind":"hnk.quest_definition",
+  "version":"0.1.0",
+  "status":"CONFIG_COMPILED__RUNTIME_COMPLETION_PENDING",
+  "day":8,
+  "title":"Dave Elman II — Contagem que Desaparece",
+  "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-008.md","source_sha":"df7c39ced019ead6eb0be817a1ac638789d40c3c","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Jeliel","initiatory_grade":1,"initiatory_title":"Neófito","xp":150,"tracks":["TEURG-101","COMP-101","BIO-101"]},
+  "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","primary_attribute":null,"secondary_attribute":null,"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE","client_may_apply":false,"source_basis":"NO_FROZEN_GAIN_RULE_FOR_DAY008"},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"checkpoint_states":["JACHIN_RETURN","BOAZ_RETURN","MIDDLE_RETURN","SOUL_MIRROR"],"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "phases":[
+    {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["Expand voluntary relaxation through a body scan and a reversible countdown without competing against consciousness."],"required_for_completion":false},
+    {"id":"elman_ii_reveal","type":"TERM_REVEAL","source":{"kind":"PLATFORM_MICROCOPY"},"terms":["Dave Elman II","Relaxamento corporal","Contagem regressiva","Retomar sem fracasso","Autonomia"],"required_for_completion":false},
+    {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"epistemic_overlays":[{"domain":"E2","scope":"attention, voluntary relaxation and predictable counting"},{"domain":"E3","scope":"depth is subjective and not a spiritual or neurological proof"}],"required_for_completion":true},
+    {"id":"jachin_countdown","type":"FOCUS","source":{"kind":"CANON","block_ids":["jachin-kavanah"]},"interaction":{"components":["RELAXATION_GUIDE","COUNTDOWN_DISSOLVE","ATTENTION_RETURN","RETURN_GATE"],"starting_number":100,"minimum_number":1,"user_paced":true,"must_reach_one":false,"lost_count_is_failure":false,"pause":true,"stop":true,"body_scan":true},"safety":{"no_force_required":true,"stop_always_visible":true,"never_driving_or_operating_equipment":true,"movement_for_comfort_allowed":true,"loss_of_control_not_required":true},"required_for_completion":true},
+    {"id":"jachin_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"jachin_record","type":"JOURNAL","source":{"kind":"CANON","block_ids":["jachin-ordalia"]},"interaction":{"structured_fields":["final_number","attention_stability_rating"],"free_text_destination":"VAULT_ONLY"},"required_for_completion":true},
+    {"id":"boaz_reading","type":"READ","source":{"kind":"CANON","block_ids":["boaz-doctrine","boaz-kavanah","boaz-ordalia"]},"epistemic_overlays":[{"domain":"E2","scope":"pacing, distraction recovery and voluntary reversibility"}],"required_for_completion":true},
+    {"id":"boaz_countdown","type":"FOCUS","source":{"kind":"CANON","block_ids":["boaz-kavanah"]},"interaction":{"components":["COUNTDOWN_DISSOLVE","ATTENTION_RETURN","RETURN_GATE"],"starting_number":100,"minimum_number":1,"user_paced":true,"must_reach_one":false,"lost_count_is_failure":false,"distraction_counter":true,"pause":true,"stop":true},"safety":{"stop_for_relevant_discomfort":true,"never_driving_or_operating_equipment":true,"no_competition":true,"unconsciousness_not_goal":true,"loss_of_control_not_goal":true},"required_for_completion":true},
+    {"id":"boaz_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"boaz_record","type":"JOURNAL","source":{"kind":"CANON","block_ids":["boaz-ordalia"]},"interaction":{"structured_fields":["distractions_noted_count"],"free_text_destination":"VAULT_ONLY"},"required_for_completion":true},
+    {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"epistemic_overlays":[{"domain":"E2","scope":"relaxation plus predictable sequence as self-regulation practice"},{"domain":"E5","scope":"prayer and theological framing"}],"required_for_completion":true},
+    {"id":"middle_countdown","type":"FOCUS","source":{"kind":"CANON","block_ids":["middle-kavanah"]},"interaction":{"components":["RELAXATION_GUIDE","COUNTDOWN_DISSOLVE","SILENT_OBSERVATION","RETURN_GATE"],"starting_number":100,"minimum_number":1,"user_paced":true,"must_reach_one":false,"silent_observation_seconds":60,"pause":true,"stop":true},"safety":{"stop_always_visible":true,"eyes_open_normally_after_practice":true,"movement_for_orientation_required_after":true,"loss_of_control_not_required":true},"required_for_completion":true},
+    {"id":"middle_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
+    {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["middle-ordalia","espelho-da-alma"]},"interaction":{"structured_fields":["final_number","relaxation_rating","attention_stability_rating","forcing_rating"]},"privacy":{"free_text_destination":"VAULT_ONLY"},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-KETHER-D008-COMP-V1","completion_contract_state":"NOT_DEPLOYED","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"jeliel_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Jeliel","cycle_progress":"3/5","fragment_awarded":false,"next_day":9},"required_for_completion":false}
+  ],
+  "completion_semantics":{"must_reach_one":false,"lost_count_is_failure":false,"depth_or_unconsciousness_required":false,"phenomenon_required":false,"required_practice":"BODY_RELAXATION_PLUS_REVERSIBLE_COUNTDOWN_AND_RECORD"},
+  "release_blockers":[
+    {"id":"RUNTIME-008-COUNTDOWN-INTEGRATION","scope":"WEB_EXPO","reason":"Generic countdown surface must be integrated in Web and Expo."},
+    {"id":"COMPLETION-008-CONTRACT","scope":"SERVER_COMPLETION","reason":"Day008 validator/registry are not yet deployed."}
+  ]
+}
