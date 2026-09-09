@@ -1,0 +1,12 @@
+{
+  "id":"HNK-KETHER-D009-COMPLETION-SERVICE-V1",
+  "quest_definition_id":"HNK-KETHER-D009-V1",
+  "completion_contract_id":"HNK-KETHER-D009-COMP-V1",
+  "canonical_source_sha":"bb0c3fa790a5945e53114ced4c354195111bea96",
+  "canonical_xp":150,
+  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"NOT_DEPLOYED"},
+  "progression":{"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE"},
+  "privacy":{"dream_plaintext_server_side":false,"interpretation_plaintext_server_side":false,"vault_refs_only":true},
+  "deployment":{"project":"codex-hnk-app","registry_status":"not_deployed","validator_key":"day009_v1"},
+  "completion_semantics":{"dream_recall_required":false,"no_recall_valid":true,"voice_recording_required":false,"sleep_deprivation_required":false}
+}
