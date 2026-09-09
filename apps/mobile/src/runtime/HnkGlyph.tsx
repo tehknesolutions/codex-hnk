@@ -51,6 +51,43 @@ export function HnkGlyph({
   );
 }
 
+export type HnkGlyphSequenceProps = {
+  glyphIds: readonly (GlyphId | 'SPACE')[];
+  size?: number;
+  color?: string;
+  gap?: number;
+  label?: string;
+};
+
+export function HnkGlyphSequence({
+  glyphIds,
+  size = 48,
+  color = DEFAULT_COLOR,
+  gap = 2,
+  label,
+}: HnkGlyphSequenceProps) {
+  return (
+    <View
+      accessible
+      accessibilityLabel={label}
+      style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap }}
+    >
+      {glyphIds.map((glyphId, index) =>
+        glyphId === 'SPACE' ? (
+          <View key={`space-${index}`} style={{ width: size * 0.45 }} />
+        ) : (
+          <HnkGlyph
+            key={`${glyphId}-${index}`}
+            glyphId={glyphId}
+            size={size}
+            color={color}
+          />
+        ),
+      )}
+    </View>
+  );
+}
+
 export type HnkWordProps = {
   transliteration: string;
   size?: number;
