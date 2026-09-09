@@ -1,9 +1,10 @@
 {
-  "id":"HNK-KETHER-D014-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":14,"quest_id":"HNK-KETHER-D014-V1","canonical_source_sha":"31f7e171a5727926eac9a3e1c569ab9eff8ad245","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "id":"HNK-KETHER-D014-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":14,"quest_id":"HNK-KETHER-D014-V1","canonical_source_sha":"31f7e171a5727926eac9a3e1c569ab9eff8ad245","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":100,"attribute_gain":0,"angel":"Sitael"},
   "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","completion_receives":"OPAQUE_UUID_VAULT_REFS_ONLY"},
-  "safety":{"practice_block_seconds":300,"perfect_visual_required":false,"empty_mind_required":false,"mental_strain_required":false,"spontaneous_image_change_not_automatic_revelation":true,"symbol_not_devotional_object":true,"grounding_three_real_objects":true},
+  "safety":{"practice_block_seconds":300,"perfect_visual_required":false,"empty_mind_required":false,"mental_strain_required":false,"spontaneous_image_change_not_automatic_revelation":true,"symbol_not_devotional_object":true,"grounding_three_real_objects":true,"active_timer_persisted":false,"background_time_counts":false},
   "cycle_progress":{"cycle":"Sitael","days":[11,12,13,14,15],"expected_after_day":4,"fragment":3,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D014-COMP-V1","validator":"day014_v1","registry":"pending"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+  "backend":{"completion_contract":"HNK-KETHER-D014-COMP-V1","validator":"day014_v1","registry":"active","smoke":{"rollback_only":true,"xp_before":1000,"xp_awarded":100,"xp_after":1100,"current_day":15,"attribute_gain_rule_count":0,"attribute_event_count":0,"sitael_completed_days":4,"sitael_lit":false,"fragments_lit":2,"events":["NEXT_DAY_UNLOCKED"],"synthetic_user_persisted":false}},
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","vault_e2ee":true,"offline_ciphertext_queue":true,"local_vault_refs_resolved_before_completion":true,"foreground_only_timing":true,"authoritative_sitael_assert":4},
+  "release_blockers":["DEVICE_BROWSER_QA"],"proof":"PASS_ACTIVE_WEB_EXPO_E2EE_BACKEND_ATTR0_SITAEL_4_OF_5__DEVICE_BROWSER_QA_PENDING"
 }
