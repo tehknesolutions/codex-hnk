@@ -12,6 +12,7 @@
     "test": "node --test"
   },
   "dependencies": {
+    "@hnk/audio-contract": "workspace:*",
     "@hnk/database": "workspace:*",
     "@hnk/day-runtime": "workspace:*",
     "@hnk/supabase-client": "workspace:*",
