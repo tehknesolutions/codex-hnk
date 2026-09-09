@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.1.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.2.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-09';
 
@@ -60,6 +60,35 @@ const RAW_AUTHORED_CANDIDATES = [
       'New governed authorship; VALA is not claimed as a recovered historical morpheme.',
       'Does not establish A=noun or I=verb as universal morphology.',
       'Primary test use is L01 OPI 6 through the contextual frame EN KU VALA KE.',
+    ],
+  },
+  {
+    id: 'AUTH-003',
+    transliteration: 'KUON',
+    meaning: {
+      pt: 'qual pessoa / quem; variável interrogativa de referente humano em teste',
+      en: 'which person / who; human-referent interrogative variable under test',
+    },
+    authority: 'CANDIDATE',
+    certainty: 'AUTHORED_DERIVATION_WITH_GATED_COMPONENT',
+    sourceClass: 'AUTHORING_PROPOSAL',
+    historicalRecoveryClaim: false,
+    lessons: ['L01'],
+    morphology: {
+      schema: 'KU + ON',
+      leftState: 'RECOVERED_FORM_COMPONENT_INFERRED_CONTENT_SELECTOR_ROLE',
+      rightState: 'LEX-026_ON_GATE_PRONOUN_REFERENT_UNDER_TEST',
+      productivity: 'CLOSED_LIST_ONLY',
+    },
+    provenance: [
+      'simpleway-hnk/proposals/language/HNK_KUON_PERSON_INTERROGATIVE_PROPOSAL_V1.json',
+      'simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/opi-007.archaeology.v2.json',
+    ],
+    notes: [
+      'New governed authorship; not recovered historical HNK.',
+      'Depends on ON remaining GATE; this candidate does not promote ON.',
+      'Does not retroactively define KU as WHO or ON as a generic person noun.',
+      'First test use is L01 OPI 7 only.',
     ],
   },
 ];
@@ -128,6 +157,16 @@ export function validateHnkAuthoredRegistry() {
     if (vala.morphology.productivity !== 'NON_PRODUCTIVE_SINGLE_CANDIDATE') errors.push('VALA productivity gate drift');
     if (!vala.lessons.includes('L01')) errors.push('VALA L01 binding missing');
     if (vala.historicalRecoveryClaim !== false) errors.push('VALA recovery boundary drift');
+  }
+
+  const kuon = HNK_AUTHORED_CANDIDATES_BY_FORM.KUON;
+  if (!kuon) errors.push('KUON candidate missing');
+  else {
+    if (JSON.stringify(kuon.glyphIds) !== JSON.stringify(['G23','G05','G04','G12'])) errors.push('KUON glyph sequence drift');
+    if (kuon.morphology.productivity !== 'CLOSED_LIST_ONLY') errors.push('KUON productivity gate drift');
+    if (kuon.certainty !== 'AUTHORED_DERIVATION_WITH_GATED_COMPONENT') errors.push('KUON gated-component certainty drift');
+    if (!kuon.lessons.includes('L01')) errors.push('KUON L01 binding missing');
+    if (kuon.historicalRecoveryClaim !== false) errors.push('KUON recovery boundary drift');
   }
 
   return { ok: errors.length === 0, errors };
