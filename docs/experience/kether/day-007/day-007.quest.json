@@ -1,13 +1,13 @@
 {
   "id":"HNK-KETHER-D007-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.1.0",
-  "status":"CONFIG_COMPILED__RUNTIME_COMPLETION_PENDING",
+  "version":"0.3.0",
+  "status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "day":7,
   "title":"Dave Elman I — Relaxar, Testar, Liberar",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-007.md","source_sha":"bc12709d5a346870405cf41e62f99ac28d70186d","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Jeliel","initiatory_grade":1,"initiatory_title":"Neófito","xp":150,"tracks":["TEURG-101","COMP-101","BIO-101"]},
   "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","primary_attribute":"HIP","secondary_attribute":"VNT","attribute_gain":1,"application":"SERVER_SIDE_FIRST_COMPLETION_ONLY","client_may_apply":false,"source_basis":"EXPERIENCE_MATRIX_CHECKPOINT"},
-  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"checkpoint_states":["JACHIN_RETURN","BOAZ_RETURN","MIDDLE_RETURN","SOUL_MIRROR"],"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"web_route":"/day-007","expo_route":"/day-007","checkpoint_states":["JACHIN_RETURN","BOAZ_RETURN","MIDDLE_RETURN","SOUL_MIRROR"],"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
   "phases":[
     {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["Learn a voluntary relaxation-test-release sequence without proving anything to yourself."],"required_for_completion":false},
     {"id":"elman_reveal","type":"TERM_REVEAL","source":{"kind":"PLATFORM_MICROCOPY"},"terms":["Dave Elman I","Relaxamento voluntário","Sugestão reversível","Catalepsia subjetiva","Liberação"],"required_for_completion":false},
@@ -22,12 +22,10 @@
     {"id":"middle_sequence","type":"FOCUS","source":{"kind":"CANON","block_ids":["middle-kavanah"]},"interaction":{"components":["RELAXATION_GUIDE","THREE_SECOND_TEST","RELEASE","SILENT_OBSERVATION"],"silent_observation_seconds":60,"user_paced":true,"pause":true,"stop":true},"safety":{"release_required":true,"eyes_open_normally_after_test":true,"catalepsy_not_required":true,"stop_always_visible":true},"required_for_completion":true},
     {"id":"middle_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
     {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"interaction":{"structured_fields":["relaxation_spontaneous_rating","muscular_effort_rating","perception_change_rating"]},"privacy":{"free_text_destination":"VAULT_ONLY"},"required_for_completion":true},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-KETHER-D007-COMP-V1","completion_contract_state":"NOT_DEPLOYED","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-KETHER-D007-COMP-V1","completion_contract_state":"ACTIVE","client_may_award_xp":false,"required_for_completion":true},
     {"id":"jeliel_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Jeliel","cycle_progress":"2/5","fragment_awarded":false,"next_day":8},"required_for_completion":false}
   ],
   "completion_semantics":{"catalepsy_required":false,"no_catalepsy_is_valid":true,"force_or_pain_invalidates_nothing_but_should_stop_practice":true,"required_sequence":["RELAX","TEST","RELEASE","RECORD"]},
-  "release_blockers":[
-    {"id":"RUNTIME-007-ELMAN-I-INTEGRATION","scope":"WEB_EXPO","reason":"Day007 relaxation/comparison surfaces must be integrated."},
-    {"id":"COMPLETION-007-CONTRACT","scope":"SERVER_COMPLETION","reason":"Day007 validator/registry are not yet deployed."}
-  ]
+  "release_blockers":[],
+  "qa_pending":["WEB_BROWSER","EXPO_DEVICE","AUTHENTICATED_PREVIEW","CONCURRENT_TWO_CONNECTIONS"]
 }
