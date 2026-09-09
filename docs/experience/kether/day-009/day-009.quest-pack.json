@@ -1,19 +1,20 @@
 {
   "id":"HNK-KETHER-D009-PACK-V1",
   "kind":"hnk.quest_pack",
-  "version":"0.1.0",
+  "version":"0.2.0",
   "day":9,
   "quest_definition_id":"HNK-KETHER-D009-V1",
   "completion_contract_id":"HNK-KETHER-D009-COMP-V1",
   "canonical_source_sha":"bb0c3fa790a5945e53114ced4c354195111bea96",
   "canonical_xp":150,
   "integrity_state":"PASS_CANON_705_CONFIG_COMPILED",
-  "release_state":"RUNTIME_AND_COMPLETION_PENDING",
+  "release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "reuse":{"quest_catalog":"QuestCatalog.requireDay(9)","journal_renderer":"QuestDreamJournalPhase","vault_port":"VaultTextPort","completion_service":"complete_codex_day_v2","day_specific_engine_branch_required":false},
   "progression":{"xp":150,"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE"},
   "cycle":{"angel":"Jeliel","progress_after":"4/5","fragment_awarded":false,"crown_fragments_lit_after":1},
-  "privacy":{"dream_content":"VAULT_ONLY","server_plaintext":false,"device_bound_v1":true,"recovery_envelope_auto_configured":false},
+  "privacy":{"dream_content":"VAULT_ONLY","server_plaintext":false,"device_bound_v1":true,"recovery_envelope_auto_configured":false,"offline_ciphertext_queue":true,"offline_plaintext_persistence":false},
   "safety":{"no_recall_valid":true,"sleep_deprivation_prohibited":true,"sleep_paralysis_induction_prohibited":true,"voice_recording_required":false},
-  "blockers":[{"id":"RUNTIME-009-DREAM-JOURNAL-INTEGRATION","reason":"Encrypted Dream Journal surface must be integrated in Web and Expo."},{"id":"COMPLETION-009-CONTRACT","reason":"Day009 validator/registry are not yet deployed."}],
-  "proof_result":"PASS_CANON_705_AND_CONFIG__RUNTIME_COMPLETION_PENDING"
+  "backend_smoke":{"status":"PASS_ROLLBACK_ONLY","scenario":"NO_RECALL","xp_total_before":1000,"xp_awarded":150,"xp_total_after":1150,"attribute_events":0,"day_completion_count":1,"next_day":10,"jeliel_progress":"4/5","crown_fragments_lit":1,"rollback_only":true},
+  "blockers":[],
+  "proof_result":"PASS_ACTIVE_WEB_EXPO_E2EE_OFFLINE_QUEUE_BACKEND__DEVICE_BROWSER_QA_PENDING"
 }
