@@ -130,9 +130,40 @@ export const HAZIEL_DAY_045 = haziel(45, 4, [
   },
 });
 
+export const HAZIEL_DAY_046 = haziel(46, 5, [
+  { id: 'threshold', label: 'Limiar da Leitura Vegetal', kind: 'threshold' },
+  { id: 'plant', label: 'Planta · observação corporal', kind: 'practice' },
+  { id: 'rest', label: 'Descanso entre condições', kind: 'grounding' },
+  { id: 'control', label: 'Objeto inerte · controle', kind: 'comparison' },
+  { id: 'compare', label: 'Planta · controle · alternativas', kind: 'review' },
+  { id: 'grounding', label: 'Retorno corporal e ambiental', kind: 'grounding', requiresReturnConfirmation: true },
+  { id: 'seal', label: 'Selo', kind: 'seal' },
+  { id: 'complete', label: 'Haziel 5/5', kind: 'complete' },
+], {
+  requiredTrue: [
+    'protocol_completed',
+    'return_confirmed',
+    'plant_completed',
+    'rest_confirmed',
+    'control_completed',
+    'comparison_completed',
+    'interpretation_separated',
+    'null_results_preserved',
+    'alternatives_considered',
+    'aura_not_claimed',
+    'safety_clear',
+  ],
+  requiredPresent: ['plant_sensation_present', 'control_sensation_present'],
+  minimums: {
+    plant_seconds: 420,
+    control_seconds: 420,
+  },
+});
+
 export const HAZIEL_CANON_RUNTIME = [
   HAZIEL_DAY_042,
   HAZIEL_DAY_043,
   HAZIEL_DAY_044,
   HAZIEL_DAY_045,
+  HAZIEL_DAY_046,
 ] as const;
