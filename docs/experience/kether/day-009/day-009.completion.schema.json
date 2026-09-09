@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"HNK-KETHER-D009-COMP-V1",
+  "type":"object",
+  "required":["day","quest_definition_id","completion_contract_id","canonical_source_sha","canonical_xp","evidence_contract_id"],
+  "properties":{
+    "day":{"const":9},
+    "quest_definition_id":{"const":"HNK-KETHER-D009-V1"},
+    "completion_contract_id":{"const":"HNK-KETHER-D009-COMP-V1"},
+    "canonical_source_sha":{"const":"bb0c3fa790a5945e53114ced4c354195111bea96"},
+    "canonical_xp":{"const":150},
+    "evidence_contract_id":{"const":"HNK-KETHER-D009-EVIDENCE-V1"},
+    "attribute_gain":{"const":0},
+    "dream_recall_required":{"const":false},
+    "plaintext_dream_server_side":{"const":false}
+  }
+}
