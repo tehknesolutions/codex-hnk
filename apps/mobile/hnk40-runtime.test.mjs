@@ -17,8 +17,20 @@ test('Expo binds to shared HNK40 runtime through SvgXml', () => {
   assert.doesNotMatch(adapter, /<Path\b|<Polyline\b|const\s+IPA\s*=|G01.*G40/s);
 });
 
-test('Expo proof surface uses shared word and Sacred 10x4 adapters', () => {
-  assert.match(proof, /HnkWord/);
+test('Expo proof surface consumes shared master lexicon', () => {
+  assert.equal(pkg.dependencies['@hnk/linguas'], 'workspace:*');
+  assert.match(proof, /from '@hnk\/linguas'/);
+  assert.match(proof, /HNK_MASTER_LEXICON/);
+  assert.match(proof, /HNK_MASTER_PHRASES/);
+  assert.doesNotMatch(proof, /const\s+RECOVERED_EXAMPLES/);
+});
+
+test('Expo registry rendering uses audited G-ID sequences instead of retransliteration', () => {
+  assert.match(adapter, /HnkGlyphSequence/);
+  assert.match(proof, /HnkGlyphSequence/);
+  assert.match(proof, /glyphIds=\{entry\.glyphIds\}/);
+  assert.match(proof, /glyphIds=\{phrase\.glyphIds\}/);
+  assert.doesNotMatch(proof, /HnkWord\s+transliteration=\{entry\.transliteration\}/);
   assert.match(proof, /HnkSacred10x4/);
   assert.match(proof, /PREPRODUCTION|HNK40_STATUS/);
 });
