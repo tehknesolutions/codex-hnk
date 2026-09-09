@@ -5,6 +5,7 @@ import { AladiahDay047VisualExperience } from './AladiahDay047VisualExperience';
 import { AladiahDay048NarrativeLoopsExperience } from './AladiahDay048NarrativeLoopsExperience';
 import { AladiahDay049InteroceptionExperience } from './AladiahDay049InteroceptionExperience';
 import { AladiahDay050ContourExperience } from './AladiahDay050ContourExperience';
+import { AladiahDay051SigilExperience } from './AladiahDay051SigilExperience';
 
 const ALADIAH_DAYS = [47, 48, 49, 50, 51] as const;
 type AladiahDay = (typeof ALADIAH_DAYS)[number];
@@ -47,21 +48,19 @@ export function ChokmahCycle03Aladiah() {
     return <View style={styles.loading}><ActivityIndicator color="#9fc6ff" /><Text style={styles.loadingText}>ABRINDO O CICLO DE ALADIAH</Text></View>;
   }
 
-  const completed = Math.max(0, Math.min(4, currentDay - 47));
+  const completed = Math.max(0, Math.min(5, currentDay - 47));
 
   return (
     <View style={styles.screen}>
       <View style={styles.rail}>
         <View style={styles.railLine} />
         {ALADIAH_DAYS.map((day, index) => {
-          const executable = day <= 50;
-          const done = executable && index < completed;
+          const done = index < completed;
           const available = day <= currentDay;
           const active = displayDay === day;
-          const blocked = day >= 51;
           return (
             <Pressable key={day} disabled={!available} onPress={() => setDisplayDay(day)} style={styles.nodeWrap}>
-              <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked, blocked && styles.nodeBlocked]}>
+              <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked]}>
                 <Text style={[styles.nodeText, (done || active) && styles.nodeTextActive]}>{done ? '✓' : day}</Text>
               </View>
               <Text style={[styles.nodeLabel, active && styles.nodeLabelActive]}>{day === 47 ? 'PERIFERIA' : day === 48 ? 'LOOPS' : day === 49 ? 'PULSO' : day === 50 ? 'CONTORNO' : 'SIGILO'}</Text>
@@ -79,19 +78,7 @@ export function ChokmahCycle03Aladiah() {
       {displayDay === 48 ? <AladiahDay048NarrativeLoopsExperience /> : null}
       {displayDay === 49 ? <AladiahDay049InteroceptionExperience /> : null}
       {displayDay === 50 ? <AladiahDay050ContourExperience /> : null}
-      {displayDay === 51 ? <AladiahRuntimePending /> : null}
-    </View>
-  );
-}
-
-function AladiahRuntimePending() {
-  return (
-    <View style={styles.blockWrap}>
-      <View style={styles.blockCard}>
-        <Text style={styles.blockLabel}>CANONICAL_STORAGE_READY · G7_RUNTIME_PENDING</Text>
-        <Text style={styles.blockTitle}>Dia 051 · VAULT DO SIGILO</Text>
-        <Text style={styles.blockBody}>O conteúdo está canônico, mas o runtime específico de frase, redução, desenho privado e comparação textual ainda não foi montado. Nenhuma Practice Session genérica é aberta e nenhum XP pode ser concedido por esta tela.</Text>
-      </View>
+      {displayDay === 51 ? <AladiahDay051SigilExperience /> : null}
     </View>
   );
 }
@@ -107,7 +94,6 @@ const styles = StyleSheet.create({
   nodeDone: { borderColor: '#5f87b7', backgroundColor: '#0b2034' },
   nodeActive: { borderColor: '#9fcfff', backgroundColor: '#17334d' },
   nodeLocked: { opacity: 0.3 },
-  nodeBlocked: { borderStyle: 'dashed' },
   nodeText: { color: '#71879b', fontSize: 8, fontWeight: '700' },
   nodeTextActive: { color: '#e2f2ff' },
   nodeLabel: { color: '#526b80', fontSize: 6, letterSpacing: 0.7 },
@@ -117,9 +103,4 @@ const styles = StyleSheet.create({
   heading: { color: '#e8f4ff', fontSize: 14, letterSpacing: 2.1, marginTop: 5 },
   stats: { alignItems: 'flex-end', gap: 3 },
   stat: { color: '#72899c', fontSize: 8, letterSpacing: 1 },
-  blockWrap: { flex: 1, padding: 24, justifyContent: 'center' },
-  blockCard: { borderWidth: 1, borderStyle: 'dashed', borderColor: '#46627c', borderRadius: 24, padding: 24, backgroundColor: '#050d16', gap: 12 },
-  blockLabel: { color: '#86a9c7', fontSize: 9, letterSpacing: 1.4, fontWeight: '700' },
-  blockTitle: { color: '#e6f2fc', fontSize: 23, lineHeight: 30, fontWeight: '300' },
-  blockBody: { color: '#91a4b4', fontSize: 13, lineHeight: 21 },
 });
