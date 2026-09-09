@@ -1,13 +1,13 @@
 {
   "id":"HNK-KETHER-D011-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.1.0",
-  "status":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "version":"0.2.0",
+  "status":"BACKEND_ACTIVE__WEB_EXPO_RUNTIME_PENDING",
   "day":11,
   "title":"Espelho do Observador — Ver Antes de Julgar",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-011.md","source_sha":"9b7140dee8d346a4ea81dd753d342e4c1f172b0d","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Sitael","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101"]},
   "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","primary_attribute":null,"secondary_attribute":null,"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE","client_may_apply":false,"source_basis":"NO_FROZEN_GAIN_RULE_FOR_DAY011"},
-  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"mirror_session_limit_seconds":300,"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"mirror_session_limit_seconds":300,"backend":"ACTIVE","interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
   "phases":[
     {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["O espelho é superfície de observação, não tribunal, ídolo ou detector de fenômenos espirituais."],"required_for_completion":false},
     {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"epistemic_overlays":[{"domain":"E2","scope":"attention to visual features and automatic judgments"},{"domain":"E3","scope":"subjective relationship to the reflected image"}],"required_for_completion":true},
@@ -17,9 +17,9 @@
     {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"epistemic_overlays":[{"domain":"E3","scope":"identity is not reduced to reflected appearance or passing judgments"},{"domain":"E5","scope":"Psalm 91:2 is devotional trust in God, not an automatic signal produced by the mirror"}],"required_for_completion":true},
     {"id":"middle_observation","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"timer_seconds":300,"cue":"VEJO_ANTES_DE_JULGAR","psalm_91_2_prayer_confirmation":true,"attention_stability_score":{"min":0,"max":10},"final_observation_note":"VAULT_ENCRYPTED"},"safety":{"extraordinary_visual_effect_not_required":true,"gaze_shift_before_close":true},"required_for_completion":true},
     {"id":"soul_mirror","type":"JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"interaction":{"observation_vs_interpretation_note":"VAULT_ENCRYPTED"},"privacy":{"free_text_destination":"VAULT_ONLY","offline_persistence":"CIPHERTEXT_ONLY","server_receives":"OPAQUE_VAULT_REF_ONLY"},"required_for_completion":true},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D011-COMP-V1","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D011-COMP-V1","completion_contract_state":"ACTIVE","client_may_award_xp":false,"required_for_completion":true},
     {"id":"sitael_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Sitael","authoritative_cycle_days":[11,12,13,14,15],"cycle_progress":"1/5","fragment":3,"fragment_awarded":false,"fragment_state_source":"SERVER_CROWN_STATE","next_day":12},"required_for_completion":false}
   ],
   "completion_semantics":{"literally_empty_mind_required":false,"strange_visual_effect_required":false,"self_criticism_required":false,"three_five_minute_observations_required":true,"private_text_server_side":false,"sitael_fragment_client_computed":false,"safety_stop_supported":true},
-  "release_blockers":[{"id":"BACKEND_REVIEW"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"DEVICE_BROWSER_QA"}]
 }
