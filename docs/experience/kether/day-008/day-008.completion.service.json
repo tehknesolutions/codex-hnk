@@ -1,0 +1,11 @@
+{
+  "id":"HNK-KETHER-D008-COMPLETION-SERVICE-V1",
+  "quest_definition_id":"HNK-KETHER-D008-V1",
+  "completion_contract_id":"HNK-KETHER-D008-COMP-V1",
+  "canonical_source_sha":"df7c39ced019ead6eb0be817a1ac638789d40c3c",
+  "canonical_xp":150,
+  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"NOT_DEPLOYED"},
+  "progression":{"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE"},
+  "deployment":{"project":"codex-hnk-app","registry_status":"not_deployed","validator_key":"day008_v1"},
+  "completion_semantics":{"must_reach_one":false,"lost_count_is_failure":false,"phenomenon_required":false,"required_practice":"BODY_RELAXATION_PLUS_REVERSIBLE_COUNTDOWN_AND_RECORD"}
+}
