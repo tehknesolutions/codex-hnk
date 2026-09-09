@@ -1,9 +1,11 @@
 {
-  "id":"HNK-KETHER-D015-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":15,"quest_id":"HNK-KETHER-D015-V1","canonical_source_sha":"2a5037afce694753bef1b89da89d2746850ef4a1","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "id":"HNK-KETHER-D015-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":15,"quest_id":"HNK-KETHER-D015-V1","canonical_source_sha":"2a5037afce694753bef1b89da89d2746850ef4a1","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"attribute_gain":0,"angel":"Sitael"},
   "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","completion_receives":"OPAQUE_UUID_VAULT_REFS_ONLY"},
-  "safety":{"fire_optional":true,"safe_alternative_equivalent":true,"methods":["BURN_SAFE","TEAR","SHRED_DISCARD"],"symbolic_destruction_not_problem_resolution":true,"future_action_not_falsely_claimed_completed":true},
-  "cycle_progress":{"cycle":"Sitael","days":[11,12,13,14,15],"expected_after_day":5,"fragment":3,"expected_lit":true,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D015-COMP-V1","validator":"day015_v1","registry":"pending"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+  "safety":{"fire_optional":true,"safe_alternative_equivalent":true,"methods":["BURN_SAFE","TEAR","SHRED_DISCARD"],"burn_requires_full_gate":true,"non_burn_forbids_burn_safety_payload":true,"symbolic_destruction_not_problem_resolution":true,"future_action_not_falsely_claimed_completed":true,"safety_stop_supported":true},
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","atrium_gate_expo":true,"vault_flush_before_seal":true,"vault_ref_resolution_before_evidence":true},
+  "cycle_progress":{"cycle":"Sitael","days":[11,12,13,14,15],"expected_after_day":5,"fragment":3,"expected_lit":true,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false,"smoke":{"completed_days":5,"fragment":3,"lit":true,"fragments_lit":3,"current_day":16,"xp_awarded":150,"attribute_event_count":0}},
+  "backend":{"completion_contract":"HNK-KETHER-D015-COMP-V1","validator":"day015_v1","registry":"active","migration":"20260909230654_day015_completion_contract_v1_reviewed_and_active.sql"},
+  "release_blockers":["DEVICE_BROWSER_QA"],
+  "proof":"PASS_ACTIVE_WEB_EXPO_E2EE_CYCLE_SEAL__SITAEL_5_OF_5_FRAGMENT_III_LIT__DEVICE_BROWSER_QA_PENDING"
 }
