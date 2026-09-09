@@ -4,8 +4,8 @@
   "completion_contract_id":"HNK-KETHER-D007-COMP-V1",
   "canonical_source_sha":"bc12709d5a346870405cf41e62f99ac28d70186d",
   "canonical_xp":150,
-  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"NOT_DEPLOYED"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment_state":"LIVE"},
   "progression":{"attribute":"HIP","gain":1,"application":"SERVER_SIDE_FIRST_COMPLETION_ONLY"},
-  "deployment":{"project":"codex-hnk-app","registry_status":"not_deployed","validator_key":"day007_v1"},
+  "deployment":{"project":"codex-hnk-app","registry_status":"active","validator_key":"day007_v1","reviewed_migration":"20260909014234","activation_migration":"20260909014501"},
   "completion_semantics":{"catalepsy_required":false,"no_catalepsy_valid":true,"required_sequence":["RELAX","TEST","RELEASE","RECORD"]}
 }
