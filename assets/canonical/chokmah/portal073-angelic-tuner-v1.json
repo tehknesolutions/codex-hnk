@@ -1,0 +1,19 @@
+{
+  "kind": "hnk.angelic_tuner_operator",
+  "id": "HNK-ANGELIC-TUNER-D073-V1",
+  "version": "1.0.0",
+  "portal_day": 73,
+  "engine": "@hnk/audio-contract",
+  "mode": "procedural-solfeggio-binaural",
+  "active_preset_id": "HNK-PORTAL073-CHOKMAH-BINAH-ACTIVE-V1",
+  "control_preset_id": "HNK-PORTAL073-CHOKMAH-BINAH-CONTROL-V1",
+  "audio_freeze": "docs/audio/HNK_PORTAL073_CHOKMAH_BINAH_AUDIO_FREEZE_V1.md",
+  "source_plan_sha256": "49917dc66e8401d17d3af362d2370bf532e7388145b6d481bae18d48e95cac59",
+  "psalm_binding": null,
+  "psalm_policy": "The source says Angelic Psalm Tuner but does not identify a specific Psalm for Portal 073; V1 does not invent one.",
+  "autoplay": false,
+  "requires_explicit_start": true,
+  "requires_volume_control": true,
+  "requires_immediate_stop": true,
+  "runtime_status": "qa_pending"
+}
