@@ -1,0 +1,18 @@
+{
+  "id":"HNK-KETHER-D007-PACK-V1",
+  "kind":"hnk.quest_pack",
+  "version":"0.1.0",
+  "day":7,
+  "quest_definition_id":"HNK-KETHER-D007-V1",
+  "completion_contract_id":"HNK-KETHER-D007-COMP-V1",
+  "canonical_source_sha":"bc12709d5a346870405cf41e62f99ac28d70186d",
+  "canonical_xp":150,
+  "integrity_state":"PASS_CANON_705_CONFIG_COMPILED",
+  "release_state":"RUNTIME_AND_COMPLETION_PENDING",
+  "reuse":{"quest_catalog":"QuestCatalog.requireDay(7)","experiment_renderer":"QuestBehavioralExperimentPhase","completion_service":"complete_codex_day_v2","day_specific_engine_branch_required":false},
+  "progression":{"xp":150,"attribute_gain":1,"attribute":"HIP","matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","application":"SERVER_SIDE_FIRST_COMPLETION_ONLY"},
+  "cycle":{"angel":"Jeliel","progress_after":"2/5","fragment_awarded":false,"crown_fragments_lit_after":1},
+  "safety":{"voluntary_hypnosis":true,"reversible":true,"catalepsy_not_required":true,"no_catalepsy_valid":true,"force_prohibited":true,"second_attempt_optional":true},
+  "blockers":[{"id":"RUNTIME-007-ELMAN-I-INTEGRATION","reason":"Web/Expo Day007 routes must be integrated."},{"id":"COMPLETION-007-CONTRACT","reason":"Day007 validator/registry are not yet deployed."}],
+  "proof_result":"PASS_CANON_705_AND_CONFIG__RUNTIME_COMPLETION_PENDING"
+}
