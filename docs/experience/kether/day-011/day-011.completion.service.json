@@ -1,9 +1,10 @@
 {
   "id":"HNK-KETHER-D011-COMPLETION-SERVICE-V1",
   "day":11,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D011-COMP-V1","quest_definition_id":"HNK-KETHER-D011-V1","validator_key":"day011_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D011-COMP-V1","quest_definition_id":"HNK-KETHER-D011-V1","validator_key":"day011_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"9b7140dee8d346a4ea81dd753d342e4c1f172b0d","xp":100,"attribute_gain":0},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","vault_ref_format":"UUID"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "validator_tests":{"valid":"PASS","plaintext_in_jachin":"REJECTED_DAY011_JACHIN_UNKNOWN_FIELD","unknown_top":"REJECTED_DAY011_UNKNOWN_TOP_FIELD","fractional_score":"REJECTED_DAY011_ATTENTION_SCORE_INVALID","unsafe_visual_inference_confirmation_missing":"REJECTED_DAY011_BOAZ_REQUIRED"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":100,"xp_after":1100,"current_day":12,"attribute_gain_rule_count":0,"attribute_event_count":0,"day11_completion_count":1,"day11_xp_event_count":1,"sitael":{"fragment":3,"completed_days":1,"lit":false},"fragments_lit":2,"progression_events":["NEXT_DAY_UNLOCKED"],"synthetic_user_persisted":false}
 }
