@@ -1,8 +1,8 @@
 {
   "id":"HNK-KETHER-D006-V1",
   "kind":"hnk.quest_definition",
-  "version":"0.1.0",
-  "status":"CONFIG_COMPILED__RUNTIME_COMPLETION_PENDING",
+  "version":"1.0.0",
+  "status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "day":6,
   "title":"O Silêncio da Psuche",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-006.md","source_sha":"923c43ae0a68d63a4c88f67d83076b72e0b06c39","editorial_version":"1.0","sephira":"Kether","world":"Atziluth","angel":"Jeliel","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"]},
@@ -23,12 +23,9 @@
     {"id":"jeliel_voice","type":"VOICE","source":{"kind":"CANON","block_ids":["middle-kavanah","middle-ordalia"]},"interaction":{"vocalization":"IOD-LAMED-IOD","user_paced":true,"recording_optional":true,"practice_without_recording_allowed":true,"recording_destination":"LOCAL_ENCRYPTED_VAULT","upload":false,"automatic_transcription":false},"safety":{"volume_user_controlled":true,"stop_for_voice_or_audio_discomfort":true,"return_gate":true},"privacy":{"recording_consent_required":true,"recording_not_required_for_completion":true},"required_for_completion":true},
     {"id":"middle_return","type":"RETURN","source":{"kind":"GUIDE_SAFETY"},"interaction":{"orientation_confirmation_required":true},"required_for_completion":true},
     {"id":"soul_mirror","type":"STRUCTURED_JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","voice_recording_optional":true,"voice_recording_destination":"LOCAL_ENCRYPTED_VAULT"},"required_for_completion":true},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D006-COMP-V1","completion_contract_state":"NOT_DEPLOYED","client_may_award_xp":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D006-COMP-V1","completion_contract_state":"ACTIVE","client_may_award_xp":false,"required_for_completion":true},
     {"id":"jeliel_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Jeliel","cycle_progress":"1/5","fragment_awarded":false,"next_day":7},"required_for_completion":false}
   ],
   "privacy_mediation":{"canon_mentions_audio_record_validation":true,"platform_policy":"VOICE_RECORDING_OPT_IN_NOT_REQUIRED_FOR_XP","reason":"Private voice media remains optional and local-first; execution of the vocal practice is the completion evidence."},
-  "release_blockers":[
-    {"id":"RUNTIME-006-JELIEL-INTEGRATION","scope":"WEB_EXPO","reason":"Day006 listening/voice surfaces must be integrated."},
-    {"id":"COMPLETION-006-CONTRACT","scope":"SERVER_COMPLETION","reason":"Day006 validator/registry are not yet deployed."}
-  ]
+  "release_blockers":[]
 }
