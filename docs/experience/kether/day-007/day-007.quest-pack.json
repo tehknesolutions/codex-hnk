@@ -1,18 +1,21 @@
 {
   "id":"HNK-KETHER-D007-PACK-V1",
   "kind":"hnk.quest_pack",
-  "version":"0.1.0",
+  "version":"0.3.0",
   "day":7,
   "quest_definition_id":"HNK-KETHER-D007-V1",
   "completion_contract_id":"HNK-KETHER-D007-COMP-V1",
   "canonical_source_sha":"bc12709d5a346870405cf41e62f99ac28d70186d",
   "canonical_xp":150,
-  "integrity_state":"PASS_CANON_705_CONFIG_COMPILED",
-  "release_state":"RUNTIME_AND_COMPLETION_PENDING",
+  "integrity_state":"PASS_CANON_705_RUNTIME_AND_COMPLETION",
+  "release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "reuse":{"quest_catalog":"QuestCatalog.requireDay(7)","experiment_renderer":"QuestBehavioralExperimentPhase","completion_service":"complete_codex_day_v2","day_specific_engine_branch_required":false},
-  "progression":{"xp":150,"attribute_gain":1,"attribute":"HIP","matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","application":"SERVER_SIDE_FIRST_COMPLETION_ONLY"},
+  "runtime":{"web_route":"/day-007","expo_route":"/day-007","backend_status":"ACTIVE"},
+  "progression":{"xp":150,"attribute_gain":1,"attribute":"HIP","matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","application":"SERVER_SIDE_FIRST_COMPLETION_ONLY","smoke_result":"HIP_5_TO_6"},
   "cycle":{"angel":"Jeliel","progress_after":"2/5","fragment_awarded":false,"crown_fragments_lit_after":1},
   "safety":{"voluntary_hypnosis":true,"reversible":true,"catalepsy_not_required":true,"no_catalepsy_valid":true,"force_prohibited":true,"second_attempt_optional":true},
-  "blockers":[{"id":"RUNTIME-007-ELMAN-I-INTEGRATION","reason":"Web/Expo Day007 routes must be integrated."},{"id":"COMPLETION-007-CONTRACT","reason":"Day007 validator/registry are not yet deployed."}],
-  "proof_result":"PASS_CANON_705_AND_CONFIG__RUNTIME_COMPLETION_PENDING"
+  "backend_smoke":{"status":"PASS_ROLLBACK_ONLY","xp_awarded":150,"xp_total_after":800,"hip_after":6,"first_completion_catalepsy_reported":false,"progression_events":["NEXT_DAY_UNLOCKED"],"crown_fragments_lit":1,"jeliel_completed_days":2},
+  "blockers":[],
+  "qa_pending":["WEB_BROWSER","EXPO_DEVICE","AUTHENTICATED_PREVIEW","CONCURRENT_TWO_CONNECTIONS"],
+  "proof_result":"PASS_TECHNICAL_ACTIVE__JELIEL_2_OF_5__NO_CATALEPSY_REQUIRED"
 }
