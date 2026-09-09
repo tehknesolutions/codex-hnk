@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+const read=(p)=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8');
+const must=(t,x,l)=>{if(!t.includes(x))throw new Error(`DAY008_RUNTIME_FAIL:${l}`)};
+const quest=JSON.parse(read('docs/experience/kether/day-008/day-008.quest.json'));
+const canon=JSON.parse(read('docs/experience/kether/day-008/day-008.canon-blocks.json'));
+const pack=JSON.parse(read('docs/experience/kether/day-008/day-008.quest-pack.json'));
+const library=read('packages/quest-library/src/library.ts');
+const client=read('packages/supabase-client/src/day008-v1.ts');
+const web=read('apps/web/app/day-008/Day008GoldenV1Web.tsx');
+const mobile=read('apps/mobile/src/features/kether/Day008GoldenV1Mobile.tsx');
+const countdownWeb=read('apps/web/app/_runtime/QuestCountdownPhase.tsx');
+const countdownMobile=read('apps/mobile/src/runtime/QuestCountdownPhase.tsx');
+if(quest.day!==8||quest.id!=='HNK-KETHER-D008-V1')throw new Error('DAY008_RUNTIME_FAIL:quest_identity');
+if(quest.canonical.source_sha!==canon.source.blob_sha||canon.counted_words!==705)throw new Error('DAY008_RUNTIME_FAIL:canon_integrity');
+if(quest.canonical.xp!==150||quest.progression?.attribute_gain!==0)throw new Error('DAY008_RUNTIME_FAIL:progression');
+if(quest.completion_semantics?.must_reach_one!==false||quest.completion_semantics?.lost_count_is_failure!==false||quest.completion_semantics?.phenomenon_required!==false)throw new Error('DAY008_RUNTIME_FAIL:completion_semantics');
+for(const id of ['jachin_countdown','boaz_countdown','middle_countdown']){const p=quest.phases.find(x=>x.id===id);if(!p||p.type!=='FOCUS'||!(p.interaction?.components??[]).includes('COUNTDOWN_DISSOLVE')||p.interaction?.must_reach_one!==false)throw new Error(`DAY008_RUNTIME_FAIL:${id}`)}
+must(library,'day008QuestJson','library_import');must(library,'[8,{day:8','library_registry');must(client,'sealDay008V1','client_seal');must(client,'complete_codex_day_v2','client_rpc');must(web,'catalog.requireDay(8)','web_catalog');must(web,'QuestCountdownPhase','web_countdown');must(mobile,'catalog.requireDay(8)','mobile_catalog');must(mobile,'QuestCountdownPhase','mobile_countdown');must(countdownWeb,'Você não precisa chegar a 1','web_no_reach_one');must(countdownMobile,'Você não precisa chegar a 1','mobile_no_reach_one');
+if((pack.blockers??[]).length!==2)throw new Error('DAY008_RUNTIME_FAIL:pre_activation_pack_state');
+console.log('DAY008 RUNTIME INTEGRATION PASS (PRE-ACTIVATION · Web + Expo · user-paced countdown · no attribute gain)');
