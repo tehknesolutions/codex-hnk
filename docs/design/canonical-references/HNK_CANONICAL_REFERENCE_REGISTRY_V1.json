@@ -1,6 +1,6 @@
 {
   "kind": "hnk.canonical_reference_registry",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "frozen",
   "entries": [
     {
@@ -9,7 +9,17 @@
       "asset": "assets/canonical/binah/thurisaz-hnk-master-v1.svg",
       "sha256": "c7e0967c30f084a9b57f864342613d1af6209de148bf9ae9b941896b6c3980ea",
       "freeze": "docs/design/canonical-references/HNK_THURISAZ_REFERENCE_FREEZE_V1.md",
-      "scope": ["binah:079"],
+      "scope": ["binah:079", "binah:109"],
+      "orientation": "upright-no-mirror",
+      "runtime_status": "qa_pending"
+    },
+    {
+      "id": "HNK-REF-ANSUZ-V1",
+      "label": "Ansuz HNK Master V1",
+      "asset": "assets/canonical/shared/runes/ansuz-hnk-master-v1.svg",
+      "sha256": "79449e97af47e731f66155ca3ad4847e06fd937ef7953ed837323a02fae3f97a",
+      "freeze": "docs/design/canonical-references/HNK_ANSUZ_REFERENCE_FREEZE_V1.md",
+      "scope": ["binah:109"],
       "orientation": "upright-no-mirror",
       "runtime_status": "qa_pending"
     },
@@ -44,6 +54,16 @@
       "orientation": "heh-top-lamed-bottom-dalet-aligned-no-mirror",
       "source_family": "Golden Dawn / Israel Regardie",
       "source_license_context": "Wikimedia Commons Rose Cross Lamen.svg public-domain provenance",
+      "runtime_status": "qa_pending"
+    },
+    {
+      "id": "HNK-PORTAL109-ORACLE-ASSETSET-V1",
+      "label": "Portal 109 Oracle Transition Asset Set V1",
+      "asset": "assets/canonical/binah/portal109-oracle-assetset-v1.json",
+      "sha256": "4fe2b55e4a745b3b573cd696ec252509ec5d9dd5bcdbb9a7181a371c8473822c",
+      "freeze": "docs/design/canonical-references/HNK_PORTAL109_ORACLE_ASSETSET_FREEZE_V1.md",
+      "scope": ["binah:109"],
+      "orientation": "upright-no-mirror",
       "runtime_status": "qa_pending"
     }
   ]
