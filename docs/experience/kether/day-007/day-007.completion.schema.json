@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"HNK-KETHER-D007-COMP-V1",
+  "title":"HNK Day 007 Completion Contract V1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["day","completion_contract_id","quest_definition_id","canonical_source_sha","session_id","client_completion_id","mode"],
+  "properties":{
+    "day":{"const":7},
+    "completion_contract_id":{"const":"HNK-KETHER-D007-COMP-V1"},
+    "quest_definition_id":{"const":"HNK-KETHER-D007-V1"},
+    "canonical_source_sha":{"const":"bc12709d5a346870405cf41e62f99ac28d70186d"},
+    "session_id":{"type":"string","minLength":1},
+    "client_completion_id":{"type":"string","minLength":1,"maxLength":256},
+    "client_completed_at":{"type":"string"},
+    "local_record_hash":{"type":"string"},
+    "mode":{"const":"first_completion"}
+  },
+  "x-hnk":{"canonical_xp":150,"attribute_gain":{"attribute":"HIP","amount":1,"application":"SERVER_SIDE_FIRST_COMPLETION_ONLY"},"cycle":{"angel":"Jeliel","progress_after":"2/5","fragment_awarded":false},"subjective_effect_required":false,"catalepsy_required":false}
+}
