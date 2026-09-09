@@ -14,6 +14,7 @@ export * from './day005-v1';
 export * from './day006-v1';
 export * from './day007-v1';
 export * from './day008-v1';
+export * from './day009-v1';
 export * from './kether-cycle01';
 export * from './practice-record';
 export * from './promotion-sync';
