@@ -5,6 +5,7 @@ import { ChokmahCycle01Cahetel } from './ChokmahCycle01Cahetel';
 import { ChokmahCycle02Haziel } from './ChokmahCycle02Haziel';
 import { ChokmahCycle03Aladiah } from './ChokmahCycle03Aladiah';
 import { ChokmahCycle04Lauviah } from './ChokmahCycle04Lauviah';
+import { ChokmahCycle05Hahaiah } from './ChokmahCycle05Hahaiah';
 
 export function ChokmahJourney() {
   const auth = useHnkAuth();
@@ -37,6 +38,7 @@ export function ChokmahJourney() {
   if (currentDay <= 46) return <ChokmahCycle02Haziel />;
   if (currentDay <= 51) return <ChokmahCycle03Aladiah />;
   if (currentDay <= 56) return <ChokmahCycle04Lauviah />;
+  if (currentDay <= 61) return <ChokmahCycle05Hahaiah />;
 
   return (
     <View style={styles.threshold}>
