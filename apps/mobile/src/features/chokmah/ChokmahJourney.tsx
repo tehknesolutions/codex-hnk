@@ -7,6 +7,7 @@ import { ChokmahCycle03Aladiah } from './ChokmahCycle03Aladiah';
 import { ChokmahCycle04Lauviah } from './ChokmahCycle04Lauviah';
 import { ChokmahCycle05Hahaiah } from './ChokmahCycle05Hahaiah';
 import { ChokmahCycle06Iezalel } from './ChokmahCycle06Iezalel';
+import { ChokmahCycle07Mebahel } from './ChokmahCycle07Mebahel';
 
 export function ChokmahJourney() {
   const auth = useHnkAuth();
@@ -41,12 +42,13 @@ export function ChokmahJourney() {
   if (currentDay <= 56) return <ChokmahCycle04Lauviah />;
   if (currentDay <= 61) return <ChokmahCycle05Hahaiah />;
   if (currentDay <= 66) return <ChokmahCycle06Iezalel />;
+  if (currentDay <= 71) return <ChokmahCycle07Mebahel />;
 
   return (
     <View style={styles.threshold}>
       <Text style={styles.eyebrow}>CHOKMAH · FRONTEIRA G7</Text>
       <Text style={styles.title}>DIA {String(Math.min(currentDay, 73)).padStart(3, '0')}</Text>
-      <Text style={styles.body}>O próximo ciclo só será executável quando seu runtime específico e evidence contract fail-closed estiverem implementados. Conteúdo canônico no banco não abre uma prática genérica nem concede XP por si só.</Text>
+      <Text style={styles.body}>Restam apenas a preparação do Dia 072 e o Portal 073. Conteúdo canônico no banco não abre uma prática genérica nem concede XP por si só.</Text>
     </View>
   );
 }
