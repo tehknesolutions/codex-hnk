@@ -1,8 +1,9 @@
 {
   "id":"HNK-KETHER-D018-COMPLETION-SERVICE-V1","day":18,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D018-COMP-V1","quest_definition_id":"HNK-KETHER-D018-V1","validator_key":"day018_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D018-COMP-V1","quest_definition_id":"HNK-KETHER-D018-V1","validator_key":"day018_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"152f91da1e7442f645687ba5b72c9977496a1e55","xp":150,"attribute_gain":0},
-  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","audio_recording":"NOT_ENABLED_V1"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","audio_recording":"NOT_ENABLED_V1","offline_queue":"CIPHERTEXT_ONLY"},
+  "validator_tests":{"all_absent":"PASS","plaintext_extra":"REJECTED_day018_jachin_unknown_field","spiritual_activation_boundary_missing":"REJECTED_day018_epistemic_boundary_required"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":150,"xp_after":1150,"current_day":19,"attribute_event_count":0,"attribute_gain_rule_count":0,"elemiah":{"completed_days":3,"lit":false},"fragments_lit":3,"synthetic_user_persisted":false}
 }
