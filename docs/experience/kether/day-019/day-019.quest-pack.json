@@ -1,0 +1,12 @@
+{
+  "id":"HNK-KETHER-D019-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":19,"quest_id":"HNK-KETHER-D019-V1","canonical_source_sha":"b37705700bcf5e0a976b5eba65af3f48ad4b7907","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"angel":"Elemiah"},
+  "progression":{"matrix_version":"1.0.0","competency":"Análise Vocal no App","primary_attribute":"INT","secondary_attribute":"HIP","requested_gain":1,"client_may_apply":false,"server_trigger":"xp_events_apply_attribute_progression_v1","cap":20,"basis_note":"technical observation; no spiritual diagnosis"},
+  "media":{"microphone_required":true,"recording_max_seconds":180,"recording_recommended_seconds":180,"safe_early_stop_valid":true,"raw_audio_server_upload":false,"local_media_vault":"AES-256-GCM_DEVICE_BOUND","media_recovery":"NOT_AVAILABLE_V1","background_recording":false,"active_recording_persistence":false},
+  "analysis":{"schema":"hnk-acoustic-analysis-v1","local_processing":true,"server_receives_metrics_only":true,"metrics":["sample_rate_hz","duration_seconds","rms","peak","zero_crossing_rate","spectral_centroid_hz","dominant_frequency_hz","low_band_energy_ratio","mid_band_energy_ratio","high_band_energy_ratio","spectral_frames"]},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"raw_audio_server_side":false,"server_media_reference":false},
+  "safety":{"moderate_or_low_volume":true,"natural_breathing":true,"comfortable_device_distance":true,"repeat_recording_required":false,"dramatic_graph_chasing_prohibited":true,"graph_not_spiritual_diagnosis":true,"single_session_not_proof_of_correlation":true},
+  "cycle_progress":{"cycle":"Elemiah","days":[16,17,18,19,20],"expected_after_day":4,"fragment":4,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D019-COMP-V1","validator":"day019_v1","registry":"pending","attribute_application":"SERVER_XP_EVENT_TRIGGER"},
+  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+}
