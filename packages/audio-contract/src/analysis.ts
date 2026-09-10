@@ -20,6 +20,14 @@ export interface HnkAcousticAnalysisAccumulator {
   reset(): void;
 }
 
+export interface HnkPcmWavCapture {
+  push(samples: Float32Array, inputSampleRateHz: number): void;
+  wavBytes(): Uint8Array;
+  outputSampleRateHz(): number;
+  sampleCount(): number;
+  reset(): void;
+}
+
 function clamp01(value: number): number { return Math.max(0, Math.min(1, value)); }
 function round(value: number, digits = 6): number { const p = 10 ** digits; return Math.round(value * p) / p; }
 function isPowerOfTwo(value: number): boolean { return value > 0 && (value & (value - 1)) === 0; }
@@ -89,28 +97,12 @@ function analyzeSpectrum(samples: Float32Array, sampleRateHz: number) {
     else high += energy;
     if (mag[i] > dominantMag) { dominantMag = mag[i]; dominant = hz; }
   }
-  return {
-    centroid: total > 0 ? weighted / total : 0,
-    dominant,
-    low: total > 0 ? low / total : 0,
-    mid: total > 0 ? mid / total : 0,
-    high: total > 0 ? high / total : 0,
-  };
+  return { centroid: total > 0 ? weighted / total : 0, dominant, low: total > 0 ? low / total : 0, mid: total > 0 ? mid / total : 0, high: total > 0 ? high / total : 0 };
 }
 
 export function createAcousticAnalysisAccumulatorV1(): HnkAcousticAnalysisAccumulator {
-  let sampleRate = 0;
-  let samplesSeen = 0;
-  let sumSquares = 0;
-  let peak = 0;
-  let crossings = 0;
-  let previous: number | null = null;
-  let spectralFrames = 0;
-  let centroidSum = 0;
-  let dominantSum = 0;
-  let lowSum = 0;
-  let midSum = 0;
-  let highSum = 0;
+  let sampleRate = 0, samplesSeen = 0, sumSquares = 0, peak = 0, crossings = 0, previous: number | null = null;
+  let spectralFrames = 0, centroidSum = 0, dominantSum = 0, lowSum = 0, midSum = 0, highSum = 0;
   return {
     push(samples, sampleRateHz) {
       if (!Number.isFinite(sampleRateHz) || sampleRateHz < 8000 || sampleRateHz > 192000) throw new Error('invalid_analysis_sample_rate');
@@ -119,45 +111,31 @@ export function createAcousticAnalysisAccumulatorV1(): HnkAcousticAnalysisAccumu
       sampleRate = sampleRateHz;
       for (let i = 0; i < samples.length; i += 1) {
         const value = Math.max(-1, Math.min(1, Number.isFinite(samples[i]) ? samples[i] : 0));
-        sumSquares += value * value;
-        peak = Math.max(peak, Math.abs(value));
+        sumSquares += value * value; peak = Math.max(peak, Math.abs(value));
         if (previous !== null && ((previous < 0 && value >= 0) || (previous >= 0 && value < 0))) crossings += 1;
         previous = value;
       }
       samplesSeen += samples.length;
       const spectrum = analyzeSpectrum(samples, sampleRateHz);
-      if (spectrum) {
-        spectralFrames += 1;
-        centroidSum += spectrum.centroid;
-        dominantSum += spectrum.dominant;
-        lowSum += spectrum.low;
-        midSum += spectrum.mid;
-        highSum += spectrum.high;
-      }
+      if (spectrum) { spectralFrames += 1; centroidSum += spectrum.centroid; dominantSum += spectrum.dominant; lowSum += spectrum.low; midSum += spectrum.mid; highSum += spectrum.high; }
     },
     snapshot(durationSeconds) {
       if (!Number.isFinite(durationSeconds) || durationSeconds <= 0 || durationSeconds > 180.5) throw new Error('invalid_analysis_duration');
       if (!sampleRate || !samplesSeen) throw new Error('acoustic_samples_required');
       const denom = Math.max(1, samplesSeen - 1);
-      return {
-        schema: 'hnk-acoustic-analysis-v1',
-        sampleRateHz: Math.round(sampleRate),
-        analyzedSampleCount: samplesSeen,
-        durationSeconds: round(durationSeconds, 3),
-        rms: round(Math.sqrt(sumSquares / samplesSeen)),
-        peak: round(clamp01(peak)),
-        zeroCrossingRate: round(crossings / denom),
-        spectralCentroidHz: round(spectralFrames ? centroidSum / spectralFrames : 0, 3),
-        dominantFrequencyHz: round(spectralFrames ? dominantSum / spectralFrames : 0, 3),
-        lowBandEnergyRatio: round(spectralFrames ? lowSum / spectralFrames : 0),
-        midBandEnergyRatio: round(spectralFrames ? midSum / spectralFrames : 0),
-        highBandEnergyRatio: round(spectralFrames ? highSum / spectralFrames : 0),
-        spectralFrames,
-      };
+      return { schema:'hnk-acoustic-analysis-v1', sampleRateHz:Math.round(sampleRate), analyzedSampleCount:samplesSeen, durationSeconds:round(durationSeconds,3), rms:round(Math.sqrt(sumSquares/samplesSeen)), peak:round(clamp01(peak)), zeroCrossingRate:round(crossings/denom), spectralCentroidHz:round(spectralFrames?centroidSum/spectralFrames:0,3), dominantFrequencyHz:round(spectralFrames?dominantSum/spectralFrames:0,3), lowBandEnergyRatio:round(spectralFrames?lowSum/spectralFrames:0), midBandEnergyRatio:round(spectralFrames?midSum/spectralFrames:0), highBandEnergyRatio:round(spectralFrames?highSum/spectralFrames:0), spectralFrames };
     },
-    reset() {
-      sampleRate = 0; samplesSeen = 0; sumSquares = 0; peak = 0; crossings = 0; previous = null;
-      spectralFrames = 0; centroidSum = 0; dominantSum = 0; lowSum = 0; midSum = 0; highSum = 0;
-    },
+    reset() { sampleRate=0;samplesSeen=0;sumSquares=0;peak=0;crossings=0;previous=null;spectralFrames=0;centroidSum=0;dominantSum=0;lowSum=0;midSum=0;highSum=0; },
   };
+}
+
+function writeAscii(view:DataView,offset:number,text:string){for(let i=0;i<text.length;i+=1)view.setUint8(offset+i,text.charCodeAt(i))}
+export function createPcm16WavCaptureV1(targetSampleRateHz=24000):HnkPcmWavCapture{
+  if(!Number.isInteger(targetSampleRateHz)||targetSampleRateHz<8000||targetSampleRateHz>48000)throw new Error('invalid_wav_target_sample_rate');
+  let inputRate=0,phase=0;const samples:number[]=[];
+  return{
+    push(frame,rate){if(!(frame instanceof Float32Array)||!frame.length)return;if(!Number.isFinite(rate)||rate<8000||rate>192000)throw new Error('invalid_wav_input_sample_rate');if(inputRate&&Math.abs(inputRate-rate)>1)throw new Error('wav_input_sample_rate_changed');inputRate=rate;const ratio=rate/targetSampleRateHz;for(let i=0;i<frame.length;i+=1){if(phase<=0){samples.push(Math.max(-1,Math.min(1,Number.isFinite(frame[i])?frame[i]:0)));phase+=ratio}phase-=1}},
+    wavBytes(){if(!samples.length)throw new Error('wav_samples_required');const dataSize=samples.length*2;const out=new Uint8Array(44+dataSize);const view=new DataView(out.buffer);writeAscii(view,0,'RIFF');view.setUint32(4,36+dataSize,true);writeAscii(view,8,'WAVE');writeAscii(view,12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,targetSampleRateHz,true);view.setUint32(28,targetSampleRateHz*2,true);view.setUint16(32,2,true);view.setUint16(34,16,true);writeAscii(view,36,'data');view.setUint32(40,dataSize,true);for(let i=0;i<samples.length;i+=1)view.setInt16(44+i*2,Math.max(-32768,Math.min(32767,Math.round(samples[i]*32767))),true);return out},
+    outputSampleRateHz(){return targetSampleRateHz},sampleCount(){return samples.length},reset(){inputRate=0;phase=0;samples.length=0},
+  }
 }
