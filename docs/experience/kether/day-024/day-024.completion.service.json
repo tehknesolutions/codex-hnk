@@ -1,0 +1,11 @@
+{
+  "id":"HNK-KETHER-D024-COMPLETION-SERVICE-V1","day":24,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D024-COMP-V1","quest_definition_id":"HNK-KETHER-D024-V1","validator_key":"day024_v1","status":"draft","review":"PENDING"},
+  "canonical":{"source_sha":"0d7c70b7bd0f82d3b4cc75ad077fce4c21202e2d","xp":150},
+  "progression":{"matrix_version":"1.0.0","primary_attribute":"BIO","secondary_attribute":"DIS","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20},
+  "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0"},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "cycle":{"angel":"Mahasiah","expected_completed_days":4,"fragment":5,"expected_lit":false,"crown_expected_after":"4/7","authoritative_source":"get_kether_crown_state"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+}
