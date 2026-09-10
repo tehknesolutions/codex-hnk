@@ -1,0 +1,13 @@
+{
+  "id":"HNK-KETHER-D028-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":28,"quest_id":"HNK-KETHER-D028-V1","canonical_source_sha":"9253344faa2b6be10a85e58561f306b7ef1661ba","release_state":"BACKEND_REVIEW_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"angel":"Lelahel"},
+  "attribute_progression":{"matrix_version":"1.0.0","competency":"Gneo Geo Astral","primary":"INT","secondary":"PER","gain":1,"status":"frozen","application":"SERVER_XP_EVENT_TRIGGER","client_may_apply":false},
+  "practice":{"active_seconds":600,"control_seconds":600,"middle":{"circuits":8,"breaths_per_circuit":3,"center_returns":8,"silent_center_seconds":60},"active_must_exceed_control":false,"cockpit_superiority_required":false},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "safety":{"foreground_only_timing":true,"active_timer_persisted":false,"stable_posture":true,"natural_breathing":true,"stop_on_relevant_confusion_distress_or_excessive_tension":true},
+  "epistemic":{"cockpit_is_internal_hnk_operator":true,"external_astral_access_proven":false,"presence_is_external_entity_proof":false,"single_session_definitive":false,"data_may_correct_expectation":true},
+  "cycle_progress":{"cycle":"Lelahel","days":[26,27,28,29,30],"expected_after_day":3,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D028-COMP-V1","validator":"day028_v1","registry":"PENDING","attribute_application":"SERVER_XP_EVENT_TRIGGER"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+}
