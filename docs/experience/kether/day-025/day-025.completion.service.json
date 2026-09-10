@@ -1,10 +1,11 @@
 {
   "id":"HNK-KETHER-D025-COMPLETION-SERVICE-V1","day":25,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D025-COMP-V1","quest_definition_id":"HNK-KETHER-D025-V1","validator_key":"day025_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D025-COMP-V1","quest_definition_id":"HNK-KETHER-D025-V1","validator_key":"day025_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"88336e31521c64b3b43aae06d6d5e221fc77a490","xp":150,"attribute_gain":0},
   "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0"},
-  "privacy":{"server_plaintext":false,"camera_frames_server_side":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "privacy":{"server_plaintext":false,"camera_frames_server_side":false,"camera_frames_persisted":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "validator_tests":{"control_scores_may_exceed_active":"PASS","flat_overlay":"REJECTED_day025_flat_overlay_forbidden","camera_frame_persisted":"REJECTED_day025_camera_frame_privacy_required","camera_payload_extra":"REJECTED_day025_jachin_unknown_field","active_tracking_419":"REJECTED_day025_active_tracking_requires_420_seconds","fake_tracking_mode":"REJECTED_day025_tracking_mode_invalid","single_episode_claim":"REJECTED_day025_boaz_requirements","objective_energy_claim":"REJECTED_day025_middle_requirements"},
   "cycle":{"angel":"Mahasiah","expected_completed_days":5,"fragment":5,"expected_lit":true,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_total_before":1000,"xp_total_after":1150,"xp_awarded":150,"current_day":26,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"attribute_gain_rule_count":0,"progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT"],"mahasiah":{"completed_days":5,"lit":true},"fragments_lit":5,"synthetic_user_not_persisted":true}
 }
