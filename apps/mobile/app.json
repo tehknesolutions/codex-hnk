@@ -24,6 +24,18 @@
         {
           "configureAndroidBackup": true
         }
+      ],
+      [
+        "@reactvision/react-viro",
+        {
+          "provider": "none",
+          "ios": {
+            "cameraUsagePermission": "Permitir que o HNK Codex use a câmera durante práticas AR locais."
+          },
+          "android": {
+            "xRMode": ["AR"]
+          }
+        }
       ]
     ],
     "experiments": {
