@@ -9,6 +9,7 @@ on:
       - 'packages/audio-contract/**'
       - 'scripts/validate-chokmah-runtime-v2.mjs'
       - 'scripts/validate-aladiah-runtime.mjs'
+      - 'scripts/validate-lauviah-runtime.mjs'
       - 'scripts/validate-audio-contract.mjs'
       - 'supabase/migrations/**'
       - '.github/workflows/g7-runtime.yml'
@@ -47,6 +48,9 @@ jobs:
 
       - name: Validate Aladiah runtime contract
         run: pnpm validate:aladiah
+
+      - name: Validate Lauviah runtime contract
+        run: pnpm validate:lauviah
 
       - name: Typecheck audio contract
         run: pnpm --filter @hnk/audio-contract typecheck
