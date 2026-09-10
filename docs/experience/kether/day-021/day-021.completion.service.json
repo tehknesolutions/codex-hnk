@@ -1,9 +1,10 @@
 {
   "id":"HNK-KETHER-D021-COMPLETION-SERVICE-V1","day":21,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D021-COMP-V1","quest_definition_id":"HNK-KETHER-D021-V1","validator_key":"day021_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D021-COMP-V1","quest_definition_id":"HNK-KETHER-D021-V1","validator_key":"day021_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"12ca319d37146b91693fcb09ebc5fd9aa7d5490c","xp":100,"attribute_gain":0},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "validator_tests":{"all_absent":"PASS","plaintext_extra":"REJECTED_day021_jachin_unknown_field","breath_holding":"REJECTED_day021_boaz_requirements","biomedical_boundary_missing":"REJECTED_day021_boaz_requirements"},
   "cycle":{"angel":"Mahasiah","expected_completed_days":1,"fragment":5,"expected_lit":false,"crown_expected_after":"4/7","authoritative_source":"get_kether_crown_state"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_total_before":1000,"xp_total_after":1100,"xp_awarded":100,"current_day":22,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"attribute_gain_rule_count":0,"progression_events":["NEXT_DAY_UNLOCKED"],"mahasiah":{"completed_days":1,"lit":false},"fragments_lit":4,"synthetic_user_not_persisted":true}
 }
