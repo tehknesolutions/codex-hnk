@@ -12,6 +12,7 @@ on:
       - 'scripts/validate-lauviah-runtime.mjs'
       - 'scripts/validate-hahaiah-runtime.mjs'
       - 'scripts/validate-iezalel-runtime.mjs'
+      - 'scripts/validate-mebahel-runtime.mjs'
       - 'scripts/validate-audio-contract.mjs'
       - 'supabase/migrations/**'
       - '.github/workflows/g7-runtime.yml'
@@ -59,6 +60,9 @@ jobs:
 
       - name: Validate Iezalel runtime contract
         run: pnpm validate:iezalel
+
+      - name: Validate Mebahel runtime contract
+        run: pnpm validate:mebahel
 
       - name: Typecheck audio contract
         run: pnpm --filter @hnk/audio-contract typecheck
