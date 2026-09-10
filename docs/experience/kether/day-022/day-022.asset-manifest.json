@@ -1,0 +1,33 @@
+{
+  "day":22,
+  "canonical_reference":{
+    "id":"reiki-usui-dai-ko-myo-v1",
+    "semantic_master":"大光明",
+    "romanization":"Dai Kō Myō / Dai Ko Myo",
+    "orientation":"VERTICAL_TOP_TO_BOTTOM",
+    "sequence":["大","光","明"],
+    "family":"USUI_KANJI",
+    "excluded_families":["TIBETAN_DUMO"],
+    "reference_source_path":"canon/references/approved/DAI_KOO_MYO_USUI_HNK_V1.md",
+    "reference_source_blob_sha":"5fd8e69a74833264b98f2b148df96cc76fd2b1f9"
+  },
+  "master":{
+    "asset_id":"oracle-dai-ko-myo-usui-hnk-master-v1",
+    "kind":"svg_vector_outline",
+    "source_path":"canon/references/assets/dai-koo-myo-usui-hnk-master-v1.svg",
+    "checksum_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0",
+    "web_path":"/canon/day-022/dai-koo-myo-usui-hnk-master-v1.svg",
+    "expo_path":"assets/day-022/dai-koo-myo-usui-hnk-master-v1.svg",
+    "license":"project-generated",
+    "provenance_boundary":"HNK rendering of the traditional Usui Dai Ko Myo kanji reference 大光明; not a recovered historical HNK drawing"
+  },
+  "stroke_order":{
+    "source_path":"canon/references/assets/dai-koo-myo-usui-hnk-stroke-order-v1.svg",
+    "checksum_sha256":"52cf6921ccd6ede63a6f83d05b31faf787d2881b99d5b8ce1ee6095a86b4fe6b",
+    "web_path":"/canon/day-022/dai-koo-myo-usui-hnk-stroke-order-v1.svg",
+    "expo_path":"assets/day-022/dai-koo-myo-usui-hnk-stroke-order-v1.svg",
+    "sequence":{"大":3,"光":6,"明":8},
+    "license":"CC BY-SA 3.0",
+    "attribution":"KanjiVG · Ulrich Apel · adapted for layout/scale into HNK study sheet"
+  }
+}
