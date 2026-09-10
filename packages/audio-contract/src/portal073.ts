@@ -4,6 +4,8 @@ export const HNK_PORTAL073_ACTIVE_PRESET_ID = 'HNK-PORTAL073-CHOKMAH-BINAH-ACTIV
 export const HNK_PORTAL073_CONTROL_PRESET_ID = 'HNK-PORTAL073-CHOKMAH-BINAH-CONTROL-V1' as const;
 export const HNK_PORTAL073_ACTIVE_RENDER_SHA256 = 'c8cc0b02bd8c41479eeb5b2788cf26bb951a7ad4e7c6562f6eb88bfab5e8e43b' as const;
 export const HNK_PORTAL073_CONTROL_RENDER_SHA256 = '7c8c4fb511883ac4b17fc475d4303ee1a922b4b186fc204760bafe50b9b1fc7c' as const;
+export const HNK_PORTAL073_SAMPLE_RATE = 44_100 as const;
+export const HNK_PORTAL073_LOOP_SECONDS = 1 as const;
 export const HNK_PORTAL073_DURATION_SECONDS = 600 as const;
 
 const SAFETY = Object.freeze({
@@ -72,3 +74,51 @@ export const HNK_PORTAL073_CONTROL_PRESET_V1 = Object.freeze({
   renderChecksumSha256: HNK_PORTAL073_CONTROL_RENDER_SHA256,
   safety: SAFETY,
 } satisfies HnkAudioPreset);
+
+function writeAscii(view: DataView, offset: number, text: string): void {
+  for (let index = 0; index < text.length; index += 1) view.setUint8(offset + index, text.charCodeAt(index));
+}
+
+function createStereoSineLoopWavBytes(leftHz: number, rightHz: number): Uint8Array {
+  const sampleRate = HNK_PORTAL073_SAMPLE_RATE;
+  const sampleCount = sampleRate * HNK_PORTAL073_LOOP_SECONDS;
+  const channels = 2;
+  const bytesPerSample = 2;
+  const dataSize = sampleCount * channels * bytesPerSample;
+  const bytes = new Uint8Array(44 + dataSize);
+  const view = new DataView(bytes.buffer);
+
+  writeAscii(view, 0, 'RIFF');
+  view.setUint32(4, 36 + dataSize, true);
+  writeAscii(view, 8, 'WAVE');
+  writeAscii(view, 12, 'fmt ');
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, channels, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * channels * bytesPerSample, true);
+  view.setUint16(32, channels * bytesPerSample, true);
+  view.setUint16(34, 16, true);
+  writeAscii(view, 36, 'data');
+  view.setUint32(40, dataSize, true);
+
+  for (let index = 0; index < sampleCount; index += 1) {
+    const t = index / sampleRate;
+    const left = Math.sin(2 * Math.PI * leftHz * t) * 0.06;
+    const right = Math.sin(2 * Math.PI * rightHz * t) * 0.06;
+    const leftPcm = Math.max(-32768, Math.min(32767, Math.round(left * 32767)));
+    const rightPcm = Math.max(-32768, Math.min(32767, Math.round(right * 32767)));
+    view.setInt16(44 + index * 4, leftPcm, true);
+    view.setInt16(46 + index * 4, rightPcm, true);
+  }
+
+  return bytes;
+}
+
+export function createPortal073ActiveLoopWavBytes(): Uint8Array {
+  return createStereoSineLoopWavBytes(528, 532);
+}
+
+export function createPortal073ControlLoopWavBytes(): Uint8Array {
+  return createStereoSineLoopWavBytes(528, 528);
+}
