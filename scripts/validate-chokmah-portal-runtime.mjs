@@ -20,6 +20,7 @@ const audioIndex = read('packages/audio-contract/src/index.ts');
 const portalAdapter = read('packages/supabase-client/src/portal-practice-record.ts');
 const runtime = read('apps/mobile/src/features/kether/useHnkDayRuntime.ts');
 const p73db = read('supabase/migrations/20260910124500_require_portal_vault_receipt_presence.sql');
+const serialization = read('supabase/migrations/20260910130000_serialize_day_completion_by_user_day.sql');
 const e2e = read('supabase/tests/portal073-rollback-e2e.sql');
 const freeze = read('docs/experience/chokmah/HNK_CHOKMAH_PORTAL_073_OPERATOR_FREEZE_V1.md');
 
@@ -47,7 +48,9 @@ check('Portal-only string evidence does not weaken ordinary Practice Record', ha
 check('Portal073 server binds canonical SHA and exact 600 seconds', has(p73db, 'be135a55fdd2fad853cc526f1ccb78cb933e2391') && has(p73db, 'portal073_audio_duration_mismatch') && has(p73db, "::integer <> 600"));
 check('Portal073 server requires operator execution + stop/volume + safety', ['tuner_completed','transition_audio_completed','sigil_completed','operator_ids_verified','volume_control_available','immediate_stop_available','safety_clear'].every((field) => has(p73db, field)));
 check('Portal receipt must resolve to same-user same-day encrypted Vault row', has(p73db, 'portal_encrypted_vault_receipt_not_found') && has(p73db, 'v.user_id = v_uid') && has(p73db, 'v.day = p_day') && has(p73db, 'v.id::text = v_vault_receipt') && has(p73db, "checksum_sha256, '') ~ '^[a-fA-F0-9]{64}$'"));
-check('Rollback E2E covers reward, retry, Teurgo and no Day074 auto-start', has(e2e, 'P73_RPC_ROLLBACK_E2E_PASS') && has(e2e, "xp_awarded')::integer <> 500") && has(e2e, "xp_awarded')::integer <> 0") && has(e2e, "initiatory_title <> 'Teurgo'") && has(e2e, 'P73_E2E_day074_auto_started'));
+check('Completion RPC serializes distinct sessions per user/day before v_existing', has(serialization, 'pg_advisory_xact_lock') && has(serialization, "hashtextextended(v_uid::text || ':day:' || p_day::text, 0)") && serialization.indexOf('pg_advisory_xact_lock') < serialization.indexOf('into v_existing'));
+check('Completion keeps UNIQUE/ON CONFLICT idempotency behind advisory serialization', has(serialization, 'on conflict (user_id, day) do nothing') && has(serialization, "':completion:v3'") && has(serialization, 'on conflict (idempotency_key) do nothing'));
+check('Rollback E2E covers reward, same-session retry, distinct-session replay, Teurgo and no Day074 auto-start', has(e2e, 'P73_RPC_ROLLBACK_E2E_PASS') && has(e2e, 's2 uuid := gen_random_uuid()') && has(e2e, 'P73_E2E_second_session_first_completion_not_false') && has(e2e, 'P73_E2E_second_session_xp_not_zero') && has(e2e, "xp_awarded')::integer <> 500") && has(e2e, "initiatory_title <> 'Teurgo'") && has(e2e, 'P73_E2E_day074_auto_started'));
 
 if (failed) process.exit(1);
-console.log('PASS CHOKMAH-PORTAL · Days 072-073 structural runtime contracts valid; Day073 production remains fail-closed');
+console.log('PASS CHOKMAH-PORTAL · Days 072-073 structural runtime, Vault and serialized completion contracts valid; Day073 production remains fail-closed');
