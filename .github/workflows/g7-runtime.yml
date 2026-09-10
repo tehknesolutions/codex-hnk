@@ -10,6 +10,7 @@ on:
       - 'scripts/validate-chokmah-runtime-v2.mjs'
       - 'scripts/validate-aladiah-runtime.mjs'
       - 'scripts/validate-lauviah-runtime.mjs'
+      - 'scripts/validate-hahaiah-runtime.mjs'
       - 'scripts/validate-audio-contract.mjs'
       - 'supabase/migrations/**'
       - '.github/workflows/g7-runtime.yml'
@@ -51,6 +52,9 @@ jobs:
 
       - name: Validate Lauviah runtime contract
         run: pnpm validate:lauviah
+
+      - name: Validate Hahaiah runtime contract
+        run: pnpm validate:hahaiah
 
       - name: Typecheck audio contract
         run: pnpm --filter @hnk/audio-contract typecheck
