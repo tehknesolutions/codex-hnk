@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'); const read=p=>fs.readFileSync(path.join(root,p),'utf8'); const has=(s,n)=>s.includes(n); let failed=0; const check=(l,o)=>{console.log(`${o?'PASS':'FAIL'} HARIEL · ${l}`);if(!o)failed++;};
 const a=read('apps/mobile/src/features/atziluth/AtziluthJourney.tsx'),j=read('apps/mobile/src/features/binah/BinahJourney.tsx'),c=read('apps/mobile/src/features/binah/BinahCycle01Hariel.tsx'),d=read('apps/mobile/src/features/binah/runtime-definitions/hariel.ts'),l=read('apps/mobile/src/features/binah/HarielDays074to076Experience.tsx'),d77=read('apps/mobile/src/features/binah/HarielDay077CommunicationExperience.tsx'),d78=read('apps/mobile/src/features/binah/HarielDay078SilentVeilExperience.tsx'),db=read('supabase/migrations/20260910133000_enforce_hariel_074_078_scalar_evidence.sql');
+const d78def=d.slice(d.indexOf('export const HARIEL_DAY_078'),d.indexOf('export const HARIEL_CANON_RUNTIME'));
 check('Atziluth routes Binah only after Chokmah frontier',has(a,"import { BinahJourney }")&&has(a,'currentDay <= 73')&&has(a,'currentDay <= 109')&&a.indexOf('currentDay <= 73')<a.indexOf('currentDay <= 109'));
 check('Binah Journey mounts Hariel 074-078',[74,75,76,77,78].every(x=>has(d,`HARIEL_DAY_0${x}`))&&has(j,'currentDay<=78')&&['HarielDays074to076Experience','HarielDay077CommunicationExperience','HarielDay078SilentVeilExperience'].every(x=>has(c,x)));
 check('Hariel remains sequential behind Portal073',has(d,'requiresPrevious: true')&&has(d,'day, chapter: 3')&&has(d,"sephira: 'Binah'"));
@@ -13,7 +14,7 @@ check('Day076 forbids spiritual ranking and third-party mind inference',has(l,'t
 check('Day077 uses persistent exact three-hour wall clock',has(d77,'usePersistentWallClock')&&has(d77,'3 * 60 * 60')&&has(d77,'wall.atCap')&&has(db,"'monitoring_seconds')::int<>10800")&&has(db,'day077_three_hours_required'));
 check('Day077 collects no third-party recording',has(d77,'no_recording_of_third_parties')&&has(d77,'SEM GRAVAÇÃO DE TERCEIROS')&&!has(d77,'useAudioRecorder'));
 check('Day078 preserves open duration and rejects zero-thought goal',has(d78,'RuntimeOpenTimer')&&has(d78,'zero_thought_goal_rejected')&&has(d78,'thought_suppression_not_required')&&has(d78,'natural_breath_preserved')&&!has(d78,'target={'));
-check('Day078 Vault is optional, not a completion requirement',has(d78,'VAULT OPCIONAL')&&has(d78,'vaultSkipped')&&!has(d,'vault_saved') /* Day078 definition deliberately omits required Vault */);
+check('Day078 Vault is optional, not a completion requirement',has(d78,'VAULT OPCIONAL')&&has(d78,'vaultSkipped')&&!has(d78def,'vault_saved'));
 check('DB binds exact canonical Hariel SHAs',['41abcd70bb9a5f98736b863883c89ca166c13cb8','48eb5fe1a17ef333623b9bfd23b511f81897a833','165821d942795ad7e7f01dec0da1f73c3d84ccdb','9dbb35e936b49829bd6b99b66017a189678dba13','7e10777607778e29ada5983ef69ca4871f4ebb24'].every(x=>has(db,x)));
 check('DB uses strict unknown-field allowlists',[74,75,76,77,78].every(x=>has(db,`day0${x}_evidence_unknown_field`)));
 check('DB functions are private',[74,75,76,77,78].every(x=>has(db,`revoke all on function hnk_private.validate_day0${x}`))&&has(db,'enforce_hariel_074_078_scalar_evidence'));
