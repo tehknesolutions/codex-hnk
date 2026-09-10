@@ -1,10 +1,13 @@
 {
   "id":"HNK-KETHER-D028-COMPLETION-SERVICE-V1","day":28,
   "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D028-COMP-V1","quest_definition_id":"HNK-KETHER-D028-V1","validator_key":"day028_v1","status":"PENDING","review":"PENDING"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D028-COMP-V1","quest_definition_id":"HNK-KETHER-D028-V1","validator_key":"day028_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"9253344faa2b6be10a85e58561f306b7ef1661ba","xp":150},
   "attribute_progression":{"primary":"INT","secondary":"PER","gain":1,"application":"SERVER_XP_EVENT_TRIGGER"},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "validator_tests":{"control_better_than_cockpit":"PASS","plaintext_extra":"REJECTED_day028_jachin_unknown_field","circuit_9":"REJECTED_day028_jachin_circuit_invalid","external_realm_proof_boundary":"REJECTED_day028_middle_requirements"},
   "epistemic":{"active_must_exceed_control":false,"cockpit_superiority_required":false,"external_astral_access_proven":false,"presence_is_external_entity_proof":false},
-  "cycle":{"angel":"Lelahel","expected_completed_days":3,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"}
+  "cycle":{"angel":"Lelahel","expected_completed_days":3,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_total_before":1000,"xp_total_after":1150,"xp_awarded":150,"int_before":5,"int_after":6,"per_before":5,"per_after":5,"secondary_attribute":"PER","current_day":29,"completion_count":1,"xp_event_count":1,"attribute_event_count":1,"attribute_gain_rule_count":1,"progression_events":["NEXT_DAY_UNLOCKED"],"lelahel":{"completed_days":3,"lit":false},"fragments_lit":5,"active_navigation":2,"control_navigation":9,"synthetic_user_not_persisted":true},
+  "migration":{"version":"20260910214831","name":"day028_completion_contract_v1_reviewed_and_active"}
 }
