@@ -1,0 +1,12 @@
+{
+  "id":"HNK-KETHER-D026-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":26,"quest_id":"HNK-KETHER-D026-V1","canonical_source_sha":"1d3a86fdbee1dad1f7cf7d1590b3e1b63e3f0496","release_state":"BACKEND_REVIEW_PENDING",
+  "canonical":{"counted_words":705,"xp":100,"attribute_gain":0,"angel":"Lelahel"},
+  "practice":{"active_seconds":420,"control_seconds":420,"middle_active_seconds":420,"middle_silent_seconds":60,"responses":["STRONG","WEAK","ABSENT"],"active_must_exceed_control":false},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "safety":{"foreground_only_timing":true,"forced_upward_eye_position":false,"breath_retention_required":false,"stop_on_ocular_pain_intense_headache_dizziness_or_relevant_discomfort":true},
+  "epistemic":{"ajna_and_brodmann10_identical":false,"phenomenology_is_neural_or_spiritual_proof":false,"special_sensation_required":false,"data_may_correct_expectation":true},
+  "cycle_progress":{"cycle":"Lelahel","days":[26,27,28,29,30],"expected_after_day":1,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D026-COMP-V1","validator":"day026_v1","registry":"PENDING","attribute_application":"NO_EXECUTABLE_GAIN_RULE"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+}
