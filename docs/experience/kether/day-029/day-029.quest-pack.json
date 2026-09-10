@@ -1,0 +1,14 @@
+{
+  "id":"HNK-KETHER-D029-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":29,"quest_id":"HNK-KETHER-D029-V1","canonical_source_sha":"cb3ffc429076d323d9996fbe9c22a458f9c49dde","release_state":"BACKEND_REVIEW_PENDING",
+  "canonical":{"counted_words":705,"xp":250,"angel":"Lelahel"},
+  "attribute_progression":{"gain":0,"application":"NO_EXECUTABLE_GAIN_RULE","client_may_apply":false},
+  "practice":{"jachin_seconds":420,"patterns":3,"replacement_behaviors":3,"closure_count":1,"closure_methods":["TEAR_PAPER","DISASSEMBLE_CLAY","ERASE_WATER_SOLUBLE_MARKS"],"middle_silent_seconds":60},
+  "followups":{"observation_24h":{"contract_id":"HNK-KETHER-D029-SUBSTITUTION-24H-V1","elapsed_seconds":86400,"qualification_semantics":"OBSERVATION_WINDOW_ELAPSED_NOT_SUCCESS"},"review_7d":{"contract_id":"HNK-KETHER-D029-REVIEW-7D-V1","elapsed_seconds":604800,"qualification_semantics":"REVIEW_WINDOW_ELAPSED_NOT_SUCCESS"},"block_day30":false,"grant_xp":false,"grant_attribute":false},
+  "privacy":{"pattern_names_costs_replacements":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "safety":{"pattern_is_not_identity":true,"doll_is_not_body_soul_dignity":true,"self_punishment":false,"physical_harm":false,"fire_required":false,"cutting_required":false,"destruction_is_merit_measure":false},
+  "epistemic":{"ritual_closure_is_behavior_change_proof":false,"emotional_release_is_behavior_change_proof":false,"followup_elapsed_is_success":false,"behavioral_change_requires_observation":true},
+  "cycle_progress":{"cycle":"Lelahel","days":[26,27,28,29,30],"expected_after_day":4,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D029-COMP-V1","validator":"day029_v1","registry":"PENDING","attribute_application":"NO_EXECUTABLE_GAIN_RULE","real_world_action_contracts":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+}
