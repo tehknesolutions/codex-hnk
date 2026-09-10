@@ -1,9 +1,11 @@
 {
-  "id":"HNK-KETHER-D020-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":20,"quest_id":"HNK-KETHER-D020-V1","canonical_source_sha":"9d901354b737c2d724ff6a1aaf336d5a411fbd55","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "id":"HNK-KETHER-D020-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":20,"quest_id":"HNK-KETHER-D020-V1","canonical_source_sha":"9d901354b737c2d724ff6a1aaf336d5a411fbd55","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":100,"attribute_gain":0,"angel":"Elemiah"},
   "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","audio_recording":"NOT_REQUIRED_V1"},
-  "safety":{"quietude_not_proof":true,"mental_blankness_not_required":true,"thoughts_allowed":true,"breath_holding_prohibited":true,"eyes_optional":true,"safe_early_stop_middle":true},
+  "safety":{"quietude_not_proof":true,"mental_blankness_not_required":true,"thoughts_allowed":true,"breath_holding_prohibited":true,"eyes_optional":true,"safe_early_stop_middle":true,"foreground_only_timing":true},
   "cycle_progress":{"cycle":"Elemiah","days":[16,17,18,19,20],"expected_after_day":5,"fragment":4,"expected_lit":true,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D020-COMP-V1","validator":"day020_v1","registry":"pending"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+  "backend":{"completion_contract":"HNK-KETHER-D020-COMP-V1","validator":"day020_v1","registry":"active"},
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","web_route":"/day-020","expo_route":"/day-020","vault_sync_before_completion":true,"authoritative_elemiah_assert":5},
+  "smoke":{"rollback_only":true,"xp":"1000->1100","xp_awarded":100,"current_day":21,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"gain_rule_count":0,"elemiah":"5/5","fragment_4_lit":true,"crown":"4/7","progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT"],"synthetic_user_not_persisted":true},
+  "release_blockers":["DEVICE_BROWSER_QA"],"proof":"PASS_TECHNICALLY_ACTIVE__WEB_EXPO_E2EE__ELEMIAH_5_OF_5__FRAGMENT_4_LIT__DEVICE_QA_PENDING"
 }
