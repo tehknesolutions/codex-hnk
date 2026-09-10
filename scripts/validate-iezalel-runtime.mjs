@@ -31,7 +31,7 @@ check('Day064 enforces 5m writing blocks and keeps prose in Vault', has(d64, 'ta
 check('Day065 never uploads photo/third-party data and models conditional consent', has(d65, 'photo_not_uploaded') && has(d65, 'third_party_identity_not_stored') && has(d65, 'third_party_symptoms_not_collected') && has(d65, 'consent_applicable') && has(d65, 'consent_confirmed_if_applicable') && !has(d65, 'expo-image-picker'));
 check('Day066 renders exact frozen Gneo Geo master and preserves node/circuit distinction', has(d66, 'GneoGeoMasterV1') && has(d66, 'GNEO_GEO_MASTER_ID') && has(d66, 'nodes_circuits_kept_distinct') && has(d66, 'no_route_invented') && has(d66, 'external_travel_not_claimed'));
 check('Gneo renderer pins canonical asset ID and checksum', has(gneo, "cockpit-gneo-geo-hnk-master-v1.svg") && has(gneo, '9b3c8f3f8292100d148e7a698e8a8d978adee6f1779412a1ba833603c7fc62e6'));
-check('Gneo renderer preserves frozen coordinates', ['250,27 335,178 165,178','250,237 165,86 335,86','cx="290"','cy="100"','cx="250" cy="132"'].every((x) => has(gneo, x)));
+check('Gneo renderer preserves frozen geometry and node coordinates', ['250,27 335,178 165,178','250,237 165,86 335,86','cx: 290, cy: 100','cx: 250, cy: 170','cx: 210, cy: 100','cx: 250, cy: 120','cx: 180, cy: 140','cx: 250, cy: 48','cx: 320, cy: 140','cx: 250, cy: 92','cx="250" cy="132" r="7"'].every((x) => has(gneo, x)));
 
 check('DB binds immutable canonical SHAs 062-066', [
   '56a8aaafbd2d602324ecfb9c06da39563fefaaf6',
