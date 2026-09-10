@@ -1,9 +1,12 @@
 {
   "id":"HNK-KETHER-D026-COMPLETION-SERVICE-V1","day":26,
   "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D026-COMP-V1","quest_definition_id":"HNK-KETHER-D026-V1","validator_key":"day026_v1","status":"PENDING","review":"PENDING"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D026-COMP-V1","quest_definition_id":"HNK-KETHER-D026-V1","validator_key":"day026_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"1d3a86fdbee1dad1f7cf7d1590b3e1b63e3f0496","xp":100,"attribute_gain":0},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "validator_tests":{"all_absent":"PASS","control_may_exceed_active":"PASS","plaintext_extra":"REJECTED_day026_jachin_unknown_field","active_419_seconds":"REJECTED_day026_active_requires_420_seconds","ajna_brodmann_equivalence":"REJECTED_day026_middle_requirements"},
   "epistemic":{"active_must_exceed_control":false,"ajna_and_brodmann10_identical":false,"phenomenology_is_neural_or_spiritual_proof":false,"special_sensation_required":false},
-  "cycle":{"angel":"Lelahel","expected_completed_days":1,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"}
+  "cycle":{"angel":"Lelahel","expected_completed_days":1,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_total_before":1000,"xp_total_after":1100,"xp_awarded":100,"current_day":27,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"attribute_gain_rule_count":0,"progression_events":["NEXT_DAY_UNLOCKED"],"lelahel":{"completed_days":1,"lit":false},"fragments_lit":5,"synthetic_user_not_persisted":true},
+  "migration":{"version":"20260910210233","name":"day026_completion_contract_v1_reviewed_and_active"}
 }
