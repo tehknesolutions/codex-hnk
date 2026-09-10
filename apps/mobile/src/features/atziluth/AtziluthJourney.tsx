@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { useHnkAuth } from '../auth/AuthContext';
+import { BinahJourney } from '../binah/BinahJourney';
 import { ChokmahJourney } from '../chokmah/ChokmahJourney';
 import { KetherJourney } from '../kether/KetherJourney';
 
@@ -46,12 +47,13 @@ export function AtziluthJourney() {
 
   if (currentDay <= 36) return <KetherJourney />;
   if (currentDay <= 73) return <ChokmahJourney />;
+  if (currentDay <= 109) return <BinahJourney />;
 
   return (
     <View style={styles.threshold}>
-      <Text style={styles.eyebrow}>ATZILUTH · LEVEL 3 · {currentSephira.toUpperCase()}</Text>
+      <Text style={styles.eyebrow}>ATZILUTH · PÓS-BINAH · {currentSephira.toUpperCase()}</Text>
       <Text style={styles.title}>{title}</Text>
-      <Text style={styles.body}>A progressão oficial alcançou o Dia {String(currentDay).padStart(3, '0')}. O roteador já reconhece Binah; a experiência do Capítulo 3 será conectada à mesma autoridade server-side sem auto-iniciar o primeiro Dia.</Text>
+      <Text style={styles.body}>A progressão oficial alcançou o Dia {String(currentDay).padStart(3, '0')}. Kether, Chokmah e a rota de Binah compartilham a mesma autoridade server-side; nenhum próximo mundo é auto-iniciado pelo cliente.</Text>
     </View>
   );
 }
