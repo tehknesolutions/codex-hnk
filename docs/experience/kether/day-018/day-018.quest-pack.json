@@ -1,9 +1,10 @@
 {
-  "id":"HNK-KETHER-D018-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":18,"quest_id":"HNK-KETHER-D018-V1","canonical_source_sha":"152f91da1e7442f645687ba5b72c9977496a1e55","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "id":"HNK-KETHER-D018-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":18,"quest_id":"HNK-KETHER-D018-V1","canonical_source_sha":"152f91da1e7442f645687ba5b72c9977496a1e55","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"attribute_gain":0,"angel":"Elemiah"},
   "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","audio_recording":"NOT_ENABLED_V1"},
   "safety":{"responses":["STRONG","WEAK","ABSENT"],"absence_valid":true,"special_sensation_required":false,"forced_voice_prohibited":true,"breath_retention_hyperventilation_prohibited":true,"body_sensation_not_diagnosis":true,"body_sensation_not_automatic_spiritual_activation":true},
   "cycle_progress":{"cycle":"Elemiah","days":[16,17,18,19,20],"expected_after_day":3,"fragment":4,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D018-COMP-V1","validator":"day018_v1","registry":"pending"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+  "backend":{"completion_contract":"HNK-KETHER-D018-COMP-V1","validator":"day018_v1","registry":"active","smoke":{"xp_awarded":150,"xp_total_before":1000,"xp_total_after":1150,"current_day":19,"attribute_event_count":0,"attribute_gain_rule_count":0,"elemiah_completed_days":3,"elemiah_lit":false,"fragments_lit":3,"rollback_only":true}},
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","foreground_only_timing":true,"safe_early_stop":true,"audio_required":false,"all_absent_valid":true,"authoritative_elemiah_assert":3},
+  "release_blockers":["DEVICE_BROWSER_QA"],"proof":"PASS_ACTIVE_WEB_EXPO_E2EE_ALL_ABSENT_VALID_BACKEND__DEVICE_BROWSER_QA_PENDING"
 }
