@@ -19,8 +19,10 @@ import {
 import {
   completeCodexDay,
   interruptPracticeSession,
+  savePortalPracticeRecord,
   savePracticeRecord,
   startPracticeSession,
+  type PortalSafeEvidence,
   type PracticeSessionRecord,
 } from '@hnk/supabase-client';
 import { useHnkAuth } from '../auth/AuthContext';
@@ -41,6 +43,7 @@ function remoteSafeEvidence(evidence: SafeEvidence): RemoteSafeRecord {
 export interface SealDayInput {
   evidence?: SafeEvidence;
   remoteEvidence?: RemoteSafeRecord;
+  portalRemoteEvidence?: PortalSafeEvidence;
   metrics?: RemoteSafeRecord;
   durationSeconds?: number | null;
   localRecordHash?: string | null;
@@ -199,6 +202,7 @@ export function useHnkDayRuntime(definition: DayDefinition) {
   const seal = useCallback(async (input: SealDayInput = {}) => {
     if (!runtime || !practice) throw new Error('practice_session_required');
     if (!auth.client || auth.phase !== 'signed-in') throw new Error('authentication_required');
+    if (input.remoteEvidence && input.portalRemoteEvidence) throw new Error('multiple_remote_evidence_adapters_forbidden');
 
     setBusy(true);
     setError(null);
@@ -207,15 +211,26 @@ export function useHnkDayRuntime(definition: DayDefinition) {
       const pending = markEvidencePending(withPatch, definition);
       const evidence = input.remoteEvidence ?? remoteSafeEvidence(pending.evidence);
 
-      await savePracticeRecord(auth.client, {
-        sessionId: practice.id,
-        durationSeconds: input.durationSeconds ?? null,
-        metrics: input.metrics ?? {},
-        evidence,
-        readyForCompletion: true,
-        endedAt: new Date().toISOString(),
-        localRecordHash: input.localRecordHash ?? null,
-      });
+      if (input.portalRemoteEvidence) {
+        await savePortalPracticeRecord(auth.client, {
+          sessionId: practice.id,
+          durationSeconds: input.durationSeconds ?? null,
+          metrics: input.metrics ?? {},
+          evidence: input.portalRemoteEvidence,
+          endedAt: new Date().toISOString(),
+          localRecordHash: input.localRecordHash ?? null,
+        });
+      } else {
+        await savePracticeRecord(auth.client, {
+          sessionId: practice.id,
+          durationSeconds: input.durationSeconds ?? null,
+          metrics: input.metrics ?? {},
+          evidence,
+          readyForCompletion: true,
+          endedAt: new Date().toISOString(),
+          localRecordHash: input.localRecordHash ?? null,
+        });
+      }
 
       const completion = await completeCodexDay(auth.client, {
         day: definition.day,
