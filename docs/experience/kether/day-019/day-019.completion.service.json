@@ -1,0 +1,10 @@
+{
+  "id":"HNK-KETHER-D019-COMPLETION-SERVICE-V1","day":19,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D019-COMP-V1","quest_definition_id":"HNK-KETHER-D019-V1","validator_key":"day019_v1","status":"draft","review":"PENDING"},
+  "canonical":{"source_sha":"b37705700bcf5e0a976b5eba65af3f48ad4b7907","xp":150},
+  "progression":{"matrix_version":"1.0.0","primary_attribute":"INT","secondary_attribute":"HIP","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","raw_audio_server_side":false,"media_vault":"DEVICE_BOUND_LOCAL_AES_256_GCM","server_receives_media":"NO"},
+  "analysis":{"schema":"hnk-acoustic-analysis-v1","processed_on_client":true,"server_receives_safe_metrics":true},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+}
