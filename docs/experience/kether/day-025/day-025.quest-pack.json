@@ -1,0 +1,12 @@
+{
+  "id":"HNK-KETHER-D025-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":25,"quest_id":"HNK-KETHER-D025-V1","canonical_source_sha":"88336e31521c64b3b43aae06d6d5e221fc77a490","release_state":"DRAFT__AR_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"attribute_gain":0,"angel":"Mahasiah"},
+  "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0","family":"USUI_KANJI","tibetan_dumo_substitution":false},
+  "ar":{"real_world_ar_required":true,"flat_overlay_fallback_allowed":false,"tracking_modes":["WEBXR_IMMERSIVE_AR","NATIVE_ARCORE_ARKIT"],"active_tracked_seconds":420,"control_camera_seconds":420,"middle_tracked_seconds":420,"middle_silent_seconds":60,"four_points":["P1","P2","P3","P4"],"camera_frames_server_side":false,"camera_frames_persisted":false},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"camera_frames_server_side":false,"camera_frames_persisted":false},
+  "safety":{"foreground_only_timing":true,"tracking_required_for_ar_timer":true,"single_episode_definitive":false,"active_must_exceed_control":false,"environmental_signature_is_objective_energy_proof":false},
+  "cycle_progress":{"cycle":"Mahasiah","days":[21,22,23,24,25],"expected_after_day":5,"fragment":5,"expected_lit":true,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D025-COMP-V1","validator":"day025_v1","registry":"pending","attribute_application":"NO_EXECUTABLE_GAIN_RULE"},
+  "runtime":{"web":"PENDING_WEBXR_RUNTIME","expo":"PENDING_NATIVE_AR_RUNTIME"},
+  "release_blockers":["BACKEND_REVIEW","WEBXR_AR_RUNTIME","NATIVE_AR_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+}
