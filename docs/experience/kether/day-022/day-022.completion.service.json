@@ -1,11 +1,12 @@
 {
   "id":"HNK-KETHER-D022-COMPLETION-SERVICE-V1","day":22,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D022-COMP-V1","quest_definition_id":"HNK-KETHER-D022-V1","validator_key":"day022_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D022-COMP-V1","quest_definition_id":"HNK-KETHER-D022-V1","validator_key":"day022_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"dd2d6f906b57050fb568b5f82b806f456acdd3af","xp":150},
   "progression":{"matrix_version":"1.0.0","primary_attribute":"SIN","secondary_attribute":"PER","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20,"source_note":"symbol study completion; not supernatural effect"},
   "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0","stroke_order_sha256":"52cf6921ccd6ede63a6f83d05b31faf787d2881b99d5b8ce1ee6095a86b4fe6b"},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "validator_tests":{"all_absent":"PASS","wrong_master_checksum":"REJECTED_day022_master_checksum_invalid","dumo_substitution":"REJECTED_day022_reference_boundary_required","plaintext_extra":"REJECTED_day022_jachin_unknown_field","sensation_chasing":"REJECTED_day022_boaz_requirements","god_authority_missing":"REJECTED_day022_boaz_requirements","symbol_replaces_god":"REJECTED_day022_middle_requirements"},
   "cycle":{"angel":"Mahasiah","expected_completed_days":2,"fragment":5,"expected_lit":false,"crown_expected_after":"4/7","authoritative_source":"get_kether_crown_state"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_total_before":1000,"xp_total_after":1150,"xp_awarded":150,"current_day":23,"sin_before":5,"sin_after":6,"per_before":5,"per_after":5,"completion_count":1,"xp_event_count":1,"attribute_event_count":1,"attribute_event":{"attribute_code":"SIN","amount":1,"secondary_attribute":"PER","matrix_version":"1.0.0"},"progression_events":["NEXT_DAY_UNLOCKED"],"mahasiah":{"completed_days":2,"lit":false},"fragments_lit":4,"synthetic_user_not_persisted":true}
 }
