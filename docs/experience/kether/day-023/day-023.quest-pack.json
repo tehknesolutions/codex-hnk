@@ -1,0 +1,10 @@
+{
+  "id":"HNK-KETHER-D023-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":23,"quest_id":"HNK-KETHER-D023-V1","canonical_source_sha":"1b7e27c69a7d4b9eaaf548043ad3b781e331f516","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"attribute_gain":0,"angel":"Mahasiah"},
+  "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0","family":"USUI_KANJI","tibetan_dumo_substitution":false},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY"},
+  "safety":{"active_seconds":420,"control_seconds":300,"middle_active_seconds":420,"middle_silent_seconds":60,"active_must_exceed_control":false,"special_sensation_required":false,"clinical_claim_from_internal_result":false,"biological_effect_established":false,"foreground_only_timing":true},
+  "cycle_progress":{"cycle":"Mahasiah","days":[21,22,23,24,25],"expected_after_day":3,"fragment":5,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D023-COMP-V1","validator":"day023_v1","registry":"pending","attribute_application":"NO_EXECUTABLE_GAIN_RULE"},
+  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+}
