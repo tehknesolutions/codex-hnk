@@ -16,6 +16,7 @@ on:
       - 'scripts/validate-mebahel-runtime.mjs'
       - 'scripts/validate-chokmah-portal-runtime.mjs'
       - 'scripts/validate-hariel-runtime.mjs'
+      - 'scripts/validate-hakamiah-runtime.mjs'
       - 'scripts/validate-audio-contract.mjs'
       - 'supabase/migrations/**'
       - '.github/workflows/g7-runtime.yml'
@@ -72,6 +73,9 @@ jobs:
 
       - name: Validate Hariel runtime contract
         run: pnpm validate:hariel
+
+      - name: Validate Hakamiah runtime contract
+        run: pnpm validate:hakamiah
 
       - name: Typecheck audio contract
         run: pnpm --filter @hnk/audio-contract typecheck
