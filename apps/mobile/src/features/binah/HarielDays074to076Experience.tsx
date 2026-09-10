@@ -71,7 +71,7 @@ export function HarielDays074to076Experience({ day }: { day: HarielLanguageDay }
   const phase=controller.phase?.id;
   if(controller.loading) return <View style={s.loading}><Text style={s.meta}>ABRINDO {meta.label}</Text></View>;
 
-  const evidence = day===74 ? {
+  const evidence: Record<string, boolean | number> = day===74 ? {
     protocol_completed:true,return_confirmed:true,three_accusations_recorded:true,three_reformulations_recorded:true,fact_inference_separated:factInference,uncertainty_preserved:uncertainty,false_memory_not_claimed:falseMemory,diagnosis_not_claimed:diagnosis,responsibility_preserved:responsibility,vault_saved:vault,safety_clear:safety,accusations_count:3,reformulations_count:3,
   } : day===75 ? {
     protocol_completed:true,return_confirmed:true,five_verbs_recorded:true,five_operational_definitions_recorded:true,five_criteria_recorded:true,unknowns_allowed:unknowns,next_action_defined:nextAction.trim().length>1,productivity_compulsion_avoided:antiCompulsion,personal_value_not_scored:personalValue,vault_saved:vault,safety_clear:safety,verbs_count:5,operational_definitions_count:5,criteria_count:5,
