@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.4.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.5.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-10';
 
@@ -53,107 +53,100 @@ const RAW_AUTHORED_CANDIDATES = [
     id,
     transliteration,
     meaning: { pt: `${pt}; numeral cardinal falado ${value}`, en: `${en}; spoken cardinal numeral ${value}` },
-    authority: 'CANDIDATE',
-    certainty: 'AUTHORED_PRIMITIVE',
-    sourceClass: 'AUTHORING_PROPOSAL',
-    historicalRecoveryClaim: false,
-    lessons: ['L01'],
-    morphology: {
-      schema: 'PRIMITIVE_AUTHORED_NUMERAL_0_9',
-      leftState: `CARDINAL_VALUE_${value}_DEFINED_BEFORE_FORM_SELECTION`,
-      rightState: 'NO_RECOVERED_NUMERAL_MORPHOLOGY_CLAIMED',
-      productivity: 'NON_PRODUCTIVE_SINGLE_CANDIDATE',
-    },
-    provenance: [
-      'simpleway-hnk/proposals/language/HNK_SPOKEN_NUMERAL_0_9_CANDIDATES_V1.json',
-      'simpleway-hnk/curriculum/cycle-01/L01-kether/validation/spoken-numeral-0-9-candidate-promotion-batch.v1.json',
-    ],
-    notes: [
-      `New governed primitive for cardinal value ${value}; not recovered historical HNK.`,
-      'Selected under the approved 0-9 candidate-set constraints; numerology and glyph appearance did not assign the form.',
-      'Registration does not define cardinal composition for 10+, a year unit, or a universal number grammar.',
-      'Starts and remains CANDIDATE pending later language-authority promotion.',
-    ],
+    authority: 'CANDIDATE', certainty: 'AUTHORED_PRIMITIVE', sourceClass: 'AUTHORING_PROPOSAL', historicalRecoveryClaim: false, lessons: ['L01'],
+    morphology: { schema: 'PRIMITIVE_AUTHORED_NUMERAL_0_9', leftState: `CARDINAL_VALUE_${value}_DEFINED_BEFORE_FORM_SELECTION`, rightState: 'NO_RECOVERED_NUMERAL_MORPHOLOGY_CLAIMED', productivity: 'NON_PRODUCTIVE_SINGLE_CANDIDATE' },
+    provenance: ['simpleway-hnk/proposals/language/HNK_SPOKEN_NUMERAL_0_9_CANDIDATES_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/validation/spoken-numeral-0-9-candidate-promotion-batch.v1.json'],
+    notes: [`New governed primitive for cardinal value ${value}; not recovered historical HNK.`,'Selected under the approved 0-9 candidate-set constraints; numerology and glyph appearance did not assign the form.','Registration does not define cardinal composition for 10+, a year unit, or a universal number grammar.','Starts and remains CANDIDATE pending later language-authority promotion.'],
   })),
+  {
+    id:'AUTH-015', transliteration:'KALA',
+    meaning:{pt:'domínio de nome pessoal; componente lexical de nome em uso iniciante escopado',en:'personal-name domain; name lexical component for scoped beginner use'},
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_RECOVERED_PHRASE_AND_LEXICAL_FAMILY',leftState:'PHR-001_NAME_QUESTION_COMPONENT',rightState:'VAMAKALA_FROZEN_NAME_FAMILY_SUPPORT',productivity:'NON_PRODUCTIVE_SINGLE_CANDIDATE'},
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/validation/vocabulary-gap-8-form-mapping-human-batch.v1.json'],
+    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','KALA remains scoped to the personal-name domain pending broader evidence.','No decomposition rule for VAMAKALA is canonized by this entry.'],
+  },
+  {
+    id:'AUTH-016', transliteration:'AN',
+    meaning:{pt:'referente de primeira pessoa / eu em uso iniciante escopado',en:'first-person referent / I for scoped beginner use'},
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-002_APPROXIMATE_I_CONTEXT',rightState:'PHR-007_REPEATED_DECLARATIVE_POSITION',productivity:'CLOSED_LIST_ONLY'},
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
+    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','First-person role is authorized for scoped L01 use only; person/number paradigm is not globally canonized.'],
+  },
+  {
+    id:'AUTH-017', transliteration:'EN',
+    meaning:{pt:'referente de segunda pessoa / você em uso iniciante escopado',en:'second-person referent / you for scoped beginner use'},
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-003_SECOND_PERSON_QUESTION_CONTEXT',rightState:'REPEATED_ADDRESSEE_POSITION_PHR-004_006',productivity:'CLOSED_LIST_ONLY'},
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
+    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Subject versus possessive behavior remains unresolved outside scoped L01 constructions.'],
+  },
+  {
+    id:'AUTH-018', transliteration:'KU',
+    meaning:{pt:'seletor interrogativo de conteúdo em uso escopado; não equivale a uma palavra WH única',en:'scoped interrogative content selector; not equivalent to one fixed WH word'},
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_MINIMAL_CONTRAST',leftState:'PHR-003_HENUVOKODAN_OBJECT',rightState:'PHR-006_KU_ZAMO_CONTENT_PHRASE',productivity:'CLOSED_LIST_ONLY'},
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'],
+    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Must not be globally glossed as WHAT, WHICH, WHO, WHERE or HOW.','Any productive extension remains separately governed.'],
+  },
+  {
+    id:'AUTH-019', transliteration:'KE',
+    meaning:{pt:'operador / marcador de pergunta em posição final de oração em uso escopado',en:'question operator / marker in clause-final position for scoped use'},
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_CONTRAST',leftState:'KE_FINAL_IN_QUESTION_LIKE_PHR-001_003_006',rightState:'ABSENT_FROM_DECLARATIVE_PHR-002_007',productivity:'CLOSED_LIST_ONLY'},
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'],
+    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Clause-final question behavior is authorized for scoped L01 constructions only; universal HNK interrogative grammar is not claimed.'],
+  },
+  {
+    id:'AUTH-020', transliteration:'ZAMI',
+    meaning:{pt:'falar / usar linguagem em contexto comunicativo escopado',en:'speak / use language in scoped communicative context'},
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_REPEATED_LANGUAGE_USE_CONTEXTS',leftState:'PHR-002_APPROXIMATE_SPEAK_USE_LANGUAGE',rightState:'PHR-003_006_007_REPEATED_PREDICATE_POSITION',productivity:'CLOSED_LIST_ONLY'},
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
+    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Semantic range remains speak/use-language in scoped L01 communicative contexts.'],
+  },
 ];
 
 function compileCandidate(raw) {
   const glyphIds = transliterationToGlyphIds(raw.transliteration, { strict: true }).glyphIds.filter((id) => id !== 'SPACE');
   const ipaSegments = glyphIds.map((glyphId) => getGlyph(glyphId).phonemeIpa);
-  return Object.freeze({
-    ...raw,
-    meaning: Object.freeze({ ...raw.meaning }),
-    lessons: Object.freeze([...raw.lessons]),
-    morphology: Object.freeze({ ...raw.morphology }),
-    provenance: Object.freeze([...raw.provenance]),
-    notes: Object.freeze([...raw.notes]),
-    glyphIds: Object.freeze(glyphIds),
-    ipaSegments: Object.freeze(ipaSegments),
-    ipa: ipaSegments.join(''),
-  });
+  return Object.freeze({...raw,meaning:Object.freeze({...raw.meaning}),lessons:Object.freeze([...raw.lessons]),morphology:Object.freeze({...raw.morphology}),provenance:Object.freeze([...raw.provenance]),notes:Object.freeze([...raw.notes]),glyphIds:Object.freeze(glyphIds),ipaSegments:Object.freeze(ipaSegments),ipa:ipaSegments.join('')});
 }
 
 export const HNK_AUTHORED_CANDIDATES = Object.freeze(RAW_AUTHORED_CANDIDATES.map(compileCandidate));
 export const HNK_AUTHORED_CANDIDATES_BY_FORM = Object.freeze(Object.fromEntries(HNK_AUTHORED_CANDIDATES.map((entry) => [entry.transliteration, entry])));
-export const HNK_AUTHORED_REGISTRY_STATS = Object.freeze({
-  candidates: HNK_AUTHORED_CANDIDATES.length,
-  cycle1Candidates: HNK_AUTHORED_CANDIDATES.filter((entry) => entry.lessons.some((lesson) => /^L0[1-7]$/.test(lesson))).length,
-});
+export const HNK_AUTHORED_REGISTRY_STATS = Object.freeze({candidates:HNK_AUTHORED_CANDIDATES.length,cycle1Candidates:HNK_AUTHORED_CANDIDATES.filter((entry) => entry.lessons.some((lesson) => /^L0[1-7]$/.test(lesson))).length});
 
-export function getAuthoredCandidate(value) {
-  return typeof value === 'string' ? HNK_AUTHORED_CANDIDATES_BY_FORM[value.trim().toUpperCase()] : undefined;
-}
+export function getAuthoredCandidate(value) { return typeof value === 'string' ? HNK_AUTHORED_CANDIDATES_BY_FORM[value.trim().toUpperCase()] : undefined; }
 
 export function validateHnkAuthoredRegistry() {
-  const errors = [];
-  const recoveredForms = new Set(HNK_MASTER_LEXICON.map((entry) => entry.transliteration));
-  const ids = new Set();
-  const forms = new Set();
-
+  const errors=[];
+  const recoveredForms=new Set(HNK_MASTER_LEXICON.map((entry)=>entry.transliteration));
+  const ids=new Set(); const forms=new Set();
   for (const entry of HNK_AUTHORED_CANDIDATES) {
-    if (entry.authority !== 'CANDIDATE') errors.push(`${entry.id} must start at CANDIDATE`);
-    if (entry.sourceClass !== 'AUTHORING_PROPOSAL') errors.push(`${entry.id} sourceClass drift`);
-    if (entry.historicalRecoveryClaim !== false) errors.push(`${entry.id} must not claim historical recovery`);
-    if (ids.has(entry.id)) errors.push(`Duplicate authored id ${entry.id}`);
-    if (forms.has(entry.transliteration)) errors.push(`Duplicate authored form ${entry.transliteration}`);
-    if (recoveredForms.has(entry.transliteration)) errors.push(`Authored candidate collides with recovered Master Lexicon: ${entry.transliteration}`);
-    ids.add(entry.id);
-    forms.add(entry.transliteration);
-    const roundTrip = transliterationToGlyphIds(entry.transliteration, { strict: true }).glyphIds.filter((id) => id !== 'SPACE');
-    if (JSON.stringify(roundTrip) !== JSON.stringify(entry.glyphIds)) errors.push(`${entry.id} HNK40 round-trip drift`);
+    if(entry.authority!=='CANDIDATE')errors.push(`${entry.id} must start at CANDIDATE`);
+    if(entry.sourceClass!=='AUTHORING_PROPOSAL')errors.push(`${entry.id} sourceClass drift`);
+    if(entry.historicalRecoveryClaim!==false)errors.push(`${entry.id} must not claim historical recovery`);
+    if(ids.has(entry.id))errors.push(`Duplicate authored id ${entry.id}`);
+    if(forms.has(entry.transliteration))errors.push(`Duplicate authored form ${entry.transliteration}`);
+    if(recoveredForms.has(entry.transliteration))errors.push(`Authored candidate collides with recovered Master Lexicon: ${entry.transliteration}`);
+    ids.add(entry.id); forms.add(entry.transliteration);
+    const roundTrip=transliterationToGlyphIds(entry.transliteration,{strict:true}).glyphIds.filter((id)=>id!=='SPACE');
+    if(JSON.stringify(roundTrip)!==JSON.stringify(entry.glyphIds))errors.push(`${entry.id} HNK40 round-trip drift`);
   }
-
-  const fixed = {
-    KUVAN:['G23','G05','G31','G01','G12'],
-    VALA:['G31','G01','G14','G01'],
-    KUON:['G23','G05','G04','G12'],
-    NE:['G12','G02'],
-    BIZO:['G18','G03','G32','G04'],
-    DUVE:['G19','G05','G31','G02'],
-    HOYU:['G07','G04','G40','G05'],
-    KETI:['G23','G02','G22','G03'],
-    LUSO:['G14','G05','G26','G04'],
-    MUPI:['G11','G05','G21','G03'],
-    NURA:['G12','G05','G15','G01'],
-    PEVU:['G21','G02','G31','G05'],
-    TOMI:['G22','G04','G11','G03'],
-    ZOKA:['G32','G04','G23','G01'],
+  const fixed={
+    KUVAN:['G23','G05','G31','G01','G12'],VALA:['G31','G01','G14','G01'],KUON:['G23','G05','G04','G12'],NE:['G12','G02'],
+    BIZO:['G18','G03','G32','G04'],DUVE:['G19','G05','G31','G02'],HOYU:['G07','G04','G40','G05'],KETI:['G23','G02','G22','G03'],LUSO:['G14','G05','G26','G04'],MUPI:['G11','G05','G21','G03'],NURA:['G12','G05','G15','G01'],PEVU:['G21','G02','G31','G05'],TOMI:['G22','G04','G11','G03'],ZOKA:['G32','G04','G23','G01'],
+    KALA:['G23','G01','G14','G01'],AN:['G01','G12'],EN:['G02','G12'],KU:['G23','G05'],KE:['G23','G02'],ZAMI:['G32','G01','G11','G03']
   };
-  for (const [form, glyphIds] of Object.entries(fixed)) {
-    const entry = HNK_AUTHORED_CANDIDATES_BY_FORM[form];
-    if (!entry) errors.push(`${form} candidate missing`);
-    else if (JSON.stringify(entry.glyphIds) !== JSON.stringify(glyphIds)) errors.push(`${form} glyph sequence drift`);
-  }
-
-  if (HNK_AUTHORED_CANDIDATES.length !== 14) errors.push(`Expected 14 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
-  const numerals = HNK_AUTHORED_CANDIDATES.slice(4);
-  if (numerals.length !== 10) errors.push(`Expected 10 numeral candidates, got ${numerals.length}`);
-  for (const entry of numerals) {
-    if (entry.certainty !== 'AUTHORED_PRIMITIVE') errors.push(`${entry.id} numeral certainty drift`);
-    if (entry.morphology.schema !== 'PRIMITIVE_AUTHORED_NUMERAL_0_9') errors.push(`${entry.id} numeral formation drift`);
-    if (entry.morphology.productivity !== 'NON_PRODUCTIVE_SINGLE_CANDIDATE') errors.push(`${entry.id} numeral productivity drift`);
-    if (!entry.lessons.includes('L01')) errors.push(`${entry.id} L01 numeral binding missing`);
-  }
-
-  return { ok: errors.length === 0, errors };
+  for(const [form,glyphIds] of Object.entries(fixed)){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(!entry)errors.push(`${form} candidate missing`);else if(JSON.stringify(entry.glyphIds)!==JSON.stringify(glyphIds))errors.push(`${form} glyph sequence drift`);}
+  if(HNK_AUTHORED_CANDIDATES.length!==20)errors.push(`Expected 20 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
+  const numerals=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_NUMERAL_0_9');
+  if(numerals.length!==10)errors.push(`Expected 10 numeral candidates, got ${numerals.length}`);
+  for(const entry of numerals){if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} numeral certainty drift`);if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} numeral productivity drift`);if(!entry.lessons.includes('L01'))errors.push(`${entry.id} L01 numeral binding missing`);}
+  const evidenceMapped=['KALA','AN','EN','KU','KE','ZAMI'];
+  for(const form of evidenceMapped){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(entry?.certainty!=='AUTHORED_EVIDENCE_MAPPING')errors.push(`${form} evidence mapping certainty drift`);if(entry?.historicalRecoveryClaim!==false)errors.push(`${form} historical recovery boundary drift`);}
+  for(const recovered of ['VANI','VAME'])if(HNK_AUTHORED_CANDIDATES_BY_FORM[recovered])errors.push(`${recovered} must remain recovered-only, not duplicated in authored registry`);
+  return {ok:errors.length===0,errors};
 }
