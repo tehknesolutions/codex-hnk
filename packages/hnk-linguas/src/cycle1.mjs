@@ -28,11 +28,8 @@ const AUTHORITY_ORDER = Object.freeze(['FROZEN','WATCH','CANDIDATE','GATE','BRID
 const CYCLE1_IDS = new Set(HNK_CYCLE1_LESSONS.map((lesson) => lesson.lessonId));
 
 function authorityCounts(entries) {
-  return Object.freeze(Object.fromEntries(
-    AUTHORITY_ORDER.map((authority) => [authority, entries.filter((entry) => entry.authority === authority).length]),
-  ));
+  return Object.freeze(Object.fromEntries(AUTHORITY_ORDER.map((authority) => [authority, entries.filter((entry) => entry.authority === authority).length])));
 }
-
 function isBoundToLesson(entry, lessonId) {
   return entry.lessons.includes(lessonId) || HNK_CYCLE1_CURRICULUM_REBINDS[lessonId].includes(entry.id);
 }
@@ -59,28 +56,18 @@ export const HNK_CYCLE1_LANGUAGE_COVERAGE = Object.freeze(HNK_CYCLE1_LESSONS.map
     authoredCandidateIds: Object.freeze(authoredCandidates.map((entry) => entry.id)),
     phraseIds: Object.freeze(phrases.map((entry) => entry.id)),
     authorityCounts: authorityCounts(lexemes),
-    sourceState: lexemes.length > 0 || authoredCandidates.length > 0
-      ? 'RECOVERED_GOVERNED_OR_AUTHORED_ASSETS_PRESENT'
-      : 'NO_GOVERNED_LANGUAGE_ASSETS',
+    sourceState: lexemes.length > 0 || authoredCandidates.length > 0 ? 'RECOVERED_GOVERNED_OR_AUTHORED_ASSETS_PRESENT' : 'NO_GOVERNED_LANGUAGE_ASSETS',
   });
 }));
 
-export const HNK_CYCLE1_BOUND_LEXEMES = Object.freeze(
-  HNK_MASTER_LEXICON.filter((entry) => entry.lessons.some((lessonId) => CYCLE1_IDS.has(lessonId))),
-);
-export const HNK_CYCLE1_UNBOUND_LEXEMES = Object.freeze(
-  HNK_MASTER_LEXICON.filter((entry) => !entry.lessons.some((lessonId) => CYCLE1_IDS.has(lessonId))),
-);
-export const HNK_CYCLE1_EMPTY_LESSONS = Object.freeze(
-  HNK_CYCLE1_LANGUAGE_COVERAGE.filter((lesson) => lesson.languageAssetCount === 0).map((lesson) => lesson.lessonId),
-);
+export const HNK_CYCLE1_BOUND_LEXEMES = Object.freeze(HNK_MASTER_LEXICON.filter((entry) => entry.lessons.some((lessonId) => CYCLE1_IDS.has(lessonId))));
+export const HNK_CYCLE1_UNBOUND_LEXEMES = Object.freeze(HNK_MASTER_LEXICON.filter((entry) => !entry.lessons.some((lessonId) => CYCLE1_IDS.has(lessonId))));
+export const HNK_CYCLE1_EMPTY_LESSONS = Object.freeze(HNK_CYCLE1_LANGUAGE_COVERAGE.filter((lesson) => lesson.languageAssetCount === 0).map((lesson) => lesson.lessonId));
 
 const governedUniqueLanguageAssets = HNK_CYCLE1_BOUND_LEXEMES.length + HNK_CYCLE1_AUTHORED_CANDIDATES.length;
 
 export const HNK_CYCLE1_LANGUAGE_GATE = Object.freeze({
-  decision: governedUniqueLanguageAssets >= HNK_CYCLE1_VOCABULARY_TARGET && HNK_CYCLE1_EMPTY_LESSONS.length === 0
-    ? 'READY_FOR_COMPLETION_REVIEW'
-    : 'HOLD_INCOMPLETE_BINDING',
+  decision: governedUniqueLanguageAssets >= HNK_CYCLE1_VOCABULARY_TARGET && HNK_CYCLE1_EMPTY_LESSONS.length === 0 ? 'READY_FOR_COMPLETION_REVIEW' : 'HOLD_INCOMPLETE_BINDING',
   vocabularyTarget: HNK_CYCLE1_VOCABULARY_TARGET,
   registryBoundRecoveredForms: HNK_CYCLE1_BOUND_LEXEMES.length,
   registryUnboundRecoveredForms: HNK_CYCLE1_UNBOUND_LEXEMES.length,
@@ -106,22 +93,23 @@ export function validateCycle1LanguageCoverage() {
   if (HNK_CYCLE1_VOCABULARY_TARGET !== 144) errors.push('Cycle 1 vocabulary target drift');
   if (HNK_CYCLE1_BOUND_LEXEMES.length !== 31) errors.push(`Expected 31 cycle-bound recovered forms, got ${HNK_CYCLE1_BOUND_LEXEMES.length}`);
   if (HNK_CYCLE1_UNBOUND_LEXEMES.length !== 2) errors.push(`Expected 2 unbound recovered forms, got ${HNK_CYCLE1_UNBOUND_LEXEMES.length}`);
-  if (HNK_CYCLE1_AUTHORED_CANDIDATES.length !== 4) errors.push(`Expected 4 governed authored candidates, got ${HNK_CYCLE1_AUTHORED_CANDIDATES.length}`);
-  if (JSON.stringify(HNK_CYCLE1_AUTHORED_CANDIDATES.map((entry) => entry.transliteration)) !== JSON.stringify(['KUVAN','VALA','KUON','NE'])) errors.push('Authored candidate list drift');
-  if (governedUniqueLanguageAssets !== 35) errors.push(`Expected 35 governed unique language assets, got ${governedUniqueLanguageAssets}`);
+  if (HNK_CYCLE1_AUTHORED_CANDIDATES.length !== 14) errors.push(`Expected 14 governed authored candidates, got ${HNK_CYCLE1_AUTHORED_CANDIDATES.length}`);
+  const expectedAuthored = ['KUVAN','VALA','KUON','NE','BIZO','DUVE','HOYU','KETI','LUSO','MUPI','NURA','PEVU','TOMI','ZOKA'];
+  if (JSON.stringify(HNK_CYCLE1_AUTHORED_CANDIDATES.map((entry) => entry.transliteration)) !== JSON.stringify(expectedAuthored)) errors.push('Authored candidate list drift');
+  if (governedUniqueLanguageAssets !== 45) errors.push(`Expected 45 governed unique language assets, got ${governedUniqueLanguageAssets}`);
   if (JSON.stringify(HNK_CYCLE1_EMPTY_LESSONS) !== JSON.stringify(['L05','L06','L07'])) errors.push('Empty lesson boundary drift');
   if (JSON.stringify(HNK_CYCLE1_CURRICULUM_REBINDS.L01) !== JSON.stringify(['LEX-013'])) errors.push('L01 curriculum rebind drift');
   const expectedLexemeCounts = {L01:10,L02:11,L03:8,L04:9,L05:0,L06:0,L07:0};
-  const expectedCandidateCounts = {L01:4,L02:0,L03:0,L04:0,L05:0,L06:0,L07:0};
+  const expectedCandidateCounts = {L01:14,L02:0,L03:0,L04:0,L05:0,L06:0,L07:0};
   for (const lesson of HNK_CYCLE1_LANGUAGE_COVERAGE) {
     if (lesson.lexemeCount !== expectedLexemeCounts[lesson.lessonId]) errors.push(`${lesson.lessonId} lexeme-count drift`);
     if (lesson.authoredCandidateCount !== expectedCandidateCounts[lesson.lessonId]) errors.push(`${lesson.lessonId} authored-candidate-count drift`);
   }
   const l01 = HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson) => lesson.lessonId === 'L01');
   if (JSON.stringify(l01.governedRebindLexemeIds) !== JSON.stringify(['LEX-013'])) errors.push('L01 governed rebind provenance drift');
-  if (JSON.stringify(l01.authoredCandidateIds) !== JSON.stringify(['AUTH-001','AUTH-002','AUTH-003','AUTH-004'])) errors.push('L01 authored candidate provenance drift');
+  if (JSON.stringify(l01.authoredCandidateIds) !== JSON.stringify(['AUTH-001','AUTH-002','AUTH-003','AUTH-004','AUTH-005','AUTH-006','AUTH-007','AUTH-008','AUTH-009','AUTH-010','AUTH-011','AUTH-012','AUTH-013','AUTH-014'])) errors.push('L01 authored candidate provenance drift');
   if (HNK_CYCLE1_LANGUAGE_GATE.recoveredProxyRatio !== 0.2153) errors.push('Recovered proxy ratio drift');
-  if (HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyRatio !== 0.2431) errors.push('Governed asset proxy ratio drift');
+  if (HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyRatio !== 0.3125) errors.push('Governed asset proxy ratio drift');
   if (HNK_CYCLE1_LANGUAGE_GATE.decision !== 'HOLD_INCOMPLETE_BINDING') errors.push('Incomplete Cycle 1 must remain HOLD');
   return { ok: errors.length === 0, errors };
 }
