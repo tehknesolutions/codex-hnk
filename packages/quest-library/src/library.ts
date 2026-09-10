@@ -47,6 +47,9 @@ import day015PackJson from '../../../docs/experience/kether/day-015/day-015.ques
 import day016QuestJson from '../../../docs/experience/kether/day-016/day-016.quest.json';
 import day016CanonJson from '../../../docs/experience/kether/day-016/day-016.canon-blocks.json';
 import day016PackJson from '../../../docs/experience/kether/day-016/day-016.quest-pack.json';
+import day017QuestJson from '../../../docs/experience/kether/day-017/day-017.quest.json';
+import day017CanonJson from '../../../docs/experience/kether/day-017/day-017.canon-blocks.json';
+import day017PackJson from '../../../docs/experience/kether/day-017/day-017.quest-pack.json';
 import type { RuntimeCanonManifest, RuntimeQuestBundle, RuntimeQuestBundleLoader } from './types.js';
 function asQuest(value: unknown): QuestDefinition { return value as QuestDefinition; }
 function asCanon(value: unknown): RuntimeCanonManifest { return value as RuntimeCanonManifest; }
@@ -68,6 +71,7 @@ const BUNDLES = new Map<number, RuntimeQuestBundle>([
   [14,{day:14,quest:asQuest(day014QuestJson),canon:asCanon(day014CanonJson),pack:asPack(day014PackJson)}],
   [15,{day:15,quest:asQuest(day015QuestJson),canon:asCanon(day015CanonJson),pack:asPack(day015PackJson)}],
   [16,{day:16,quest:asQuest(day016QuestJson),canon:asCanon(day016CanonJson),pack:asPack(day016PackJson)}],
+  [17,{day:17,quest:asQuest(day017QuestJson),canon:asCanon(day017CanonJson),pack:asPack(day017PackJson)}],
 ]);
 function validateBundle(bundle:RuntimeQuestBundle):RuntimeQuestBundle{if(bundle.quest.day!==bundle.day)throw new Error(`quest_library_day_mismatch:${bundle.day}`);if(bundle.canon.source.day!==bundle.day)throw new Error(`quest_library_canon_day_mismatch:${bundle.day}`);if(bundle.quest.canonical.source_sha!==bundle.canon.source.blob_sha)throw new Error(`quest_library_source_sha_mismatch:${bundle.day}`);return bundle}
 export class BundledQuestLibrary implements RuntimeQuestBundleLoader,QuestDefinitionLoader{async loadBundle(day:number):Promise<RuntimeQuestBundle|null>{const bundle=BUNDLES.get(day);return bundle?validateBundle(bundle):null}async loadDay(day:number):Promise<QuestDefinition|null>{return(await this.loadBundle(day))?.quest??null}listAvailableDays():number[]{return[...BUNDLES.keys()].sort((a,b)=>a-b)}}
