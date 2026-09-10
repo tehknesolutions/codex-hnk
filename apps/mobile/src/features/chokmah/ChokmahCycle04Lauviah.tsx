@@ -3,6 +3,9 @@ import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-nati
 import { useHnkAuth } from '../auth/AuthContext';
 import { LauviahDay052ExpansionExperience } from './LauviahDay052ExpansionExperience';
 import { LauviahDay053BlindTargetExperience } from './LauviahDay053BlindTargetExperience';
+import { LauviahDay054VoiceExperience } from './LauviahDay054VoiceExperience';
+import { LauviahDay055VakogExperience } from './LauviahDay055VakogExperience';
+import { LauviahDay056ReturnExperience } from './LauviahDay056ReturnExperience';
 
 const LAUVIAH_DAYS = [52, 53, 54, 55, 56] as const;
 type LauviahDay = (typeof LAUVIAH_DAYS)[number];
@@ -45,21 +48,19 @@ export function ChokmahCycle04Lauviah() {
     return <View style={styles.loading}><ActivityIndicator color="#9fc6ff" /><Text style={styles.loadingText}>ABRINDO O CICLO DE LAUVIAH</Text></View>;
   }
 
-  const completed = Math.max(0, Math.min(2, currentDay - 52));
+  const completed = Math.max(0, Math.min(5, currentDay - 52));
 
   return (
     <View style={styles.screen}>
       <View style={styles.rail}>
         <View style={styles.railLine} />
         {LAUVIAH_DAYS.map((day, index) => {
-          const executable = day <= 53;
-          const done = executable && index < completed;
+          const done = index < completed;
           const available = day <= currentDay;
           const active = displayDay === day;
-          const blocked = day >= 54;
           return (
             <Pressable key={day} disabled={!available} onPress={() => setDisplayDay(day)} style={styles.nodeWrap}>
-              <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked, blocked && styles.nodeBlocked]}>
+              <View style={[styles.node, done && styles.nodeDone, active && styles.nodeActive, !available && styles.nodeLocked]}>
                 <Text style={[styles.nodeText, (done || active) && styles.nodeTextActive]}>{done ? '✓' : day}</Text>
               </View>
               <Text style={[styles.nodeLabel, active && styles.nodeLabelActive]}>{day === 52 ? 'EXPANSÃO' : day === 53 ? 'CEGO' : day === 54 ? 'VOZ' : day === 55 ? 'VAKOG' : 'RETORNO'}</Text>
@@ -75,20 +76,9 @@ export function ChokmahCycle04Lauviah() {
 
       {displayDay === 52 ? <LauviahDay052ExpansionExperience /> : null}
       {displayDay === 53 ? <LauviahDay053BlindTargetExperience /> : null}
-      {displayDay >= 54 ? <LauviahRuntimePending day={displayDay} /> : null}
-    </View>
-  );
-}
-
-function LauviahRuntimePending({ day }: { day: 54 | 55 | 56 }) {
-  const label = day === 54 ? 'GRAVAÇÃO LOCAL' : day === 55 ? 'VAKOG PRÉ-FEEDBACK' : 'EXPIRAÇÃO/RETORNO';
-  return (
-    <View style={styles.blockWrap}>
-      <View style={styles.blockCard}>
-        <Text style={styles.blockLabel}>CANONICAL_STORAGE_READY · G7_RUNTIME_PENDING</Text>
-        <Text style={styles.blockTitle}>Dia {String(day).padStart(3, '0')} · {label}</Text>
-        <Text style={styles.blockBody}>O conteúdo está canônico, mas este runtime específico ainda não foi montado. Nenhuma Practice Session genérica é aberta e nenhum XP pode ser concedido por esta tela.</Text>
-      </View>
+      {displayDay === 54 ? <LauviahDay054VoiceExperience /> : null}
+      {displayDay === 55 ? <LauviahDay055VakogExperience /> : null}
+      {displayDay === 56 ? <LauviahDay056ReturnExperience /> : null}
     </View>
   );
 }
@@ -104,7 +94,6 @@ const styles = StyleSheet.create({
   nodeDone: { borderColor: '#5f87b7', backgroundColor: '#0b2034' },
   nodeActive: { borderColor: '#9fcfff', backgroundColor: '#17334d' },
   nodeLocked: { opacity: 0.3 },
-  nodeBlocked: { borderStyle: 'dashed' },
   nodeText: { color: '#71879b', fontSize: 8, fontWeight: '700' },
   nodeTextActive: { color: '#e2f2ff' },
   nodeLabel: { color: '#526b80', fontSize: 6, letterSpacing: 0.7 },
@@ -114,9 +103,4 @@ const styles = StyleSheet.create({
   heading: { color: '#e8f4ff', fontSize: 14, letterSpacing: 2.1, marginTop: 5 },
   stats: { alignItems: 'flex-end', gap: 3 },
   stat: { color: '#72899c', fontSize: 8, letterSpacing: 1 },
-  blockWrap: { flex: 1, padding: 24, justifyContent: 'center' },
-  blockCard: { borderWidth: 1, borderStyle: 'dashed', borderColor: '#46627c', borderRadius: 24, padding: 24, backgroundColor: '#050d16', gap: 12 },
-  blockLabel: { color: '#86a9c7', fontSize: 9, letterSpacing: 1.4, fontWeight: '700' },
-  blockTitle: { color: '#e6f2fc', fontSize: 23, lineHeight: 30, fontWeight: '300' },
-  blockBody: { color: '#91a4b4', fontSize: 13, lineHeight: 21 },
 });
