@@ -1,0 +1,9 @@
+{
+  "id":"HNK-KETHER-D020-COMPLETION-SERVICE-V1","day":20,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D020-COMP-V1","quest_definition_id":"HNK-KETHER-D020-V1","validator_key":"day020_v1","status":"draft","review":"PENDING"},
+  "canonical":{"source_sha":"9d901354b737c2d724ff6a1aaf336d5a411fbd55","xp":100,"attribute_gain":0},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","audio_recording":"NOT_REQUIRED_V1"},
+  "cycle":{"angel":"Elemiah","expected_completed_days":5,"fragment":4,"expected_lit":true,"crown_expected_after":"4/7","authoritative_source":"get_kether_crown_state"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+}
