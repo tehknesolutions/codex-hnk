@@ -43,6 +43,29 @@ export function RuntimeTimer({ value, target, onChange, allowEarlyStop = false }
   );
 }
 
+export function RuntimeOpenTimer({ value, onChange }: { value: number; onChange: (value: number) => void }) {
+  const [running, setRunning] = useState(false);
+
+  useEffect(() => {
+    if (!running) return;
+    const id = setInterval(() => onChange(value + 1), 1000);
+    return () => clearInterval(id);
+  }, [onChange, running, value]);
+
+  return (
+    <View style={styles.timer}>
+      <View>
+        <Text style={styles.timerLabel}>TEMPO REAL</Text>
+        <Text style={styles.timerValue}>{formatSeconds(value)}</Text>
+        <Text style={styles.timerTarget}>SEM META NUMÉRICA CANÔNICA</Text>
+      </View>
+      <Pressable style={styles.timerButton} onPress={() => setRunning((state) => !state)}>
+        <Text style={styles.timerButtonText}>{running ? 'PAUSAR' : value > 0 ? 'CONTINUAR' : 'INICIAR'}</Text>
+      </Pressable>
+    </View>
+  );
+}
+
 export function RuntimeScale({ label, value, onChange }: { label: string; value: number; onChange: (value: number) => void }) {
   return (
     <View style={styles.scale}>
