@@ -9,6 +9,7 @@ import { ChokmahCycle05Hahaiah } from './ChokmahCycle05Hahaiah';
 import { ChokmahCycle06Iezalel } from './ChokmahCycle06Iezalel';
 import { ChokmahCycle07Mebahel } from './ChokmahCycle07Mebahel';
 import { ChokmahDay072BlackMirrorExperience } from './ChokmahDay072BlackMirrorExperience';
+import { ChokmahPortal073Experience } from './ChokmahPortal073Experience';
 
 export function ChokmahJourney() {
   const auth = useHnkAuth();
@@ -45,12 +46,13 @@ export function ChokmahJourney() {
   if (currentDay <= 66) return <ChokmahCycle06Iezalel />;
   if (currentDay <= 71) return <ChokmahCycle07Mebahel />;
   if (currentDay === 72) return <ChokmahDay072BlackMirrorExperience />;
+  if (currentDay === 73) return <ChokmahPortal073Experience />;
 
   return (
     <View style={styles.threshold}>
-      <Text style={styles.eyebrow}>CHOKMAH · PORTAL 073</Text>
-      <Text style={styles.title}>DIA {String(Math.min(currentDay, 73)).padStart(3, '0')}</Text>
-      <Text style={styles.body}>O Portal 073 permanece fail-closed até o runtime vincular os operadores canônicos, o Vault cifrado e o Return Gate e o conjunto do servidor ser publicado após QA.</Text>
+      <Text style={styles.eyebrow}>CHOKMAH · TRAVESSIA CONCLUÍDA</Text>
+      <Text style={styles.title}>BINAH · DIA {String(Math.max(currentDay, 74)).padStart(3, '0')}</Text>
+      <Text style={styles.body}>Depois de uma conclusão autoritativa do Portal 073, a próxima rota pertence a Binah. Chokmah não inicia automaticamente o Dia 074.</Text>
     </View>
   );
 }
