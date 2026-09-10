@@ -15,4 +15,15 @@ const { glyphIds } = transliterationToGlyphIds('VAMAKALA', { strict:true });
 const svg = glyphIds.map(gid => getGlyphSvg(gid)).join('');
 ```
 
+## Comparative reference layer
+
+The governed research scaffold for cross-language comparison lives in `reference/`.
+
+- `reference/HNK40_REFERENCE_MATRIX_V1.json` mirrors the authoritative G01–G40 runtime fields and reserves reviewed mapping cells for Biblical Hebrew, Koine Greek, Japanese kana and Esperanto.
+- `reference/README.md` defines the separation between phonetic, graphemic, semantic, symbolic/initiatic and digital-encoding layers.
+- Reference cells remain `PENDING_RESEARCH` until evidence is authored and reviewed; similarity never promotes a reference form into HNK canon.
+- ASCII, binary, hexadecimal and candidate PUA are encoding/transport layers, not linguistic equivalents.
+
+The comparative matrix is protected by `test/reference-matrix.test.mjs`, which checks 40/40 identity against the runtime and blocks silent drift or premature reference claims.
+
 Final human promotion remains required before `VISUAL-CANON-V2`.
