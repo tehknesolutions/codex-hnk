@@ -1,0 +1,10 @@
+{
+  "id":"HNK-KETHER-D028-COMPLETION-SERVICE-V1","day":28,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D028-COMP-V1","quest_definition_id":"HNK-KETHER-D028-V1","validator_key":"day028_v1","status":"PENDING","review":"PENDING"},
+  "canonical":{"source_sha":"9253344faa2b6be10a85e58561f306b7ef1661ba","xp":150},
+  "attribute_progression":{"primary":"INT","secondary":"PER","gain":1,"application":"SERVER_XP_EVENT_TRIGGER"},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "epistemic":{"active_must_exceed_control":false,"cockpit_superiority_required":false,"external_astral_access_proven":false,"presence_is_external_entity_proof":false},
+  "cycle":{"angel":"Lelahel","expected_completed_days":3,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"}
+}
