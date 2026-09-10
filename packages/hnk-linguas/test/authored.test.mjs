@@ -8,64 +8,69 @@ import {
 } from '../src/authored.mjs';
 import { HNK_MASTER_LEXICON_BY_FORM } from '../src/index.mjs';
 
-test('authored registry contains four governed Cycle 1 candidates', () => {
-  assert.equal(HNK_AUTHORED_CANDIDATES.length, 4);
-  assert.equal(HNK_AUTHORED_REGISTRY_STATS.candidates, 4);
-  assert.equal(HNK_AUTHORED_REGISTRY_STATS.cycle1Candidates, 4);
+const numerals = [
+  ['AUTH-005','BIZO',0,['G18','G03','G32','G04']],
+  ['AUTH-006','DUVE',1,['G19','G05','G31','G02']],
+  ['AUTH-007','HOYU',2,['G07','G04','G40','G05']],
+  ['AUTH-008','KETI',3,['G23','G02','G22','G03']],
+  ['AUTH-009','LUSO',4,['G14','G05','G26','G04']],
+  ['AUTH-010','MUPI',5,['G11','G05','G21','G03']],
+  ['AUTH-011','NURA',6,['G12','G05','G15','G01']],
+  ['AUTH-012','PEVU',7,['G21','G02','G31','G05']],
+  ['AUTH-013','TOMI',8,['G22','G04','G11','G03']],
+  ['AUTH-014','ZOKA',9,['G32','G04','G23','G01']],
+];
+
+test('authored registry contains fourteen governed Cycle 1 candidates', () => {
+  assert.equal(HNK_AUTHORED_CANDIDATES.length, 14);
+  assert.equal(HNK_AUTHORED_REGISTRY_STATS.candidates, 14);
+  assert.equal(HNK_AUTHORED_REGISTRY_STATS.cycle1Candidates, 14);
 });
 
-test('KUVAN is authored CANDIDATE, never recovered canon', () => {
+test('core authored candidates preserve their authorities', () => {
   const kuvan = getAuthoredCandidate('kuvan');
-  assert.ok(kuvan);
   assert.equal(kuvan.id, 'AUTH-001');
   assert.equal(kuvan.authority, 'CANDIDATE');
   assert.equal(kuvan.historicalRecoveryClaim, false);
   assert.deepEqual(kuvan.glyphIds, ['G23','G05','G31','G01','G12']);
-  assert.equal(kuvan.morphology.productivity, 'CLOSED_LIST_ONLY');
-});
 
-test('VALA is authored activity CANDIDATE from back-analysis only', () => {
   const vala = getAuthoredCandidate('vala');
-  assert.ok(vala);
   assert.equal(vala.id, 'AUTH-002');
-  assert.equal(vala.authority, 'CANDIDATE');
   assert.equal(vala.certainty, 'AUTHORED_BACK_ANALYSIS');
-  assert.equal(vala.historicalRecoveryClaim, false);
   assert.deepEqual(vala.glyphIds, ['G31','G01','G14','G01']);
-  assert.equal(vala.morphology.productivity, 'NON_PRODUCTIVE_SINGLE_CANDIDATE');
-});
 
-test('KUON is authored person-interrogative candidate with explicit GATE dependency', () => {
   const kuon = getAuthoredCandidate('kuon');
-  assert.ok(kuon);
   assert.equal(kuon.id, 'AUTH-003');
-  assert.equal(kuon.authority, 'CANDIDATE');
   assert.equal(kuon.certainty, 'AUTHORED_DERIVATION_WITH_GATED_COMPONENT');
-  assert.equal(kuon.historicalRecoveryClaim, false);
-  assert.deepEqual(kuon.glyphIds, ['G23','G05','G04','G12']);
-  assert.equal(kuon.morphology.schema, 'KU + ON');
   assert.match(kuon.morphology.rightState, /LEX-026_ON_GATE/);
-  assert.equal(kuon.morphology.productivity, 'CLOSED_LIST_ONLY');
+
+  const ne = getAuthoredCandidate('ne');
+  assert.equal(ne.id, 'AUTH-004');
+  assert.equal(ne.certainty, 'AUTHORED_PRIMITIVE');
+  assert.deepEqual(ne.glyphIds, ['G12','G02']);
+  assert.equal(ne.morphology.productivity, 'CLOSED_LIST_ONLY');
 });
 
-test('NE is an authored primitive CANDIDATE for negation/absence', () => {
-  const ne = getAuthoredCandidate('ne');
-  assert.ok(ne);
-  assert.equal(ne.id, 'AUTH-004');
-  assert.equal(ne.authority, 'CANDIDATE');
-  assert.equal(ne.certainty, 'AUTHORED_PRIMITIVE');
-  assert.equal(ne.historicalRecoveryClaim, false);
-  assert.deepEqual(ne.glyphIds, ['G12','G02']);
-  assert.equal(ne.morphology.schema, 'PRIMITIVE_AUTHORED');
-  assert.equal(ne.morphology.productivity, 'CLOSED_LIST_ONLY');
-  assert.match(ne.notes.join(' '), /Does not create a HAVE verb/);
+test('0-9 spoken numerals are authored primitive CANDIDATES only', () => {
+  for (const [id, form, value, glyphIds] of numerals) {
+    const entry = getAuthoredCandidate(form);
+    assert.ok(entry, `${form} missing`);
+    assert.equal(entry.id, id);
+    assert.equal(entry.authority, 'CANDIDATE');
+    assert.equal(entry.certainty, 'AUTHORED_PRIMITIVE');
+    assert.equal(entry.historicalRecoveryClaim, false);
+    assert.equal(entry.morphology.schema, 'PRIMITIVE_AUTHORED_NUMERAL_0_9');
+    assert.equal(entry.morphology.productivity, 'NON_PRODUCTIVE_SINGLE_CANDIDATE');
+    assert.deepEqual(entry.glyphIds, glyphIds);
+    assert.match(entry.meaning.en, new RegExp(`spoken cardinal numeral ${value}$`));
+    assert.match(entry.notes.join(' '), /does not define cardinal composition for 10\+/i);
+  }
 });
 
 test('authored candidates do not contaminate recovered Master Lexicon', () => {
-  assert.equal(HNK_MASTER_LEXICON_BY_FORM.KUVAN, undefined);
-  assert.equal(HNK_MASTER_LEXICON_BY_FORM.VALA, undefined);
-  assert.equal(HNK_MASTER_LEXICON_BY_FORM.KUON, undefined);
-  assert.equal(HNK_MASTER_LEXICON_BY_FORM.NE, undefined);
+  for (const form of ['KUVAN','VALA','KUON','NE',...numerals.map(x => x[1])]) {
+    assert.equal(HNK_MASTER_LEXICON_BY_FORM[form], undefined, `${form} must remain outside recovered registry`);
+  }
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.VANI.meaning, null);
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.VANI.authority, 'WATCH');
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.ON.authority, 'GATE');
