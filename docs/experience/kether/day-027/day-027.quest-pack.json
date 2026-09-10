@@ -1,13 +1,14 @@
 {
-  "id":"HNK-KETHER-D027-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":27,"quest_id":"HNK-KETHER-D027-V1","canonical_source_sha":"f3238116f4bf63b54c1bf7e34d6accb58afbef06","release_state":"BACKEND_REVIEW_PENDING",
+  "id":"HNK-KETHER-D027-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":27,"quest_id":"HNK-KETHER-D027-V1","canonical_source_sha":"f3238116f4bf63b54c1bf7e34d6accb58afbef06","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"angel":"Lelahel"},
   "attribute_progression":{"matrix_version":"1.0.0","competency":"Pérola Azul","primary":"PER","secondary":"DIS","gain":1,"status":"frozen","application":"SERVER_XP_EVENT_TRIGGER","client_may_apply":false},
   "practice":{"active_seconds":600,"control_seconds":600,"middle_seconds":600,"middle_silent_seconds":60,"construction_results":["STABLE","INTERMITTENT","ABSENT"],"active_must_exceed_control":false,"stable_blue_pearl_required":false},
-  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
-  "safety":{"foreground_only_timing":true,"no_eyelid_squeezing":true,"no_forced_eye_movement_or_convergence":true,"no_eye_pressure":true,"natural_breathing":true,"stop_on_strong_flashes_eye_pain_headache_persistent_spots_or_persistent_visual_change":true},
-  "epistemic":{"spontaneous_visual_phenomena_are_spiritual_proof":false,"sinal_astral_is_origin_proof":false,"single_session_definitive":false,"data_may_correct_expectation":true},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true,"offline_capture_queue":"CIPHERTEXT_ONLY"},
+  "safety":{"foreground_only_timing":true,"active_timer_persisted":false,"no_eyelid_squeezing":true,"no_forced_eye_movement_or_convergence":true,"no_eye_pressure":true,"natural_breathing":true,"stop_on_strong_flashes_eye_pain_headache_persistent_spots_or_persistent_visual_change":true},
+  "epistemic":{"spontaneous_visual_phenomena_are_spiritual_proof":false,"sinal_astral_is_origin_proof":false,"single_session_definitive":false,"data_may_correct_expectation":true,"active_absent_valid":true,"control_may_exceed_active":true},
   "cycle_progress":{"cycle":"Lelahel","days":[26,27,28,29,30],"expected_after_day":2,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D027-COMP-V1","validator":"day027_v1","registry":"PENDING","attribute_application":"SERVER_XP_EVENT_TRIGGER"},
-  "runtime":{"web":"PENDING","expo":"PENDING"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+  "backend":{"completion_contract":"HNK-KETHER-D027-COMP-V1","validator":"day027_v1","registry":"active","attribute_application":"SERVER_XP_EVENT_TRIGGER","smoke":{"xp_awarded":150,"xp_total_before":1000,"xp_total_after":1150,"per_before":5,"per_after":6,"dis_before":5,"dis_after":5,"attribute_event_count":1,"attribute_gain_rule_count":1,"xp_event_count":1,"current_day":28,"lelahel_completed_days":2,"lelahel_lit":false,"fragments_lit":5,"active_result":"ABSENT","control_result":"STABLE","progression_events":["NEXT_DAY_UNLOCKED"],"rollback_only":true}},
+  "runtime":{"web":"ACTIVE","web_route":"/day-027","expo":"ACTIVE","expo_route":"/day-027","vault_sync_before_completion":true,"server_crown_assert":true},
+  "release_blockers":["DEVICE_BROWSER_QA"],
+  "proof":"PASS_TECHNICALLY_ACTIVE__BLUE_PEARL_ABSENT_VALID__PER_SERVER_PLUS_1__LELAHEL_2_OF_5__WEB_EXPO_E2EE__DEVICE_QA_PENDING"
 }
