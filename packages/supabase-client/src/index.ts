@@ -32,6 +32,7 @@ export * from './day023-v1';
 export * from './day024-v1';
 export * from './day025-v1';
 export * from './day026-v1';
+export * from './day027-v1';
 export * from './kether-cycle01';
 export * from './kether-cycle02';
 export * from './kether-cycle03';
