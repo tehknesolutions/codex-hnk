@@ -1,0 +1,9 @@
+{
+  "id":"HNK-KETHER-D026-COMPLETION-SERVICE-V1","day":26,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D026-COMP-V1","quest_definition_id":"HNK-KETHER-D026-V1","validator_key":"day026_v1","status":"PENDING","review":"PENDING"},
+  "canonical":{"source_sha":"1d3a86fdbee1dad1f7cf7d1590b3e1b63e3f0496","xp":100,"attribute_gain":0},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "epistemic":{"active_must_exceed_control":false,"ajna_and_brodmann10_identical":false,"phenomenology_is_neural_or_spiritual_proof":false,"special_sensation_required":false},
+  "cycle":{"angel":"Lelahel","expected_completed_days":1,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"}
+}
