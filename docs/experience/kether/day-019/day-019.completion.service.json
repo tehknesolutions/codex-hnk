@@ -1,10 +1,11 @@
 {
   "id":"HNK-KETHER-D019-COMPLETION-SERVICE-V1","day":19,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D019-COMP-V1","quest_definition_id":"HNK-KETHER-D019-V1","validator_key":"day019_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D019-COMP-V1","quest_definition_id":"HNK-KETHER-D019-V1","validator_key":"day019_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"b37705700bcf5e0a976b5eba65af3f48ad4b7907","xp":150},
   "progression":{"matrix_version":"1.0.0","primary_attribute":"INT","secondary_attribute":"HIP","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20},
-  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","raw_audio_server_side":false,"media_vault":"DEVICE_BOUND_LOCAL_AES_256_GCM","server_receives_media":"NO"},
-  "analysis":{"schema":"hnk-acoustic-analysis-v1","processed_on_client":true,"server_receives_safe_metrics":true},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","raw_audio_server_side":false,"media_vault":"DEVICE_BOUND_LOCAL_AES_256_GCM","server_receives_media":"NO","local_media_ref_server_side":"FORBIDDEN"},
+  "analysis":{"schema":"hnk-acoustic-analysis-v1","processed_on_client":true,"server_receives_safe_metrics":true,"band_ratio_sum_validated":true,"graph_spiritual_translation_forbidden":true},
+  "negative_tests":[{"case":"local_media_ref","result":"REJECTED_day019_jachin_unknown_field"},{"case":"audio_base64","result":"REJECTED_day019_jachin_unknown_field"},{"case":"band_ratio_sum","result":"REJECTED_day019_analysis_band_ratio_sum_invalid"},{"case":"spiritual_graph_claim","result":"REJECTED_day019_graph_boundary_required"}],
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_after":1150,"xp_awarded":150,"current_day":20,"int_before":5,"int_after":6,"hip_before":5,"hip_after":5,"completion_count":1,"xp_event_count":1,"attribute_event_count":1,"attribute_event":{"attribute_code":"INT","amount":1,"secondary_attribute":"HIP"},"elemiah_completed_days":4,"fragment_4_lit":false,"crown_fragments_lit":3,"synthetic_user_persisted":false}
 }
