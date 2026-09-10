@@ -1,0 +1,11 @@
+{
+  "id":"HNK-KETHER-D022-COMPLETION-SERVICE-V1","day":22,
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D022-COMP-V1","quest_definition_id":"HNK-KETHER-D022-V1","validator_key":"day022_v1","status":"draft","review":"PENDING"},
+  "canonical":{"source_sha":"dd2d6f906b57050fb568b5f82b806f456acdd3af","xp":150},
+  "progression":{"matrix_version":"1.0.0","primary_attribute":"SIN","secondary_attribute":"PER","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20,"source_note":"symbol study completion; not supernatural effect"},
+  "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0","stroke_order_sha256":"52cf6921ccd6ede63a6f83d05b31faf787d2881b99d5b8ce1ee6095a86b4fe6b"},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "cycle":{"angel":"Mahasiah","expected_completed_days":2,"fragment":5,"expected_lit":false,"crown_expected_after":"4/7","authoritative_source":"get_kether_crown_state"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+}
