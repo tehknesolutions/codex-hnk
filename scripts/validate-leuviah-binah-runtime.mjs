@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'); const read=p=>fs.readFileSync(path.join(root,p),'utf8'); const has=(s,n)=>s.includes(n); let failed=0; const check=(l,o)=>{console.log(`${o?'PASS':'FAIL'} BINAH-LEUVIAH · ${l}`);if(!o)failed++;};
+const j=read('apps/mobile/src/features/binah/BinahJourney.tsx'),c=read('apps/mobile/src/features/binah/BinahCycle05Leuviah.tsx'),d=read('apps/mobile/src/features/binah/runtime-definitions/leuviah.ts'),d94=read('apps/mobile/src/features/binah/LeuviahDay094WaterFocusExperience.tsx'),d9596=read('apps/mobile/src/features/binah/LeuviahDays095to096Experience.tsx'),d97=read('apps/mobile/src/features/binah/LeuviahDay097EquivalenceExperience.tsx'),d98=read('apps/mobile/src/features/binah/LeuviahDay098RitualWashExperience.tsx'),db=read('supabase/migrations/20260910151000_enforce_leuviah_094_098_scalar_evidence.sql');
+check('Binah routes Leuviah after Caliel',has(j,"import { BinahCycle05Leuviah }")&&has(j,'currentDay<=93')&&has(j,'currentDay<=98')&&j.indexOf('currentDay<=93')<j.indexOf('currentDay<=98'));
+check('Cycle05 mounts Days094-098',[94,95,96,97,98].every(x=>has(d,`LEUVIAH_DAY_0${x}`))&&['LeuviahDay094WaterFocusExperience','LeuviahDays095to096Experience','LeuviahDay097EquivalenceExperience','LeuviahDay098RitualWashExperience'].every(x=>has(c,x)));
+check('Day094 uses open timing and permits null effect',has(d94,'RuntimeOpenTimer')&&has(d94,'NÃO PERCEBI MUDANÇA MARCANTE')&&has(d94,'water_hidden_properties_not_claimed')&&has(d94,'energy_transfer_not_claimed'));
+check('Days095-096 are Vault-first',has(d9596,'encryptVaultText')&&has(d9596,'saveEncryptedVaultEntry')&&has(d9596,'Zero exemplos é permitido'));
+check('Day095 preserves five categories and zero-count validity',['MELANCOLIA','AUTOPIEDADE','CIÚMES','DORES RESSENTIDAS','INSTABILIDADE DE HUMOR'].every(x=>has(d9596,x))&&has(d9596,'total_examples_count:total')&&!has(db,'positive_examples_required'));
+check('Day096 preserves four virtues without spiritual ranking',['COMPAIXÃO','DEVOÇÃO','EMPATIA EMOCIONAL','SENSIBILIDADE ASTRAL'].every(x=>has(d9596,x))&&has(d9596,'NÃO CRIEI RANKING ESPIRITUAL')&&has(d9596,'SENSIBILIDADE ASTRAL NÃO FOI TRATADA COMO CAMPO INVISÍVEL MEDIDO'));
+check('Day097 has no invented quota and uses encrypted equivalence record',has(d97,'SEM QUOTA INVENTADA')&&has(d97,'encryptVaultText')&&has(d97,'alternatives:[alt1.trim(),alt2.trim()]')&&has(d97,'fixed_identity_not_claimed'));
+check('Day098 treats cold water as optional boolean',has(d98,'ÁGUA FRIA É OPCIONAL')&&has(d98,'USEI TEMPERATURA CONFORTÁVEL SEM ÁGUA FRIA')&&has(d98,'cold_water_used:coldUsed??false')&&has(db,"jsonb_typeof(p->'cold_water_used')<>'boolean'"));
+check('Day098 prevents entity diagnosis and cleansing measurement claims',has(d98,"NÃO TRATEI ‘LARVAS’ COMO DIAGNÓSTICO DE ENTIDADES")&&has(d98,'energy_cleansing_not_claimed_as_measured')&&has(d98,'anti_compulsion_rule_confirmed'));
+check('DB binds exact canonical Leuviah SHAs',['21953e229705418d91d410234a3ad151ed1c3e6e','45b09623cdcf750c4f7d60ce2d361a5b77e4d039','610279b722317d3cd6f8896292f34c555d787647','7a59eed915909c60dd05f078a4a6f4b4e06d8365','4fa277aa58c8f5c9eb9dd4fb6a84e7a2c10e942b'].every(x=>has(db,x)));
+check('DB strict allowlists',[94,95,96,97,98].every(x=>has(db,`day0${x}_evidence_unknown_field`)));
+check('DB functions are private',[94,95,96,97,98].every(x=>has(db,`revoke all on function hnk_private.validate_day0${x}`))&&has(db,'revoke all on function hnk_private.enforce_leuviah_094_098_scalar_evidence'));
+if(failed)process.exit(1); console.log('PASS BINAH-LEUVIAH · Days 094-098 runtime and server contracts valid');
