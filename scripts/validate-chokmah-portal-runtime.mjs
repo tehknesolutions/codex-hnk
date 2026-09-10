@@ -19,7 +19,8 @@ const audio = read('packages/audio-contract/src/portal073.ts');
 const audioIndex = read('packages/audio-contract/src/index.ts');
 const portalAdapter = read('packages/supabase-client/src/portal-practice-record.ts');
 const runtime = read('apps/mobile/src/features/kether/useHnkDayRuntime.ts');
-const p73db = read('supabase/migrations/20260910123000_harden_portal073_completion_evidence.sql');
+const p73db = read('supabase/migrations/20260910124500_require_portal_vault_receipt_presence.sql');
+const e2e = read('supabase/tests/portal073-rollback-e2e.sql');
 const freeze = read('docs/experience/chokmah/HNK_CHOKMAH_PORTAL_073_OPERATOR_FREEZE_V1.md');
 
 check('Journey routes Day072 and Day073 explicitly', has(journey, 'ChokmahDay072BlackMirrorExperience') && has(journey, 'ChokmahPortal073Experience') && has(journey, 'currentDay === 72') && has(journey, 'currentDay === 73'));
@@ -45,6 +46,8 @@ check('Portal plaintext never enters structural evidence', has(portalAdapter, 'p
 check('Portal-only string evidence does not weaken ordinary Practice Record', has(runtime, 'portalRemoteEvidence') && has(runtime, 'savePortalPracticeRecord') && has(runtime, 'multiple_remote_evidence_adapters_forbidden') && has(portalAdapter, "'schema_version'") && has(portalAdapter, "'vault_receipt'"));
 check('Portal073 server binds canonical SHA and exact 600 seconds', has(p73db, 'be135a55fdd2fad853cc526f1ccb78cb933e2391') && has(p73db, 'portal073_audio_duration_mismatch') && has(p73db, "::integer <> 600"));
 check('Portal073 server requires operator execution + stop/volume + safety', ['tuner_completed','transition_audio_completed','sigil_completed','operator_ids_verified','volume_control_available','immediate_stop_available','safety_clear'].every((field) => has(p73db, field)));
+check('Portal receipt must resolve to same-user same-day encrypted Vault row', has(p73db, 'portal_encrypted_vault_receipt_not_found') && has(p73db, 'v.user_id = v_uid') && has(p73db, 'v.day = p_day') && has(p73db, 'v.id::text = v_vault_receipt') && has(p73db, "checksum_sha256, '') ~ '^[a-fA-F0-9]{64}$'"));
+check('Rollback E2E covers reward, retry, Teurgo and no Day074 auto-start', has(e2e, 'P73_RPC_ROLLBACK_E2E_PASS') && has(e2e, "xp_awarded')::integer <> 500") && has(e2e, "xp_awarded')::integer <> 0") && has(e2e, "initiatory_title <> 'Teurgo'") && has(e2e, 'P73_E2E_day074_auto_started'));
 
 if (failed) process.exit(1);
 console.log('PASS CHOKMAH-PORTAL · Days 072-073 structural runtime contracts valid; Day073 production remains fail-closed');
