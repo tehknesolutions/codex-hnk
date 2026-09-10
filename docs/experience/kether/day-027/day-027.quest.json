@@ -1,9 +1,9 @@
 {
-  "id":"HNK-KETHER-D027-V1","kind":"hnk.quest_definition","version":"0.1.0","status":"BACKEND_REVIEW_PENDING","day":27,
+  "id":"HNK-KETHER-D027-V1","kind":"hnk.quest_definition","version":"0.2.0","status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING","day":27,
   "title":"A Pérola Azul — Ativo vs Controle Cinza",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-027.md","source_sha":"f3238116f4bf63b54c1bf7e34d6accb58afbef06","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","sephira":"Kether","world":"Atziluth","angel":"Lelahel","initiatory_grade":1,"initiatory_title":"Neófito","xp":150,"tracks":["TEURG-101","COMP-101"]},
   "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","primary_attribute":"PER","secondary_attribute":"DIS","attribute_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","client_may_apply":false,"source_basis":"FROZEN_DAY027_BLUE_PEARL"},
-  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"private_text":"VAULT_E2EE_ONLY","active_timer_persistence":false,"foreground_only_timing":true,"web":"PENDING","expo":"PENDING","interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"private_text":"VAULT_E2EE_ONLY","active_timer_persistence":false,"foreground_only_timing":true,"web":"ACTIVE","expo":"ACTIVE","vault_sync_before_completion":true,"server_crown_assert":true,"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
   "phases":[
     {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["A Pérola Azul é um objeto interno deliberadamente treinado. Pontos, cores, flashes ou imagens espontâneas podem surgir por múltiplas vias perceptivas e não constituem prova automática de origem espiritual, clínica ou externa."],"required_for_completion":false},
     {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"required_for_completion":true},
@@ -13,9 +13,9 @@
     {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"required_for_completion":true},
     {"id":"middle_blue_pearl","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"timer_seconds":600,"silent_observation_seconds":60,"lamed_lamed_he_once_confirmation":true,"psalm_9_11_orientation_confirmation":true,"eyes_relaxed_confirmation":true,"no_sensation_or_visual_pursuit_confirmation":true,"e1_e5_recorded_confirmation":true,"construction_spontaneous_interpretation_separated_confirmation":true,"sinal_astral_traditional_classification_not_origin_proof_confirmation":true,"single_session_not_definitive_confirmation":true,"hypothesis_refined_confirmation":true,"repeatability_criterion_defined_confirmation":true,"integration_note":"VAULT_ENCRYPTED"},"required_for_completion":true},
     {"id":"soul_mirror","type":"JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","server_receives":"OPAQUE_VAULT_REF_ONLY"},"required_for_completion":true},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-KETHER-D027-COMP-V1","completion_contract_state":"DRAFT","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-KETHER-D027-COMP-V1","completion_contract_state":"ACTIVE","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true},
     {"id":"lelahel_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Lelahel","authoritative_cycle_days":[26,27,28,29,30],"cycle_progress":"2/5","fragment":6,"fragment_awarded":false,"fragment_state_source":"SERVER_CROWN_STATE","next_day":28},"required_for_completion":false}
   ],
   "completion_semantics":{"active_result_must_exceed_control":false,"stable_blue_pearl_required":false,"spontaneous_visual_phenomena_are_spiritual_proof":false,"sinal_astral_proves_origin":false,"private_text_server_side":false,"attribute_gain_client_computed":false,"lelahel_fragment_client_computed":false,"safety_stop_supported":true},
-  "release_blockers":[{"id":"BACKEND_REVIEW"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"DEVICE_BROWSER_QA"}]
 }
