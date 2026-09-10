@@ -1,10 +1,11 @@
 {
-  "id":"HNK-KETHER-D017-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":17,"quest_id":"HNK-KETHER-D017-V1","canonical_source_sha":"b712f912d9eefe1e021f6b8cee915a64751a2de3","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "id":"HNK-KETHER-D017-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":17,"quest_id":"HNK-KETHER-D017-V1","canonical_source_sha":"b712f912d9eefe1e021f6b8cee915a64751a2de3","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"angel":"Elemiah"},
   "progression":{"matrix_version":"1.0.0","competency":"Ativação da Glossolália","primary_attribute":"HIP","secondary_attribute":"SIN","requested_gain":1,"client_may_apply":false,"server_trigger":"xp_events_apply_attribute_progression_v1","cap":20,"basis_note":"voluntary practice; not recording or intensity"},
   "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY","audio_recording":"NOT_ENABLED_V1"},
   "safety":{"voluntary":true,"forced_volume_speed_duration":false,"safe_early_stop_valid":true,"agency_required":true,"supernatural_cause_not_assumed":true,"sound_not_automatic_prophecy_or_command":true},
   "cycle_progress":{"cycle":"Elemiah","days":[16,17,18,19,20],"expected_after_day":2,"fragment":4,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D017-COMP-V1","validator":"day017_v1","registry":"pending","attribute_application":"SERVER_XP_EVENT_TRIGGER"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+  "backend":{"completion_contract":"HNK-KETHER-D017-COMP-V1","validator":"day017_v1","registry":"active","attribute_application":"SERVER_XP_EVENT_TRIGGER","smoke":{"xp_awarded":150,"xp_total_before":1000,"xp_total_after":1150,"current_day":18,"hip_before":5,"hip_after":6,"sin_before":5,"sin_after":5,"attribute_event_count":1,"attribute_code":"HIP","attribute_amount":1,"secondary_attribute":"SIN","elemiah_completed_days":2,"elemiah_lit":false,"fragments_lit":3,"rollback_only":true}},
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","foreground_only_timing":true,"safe_early_stop":true,"audio_required":false,"authoritative_elemiah_assert":2},
+  "release_blockers":["DEVICE_BROWSER_QA"],"proof":"PASS_ACTIVE_WEB_EXPO_E2EE_BACKEND_HIP_PLUS1_ELEMIAH_2_OF_5__DEVICE_BROWSER_QA_PENDING"
 }
