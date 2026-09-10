@@ -38,9 +38,10 @@
     "validate:day024": "node scripts/validate-day024-runtime-integration.mjs",
     "validate:day025": "node scripts/validate-day025-cycle-seal.mjs",
     "validate:day026": "node scripts/validate-day026-runtime-integration.mjs",
+    "validate:day027": "node scripts/validate-day027-runtime-integration.mjs",
     "validate:catalog": "node scripts/validate-quest-catalog-scalability.mjs",
     "validate:attributes": "node scripts/validate-attribute-progression-matrix.mjs",
-    "validate:scalability": "pnpm validate:day002 && pnpm validate:audio002 && pnpm validate:audio-runtime && pnpm validate:runtime002 && pnpm validate:day003 && pnpm validate:day004 && pnpm validate:day005 && pnpm validate:day006 && pnpm validate:day007 && pnpm validate:day008 && pnpm validate:day009 && pnpm validate:day010 && pnpm validate:day011 && pnpm validate:day012 && pnpm validate:day013 && pnpm validate:day014 && pnpm validate:day015 && pnpm validate:day016 && pnpm validate:day017 && pnpm validate:day018 && pnpm validate:day019 && pnpm validate:day020 && pnpm validate:day021 && pnpm validate:day022 && pnpm validate:day023 && pnpm validate:day024 && pnpm validate:day025 && pnpm validate:day026 && pnpm validate:catalog && pnpm validate:attributes",
+    "validate:scalability": "pnpm validate:day002 && pnpm validate:audio002 && pnpm validate:audio-runtime && pnpm validate:runtime002 && pnpm validate:day003 && pnpm validate:day004 && pnpm validate:day005 && pnpm validate:day006 && pnpm validate:day007 && pnpm validate:day008 && pnpm validate:day009 && pnpm validate:day010 && pnpm validate:day011 && pnpm validate:day012 && pnpm validate:day013 && pnpm validate:day014 && pnpm validate:day015 && pnpm validate:day016 && pnpm validate:day017 && pnpm validate:day018 && pnpm validate:day019 && pnpm validate:day020 && pnpm validate:day021 && pnpm validate:day022 && pnpm validate:day023 && pnpm validate:day024 && pnpm validate:day025 && pnpm validate:day026 && pnpm validate:day027 && pnpm validate:catalog && pnpm validate:attributes",
     "check": "pnpm validate:day001 && pnpm validate:scalability && turbo run typecheck test"
   },
   "devDependencies": {"turbo": "2.10.12"}
