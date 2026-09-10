@@ -1,9 +1,10 @@
 {
   "id":"HNK-KETHER-D017-COMPLETION-SERVICE-V1","day":17,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D017-COMP-V1","quest_definition_id":"HNK-KETHER-D017-V1","validator_key":"day017_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D017-COMP-V1","quest_definition_id":"HNK-KETHER-D017-V1","validator_key":"day017_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"b712f912d9eefe1e021f6b8cee915a64751a2de3","xp":150},
-  "progression":{"matrix_version":"1.0.0","primary_attribute":"HIP","secondary_attribute":"SIN","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20},
-  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","audio_recording":"NOT_ENABLED_V1"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "progression":{"matrix_version":"1.0.0","primary_attribute":"HIP","secondary_attribute":"SIN","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER","cap":20,"client_may_apply":false},
+  "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","audio_recording":"NOT_ENABLED_V1","offline_queue":"CIPHERTEXT_ONLY"},
+  "validator_tests":{"valid":"PASS","plaintext_extra":"REJECTED_day017_jachin_unknown_field","prophecy_boundary_missing":"REJECTED_day017_prophecy_boundary_required"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_awarded":150,"xp_after":1150,"current_day":18,"hip_before":5,"hip_after":6,"sin_before":5,"sin_after":5,"attribute_event":{"count":1,"attribute_code":"HIP","amount":1,"secondary_attribute":"SIN"},"elemiah":{"completed_days":2,"lit":false},"fragments_lit":3,"synthetic_user_persisted":false}
 }
