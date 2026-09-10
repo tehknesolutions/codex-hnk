@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.2.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.3.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-09';
 
@@ -91,6 +91,36 @@ const RAW_AUTHORED_CANDIDATES = [
       'First test use is L01 OPI 7 only.',
     ],
   },
+  {
+    id: 'AUTH-004',
+    transliteration: 'NE',
+    meaning: {
+      pt: 'operador de negação / ausência em uso iniciante governado',
+      en: 'negation / absence operator for governed beginner use',
+    },
+    authority: 'CANDIDATE',
+    certainty: 'AUTHORED_PRIMITIVE',
+    sourceClass: 'AUTHORING_PROPOSAL',
+    historicalRecoveryClaim: false,
+    lessons: ['L01'],
+    morphology: {
+      schema: 'PRIMITIVE_AUTHORED',
+      leftState: 'SEMANTICS_DEFINED_BEFORE_FORM_SELECTION',
+      rightState: 'NO_RECOVERED_COMPONENTS_CLAIMED',
+      productivity: 'CLOSED_LIST_ONLY',
+    },
+    provenance: [
+      'simpleway-hnk/proposals/language/HNK_NE_NEGATION_ABSENCE_PROPOSAL_V1.json',
+      'simpleway-hnk/proposals/language/HNK_NEGATION_EXISTENCE_MICROGRAMMAR_V1.json',
+      'simpleway-hnk/curriculum/cycle-01/L01-kether/validation/opi-002-negation-candidate-human-batch.v1.json',
+    ],
+    notes: [
+      'New governed primitive; not recovered historical HNK.',
+      'First approved course use is NE VAMAKALA for absence of a nickname in L01 OPI 2.',
+      'Does not create a HAVE verb and does not define historical HNK negation.',
+      'Global productivity is not granted; each broader usage requires separate governance.',
+    ],
+  },
 ];
 
 function compileCandidate(raw) {
@@ -167,6 +197,17 @@ export function validateHnkAuthoredRegistry() {
     if (kuon.certainty !== 'AUTHORED_DERIVATION_WITH_GATED_COMPONENT') errors.push('KUON gated-component certainty drift');
     if (!kuon.lessons.includes('L01')) errors.push('KUON L01 binding missing');
     if (kuon.historicalRecoveryClaim !== false) errors.push('KUON recovery boundary drift');
+  }
+
+  const ne = HNK_AUTHORED_CANDIDATES_BY_FORM.NE;
+  if (!ne) errors.push('NE candidate missing');
+  else {
+    if (JSON.stringify(ne.glyphIds) !== JSON.stringify(['G12','G02'])) errors.push('NE glyph sequence drift');
+    if (ne.certainty !== 'AUTHORED_PRIMITIVE') errors.push('NE certainty drift');
+    if (ne.morphology.schema !== 'PRIMITIVE_AUTHORED') errors.push('NE formation drift');
+    if (ne.morphology.productivity !== 'CLOSED_LIST_ONLY') errors.push('NE productivity gate drift');
+    if (!ne.lessons.includes('L01')) errors.push('NE L01 binding missing');
+    if (ne.historicalRecoveryClaim !== false) errors.push('NE recovery boundary drift');
   }
 
   return { ok: errors.length === 0, errors };
