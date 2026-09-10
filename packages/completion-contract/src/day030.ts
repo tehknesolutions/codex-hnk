@@ -23,7 +23,7 @@ export const DAY030_COMPLETION = {
     nextCycle: 'Achaiah',
     application: 'SERVER_CROWN_STATE_ONLY',
   },
-  deploymentState: 'draft',
+  deploymentState: 'active',
 } as const;
 
 export function buildDay030CompletionRequest(input: {
