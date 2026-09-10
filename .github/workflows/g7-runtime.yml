@@ -7,12 +7,14 @@ on:
     paths:
       - 'apps/mobile/**'
       - 'packages/audio-contract/**'
+      - 'packages/supabase-client/**'
       - 'scripts/validate-chokmah-runtime-v2.mjs'
       - 'scripts/validate-aladiah-runtime.mjs'
       - 'scripts/validate-lauviah-runtime.mjs'
       - 'scripts/validate-hahaiah-runtime.mjs'
       - 'scripts/validate-iezalel-runtime.mjs'
       - 'scripts/validate-mebahel-runtime.mjs'
+      - 'scripts/validate-chokmah-portal-runtime.mjs'
       - 'scripts/validate-audio-contract.mjs'
       - 'supabase/migrations/**'
       - '.github/workflows/g7-runtime.yml'
@@ -64,8 +66,14 @@ jobs:
       - name: Validate Mebahel runtime contract
         run: pnpm validate:mebahel
 
+      - name: Validate Chokmah Portal runtime contract
+        run: pnpm validate:chokmah-portal
+
       - name: Typecheck audio contract
         run: pnpm --filter @hnk/audio-contract typecheck
+
+      - name: Typecheck Supabase client
+        run: pnpm --filter @hnk/supabase-client typecheck
 
       - name: Typecheck Mobile
         run: pnpm --filter @hnk/mobile typecheck
