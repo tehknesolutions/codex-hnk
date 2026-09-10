@@ -1,9 +1,9 @@
 {
-  "id":"HNK-KETHER-D021-V1","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_WEB_EXPO_PENDING","day":21,
+  "id":"HNK-KETHER-D021-V1","kind":"hnk.quest_definition","version":"0.2.0","status":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING","day":21,
   "title":"A Linha de Prana (Ki) — Respiração, Imagem e Sensação",
   "canonical":{"repository":"Tehkne-Solutions/hnk-codex-365","path":"canon/capitulo-01-kether/dia-021.md","source_sha":"12ca319d37146b91693fcb09ebc5fd9aa7d5490c","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","sephira":"Kether","world":"Atziluth","angel":"Mahasiah","initiatory_grade":1,"initiatory_title":"Neófito","xp":100,"tracks":["TEURG-101","COMP-101","BIO-101"]},
   "progression":{"matrix_id":"HNK-ATTRIBUTE-PROGRESSION-MATRIX-V1","matrix_version":"1.0.0","primary_attribute":null,"secondary_attribute":null,"attribute_gain":0,"application":"NO_EXECUTABLE_GAIN_RULE","client_may_apply":false,"source_basis":"NO_FROZEN_GAIN_RULE_FOR_DAY021"},
-  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"active_timer_persistence":false,"foreground_only_timing":true,"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
+  "runtime":{"entry_state":"AVAILABLE","completion_state":"COMPLETE","resumable":true,"offline_first":true,"offline_private_capture":"CIPHERTEXT_ONLY_AFTER_SESSION_START","offline_plaintext_persistence":false,"active_timer_persistence":false,"foreground_only_timing":true,"web":"ACTIVE","expo":"ACTIVE","web_route":"/day-021","expo_route":"/day-021","vault_sync_before_completion":true,"authoritative_mahasiah_assert":1,"interrupt_states":["PAUSED","INTERRUPTED","SAFETY_STOP","RESUMABLE"]},
   "phases":[
     {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["Prana e Ki são modelos operacionais do HNK nesta prática. Sensação forte, fraca ou ausente é dado fenomenológico; não é diagnóstico nem prova biomédica ou espiritual automática."],"required_for_completion":false},
     {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"required_for_completion":true},
@@ -13,9 +13,9 @@
     {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia","formula-teurgica"]},"required_for_completion":true},
     {"id":"middle_integration","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"max_timer_seconds":300,"safe_early_stop_valid":true,"natural_breathing_confirmation":true,"psalm_34_4_prayer_confirmation":true,"hands_feet_moved_confirmation":true,"environment_reorientation_confirmation":true,"presence_score":{"min":0,"max":10},"concrete_action_defined_confirmation":true,"integration_note":"VAULT_ENCRYPTED"},"required_for_completion":true},
     {"id":"soul_mirror","type":"JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"interaction":{"breath_image_sensation_interpretation_action_note":"VAULT_ENCRYPTED"},"privacy":{"free_text_destination":"VAULT_ONLY","offline_persistence":"CIPHERTEXT_ONLY","server_receives":"OPAQUE_VAULT_REF_ONLY"},"required_for_completion":true},
-    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D021-COMP-V1","completion_contract_state":"DRAFT","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-KETHER-D021-COMP-V1","completion_contract_state":"ACTIVE","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true},
     {"id":"mahasiah_progress","type":"UNLOCK","source":{"kind":"SYSTEM"},"unlock":{"cycle":"Mahasiah","authoritative_cycle_days":[21,22,23,24,25],"cycle_progress":"1/5","fragment":5,"fragment_awarded":false,"fragment_state_source":"SERVER_CROWN_STATE","next_day":22},"required_for_completion":false}
   ],
   "completion_semantics":{"special_sensation_required":false,"absence_of_sensation_valid":true,"prana_ki_are_biomedical_fact":false,"sensation_is_spiritual_proof":false,"private_text_server_side":false,"attribute_gain_client_computed":false,"mahasiah_fragment_client_computed":false,"safety_stop_supported":true},
-  "release_blockers":[{"id":"BACKEND_REVIEW"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"DEVICE_BROWSER_QA"}]
 }
