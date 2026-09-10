@@ -34,6 +34,33 @@ export const DAY003_REAL_WORLD_ACTION = Object.freeze({
   serverClockAuthoritative: true,
 } as const);
 
+export const DAY029_REAL_WORLD_ACTIONS = Object.freeze({
+  observation24h: Object.freeze({
+    actionContractId: 'HNK-KETHER-D029-SUBSTITUTION-24H-V1',
+    questDefinitionId: 'HNK-KETHER-D029-V1',
+    actionKey: 'SUBSTITUTION_OBSERVATION_24H',
+    targetElapsedSeconds: 86_400,
+    consecutive: false,
+    qualificationSemantics: 'OBSERVATION_WINDOW_ELAPSED_NOT_SUCCESS',
+    userReportRequiredForBehavioralConclusion: true,
+    grantsXp: false,
+    grantsAttribute: false,
+    serverClockAuthoritative: true,
+  }),
+  review7d: Object.freeze({
+    actionContractId: 'HNK-KETHER-D029-REVIEW-7D-V1',
+    questDefinitionId: 'HNK-KETHER-D029-V1',
+    actionKey: 'TRANSMUTATION_REVIEW_7D',
+    targetElapsedSeconds: 604_800,
+    consecutive: false,
+    qualificationSemantics: 'REVIEW_WINDOW_ELAPSED_NOT_SUCCESS',
+    userReportRequiredForBehavioralConclusion: true,
+    grantsXp: false,
+    grantsAttribute: false,
+    serverClockAuthoritative: true,
+  }),
+} as const);
+
 function requireString(value: unknown, key: string): string {
   if (typeof value !== 'string' || !value.trim()) throw new Error(`real_world_action_invalid_${key}`);
   return value;
