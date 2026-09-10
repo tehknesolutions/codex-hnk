@@ -1,0 +1,41 @@
+import type { DayDefinition } from '@hnk/day-runtime';
+
+export const CHOKMAH_DAY_072: DayDefinition = {
+  day: 72,
+  chapter: 2,
+  sephira: 'Chokmah',
+  world: 'Atziluth',
+  cycle: 'Portal Chokmah→Binah',
+  cycleIndex: 8,
+  cycleDay: 1,
+  cycleLength: 2,
+  gate: { requiresPrevious: true },
+  phases: [
+    { id: 'threshold', label: 'Limiar do Grande Espelho Negro', kind: 'threshold' },
+    { id: 'active', label: 'Observação · 15 minutos', kind: 'practice' },
+    { id: 'preregister', label: 'Pré-registro visual cifrado', kind: 'review' },
+    { id: 'review', label: 'Descrição · interpretação · hipótese', kind: 'review' },
+    { id: 'grounding', label: 'Restaurar iluminação e orientação', kind: 'grounding', requiresReturnConfirmation: true },
+    { id: 'seal', label: 'Selo do Dia 072', kind: 'seal' },
+    { id: 'complete', label: 'Portal 1/2', kind: 'complete' },
+  ],
+  evidence: {
+    requiredTrue: [
+      'protocol_completed',
+      'return_confirmed',
+      'active_completed',
+      'support_selected',
+      'visual_preregister_saved',
+      'interpretation_separated',
+      'external_presence_not_claimed',
+      'high_impact_decision_not_used',
+      'fire_safety_preserved',
+      'lighting_restored',
+      'orientation_restored',
+      'vault_saved',
+      'safety_clear',
+    ],
+    requiredPresent: ['electric_fallback_used', 'visual_form_present'],
+    minimums: { active_seconds: 900 },
+  },
+};
