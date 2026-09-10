@@ -6,6 +6,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./theta432": "./src/theta432.ts",
+    "./day030": "./src/day030.ts",
     "./analysis": "./src/analysis.ts",
     "./pcm-wav": "./src/pcm-wav.ts"
   },
