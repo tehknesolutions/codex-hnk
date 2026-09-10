@@ -1,10 +1,13 @@
 {
   "id":"HNK-KETHER-D029-COMPLETION-SERVICE-V1","day":29,
   "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D029-COMP-V1","quest_definition_id":"HNK-KETHER-D029-V1","validator_key":"day029_v1","status":"PENDING","review":"PENDING"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D029-COMP-V1","quest_definition_id":"HNK-KETHER-D029-V1","validator_key":"day029_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"cb3ffc429076d323d9996fbe9c22a458f9c49dde","xp":250,"attribute_gain":0},
-  "real_world_actions":{"observation_24h":"HNK-KETHER-D029-SUBSTITUTION-24H-V1","review_7d":"HNK-KETHER-D029-REVIEW-7D-V1","qualification_means_success":false,"required_started_before_completion":true,"required_qualified_before_completion":false},
-  "privacy":{"server_plaintext":false,"pattern_content":"VAULT_REFS_ONLY"},
-  "safety":{"pattern_is_not_identity":true,"doll_is_not_body_soul_dignity":true,"self_punishment":false,"physical_harm":false,"single_material_closure":true,"fire_required":false,"cutting_required":false},
-  "cycle":{"angel":"Lelahel","expected_completed_days":4,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"}
+  "real_world_actions":{"observation_24h":"HNK-KETHER-D029-SUBSTITUTION-24H-V1","review_7d":"HNK-KETHER-D029-REVIEW-7D-V1","qualification_means_success":false,"required_started_before_completion":true,"required_qualified_before_completion":false,"smoke_states_at_completion":{"observation_24h":"active","review_7d":"active"}},
+  "privacy":{"server_plaintext":false,"pattern_content":"VAULT_REFS_ONLY","anonymous_pattern_slots":[1,2,3]},
+  "validator_tests":{"valid_with_active_followups":"PASS","plaintext_extra":"REJECTED_day029_jachin_unknown_field","self_punishment_boundary_false":"REJECTED_day029_boaz_safety_requirements","jachin_419_seconds":"REJECTED_day029_jachin_requires_420_seconds","foreign_24h_action_id":"REJECTED_day029_24h_action_not_started"},
+  "safety":{"pattern_is_not_identity":true,"doll_is_not_body_soul_dignity":true,"self_punishment":false,"physical_harm":false,"single_material_closure":true,"fire_required":false,"cutting_required":false,"destruction_is_merit_measure":false},
+  "cycle":{"angel":"Lelahel","expected_completed_days":4,"fragment":6,"expected_lit":false,"crown_expected_after":"5/7","authoritative_source":"get_kether_crown_state"},
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_total_before":1000,"xp_total_after":1250,"xp_awarded":250,"current_day":30,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"attribute_gain_rule_count":0,"real_world_action_count":2,"followups_qualified_before_completion":false,"progression_events":["NEXT_DAY_UNLOCKED"],"lelahel":{"completed_days":4,"lit":false},"fragments_lit":5,"synthetic_user_not_persisted":true},
+  "migration":{"version":"20260910223123","name":"day029_completion_and_followup_contracts_v1_reviewed_and_active"}
 }
