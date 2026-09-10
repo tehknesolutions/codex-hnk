@@ -1,11 +1,12 @@
 {
-  "id":"HNK-KETHER-D022-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":22,"quest_id":"HNK-KETHER-D022-V1","canonical_source_sha":"dd2d6f906b57050fb568b5f82b806f456acdd3af","release_state":"DRAFT__BACKEND_WEB_EXPO_PENDING",
+  "id":"HNK-KETHER-D022-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":22,"quest_id":"HNK-KETHER-D022-V1","canonical_source_sha":"dd2d6f906b57050fb568b5f82b806f456acdd3af","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"angel":"Mahasiah"},
   "progression":{"matrix_version":"1.0.0","competency":"Sintonização do Dai Koo Myo","primary_attribute":"SIN","secondary_attribute":"PER","requested_gain":1,"client_may_apply":false,"server_trigger":"xp_events_apply_attribute_progression_v1","cap":20,"basis_note":"symbol study completion; not supernatural effect"},
   "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_asset_id":"oracle-dai-ko-myo-usui-hnk-master-v1","semantic_master":"大光明","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0","stroke_order_sha256":"52cf6921ccd6ede63a6f83d05b31faf787d2881b99d5b8ce1ee6095a86b4fe6b","stroke_counts":[3,6,8],"family":"USUI_KANJI","tibetan_dumo_substitution":false},
   "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false,"offline_plaintext_persistence":false,"offline_capture_queue":"CIPHERTEXT_ONLY"},
   "safety":{"responses":["STRONG","WEAK","ABSENT"],"absence_valid":true,"special_sensation_required":false,"restart_without_punishment":true,"no_sensation_chasing":true,"symbol_faith_evidence_distinct":true,"god_highest_spiritual_authority":true},
   "cycle_progress":{"cycle":"Mahasiah","days":[21,22,23,24,25],"expected_after_day":2,"fragment":5,"expected_lit":false,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D022-COMP-V1","validator":"day022_v1","registry":"pending","attribute_application":"SERVER_XP_EVENT_TRIGGER"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"],"proof":"DRAFT"
+  "backend":{"completion_contract":"HNK-KETHER-D022-COMP-V1","validator":"day022_v1","registry":"active","attribute_application":"SERVER_XP_EVENT_TRIGGER","smoke":{"xp_awarded":150,"xp_total_before":1000,"xp_total_after":1150,"current_day":23,"sin_before":5,"sin_after":6,"per_before":5,"per_after":5,"attribute_event_count":1,"xp_event_count":1,"mahasiah_completed_days":2,"mahasiah_lit":false,"fragments_lit":4,"rollback_only":true}},
+  "runtime":{"web":"ACTIVE","expo":"ACTIVE","web_route":"/day-022","expo_route":"/day-022","foreground_only_timing":true,"vault_sync_before_completion":true,"authoritative_mahasiah_assert":2,"approved_master_rendered":true,"approved_stroke_order_rendered":true},
+  "release_blockers":["DEVICE_BROWSER_QA"],"proof":"PASS_TECHNICALLY_ACTIVE__APPROVED_USUI_ASSETS__WEB_EXPO_E2EE__SIN_PLUS_1__MAHASIAH_2_OF_5__FRAGMENT_5_UNLIT__DEVICE_QA_PENDING"
 }
