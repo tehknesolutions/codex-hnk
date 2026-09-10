@@ -17,6 +17,7 @@ on:
       - 'scripts/validate-chokmah-portal-runtime.mjs'
       - 'scripts/validate-hariel-runtime.mjs'
       - 'scripts/validate-hakamiah-runtime.mjs'
+      - 'scripts/validate-binah-lauviah-runtime.mjs'
       - 'scripts/validate-audio-contract.mjs'
       - 'supabase/migrations/**'
       - '.github/workflows/g7-runtime.yml'
@@ -76,6 +77,9 @@ jobs:
 
       - name: Validate Hakamiah runtime contract
         run: pnpm validate:hakamiah
+
+      - name: Validate Binah Lauviah runtime contract
+        run: pnpm validate:binah-lauviah
 
       - name: Typecheck audio contract
         run: pnpm --filter @hnk/audio-contract typecheck
