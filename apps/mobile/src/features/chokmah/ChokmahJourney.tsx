@@ -4,6 +4,7 @@ import { useHnkAuth } from '../auth/AuthContext';
 import { ChokmahCycle01Cahetel } from './ChokmahCycle01Cahetel';
 import { ChokmahCycle02Haziel } from './ChokmahCycle02Haziel';
 import { ChokmahCycle03Aladiah } from './ChokmahCycle03Aladiah';
+import { ChokmahCycle04Lauviah } from './ChokmahCycle04Lauviah';
 
 export function ChokmahJourney() {
   const auth = useHnkAuth();
@@ -35,6 +36,7 @@ export function ChokmahJourney() {
   if (currentDay <= 41) return <ChokmahCycle01Cahetel />;
   if (currentDay <= 46) return <ChokmahCycle02Haziel />;
   if (currentDay <= 51) return <ChokmahCycle03Aladiah />;
+  if (currentDay <= 56) return <ChokmahCycle04Lauviah />;
 
   return (
     <View style={styles.threshold}>
