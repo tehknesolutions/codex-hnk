@@ -27,5 +27,6 @@ export * from "./day024.js";
 export * from "./day025.js";
 export * from "./day026.js";
 export * from "./day027.js";
+export * from "./day028.js";
 export * from "./service.js";
 export * from "./offline.js";
