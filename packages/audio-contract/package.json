@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./theta432": "./src/theta432.ts"
+    "./theta432": "./src/theta432.ts",
+    "./analysis": "./src/analysis.ts"
   },
   "scripts": {"typecheck": "tsc -p tsconfig.json --noEmit"},
   "devDependencies": {"typescript": "^5.9.2"}
