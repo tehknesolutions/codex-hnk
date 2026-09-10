@@ -1,10 +1,11 @@
 {
   "id":"HNK-KETHER-D023-COMPLETION-SERVICE-V1","day":23,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D023-COMP-V1","quest_definition_id":"HNK-KETHER-D023-V1","validator_key":"day023_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D023-COMP-V1","quest_definition_id":"HNK-KETHER-D023-V1","validator_key":"day023_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"1b7e27c69a7d4b9eaaf548043ad3b781e331f516","xp":150,"attribute_gain":0},
   "assets":{"reference_id":"reiki-usui-dai-ko-myo-v1","master_sha256":"25d7853168b209665a66c01a83b3ebd4681b620e1ae2a98e65d74fbab6f7b4d0"},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY"},
+  "validator_tests":{"control_scores_may_exceed_active":"PASS","active_419_seconds":"REJECTED_day023_active_requires_420_seconds","control_distance_mismatch":"REJECTED_day023_control_distance_must_match_active","plaintext_extra":"REJECTED_day023_jachin_unknown_field"},
   "cycle":{"angel":"Mahasiah","expected_completed_days":3,"fragment":5,"expected_lit":false,"crown_expected_after":"4/7","authoritative_source":"get_kether_crown_state"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_total_before":1000,"xp_total_after":1150,"xp_awarded":150,"current_day":24,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"attribute_gain_rule_count":0,"progression_events":["NEXT_DAY_UNLOCKED"],"mahasiah":{"completed_days":3,"lit":false},"fragments_lit":4,"synthetic_user_not_persisted":true}
 }
