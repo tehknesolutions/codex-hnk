@@ -1,7 +1,8 @@
 -- Portal 073 rollback E2E.
 -- Destructive-looking fixtures are transaction-local and MUST be rolled back.
 -- Covers valid evidence, negative evidence cases, canonical +500 XP exactly once,
--- Iniciado -> Teurgo, retry idempotency, Binah/Day074 unlock and no Day074 auto-start.
+-- Iniciado -> Teurgo, same-session retry, distinct-session idempotency,
+-- Binah/Day074 unlock and no Day074 auto-start.
 
 begin;
 
@@ -9,10 +10,12 @@ do $$
 declare
   u uuid := gen_random_uuid();
   s uuid := gen_random_uuid();
+  s2 uuid := gen_random_uuid();
   v uuid := gen_random_uuid();
   ev jsonb;
   r1 jsonb;
   r2 jsonb;
+  r3 jsonb;
   xp_count integer;
   xp_sum integer;
   completion_count integer;
@@ -53,9 +56,9 @@ begin
     'audio_seconds',600
   );
 
+  -- Publication is transaction-local and rolled back at the end.
   update hnk_private.portal_operator_sets set status='published',updated_at=now() where portal_day=73;
 
-  -- Negative structural-evidence matrix.
   rejected := false;
   begin
     perform hnk_private.assert_portal_completion_evidence(73::smallint, ev || jsonb_build_object('audio_seconds',599));
@@ -107,9 +110,19 @@ begin
   if (r1->>'initiatory_grade')::integer <> 3 then raise exception 'P73_E2E_grade_not_3'; end if;
   if r1->>'initiatory_title' <> 'Teurgo' then raise exception 'P73_E2E_title_not_Teurgo'; end if;
 
+  -- Same-session retry must reconcile without a second reward.
   r2 := public.complete_codex_day(73::smallint,s,repeat('b',64),now());
   if (r2->>'first_completion')::boolean is distinct from false then raise exception 'P73_E2E_retry_first_completion_not_false'; end if;
   if (r2->>'xp_awarded')::integer <> 0 then raise exception 'P73_E2E_retry_xp_not_zero'; end if;
+
+  -- A distinct Practice Session for the same user/day must also reconcile to the
+  -- already committed canonical completion. In live concurrency the advisory
+  -- xact lock serializes these sessions before v_existing is evaluated.
+  insert into public.practice_sessions(id,user_id,day,client_session_id,mode,state,duration_seconds,metrics,evidence,started_at,ended_at)
+  values (s2,u,73,'portal073-e2e-'||s2::text,'first_completion','evidence_pending',600,'{}'::jsonb,ev,now(),now());
+  r3 := public.complete_codex_day(73::smallint,s2,repeat('c',64),now());
+  if (r3->>'first_completion')::boolean is distinct from false then raise exception 'P73_E2E_second_session_first_completion_not_false'; end if;
+  if (r3->>'xp_awarded')::integer <> 0 then raise exception 'P73_E2E_second_session_xp_not_zero'; end if;
 
   select count(*)::integer into completion_count from public.day_completions where user_id=u and day=73;
   if completion_count <> 1 then raise exception 'P73_E2E_completion_count_%', completion_count; end if;
@@ -130,7 +143,5 @@ $$;
 
 rollback;
 
--- Expected persisted state after execution:
--- P73_RPC_ROLLBACK_E2E_PASS / portal_operator_sets(73).status = approved
 select 'P73_RPC_ROLLBACK_E2E_PASS' as e2e_status,
        (select status from hnk_private.portal_operator_sets where portal_day=73) as persisted_operator_status;
