@@ -8,10 +8,10 @@ import {
 } from '../src/authored.mjs';
 import { HNK_MASTER_LEXICON_BY_FORM } from '../src/index.mjs';
 
-test('authored registry contains three governed Cycle 1 candidates', () => {
-  assert.equal(HNK_AUTHORED_CANDIDATES.length, 3);
-  assert.equal(HNK_AUTHORED_REGISTRY_STATS.candidates, 3);
-  assert.equal(HNK_AUTHORED_REGISTRY_STATS.cycle1Candidates, 3);
+test('authored registry contains four governed Cycle 1 candidates', () => {
+  assert.equal(HNK_AUTHORED_CANDIDATES.length, 4);
+  assert.equal(HNK_AUTHORED_REGISTRY_STATS.candidates, 4);
+  assert.equal(HNK_AUTHORED_REGISTRY_STATS.cycle1Candidates, 4);
 });
 
 test('KUVAN is authored CANDIDATE, never recovered canon', () => {
@@ -48,10 +48,24 @@ test('KUON is authored person-interrogative candidate with explicit GATE depende
   assert.equal(kuon.morphology.productivity, 'CLOSED_LIST_ONLY');
 });
 
+test('NE is an authored primitive CANDIDATE for negation/absence', () => {
+  const ne = getAuthoredCandidate('ne');
+  assert.ok(ne);
+  assert.equal(ne.id, 'AUTH-004');
+  assert.equal(ne.authority, 'CANDIDATE');
+  assert.equal(ne.certainty, 'AUTHORED_PRIMITIVE');
+  assert.equal(ne.historicalRecoveryClaim, false);
+  assert.deepEqual(ne.glyphIds, ['G12','G02']);
+  assert.equal(ne.morphology.schema, 'PRIMITIVE_AUTHORED');
+  assert.equal(ne.morphology.productivity, 'CLOSED_LIST_ONLY');
+  assert.match(ne.notes.join(' '), /Does not create a HAVE verb/);
+});
+
 test('authored candidates do not contaminate recovered Master Lexicon', () => {
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.KUVAN, undefined);
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.VALA, undefined);
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.KUON, undefined);
+  assert.equal(HNK_MASTER_LEXICON_BY_FORM.NE, undefined);
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.VANI.meaning, null);
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.VANI.authority, 'WATCH');
   assert.equal(HNK_MASTER_LEXICON_BY_FORM.ON.authority, 'GATE');
