@@ -35,8 +35,9 @@
     "validate:lauviah": "node scripts/validate-lauviah-runtime.mjs",
     "validate:hahaiah": "node scripts/validate-hahaiah-runtime.mjs",
     "validate:iezalel": "node scripts/validate-iezalel-runtime.mjs",
+    "validate:mebahel": "node scripts/validate-mebahel-runtime.mjs",
     "export:board": "node scripts/export-board.mjs",
-    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && pnpm validate:lelahel && pnpm validate:achaiah && pnpm validate:portal036 && pnpm validate:editorial && pnpm validate:promotion && pnpm validate:canon && pnpm validate:chokmah && pnpm validate:aladiah && pnpm validate:lauviah && pnpm validate:hahaiah && pnpm validate:iezalel && turbo run lint typecheck test"
+    "check": "pnpm validate:architecture && pnpm validate:ui && pnpm validate:day001 && pnpm validate:experience && pnpm validate:audio && pnpm validate:kether-references && pnpm validate:boards && pnpm validate:vault-web-crypto && pnpm validate:vault-native-interop && pnpm validate:vault-envelope-adapter && pnpm validate:mahasiah-ar && pnpm validate:lelahel && pnpm validate:achaiah && pnpm validate:portal036 && pnpm validate:editorial && pnpm validate:promotion && pnpm validate:canon && pnpm validate:chokmah && pnpm validate:aladiah && pnpm validate:lauviah && pnpm validate:hahaiah && pnpm validate:iezalel && pnpm validate:mebahel && turbo run lint typecheck test"
   },
   "devDependencies": {
     "playwright": "1.55.0",
