@@ -8,6 +8,7 @@ import type { Database } from '@hnk/database';
 export * from './auth-callback';
 export * from './kether-cycle01';
 export * from './practice-record';
+export * from './portal-practice-record';
 export * from './promotion-sync';
 export * from './vault';
 export * from './vault-key-envelopes';
