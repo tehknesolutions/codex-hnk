@@ -45,3 +45,13 @@ export function createDay003ClientActionId(sessionSeed: string): string {
   if (!sessionSeed.trim()) throw new Error('session_seed_required');
   return `hnk:d003:boaz24h:v1:${sessionSeed}`;
 }
+
+export function createDay029Observation24hClientActionId(sessionSeed:string):string {
+  if(!sessionSeed.trim()) throw new Error('session_seed_required');
+  return `hnk:d029:substitution24h:v1:${sessionSeed}`;
+}
+
+export function createDay029Review7dClientActionId(sessionSeed:string):string {
+  if(!sessionSeed.trim()) throw new Error('session_seed_required');
+  return `hnk:d029:review7d:v1:${sessionSeed}`;
+}
