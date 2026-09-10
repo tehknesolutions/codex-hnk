@@ -1,9 +1,10 @@
 {
   "id":"HNK-KETHER-D020-COMPLETION-SERVICE-V1","day":20,
-  "transport":{"rpc":"complete_codex_day_v2","deployment":"PENDING_REVIEW"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D020-COMP-V1","quest_definition_id":"HNK-KETHER-D020-V1","validator_key":"day020_v1","status":"draft","review":"PENDING"},
+  "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D020-COMP-V1","quest_definition_id":"HNK-KETHER-D020-V1","validator_key":"day020_v1","status":"active","review":"REVIEWED_AND_TESTED"},
   "canonical":{"source_sha":"9d901354b737c2d724ff6a1aaf336d5a411fbd55","xp":100,"attribute_gain":0},
   "privacy":{"server_plaintext":false,"evidence_private_content":"VAULT_REFS_ONLY","audio_recording":"NOT_REQUIRED_V1"},
+  "validator_tests":{"null_first_thought_latency":"PASS","299_seconds":"REJECTED_day020_jachin_silence_requires_300_seconds","plaintext_extra":"REJECTED_day020_jachin_unknown_field","quietude_proof_boundary_missing":"REJECTED_day020_boaz_requirements","reorientation_missing":"REJECTED_day020_middle_requirements"},
   "cycle":{"angel":"Elemiah","expected_completed_days":5,"fragment":4,"expected_lit":true,"crown_expected_after":"4/7","authoritative_source":"get_kether_crown_state"},
-  "smoke":{"mode":"ROLLBACK_ONLY","result":"PENDING"}
+  "smoke":{"mode":"ROLLBACK_ONLY","result":"PASS","xp_before":1000,"xp_after":1100,"xp_awarded":100,"current_day":21,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"gain_rule_count":0,"elemiah":{"completed_days":5,"lit":true},"fragments_lit":4,"progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT"],"synthetic_user_persisted":false}
 }
