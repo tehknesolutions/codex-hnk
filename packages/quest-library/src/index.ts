@@ -1,2 +1,3 @@
 export * from './types.js';
-export * from './library.js';
+export {BundledQuestLibrary as KetherDay001To035Library} from './library.js';
+export {PortalAwareQuestLibrary as BundledQuestLibrary,createBundledQuestLibrary} from './portal-library.js';
