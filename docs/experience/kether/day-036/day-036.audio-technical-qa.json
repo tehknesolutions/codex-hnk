@@ -1,0 +1,16 @@
+{
+  "asset_id":"hnk.audio.kether_chokmah.transition.v1",
+  "qa_type":"DETERMINISTIC_RENDER_AND_SIGNAL_TECHNICAL_QA",
+  "result":"PASS",
+  "listening_qa_result":"PENDING_HUMAN_LISTENING",
+  "publication_state":"NOT_PUBLISHED",
+  "canonical_reference":"canon/references/approved/KETHER_CHOKMAH_TRANSITION_AUDIO_V1.md",
+  "renderer":"scripts/audio/render_kether_chokmah_transition_v1.py",
+  "expected_sha256":"5289f4b32bb1c1094b16471e262c8abb1886d7d77e595efc2605869a316a8168",
+  "rendered_sha256":"5289f4b32bb1c1094b16471e262c8abb1886d7d77e595efc2605869a316a8168",
+  "byte_identical_checksum_match":true,
+  "format":{"channels":2,"sample_width_bytes":2,"sample_rate_hz":48000,"frames":34560000,"duration_seconds":720,"file_bytes":138240044},
+  "signal":{"peak_int16":11795,"peak_dbfs":-8.8748,"clipped_samples":0,"left_rms":0.19893046693191002,"right_rms":0.19893042028829136,"first_100ms_peak_int16":32,"last_100ms_peak_int16":32},
+  "objective_checks":{"duration_exact":true,"stereo":true,"pcm16":true,"sample_rate_48000":true,"checksum_exact":true,"no_digital_clipping":true,"fade_endpoints_near_zero":true},
+  "boundary":"This technical QA does not replace the required human listening QA for harsh transients, subjective tolerability, stereo presentation, ritual-layer balance, product stop/pause/volume UX, headphone warning, or reduced-sensory alternative."
+}
