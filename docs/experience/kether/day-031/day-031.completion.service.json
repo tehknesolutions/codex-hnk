@@ -1,10 +1,12 @@
 {
   "id":"HNK-KETHER-D031-COMPLETION-SERVICE-V1","day":31,
   "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D031-COMP-V1","quest_definition_id":"HNK-KETHER-D031-V1","validator_key":"day031_v1","status":"PENDING","review":"PENDING"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D031-COMP-V1","quest_definition_id":"HNK-KETHER-D031-V1","validator_key":"day031_v1","status":"active","review":"PASS","migration":"20260911135246_day031_completion_contract_v1_reviewed_and_active.sql"},
   "canonical":{"source_sha":"2de71dbcf341774916d544f6aad55ab186bd3b68","xp":100,"attribute_gain":0},
   "privacy":{"server_plaintext":false,"phenomenology":"VAULT_REFS_ONLY"},
   "safety":{"ego_death_is_not_identity_destruction":true,"reversibility_required":true,"responsibility_return_required":true},
   "epistemic":{"silence_required_to_occur":false,"sleepiness_equals_silence":false,"single_session_definitive":false},
+  "validator":{"result":"PASS","attacks":["plaintext_extra_rejected","duration_599_rejected","fractional_score_rejected","blind_obedience_boundary_required","reversibility_required","average_return_requires_impulse"]},
+  "smoke":{"result":"PASS","mode":"ROLLBACK_ONLY","xp_before":1000,"xp_awarded":100,"xp_total_after":1100,"current_day":32,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"attribute_gain_rule_count":0,"achaiah":{"completed_days":1,"lit":false,"fragment":7},"fragments_lit":6,"progression_events":["NEXT_DAY_UNLOCKED"],"synthetic_user_persisted":false},
   "cycle":{"angel":"Achaiah","expected_completed_days":1,"fragment":7,"expected_lit":false,"crown_expected_after":"6/7","next_day":32,"authoritative_source":"get_kether_crown_state"}
 }
