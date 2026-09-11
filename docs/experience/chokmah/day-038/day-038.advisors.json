@@ -1,0 +1,5 @@
+{
+  "checked_at":"2026-09-11T21:33:38Z",
+  "security":{"day038_specific_regression":false,"known_warn":[{"name":"authenticated_security_definer_function_executable","count":1,"function":"public.complete_codex_day(p_day smallint, p_session_id uuid, p_local_record_hash text, p_client_completed_at timestamptz)","remediation":"https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"}],"known_info":{"rls_enabled_no_policy_count":6}},
+  "performance":{"day038_specific_regression":false,"known_info":{"unused_index_count":16}}
+}
