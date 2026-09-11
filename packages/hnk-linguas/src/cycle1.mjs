@@ -16,7 +16,7 @@ export const HNK_CYCLE1_LESSONS = Object.freeze([
 
 export const HNK_CYCLE1_CURRICULUM_REBINDS = Object.freeze({
   L01: Object.freeze(['LEX-013']),
-  L02: Object.freeze([]),
+  L02: Object.freeze(['LEX-003','LEX-004']),
   L03: Object.freeze([]),
   L04: Object.freeze([]),
   L05: Object.freeze([]),
@@ -99,7 +99,8 @@ export function validateCycle1LanguageCoverage() {
   if (governedUniqueLanguageAssets !== 51) errors.push(`Expected 51 governed unique language assets, got ${governedUniqueLanguageAssets}`);
   if (JSON.stringify(HNK_CYCLE1_EMPTY_LESSONS) !== JSON.stringify(['L05','L06','L07'])) errors.push('Empty lesson boundary drift');
   if (JSON.stringify(HNK_CYCLE1_CURRICULUM_REBINDS.L01) !== JSON.stringify(['LEX-013'])) errors.push('L01 curriculum rebind drift');
-  const expectedLexemeCounts = {L01:10,L02:11,L03:8,L04:9,L05:0,L06:0,L07:0};
+  if (JSON.stringify(HNK_CYCLE1_CURRICULUM_REBINDS.L02) !== JSON.stringify(['LEX-003','LEX-004'])) errors.push('L02 recovered curriculum rebind drift');
+  const expectedLexemeCounts = {L01:10,L02:13,L03:8,L04:9,L05:0,L06:0,L07:0};
   const expectedCandidateCounts = {L01:20,L02:5,L03:0,L04:0,L05:0,L06:0,L07:0};
   for (const lesson of HNK_CYCLE1_LANGUAGE_COVERAGE) {
     if (lesson.lexemeCount !== expectedLexemeCounts[lesson.lessonId]) errors.push(`${lesson.lessonId} lexeme-count drift`);
@@ -109,8 +110,9 @@ export function validateCycle1LanguageCoverage() {
   const l02 = HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson) => lesson.lessonId === 'L02');
   if (JSON.stringify(l01.governedRebindLexemeIds) !== JSON.stringify(['LEX-013'])) errors.push('L01 governed rebind provenance drift');
   if (JSON.stringify(l01.authoredCandidateIds) !== JSON.stringify(Array.from({length:20},(_,i)=>`AUTH-${String(i+1).padStart(3,'0')}`))) errors.push('L01 authored candidate provenance drift');
+  if (JSON.stringify(l02.governedRebindLexemeIds) !== JSON.stringify(['LEX-003','LEX-004'])) errors.push('L02 governed recovered rebind provenance drift');
   if (JSON.stringify(l02.authoredCandidateIds) !== JSON.stringify(['AUTH-001','AUTH-016','AUTH-017','AUTH-018','AUTH-019'])) errors.push('L02 scoped authored candidate binding drift');
-  if (l02.languageAssetCount !== 16) errors.push(`Expected 16 governed L02 language assets, got ${l02.languageAssetCount}`);
+  if (l02.languageAssetCount !== 18) errors.push(`Expected 18 governed L02 source references, got ${l02.languageAssetCount}`);
   if (HNK_CYCLE1_LANGUAGE_GATE.recoveredProxyRatio !== 0.2153) errors.push('Recovered proxy ratio drift');
   if (HNK_CYCLE1_LANGUAGE_GATE.governedAssetProxyRatio !== 0.3542) errors.push('Governed asset proxy ratio drift');
   if (HNK_CYCLE1_LANGUAGE_GATE.decision !== 'HOLD_INCOMPLETE_BINDING') errors.push('Incomplete Cycle 1 must remain HOLD');
