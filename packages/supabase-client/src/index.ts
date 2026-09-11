@@ -44,6 +44,7 @@ export * from './day035-v1';
 export * from './day036-v1';
 export * from './day037-v1';
 export * from './day038-v1';
+export * from './day039-v1';
 export * from './kether-cycle01';
 export * from './kether-cycle02';
 export * from './kether-cycle03';
