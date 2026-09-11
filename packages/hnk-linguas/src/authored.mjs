@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.5.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.6.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-10';
 
@@ -9,10 +9,10 @@ const RAW_AUTHORED_CANDIDATES = [
   {
     id: 'AUTH-001', transliteration: 'KUVAN',
     meaning: { pt: 'variável interrogativa locativa; equivalente funcional aproximado de onde / em que lugar', en: 'locative interrogative variable; approximate functional equivalent of where / in what place' },
-    authority: 'CANDIDATE', certainty: 'AUTHORED_DERIVATION', sourceClass: 'AUTHORING_PROPOSAL', historicalRecoveryClaim: false, lessons: ['L01'],
+    authority: 'CANDIDATE', certainty: 'AUTHORED_DERIVATION', sourceClass: 'AUTHORING_PROPOSAL', historicalRecoveryClaim: false, lessons: ['L01','L02'],
     morphology: { schema: 'KU + VAN', leftState: 'RECOVERED_FORM_COMPONENT_INFERRED_ROLE', rightState: 'RECOVERED_RECURRING_SEGMENT_INFERRED_LOCATIVE_ROLE', productivity: 'CLOSED_LIST_ONLY' },
-    provenance: ['simpleway-hnk/proposals/language/HNK_KUVAN_LOCATIVE_INTERROGATIVE_PROPOSAL_V1.json','simpleway-hnk/proposals/language/HNK_COMPOSITIONAL_INTERROGATIVE_RULE_V1.json'],
-    notes: ['New governed authorship; not recovered historical HNK.','Starts at CANDIDATE and must not be promoted silently.','Does not retroactively define KU as WHERE or VAN as globally productive.'],
+    provenance: ['simpleway-hnk/proposals/language/HNK_KUVAN_LOCATIVE_INTERROGATIVE_PROPOSAL_V1.json','simpleway-hnk/proposals/language/HNK_COMPOSITIONAL_INTERROGATIVE_RULE_V1.json','simpleway-hnk/curriculum/cycle-01/L02-chokhmah/validation/l02-exact-rebind-mapping-human-batch.v1.json'],
+    notes: ['New governed authorship; not recovered historical HNK.','Starts at CANDIDATE and must not be promoted silently.','Does not retroactively define KU as WHERE or VAN as globally productive.','Scoped curriculum reuse is authorized for L01 and L02.'],
   },
   {
     id: 'AUTH-002', transliteration: 'VALA',
@@ -69,34 +69,34 @@ const RAW_AUTHORED_CANDIDATES = [
   {
     id:'AUTH-016', transliteration:'AN',
     meaning:{pt:'referente de primeira pessoa / eu em uso iniciante escopado',en:'first-person referent / I for scoped beginner use'},
-    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
     morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-002_APPROXIMATE_I_CONTEXT',rightState:'PHR-007_REPEATED_DECLARATIVE_POSITION',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
-    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','First-person role is authorized for scoped L01 use only; person/number paradigm is not globally canonized.'],
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json','simpleway-hnk/curriculum/cycle-01/L02-chokhmah/validation/l02-exact-rebind-mapping-human-batch.v1.json'],
+    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','First-person role is authorized for scoped L01/L02 use only; person/number paradigm is not globally canonized.'],
   },
   {
     id:'AUTH-017', transliteration:'EN',
     meaning:{pt:'referente de segunda pessoa / você em uso iniciante escopado',en:'second-person referent / you for scoped beginner use'},
-    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
     morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-003_SECOND_PERSON_QUESTION_CONTEXT',rightState:'REPEATED_ADDRESSEE_POSITION_PHR-004_006',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
-    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Subject versus possessive behavior remains unresolved outside scoped L01 constructions.'],
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json','simpleway-hnk/curriculum/cycle-01/L02-chokhmah/validation/l02-exact-rebind-mapping-human-batch.v1.json'],
+    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Subject versus possessive behavior remains unresolved outside scoped L01/L02 constructions.'],
   },
   {
     id:'AUTH-018', transliteration:'KU',
     meaning:{pt:'seletor interrogativo de conteúdo em uso escopado; não equivale a uma palavra WH única',en:'scoped interrogative content selector; not equivalent to one fixed WH word'},
-    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
     morphology:{schema:'EVIDENCE_MAPPING_FROM_MINIMAL_CONTRAST',leftState:'PHR-003_HENUVOKODAN_OBJECT',rightState:'PHR-006_KU_ZAMO_CONTENT_PHRASE',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'],
-    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Must not be globally glossed as WHAT, WHICH, WHO, WHERE or HOW.','Any productive extension remains separately governed.'],
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json','simpleway-hnk/curriculum/cycle-01/L02-chokhmah/validation/l02-exact-rebind-mapping-human-batch.v1.json'],
+    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Must not be globally glossed as WHAT, WHICH, WHO, WHERE or HOW.','Any productive extension remains separately governed.','Scoped curriculum reuse is authorized for L01 and L02.'],
   },
   {
     id:'AUTH-019', transliteration:'KE',
     meaning:{pt:'operador / marcador de pergunta em posição final de oração em uso escopado',en:'question operator / marker in clause-final position for scoped use'},
-    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
+    authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
     morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_CONTRAST',leftState:'KE_FINAL_IN_QUESTION_LIKE_PHR-001_003_006',rightState:'ABSENT_FROM_DECLARATIVE_PHR-002_007',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'],
-    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Clause-final question behavior is authorized for scoped L01 constructions only; universal HNK interrogative grammar is not claimed.'],
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json','simpleway-hnk/curriculum/cycle-01/L02-chokhmah/validation/l02-exact-rebind-mapping-human-batch.v1.json'],
+    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Clause-final question behavior is authorized for scoped L01/L02 constructions only; universal HNK interrogative grammar is not claimed.'],
   },
   {
     id:'AUTH-020', transliteration:'ZAMI',
@@ -147,6 +147,7 @@ export function validateHnkAuthoredRegistry() {
   for(const entry of numerals){if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} numeral certainty drift`);if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} numeral productivity drift`);if(!entry.lessons.includes('L01'))errors.push(`${entry.id} L01 numeral binding missing`);}
   const evidenceMapped=['KALA','AN','EN','KU','KE','ZAMI'];
   for(const form of evidenceMapped){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(entry?.certainty!=='AUTHORED_EVIDENCE_MAPPING')errors.push(`${form} evidence mapping certainty drift`);if(entry?.historicalRecoveryClaim!==false)errors.push(`${form} historical recovery boundary drift`);}
+  for(const form of ['KUVAN','AN','EN','KU','KE']){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(!entry?.lessons.includes('L02'))errors.push(`${form} L02 scoped curriculum binding missing`);}
   for(const recovered of ['VANI','VAME'])if(HNK_AUTHORED_CANDIDATES_BY_FORM[recovered])errors.push(`${recovered} must remain recovered-only, not duplicated in authored registry`);
   return {ok:errors.length===0,errors};
 }
