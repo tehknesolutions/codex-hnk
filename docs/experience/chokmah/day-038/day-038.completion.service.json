@@ -1,0 +1,13 @@
+{
+  "day":38,
+  "completion_contract_id":"HNK-CHOKMAH-D038-COMP-V1",
+  "quest_definition_id":"HNK-CHOKMAH-D038-V1",
+  "canonical_source_sha":"db42ffb5a78fb9f3d816c2921b02b227bb7c7652",
+  "registry":{"status":"active","contract_version":"1.0.0","validator_key":"day038_v1","draft_migration":"20260911212647_day038_completion_contract_v1_draft","activation_migration":"20260911212718_activate_day038_completion_contract_v1"},
+  "validator":{"structure_result":"PASS","attack_batch_result":"PASS","proofs":["valid structural evidence accepted","Jachin 359s rejected with day038_jachin_360_required","9 thoughts rejected with day038_ten_thoughts_required","unclassified leading rejected with day038_every_leading_must_be_classified","suggestion rejectable=false rejected with day038_jachin_boundaries_required","Boaz 299s rejected with day038_boaz_300_required","Middle functional return=false rejected with day038_middle_boundaries_required","unknown plaintext top-level field rejected with day038_unknown_top_field"]},
+  "entry_gate":{"chokmah_sequential_gate":"PASS","proofs":["Day 038 without Day 037 rejected","Day 038 with Day 037 but invalid initiatory state rejected","Day 038 with Day 037 and Grade 2 / Iniciado / Chapter 2 / Chokmah accepted in rollback-only fixture"]},
+  "xp":{"canonical":100,"application":"SERVER_FIRST_COMPLETION_ONLY"},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY038_RULE_IN_MATRIX_1_0_0","canonical_cycle_language":"HIP +1 / PER +1 is descriptive cycle language only"},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_receives":"OPAQUE_VAULT_REFS_ONLY"},
+  "smoke":{"result":"PENDING","mode":"ROLLBACK_ONLY","reason":"No disposable authenticated runtime principal has completed the full RPC path."}
+}
