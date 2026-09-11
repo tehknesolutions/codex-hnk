@@ -1,5 +1,5 @@
 {
-  "id":"HNK-KETHER-D031-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":31,"quest_id":"HNK-KETHER-D031-V1","canonical_source_sha":"2de71dbcf341774916d544f6aad55ab186bd3b68","release_state":"BACKEND_REVIEW_PENDING",
+  "id":"HNK-KETHER-D031-PACK-V1","kind":"hnk.quest_pack","version":"0.2.0","day":31,"quest_id":"HNK-KETHER-D031-V1","canonical_source_sha":"2de71dbcf341774916d544f6aad55ab186bd3b68","release_state":"TECHNICALLY_ACTIVE__DEVICE_BROWSER_QA_PENDING",
   "canonical":{"counted_words":705,"xp":100,"angel":"Achaiah"},
   "attribute_progression":{"gain":0,"application":"NO_EXECUTABLE_GAIN_RULE","client_may_apply":false},
   "practice":{"jachin_surrender_seconds":600,"boaz_analysis_seconds":600,"boaz_surrender_seconds":600,"middle_surrender_seconds":600,"silence_required_to_occur":false,"reversibility_required":true,"five_object_orientation_after_boaz":true},
@@ -7,7 +7,7 @@
   "safety":{"ego_death_is_not_identity_destruction":true,"self_hatred":false,"blind_obedience":false,"responsibility_abandonment":false,"thought_suppression_by_force":false,"stop_on_intense_disorientation_growing_fear_or_persistent_loss_of_control":true,"environmental_orientation_on_stop":true},
   "epistemic":{"analysis_vs_surrender_is_comparison":true,"active_must_outperform_control":false,"sleepiness_equals_silence":false,"single_session_definitive":false,"data_may_correct_expectation":true},
   "cycle_progress":{"cycle":"Achaiah","days":[31,32,33,34,35],"expected_after_day":1,"fragment":7,"expected_lit":false,"crown_expected_after":"6/7","next_day":32,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
-  "backend":{"completion_contract":"HNK-KETHER-D031-COMP-V1","validator":"day031_v1","registry":"PENDING","attribute_application":"NO_EXECUTABLE_GAIN_RULE"},
-  "runtime":{"web":"PENDING","expo":"PENDING"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+  "backend":{"completion_contract":"HNK-KETHER-D031-COMP-V1","validator":"day031_v1","registry":"ACTIVE","migration":"20260911135246_day031_completion_contract_v1_reviewed_and_active.sql","attribute_application":"NO_EXECUTABLE_GAIN_RULE","validator_attack_test":"PASS","smoke_test":"PASS_ROLLBACK_ONLY"},
+  "runtime":{"web":"ACTIVE","web_route":"/day-031","expo":"ACTIVE","expo_route":"/day-031","foreground_only_timing":true,"active_timer_persistence":false},
+  "release_blockers":["DEVICE_BROWSER_QA"]
 }
