@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.6.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.7.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-10';
 
@@ -26,17 +26,17 @@ const RAW_AUTHORED_CANDIDATES = [
     id: 'AUTH-003', transliteration: 'KUON',
     meaning: { pt: 'qual pessoa / quem; variável interrogativa de referente humano em teste', en: 'which person / who; human-referent interrogative variable under test' },
     authority: 'CANDIDATE', certainty: 'AUTHORED_DERIVATION_WITH_GATED_COMPONENT', sourceClass: 'AUTHORING_PROPOSAL', historicalRecoveryClaim: false, lessons: ['L01'],
-    morphology: { schema: 'KU + ON', leftState: 'RECOVERED_FORM_COMPONENT_INFERRED_CONTENT_SELECTOR_ROLE', rightState: 'LEX-026_ON_GATE_PRONOUN_REFERENT_UNDER_TEST', productivity: 'CLOSED_LIST_ONLY' },
+    morphology: { schema: 'KU + ON', leftState: 'RECOVERED_FORM_COMPONENT_INFERRED_ROLE', rightState: 'LEX-026_ON_GATE_PRONOUN_REFERENT_UNDER_TEST', productivity: 'CLOSED_LIST_ONLY' },
     provenance: ['simpleway-hnk/proposals/language/HNK_KUON_PERSON_INTERROGATIVE_PROPOSAL_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/opi-007.archaeology.v2.json'],
     notes: ['New governed authorship; not recovered historical HNK.','Depends on ON remaining GATE; this candidate does not promote ON.','Does not retroactively define KU as WHO or ON as a generic person noun.','First test use is L01 OPI 7 only.'],
   },
   {
     id: 'AUTH-004', transliteration: 'NE',
     meaning: { pt: 'operador de negação / ausência em uso iniciante governado', en: 'negation / absence operator for governed beginner use' },
-    authority: 'CANDIDATE', certainty: 'AUTHORED_PRIMITIVE', sourceClass: 'AUTHORING_PROPOSAL', historicalRecoveryClaim: false, lessons: ['L01'],
+    authority: 'CANDIDATE', certainty: 'AUTHORED_PRIMITIVE', sourceClass: 'AUTHORING_PROPOSAL', historicalRecoveryClaim: false, lessons: ['L01','L02'],
     morphology: { schema: 'PRIMITIVE_AUTHORED', leftState: 'SEMANTICS_DEFINED_BEFORE_FORM_SELECTION', rightState: 'NO_RECOVERED_COMPONENTS_CLAIMED', productivity: 'CLOSED_LIST_ONLY' },
-    provenance: ['simpleway-hnk/proposals/language/HNK_NE_NEGATION_ABSENCE_PROPOSAL_V1.json','simpleway-hnk/proposals/language/HNK_NEGATION_EXISTENCE_MICROGRAMMAR_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/validation/opi-002-negation-candidate-human-batch.v1.json'],
-    notes: ['New governed primitive; not recovered historical HNK.','First approved course use is NE VAMAKALA for absence of a nickname in L01 OPI 2.','Does not create a HAVE verb and does not define historical HNK negation.','Global productivity is not granted; each broader usage requires separate governance.'],
+    provenance: ['simpleway-hnk/proposals/language/HNK_NE_NEGATION_ABSENCE_PROPOSAL_V1.json','simpleway-hnk/proposals/language/HNK_NEGATION_EXISTENCE_MICROGRAMMAR_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/validation/opi-002-negation-candidate-human-batch.v1.json','simpleway-hnk/curriculum/cycle-01/L02-chokhmah/validation/l02-str005-ne-scope-exact-pattern-human-batch.v4.json'],
+    notes: ['New governed primitive; not recovered historical HNK.','First approved course use is NE VAMAKALA for absence of a nickname in L01 OPI 2.','L02 scope is restricted to predicate negation inside the governed STR005 course frame; this does not license general L02 negation productivity.','Does not create a HAVE verb, a DID auxiliary, past-tense morphology, or historical HNK negation.','Global productivity is not granted; each broader usage requires separate governance.'],
   },
   ...[
     ['AUTH-005','BIZO','zero','zero',0],
@@ -147,8 +147,10 @@ export function validateHnkAuthoredRegistry() {
   for(const entry of numerals){if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} numeral certainty drift`);if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} numeral productivity drift`);if(!entry.lessons.includes('L01'))errors.push(`${entry.id} L01 numeral binding missing`);}
   const evidenceMapped=['KALA','AN','EN','KU','KE','ZAMI'];
   for(const form of evidenceMapped){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(entry?.certainty!=='AUTHORED_EVIDENCE_MAPPING')errors.push(`${form} evidence mapping certainty drift`);if(entry?.historicalRecoveryClaim!==false)errors.push(`${form} historical recovery boundary drift`);}
-  const l02Scoped=['KUVAN','AN','EN','KU','KE'];
+  const l02Scoped=['KUVAN','NE','AN','EN','KU','KE'];
   for(const form of l02Scoped){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(!entry?.lessons.includes('L02'))errors.push(`${form} L02 scoped rebind missing`);if(entry?.authority!=='CANDIDATE')errors.push(`${form} L02 rebind must remain CANDIDATE`);}
+  const ne=HNK_AUTHORED_CANDIDATES_BY_FORM.NE;
+  if(!ne?.notes.some((note)=>note.includes('restricted to predicate negation inside the governed STR005 course frame')))errors.push('NE L02 STR005 scope boundary missing');
   for(const recovered of ['VANI','VAME'])if(HNK_AUTHORED_CANDIDATES_BY_FORM[recovered])errors.push(`${recovered} must remain recovered-only, not duplicated in authored registry`);
   return {ok:errors.length===0,errors};
 }
