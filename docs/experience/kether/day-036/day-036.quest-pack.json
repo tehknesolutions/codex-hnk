@@ -1,0 +1,15 @@
+{
+  "id":"HNK-KETHER-D036-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":36,"quest_id":"HNK-KETHER-D036-V1","canonical_source_sha":"cfb52771830f1f004c9eded69fb91846da313607","release_state":"PORTAL_LOCKED__OPERATOR_PUBLICATION_PENDING",
+  "canonical":{"counted_words":705,"xp":500,"angel":"Portal de Transmutação","promotion":"Level 2 - Iniciado","transition":"Kether→Chokmah"},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY036_RULE_IN_MATRIX_1_0_0"},
+  "operator_set":{"tuner":{"id":"hnk.tuner.kether.v1","approval_state":"approved","published_component_pending":true},"transition_audio":{"id":"hnk.audio.kether_chokmah.transition.v1","approval_state":"review","published":false,"listening_qa_pending":true,"duration_seconds":720,"checksum_sha256":"5289f4b32bb1c1094b16471e262c8abb1886d7d77e595efc2605869a316a8168","runtime_synthesis_forbidden":true},"sigil":{"id":"hnk.kether.sigil.v1","master_asset_id":"hnk.kether.sigil.v1.master","approval_state":"approved","published_asset_pending":true,"checksum_sha256":"7792ad999497f502d29c4377d3497c02241421701e5762ed247c5351fb24320a"}},
+  "portal_protocol":{"prior_days_required":35,"crown_required":"7/7","portal_audio_effective_seconds":720,"portal_gnosis_seconds":300,"baseline_gnosis_seconds":300,"final_portal_audio_effective_seconds":720,"final_portal_gnosis_seconds":300,"foreground_only":true,"active_timer_persistence":false,"canonical_phase_sequence":["READY","AUDIO_ARMED","INDUCTION","SIGIL_READY","GNOSIS","RETURN","RECORD","COMPLETE"]},
+  "review_requirements":{"days_reviewed":"001-035","consolidated_competencies":3,"fragile_competencies":3,"attribute_evidence_count":7,"old_records_may_be_modified":false,"premature_promotion_criterion_required":true},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "safety":{"stop_always_available":true,"reduced_sensory_mode_available":true,"strobing_required":false,"discomfort_stop_has_progress_penalty":false,"orientation_required":true,"voluntary_return_required":true,"functional_return_required":true},
+  "epistemic":{"active_vs_baseline_is_comparison":true,"active_must_outperform_baseline":false,"subjective_intensity_grants_promotion":false,"technology_or_symbols_independent_effect_proven":false,"theta_is_product_label_not_measurement":true,"supernatural_detection_claim":false},
+  "promotion":{"server_authoritative":true,"from":{"current_day":36,"chapter":1,"sephira":"Kether","grade":1,"title":"Neófito"},"to":{"current_day":37,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado"},"expected_progression_events":["KETHER_COMPLETE","INITIATORY_GRADE_CHANGED"],"final_sigil_resolution_order":["origin","rings","gates","36th_mark","crown_axis"]},
+  "backend":{"completion_contract":"HNK-KETHER-D036-COMP-V1","validator":"day036_v1","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_CONTRACT","TUNER_COMPONENT_PUBLICATION","SIGIL_ASSET_PUBLICATION","TRANSITION_AUDIO_LISTENING_QA","TRANSITION_AUDIO_PUBLICATION","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+}
