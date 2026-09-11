@@ -38,7 +38,7 @@ test('recovered registry and authored candidates remain separate metrics', () =>
 
 test('lesson binding counts preserve recovered provenance and governed additions', () => {
   assert.deepEqual(Object.fromEntries(HNK_CYCLE1_LANGUAGE_COVERAGE.map((lesson) => [lesson.lessonId,lesson.lexemeCount])), {L01:10,L02:11,L03:8,L04:9,L05:0,L06:0,L07:0});
-  assert.deepEqual(Object.fromEntries(HNK_CYCLE1_LANGUAGE_COVERAGE.map((lesson) => [lesson.lessonId,lesson.authoredCandidateCount])), {L01:20,L02:5,L03:0,L04:0,L05:0,L06:0,L07:0});
+  assert.deepEqual(Object.fromEntries(HNK_CYCLE1_LANGUAGE_COVERAGE.map((lesson) => [lesson.lessonId,lesson.authoredCandidateCount])), {L01:20,L02:0,L03:0,L04:0,L05:0,L06:0,L07:0});
   const l01 = HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson) => lesson.lessonId === 'L01');
   assert.deepEqual(HNK_CYCLE1_CURRICULUM_REBINDS.L01, ['LEX-013']);
   assert.deepEqual(l01.governedRebindLexemeIds, ['LEX-013']);
@@ -47,17 +47,17 @@ test('lesson binding counts preserve recovered provenance and governed additions
   assert.deepEqual(HNK_CYCLE1_EMPTY_LESSONS, ['L05','L06','L07']);
 });
 
-test('L02 has eleven recovered lexemes plus five scoped authored-candidate bindings', () => {
+test('L02 source lock currently has eleven recovered lexemes and zero recovered phrases', () => {
   const l02=HNK_CYCLE1_LANGUAGE_COVERAGE.find((lesson)=>lesson.lessonId==='L02');
   assert.equal(l02.lexemeCount,11);
-  assert.equal(l02.authoredCandidateCount,5);
-  assert.equal(l02.languageAssetCount,16);
+  assert.equal(l02.authoredCandidateCount,0);
+  assert.equal(l02.languageAssetCount,11);
   assert.equal(l02.phraseCount,0);
   assert.equal(l02.authorityCounts.FROZEN,5);
   assert.equal(l02.authorityCounts.WATCH,5);
   assert.equal(l02.authorityCounts.GATE,1);
   assert.deepEqual(l02.lexemeIds,['LEX-009','LEX-010','LEX-011','LEX-012','LEX-013','LEX-014','LEX-015','LEX-020','LEX-030','LEX-031','LEX-032']);
-  assert.deepEqual(l02.authoredCandidateIds,['AUTH-001','AUTH-016','AUTH-017','AUTH-018','AUTH-019']);
+  assert.deepEqual(l02.authoredCandidateIds,[]);
 });
 
 test('L03 and L04 authority mix remains non-canonical where required', () => {
