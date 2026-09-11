@@ -1,0 +1,1 @@
+update hnk_private.completion_contract_registry set status='active', updated_at=now() where completion_contract_id='HNK-KETHER-D035-COMP-V1' and quest_definition_id='HNK-KETHER-D035-V1' and day=35 and canonical_source_sha='7f20c0ed04243ccb9c21e6a3e0068adf8921e941' and validator_key='day035_v1';
