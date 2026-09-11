@@ -1,0 +1,13 @@
+{
+  "day":39,
+  "completion_contract_id":"HNK-CHOKMAH-D039-COMP-V1",
+  "quest_definition_id":"HNK-CHOKMAH-D039-V1",
+  "canonical_source_sha":"be610c0d5cee2553e281ac08ef3db6c0d26b5d27",
+  "registry":{"status":"active","contract_version":"1.0.0","validator_key":"day039_v1","draft_migration":"20260911213749_day039_completion_contract_v1_draft","activation_migration":"20260911213826_activate_day039_completion_contract_v1"},
+  "validator":{"structure_result":"PASS","attack_batch_result":"PASS","proofs":["valid structural evidence accepted","Jachin 419s rejected with day039_jachin_420_required","airway/vessel compression boundary false rejected with day039_jachin_boundaries_required","natural breathing false rejected with day039_jachin_boundaries_required","Boaz neutral 179s rejected with day039_boaz_neutral_180_required","Boaz symbolic 239s rejected with day039_boaz_symbolic_240_required","associated-person content internal=false rejected with day039_boaz_boundaries_required","action on impression avoided=false rejected with day039_boaz_boundaries_required","telepathy_not_confirmed=false rejected with day039_boaz_boundaries_required","Middle four-layer record=false rejected with day039_middle_boundaries_required","Middle functional return=false rejected with day039_middle_boundaries_required","Middle telepathy-not-claimed=false rejected with day039_middle_boundaries_required","unknown plaintext top-level field rejected with day039_unknown_top_field"]},
+  "entry_gate":{"chokmah_sequential_gate":"PASS","requires_previous_day":38,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah"},
+  "xp":{"canonical":100,"application":"SERVER_FIRST_COMPLETION_ONLY"},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY039_RULE_IN_MATRIX_1_0_0"},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_receives":"OPAQUE_VAULT_REFS_ONLY"},
+  "smoke":{"result":"PENDING","mode":"ROLLBACK_ONLY","reason":"No disposable authenticated runtime principal has completed the full RPC path."}
+}
