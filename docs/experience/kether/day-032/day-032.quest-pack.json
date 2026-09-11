@@ -1,5 +1,5 @@
 {
-  "id":"HNK-KETHER-D032-PACK-V1","kind":"hnk.quest_pack","version":"0.1.1","day":32,"quest_id":"HNK-KETHER-D032-V1","canonical_source_sha":"e769394099a40802b45b9d5d269e1545dc5c4cf5","release_state":"BACKEND_VALIDATED__RUNTIME_PENDING",
+  "id":"HNK-KETHER-D032-PACK-V1","kind":"hnk.quest_pack","version":"0.1.2","day":32,"quest_id":"HNK-KETHER-D032-V1","canonical_source_sha":"e769394099a40802b45b9d5d269e1545dc5c4cf5","release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"angel":"Achaiah"},
   "attribute_progression":{"matrix_version":"1.0.0","primary_attribute":"HIP","secondary_attribute":"PER","gain":1,"cap":20,"application":"SERVER_XP_EVENT_TRIGGER_ONLY","client_may_apply":false,"source_basis":{"type":"CANON_EPISTEMIC_CHECKPOINT","note":"latency, markers and voluntary return"}},
   "practice":{"floors":7,"jachin_final_level_seconds":180,"boaz_control_final_silence_seconds":180,"middle_final_level_seconds":180,"descent_and_return_timing":"MEASURED_NOT_FIXED","specific_marker_required":false,"orientation_required":true,"memory_continuity_required":true,"voluntary_return_required":true},
@@ -8,6 +8,6 @@
   "epistemic":{"active_vs_control_is_comparison":true,"active_must_outperform_control":false,"natural_anesthesia_is_hnk_fenomenological_hypothesis":true,"single_session_definitive":false,"data_may_correct_expectation":true},
   "cycle_progress":{"cycle":"Achaiah","days":[31,32,33,34,35],"expected_after_day":2,"fragment":7,"expected_lit":false,"crown_expected_after":"6/7","next_day":33,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
   "backend":{"completion_contract":"HNK-KETHER-D032-COMP-V1","validator":"day032_v1","registry":"ACTIVE","review":"PASS","validator_attack_test":"PASS","smoke_test":"PENDING_ROLLBACK_ONLY","attribute_application":"SERVER_XP_EVENT_TRIGGER_ONLY"},
-  "runtime":{"web":"PENDING","expo":"PENDING"},
-  "release_blockers":["BACKEND_ROLLBACK_SMOKE","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED_BUILD","expo":"IMPLEMENTED_UNVERIFIED_BUILD","web_route":"/day-032","expo_route":"day-032","integration_gate":"validate:day032"},
+  "release_blockers":["BACKEND_ROLLBACK_SMOKE","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
