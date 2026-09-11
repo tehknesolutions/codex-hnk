@@ -1,5 +1,5 @@
 {
-  "id":"HNK-KETHER-D035-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":35,"quest_id":"HNK-KETHER-D035-V1","canonical_source_sha":"7f20c0ed04243ccb9c21e6a3e0068adf8921e941","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "id":"HNK-KETHER-D035-PACK-V1","kind":"hnk.quest_pack","version":"0.1.1","day":35,"quest_id":"HNK-KETHER-D035-V1","canonical_source_sha":"7f20c0ed04243ccb9c21e6a3e0068adf8921e941","release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
   "canonical":{"counted_words":705,"xp":250,"angel":"Achaiah"},
   "attribute_progression":{"matrix_version":"1.0.0","primary_attribute":"SIN","secondary_attribute":"VNT","gain":1,"application":"SERVER_XP_EVENT_TRIGGER_ONLY","source_basis":{"type":"CYCLE_CHECKPOINT","note":"integration/closure; never subjective phenomenon"}},
   "ritual":{"active":{"circle_count":3,"line_color":"BLUE","tetragrammaton_blue_flames":true,"construction_timing":"MEASURED_1_7200","center_hold_seconds":300},"control":{"circle_count":3,"line_color":"GRAY_NEUTRAL","no_sacred_name":true,"no_blue_fire":true,"no_achaiah_formula":true,"construction_timing":"MEASURED_1_7200","center_hold_seconds":300},"middle":{"circle_count":3,"line_color":"BLUE","tetragrammaton_blue_flames":true,"construction_timing":"MEASURED_1_7200","center_hold_seconds":300,"psalm_3_5":true,"aleph_cheth_aleph_once":true},"foreground_only":true,"active_timer_persistence":false},
@@ -7,7 +7,7 @@
   "safety":{"invulnerability_claim":false,"concrete_prudence_required":true,"physical_social_medical_risks_may_be_ignored":false,"shared_reality_required":true,"functional_return_required":true,"no_cutting_objects":true,"safety_stop_supported":true},
   "epistemic":{"active_vs_control_is_comparison":true,"active_must_outperform_control":false,"specific_subjective_effect_required":false,"single_session_definitive":false},
   "cycle_progress":{"cycle":"Achaiah","days":[31,32,33,34,35],"expected_after_day":5,"fragment":7,"expected_lit":true,"crown_expected_after":"7/7","portal_unlocked_expected":true,"next_day":36,"authoritative_source":"get_kether_crown_state","expected_progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT","KETHER_PORTAL_UNLOCKED"],"client_may_light_fragment":false,"client_may_unlock_portal":false},
-  "backend":{"completion_contract":"HNK-KETHER-D035-COMP-V1","validator":"day035_v1","registry":"PENDING"},
-  "runtime":{"web":"PENDING","expo":"PENDING"},
-  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+  "backend":{"completion_contract":"HNK-KETHER-D035-COMP-V1","validator":"day035_v1","registry":"ACTIVE","review":"PASS","validator_attack_test":"PASS","smoke_test":"PENDING_ROLLBACK_ONLY"},
+  "runtime":{"web":"ACTIVE","web_route":"/day-035","expo":"ACTIVE","expo_route":"/day-035","vault_sync_before_completion":true,"server_crown_assert":true},
+  "release_blockers":["BACKEND_ROLLBACK_SMOKE","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
