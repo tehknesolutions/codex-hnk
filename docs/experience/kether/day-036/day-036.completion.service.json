@@ -1,0 +1,24 @@
+{
+  "day":36,
+  "completion_contract_id":"HNK-KETHER-D036-COMP-V1",
+  "quest_definition_id":"HNK-KETHER-D036-V1",
+  "canonical_source_sha":"cfb52771830f1f004c9eded69fb91846da313607",
+  "registry":{"status":"active","operational_state":"LOCKED_BY_OPERATOR_PUBLICATION","contract_version":"1.0.0","validator_key":"day036_v1","draft_migration":"20260911181853_day036_completion_contract_v1_draft","activation_migration":"20260911181954_activate_day036_completion_contract_v1_locked","review":"PASS"},
+  "validator":{"structure_result":"PASS","operator_gate_result":"LOCKED_AS_EXPECTED","project_ref":"czgqjrxkveatlnyjiwds","proofs":[
+    "valid structural evidence accepted even when baseline scores exceed Portal scores",
+    "Portal audio 719s rejected with day036_portal_audio_720_required",
+    "Portal gnosis 299s rejected with day036_portal_gnosis_300_required",
+    "operator checksum mutation rejected with day036_operator_version_mismatch",
+    "attribute evidence count 6 rejected with day036_attribute_evidence_7_required",
+    "baseline tuner absence=false rejected with day036_baseline_boundaries_required",
+    "Middle responsibility-not-superiority=false rejected with day036_middle_boundaries_required",
+    "unknown plaintext top-level field rejected with day036_unknown_top_field",
+    "current final validator is blocked by day036_tuner_component_not_published before promotion can occur"
+  ]},
+  "xp":{"canonical":500,"application":"SERVER_FIRST_COMPLETION_ONLY"},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY036_RULE_IN_MATRIX_1_0_0"},
+  "promotion":{"application":"SERVER_ONLY","requires_prior_days":35,"expected_from":{"grade":1,"title":"Neófito","chapter":1,"sephira":"Kether","current_day":36},"expected_to":{"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","current_day":37},"expected_progression_events":["KETHER_COMPLETE","INITIATORY_GRADE_CHANGED"]},
+  "operators":{"tuner":{"id":"hnk.tuner.kether.v1","state":"APPROVED_COMPONENT_PENDING"},"sigil":{"id":"hnk.kether.sigil.v1","master_asset_id":"hnk.kether.sigil.v1.master","state":"APPROVED_ASSET_PUBLICATION_PENDING"},"audio":{"id":"hnk.audio.kether_chokmah.transition.v1","state":"REVIEW__LISTENING_QA_PENDING__NOT_PUBLISHED","duration_seconds":720,"checksum_sha256":"5289f4b32bb1c1094b16471e262c8abb1886d7d77e595efc2605869a316a8168"}},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_receives":"OPAQUE_VAULT_REFS_ONLY"},
+  "smoke":{"result":"PENDING","mode":"ROLLBACK_ONLY","reason":"No disposable authenticated principal has been approved; operator publication gate also intentionally prevents Portal completion today."}
+}
