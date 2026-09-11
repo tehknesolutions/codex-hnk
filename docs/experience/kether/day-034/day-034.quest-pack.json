@@ -1,0 +1,13 @@
+{
+  "id":"HNK-KETHER-D034-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":34,"quest_id":"HNK-KETHER-D034-V1","canonical_source_sha":"6d8fb4dc7923691a38677881db902efc47c37ac2","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"angel":"Achaiah"},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY034_RULE_IN_MATRIX_1_0_0"},
+  "installation":{"phrase":"A Vida Zoe flui por mim em silêncio","anchor_gesture":"DOMINANT_THUMB_INDEX","control_gesture":"DOMINANT_THUMB_MIDDLE","gesture_seconds":5,"silence_after_installation_seconds":60,"installation_repetitions":3,"awake_control_interval_seconds":300,"inter_condition_wait_seconds":60,"awake_middle_test_interval_seconds":300},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "safety":{"irresistible_command_claim":false,"permanence_guaranteed":false,"voluntary_cancellation_required":true,"consciousness_responsibility_discernment_required":true,"safety_stop_supported":true},
+  "epistemic":{"active_vs_control_is_comparison":true,"active_must_outperform_control":false,"durability_requires_future_measurement":true,"single_session_definitive":false},
+  "cycle_progress":{"cycle":"Achaiah","days":[31,32,33,34,35],"expected_after_day":4,"fragment":7,"expected_lit":false,"crown_expected_after":"6/7","next_day":35,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
+  "backend":{"completion_contract":"HNK-KETHER-D034-COMP-V1","validator":"day034_v1","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_REVIEW","WEB_RUNTIME","EXPO_RUNTIME","DEVICE_BROWSER_QA"]
+}
