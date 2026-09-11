@@ -1,14 +1,14 @@
 {
-  "id":"HNK-CHOKMAH-D037-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":37,"quest_id":"HNK-CHOKMAH-D037-V1","canonical_source_sha":"3f61ac6495fbc438e87785d1929b0a32941976d2","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "id":"HNK-CHOKMAH-D037-PACK-V1","kind":"hnk.quest_pack","version":"0.1.1","day":37,"quest_id":"HNK-CHOKMAH-D037-V1","canonical_source_sha":"3f61ac6495fbc438e87785d1929b0a32941976d2","release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
   "canonical":{"counted_words":705,"xp":100,"angel":"Cahetel","chapter":2,"sephira":"Chokmah","level":2},
   "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY037_RULE_IN_MATRIX_1_0_0"},
-  "entry_gate":{"day_036_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true},
+  "entry_gate":{"day_036_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"trigger":"trg_day037_initiatory_entry_gate","live_attack_result":"PASS"},
   "jachin":{"observation_seconds":420,"open_reception_seconds":60,"eyes_open":true,"comfortable_posture":true,"minimums":{"visual":5,"auditory":4,"kinesthetic":3,"olfactory":2,"gustatory":1},"total_perceptions":20,"additional_perceptions_any_modality":5,"automatic_labels_counted":true,"distractions_counted":true,"attention_recovery_recorded":true,"direct_description_before_interpretation":true},
-  "boaz":{"different_environment":true,"duration":"MEASURED_AND_SIMILAR_TO_ACTIVE","three_columns":["DADO","INTERPRETACAO","HIPOTESE"],"three_breath_delay":true,"external_cause_only_as_hypothesis":true,"alternative_hypothesis_required":true,"certainty_seeking":false,"records_compared":10,"premature_inferences_marked":true,"confidence_changes_recorded":true,"certainty_blocking_criterion_required":true},
+  "boaz":{"different_environment":true,"duration":"MEASURED_1_7200_AND_SIMILAR_TO_ACTIVE","three_columns":["DADO","INTERPRETACAO","HIPOTESE"],"three_breath_delay":true,"external_cause_only_as_hypothesis":true,"alternative_hypothesis_required":true,"certainty_seeking":false,"records_compared":10,"premature_inferences_marked":true,"confidence_changes_recorded":true,"certainty_blocking_criterion_required":true},
   "middle":{"prayer_for_discernment":true,"cahetel":true,"psalm_11_7":true,"vakog_unlabeled_seconds":300,"e1_e5_classification":true,"triplet":["PERCEBIDO","INTERPRETADO","DESCONHECIDO"],"unknown_must_remain_unknown":true,"thanks_to_god":true,"functional_return":true,"twenty_perceptions_saved":true,"personal_discernment_rule":true},
-  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true,"draft_contains_private_text":false},
   "epistemic":{"sensory_data_precedes_interpretation":true,"subjective_experience_is_external_cause_proof":false,"traditional_operators_are_measurements":false,"alternative_explanation_required":true,"certainty_from_sensation_forbidden":true},
-  "backend":{"completion_contract":"HNK-CHOKMAH-D037-COMP-V1","validator":"day037_v1","registry":"PENDING"},
-  "runtime":{"web":"PENDING","expo":"PENDING"},
-  "release_blockers":["BACKEND_CONTRACT","DAY036_PREVIOUS_DAY_GATE","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+  "backend":{"completion_contract":"HNK-CHOKMAH-D037-COMP-V1","validator":"day037_v1","registry":"ACTIVE","review":"PASS","attack_test":"PASS","entry_gate":"PASS","smoke":"PENDING_ROLLBACK_ONLY"},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED_BUILD","expo":"IMPLEMENTED_UNVERIFIED_BUILD","web_route":"/day-037","expo_route":"day-037","foreground_only":true,"active_timer_persistence":false},
+  "release_blockers":["BACKEND_ROLLBACK_SMOKE","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
