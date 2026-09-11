@@ -1,10 +1,10 @@
 {
-  "id":"HNK-KETHER-D033-PACK-V1","kind":"hnk.quest_pack","version":"0.1.0","day":33,"quest_id":"HNK-KETHER-D033-V1","canonical_source_sha":"83cf1f0249c39cdd112d2bd3e6fa6a0436f525c0","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "id":"HNK-KETHER-D033-PACK-V1","kind":"hnk.quest_pack","version":"0.1.1","day":33,"quest_id":"HNK-KETHER-D033-V1","canonical_source_sha":"97c1562b8b285b8b5d9ead934c3702844c7bd837","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
   "canonical":{"counted_words":705,"xp":150,"angel":"Achaiah"},
   "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY033_RULE_IN_MATRIX_1_0_0"},
-  "practice":{"active_immobility_seconds":300,"control_immobility_seconds":300,"middle_immobility_seconds":300,"historical_ceiling_seconds":1200,"historical_ceiling_is_target":false,"foreground_only":true,"movement_available_at_will_required":true,"orientation_required":true,"memory_continuity_required":true,"functional_return_required":true},
+  "practice":{"jachin_immobility_seconds":900,"control_immobility_seconds":900,"middle_duration_timing":"MEASURED_NOT_FIXED","middle_duration_max_seconds":1200,"historical_ceiling_is_required":false,"foreground_only":true,"movement_available_at_will_required":true,"orientation_required":true,"functional_return_required":true},
   "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
-  "safety":{"medical_catatonia_claim":false,"analgesia_claim":false,"loss_of_consciousness_required":false,"pain_or_warning_signals_may_be_ignored":false,"medical_care_replacement":false,"warning_symptoms_invalidate_current_block":true,"safety_stop_supported":true},
+  "safety":{"catatonia_is_hnk_hypnosis_label_not_medical_diagnosis":true,"analgesia_required":false,"loss_of_consciousness_required":false,"pain_or_growing_discomfort_may_be_ignored":false,"medical_care_replacement":false,"safety_stop_supported":true},
   "epistemic":{"active_vs_control_is_comparison":true,"active_must_outperform_control":false,"single_session_definitive":false,"data_may_correct_expectation":true},
   "cycle_progress":{"cycle":"Achaiah","days":[31,32,33,34,35],"expected_after_day":3,"fragment":7,"expected_lit":false,"crown_expected_after":"6/7","next_day":34,"authoritative_source":"get_kether_crown_state","client_may_light_fragment":false},
   "backend":{"completion_contract":"HNK-KETHER-D033-COMP-V1","validator":"day033_v1","registry":"PENDING"},
