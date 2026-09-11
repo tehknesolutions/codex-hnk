@@ -1,0 +1,19 @@
+{
+  "day":34,
+  "completion_contract_id":"HNK-KETHER-D034-COMP-V1",
+  "quest_definition_id":"HNK-KETHER-D034-V1",
+  "canonical_source_sha":"6d8fb4dc7923691a38677881db902efc47c37ac2",
+  "registry":{"status":"active","contract_version":"1.0.0","validator_key":"day034_v1","draft_migration":"20260911163131_day034_completion_contract_v1_draft","activation_migration":"20260911170425_activate_day034_completion_contract_v1","review":"PASS"},
+  "validator":{"result":"PASS","project_ref":"czgqjrxkveatlnyjiwds","proofs":[
+    "valid evidence accepted with control scores 9/10 while anchor scores 2/10",
+    "jachin gesture repetitions 2 rejected with day034_jachin_timing_required",
+    "boaz voluntary cancellation false rejected with day034_boaz_boundaries_required",
+    "middle durability-as-hypothesis false rejected with day034_middle_boundaries_required",
+    "unknown plaintext top-level field rejected with day034_unknown_top_field"
+  ]},
+  "xp":{"canonical":150,"application":"SERVER_FIRST_COMPLETION_ONLY"},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY034_RULE_IN_MATRIX_1_0_0"},
+  "cycle_progression":{"cycle":"Achaiah","expected_completed_days":4,"fragment":7,"expected_lit":false,"crown_fragments_lit_after":6,"next_day":35,"application":"SERVER_CROWN_STATE_ONLY"},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_receives":"OPAQUE_VAULT_REFS_ONLY"},
+  "smoke":{"result":"PENDING","mode":"ROLLBACK_ONLY","reason":"No disposable authenticated principal has been approved; real user state will not be mutated for smoke testing."}
+}
