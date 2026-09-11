@@ -1,0 +1,14 @@
+{
+  "day":33,
+  "canonical_source_sha":"97c1562b8b285b8b5d9ead934c3702844c7bd837",
+  "registry":{"status":"active","validator_key":"day033_v1","contract":"HNK-KETHER-D033-COMP-V1"},
+  "proofs":[
+    {"case":"valid_control_outperforming_active","result":"PASS"},
+    {"case":"jachin_899_seconds","result":"REJECTED","error":"day033_jachin_duration_900_required"},
+    {"case":"middle_pain_not_suppressed_false","result":"REJECTED","error":"day033_middle_boundaries_required"},
+    {"case":"middle_1201_seconds","result":"REJECTED","error":"day033_middle_duration_invalid"},
+    {"case":"plaintext_top_level_field","result":"REJECTED","error":"day033_unknown_top_field"}
+  ],
+  "attribute_progression":{"gain":0,"reason":"NO_FROZEN_DAY033_RULE_IN_MATRIX_1_0_0"},
+  "rollback_completion_smoke":"PENDING_SYNTHETIC_AUTH_PRINCIPAL"
+}
