@@ -1,2 +1,2 @@
-import {Day034GoldenV1Web} from './Day034GoldenV1Web';
-export default function Day034Page(){return <Day034GoldenV1Web/>}
+import {Day034GoldenV2Web} from './Day034GoldenV2Web';
+export default function Day034Page(){return <Day034GoldenV2Web/>}
