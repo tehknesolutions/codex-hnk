@@ -1,10 +1,13 @@
 {
   "id":"HNK-KETHER-D032-COMPLETION-SERVICE-V1","day":32,
   "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D032-COMP-V1","quest_definition_id":"HNK-KETHER-D032-V1","validator_key":"day032_v1","status":"PENDING","review":"PENDING"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D032-COMP-V1","quest_definition_id":"HNK-KETHER-D032-V1","validator_key":"day032_v1","status":"active","review":"PASS","migration":"20260911144155_day032_completion_contract_v1_reviewed_and_active.sql"},
   "canonical":{"source_sha":"e769394099a40802b45b9d5d269e1545dc5c4cf5","xp":150,"attribute_gain":1,"primary_attribute":"HIP","secondary_attribute":"PER"},
   "privacy":{"server_plaintext":false,"phenomenology":"VAULT_REFS_ONLY"},
   "safety":{"orientation_required":true,"memory_continuity_required":true,"voluntary_return_required":true,"pain_testing_allowed":false,"medical_care_replacement_allowed":false},
   "epistemic":{"specific_marker_required":false,"active_must_outperform_control":false,"natural_anesthesia_is_medical_claim":false,"single_session_definitive":false},
+  "validator":{"result":"PASS","live_project":"codex-hnk-app","attacks":["valid_none_marker_and_control_outperforming_active_accepted","plaintext_extra_rejected","jachin_final_179_rejected","pain_testing_boundary_required"],"observed_errors":["day032_unknown_top_field","day032_jachin_final_180_required","day032_middle_boundaries_required"]},
+  "attribute_progression":{"matrix_version":"1.0.0","rule_status":"frozen","primary_attribute":"HIP","secondary_attribute":"PER","application":"SERVER_XP_EVENT_TRIGGER_ONLY","client_may_apply":false},
+  "smoke":{"result":"PENDING","mode":"ROLLBACK_ONLY","reason":"connector_auth_write_guard_blocked_synthetic_auth_user_creation; no real user will be mutated to bypass the guard"},
   "cycle":{"angel":"Achaiah","expected_completed_days":2,"fragment":7,"expected_lit":false,"crown_expected_after":"6/7","next_day":33,"authoritative_source":"get_kether_crown_state"}
 }
