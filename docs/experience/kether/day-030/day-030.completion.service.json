@@ -1,11 +1,12 @@
 {
   "id":"HNK-KETHER-D030-COMPLETION-SERVICE-V1","day":30,
   "transport":{"rpc":"complete_codex_day_v2","deployment":"LIVE"},
-  "registry":{"completion_contract_id":"HNK-KETHER-D030-COMP-V1","quest_definition_id":"HNK-KETHER-D030-V1","validator_key":"day030_v1","status":"PENDING","review":"PENDING"},
+  "registry":{"completion_contract_id":"HNK-KETHER-D030-COMP-V1","quest_definition_id":"HNK-KETHER-D030-V1","validator_key":"day030_v1","status":"active","review":"PASS"},
   "canonical":{"source_sha":"a9bea648b20595579ef70c11ba3f319e477845dd","xp":100,"attribute_gain":0},
-  "audio":{"active_profile":"HNK-KETHER-D030-ASMR-ACTIVE-V1","control_profile":"HNK-KETHER-D030-CONTROL-V1","effective_seconds_per_block":600,"sequence_blocks":3,"active_must_exceed_control":false},
+  "audio":{"active_profile":"HNK-KETHER-D030-ASMR-ACTIVE-V1","control_profile":"HNK-KETHER-D030-CONTROL-V1","effective_seconds_per_block":600,"sequence_blocks":3,"max_average_volume_spread_permille":50,"active_must_exceed_control":false},
   "privacy":{"server_plaintext":false,"phenomenology":"VAULT_REFS_ONLY"},
   "safety":{"comfortable_volume":true,"higher_volume_is_better":false,"pain_irritation_or_persistent_tinnitus":"REDUCE_OR_STOP","environmental_return_required":true},
-  "epistemic":{"specific_sensation_required":false,"neurological_state_proven":false,"external_presence_proven":false,"single_session_definitive":false},
-  "cycle":{"angel":"Lelahel","expected_completed_days":5,"fragment":6,"expected_lit":true,"crown_expected_after":"6/7","next_day":31,"next_cycle":"Achaiah","authoritative_source":"get_kether_crown_state"}
+  "epistemic":{"specific_sensation_required":false,"zero_tingles_valid":true,"null_latency_valid":true,"control_may_outperform_active":true,"neurological_state_proven":false,"external_presence_proven":false,"single_session_definitive":false},
+  "cycle":{"angel":"Lelahel","expected_completed_days":5,"fragment":6,"expected_lit":true,"crown_expected_after":"6/7","next_day":31,"next_cycle":"Achaiah","authoritative_source":"get_kether_crown_state"},
+  "smoke":{"result":"PASS","rollback_only":true,"xp_total_before":1000,"xp_awarded":100,"xp_total_after":1100,"current_day":31,"completion_count":1,"xp_event_count":1,"attribute_event_count":0,"attribute_gain_rule_count":0,"lelahel":{"completed_days":5,"lit":true,"fragment":6},"achaiah":{"completed_days":0,"lit":false,"fragment":7},"fragments_lit":6,"kether_complete":false,"portal_unlocked":false,"progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT"]}
 }
