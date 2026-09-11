@@ -1,0 +1,20 @@
+{
+  "day":35,
+  "completion_contract_id":"HNK-KETHER-D035-COMP-V1",
+  "quest_definition_id":"HNK-KETHER-D035-V1",
+  "canonical_source_sha":"7f20c0ed04243ccb9c21e6a3e0068adf8921e941",
+  "registry":{"status":"active","contract_version":"1.0.0","validator_key":"day035_v1","draft_migration":"20260911172142_day035_completion_contract_v1_draft","activation_migration":"20260911172228_activate_day035_completion_contract_v1","review":"PASS"},
+  "validator":{"result":"PASS","project_ref":"czgqjrxkveatlnyjiwds","proofs":[
+    "valid evidence accepted with neutral control scores materially higher than active ritual scores",
+    "Jachin 299-second Tetragrammaton hold rejected with day035_jachin_hold_300_required",
+    "Jachin no-cutting-objects boundary false rejected with day035_jachin_boundaries_required",
+    "sabotaged control rejected with day035_control_boundaries_required",
+    "Middle prudence=false rejected with day035_middle_boundaries_required",
+    "unknown plaintext top-level field rejected with day035_unknown_top_field"
+  ]},
+  "xp":{"canonical":250,"application":"SERVER_FIRST_COMPLETION_ONLY"},
+  "attribute_progression":{"matrix_version":"1.0.0","primary_attribute":"SIN","secondary_attribute":"VNT","requested_gain":1,"application":"SERVER_XP_EVENT_TRIGGER_ONLY","cap":20,"source_basis":{"type":"CYCLE_CHECKPOINT","note":"integration/closure; never subjective phenomenon"}},
+  "cycle_progression":{"cycle":"Achaiah","expected_completed_days":5,"fragment":7,"expected_lit":true,"crown_fragments_lit_after":7,"portal_unlocked_expected":true,"next_day":36,"expected_progression_events":["NEXT_DAY_UNLOCKED","KETHER_FRAGMENT_LIT","KETHER_PORTAL_UNLOCKED"],"application":"SERVER_CROWN_STATE_ONLY"},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_receives":"OPAQUE_VAULT_REFS_ONLY"},
+  "smoke":{"result":"PENDING","mode":"ROLLBACK_ONLY","reason":"No disposable authenticated principal has been approved; real user state will not be mutated for smoke testing."}
+}
