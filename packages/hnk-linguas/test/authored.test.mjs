@@ -16,7 +16,7 @@ test('core authored candidates preserve their authorities',()=>{
   const kuvan=getAuthoredCandidate('kuvan'); assert.equal(kuvan.id,'AUTH-001'); assert.equal(kuvan.authority,'CANDIDATE'); assert.equal(kuvan.historicalRecoveryClaim,false); assert.deepEqual(kuvan.glyphIds,['G23','G05','G31','G01','G12']);
   const vala=getAuthoredCandidate('vala'); assert.equal(vala.id,'AUTH-002'); assert.equal(vala.certainty,'AUTHORED_BACK_ANALYSIS'); assert.deepEqual(vala.glyphIds,['G31','G01','G14','G01']);
   const kuon=getAuthoredCandidate('kuon'); assert.equal(kuon.id,'AUTH-003'); assert.equal(kuon.certainty,'AUTHORED_DERIVATION_WITH_GATED_COMPONENT'); assert.match(kuon.morphology.rightState,/LEX-026_ON_GATE/);
-  const ne=getAuthoredCandidate('ne'); assert.equal(ne.id,'AUTH-004'); assert.equal(ne.certainty,'AUTHORED_PRIMITIVE'); assert.deepEqual(ne.glyphIds,['G12','G02']);
+  const ne=getAuthoredCandidate('ne'); assert.equal(ne.id,'AUTH-004'); assert.equal(ne.certainty,'AUTHORED_PRIMITIVE'); assert.deepEqual(ne.glyphIds,['G12','G02']); assert.deepEqual(ne.lessons,['L01','L02']); assert.equal(ne.authority,'CANDIDATE'); assert.ok(ne.notes.some(note=>note.includes('STR005 course frame')));
 });
 
 test('0-9 spoken numerals remain authored primitive candidates only',()=>{for(const [id,form,value,glyphIds] of numerals){const entry=getAuthoredCandidate(form);assert.ok(entry);assert.equal(entry.id,id);assert.equal(entry.authority,'CANDIDATE');assert.equal(entry.certainty,'AUTHORED_PRIMITIVE');assert.equal(entry.historicalRecoveryClaim,false);assert.equal(entry.morphology.schema,'PRIMITIVE_AUTHORED_NUMERAL_0_9');assert.deepEqual(entry.glyphIds,glyphIds);assert.match(entry.meaning.en,new RegExp(`spoken cardinal numeral ${value}$`));}});
