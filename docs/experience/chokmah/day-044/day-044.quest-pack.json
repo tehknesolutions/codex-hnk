@@ -1,15 +1,15 @@
 {
-  "id":"HNK-CHOKMAH-D044-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":44,"quest_id":"HNK-CHOKMAH-D044-V2","canonical_source_sha":"94e25ad0e1e4413f3b72caab6e8bd762d6e5bbd9","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "id":"HNK-CHOKMAH-D044-PACK-V2","kind":"hnk.quest_pack","version":"0.1.1","day":44,"quest_id":"HNK-CHOKMAH-D044-V2","canonical_source_sha":"94e25ad0e1e4413f3b72caab6e8bd762d6e5bbd9","release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"angel":"Haziel","chapter":2,"sephira":"Chokmah","level":2},
   "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY044_RULE_IN_MATRIX_1_0_0"},
-  "entry_gate":{"day_043_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true},
-  "active":{"duration_seconds":null,"duration_semantics":"MEASURED_ONLY__NO_CANONICAL_MINIMUM","truisms_min":6,"suggestions_min":3,"truisms_verified":true,"suggestions_permissive":true,"suggestions_rejectable":true,"absolute_promises":false,"coercive_phrasing":false},
-  "neutral":{"duration_seconds":null,"duration_semantics":"MEASURED_ONLY__SIMILAR_DURATION_CONFIRMED","neutral_informative_text":true,"linked_truisms":false,"suggestions":false,"theurgic_formula":false,"posture_environment_equivalent":true,"preselected_winner":false},
+  "entry_gate":{"day_043_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"live_proof":"PASS"},
+  "active":{"duration_seconds":null,"duration_semantics":"MEASURED_ONLY__NO_CANONICAL_MINIMUM","truisms_exact":6,"suggestions_exact":3,"truisms_verified":true,"suggestions_permissive":true,"suggestions_rejectable":true,"absolute_promises":false,"coercive_phrasing":false},
+  "neutral":{"duration_seconds":null,"duration_semantics":"MEASURED_ONLY__SIMILAR_DURATION_CONFIRMED","numeric_similarity_tolerance":null,"neutral_informative_text":true,"linked_truisms":false,"suggestions":false,"theurgic_formula":false,"posture_environment_equivalent":true,"preselected_winner":false},
   "ethical_review":{"logical_leaps_reviewed":true,"pressure_reviewed":true,"healing_promises_removed":true,"superiority_claims_removed":true,"spiritual_certainty_claims_removed":true,"resisted_phrases_rewritten_or_removed":true,"consent_preserved":true,"health_care_not_replaced":true,"legal_decision_not_replaced":true,"spiritual_authority_not_replaced":true},
   "middle":{"duration_seconds":null,"duration_semantics":"MEASURED_ONLY__NO_CANONICAL_MINIMUM","psalm_25_6":true,"he_zayin_yod":true,"only_true_or_freely_acceptable_phrases":true,"silent_breath_between_blocks":true,"stop_rewrite_on_resistance":true,"resume_only_voluntarily":true,"active_vs_neutral_compared":true,"thanks_to_god":true,"influence_power_claim":false,"functional_return":true},
   "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
-  "legacy_compatibility":{"validator":"validate_day044_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"truisms_logged":6,"suggestions_logged":3,"active_script_completed":true,"neutral_comparison_completed":true,"ethical_review_completed":true,"autonomy_preserved":true}},
-  "backend":{"completion_contract":"HNK-CHOKMAH-D044-COMP-V2","validator":"day044_v2","registry":"PENDING"},
-  "runtime":{"web":"PENDING","expo":"PENDING"},
-  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+  "legacy_compatibility":{"validator":"validate_day044_scalar_evidence_v1","reuse_required":true,"wrapper_calls_legacy_live":true,"trigger_v2_compatibility_live_proof":"PASS","legacy_minimums":{"truisms_logged":6,"suggestions_logged":3,"active_script_completed":true,"neutral_comparison_completed":true,"ethical_review_completed":true,"autonomy_preserved":true}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D044-COMP-V2","validator":"day044_v2","registry":"ACTIVE","valid_structure":"PASS","attack_batch":"PASS"},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED_BUILD","expo":"IMPLEMENTED_UNVERIFIED_BUILD","web_route":"/day-044","expo_route":"day-044","foreground_only":true,"active_timer_persistence":false},
+  "release_blockers":["BACKEND_ROLLBACK_SMOKE","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
