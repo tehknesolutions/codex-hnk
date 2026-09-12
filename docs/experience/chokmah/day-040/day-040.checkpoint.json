@@ -1,0 +1,14 @@
+{
+  "checkpoint":"SWHNK-CODEX-D040-RUNTIME-V2",
+  "state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
+  "backend":"ACTIVE",
+  "registry_contract":"HNK-CHOKMAH-D040-COMP-V2",
+  "legacy_validator_reuse":"PASS",
+  "legacy_trigger_compatibility":"PASS",
+  "web":"IMPLEMENTED_UNVERIFIED_BUILD",
+  "expo":"IMPLEMENTED_UNVERIFIED_BUILD",
+  "catalog_coverage":"001-040",
+  "static_validator":"WIRED_NOT_EXECUTED",
+  "advisors":{"day_specific_regression":false,"known_security_warn":"legacy complete_codex_day SECURITY DEFINER executable by authenticated","known_rls_info_count":6,"known_unused_index_info_count":16},
+  "blockers":["BACKEND_ROLLBACK_SMOKE","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
