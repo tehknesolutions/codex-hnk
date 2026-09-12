@@ -1,0 +1,15 @@
+{
+  "id":"HNK-CHOKMAH-D047-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":47,"quest_id":"HNK-CHOKMAH-D047-V2","canonical_source_sha":"74d2be4a84f4818729bb069ac7642c7e51ff6f14","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"angel":"Aladiah","chapter":2,"sephira":"Chokmah","level":2},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY047_RULE_IN_MATRIX_1_0_0"},
+  "entry_gate":{"day_046_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"upstream_day045_audio_publication_lock_transitive":true},
+  "conditions":{"indirect_black":{"duration_seconds":300,"background":"BLACK","lighting":"INDIRECT","effect_may_be_absent":true},"indirect_white":{"duration_seconds":300,"background":"WHITE","lighting":"INDIRECT","effect_may_be_absent":true},"bright_black":{"duration_seconds":300,"background":"BLACK","lighting":"BRIGHTER_CONTROL","effect_may_be_absent":true},"bright_white":{"duration_seconds":300,"background":"WHITE","lighting":"BRIGHTER_CONTROL","effect_may_be_absent":true}},
+  "method":{"gaze_offset_cm_approx":2,"normal_blinking":true,"candle_gaze":false,"result_chasing":false,"no_intensity_compensation":true,"return_to_common_focus":true,"hands_feet_moved":true,"orientation_confirmed":true},
+  "comparison":{"null_results_preserved":true,"contradictory_results_preserved":true,"preselected_winner":false,"alternatives_recorded":true,"layers_separated":true,"diagnosis_of_others":false,"external_mechanism_claim":false,"supernatural_measurement_claim":false},
+  "middle":{"additional_timer_seconds":null,"timer_semantics":"NO_FIXED_EXTRA_TIMER_INVENTED","psalm_18_30":true,"alep_lamed_dalet":true,"three_observable_facts":true,"one_subjective_experience":true,"one_open_hypothesis":true,"body_moved":true,"environment_oriented":true,"natural_breathing":true,"thanks_to_god":true,"full_return":true},
+  "privacy":{"private_content_required":false,"free_text":"OPTIONAL_VAULT_E2EE_ONLY","server_plaintext":false,"optional_vault_refs":true},
+  "legacy_compatibility":{"validator":"validate_day047_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"black_seconds":300,"white_seconds":300,"bright_black_seconds":300,"bright_white_seconds":300,"primary_effect_present":"BOOLEAN_CAN_BE_FALSE","control_effect_present":"BOOLEAN_CAN_BE_FALSE","null_results_preserved":true,"diagnosis_not_made":true,"safety_clear":true}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D047-COMP-V2","validator":"day047_v2","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
