@@ -1,0 +1,24 @@
+{
+  "day":40,
+  "quest_id":"HNK-CHOKMAH-D040-V2",
+  "completion_contract_id":"HNK-CHOKMAH-D040-COMP-V2",
+  "canonical_source_sha":"7a26302a35aa87b309e94abf516834019df29737",
+  "registry":{"status":"active","validator":"day040_v2","contract_version":"2.0.0"},
+  "validator":{"structure_result":"PASS","attack_batch_result":"PASS"},
+  "legacy_compatibility":{"validator":"validate_day040_scalar_evidence_v1","reuse_proof":"PASS","reuse_attack":{"mutation":"verbal.truisms_count=2","expected_error":"day040_protocol_count_incomplete","result":"PASS"},"practice_sessions_trigger":"practice_sessions_enforce_cahetel_040_041_evidence","v2_trigger_compatibility":"PASS","fixture":"ROLLBACK_ONLY"},
+  "tested_rejections":[
+    "verbal duration below 360s",
+    "eye elevation effort not absent",
+    "suggestion not rejectable",
+    "silent duration below 360s",
+    "pacing present in silent condition",
+    "response/phenomenon required",
+    "functional return false",
+    "unknown top-level plaintext field"
+  ],
+  "xp":{"canonical":150,"server_authoritative":true},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY040_RULE_IN_MATRIX_1_0_0"},
+  "expected_first_completion":{"next_day":41,"chapter":2,"sephira":"Chokmah","initiatory_grade":2,"initiatory_title":"Iniciado","progression_event":"NEXT_DAY_UNLOCKED"},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_receives":"OPAQUE_VAULT_REFS_AND_SAFE_SCALARS"},
+  "backend_rollback_smoke":"PENDING_NO_DISPOSABLE_AUTHENTICATED_PRINCIPAL"
+}
