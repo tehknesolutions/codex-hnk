@@ -1,0 +1,15 @@
+{
+  "id":"HNK-CHOKMAH-D048-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":48,"quest_id":"HNK-CHOKMAH-D048-V2","canonical_source_sha":"ff8cae22023e70359768023dfc927ce94c1a27d5","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"angel":"Aladiah","chapter":2,"sephira":"Chokmah","level":2},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY048_RULE_IN_ATTRIBUTE_PROGRESSION_MATRIX"},
+  "entry_gate":{"day_047_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"upstream_day045_audio_publication_lock_transitive":true},
+  "loop_structure":{"loops_opened_exact":3,"opening_order":[1,2,3],"loops_closed_exact":3,"closure_order":[3,2,1],"all_threads_closed":true,"duration_gate":null,"duration_semantics":"MEASURED_ONLY_NO_CANONICAL_MINIMUM","effect_may_be_absent":true,"full_story_text":"VAULT_E2EE_REQUIRED"},
+  "linear_control":{"stories_exact":3,"independent":true,"similar_length":true,"similar_context":true,"preselected_winner":false,"duration_gate":null,"duration_semantics":"MEASURED_ONLY_NO_CANONICAL_MINIMUM","effect_may_be_absent":true,"full_story_text":"VAULT_E2EE_REQUIRED"},
+  "comparison":{"completed":true,"interpretation_separated":true,"null_results_preserved":true,"contradictory_results_preserved":true,"alternatives_recorded":true,"consent_only":true,"coercion":false},
+  "middle":{"additional_timer_seconds":null,"timer_semantics":"NO_FIXED_EXTRA_TIMER_INVENTED","psalm_18_30":true,"alep_lamed_dalet":true,"three_observable_facts":true,"one_subjective_experience":true,"one_open_hypothesis":true,"body_moved":true,"environment_oriented":true,"natural_breathing":true,"thanks_to_god":true,"functional_return":true},
+  "privacy":{"loop_story_text":"VAULT_E2EE_REQUIRED","linear_story_text":"VAULT_E2EE_REQUIRED","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "legacy_compatibility":{"validator":"validate_day048_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"loops_opened":3,"loops_closed":3,"linear_stories_completed":3,"all_threads_closed":true,"consent_only":true,"coercion_not_used":true,"vault_saved":true,"safety_clear":true,"loop_effect_present":"BOOLEAN_CAN_BE_FALSE","linear_effect_present":"BOOLEAN_CAN_BE_FALSE"}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D048-COMP-V2","validator":"day048_v2","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
