@@ -1,10 +1,11 @@
 {
-  "id":"HNK-CHOKMAH-D047-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":47,
+  "id":"HNK-CHOKMAH-D047-V2","kind":"hnk.quest_definition","version":"0.1.1","status":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING","day":47,
   "title":"Aladiah I — Percepção periférica sem diagnóstico",
   "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-047.md","source_sha":"74d2be4a84f4818729bb069ac7642c7e51ff6f14","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Aladiah","level":2,"xp":150,"tracks":[]},
   "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 047 gain rule exists in frozen attribute progression matrix 1.0.0."}},
   "entry_gate":{"requires_day_046_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
-  "runtime":{"private_text":"OPTIONAL_VAULT_E2EE_ONLY","private_text_required":false,"foreground_only_timing":true,"active_timer_persistence":false,"web":"PENDING","expo":"PENDING","server_previous_day_assert":true},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D047-COMP-V2","validator":"day047_v2","registry":"ACTIVE","zero_effect_proof":"DAY047_V2_ZERO_EFFECT_STRUCTURE_PASS","attack_batch_proof":"DAY047_V2_ATTACK_BATCH_PASS","legacy_trigger_proof":"DAY047_V2_LEGACY_TRIGGER_COMPAT_PASS"},
+  "runtime":{"private_text":"OPTIONAL_VAULT_E2EE_ONLY","private_text_required":false,"foreground_only_timing":true,"active_timer_persistence":false,"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","server_previous_day_assert":true},
   "phases":[
     {"id":"indirect_black","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"duration_seconds":300,"background":"BLACK","lighting":"INDIRECT","gaze_offset_cm_approx":2,"normal_blinking":true,"result_chasing":false,"effect_may_be_absent":true,"private_note":"OPTIONAL_VAULT_ENCRYPTED"},"required_for_completion":true},
     {"id":"indirect_white","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"duration_seconds":300,"background":"WHITE","lighting":"INDIRECT","gaze_offset_cm_approx":2,"normal_blinking":true,"result_chasing":false,"effect_may_be_absent":true,"private_note":"OPTIONAL_VAULT_ENCRYPTED"},"required_for_completion":true},
@@ -17,5 +18,5 @@
   ],
   "safety":{"normal_blinking":true,"candle_gaze_forbidden":true,"stop_conditions":["EYE_PAIN","HEADACHE","ALTERED_VISION","ANXIETY"],"diagnose_mood_health_character_of_others":false},
   "epistemic_boundaries":{"effect_intensity_required_for_xp":false,"halo_proves_external_field":false,"color_proves_external_field":false,"effect_proves_supernatural_faculty":false,"effect_proves_spiritual_superiority":false,"absence_is_failure":false},
-  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"UPSTREAM_DAY045_AUDIO_PUBLICATION"},{"id":"FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
 }
