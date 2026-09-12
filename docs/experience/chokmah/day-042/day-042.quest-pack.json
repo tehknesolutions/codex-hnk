@@ -1,0 +1,15 @@
+{
+  "id":"HNK-CHOKMAH-D042-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":42,"quest_id":"HNK-CHOKMAH-D042-V2","canonical_source_sha":"b7f4da850f8c724cf48e980bd30882283efbb822","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":100,"angel":"Haziel","chapter":2,"sephira":"Chokmah","level":2},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY042_RULE_IN_MATRIX_1_0_0","canonical_cycle_language":"PER +2 / HIP +1 stimulated in Haziel cycle; not executable progression"},
+  "entry_gate":{"day_041_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true},
+  "jachin":{"massage_seconds":180,"residual_seconds":300,"very_light_contact":true,"eye_orbit_pressure":false,"forceful_forehead_pressure":false,"frontal_sensation_may_be_absent":true,"contact_experience_image_interpretation_separated":true},
+  "boaz":{"control_seconds":300,"neutral_point":"TIP_OF_NOSE","forehead_massage":false,"haziel_formula":false,"same_or_comparable_posture":true,"control_sensation_may_be_absent":true,"preselected_winner":false,"alternatives_required":true,"brodmann_10_conclusion":false},
+  "middle":{"timed_seconds":null,"reason":"CANON_DOES_NOT_FIX_A_SEPARATE_MIDDLE_OBSERVATION_DURATION","psalm_25_6":true,"he_zayin_yod":true,"light_massage_protocol":true,"hands_removed":true,"natural_breathing":true,"no_forehead_pressure":true,"no_frowning":true,"no_eye_effort":true,"qualities_before_interpretation":true,"eyes_opened":true,"three_objects":true,"thanks_to_god":true,"four_fields":["SENSATION","IMAGE","INTERPRETATION","UNKNOWN"],"unknown_preserved":true,"functional_return":true},
+  "safety":{"massage_light":true,"eye_orbit_pressure":false,"stop_conditions":["EYE_PAIN","IMPORTANT_HEADACHE","DIZZINESS","PERSISTENT_NUMBNESS","VISUAL_CHANGE","OTHER_DISCOMFORT"]},
+  "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
+  "legacy_compatibility":{"validator":"validate_day042_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"massage_seconds":180,"residual_seconds":300,"control_seconds":300,"frontal_sensation_presence_may_be_false":true,"control_sensation_presence_may_be_false":true}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D042-COMP-V2","validator":"day042_v2","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
