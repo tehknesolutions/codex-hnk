@@ -1,0 +1,11 @@
+<resources>
+  <string name="app_name">HNK Keyboard</string>
+  <color name="hnk_bg">#07131C</color>
+  <color name="hnk_gold">#E5C46B</color>
+  <style name="Theme.HNKKeyboard" parent="android:style/Theme.Material.NoActionBar">
+    <item name="android:fontFamily">sans</item>
+    <item name="android:colorAccent">@color/hnk_gold</item>
+    <item name="android:navigationBarColor">@color/hnk_bg</item>
+    <item name="android:statusBarColor">@color/hnk_bg</item>
+  </style>
+</resources>
