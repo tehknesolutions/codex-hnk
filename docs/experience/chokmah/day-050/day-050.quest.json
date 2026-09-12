@@ -1,10 +1,11 @@
 {
-  "id":"HNK-CHOKMAH-D050-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":50,
+  "id":"HNK-CHOKMAH-D050-V2","kind":"hnk.quest_definition","version":"0.1.1","status":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING","day":50,
   "title":"Aladiah IV — Contorno visual com consentimento e privacidade",
   "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-050.md","source_sha":"99f56677fb57d8ddfe191b081cae44734b38ae50","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Aladiah","level":2,"xp":200,"tracks":[]},
   "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 050 rule exists in attribute_progression_gain_rules."}},
   "entry_gate":{"requires_day_049_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
-  "runtime":{"third_party_identity_on_server":false,"third_party_face_on_server":false,"third_party_image_on_server":false,"third_party_personal_interpretation_on_server":false,"optional_sensitive_note":"VAULT_E2EE_ONLY","foreground_only_timing":true,"active_timer_persistence":false,"web":"PENDING","expo":"PENDING"},
+  "backend":{"registry":"ACTIVE","completion_contract":"HNK-CHOKMAH-D050-COMP-V2","validator":"day050_v2","subject_modes_zero_effect_proof":"DAY050_V2_SELF_AND_CONSENTED_THIRD_PARTY_ZERO_EFFECT_PASS","attack_batch_proof":"DAY050_V2_ATTACK_BATCH_PASS","legacy_trigger_proof":"DAY050_V2_LEGACY_TRIGGER_COMPAT_PASS","legacy_validator_reuse":"PASS"},
+  "runtime":{"third_party_identity_on_server":false,"third_party_face_on_server":false,"third_party_image_on_server":false,"third_party_personal_interpretation_on_server":false,"optional_sensitive_note":"VAULT_E2EE_ONLY","foreground_only_timing":true,"active_timer_persistence":false,"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED"},
   "phases":[
     {"id":"primary","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"duration_seconds":300,"subject_modes":["SELF_REFLECTION","CONSENTED_THIRD_PARTY"],"third_party_requires_consent":true,"simple_background":true,"indirect_comfortable_light":true,"normal_blinking":true,"result_chasing":false,"effect_may_be_absent":true},"required_for_completion":true},
     {"id":"control","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"duration_seconds":300,"modes":["MIRROR","NEUTRAL_SILHOUETTE","CONTROLLED_BACKGROUND_LIGHT_CHANGE"],"similar_context":true,"same_metrics":true,"preselected_winner":false,"no_effort_compensation":true,"effect_may_be_absent":true},"required_for_completion":true},
@@ -14,5 +15,5 @@
   ],
   "safety":{"normal_blinking":true,"stop_conditions":["FATIGUE","EYE_PAIN","ANXIETY","SOCIAL_DISCOMFORT","OTHER_DISCOMFORT"],"third_party_consent_required":true,"diagnosis":false,"judgment":false},
   "epistemic_boundaries":{"effect_required_for_xp":false,"halo_proves_external_field":false,"color_proves_external_field":false,"visual_ambiguity_authorizes_diagnosis":false,"visual_ambiguity_authorizes_judgment":false},
-  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"UPSTREAM_DAY045_AUDIO_PUBLICATION"},{"id":"FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
 }
