@@ -1,0 +1,18 @@
+{
+  "day":45,
+  "completion_contract_id":"HNK-CHOKMAH-D045-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D045-V2",
+  "canonical_source_sha":"67e6d708444ae1fd62713ebebfb8da4d79a100e5",
+  "registry":{"status":"draft","validator_key":"day045_v2","contract_version":"2.0.0","operational_state":"LOCKED_BY_AUDIO_PUBLICATION_GATE"},
+  "validator":{"valid_structure_result":"DAY045_V2_VALID_STRUCTURE_PASS","attack_batch_result":"DAY045_V2_ATTACK_BATCH_PASS"},
+  "legacy_compatibility":{"legacy_validator":"validate_day045_scalar_evidence_v1","evidence_wrapper_calls_legacy_live":true,"evidence_pending_trigger_result":"DAY045_V2_TRIGGER_EVIDENCE_PENDING_PASS__COMPLETE_LOCK_PASS","fixture_users_after_rollback":0,"fixture_sessions_after_rollback":0},
+  "audio_authority":{"freeze":"docs/audio/HNK_HAZIEL_D045_AUDIO_FREEZE_V1.md","provenance":"docs/audio/HNK_HAZIEL_D045_AUDIO_PROVENANCE_V1.md","contract_version":"1.1.0","active":{"preset_id":"HNK-HAZIEL-D045-ACTIVE-V1","left_hz":432,"right_hz":444,"difference_hz":12,"duration_seconds":600,"reference_render_sha256":"33b8e3567cba0ad1f05d080c437eecfe51e1993dba0d20ecfe6f600bb52f42a3","asset_registry_key":"hnk.haziel.day045.active.v1","approval_state":"approved","published":false,"master_asset_pending":true},"control":{"preset_id":"HNK-HAZIEL-D045-CONTROL-V1","left_hz":432,"right_hz":432,"difference_hz":0,"duration_seconds":600,"reference_render_sha256":"012100633f1548d00e62a79b0e7a0cd67a8121d198f38c1e758cf30bdaec3002","asset_registry_key":"hnk.haziel.day045.control.v1","approval_state":"approved","published":false,"master_asset_pending":true}},
+  "publication_gate":{"result":"DAY045_AUDIO_PUBLICATION_GATE_LOCK_PASS","expected_error":"day045_audio_publication_pending:active","requires_for_each_preset":["approval_state=published","published_at present","storage_path present","64-char master checksum","metadata.published=true","master_asset_pending=false","runtime_publication_qa_pending=false","listening_qa_pending=false","device_qa_pending=false"],"runtime_synthesis_allowed":false},
+  "canonical_requirements":{"active_seconds":600,"control_seconds":600,"post_silence_seconds":60,"rest_before_control":true,"comparison_required":true,"interpretation_separated":true,"final_safety_clear":true},
+  "epistemic_boundaries":{"playback_is_neural_measurement":false,"causality_claim_allowed":false,"therapy_or_healing_claim_allowed":false,"initiatic_superiority_claim_allowed":false,"higher_volume_means_deeper":false,"technology_is_spiritual_authority":false},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "xp":{"canonical":100,"server_authoritative":true,"currently_awardable":false},
+  "attribute_progression":{"gain":0,"reason":"NO_FROZEN_DAY045_RULE_IN_MATRIX_1_0_0"},
+  "expected_first_completion_after_publication":{"next_day":46,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","events":["NEXT_DAY_UNLOCKED"]},
+  "proof_limits":{"completion_activation":"BLOCKED_UNTIL_AUDIO_PUBLICATION","web_build":"UNVERIFIED","expo_build":"UNVERIFIED","listening_qa":"PENDING","device_browser_qa":"PENDING"}
+}
