@@ -1,0 +1,22 @@
+{
+  "id":"HNK-CHOKMAH-D043-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":43,
+  "title":"Haziel II — Pérola Azul sem clarividência presumida",
+  "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-043.md","source_sha":"f1c8fa153f91ab0e7b3536c8b900ea438fa3b616","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Haziel","level":2,"xp":150,"tracks":[]},
+  "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 043 gain rule exists in frozen attribute progression matrix 1.0.0."}},
+  "entry_gate":{"requires_day_042_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false},
+  "runtime":{"private_text":"VAULT_E2EE_ONLY","foreground_only_timing":true,"active_timer_persistence":false,"web":"PENDING","expo":"PENDING","vault_sync_before_completion":true,"server_previous_day_assert":true},
+  "phases":[
+    {"id":"threshold","type":"NARRATIVE","source":{"kind":"PLATFORM_MICROCOPY"},"content_intent":["Pérola Azul é operador tradicional e experiência visual interna. Brilho, nitidez, fosfeno, pós-imagem, imaginação ou ausência não confirmam clarividência nem objeto externo."],"required_for_completion":false},
+    {"id":"jachin_reading","type":"READ","source":{"kind":"CANON","block_ids":["jachin-doctrine","jachin-kavanah","jachin-ordalia"]},"required_for_completion":true},
+    {"id":"blue_pearl","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"duration_seconds":600,"dark_safe_environment":true,"eyes_closed_without_squeezing":true,"gaze_at_rest":true,"eye_chasing_forbidden":true,"blue_content_may_be_absent":true,"deliberate_vs_spontaneous_separated":true,"external_object_claim_forbidden":true,"clairvoyance_claim_forbidden":true,"private_note":"VAULT_ENCRYPTED"},"required_for_completion":true},
+    {"id":"boaz_reading","type":"READ","source":{"kind":"CANON","block_ids":["boaz-doctrine","boaz-kavanah","boaz-ordalia"]},"required_for_completion":true},
+    {"id":"gray_control","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"duration_seconds":600,"same_size_and_position":true,"control_not_sabotaged":true,"gray_content_may_be_absent":true,"three_real_objects_named_after":true,"comparison_after_separate_records":true,"alternative_explanations_required":true,"difference_is_astral_proof":false,"private_note":"VAULT_ENCRYPTED"},"required_for_completion":true},
+    {"id":"middle_reading","type":"READ","source":{"kind":"CANON","block_ids":["middle-doctrine","middle-kavanah","middle-ordalia"]},"required_for_completion":true},
+    {"id":"middle_integration","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"duration_seconds":600,"psalm_25_6_confirmed":true,"he_zayin_yod_confirmed":true,"face_relaxed":true,"eye_chasing_forbidden":true,"content_may_be_absent":true,"deliberate_spontaneous_interpretation_unknown_separated":true,"eyes_opened_gradually":true,"three_real_objects_named":true,"thanks_to_god":true,"clairvoyance_not_claimed":true,"functional_return_confirmed":true,"private_note":"VAULT_ENCRYPTED"},"required_for_completion":true},
+    {"id":"safety","type":"INSTRUCTION","source":{"kind":"CANON"},"interaction":{"eye_strain_forbidden":true,"stop_conditions":["EYE_PAIN","HEADACHE","PERSISTENT_FLASHES_EYES_OPEN","PERSISTENT_VISUAL_CHANGE","OTHER_DISCOMFORT"],"professional_care_when_appropriate":true},"required_for_completion":true},
+    {"id":"soul_mirror","type":"JOURNAL","source":{"kind":"CANON","block_ids":["espelho-da-alma"]},"privacy":{"free_text_destination":"VAULT_ONLY","server_receives":"OPAQUE_VAULT_REF_ONLY"},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-CHOKMAH-D043-COMP-V2","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true}
+  ],
+  "epistemic_boundaries":{"blue_light_is_clairvoyance_proof":false,"blue_light_is_external_object_proof":false,"gray_control_need_not_lose":true,"absence_of_image_is_failure":false,"visual_intensity_is_merit":false},
+  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+}
