@@ -1,0 +1,17 @@
+{
+  "day":47,
+  "completion_contract_id":"HNK-CHOKMAH-D047-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D047-V2",
+  "canonical_source_sha":"74d2be4a84f4818729bb069ac7642c7e51ff6f14",
+  "registry":{"status":"active","validator_key":"day047_v2","contract_version":"2.0.0"},
+  "validator":{"zero_effect_result":"DAY047_V2_ZERO_EFFECT_STRUCTURE_PASS","attack_batch_result":"DAY047_V2_ATTACK_BATCH_PASS"},
+  "legacy_compatibility":{"legacy_validator":"validate_day047_scalar_evidence_v1","wrapper_calls_legacy_live":true,"v2_trigger_compatibility":"DAY047_V2_LEGACY_TRIGGER_COMPAT_PASS","fixture_users_after_rollback":0,"fixture_sessions_after_rollback":0},
+  "canonical_requirements":{"indirect_black_seconds":300,"indirect_white_seconds":300,"bright_black_seconds":300,"bright_white_seconds":300,"effect_presence_required":false,"null_results_valid":true,"private_content_required":false},
+  "epistemic_boundaries":{"external_mechanism_not_claimed":true,"supernatural_faculty_not_claimed":true,"spiritual_superiority_not_claimed":true,"diagnosis_of_others_forbidden":true,"preselected_winner_forbidden":true,"result_chasing_forbidden":true,"normal_blinking_required":true,"candle_gaze_forbidden":true},
+  "privacy":{"private_text_optional":true,"vault_refs_optional":true,"server_plaintext":false},
+  "xp":{"canonical":150,"server_authoritative":true},
+  "attribute_progression":{"gain":0,"reason":"NO_FROZEN_DAY047_RULE_IN_MATRIX_1_0_0"},
+  "expected_first_completion":{"next_day":48,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","events":["NEXT_DAY_UNLOCKED"]},
+  "upstream_gate":{"day045_audio_publication_lock_respected":true,"full_completion_rpc":"PENDING_UPSTREAM_DAY045_UNLOCK"},
+  "proof_limits":{"web_build":"UNVERIFIED","expo_build":"UNVERIFIED","device_browser_qa":"PENDING"}
+}
