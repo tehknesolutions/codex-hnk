@@ -1,0 +1,45 @@
+{
+  "id":"HNK-CHOKMAH-D042-COMPLETION-PROOF-V2",
+  "day":42,
+  "source_sha":"b7f4da850f8c724cf48e980bd30882283efbb822",
+  "completion_contract_id":"HNK-CHOKMAH-D042-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D042-V2",
+  "registry":{"status":"active","validator_key":"day042_v2","contract_version":"2.0.0"},
+  "validator":{
+    "structure_result":"PASS",
+    "absence_valid_result":"PASS",
+    "absence_valid_proof":"DAY042_V2_ABSENCE_VALID_STRUCTURE_PASS",
+    "attack_batch_result":"PASS",
+    "attack_batch_proof":"DAY042_V2_ATTACK_BATCH_PASS"
+  },
+  "legacy_compatibility":{
+    "validator":"validate_day042_scalar_evidence_v1",
+    "wrapper_calls_legacy":true,
+    "trigger":"practice_sessions_enforce_haziel_042_044_evidence",
+    "v2_trigger_compatibility":"PASS",
+    "v2_trigger_proof":"DAY042_V2_LEGACY_TRIGGER_COMPAT_PASS"
+  },
+  "accepted_zero_phenomenon_case":{
+    "frontal_sensation_present":false,
+    "control_sensation_present":false,
+    "meaning":"No frontal/control sensation is required for completion; absence remains a valid observation."
+  },
+  "rejected_mutations":[
+    "massage_seconds=179",
+    "residual_seconds=299",
+    "eye_orbit_pressure_absent_confirmed=false",
+    "cortical_activation_not_claimed_confirmed=false",
+    "energetic_opening_not_claimed_confirmed=false",
+    "control_seconds=299",
+    "haziel_formula_absent_confirmed=false",
+    "preselected_winner_absent_confirmed=false",
+    "brodmann_10_conclusion_avoided_confirmed=false",
+    "unknown_preserved_confirmed=false",
+    "final_protocol_safety_clear_confirmed=false",
+    "unknown top-level plaintext field"
+  ],
+  "xp":{"canonical":100,"application":"SERVER_ONLY"},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY042_RULE_IN_MATRIX_1_0_0"},
+  "expected_first_completion":{"current_day":43,"current_chapter":2,"current_sephira":"Chokmah","initiatory_grade":2,"initiatory_title":"Iniciado","expected_progression_events":["NEXT_DAY_UNLOCKED"]},
+  "smoke":{"authenticated_disposable_completion":"PENDING","reason":"No disposable authenticated principal used; do not mutate a real user for smoke."}
+}
