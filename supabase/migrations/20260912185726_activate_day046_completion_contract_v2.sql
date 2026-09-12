@@ -1,0 +1,1 @@
+update hnk_private.completion_contract_registry set status='active',updated_at=now() where completion_contract_id='HNK-CHOKMAH-D046-COMP-V2' and quest_definition_id='HNK-CHOKMAH-D046-V2' and day=46 and canonical_source_sha='e8a812598e885222d42b0ddf968fa93c83d3432b' and validator_key='day046_v2';
