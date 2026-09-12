@@ -1,0 +1,21 @@
+{
+  "id":"HNK-CHOKMAH-D049-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":49,
+  "title":"Aladiah III — Interocepção comparável sem diagnóstico",
+  "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-049.md","source_sha":"63932dceb3e412a5f6a067049d8a57e0374ed68e","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Aladiah","level":2,"xp":100,"tracks":[]},
+  "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 049 rule exists in attribute_progression_gain_rules."}},
+  "entry_gate":{"requires_day_048_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
+  "runtime":{"private_medical_narrative":"FORBIDDEN_IN_PRACTICE_RECORD","optional_sensitive_note":"VAULT_E2EE_ONLY","foreground_only_timing":true,"active_timer_persistence":false,"web":"PENDING","expo":"PENDING","server_previous_day_assert":true},
+  "phases":[
+    {"id":"active_rest","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"duration_seconds":300,"natural_breathing":true,"number_target":false,"neck_compression":false},"required_for_completion":true},
+    {"id":"active_count","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"duration_seconds":30,"allowed_attention_sites":["WRIST","CHEST_PERCEPTION"],"count_recorded":true,"diagnostic_interpretation":false,"ideal_number_target":false},"required_for_completion":true},
+    {"id":"thermal_visualization","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"after_active_count":true,"symbolic_heat_to_extremities":true,"heat_may_be_absent":true,"external_mechanism_claim":false,"treatment_claim":false},"required_for_completion":true},
+    {"id":"control_rest","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"duration_seconds":300,"similar_context":true,"thermal_visualization":false},"required_for_completion":true},
+    {"id":"control_count","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"duration_seconds":30,"same_measurement_method":true,"heat_may_be_absent":true,"preselected_winner":false,"no_effort_compensation":true},"required_for_completion":true},
+    {"id":"comparison","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"comparison_completed":true,"interpretation_separated":true,"null_results_preserved":true,"contradictory_results_preserved":true,"alternative_explanations_recorded":true,"diagnosis_forbidden":true,"treatment_claim_forbidden":true,"clinical_substitution_forbidden":true,"external_mechanism_claim":false},"required_for_completion":true},
+    {"id":"middle","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"psalm_18_30":true,"alep_lamed_dalet":true,"three_observable_facts":true,"one_subjective_experience":true,"one_open_hypothesis":true,"body_moved":true,"environment_oriented":true,"natural_breathing":true,"thanks_to_god":true,"functional_return":true,"medical_narrative_in_practice_record":false},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":100,"completion_contract_id":"HNK-CHOKMAH-D049-COMP-V2","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true}
+  ],
+  "safety":{"neck_compression_forbidden":true,"ideal_pulse_number_target_forbidden":true,"stop_conditions":["CHEST_PAIN","FAINTING","IMPORTANT_SHORTNESS_OF_BREATH","PERSISTENT_PALPITATIONS","OTHER_DISCOMFORT"],"diagnosis":false,"treatment":false,"clinical_substitution":false},
+  "epistemic_boundaries":{"pulse_count_is_diagnosis":false,"heat_is_external_measurement":false,"heat_required_for_xp":false,"pulse_difference_proves_mechanism":false,"interoceptive_clarity_proves_supernatural_faculty":false},
+  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+}
