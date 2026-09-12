@@ -1,0 +1,16 @@
+{
+  "day":44,
+  "completion_contract_id":"HNK-CHOKMAH-D044-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D044-V2",
+  "canonical_source_sha":"94e25ad0e1e4413f3b72caab6e8bd762d6e5bbd9",
+  "registry":{"status":"active","validator_key":"day044_v2","contract_version":"2.0.0"},
+  "validator":{"valid_structure_result":"DAY044_V2_VALID_STRUCTURE_PASS","attack_batch_result":"DAY044_V2_ATTACK_BATCH_PASS"},
+  "legacy_compatibility":{"legacy_validator":"validate_day044_scalar_evidence_v1","wrapper_calls_legacy_live":true,"v2_trigger_compatibility":"DAY044_V2_LEGACY_TRIGGER_COMPAT_PASS","fixture_users_after_rollback":0,"fixture_sessions_after_rollback":0},
+  "canonical_requirements":{"truisms_exact":6,"suggestions_exact":3,"active_read_duration":"MEASURED_ONLY__1_TO_7200_RUNTIME_RANGE__NO_CANONICAL_MINIMUM","neutral_read_duration":"MEASURED_ONLY__SIMILAR_DURATION_CONFIRMED__NO_NUMERIC_TOLERANCE_INVENTED","middle_duration":"MEASURED_ONLY__1_TO_7200_RUNTIME_RANGE__NO_CANONICAL_MINIMUM"},
+  "ethical_boundaries":{"truisms_must_be_verifiable":true,"suggestions_must_be_permissive_and_rejectable":true,"absolute_promises_forbidden":true,"coercive_phrasing_forbidden":true,"logical_leaps_reviewed":true,"healing_promises_removed":true,"superiority_claims_removed":true,"spiritual_certainty_claims_removed":true,"consent_preserved":true,"health_care_not_replaced":true,"legal_decision_not_replaced":true,"spiritual_authority_not_replaced":true,"influence_power_not_claimed":true},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "xp":{"canonical":150,"server_authoritative":true},
+  "attribute_progression":{"gain":0,"reason":"NO_FROZEN_DAY044_RULE_IN_MATRIX_1_0_0"},
+  "expected_first_completion":{"next_day":45,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","events":["NEXT_DAY_UNLOCKED"]},
+  "proof_limits":{"backend_rollback_smoke":"PENDING_NO_DISPOSABLE_AUTHENTICATED_COMPLETION_PRINCIPAL","web_build":"UNVERIFIED","expo_build":"UNVERIFIED","device_browser_qa":"PENDING"}
+}
