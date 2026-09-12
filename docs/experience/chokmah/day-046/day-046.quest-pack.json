@@ -1,15 +1,15 @@
 {
-  "id":"HNK-CHOKMAH-D046-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":46,"quest_id":"HNK-CHOKMAH-D046-V2","canonical_source_sha":"e8a812598e885222d42b0ddf968fa93c83d3432b","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "id":"HNK-CHOKMAH-D046-PACK-V2","kind":"hnk.quest_pack","version":"0.1.1","day":46,"quest_id":"HNK-CHOKMAH-D046-V2","canonical_source_sha":"e8a812598e885222d42b0ddf968fa93c83d3432b","release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
   "canonical":{"counted_words":705,"xp":150,"angel":"Haziel","chapter":2,"sephira":"Chokmah","level":2},
   "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY046_RULE_IN_MATRIX_1_0_0"},
   "entry_gate":{"day_045_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"day045_audio_publication_lock_respected":true},
   "plant":{"duration_seconds":420,"approx_distance_cm":3,"healthy_plant":true,"dominant_hand":true,"no_contact":true,"eyes_closed_comfortably":true,"hand_relaxed":true,"natural_breathing":true,"arm_tension_absent":true,"magnetism_not_forced":true,"sensation_may_be_absent":true,"external_aura_claim":false,"plant_communication_claim":false},
-  "control":{"duration_seconds":420,"inert_object":true,"similar_size":true,"same_hand":true,"similar_distance_posture_environment":true,"no_contact":true,"simple_blinding_optional":true,"sensation_may_be_absent":true,"null_result_is_failure":false},
+  "control":{"duration_seconds":420,"rest_before_control":true,"inert_object":true,"similar_size":true,"same_hand":true,"similar_distance_posture_environment":true,"no_contact":true,"simple_blinding_optional":true,"sensation_may_be_absent":true,"null_result_is_failure":false},
   "comparison":{"null_results_preserved":true,"favorable_result_selection":false,"alternatives":["CIRCULATION","AMBIENT_TEMPERATURE","POSTURE","AIR_MOVEMENT","SURFACE_PROXIMITY","EXPECTATION"],"aura_percentage":false,"external_aura_confirmation":false,"automatic_spiritual_confirmation":false},
   "middle":{"additional_timer_seconds":null,"timer_semantics":"NO_ADDITIONAL_CANONICAL_TIMER_INVENTED","psalm_25_6":true,"he_zayin_yod":true,"three_layers_separated":true,"hands_shoulders_moved":true,"thanks_to_god":true,"functional_return":true},
   "privacy":{"free_text":"VAULT_E2EE_ONLY","server_plaintext":false,"completion_receives_vault_refs_only":true},
-  "legacy_compatibility":{"validator":"validate_day046_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"plant_seconds":420,"control_seconds":420,"plant_sensation_present":"BOOLEAN_CAN_BE_FALSE","control_sensation_present":"BOOLEAN_CAN_BE_FALSE","null_results_preserved":true,"alternatives_considered":true,"aura_not_claimed":true,"safety_clear":true}},
-  "backend":{"completion_contract":"HNK-CHOKMAH-D046-COMP-V2","validator":"day046_v2","registry":"PENDING"},
-  "runtime":{"web":"PENDING","expo":"PENDING"},
-  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+  "legacy_compatibility":{"validator":"validate_day046_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"plant_seconds":420,"control_seconds":420,"rest_confirmed":true,"plant_sensation_present":"BOOLEAN_CAN_BE_FALSE","control_sensation_present":"BOOLEAN_CAN_BE_FALSE","null_results_preserved":true,"alternatives_considered":true,"aura_not_claimed":true,"safety_clear":true}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D046-COMP-V2","validator":"day046_v2","registry":"ACTIVE","zero_sensation_structure":"PASS","attack_batch":"PASS","legacy_validator_reuse":"PASS","legacy_trigger_compatibility":"PASS"},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED_BUILD","expo":"IMPLEMENTED_UNVERIFIED_BUILD","absence_of_sensation_ui_valid":true,"foreground_only":true,"active_timer_persistence":false,"simple_blinding_optional":true},
+  "release_blockers":["UPSTREAM_DAY045_AUDIO_PUBLICATION","FULL_COMPLETION_RPC_AFTER_DAY045_UNLOCK","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
