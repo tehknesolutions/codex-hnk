@@ -1,0 +1,29 @@
+insert into public.asset_registry(asset_key,day,scope,slot,kind,storage_path,source_tool,model_version,checksum_sha256,approval_state,duration_seconds,metadata,scope_id,asset_version,prompt_ref,license,approved_at,published_at)
+values
+('hnk.haziel.day045.active.v1',45,'day','haziel-active-audio','audio',null,'hnk-audio-contract','HNK-HAZIEL-D045-ACTIVE-V1',null,'approved',600,
+ jsonb_build_object(
+  'preset_id','HNK-HAZIEL-D045-ACTIVE-V1','preset_version','1.0.0','preset_status','approved','published',false,
+  'master_asset_pending',true,'runtime_publication_qa_pending',true,'listening_qa_pending',true,'device_qa_pending',true,
+  'left_hz',432,'right_hz',444,'difference_hz',12,'waveform','sine','gain_per_channel',0.06,'max_output_gain',0.08,
+  'fade_in_seconds',5,'fade_out_seconds',10,'sample_rate_hz',44100,'reference_loop_seconds',1,
+  'reference_render_sha256','33b8e3567cba0ad1f05d080c437eecfe51e1993dba0d20ecfe6f600bb52f42a3',
+  'approval_ref','docs/audio/HNK_HAZIEL_D045_AUDIO_FREEZE_V1.md','provenance_ref','docs/audio/HNK_HAZIEL_D045_AUDIO_PROVENANCE_V1.md',
+  'canonical_source_sha','67e6d708444ae1fd62713ebebfb8da4d79a100e5','autoplay',false,'user_volume_control',true,'immediate_stop',true,
+  'epistemic_boundary','playback_is_not_neural_state_measurement'),
+ 'day:45',1,'docs/audio/HNK_HAZIEL_D045_AUDIO_FREEZE_V1.md','project-generated',now(),null),
+('hnk.haziel.day045.control.v1',45,'day','haziel-control-audio','audio',null,'hnk-audio-contract','HNK-HAZIEL-D045-CONTROL-V1',null,'approved',600,
+ jsonb_build_object(
+  'preset_id','HNK-HAZIEL-D045-CONTROL-V1','preset_version','1.0.0','preset_status','approved','published',false,
+  'master_asset_pending',true,'runtime_publication_qa_pending',true,'listening_qa_pending',true,'device_qa_pending',true,
+  'left_hz',432,'right_hz',432,'difference_hz',0,'layer_kind','stereo-control','waveform','sine','gain_per_channel',0.06,'max_output_gain',0.08,
+  'fade_in_seconds',5,'fade_out_seconds',10,'sample_rate_hz',44100,'reference_loop_seconds',1,
+  'reference_render_sha256','012100633f1548d00e62a79b0e7a0cd67a8121d198f38c1e758cf30bdaec3002',
+  'approval_ref','docs/audio/HNK_HAZIEL_D045_AUDIO_FREEZE_V1.md','provenance_ref','docs/audio/HNK_HAZIEL_D045_AUDIO_PROVENANCE_V1.md',
+  'canonical_source_sha','67e6d708444ae1fd62713ebebfb8da4d79a100e5','autoplay',false,'user_volume_control',true,'immediate_stop',true,
+  'epistemic_boundary','control_playback_is_not_neural_state_measurement'),
+ 'day:45',1,'docs/audio/HNK_HAZIEL_D045_AUDIO_FREEZE_V1.md','project-generated',now(),null)
+on conflict(asset_key) do update set
+ day=excluded.day,scope=excluded.scope,slot=excluded.slot,kind=excluded.kind,source_tool=excluded.source_tool,model_version=excluded.model_version,
+ approval_state='approved',duration_seconds=excluded.duration_seconds,metadata=excluded.metadata,scope_id=excluded.scope_id,asset_version=excluded.asset_version,
+ prompt_ref=excluded.prompt_ref,license=excluded.license,approved_at=coalesce(public.asset_registry.approved_at,excluded.approved_at),
+ storage_path=null,checksum_sha256=null,published_at=null,updated_at=now();
