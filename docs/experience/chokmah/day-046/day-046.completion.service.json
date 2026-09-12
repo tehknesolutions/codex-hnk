@@ -1,0 +1,18 @@
+{
+  "day":46,
+  "completion_contract_id":"HNK-CHOKMAH-D046-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D046-V2",
+  "canonical_source_sha":"e8a812598e885222d42b0ddf968fa93c83d3432b",
+  "registry":{"status":"active","validator_key":"day046_v2","contract_version":"2.0.0"},
+  "validator":{"zero_sensation_structure_result":"DAY046_V2_ZERO_SENSATION_STRUCTURE_PASS","attack_batch_result":"DAY046_V2_ATTACK_BATCH_PASS"},
+  "legacy_compatibility":{"legacy_validator":"validate_day046_scalar_evidence_v1","wrapper_calls_legacy_live":true,"v2_trigger_compatibility":"DAY046_V2_LEGACY_TRIGGER_COMPAT_PASS","fixture_users_after_rollback":0,"fixture_sessions_after_rollback":0},
+  "accepted_zero_phenomenon_case":{"plant_sensation_present":false,"control_sensation_present":false,"plant_intensity":0,"control_intensity":0,"plant_thermal_quality":"NONE","control_thermal_quality":"NONE","meaning":"absence of perceived sensation is a valid recorded outcome and does not block completion"},
+  "canonical_requirements":{"plant_seconds":420,"control_seconds":420,"rest_before_control":true,"approx_distance_cm":3,"contact_forbidden":true,"same_hand_control":true,"simple_blinding":"OPTIONAL_NOT_REQUIRED","additional_middle_timer":"NONE_INVENTED"},
+  "epistemic_boundaries":{"external_aura_detection_claim":false,"plant_communication_claim":false,"aura_percentage_calculation":false,"automatic_spiritual_confirmation":false,"null_results_preserved":true,"favorable_result_selection":false,"alternatives_required":["CIRCULATION","AMBIENT_TEMPERATURE","POSTURE","AIR_MOVEMENT","SURFACE_PROXIMITY","EXPECTATION"]},
+  "privacy":{"private_text":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "xp":{"canonical":150,"server_authoritative":true},
+  "attribute_progression":{"gain":0,"reason":"NO_FROZEN_DAY046_RULE_IN_MATRIX_1_0_0"},
+  "sequential_gate":{"previous_day":45,"day45_audio_publication_lock_respected":true,"note":"Day 046 ACTIVE does not bypass Day 045; first completion remains unreachable until Day 045 is legitimately completed."},
+  "expected_first_completion":{"next_day":47,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","events":["NEXT_DAY_UNLOCKED"]},
+  "proof_limits":{"full_completion_rpc_smoke":"BLOCKED_BY_LEGITIMATE_DAY045_AUDIO_PUBLICATION_LOCK","web_build":"UNVERIFIED","expo_build":"UNVERIFIED","device_browser_qa":"PENDING"}
+}
