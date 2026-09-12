@@ -1,0 +1,17 @@
+{
+  "day":50,
+  "completion_contract_id":"HNK-CHOKMAH-D050-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D050-V2",
+  "canonical_source_sha":"99f56677fb57d8ddfe191b081cae44734b38ae50",
+  "canonical_xp":200,
+  "attribute_gain":0,
+  "registry":{"status":"active","validator":"day050_v2"},
+  "validator":{"self_and_consented_third_party_zero_effect_result":"DAY050_V2_SELF_AND_CONSENTED_THIRD_PARTY_ZERO_EFFECT_PASS","attack_batch_result":"DAY050_V2_ATTACK_BATCH_PASS"},
+  "legacy_compatibility":{"wrapper_calls_legacy_live":true,"v2_trigger_compatibility":"DAY050_V2_LEGACY_TRIGGER_COMPAT_PASS","rollback_fixture_users":0,"rollback_fixture_sessions":0},
+  "canonical_requirements":{"primary_seconds":300,"control_seconds":300,"effect_required":false,"self_reflection_allowed":true,"consented_third_party_allowed":true,"third_party_consent_required_if_used":true},
+  "privacy":{"third_party_identity_on_server":false,"third_party_face_on_server":false,"third_party_image_on_server":false,"third_party_personal_interpretation_on_server":false,"optional_sensitive_text":"VAULT_E2EE_ONLY","server_plaintext_forbidden":true},
+  "safety":{"normal_blinking":true,"diagnosis_forbidden":true,"judgment_of_person_forbidden":true,"stop_conditions":["FATIGUE","EYE_PAIN","ANXIETY","SOCIAL_DISCOMFORT","OTHER_DISCOMFORT"]},
+  "expected_first_completion":{"xp_awarded":200,"next_day":51,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","progression_event":"NEXT_DAY_UNLOCKED","attribute_event":0},
+  "upstream_gate":{"day045_audio_publication_lock_respected":true,"full_completion_rpc_pending_until_upstream_unlock":true},
+  "build_state":"NOT_EXECUTED"
+}
