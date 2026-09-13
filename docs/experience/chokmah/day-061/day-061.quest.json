@@ -1,10 +1,11 @@
 {
-  "id":"HNK-CHOKMAH-D061-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":61,
+  "id":"HNK-CHOKMAH-D061-V2","kind":"hnk.quest_definition","version":"0.1.1","status":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING","day":61,
   "title":"Hahaiah V — O Altar Digital Higienizado",
   "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-061.md","source_sha":"12e4c2da623f2f78d3fea3ff65e23f9446f9784b","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Hahaiah","level":2,"xp":150,"tracks":[]},
   "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 061 rule exists in attribute_progression_gain_rules."}},
   "entry_gate":{"requires_day_060_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
-  "runtime":{"baseline_duration_gate_seconds":null,"after_duration_gate_seconds":null,"focus_periods_required":2,"configuration_review_days":7,"os_settings_mutation":"MANUAL_USER_ACTION_ONLY","private_reflections":"VAULT_E2EE_OPTIONAL","server_plaintext":false,"web":"PENDING","expo":"PENDING"},
+  "runtime":{"baseline_duration_gate_seconds":null,"after_duration_gate_seconds":null,"focus_periods_required":2,"configuration_review_days":7,"os_settings_mutation":"MANUAL_USER_ACTION_ONLY","private_reflections":"VAULT_E2EE_OPTIONAL","server_plaintext":false,"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","backend_registry":"ACTIVE"},
+  "proofs":["DAY061_V2_ZERO_DURATION_NULL_RESULT_VALID_PASS","DAY061_V2_ATTACK_BATCH_PASS","DAY061_V2_LEGACY_TRIGGER_COMPAT_PASS"],
   "phases":[
     {"id":"inventory_baseline","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"inventory_categories":["ESSENTIAL","USEFUL","DISPENSABLE"],"baseline_completed":true,"interruptions_recorded":true,"unlocks_recorded":true,"anxiety_0_10":true,"return_to_task_0_10":true,"useful_alerts_recorded":true},"required_for_completion":true},
     {"id":"manual_reorganization","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"home_screen_reorganized":true,"noncritical_noise_reduced":true,"critical_security_preserved":true,"authentication_preserved":true,"health_family_emergency_preserved":true,"essential_work_alerts_preserved":true,"automatic_critical_changes":false,"explicit_user_action_required":true,"focus_periods":2},"required_for_completion":true},
@@ -15,5 +16,5 @@
   ],
   "privacy":{"vault_optional":true,"vault_payload_rule":"PRIVATE_REFLECTIONS_ONLY","practice_record":"COUNTS_CATEGORIES_FLAGS_AND_OPAQUE_UUID_ONLY","app_names_notification_texts_contacts_forbidden":true},
   "safety":{"critical_alerts_must_be_preserved":true,"automatic_critical_setting_changes_forbidden":true,"moral_scoring_forbidden":true,"compulsive_austerity_not_goal":true,"restore_important_alert_immediately_if_mistakenly_silenced":true},
-  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"UPSTREAM_DAY045_AUDIO_PUBLICATION"},{"id":"FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
 }
