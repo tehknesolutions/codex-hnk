@@ -1,0 +1,52 @@
+import type {Json} from '@hnk/database';
+import {CompletionService,buildDay058CompletionRequest,type CompleteDayResponseV1,type CompletionRpcArgsV2,type CompletionResult} from '@hnk/completion-contract';
+import {buildDay058EvidenceV2,buildDay058SafeMetrics,type Day058EvidenceInput} from '@hnk/practice-contract';
+import type {HnkSupabaseClient} from './index';
+
+export interface SealDay058V2Input{evidence:Day058EvidenceInput;localRecordHash?:string|null;clientCompletedAt?:string;clientCompletionId?:string}
+function asJson(v:unknown):Json{return v as Json}
+function parse(v:Json):CompleteDayResponseV1{
+  if(typeof v!=='object'||v===null||Array.isArray(v))throw new Error('invalid_completion_response');
+  const r=v as Record<string,Json|undefined>;
+  if(r.day!==58||r.completion_contract_id!=='HNK-CHOKMAH-D058-COMP-V2'||r.quest_definition_id!=='HNK-CHOKMAH-D058-V2'||r.canonical_source_sha!=='e32753a57daab23d378e881451194b0dd77d8aac'||typeof r.first_completion!=='boolean'||typeof r.xp_awarded!=='number'||typeof r.xp_total!=='number'||!Array.isArray(r.progression_events))throw new Error('invalid_completion_response');
+  if(r.first_completion===true){
+    const p=r.progress;
+    if(typeof p!=='object'||p===null||Array.isArray(p))throw new Error('invalid_progress_response');
+    const pr=p as Record<string,Json|undefined>;
+    if(pr.current_day!==59||pr.current_chapter!==2||pr.current_sephira!=='Chokmah'||pr.initiatory_grade!==2||pr.initiatory_title!=='Iniciado')throw new Error('invalid_day058_progress_response');
+    if(!(r.progression_events as Json[]).includes('NEXT_DAY_UNLOCKED'))throw new Error('missing_next_day_unlocked_event');
+  }
+  return v as unknown as CompleteDayResponseV1;
+}
+
+export function createDay058ClientCompletionId(sessionId:string){if(!sessionId.trim())throw new Error('practice_session_id_required');return`hnk:d058:completion:v2:${sessionId}`}
+
+export async function startDay058PracticeSessionV2(client:HnkSupabaseClient,input:{clientSessionId:string;appVersion?:string|null;startedAt?:string}){
+  if(!input.clientSessionId.trim())throw new Error('client_session_id_required');
+  const{data:auth,error:authError}=await client.auth.getUser();
+  if(authError)throw authError;
+  if(!auth.user?.id)throw new Error('authentication_required');
+  const{data,error}=await client.from('practice_sessions').insert({user_id:auth.user.id,day:58,client_session_id:input.clientSessionId,mode:'first_completion',state:'active',started_at:input.startedAt??new Date().toISOString(),app_version:input.appVersion??null,metrics:{},evidence:{}}).select('id,user_id,day,client_session_id,mode,state,started_at,ended_at,duration_seconds,metrics,evidence').single();
+  if(error)throw error;
+  return data;
+}
+
+export async function loadDay058PracticeSessionV2(client:HnkSupabaseClient,sessionId:string){
+  if(!sessionId.trim())throw new Error('practice_session_id_required');
+  const{data:auth,error:authError}=await client.auth.getUser();
+  if(authError)throw authError;
+  if(!auth.user?.id)throw new Error('authentication_required');
+  const{data,error}=await client.from('practice_sessions').select('id,user_id,day,client_session_id,mode,state,started_at,ended_at,duration_seconds,metrics,evidence').eq('id',sessionId).eq('user_id',auth.user.id).eq('day',58).maybeSingle();
+  if(error)throw error;
+  return data;
+}
+
+export async function sealDay058V2(client:HnkSupabaseClient,input:SealDay058V2Input):Promise<CompletionResult>{
+  const evidence=buildDay058EvidenceV2(input.evidence);
+  const metrics=buildDay058SafeMetrics(evidence);
+  const{error:e}=await client.from('practice_sessions').update({metrics:asJson(metrics),evidence:asJson(evidence),state:'evidence_pending',ended_at:input.clientCompletedAt??new Date().toISOString(),local_record_hash:input.localRecordHash??null}).eq('id',evidence.session_id);
+  if(e)throw e;
+  const req=buildDay058CompletionRequest({sessionId:evidence.session_id,clientCompletionId:input.clientCompletionId??createDay058ClientCompletionId(evidence.session_id),...(input.localRecordHash?{localRecordHash:input.localRecordHash}:{}),clientCompletedAt:input.clientCompletedAt??new Date().toISOString()});
+  const rpc=client.rpc.bind(client) as unknown as(name:'complete_codex_day_v2',args:CompletionRpcArgsV2)=>Promise<{data:Json;error:{message:string;code?:string}|null}>;
+  return new CompletionService({async completeCodexDayV2(args){const{data,error}=await rpc('complete_codex_day_v2',args);if(error)throw new Error(error.message||error.code||'completion_rpc_failed');return parse(data)}}).complete(req);
+}
