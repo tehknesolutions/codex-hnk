@@ -1,0 +1,15 @@
+{
+  "day":62,
+  "completion_contract_id":"HNK-CHOKMAH-D062-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D062-V2",
+  "canonical_source_sha":"56a8aaafbd2d602324ecfb9c06da39563fefaaf6",
+  "registry":{"status":"active","validator_key":"day062_v2","contract_version":"2.0.0"},
+  "canonical_requirements":{"xp":150,"attribute_gain":0,"active_duration_canonical_gate_seconds":null,"control_duration_canonical_gate_seconds":null,"legacy_technical_minimum_seconds":1,"earplugs_optional":true,"control_without_earplugs":true},
+  "validator":{"absence_valid_result":"DAY062_V2_ABSENCE_VALID_LEGACY_FLOOR_PASS","attack_batch_result":"DAY062_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY062_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day063_legacy_branch_preserved":true,"day064_legacy_branch_preserved":true,"day065_legacy_branch_preserved":true,"day066_legacy_branch_preserved":true},
+  "attack_batch_rejected":["active_zero_duration","control_zero_duration","control_earplugs","score_11","deep_earplug_boundary_false","risk_context_boundary_false","hidden_words_sought","forced_meaning","external_message_claim","spiritual_superiority_assignment","retrospective_cherry_pick","middle_count_two","practice_record_privacy_false","persistent_voice_reinforced","medical_evaluation_replaced","unresolved_safety_stop","invalid_vault_uuid","vault_flag_without_ref","auditory_plaintext_top_level","wrong_source_sha","control_duration_not_similar"],
+  "fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "privacy":{"vault_optional":true,"vault_e2ee_if_used":true,"practice_record":"COUNTS_CATEGORIES_FLAGS_AND_OPAQUE_UUID_ONLY","auditory_free_text":false,"server_plaintext":false},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","volatile_private_text_cleared_on_foreground_loss":true,"current_timer_segment_discarded_on_foreground_loss":true},
+  "progression":{"previous_day":61,"expected_next_day":63,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED","server_authoritative":true,"upstream_day045_audio_publication_lock_respected":true},
+  "limits":{"day045_completion_contract_status":"draft","full_completion_rpc_after_upstream_unlock":"PENDING","web_build_verify":"PENDING","expo_build_verify":"PENDING","device_browser_qa":"PENDING"}
+}
