@@ -1,0 +1,16 @@
+{
+  "day":54,
+  "completion_contract_id":"HNK-CHOKMAH-D054-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D054-V2",
+  "canonical_source_sha":"5ea33f99975868290d5371c8c1ac67f6de4b9c69",
+  "canonical_xp":150,
+  "attribute_gain":0,
+  "registry":{"status":"active","validator_key":"day054_v2","contract_version":"2.0.0"},
+  "validator":{"zero_acoustic_difference_result":"DAY054_V2_ZERO_ACOUSTIC_DIFFERENCE_PASS","attack_batch_result":"DAY054_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY054_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day055_legacy_branch_preserved":true,"day056_legacy_branch_preserved":true},
+  "rollback_fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "canonical_requirements":{"target_words_marked_minimum":1,"fixed_duration_gate":null,"active_and_control_recordings_required":true,"same_script_control":true,"neutral_prosody_control":true,"zero_acoustic_difference_valid":true},
+  "privacy":{"raw_audio":"LOCAL_ONLY_DELETABLE","raw_audio_upload":false,"practice_record":"STRUCTURED_METRICS_AND_FLAGS_ONLY","server_audio_forbidden":true},
+  "ethics":{"consent_only":true,"manipulation_without_consent_forbidden":true,"guaranteed_subconscious_access_claim":false},
+  "expected_first_completion":{"xp_awarded":150,"next_day":55,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","progression_events":["NEXT_DAY_UNLOCKED"]},
+  "upstream_gate":{"day045_audio_publication_lock_respected":true,"full_completion_rpc_after_upstream_unlock":"PENDING"}
+}
