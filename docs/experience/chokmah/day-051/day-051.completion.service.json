@@ -1,0 +1,22 @@
+{
+  "day":51,
+  "completion_contract_id":"HNK-CHOKMAH-D051-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D051-V2",
+  "canonical_source_sha":"e70910495dbbe0c70cece9b694271ded7799c7fd",
+  "canonical_xp":200,
+  "attribute_gain":0,
+  "registry":{"status":"active","validator_key":"day051_v2","contract_version":"2.0.0"},
+  "validator":{
+    "zero_effect_no_control_duration_gate_result":"DAY051_V2_ZERO_EFFECT_NO_CONTROL_DURATION_GATE_PASS",
+    "attack_batch_result":"DAY051_V2_ATTACK_BATCH_PASS",
+    "legacy_trigger_compatibility":"DAY051_V2_LEGACY_TRIGGER_COMPAT_PASS",
+    "wrapper_calls_legacy_live":true
+  },
+  "rollback_fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "canonical_requirements":{"sigil_observation_seconds":180,"text_control_duration_gate":null,"text_control_timer_semantics":"NO_FIXED_DURATION_IN_CANON"},
+  "privacy":{"original_phrase":"VAULT_E2EE_REQUIRED","reduction":"VAULT_E2EE_REQUIRED","drawing":"VAULT_E2EE_REQUIRED","server_plaintext":false},
+  "epistemic_boundaries":{"zero_sigil_effect_valid":true,"zero_text_effect_valid":true,"symbolic_anchor_only":true,"guaranteed_protection_claim":false,"entities_accidents_diseases_protection_claim":false,"pearl_blue_external_detection_claim":false},
+  "safety":{"archive_symbol_after_adverse_stop_required":true,"panic_rule_required":true},
+  "expected_first_completion":{"xp_awarded":200,"next_day":52,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","progression_events":["NEXT_DAY_UNLOCKED"]},
+  "upstream_gate":{"day045_audio_publication_lock_respected":true,"full_completion_rpc_after_upstream_unlock":"PENDING"}
+}
