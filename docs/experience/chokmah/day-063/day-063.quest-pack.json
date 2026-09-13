@@ -1,0 +1,16 @@
+{
+  "id":"HNK-CHOKMAH-D063-PACK-V2","kind":"hnk.quest_pack","version":"0.1.1","day":63,"quest_id":"HNK-CHOKMAH-D063-V2","canonical_source_sha":"b9c9872ddf618aff3f515f601b3abfd611dace46","release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
+  "canonical":{"counted_words":705,"xp":150,"angel":"Iezalel","chapter":2,"sephira":"Chokmah","level":2},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY063_RULE_IN_ATTRIBUTE_PROGRESSION_MATRIX"},
+  "entry_gate":{"day_062_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"upstream_day045_audio_publication_lock_transitive":true},
+  "preregistration":{"criticism_text":"VAULT_E2EE_ONLY","intensity_before":"INTEGER_0_10","credibility_before":"INTEGER_0_10"},
+  "caricature":{"timbre_caricature":true,"faster_pace":true,"left_foot_location":true,"repeat_once":true,"no_self_insult_added":true,"return_to_silence":true,"intensity_after":"INTEGER_0_10","credibility_after":"INTEGER_0_10"},
+  "neutral_reframe":{"fact_component":true,"judgment_component":true,"action_component_reviewed":true,"neutral_internal_voice":true,"intensity":"INTEGER_0_10","clarity":"INTEGER_0_10","utility":"INTEGER_0_10","action_needed":"BOOLEAN","small_verifiable_action_or_none":true},
+  "comparison":{"completed":true,"no_forced_improvement":true,"immediate_relief_not_only_criterion":true,"responsible_response_prioritized":true,"content_reality_not_suppressed":true,"legitimate_alerts_preserved":true},
+  "middle":{"psalm_98_4":true,"yod_zayin_lamed":true,"criticism_recalled_without_caricature":true,"fact_only_named_count":1,"proportional_response_selected":true,"error_repair_or_distortion_released":true,"thanks_to_god":true,"not_reduced_to_internal_phrase":true,"orientation_autonomy_action_possible":true},
+  "privacy":{"vault_required":true,"vault_e2ee_required":true,"practice_record":"RATINGS_FLAGS_BOOLEAN_ACTION_AND_OPAQUE_UUID_ONLY","criticism_reframe_free_text_forbidden":true,"server_plaintext":false},
+  "legacy_compatibility":{"validator":"validate_day063_scalar_evidence_v1","reuse_required":true,"duration_gate_seconds":null},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D063-COMP-V2","validator":"day063_v2","registry":"ACTIVE","proofs":["DAY063_V2_NO_FORCED_IMPROVEMENT_PASS","DAY063_V2_ATTACK_BATCH_PASS","DAY063_V2_LEGACY_TRIGGER_COMPAT_PASS"]},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED"},
+  "release_blockers":["UPSTREAM_DAY045_AUDIO_PUBLICATION","FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}

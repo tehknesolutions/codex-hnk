@@ -1,0 +1,14 @@
+{
+  "day":63,
+  "completion_contract_id":"HNK-CHOKMAH-D063-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D063-V2",
+  "canonical_source_sha":"b9c9872ddf618aff3f515f601b3abfd611dace46",
+  "registry":{"status":"active","validator_key":"day063_v2","contract_version":"2.0.0"},
+  "canonical_requirements":{"xp":150,"attribute_gain":0,"duration_gate_seconds":null,"required_vault_refs":1,"no_forced_improvement":true},
+  "validator":{"no_forced_improvement_result":"DAY063_V2_NO_FORCED_IMPROVEMENT_PASS","attack_batch_result":"DAY063_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY063_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day062_v2_and_legacy_preserved":true,"day064_legacy_preserved":true,"day065_legacy_preserved":true,"day066_legacy_preserved":true},
+  "migration_history":{"draft":"20260913223215","uuid_hardening":"20260913223249","activation":"20260913223451","failed_pre_history_attempt_recorded_in_issue":true},
+  "privacy":{"required_vault_refs":1,"vault_e2ee":true,"practice_record":"RATINGS_FLAGS_BOOLEAN_ACTION_AND_OPAQUE_UUID_ONLY","criticism_reframe_free_text_forbidden":true,"server_plaintext":false},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","volatile_private_text_cleared_on_foreground_loss":true},
+  "progression":{"previous_day":62,"expected_next_day":64,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED","server_authoritative":true,"upstream_day045_audio_publication_lock_respected":true},
+  "limits":{"day045_completion_contract_status":"draft","full_completion_rpc_after_upstream_unlock":"PENDING","web_build_verify":"PENDING","expo_build_verify":"PENDING","device_browser_qa":"PENDING"}
+}
