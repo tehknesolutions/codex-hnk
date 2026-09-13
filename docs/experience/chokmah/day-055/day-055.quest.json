@@ -1,0 +1,19 @@
+{
+  "id":"HNK-CHOKMAH-D055-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":55,
+  "title":"Lauviah IV — VAKOG imaginativo com verificação tardia",
+  "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-055.md","source_sha":"03dce9f662c05cb720bce4419f58126031ca9be6","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Lauviah","level":2,"xp":200,"tracks":[]},
+  "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 055 rule exists in attribute_progression_gain_rules."}},
+  "entry_gate":{"requires_day_054_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
+  "runtime":{"primary_preregister":"VAULT_E2EE_REQUIRED","control_preregister":"VAULT_E2EE_REQUIRED","free_associations":"VAULT_E2EE_ONLY","server_plaintext":false,"primary_duration_seconds":600,"control_fixed_duration_gate":null,"web":"PENDING","expo":"PENDING"},
+  "phases":[
+    {"id":"primary","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"target_selected_before_practice":true,"vakog_before_reference":true,"duration_seconds":600,"preregister_sealed_before_verification":true,"correspondence_may_be_absent":true},"required_for_completion":true},
+    {"id":"verification","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"fixed_references_only_after_preregister":true,"memory_prior_recognized":true,"coincidence_kept_open":true,"nonlocal_perception_claim":false},"required_for_completion":true},
+    {"id":"control","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"modes":["OTHER_PERSON_RANDOM_TARGET","SEALED_PHOTOGRAPH"],"same_metrics":true,"verification_after_preregister":true,"correspondence_may_be_absent":true,"no_effort_compensation":true},"required_for_completion":true},
+    {"id":"comparison","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"comparison_completed":true,"null_results_preserved":true,"contradictory_results_preserved":true,"memory_prior_competing_hypothesis":true,"coincidence_competing_hypothesis":true,"nonlocal_perception_claim":false,"risk_decision_use":false,"prudence_rule_defined":true},"required_for_completion":true},
+    {"id":"middle","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"psalm_18_46":true,"lamed_aleph_vav":true,"three_observable_facts":true,"one_subjective_experience":true,"one_open_hypothesis":true,"body_moved":true,"environment_oriented":true,"natural_breathing":true,"thanks_to_god":true,"functional_return":true},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":200,"completion_contract_id":"HNK-CHOKMAH-D055-COMP-V2","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true}
+  ],
+  "safety":{"risk_decisions_forbidden":["NAVIGATION","EMERGENCY","TRAVEL","INVESTMENT","OTHER_RELIABILITY_CRITICAL_DECISION"],"stop_conditions":["ANXIETY","DISORIENTATION","RISK_DECISION_IMPULSE","OTHER_DISCOMFORT"]},
+  "epistemic_boundaries":{"post_hoc_correspondence_proves_nonlocal_perception":false,"memory_prior_and_coincidence_competing_hypotheses":true,"effect_required_for_xp":false},
+  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+}
