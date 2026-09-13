@@ -55,7 +55,7 @@ export const DAY058_COMPLETION={
     title:'Iniciado',
     expectedProgressionEvents:['NEXT_DAY_UNLOCKED'],
   },
-  deploymentState:'draft',
+  deploymentState:'active',
 } as const;
 
 export function buildDay058CompletionRequest(input:{sessionId:string;clientCompletionId:string;localRecordHash?:string;clientCompletedAt?:string}):CompleteDayRequestV1{
