@@ -1,0 +1,16 @@
+{
+  "day":55,
+  "completion_contract_id":"HNK-CHOKMAH-D055-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D055-V2",
+  "canonical_source_sha":"03dce9f662c05cb720bce4419f58126031ca9be6",
+  "canonical_xp":200,
+  "attribute_gain":0,
+  "registry":{"status":"active","validator_key":"day055_v2","contract_version":"2.0.0"},
+  "validator":{"zero_correspondence_no_control_duration_gate_result":"DAY055_V2_ZERO_CORRESPONDENCE_NO_CONTROL_DURATION_GATE_PASS","attack_batch_result":"DAY055_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY055_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day054_v2_branch_preserved":true,"day056_legacy_branch_preserved":true},
+  "rollback_fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "canonical_requirements":{"primary_seconds":600,"control_fixed_duration_gate":null,"primary_zero_correspondence_valid":true,"control_zero_correspondence_valid":true,"target_selected_before_practice":true,"verification_after_preregister":true},
+  "privacy":{"primary_preregister":"VAULT_E2EE_REQUIRED","control_preregister":"VAULT_E2EE_REQUIRED","free_associations":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "epistemic_boundaries":{"post_hoc_correspondence_proves_nonlocal_perception":false,"memory_prior_competing_hypothesis":true,"coincidence_competing_hypothesis":true,"risk_decision_use":false},
+  "expected_first_completion":{"xp_awarded":200,"next_day":56,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","progression_events":["NEXT_DAY_UNLOCKED"]},
+  "upstream_gate":{"day045_audio_publication_lock_respected":true,"full_completion_rpc_after_upstream_unlock":"PENDING"}
+}
