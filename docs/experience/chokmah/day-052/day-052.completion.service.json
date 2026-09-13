@@ -1,0 +1,16 @@
+{
+  "day":52,
+  "completion_contract_id":"HNK-CHOKMAH-D052-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D052-V2",
+  "canonical_source_sha":"88ae2a1dc163f474b3afc82f2bcacdf4069c8f5e",
+  "canonical_xp":100,
+  "attribute_gain":0,
+  "registry":{"status":"active","validator_key":"day052_v2","contract_version":"2.0.0"},
+  "validator":{"zero_effect_result":"DAY052_V2_ZERO_EFFECT_STRUCTURE_PASS","attack_batch_result":"DAY052_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY052_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day053_legacy_branch_preserved":true},
+  "rollback_fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "canonical_requirements":{"expansion_seconds":600,"control_seconds":600,"zero_expansion_effect_valid":true,"zero_control_effect_valid":true,"orientation_preserved":true},
+  "epistemic_boundaries":{"expansion_as_imagination_and_fenomenology":true,"outside_brain_claim":false,"external_mechanism_claim":false,"supernatural_faculty_claim":false},
+  "privacy":{"optional_spiritual_meaning_note":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "expected_first_completion":{"xp_awarded":100,"next_day":53,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","progression_events":["NEXT_DAY_UNLOCKED"]},
+  "upstream_gate":{"day045_audio_publication_lock_respected":true,"full_completion_rpc_after_upstream_unlock":"PENDING"}
+}
