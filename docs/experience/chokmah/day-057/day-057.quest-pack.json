@@ -1,0 +1,16 @@
+{
+  "id":"HNK-CHOKMAH-D057-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":57,"quest_id":"HNK-CHOKMAH-D057-V2","canonical_source_sha":"deb6305d38b89a4168ad5cff083d2b96e7a7fec4","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":250,"angel":"Hahaiah","chapter":2,"sephira":"Chokmah","level":2},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY057_RULE_IN_ATTRIBUTE_PROGRESSION_MATRIX"},
+  "entry_gate":{"day_056_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"upstream_day045_audio_publication_lock_transitive":true},
+  "prepare":{"partner_consent":true,"closed_target_set_defined":true,"target_set_minimum":2,"scoring_rule_predefined":true,"partner_can_interrupt":true},
+  "active":{"sender_target_preregistered":true,"receiver_response_preregistered":true,"feedback_after_response":true,"match_may_be_absent":true,"errors_included":true,"possible_cues_logged":true,"no_parallel_cues":true},
+  "control":{"same_target_set":true,"same_scoring_rule":true,"no_ritual_or_formula":true,"similar_context":true,"receiver_response_preregistered":true,"feedback_after_response":true,"match_may_be_absent":true,"contamination_logged":true},
+  "comparison":{"errors_preserved":true,"null_results_preserved":true,"contradictory_results_preserved":true,"possible_cues_considered":true,"telepathy_claim":false,"external_mechanism_claim":false,"spiritual_superiority_claim":false,"diagnosis_or_prophecy":false,"high_impact_use":false,"prudence_rule_defined":true},
+  "privacy":{"partner_identity":"NOT_STORED","sender_target":"VAULT_E2EE_REQUIRED","receiver_response":"VAULT_E2EE_REQUIRED","control_target":"VAULT_E2EE_REQUIRED","control_response":"VAULT_E2EE_REQUIRED","relationship_notes":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "timing":{"active_fixed_duration_gate":null,"control_fixed_duration_gate":null,"note":"The canon references a pre-agreed duration, but no numerical minimum is frozen by canon or legacy validator."},
+  "legacy_compatibility":{"validator":"validate_day057_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"partner_consent":true,"closed_set_defined":true,"target_preregistered":true,"receiver_response_preregistered":true,"feedback_after_response":true,"control_completed":true,"errors_included":true,"possible_cues_logged":true,"telepathy_not_claimed":true,"high_impact_not_used":true,"vault_saved":true,"safety_clear":true,"active_match":"BOOLEAN_CAN_BE_FALSE","control_match":"BOOLEAN_CAN_BE_FALSE","target_set_size_min":2}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D057-COMP-V2","validator":"day057_v2","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
