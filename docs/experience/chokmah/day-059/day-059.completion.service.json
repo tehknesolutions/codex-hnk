@@ -1,0 +1,15 @@
+{
+  "day":59,
+  "completion_contract_id":"HNK-CHOKMAH-D059-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D059-V2",
+  "canonical_source_sha":"e0b9b51cac81012e4511e6394c6f3dff7f50aaf8",
+  "registry":{"status":"active","validator_key":"day059_v2","contract_version":"2.0.0"},
+  "canonical_requirements":{"xp":150,"attribute_gain":0,"blue_duration_seconds_min":900,"gray_duration_seconds_min":900,"blue_image_required":false,"gray_image_required":false,"absence_valid":true},
+  "validator":{"absence_900s_control_result":"DAY059_V2_ABSENCE_VALID_900S_CONTROL_PASS","attack_batch_result":"DAY059_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY059_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day057_branch_preserved":true,"day058_branch_preserved":true,"day060_legacy_branch_preserved":true,"day061_legacy_branch_preserved":true},
+  "attack_batch_rejected":["blue_899_seconds","gray_899_seconds","blue_image_presence_wrong_type","gray_control_sabotaged","interpretation_not_separated","clairvoyance_claimed","reason_not_preserved","difference_treated_as_external_proof","metric_above_10","top_level_private_plaintext","wrong_source_sha"],
+  "fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "privacy":{"private_associations":"VAULT_E2EE_OPTIONAL","practice_record":"STRUCTURED_METRICS_FLAGS_AND_OPAQUE_UUIDS_ONLY","server_plaintext":false},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","foreground_only":true,"background_segment_discarded":true},
+  "progression":{"previous_day":58,"expected_next_day":60,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED","server_authoritative":true,"upstream_day045_audio_publication_lock_respected":true},
+  "limits":{"full_completion_rpc_after_upstream_unlock":"PENDING","web_build_verify":"PENDING","expo_build_verify":"PENDING","device_browser_qa":"PENDING"}
+}
