@@ -1,0 +1,19 @@
+{
+  "id":"HNK-CHOKMAH-D054-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":54,
+  "title":"Lauviah III — Marcação analógica vocal com áudio local",
+  "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-054.md","source_sha":"5ea33f99975868290d5371c8c1ac67f6de4b9c69","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Lauviah","level":2,"xp":150,"tracks":[]},
+  "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 054 rule exists in attribute_progression_gain_rules."}},
+  "entry_gate":{"requires_day_053_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
+  "runtime":{"raw_audio":"LOCAL_ONLY_DELETABLE","raw_audio_upload":false,"practice_record":"STRUCTURED_METRICS_AND_FLAGS_ONLY","script_text":"LOCAL_OR_VAULT_ONLY","fixed_duration_gate":null,"web":"PENDING","expo":"PENDING"},
+  "phases":[
+    {"id":"prepare","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"short_script_prepared":true,"target_words_predeclared":true,"target_words_minimum":1,"self_voice_recording_consent":true},"required_for_completion":true},
+    {"id":"active_recording","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"local_recording":true,"target_words_discrete_tonal_variation":true,"raw_audio_upload":false,"raw_audio_deletable":true,"local_analysis":["ENVELOPE","INTENSITY","INFLECTION"],"difference_may_be_absent":true},"required_for_completion":true},
+    {"id":"neutral_control","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"same_script":true,"neutral_prosody":true,"same_local_metrics":true,"verbal_content_unchanged":true,"preselected_winner":false,"no_effort_compensation":true,"difference_may_be_absent":true},"required_for_completion":true},
+    {"id":"comparison","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"comparison_completed":true,"interpretation_separated":true,"null_results_preserved":true,"contradictory_results_preserved":true,"alternatives_recorded":true,"manipulation_without_consent":false,"guaranteed_subconscious_access_claim":false,"prudence_rule_defined":true},"required_for_completion":true},
+    {"id":"middle","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"psalm_18_46":true,"lamed_aleph_vav":true,"three_observable_facts":true,"one_subjective_experience":true,"one_open_hypothesis":true,"body_moved":true,"environment_oriented":true,"natural_breathing":true,"thanks_to_god":true,"functional_return":true},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-CHOKMAH-D054-COMP-V2","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true}
+  ],
+  "safety":{"comfortable_volume":true,"laryngeal_strain_avoided":true,"stop_conditions":["PAIN","HOARSENESS","DIZZINESS","OTHER_DISCOMFORT"],"consent_required":true},
+  "epistemic_boundaries":{"acoustic_difference_proves_subconscious_access":false,"analog_marking_authorizes_manipulation":false,"effect_required_for_xp":false},
+  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+}
