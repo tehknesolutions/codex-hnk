@@ -1,0 +1,9 @@
+{
+  "kind":"hnk.completion_service_snapshot","day":64,"state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING","completion_contract_id":"HNK-CHOKMAH-D064-COMP-V2","quest_definition_id":"HNK-CHOKMAH-D064-V2","canonical_source_sha":"fb05d22be494099a5a1d3e1e0f5480ecc6c072cb","xp":200,"attribute_gain":0,
+  "backend":{"registry":"ACTIVE","validator":"day064_v2","contract_version":"2.0.0","proofs":["DAY064_V2_CANONICAL_TIMING_PRIVACY_PASS","DAY064_V2_ATTACK_BATCH_PASS","DAY064_V2_LEGACY_TRIGGER_COMPAT_PASS"]},
+  "timing":{"vocal_seconds":{"min":1,"max":600},"active_write_seconds":{"min":300},"control_write_seconds":{"min":300}},
+  "privacy":{"vault_e2ee_required":true,"server_private_prose":false},
+  "progression":{"previous_day":63,"next_day":65,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED","day045_upstream_lock":"DRAFT"},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED"},
+  "blockers":["UPSTREAM_DAY045_AUDIO_PUBLICATION","FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
