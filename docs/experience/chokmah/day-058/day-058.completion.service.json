@@ -1,0 +1,14 @@
+{
+  "day":58,
+  "completion_contract_id":"HNK-CHOKMAH-D058-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D058-V2",
+  "canonical_source_sha":"e32753a57daab23d378e881451194b0dd77d8aac",
+  "registry":{"status":"active","validator_key":"day058_v2","contract_version":"2.0.0"},
+  "canonical_requirements":{"xp":150,"attribute_gain":0,"scripts_required":3,"required_vault_refs":4,"fixed_duration_gate":null,"metrics":["relaxation","clarity","pressure","autonomy"],"self_use_only":true,"real_refusal_required":true,"obedience_not_success_metric":true},
+  "validator":{"zero_metrics_no_duration_gate_result":"DAY058_V2_ZERO_METRICS_NO_DURATION_GATE_PASS","attack_batch_result":"DAY058_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY058_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day057_legacy_branch_preserved":true,"day059_legacy_branch_preserved":true,"day060_legacy_branch_preserved":true,"day061_legacy_branch_preserved":true},
+  "attack_batch_rejected":["two_scripts_only","duplicate_vault_ref","extra_private_vault_ref","metric_above_10","missing_real_refusal","obedience_as_success","consent_bypass","wrong_source_sha"],
+  "fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "privacy":{"script_1":"VAULT_E2EE_REQUIRED","script_2":"VAULT_E2EE_REQUIRED","script_3":"VAULT_E2EE_REQUIRED","direct_control":"VAULT_E2EE_REQUIRED","practice_record":"STRUCTURED_METRICS_FLAGS_AND_OPAQUE_UUIDS_ONLY","server_plaintext":false},
+  "progression":{"previous_day":57,"expected_next_day":59,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED","server_authoritative":true,"upstream_day045_audio_publication_lock_respected":true},
+  "limits":{"day045_completion_contract_status":"draft","full_completion_rpc_after_upstream_unlock":"PENDING","web_build_verify":"PENDING","expo_build_verify":"PENDING","device_browser_qa":"PENDING"}
+}
