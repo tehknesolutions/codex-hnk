@@ -1,0 +1,19 @@
+{
+  "id":"HNK-CHOKMAH-D053-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":53,
+  "title":"Lauviah II — Pré-registro cego com feedback tardio",
+  "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-053.md","source_sha":"0bb908ec27feeed2023a3a93d7f481328e5056c2","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Lauviah","level":2,"xp":250,"tracks":[]},
+  "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 053 rule exists in attribute_progression_gain_rules."}},
+  "entry_gate":{"requires_day_052_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
+  "runtime":{"target_preregister":"VAULT_E2EE_REQUIRED","control_preregister":"VAULT_E2EE_REQUIRED","free_descriptions_drawings_associations":"VAULT_E2EE_ONLY","server_plaintext":false,"fixed_duration_gate":null,"web":"PENDING","expo":"PENDING"},
+  "phases":[
+    {"id":"target_preregister","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"six_digit_identifier":true,"description_before_feedback":true,"preregister_sealed_before_reveal":true,"effect_may_be_absent":true,"vault_required":true},"required_for_completion":true},
+    {"id":"target_feedback","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"feedback_only_after_preregister":true,"errors_included":true,"coincidences_included":true,"paranormal_claim":false},"required_for_completion":true},
+    {"id":"control","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"second_distinct_six_digit_identifier":true,"modes":["NO_TARGET_IDENTIFIER","SHUFFLED_ENVELOPES"],"feedback_anticipated":false,"same_metrics":true,"effect_may_be_absent":true,"vault_required":true},"required_for_completion":true},
+    {"id":"comparison","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"errors_included":true,"coincidences_included":true,"null_results_preserved":true,"contradictory_results_preserved":true,"risk_decision_use":false,"paranormal_faculty_claim":false,"alternative_explanations":true,"prudence_rule_defined":true},"required_for_completion":true},
+    {"id":"middle","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"psalm_18_46":true,"lamed_aleph_vav":true,"three_observable_facts":true,"one_subjective_experience":true,"one_open_hypothesis":true,"body_moved":true,"environment_oriented":true,"natural_breathing":true,"thanks_to_god":true,"functional_return":true},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":250,"completion_contract_id":"HNK-CHOKMAH-D053-COMP-V2","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true}
+  ],
+  "safety":{"stop_conditions":["ANXIETY","HIT_OBSESSION","RISK_DECISION_IMPULSE","OTHER_DISCOMFORT"],"risk_decisions_forbidden":true,"paranormal_claim":false},
+  "epistemic_boundaries":{"apparent_hits_prove_paranormal_faculty":false,"post_hoc_correspondence_proves_external_mechanism":false,"errors_and_coincidences_required":true,"effect_required_for_xp":false},
+  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+}
