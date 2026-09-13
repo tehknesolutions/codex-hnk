@@ -13,7 +13,7 @@ export const DAY059_COMPLETION={
   privacy:{privateAssociations:'VAULT_E2EE_OPTIONAL',practiceRecord:'STRUCTURED_METRICS_FLAGS_AND_OPAQUE_UUIDS_ONLY',serverPlaintextForbidden:true},
   safety:{ocularPainStopsPractice:true,headacheStopsPractice:true,vertigoStopsPractice:true,anxietyIncreaseStopsPractice:true,disorientationStopsPractice:true,clairvoyanceClaimForbidden:true,externalMechanismProofClaimForbidden:true,highImpactUseForbidden:true},
   expectedProgression:{nextDay:60,chapter:2,sephira:'Chokmah',grade:2,title:'Iniciado',expectedProgressionEvents:['NEXT_DAY_UNLOCKED']},
-  deploymentState:'draft',
+  deploymentState:'active',
 } as const;
 
 export function buildDay059CompletionRequest(input:{sessionId:string;clientCompletionId:string;localRecordHash?:string;clientCompletedAt?:string}):CompleteDayRequestV1{
