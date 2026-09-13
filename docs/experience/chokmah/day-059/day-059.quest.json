@@ -1,0 +1,18 @@
+{
+  "id":"HNK-CHOKMAH-D059-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":59,
+  "title":"Hahaiah III — Meditação da Pérola Azul com controle cinza",
+  "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-059.md","source_sha":"e0b9b51cac81012e4511e6394c6f3dff7f50aaf8","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Hahaiah","level":2,"xp":150,"tracks":[]},
+  "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 059 rule exists in attribute_progression_gain_rules."}},
+  "entry_gate":{"requires_day_058_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
+  "runtime":{"blue_duration_seconds":900,"gray_duration_seconds":900,"blue_image_required":false,"gray_image_required":false,"private_associations":"VAULT_E2EE_OPTIONAL","server_plaintext":false,"web":"PENDING","expo":"PENDING"},
+  "phases":[
+    {"id":"blue","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"pearl_focus_seconds":900,"image_presence_may_be_false":true,"returns_recorded":true,"sharpness_recorded":true,"brightness_recorded":true,"ocular_effort_recorded":true,"silence_recorded":true,"no_forced_brightness":true,"no_eye_pressure":true},"required_for_completion":true},
+    {"id":"gray","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"neutral_gray_point":true,"duration_seconds":900,"same_posture":true,"same_environment":true,"image_presence_may_be_false":true,"returns_recorded":true,"sharpness_recorded":true,"ocular_effort_recorded":true,"expectation_recorded":true,"control_not_sabotaged":true},"required_for_completion":true},
+    {"id":"comparison","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"compare_only_after_both":true,"observation_interpretation_separated":true,"clairvoyance_claim":false,"reason_preserved":true,"difference_proves_external_mechanism":false,"null_results_valid":true,"high_impact_use":false},"required_for_completion":true},
+    {"id":"middle","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"psalm_10_1":true,"he_he_aleph":true,"instrumental_observation_named":true,"sensation_named":true,"traditional_symbol_named":true,"open_hypothesis_named":true,"thanks_to_god":true,"conscious_return":true,"grounding_three_objects":true},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-CHOKMAH-D059-COMP-V2","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true}
+  ],
+  "safety":{"stop_on_ocular_pain":true,"stop_on_headache":true,"stop_on_vertigo":true,"stop_on_anxiety_increase":true,"stop_on_disorientation":true,"breath_holding_forbidden":true,"driving_or_machinery_forbidden":true,"diagnosis_forbidden":true,"prophecy_forbidden":true,"high_impact_decisions_forbidden":true},
+  "epistemic_boundaries":{"internal_image_proves_clairvoyance":false,"color_difference_proves_external_mechanism":false,"subjective_intensity_proves_external_object":false,"effect_required_for_xp":false,"absence_is_valid_result":true},
+  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+}
