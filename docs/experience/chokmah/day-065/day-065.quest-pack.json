@@ -1,0 +1,14 @@
+{
+  "id":"HNK-CHOKMAH-D065-QUEST-PACK-V1","kind":"hnk.quest_pack","version":"0.1.1","day":65,"release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
+  "quest_definition_id":"HNK-CHOKMAH-D065-V2","completion_contract_id":"HNK-CHOKMAH-D065-COMP-V2","canonical_source_sha":"8d8cd2a39fb05be283b8326fa258ed547b40f442","xp":150,"attribute_gain":0,
+  "timing":{"active_canonical_min_seconds":null,"control_canonical_min_seconds":null,"legacy_technical_minimum_seconds":1},
+  "active":{"photo_optional_local_only":true,"consent_if_applicable":true,"white_light_visualization":true,"simple_good_intention":true,"practitioner_scores":["calm","compassion","urgency","willingness_to_help"],"remote_effect_claimed":false,"diagnosis":false,"result_promise":false,"concrete_care_considered":true},
+  "control":{"no_photo":true,"no_white_light_visualization":true,"own_experience_only":true,"energy_validation_not_sought":true,"ordinary_respectful_contact_only":true},
+  "comparison":{"own_experience_only":true,"no_cure_score":true,"remote_effect_unmeasured":true,"third_party_improvement_not_proof":true,"professional_care_prioritized":true},
+  "middle":{"psalm":"98:4","formula":"YOD-ZAYIN-LAMED","care_categories":["MESSAGE","HELP","PRESENCE","PRAYER","NONE"],"person_surrendered_to_god":true,"visualization_not_diagnosis":true,"visualization_not_physical_proof":true,"movement_and_return":true},
+  "privacy":{"photo_upload_forbidden":true,"third_party_identity_forbidden":true,"third_party_symptoms_forbidden":true,"vault_optional_e2ee":true,"server_plaintext":false},
+  "safety":{"cure_claim_forbidden":true,"remote_effect_claim_forbidden":true,"unsolicited_medical_advice_forbidden":true,"professional_care_not_replaced":true},
+  "backend":{"status":"ACTIVE","validator_key":"day065_v2","migrations":["20260913235702_day065_completion_contract_v2_draft","20260913235759_activate_day065_completion_contract_v2"],"proofs":["DAY065_V2_MINIMUM_NO_REMOTE_EFFECT_PASS","DAY065_V2_ATTACK_BATCH_PASS","DAY065_V2_LEGACY_TRIGGER_COMPAT_PASS"]},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","day045_lock_respected":true},
+  "blockers":["UPSTREAM_DAY045_AUDIO_PUBLICATION","FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
