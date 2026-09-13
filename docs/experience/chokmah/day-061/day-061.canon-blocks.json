@@ -1,0 +1,10 @@
+{
+  "kind":"hnk.canon_blocks","day":61,
+  "source":{"path":"content/canon/atziluth/chokmah/dia-061.md","blob_sha":"12e4c2da623f2f78d3fea3ff65e23f9446f9784b","source_plan_sha256":"49917dc66e8401d17d3af362d2370bf532e7388145b6d481bae18d48e95cac59"},
+  "target_words":705,"counted_words":705,"xp":150,
+  "blocks":[
+    {"id":"jachin-doctrine","target":137,"counted":137},{"id":"jachin-kavanah","target":72,"counted":72},{"id":"jachin-ordalia","target":26,"counted":26},
+    {"id":"boaz-doctrine","target":137,"counted":137},{"id":"boaz-kavanah","target":72,"counted":72},{"id":"boaz-ordalia","target":26,"counted":26},
+    {"id":"middle-doctrine","target":137,"counted":137},{"id":"middle-kavanah","target":72,"counted":72},{"id":"middle-ordalia","target":26,"counted":26}
+  ]
+}
