@@ -1,0 +1,14 @@
+{
+  "id":"HNK-CHOKMAH-D052-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":52,"quest_id":"HNK-CHOKMAH-D052-V2","canonical_source_sha":"88ae2a1dc163f474b3afc82f2bcacdf4069c8f5e","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":100,"angel":"Lauviah","chapter":2,"sephira":"Chokmah","level":2},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY052_RULE_IN_ATTRIBUTE_PROGRESSION_MATRIX"},
+  "entry_gate":{"day_051_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"upstream_day045_audio_publication_lock_transitive":true},
+  "expansion":{"duration_seconds":600,"body_boundaries_first":true,"attention_expands_to_room":true,"effect_may_be_absent":true,"eyes_open_allowed":true,"orientation_preserved":true},
+  "control":{"duration_seconds":600,"attention_body_contact_points_and_breath_only":true,"similar_context":true,"preselected_winner":false,"no_intensity_or_effort_compensation":true,"effect_may_be_absent":true},
+  "comparison":{"completed":true,"interpretation_separated":true,"null_results_preserved":true,"contradictory_results_preserved":true,"alternatives_recorded":true,"outside_brain_claim":false,"external_mechanism_claim":false,"supernatural_faculty_claim":false,"spiritual_superiority_claim":false,"prudence_rule_defined":true},
+  "privacy":{"optional_spiritual_meaning_note":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "legacy_compatibility":{"validator":"validate_day052_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"expansion_seconds":600,"control_seconds":600,"expansion_effect_present":"BOOLEAN_CAN_BE_FALSE","control_effect_present":"BOOLEAN_CAN_BE_FALSE","outside_brain_claim_not_made":true,"orientation_preserved":true,"null_results_preserved":true,"safety_clear":true}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D052-COMP-V2","validator":"day052_v2","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
