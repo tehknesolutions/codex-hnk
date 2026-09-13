@@ -1,0 +1,17 @@
+{
+  "id":"HNK-CHOKMAH-D059-CANON-BLOCKS-V1",
+  "kind":"hnk.canon_blocks",
+  "source":{"day":59,"path":"content/canon/atziluth/chokmah/dia-059.md","blob_sha":"e0b9b51cac81012e4511e6394c6f3dff7f50aaf8","counted_words":705,"target_words":705,"chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Hahaiah","level":2,"xp":150,"editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1"},
+  "blocks":[
+    {"id":"jachin-doctrine","pillar":"JACHIN","kind":"DOCTRINE","word_count":137},
+    {"id":"jachin-kavanah","pillar":"JACHIN","kind":"KAVANAH","word_count":72},
+    {"id":"jachin-ordalia","pillar":"JACHIN","kind":"ORDALIA","word_count":26},
+    {"id":"boaz-doctrine","pillar":"BOAZ","kind":"DOCTRINE","word_count":137},
+    {"id":"boaz-kavanah","pillar":"BOAZ","kind":"KAVANAH","word_count":72},
+    {"id":"boaz-ordalia","pillar":"BOAZ","kind":"ORDALIA","word_count":26},
+    {"id":"middle-doctrine","pillar":"MIDDLE","kind":"DOCTRINE","word_count":137},
+    {"id":"middle-kavanah","pillar":"MIDDLE","kind":"KAVANAH","word_count":72},
+    {"id":"middle-ordalia","pillar":"MIDDLE","kind":"ORDALIA","word_count":26}
+  ],
+  "uncounted_sections":["SELO_TEURGICO_DE_HAHAIAH","MATRIZ_EPISTEMICA_HNK","SEGURANCA_DA_PRATICA","QR_CODE_INTERATIVO","ESPELHO_DA_ALMA"]
+}
