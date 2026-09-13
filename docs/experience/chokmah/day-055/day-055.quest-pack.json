@@ -1,0 +1,14 @@
+{
+  "id":"HNK-CHOKMAH-D055-PACK-V2","kind":"hnk.quest_pack","version":"0.1.0","day":55,"quest_id":"HNK-CHOKMAH-D055-V2","canonical_source_sha":"03dce9f662c05cb720bce4419f58126031ca9be6","release_state":"DRAFT__BACKEND_RUNTIME_PENDING",
+  "canonical":{"counted_words":705,"xp":200,"angel":"Lauviah","chapter":2,"sephira":"Chokmah","level":2},
+  "attribute_progression":{"gain":0,"application":"NONE","reason":"NO_FROZEN_DAY055_RULE_IN_ATTRIBUTE_PROGRESSION_MATRIX"},
+  "entry_gate":{"day_054_completion_required":true,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","server_authoritative":true,"upstream_day045_audio_publication_lock_transitive":true},
+  "primary":{"target_selected_before_practice":true,"duration_seconds":600,"vakog_preregistered":true,"preregister_sealed":true,"verification_after_preregister":true,"correspondence_may_be_absent":true,"vault_required":true},
+  "control":{"modes":["OTHER_PERSON_RANDOM_TARGET","SEALED_PHOTOGRAPH"],"same_metrics":true,"preregister_before_verification":true,"fixed_duration_gate":null,"correspondence_may_be_absent":true,"vault_required":true},
+  "comparison":{"memory_prior_recognized":true,"coincidence_kept_open":true,"null_results_preserved":true,"contradictory_results_preserved":true,"nonlocal_perception_claim":false,"risk_decision_use":false,"prudence_rule_defined":true},
+  "privacy":{"primary_preregister":"VAULT_E2EE_REQUIRED","control_preregister":"VAULT_E2EE_REQUIRED","free_associations":"VAULT_E2EE_ONLY","server_plaintext":false},
+  "legacy_compatibility":{"validator":"validate_day055_scalar_evidence_v1","reuse_required":true,"legacy_minimums":{"target_selected_before_practice":true,"vakog_preregistered":true,"preregister_sealed":true,"verification_after_preregister":true,"control_completed":true,"memory_prior_recognized":true,"coincidence_kept_open":true,"nonlocal_perception_not_claimed":true,"risk_decision_not_used":true,"vault_saved":true,"safety_clear":true,"primary_seconds":600,"primary_correspondence_present":"BOOLEAN_CAN_BE_FALSE","control_correspondence_present":"BOOLEAN_CAN_BE_FALSE"}},
+  "backend":{"completion_contract":"HNK-CHOKMAH-D055-COMP-V2","validator":"day055_v2","registry":"PENDING"},
+  "runtime":{"web":"PENDING","expo":"PENDING"},
+  "release_blockers":["BACKEND_V2_WRAPPER","LEGACY_TRIGGER_COMPATIBILITY","WEB_RUNTIME","EXPO_RUNTIME","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
