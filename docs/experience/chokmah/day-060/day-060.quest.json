@@ -1,10 +1,11 @@
 {
-  "id":"HNK-CHOKMAH-D060-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":60,
+  "id":"HNK-CHOKMAH-D060-V2","kind":"hnk.quest_definition","version":"0.1.1","status":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING","day":60,
   "title":"Hahaiah IV — Calibragem de Micro-Expressões sem leitura de mente",
   "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-060.md","source_sha":"e98e8925c8e03555c39b033813999d6a488149a9","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Hahaiah","level":2,"xp":150,"tracks":[]},
   "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 060 rule exists in attribute_progression_gain_rules."}},
   "entry_gate":{"requires_day_059_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
-  "runtime":{"public_observations_required":5,"public_duration_gate_seconds":null,"partner_duration_gate_seconds":null,"private_reflections":"VAULT_E2EE_REQUIRED","identity_storage":"FORBIDDEN","camera_storage":"FORBIDDEN","server_plaintext":false,"web":"PENDING","expo":"PENDING"},
+  "backend":{"registry":"ACTIVE","completion_contract":"HNK-CHOKMAH-D060-COMP-V2","validator":"day060_v2","exact_five_no_duration_gate_proof":"DAY060_V2_EXACT_FIVE_NO_DURATION_GATE_PASS","attack_batch_proof":"DAY060_V2_ATTACK_BATCH_PASS","legacy_trigger_proof":"DAY060_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day057_branch_preserved":true,"day058_branch_preserved":true,"day059_branch_preserved":true,"day061_legacy_preserved":true},
+  "runtime":{"public_observations_required":5,"public_duration_gate_seconds":null,"partner_duration_gate_seconds":null,"private_reflections":"VAULT_E2EE_REQUIRED","required_vault_refs":1,"identity_storage":"FORBIDDEN","camera_storage":"FORBIDDEN","server_plaintext":false,"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED"},
   "phases":[
     {"id":"public_observation","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"exact_observations":5,"pure_description":true,"camera":false,"zoom":false,"recognition":false,"identity_stored":false,"prolonged_fixation":false,"distance_approx_recorded":true,"lighting_context_recorded":true,"pupil_lighting_primary_variable":true,"intent_inference":false,"lie_inference":false,"attraction_inference":false,"trauma_inference":false,"clinical_inference":false},"required_for_completion":true},
     {"id":"partner_control","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"consent_required":true,"neutral_topics":2,"identity_stored":false,"camera":false,"descriptions_before_feedback":true,"only_voluntary_disclosure_compared":true,"divergence_treated_as_lie":false,"vulnerable_people_targeted":false,"intimate_situation_used":false,"exercise_explicitly_ended":true},"required_for_completion":true},
@@ -14,5 +15,5 @@
   ],
   "privacy":{"required_vault_refs":1,"vault_payload_rule":"NO_IDENTIFYING_DATA","practice_record":"COUNTS_CATEGORIES_FLAGS_AND_OPAQUE_UUID_ONLY","names_handles_images_biometrics_forbidden":true},
   "safety":{"surveillance_forbidden":true,"coercion_forbidden":true,"diagnosis_forbidden":true,"mind_reading_claim_forbidden":true,"vulnerable_people_targeting_forbidden":true,"high_impact_decisions_forbidden":true,"consent_withdrawal_stops_partner_phase":true},
-  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"UPSTREAM_DAY045_AUDIO_PUBLICATION"},{"id":"FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
 }
