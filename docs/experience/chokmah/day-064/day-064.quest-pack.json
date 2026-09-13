@@ -8,7 +8,7 @@
   "middle":{"psalm":"98:4","formula":"YOD-ZAYIN-LAMED","classification_enum":["IMAGE","EMOTION","HYPOTHESIS","ACTION","FACT"],"action_safe_reversible_step_required_when_applicable":true,"fact_independent_verification_required_when_applicable":true,"thanks_to_god":true,"journal_closed":true,"return_confirmed":true},
   "privacy":{"vault_required":true,"vault_e2ee_required":true,"practice_record_has_private_prose":false,"server_plaintext":false},
   "safety":{"automatic_authority_forbidden":true,"high_impact_decision_suspended":true,"accusations_forbidden":true,"prediction_use_forbidden":true,"treatment_suspension_forbidden":true,"irreversible_decision_use_forbidden":true,"threatening_content_not_reinforced":true,"grounding_and_support_on_stop":true},
-  "backend":{"status":"ACTIVE","validator_key":"day064_v2","migrations":["PENDING_RUNTIME_VERSION_DRAFT","PENDING_RUNTIME_VERSION_ACTIVATE"],"proofs":["DAY064_V2_CANONICAL_TIMING_PRIVACY_PASS","DAY064_V2_ATTACK_BATCH_PASS","DAY064_V2_LEGACY_TRIGGER_COMPAT_PASS"]},
+  "backend":{"status":"ACTIVE","validator_key":"day064_v2","migrations":["20260913231754_day064_completion_contract_v2_draft","20260913231858_activate_day064_completion_contract_v2"],"proofs":["DAY064_V2_CANONICAL_TIMING_PRIVACY_PASS","DAY064_V2_ATTACK_BATCH_PASS","DAY064_V2_LEGACY_TRIGGER_COMPAT_PASS"]},
   "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","day045_lock_respected":true},
   "blockers":["UPSTREAM_DAY045_AUDIO_PUBLICATION","FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
