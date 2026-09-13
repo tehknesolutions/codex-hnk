@@ -1,10 +1,11 @@
 {
-  "id":"HNK-CHOKMAH-D056-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":56,
+  "id":"HNK-CHOKMAH-D056-V2","kind":"hnk.quest_definition","version":"0.1.1","status":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING","day":56,
   "title":"Lauviah V — Expiração simbólica e comparação sem gargalhada",
   "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-056.md","source_sha":"9eb847d460768615d2e6fb9173c2557a21c705c7","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Lauviah","level":2,"xp":150,"tracks":[]},
   "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 056 rule exists in attribute_progression_gain_rules."}},
   "entry_gate":{"requires_day_055_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
-  "runtime":{"active_fixed_duration_gate":null,"control_fixed_duration_gate":null,"practice_record":"STRUCTURED_METRICS_AND_FLAGS_ONLY","emotional_content":"VAULT_E2EE_ONLY","server_plaintext":false,"web":"PENDING","expo":"PENDING"},
+  "backend":{"registry":"ACTIVE","completion_contract":"HNK-CHOKMAH-D056-COMP-V2","validator":"day056_v2","zero_effect_no_duration_gate_proof":"DAY056_V2_ZERO_EFFECT_NO_DURATION_GATE_PASS","attack_batch_proof":"DAY056_V2_ATTACK_BATCH_PASS","legacy_trigger_proof":"DAY056_V2_LEGACY_TRIGGER_COMPAT_PASS","trigger_fixture_proof":"DAY056_V2_TRIGGER_FIXTURE_ROLLBACK_PASS","wrapper_calls_legacy_live":true,"day054_v2_preserved":true,"day055_v2_preserved":true},
+  "runtime":{"active_fixed_duration_gate":null,"control_fixed_duration_gate":null,"practice_record":"STRUCTURED_METRICS_AND_FLAGS_ONLY","emotional_content":"VAULT_E2EE_ONLY","server_plaintext":false,"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED"},
   "phases":[
     {"id":"active","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"comfortable_inhalation":true,"symbolic_discharge_imagery":true,"brief_laughter_on_exhalation":true,"hyperventilation":false,"prolonged_breath_retention":false,"effect_may_be_absent":true},"required_for_completion":true},
     {"id":"control","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"comfortable_exhalation_without_laughter":true,"similar_context":true,"same_metrics":true,"preselected_winner":false,"no_duration_intensity_or_effort_compensation":true,"effect_may_be_absent":true},"required_for_completion":true},
@@ -14,5 +15,5 @@
   ],
   "safety":{"no_hyperventilation":true,"no_prolonged_retention":true,"stop_conditions":["DIZZINESS","PAIN","SHORTNESS_OF_BREATH","MALAISE","OTHER_DISCOMFORT"],"clinical_substitute":false,"entity_contamination_reinforcement":false},
   "epistemic_boundaries":{"ritual_banishment_language_is_objective_entity_detection":false,"subjective_effect_proves_external_mechanism":false,"effect_required_for_xp":false},
-  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+  "release_blockers":[{"id":"UPSTREAM_DAY045_AUDIO_PUBLICATION"},{"id":"FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
 }
