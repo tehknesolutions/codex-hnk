@@ -1,0 +1,73 @@
+import type {CompleteDayRequestV1} from './types.js';
+
+export const DAY058_COMPLETION={
+  day:58,
+  completionContractId:'HNK-CHOKMAH-D058-COMP-V2',
+  questDefinitionId:'HNK-CHOKMAH-D058-V2',
+  canonicalSourceSha:'e32753a57daab23d378e881451194b0dd77d8aac',
+  canonicalXp:150,
+  attributeProgression:{
+    requestedGain:0,
+    application:'NONE',
+    reason:'NO_FROZEN_DAY058_RULE_IN_ATTRIBUTE_PROGRESSION_MATRIX',
+  },
+  entryGate:{
+    previousDay:57,
+    requiresGrade:2,
+    requiresTitle:'Iniciado',
+    requiresChapter:2,
+    requiresSephira:'Chokmah',
+    application:'SERVER_ONLY',
+    upstreamDay45AudioPublicationLockRespected:true,
+  },
+  legacyCompatibility:{
+    validator:'validate_day058_scalar_evidence_v1',
+    reuseRequired:true,
+  },
+  evidence:{
+    requiredScriptVaultRefs:3,
+    requiredDirectControlVaultRefs:1,
+    exactRequiredVaultRefs:4,
+    durationMinimumSeconds:null,
+    metrics:['relaxation','clarity','pressure','autonomy'],
+    obedienceIsSuccessMetric:false,
+  },
+  privacy:{
+    use:'SELF_USE_ONLY',
+    scriptAndControlText:'VAULT_E2EE_REQUIRED',
+    practiceRecord:'STRUCTURED_METRICS_FLAGS_AND_OPAQUE_UUIDS_ONLY',
+    serverPlaintextForbidden:true,
+  },
+  safety:{
+    realRefusalRequired:true,
+    twoBenignOptionsRequired:true,
+    consentBypassForbidden:true,
+    clinicalPromiseForbidden:true,
+    covertCommandForbidden:true,
+    affectiveCommercialSexualAdvantageForbidden:true,
+    highImpactUseForbidden:true,
+  },
+  expectedProgression:{
+    nextDay:59,
+    chapter:2,
+    sephira:'Chokmah',
+    grade:2,
+    title:'Iniciado',
+    expectedProgressionEvents:['NEXT_DAY_UNLOCKED'],
+  },
+  deploymentState:'draft',
+} as const;
+
+export function buildDay058CompletionRequest(input:{sessionId:string;clientCompletionId:string;localRecordHash?:string;clientCompletedAt?:string}):CompleteDayRequestV1{
+  return{
+    day:58,
+    sessionId:input.sessionId,
+    completionContractId:DAY058_COMPLETION.completionContractId,
+    questDefinitionId:DAY058_COMPLETION.questDefinitionId,
+    canonicalSourceSha:DAY058_COMPLETION.canonicalSourceSha,
+    clientCompletionId:input.clientCompletionId,
+    ...(input.clientCompletedAt?{clientCompletedAt:input.clientCompletedAt}:{}),
+    ...(input.localRecordHash?{localRecordHash:input.localRecordHash}:{}),
+    mode:'first_completion',
+  };
+}
