@@ -1,0 +1,18 @@
+{
+  "id":"HNK-CHOKMAH-D058-V2","kind":"hnk.quest_definition","version":"0.1.0","status":"DRAFT__BACKEND_RUNTIME_PENDING","day":58,
+  "title":"Hahaiah II — Duplo vínculo ético para auto-uso com controle direto",
+  "canonical":{"repository":"tehknesolutions/codex-hnk","path":"content/canon/atziluth/chokmah/dia-058.md","source_sha":"e32753a57daab23d378e881451194b0dd77d8aac","editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Hahaiah","level":2,"xp":150,"tracks":[]},
+  "progression":{"attribute_gain":0,"application":"NONE","source_basis":{"type":"NO_FROZEN_RULE","note":"No Day 058 rule exists in attribute_progression_gain_rules."}},
+  "entry_gate":{"requires_day_057_completion":true,"requires_grade":2,"requires_title":"Iniciado","requires_chapter":2,"requires_sephira":"Chokmah","client_may_bypass":false,"upstream_day045_audio_publication_lock_transitive":true},
+  "runtime":{"use_scope":"SELF_USE_ONLY","scripts_required":3,"script_text":"VAULT_E2EE_REQUIRED","direct_control_text":"VAULT_E2EE_REQUIRED","server_plaintext":false,"fixed_duration_gate":null,"web":"PENDING","expo":"PENDING"},
+  "phases":[
+    {"id":"scripts","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"scripts_required":3,"self_use_only":true,"two_benign_options_each":true,"real_refusal_option_each":true,"no_clinical_promise":true,"no_covert_command":true,"no_choice_removal":true,"response_recorded":true,"autonomy_recorded":true},"required_for_completion":true},
+    {"id":"direct_control","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"one_script_selected":true,"direct_equivalent_same_goal":true,"separate_moments":true,"text_not_changed_after_result":true,"metrics":["RELAXATION","CLARITY","PRESSURE","AUTONOMY"],"discomfort_allows_abandonment":true},"required_for_completion":true},
+    {"id":"comparison","type":"EXPERIMENT","source":{"kind":"PLATFORM_EXPERIENCE"},"interaction":{"comparison_completed":true,"autonomy_preserved":true,"pressure_is_valid_data":true,"obedience_not_success_metric":true,"clinical_promise":false,"covert_command":false,"consent_bypass":false,"affective_commercial_sexual_advantage":false,"high_impact_use":false,"prudence_rule_defined":true},"required_for_completion":true},
+    {"id":"middle","type":"EXPERIMENT","source":{"kind":"CANON"},"interaction":{"psalm_10_1":true,"he_he_aleph":true,"transparent_rewrite":true,"refusal_preserved":true,"language_sensation_interpretation_separated":true,"conscious_return":true,"personal_no_consent_bypass_rule":true},"required_for_completion":true},
+    {"id":"completion","type":"COMPLETION","source":{"kind":"SYSTEM"},"canonical_xp":150,"completion_contract_id":"HNK-CHOKMAH-D058-COMP-V2","client_may_award_xp":false,"client_may_apply_attribute_gain":false,"required_for_completion":true}
+  ],
+  "safety":{"self_use_only_runtime":true,"real_refusal_required":true,"clinical_promise_forbidden":true,"covert_commands_forbidden":true,"consent_bypass_forbidden":true,"affective_commercial_sexual_exploitation_forbidden":true,"high_impact_decisions_forbidden":true,"stop_on_discomfort":true},
+  "epistemic_boundaries":{"language_can_influence_attention_without_right_over_will":true,"effect_required_for_xp":false,"obedience_is_not_success":true},
+  "release_blockers":[{"id":"BACKEND_V2_WRAPPER"},{"id":"LEGACY_TRIGGER_COMPATIBILITY"},{"id":"WEB_RUNTIME"},{"id":"EXPO_RUNTIME"},{"id":"WEB_BUILD_VERIFY"},{"id":"EXPO_BUILD_VERIFY"},{"id":"DEVICE_BROWSER_QA"}]
+}
