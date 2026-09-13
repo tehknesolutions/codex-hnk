@@ -1,0 +1,14 @@
+{
+  "day":56,
+  "completion_contract_id":"HNK-CHOKMAH-D056-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D056-V2",
+  "canonical_source_sha":"9eb847d460768615d2e6fb9173c2557a21c705c7",
+  "registry":{"status":"active","validator_key":"day056_v2","contract_version":"2.0.0"},
+  "canonical_requirements":{"xp":150,"attribute_gain":0,"active_fixed_duration_gate":null,"control_fixed_duration_gate":null,"active_zero_effect_valid":true,"control_zero_effect_valid":true,"no_hyperventilation":true,"no_prolonged_retention":true,"clinical_substitute_not_claimed":true,"entity_contamination_not_reinforced":true},
+  "validator":{"zero_effect_no_duration_gate_result":"DAY056_V2_ZERO_EFFECT_NO_DURATION_GATE_PASS","attack_batch_result":"DAY056_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY056_V2_LEGACY_TRIGGER_COMPAT_PASS","trigger_fixture_result":"DAY056_V2_TRIGGER_FIXTURE_ROLLBACK_PASS","wrapper_calls_legacy_live":true,"day054_v2_branch_preserved":true,"day055_v2_branch_preserved":true},
+  "attack_batch_rejected":["hyperventilation_boundary_false","prolonged_retention_boundary_false","active_brief_laughter_missing","active_measured_seconds_above_instrumentation_bound","control_laughter_boundary_false","control_context_not_comparable","control_same_metrics_false","preselected_winner_present","duration_intensity_or_effort_compensation_allowed","null_results_not_preserved","clinical_substitute_claimed","entity_contamination_reinforced","external_mechanism_claimed","spiritual_superiority_claimed","middle_natural_breathing_false","final_safety_false","top_level_private_plaintext"],
+  "fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "privacy":{"emotional_content":"VAULT_E2EE_ONLY","practice_record":"STRUCTURED_METRICS_AND_FLAGS_ONLY","server_plaintext":false},
+  "progression":{"previous_day":55,"expected_next_day":57,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED","server_authoritative":true,"upstream_day045_audio_publication_lock_respected":true},
+  "limits":{"full_completion_rpc_after_upstream_unlock":"PENDING","web_build_verify":"PENDING","expo_build_verify":"PENDING","device_browser_qa":"PENDING"}
+}
