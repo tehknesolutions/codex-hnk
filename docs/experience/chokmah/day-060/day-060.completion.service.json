@@ -1,0 +1,15 @@
+{
+  "day":60,
+  "completion_contract_id":"HNK-CHOKMAH-D060-COMP-V2",
+  "quest_definition_id":"HNK-CHOKMAH-D060-V2",
+  "canonical_source_sha":"e98e8925c8e03555c39b033813999d6a488149a9",
+  "registry":{"status":"active","validator_key":"day060_v2","contract_version":"2.0.0"},
+  "canonical_requirements":{"xp":150,"attribute_gain":0,"exact_public_observations":5,"neutral_topics_count":2,"required_vault_refs":1,"public_duration_gate_seconds":null,"partner_duration_gate_seconds":null},
+  "validator":{"exact_five_no_duration_gate_result":"DAY060_V2_EXACT_FIVE_NO_DURATION_GATE_PASS","attack_batch_result":"DAY060_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY060_V2_LEGACY_TRIGGER_COMPAT_PASS","wrapper_calls_legacy_live":true,"day057_branch_preserved":true,"day058_branch_preserved":true,"day059_branch_preserved":true,"day061_legacy_branch_preserved":true},
+  "attack_batch_rejected":["four_public_observations","six_public_observations","identity_storage","camera_use","recognition_use","lie_inference","partner_without_consent","one_neutral_topic","vulnerable_targeting","mind_reading_claim","diagnosis_claim","continued_monitoring","middle_review_count_two","vault_identity_boundary_false","invalid_vault_uuid","top_level_person_name_plaintext","negative_duration","wrong_source_sha","forbidden_lie_detected_feature"],
+  "fixture":{"users_after_rollback":0,"sessions_after_rollback":0},
+  "privacy":{"vault_payload_no_identifying_data":true,"required_vault_refs":1,"practice_record":"COUNTS_CATEGORIES_FLAGS_AND_OPAQUE_UUID_ONLY","server_plaintext":false,"identity_storage":false,"camera_storage":false},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","volatile_private_text_cleared_on_foreground_loss":true},
+  "progression":{"previous_day":59,"expected_next_day":61,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED","server_authoritative":true,"upstream_day045_audio_publication_lock_respected":true},
+  "limits":{"day045_completion_contract_status":"draft","full_completion_rpc_after_upstream_unlock":"PENDING","web_build_verify":"PENDING","expo_build_verify":"PENDING","device_browser_qa":"PENDING"}
+}
