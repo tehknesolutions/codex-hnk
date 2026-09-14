@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.8.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.9.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-10';
 
@@ -39,19 +39,9 @@ const RAW_AUTHORED_CANDIDATES = [
     notes: ['New governed primitive; not recovered historical HNK.','First approved course use is NE VAMAKALA for absence of a nickname in L01 OPI 2.','L02 scope is restricted to predicate negation inside the governed STR005 course frame; this does not license general L02 negation productivity.','Does not create a HAVE verb, a DID auxiliary, past-tense morphology, or historical HNK negation.','Global productivity is not granted; each broader usage requires separate governance.'],
   },
   ...[
-    ['AUTH-005','BIZO','zero','zero',0],
-    ['AUTH-006','DUVE','um','one',1],
-    ['AUTH-007','HOYU','dois','two',2],
-    ['AUTH-008','KETI','três','three',3],
-    ['AUTH-009','LUSO','quatro','four',4],
-    ['AUTH-010','MUPI','cinco','five',5],
-    ['AUTH-011','NURA','seis','six',6],
-    ['AUTH-012','PEVU','sete','seven',7],
-    ['AUTH-013','TOMI','oito','eight',8],
-    ['AUTH-014','ZOKA','nove','nine',9],
+    ['AUTH-005','BIZO','zero','zero',0],['AUTH-006','DUVE','um','one',1],['AUTH-007','HOYU','dois','two',2],['AUTH-008','KETI','três','three',3],['AUTH-009','LUSO','quatro','four',4],['AUTH-010','MUPI','cinco','five',5],['AUTH-011','NURA','seis','six',6],['AUTH-012','PEVU','sete','seven',7],['AUTH-013','TOMI','oito','eight',8],['AUTH-014','ZOKA','nove','nine',9],
   ].map(([id, transliteration, pt, en, value]) => ({
-    id,
-    transliteration,
+    id, transliteration,
     meaning: { pt: `${pt}; numeral cardinal falado ${value}`, en: `${en}; spoken cardinal numeral ${value}` },
     authority: 'CANDIDATE', certainty: 'AUTHORED_PRIMITIVE', sourceClass: 'AUTHORING_PROPOSAL', historicalRecoveryClaim: false, lessons: ['L01'],
     morphology: { schema: 'PRIMITIVE_AUTHORED_NUMERAL_0_9', leftState: `CARDINAL_VALUE_${value}_DEFINED_BEFORE_FORM_SELECTION`, rightState: 'NO_RECOVERED_NUMERAL_MORPHOLOGY_CLAIMED', productivity: 'NON_PRODUCTIVE_SINGLE_CANDIDATE' },
@@ -59,102 +49,51 @@ const RAW_AUTHORED_CANDIDATES = [
     notes: [`New governed primitive for cardinal value ${value}; not recovered historical HNK.`,'Selected under the approved 0-9 candidate-set constraints; numerology and glyph appearance did not assign the form.','Registration does not define cardinal composition for 10+, a year unit, or a universal number grammar.','Starts and remains CANDIDATE pending later language-authority promotion.'],
   })),
   {
-    id:'AUTH-015', transliteration:'KALA',
-    meaning:{pt:'domínio de nome pessoal; componente lexical de nome em uso iniciante escopado',en:'personal-name domain; name lexical component for scoped beginner use'},
+    id:'AUTH-015', transliteration:'KALA', meaning:{pt:'domínio de nome pessoal; componente lexical de nome em uso iniciante escopado',en:'personal-name domain; name lexical component for scoped beginner use'},
     authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
     morphology:{schema:'EVIDENCE_MAPPING_FROM_RECOVERED_PHRASE_AND_LEXICAL_FAMILY',leftState:'PHR-001_NAME_QUESTION_COMPONENT',rightState:'VAMAKALA_FROZEN_NAME_FAMILY_SUPPORT',productivity:'NON_PRODUCTIVE_SINGLE_CANDIDATE'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/validation/vocabulary-gap-8-form-mapping-human-batch.v1.json'],
-    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','KALA remains scoped to the personal-name domain pending broader evidence.','No decomposition rule for VAMAKALA is canonized by this entry.'],
+    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/validation/vocabulary-gap-8-form-mapping-human-batch.v1.json'], notes:['Governed v1 mapping; not a historically recovered standalone gloss.','KALA remains scoped to the personal-name domain pending broader evidence.','No decomposition rule for VAMAKALA is canonized by this entry.'],
   },
   {
-    id:'AUTH-016', transliteration:'AN',
-    meaning:{pt:'referente de primeira pessoa / eu em uso iniciante escopado',en:'first-person referent / I for scoped beginner use'},
+    id:'AUTH-016', transliteration:'AN', meaning:{pt:'referente de primeira pessoa / eu em uso iniciante escopado',en:'first-person referent / I for scoped beginner use'},
     authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
-    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-002_APPROXIMATE_I_CONTEXT',rightState:'PHR-007_REPEATED_DECLARATIVE_POSITION',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
-    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','First-person role is authorized for scoped L01/L02 use only; person/number paradigm is not globally canonized.'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-002_APPROXIMATE_I_CONTEXT',rightState:'PHR-007_REPEATED_DECLARATIVE_POSITION',productivity:'CLOSED_LIST_ONLY'}, provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'], notes:['Governed v1 mapping; not a historically recovered standalone gloss.','First-person role is authorized for scoped L01/L02 use only; person/number paradigm is not globally canonized.'],
   },
   {
-    id:'AUTH-017', transliteration:'EN',
-    meaning:{pt:'referente de segunda pessoa / você em uso iniciante escopado',en:'second-person referent / you for scoped beginner use'},
+    id:'AUTH-017', transliteration:'EN', meaning:{pt:'referente de segunda pessoa / você em uso iniciante escopado',en:'second-person referent / you for scoped beginner use'},
     authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
-    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-003_SECOND_PERSON_QUESTION_CONTEXT',rightState:'REPEATED_ADDRESSEE_POSITION_PHR-004_006',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
-    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Subject versus possessive behavior remains unresolved outside scoped L01/L02 constructions.'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_PHRASE_ANALYSIS',leftState:'PHR-003_SECOND_PERSON_QUESTION_CONTEXT',rightState:'REPEATED_ADDRESSEE_POSITION_PHR-004_006',productivity:'CLOSED_LIST_ONLY'}, provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'], notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Subject versus possessive behavior remains unresolved outside scoped L01/L02 constructions.'],
   },
   {
-    id:'AUTH-018', transliteration:'KU',
-    meaning:{pt:'seletor interrogativo de conteúdo em uso escopado; não equivale a uma palavra WH única',en:'scoped interrogative content selector; not equivalent to one fixed WH word'},
+    id:'AUTH-018', transliteration:'KU', meaning:{pt:'seletor interrogativo de conteúdo em uso escopado; não equivale a uma palavra WH única',en:'scoped interrogative content selector; not equivalent to one fixed WH word'},
     authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
-    morphology:{schema:'EVIDENCE_MAPPING_FROM_MINIMAL_CONTRAST',leftState:'PHR-003_HENUVOKODAN_OBJECT',rightState:'PHR-006_KU_ZAMO_CONTENT_PHRASE',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'],
-    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Must not be globally glossed as WHAT, WHICH, WHO, WHERE or HOW.','Any productive extension remains separately governed.'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_MINIMAL_CONTRAST',leftState:'PHR-003_HENUVOKODAN_OBJECT',rightState:'PHR-006_KU_ZAMO_CONTENT_PHRASE',productivity:'CLOSED_LIST_ONLY'}, provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'], notes:['Governed functional mapping; not a historically recovered standalone gloss.','Must not be globally glossed as WHAT, WHICH, WHO, WHERE or HOW.','Any productive extension remains separately governed.'],
   },
   {
-    id:'AUTH-019', transliteration:'KE',
-    meaning:{pt:'operador / marcador de pergunta em posição final de oração em uso escopado',en:'question operator / marker in clause-final position for scoped use'},
+    id:'AUTH-019', transliteration:'KE', meaning:{pt:'operador / marcador de pergunta em posição final de oração em uso escopado',en:'question operator / marker in clause-final position for scoped use'},
     authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01','L02'],
-    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_CONTRAST',leftState:'KE_FINAL_IN_QUESTION_LIKE_PHR-001_003_006',rightState:'ABSENT_FROM_DECLARATIVE_PHR-002_007',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'],
-    notes:['Governed functional mapping; not a historically recovered standalone gloss.','Clause-final question behavior is authorized for scoped L01/L02 constructions only; universal HNK interrogative grammar is not claimed.'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_DISTRIBUTIONAL_CONTRAST',leftState:'KE_FINAL_IN_QUESTION_LIKE_PHR-001_003_006',rightState:'ABSENT_FROM_DECLARATIVE_PHR-002_007',productivity:'CLOSED_LIST_ONLY'}, provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/wh-system-recovery.v1.json'], notes:['Governed functional mapping; not a historically recovered standalone gloss.','Clause-final question behavior is authorized for scoped L01/L02 constructions only; universal HNK interrogative grammar is not claimed.'],
   },
   {
-    id:'AUTH-020', transliteration:'ZAMI',
-    meaning:{pt:'falar / usar linguagem em contexto comunicativo escopado',en:'speak / use language in scoped communicative context'},
+    id:'AUTH-020', transliteration:'ZAMI', meaning:{pt:'falar / usar linguagem em contexto comunicativo escopado',en:'speak / use language in scoped communicative context'},
     authority:'CANDIDATE', certainty:'AUTHORED_EVIDENCE_MAPPING', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:['L01'],
-    morphology:{schema:'EVIDENCE_MAPPING_FROM_REPEATED_LANGUAGE_USE_CONTEXTS',leftState:'PHR-002_APPROXIMATE_SPEAK_USE_LANGUAGE',rightState:'PHR-003_006_007_REPEATED_PREDICATE_POSITION',productivity:'CLOSED_LIST_ONLY'},
-    provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
-    notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Semantic range remains speak/use-language in scoped L01 communicative contexts.'],
+    morphology:{schema:'EVIDENCE_MAPPING_FROM_REPEATED_LANGUAGE_USE_CONTEXTS',leftState:'PHR-002_APPROXIMATE_SPEAK_USE_LANGUAGE',rightState:'PHR-003_006_007_REPEATED_PREDICATE_POSITION',productivity:'CLOSED_LIST_ONLY'}, provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'], notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Semantic range remains speak/use-language in scoped L01 communicative contexts.'],
   },
   ...[
-    ['AUTH-021','NYPOSA','nome','name','HNK3000-A1-D01-S001','D01'],
-    ['AUTH-022','ROBOVE','sobrenome','surname','HNK3000-A1-D01-S002','D01'],
-    ['AUTH-023','KYMERU','idade','age','HNK3000-A1-D01-S003','D01'],
-    ['AUTH-024','DAPOPO','aniversário','birthday','HNK3000-A1-D01-S004','D01'],
-    ['AUTH-025','VEROHA','data de nascimento','date of birth','HNK3000-A1-D01-S005','D01'],
-    ['AUTH-026','DYTYMA','nacionalidade','nationality','HNK3000-A1-D01-S006','D01'],
-    ['AUTH-027','KYVUMA','país','country','HNK3000-A1-D01-S007','D01'],
-    ['AUTH-028','MOROHE','endereço','address','HNK3000-A1-D01-S008','D01'],
-    ['AUTH-029','PUBYHA','número de telefone','phone number','HNK3000-A1-D01-S009','D01'],
-    ['AUTH-030','KUZUBU','e-mail','email','HNK3000-A1-D01-S010','D01'],
-    ['AUTH-031','HEHODE','documento de identidade','identity document','HNK3000-A1-D01-S011','D01'],
-    ['AUTH-032','REMEMU','estado civil','marital status','HNK3000-A1-D01-S012','D01'],
-    ['AUTH-033','KOPUMO','pessoa','person','HNK3000-A1-D01-S013','D01'],
-    ['AUTH-034','PUPUKU','família','family','HNK3000-A1-D02-S001','D02'],
-    ['AUTH-035','NEKUVO','progenitor / responsável parental','parent','HNK3000-A1-D02-S002','D02'],
-    ['AUTH-036','DYSANE','criança / filho genérico','child','HNK3000-A1-D02-S005','D02'],
-    ['AUTH-037','KEVYPO','filho','son','HNK3000-A1-D02-S006','D02'],
-    ['AUTH-038','RUNOLO','filha','daughter','HNK3000-A1-D02-S007','D02'],
-    ['AUTH-039','SYNONU','irmão','brother','HNK3000-A1-D02-S008','D02'],
-    ['AUTH-040','PABYSO','irmã','sister','HNK3000-A1-D02-S009','D02'],
-    ['AUTH-041','SUTADO','marido','husband','HNK3000-A1-D02-S010','D02'],
-    ['AUTH-042','HEDUDO','esposa','wife','HNK3000-A1-D02-S011','D02'],
-    ['AUTH-043','BUNABU','parceiro(a)','partner','HNK3000-A1-D02-S012','D02'],
-    ['AUTH-044','LEPEDE','amigo(a)','friend','HNK3000-A1-D02-S013','D02'],
-    ['AUTH-045','TEBAHA','homem','man','HNK3000-A1-D02-S014','D02'],
-    ['AUTH-046','DOSETY','mulher','woman','HNK3000-A1-D02-S015','D02'],
-    ['AUTH-047','LOZYVY','menino','boy','HNK3000-A1-D02-S016','D02'],
-    ['AUTH-048','BYROLU','menina','girl','HNK3000-A1-D02-S017','D02'],
-    ['AUTH-049','ROZOSO','bebê','baby','HNK3000-A1-D02-S018','D02'],
-    ['AUTH-050','PUZODO','avó','grandmother','HNK3000-A1-D02-S019','D02'],
-    ['AUTH-051','VUHABO','avô','grandfather','HNK3000-A1-D02-S020','D02'],
-    ['AUTH-052','HATOSE','corpo','body','HNK3000-A1-D03-S001','D03'],
-    ['AUTH-053','MAZUBE','cabeça','head','HNK3000-A1-D03-S002','D03'],
-    ['AUTH-054','DEPYZU','rosto','face','HNK3000-A1-D03-S003','D03'],
-    ['AUTH-055','RAKUTA','olho','eye','HNK3000-A1-D03-S004','D03'],
-    ['AUTH-056','KEBEBU','orelha / ouvido externo','ear','HNK3000-A1-D03-S005','D03'],
-    ['AUTH-057','ZAVOHE','nariz','nose','HNK3000-A1-D03-S006','D03'],
-    ['AUTH-058','VUZULO','boca','mouth','HNK3000-A1-D03-S007','D03'],
-    ['AUTH-059','VOTASO','dente','tooth','HNK3000-A1-D03-S008','D03'],
-    ['AUTH-060','ZYPETE','pescoço','neck','HNK3000-A1-D03-S009','D03'],
+    ['AUTH-021','NYPOSA','nome','name','HNK3000-A1-D01-S001','D01'],['AUTH-022','ROBOVE','sobrenome','surname','HNK3000-A1-D01-S002','D01'],['AUTH-023','KYMERU','idade','age','HNK3000-A1-D01-S003','D01'],['AUTH-024','DAPOPO','aniversário','birthday','HNK3000-A1-D01-S004','D01'],['AUTH-025','VEROHA','data de nascimento','date of birth','HNK3000-A1-D01-S005','D01'],['AUTH-026','DYTYMA','nacionalidade','nationality','HNK3000-A1-D01-S006','D01'],['AUTH-027','KYVUMA','país','country','HNK3000-A1-D01-S007','D01'],['AUTH-028','MOROHE','endereço','address','HNK3000-A1-D01-S008','D01'],['AUTH-029','PUBYHA','número de telefone','phone number','HNK3000-A1-D01-S009','D01'],['AUTH-030','KUZUBU','e-mail','email','HNK3000-A1-D01-S010','D01'],['AUTH-031','HEHODE','documento de identidade','identity document','HNK3000-A1-D01-S011','D01'],['AUTH-032','REMEMU','estado civil','marital status','HNK3000-A1-D01-S012','D01'],['AUTH-033','KOPUMO','pessoa','person','HNK3000-A1-D01-S013','D01'],['AUTH-034','PUPUKU','família','family','HNK3000-A1-D02-S001','D02'],['AUTH-035','NEKUVO','progenitor / responsável parental','parent','HNK3000-A1-D02-S002','D02'],['AUTH-036','DYSANE','criança / filho genérico','child','HNK3000-A1-D02-S005','D02'],['AUTH-037','KEVYPO','filho','son','HNK3000-A1-D02-S006','D02'],['AUTH-038','RUNOLO','filha','daughter','HNK3000-A1-D02-S007','D02'],['AUTH-039','SYNONU','irmão','brother','HNK3000-A1-D02-S008','D02'],['AUTH-040','PABYSO','irmã','sister','HNK3000-A1-D02-S009','D02'],['AUTH-041','SUTADO','marido','husband','HNK3000-A1-D02-S010','D02'],['AUTH-042','HEDUDO','esposa','wife','HNK3000-A1-D02-S011','D02'],['AUTH-043','BUNABU','parceiro(a)','partner','HNK3000-A1-D02-S012','D02'],['AUTH-044','LEPEDE','amigo(a)','friend','HNK3000-A1-D02-S013','D02'],['AUTH-045','TEBAHA','homem','man','HNK3000-A1-D02-S014','D02'],['AUTH-046','DOSETY','mulher','woman','HNK3000-A1-D02-S015','D02'],['AUTH-047','LOZYVY','menino','boy','HNK3000-A1-D02-S016','D02'],['AUTH-048','BYROLU','menina','girl','HNK3000-A1-D02-S017','D02'],['AUTH-049','ROZOSO','bebê','baby','HNK3000-A1-D02-S018','D02'],['AUTH-050','PUZODO','avó','grandmother','HNK3000-A1-D02-S019','D02'],['AUTH-051','VUHABO','avô','grandfather','HNK3000-A1-D02-S020','D02'],['AUTH-052','HATOSE','corpo','body','HNK3000-A1-D03-S001','D03'],['AUTH-053','MAZUBE','cabeça','head','HNK3000-A1-D03-S002','D03'],['AUTH-054','DEPYZU','rosto','face','HNK3000-A1-D03-S003','D03'],['AUTH-055','RAKUTA','olho','eye','HNK3000-A1-D03-S004','D03'],['AUTH-056','KEBEBU','orelha / ouvido externo','ear','HNK3000-A1-D03-S005','D03'],['AUTH-057','ZAVOHE','nariz','nose','HNK3000-A1-D03-S006','D03'],['AUTH-058','VUZULO','boca','mouth','HNK3000-A1-D03-S007','D03'],['AUTH-059','VOTASO','dente','tooth','HNK3000-A1-D03-S008','D03'],['AUTH-060','ZYPETE','pescoço','neck','HNK3000-A1-D03-S009','D03'],
   ].map(([id, transliteration, pt, en, slotId, primaryDomain]) => ({
-    id,
-    transliteration,
-    meaning:{pt,en},
-    authority:'CANDIDATE', certainty:'AUTHORED_PRIMITIVE', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:[],
+    id, transliteration, meaning:{pt,en}, authority:'CANDIDATE', certainty:'AUTHORED_PRIMITIVE', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:[],
     morphology:{schema:'PRIMITIVE_AUTHORED_HNK3000_A1',leftState:'SEMANTIC_SLOT_DEFINED_BEFORE_FORM_SELECTION',rightState:'HUMAN_SELECTED_GID_FIRST_WAVE01',productivity:'NON_PRODUCTIVE_SINGLE_CANDIDATE'},
     provenance:['simpleway-hnk/proposals/language/HNK3000_A1_AUTHORING_WAVE_01_HUMAN_SELECTION_GATE_V1.json','simpleway-hnk/proposals/language/HNK3000_A1_WAVE_01_SELECTED_FORM_REGISTRATION_MANIFEST_V1.json'],
     notes:[`HNK3000 A1 Wave 01 slot ${slotId}; primary domain ${primaryDomain}.`,'Governed authored primitive; not recovered historical HNK.','Registration grants one HNK3000 core credit only; it does not promote FROZEN authority, productivity, grammar, curriculum binding or runtime use.'],
+  })),
+  ...[
+    ['AUTH-061','ZUBEDY','mão','hand','HNK3000-A1-D03-S010','D03'],['AUTH-062','BYDATA','braço','arm','HNK3000-A1-D03-S011','D03'],['AUTH-063','PONENA','perna','leg','HNK3000-A1-D03-S012','D03'],['AUTH-064','ZETARY','pé','foot','HNK3000-A1-D03-S013','D03'],['AUTH-065','SUBUPY','costas','back','HNK3000-A1-D03-S014','D03'],['AUTH-066','KANUZY','estômago','stomach','HNK3000-A1-D03-S015','D03'],['AUTH-067','TYMOZE','saúde','health','HNK3000-A1-D03-S016','D03'],['AUTH-068','TUSEPE','doença / estado de estar doente','illness / sick state','HNK3000-A1-D03-S017','D03'],['AUTH-069','BOVULE','médico(a)','doctor','HNK3000-A1-D03-S018','D03'],['AUTH-070','HAVETO','remédio / medicamento','medicine','HNK3000-A1-D03-S019','D03'],['AUTH-071','RULUME','hospital','hospital','HNK3000-A1-D03-S020','D03'],['AUTH-072','ZUDOPY','acordar','wake up','HNK3000-A1-D04-S001','D04'],['AUTH-073','BUBURE','levantar-se','get up','HNK3000-A1-D04-S002','D04'],['AUTH-074','LAHAKE','dormir','sleep','HNK3000-A1-D04-S003','D04'],['AUTH-075','SUDEZA','comer','eat','HNK3000-A1-D04-S004','D04'],['AUTH-076','NAZENA','beber','drink','HNK3000-A1-D04-S005','D04'],['AUTH-077','HUTETA','lavar','wash','HNK3000-A1-D04-S006','D04'],['AUTH-078','LOMULU','tomar banho','bathe / shower','HNK3000-A1-D04-S007','D04'],['AUTH-079','HOLOKY','vestir-se','get dressed','HNK3000-A1-D04-S008','D04'],['AUTH-080','SEHULY','cozinhar','cook','HNK3000-A1-D04-S009','D04'],['AUTH-081','BOTUBA','limpar','clean','HNK3000-A1-D04-S010','D04'],['AUTH-082','NONUDU','começar','start','HNK3000-A1-D04-S011','D04'],['AUTH-083','NAVELU','terminar','finish','HNK3000-A1-D04-S012','D04'],['AUTH-084','SODELE','fazer','do / make','HNK3000-A1-D04-S013','D04'],['AUTH-085','VOMUZY','usar','use','HNK3000-A1-D04-S014','D04'],['AUTH-086','TADUSU','dar','give','HNK3000-A1-D04-S015','D04'],['AUTH-087','RAHEZO','pegar / tomar','take','HNK3000-A1-D04-S016','D04'],['AUTH-088','RERARE','colocar','put / place','HNK3000-A1-D04-S017','D04'],['AUTH-089','BOZAKE','esperar','wait','HNK3000-A1-D04-S018','D04'],['AUTH-090','MULUNY','ajudar','help','HNK3000-A1-D04-S019','D04'],['AUTH-091','BUMUDA','mover-se','move','HNK3000-A1-D05-S001','D05'],['AUTH-092','ZADYRA','ir','go','HNK3000-A1-D05-S002','D05'],['AUTH-093','VODOZU','vir','come','HNK3000-A1-D05-S003','D05'],['AUTH-094','BOZEHA','caminhar','walk','HNK3000-A1-D05-S004','D05'],['AUTH-095','TOTORU','correr','run','HNK3000-A1-D05-S005','D05'],['AUTH-096','LAZOTU','entrar','enter','HNK3000-A1-D05-S006','D05'],['AUTH-097','RAMONY','sair','exit','HNK3000-A1-D05-S007','D05'],['AUTH-098','DUHOZA','chegar','arrive','HNK3000-A1-D05-S008','D05'],['AUTH-099','TALERE','partir / deixar um lugar','leave / depart','HNK3000-A1-D05-S009','D05'],['AUTH-100','VUSYDU','parar','stop','HNK3000-A1-D05-S010','D05'],
+  ].map(([id, transliteration, pt, en, slotId, primaryDomain]) => ({
+    id, transliteration, meaning:{pt,en}, authority:'CANDIDATE', certainty:'AUTHORED_PRIMITIVE', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:[],
+    morphology:{schema:'PRIMITIVE_AUTHORED_HNK3000_A1',leftState:'SEMANTIC_SLOT_DEFINED_BEFORE_FORM_SELECTION',rightState:'HUMAN_SELECTED_GID_FIRST_WAVE02',productivity:'NON_PRODUCTIVE_SINGLE_CANDIDATE'},
+    provenance:['simpleway-hnk/proposals/language/HNK3000_A1_AUTHORING_WAVE_02_HUMAN_SELECTION_GATE_V1.json','simpleway-hnk/proposals/language/HNK3000_A1_WAVE_02_SELECTED_FORM_REGISTRATION_MANIFEST_V1.json'],
+    notes:[`HNK3000 A1 Wave 02 slot ${slotId}; primary domain ${primaryDomain}.`,'Governed authored primitive; not recovered historical HNK.','Registration grants one HNK3000 core credit only; it does not promote FROZEN authority, productivity, grammar, curriculum binding or runtime use.'],
   })),
 ];
 
@@ -191,7 +130,7 @@ export function validateHnkAuthoredRegistry() {
     KALA:['G23','G01','G14','G01'],AN:['G01','G12'],EN:['G02','G12'],KU:['G23','G05'],KE:['G23','G02'],ZAMI:['G32','G01','G11','G03']
   };
   for(const [form,glyphIds] of Object.entries(fixed)){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(!entry)errors.push(`${form} candidate missing`);else if(JSON.stringify(entry.glyphIds)!==JSON.stringify(glyphIds))errors.push(`${form} glyph sequence drift`);}
-  if(HNK_AUTHORED_CANDIDATES.length!==60)errors.push(`Expected 60 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
+  if(HNK_AUTHORED_CANDIDATES.length!==100)errors.push(`Expected 100 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
   const numerals=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_NUMERAL_0_9');
   if(numerals.length!==10)errors.push(`Expected 10 numeral candidates, got ${numerals.length}`);
   for(const entry of numerals){if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} numeral certainty drift`);if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} numeral productivity drift`);if(!entry.lessons.includes('L01'))errors.push(`${entry.id} L01 numeral binding missing`);}
@@ -202,13 +141,16 @@ export function validateHnkAuthoredRegistry() {
   const ne=HNK_AUTHORED_CANDIDATES_BY_FORM.NE;
   if(!ne?.notes.some((note)=>note.includes('restricted to predicate negation inside the governed STR005 course frame')))errors.push('NE L02 STR005 scope boundary missing');
   for(const recovered of ['VANI','VAME'])if(HNK_AUTHORED_CANDIDATES_BY_FORM[recovered])errors.push(`${recovered} must remain recovered-only, not duplicated in authored registry`);
-  const wave01=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_HNK3000_A1');
-  if(wave01.length!==40)errors.push(`Expected 40 HNK3000 A1 Wave 01 candidates, got ${wave01.length}`);
-  for(const entry of wave01){
-    if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} Wave 01 certainty drift`);
-    if(entry.lessons.length!==0)errors.push(`${entry.id} Wave 01 must remain curriculum-unbound`);
-    if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} Wave 01 productivity drift`);
-    const n=Number(entry.id.slice(5)); if(!Number.isInteger(n)||n<21||n>60)errors.push(`${entry.id} outside reserved Wave 01 AUTH range`);
+  const hnk3000A1=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_HNK3000_A1');
+  if(hnk3000A1.length!==80)errors.push(`Expected 80 HNK3000 A1 authored candidates through Wave 02, got ${hnk3000A1.length}`);
+  for(const entry of hnk3000A1){
+    if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} HNK3000 A1 certainty drift`);
+    if(entry.lessons.length!==0)errors.push(`${entry.id} HNK3000 A1 candidate must remain curriculum-unbound`);
+    if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} HNK3000 A1 productivity drift`);
+    const n=Number(entry.id.slice(5)); if(!Number.isInteger(n)||n<21||n>100)errors.push(`${entry.id} outside reserved HNK3000 A1 Wave 01-02 AUTH range`);
   }
+  const wave02=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.notes.some((note)=>note.startsWith('HNK3000 A1 Wave 02 slot ')));
+  if(wave02.length!==40)errors.push(`Expected 40 HNK3000 A1 Wave 02 candidates, got ${wave02.length}`);
+  for(const entry of wave02){const n=Number(entry.id.slice(5));if(!Number.isInteger(n)||n<61||n>100)errors.push(`${entry.id} outside reserved Wave 02 AUTH range`);}
   return {ok:errors.length===0,errors};
 }
