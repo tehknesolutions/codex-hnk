@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.9.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.10.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-10';
 
@@ -95,6 +95,14 @@ const RAW_AUTHORED_CANDIDATES = [
     provenance:['simpleway-hnk/proposals/language/HNK3000_A1_AUTHORING_WAVE_02_HUMAN_SELECTION_GATE_V1.json','simpleway-hnk/proposals/language/HNK3000_A1_WAVE_02_SELECTED_FORM_REGISTRATION_MANIFEST_V1.json'],
     notes:[`HNK3000 A1 Wave 02 slot ${slotId}; primary domain ${primaryDomain}.`,'Governed authored primitive; not recovered historical HNK.','Registration grants one HNK3000 core credit only; it does not promote FROZEN authority, productivity, grammar, curriculum binding or runtime use.'],
   })),
+  ...[
+    ['AUTH-101','VIHIPA','virar / mudar direção','turn','HNK3000-A1-D05-S011','D05'],['AUTH-102','BAHIVU','atravessar','cross','HNK3000-A1-D05-S012','D05'],['AUTH-103','VIREMO','subir','go up / ascend','HNK3000-A1-D05-S013','D05'],['AUTH-104','HENIPU','descer','go down / descend','HNK3000-A1-D05-S014','D05'],['AUTH-105','PUNIMY','cair','fall','HNK3000-A1-D05-S015','D05'],['AUTH-106','NIKOME','carregar','carry','HNK3000-A1-D05-S016','D05'],['AUTH-107','MEPANO','trazer','bring','HNK3000-A1-D05-S017','D05'],['AUTH-108','NIDIBU','seguir','follow','HNK3000-A1-D05-S018','D05'],['AUTH-109','NEDILA','retornar','return','HNK3000-A1-D05-S019','D05'],['AUTH-110','KIMASY','ficar / permanecer','stay / remain','HNK3000-A1-D05-S020','D05'],['AUTH-111','RINITE','lar','home','HNK3000-A1-D06-S001','D06'],['AUTH-112','TOLYBO','casa','house','HNK3000-A1-D06-S002','D06'],['AUTH-113','ZESIZE','cômodo / quarto genérico','room','HNK3000-A1-D06-S003','D06'],['AUTH-114','RYNIRY','quarto de dormir','bedroom','HNK3000-A1-D06-S004','D06'],['AUTH-115','MELISA','banheiro','bathroom','HNK3000-A1-D06-S005','D06'],['AUTH-116','DYLEVO','cozinha','kitchen','HNK3000-A1-D06-S006','D06'],['AUTH-117','MIRYKA','sala de estar','living room','HNK3000-A1-D06-S007','D06'],['AUTH-118','NYRIBE','porta','door','HNK3000-A1-D06-S008','D06'],['AUTH-119','SYKIDA','janela','window','HNK3000-A1-D06-S009','D06'],['AUTH-120','DIKYKY','mesa','table','HNK3000-A1-D06-S010','D06'],['AUTH-121','NYLAPO','cadeira','chair','HNK3000-A1-D06-S011','D06'],['AUTH-122','PIKANO','cama','bed','HNK3000-A1-D06-S012','D06'],['AUTH-123','LYKIPE','lâmpada','lamp','HNK3000-A1-D06-S013','D06'],['AUTH-124','ROHADA','chave','key','HNK3000-A1-D06-S014','D06'],['AUTH-125','ZIRILA','parede','wall','HNK3000-A1-D06-S015','D06'],['AUTH-126','RIPASU','chão / piso','floor','HNK3000-A1-D06-S016','D06'],['AUTH-127','RUDIRU','geladeira','refrigerator','HNK3000-A1-D06-S017','D06'],['AUTH-128','KAKIKO','fogão','stove','HNK3000-A1-D06-S018','D06'],['AUTH-129','MOBEPO','chuveiro','shower','HNK3000-A1-D06-S019','D06'],['AUTH-130','DOHIHO','vaso sanitário','toilet','HNK3000-A1-D06-S020','D06'],['AUTH-131','ZINUNE','água','water','HNK3000-A1-D07-S001','D07'],['AUTH-132','DITIKU','café','coffee','HNK3000-A1-D07-S002','D07'],['AUTH-133','MIDESO','chá','tea','HNK3000-A1-D07-S003','D07'],['AUTH-134','NIPATO','leite','milk','HNK3000-A1-D07-S004','D07'],['AUTH-135','HIVUVU','pão','bread','HNK3000-A1-D07-S005','D07'],['AUTH-136','VEDISE','arroz','rice','HNK3000-A1-D07-S006','D07'],['AUTH-137','RASIPU','carne','meat','HNK3000-A1-D07-S007','D07'],['AUTH-138','LIROVO','frango','chicken','HNK3000-A1-D07-S008','D07'],['AUTH-139','ROVIKU','ovo','egg','HNK3000-A1-D07-S009','D07'],['AUTH-140','ZIRURU','fruta','fruit','HNK3000-A1-D07-S010','D07'],
+  ].map(([id, transliteration, pt, en, slotId, primaryDomain]) => ({
+    id, transliteration, meaning:{pt,en}, authority:'CANDIDATE', certainty:'AUTHORED_PRIMITIVE', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:[],
+    morphology:{schema:'PRIMITIVE_AUTHORED_HNK3000_A1',leftState:'SEMANTIC_SLOT_DEFINED_BEFORE_FORM_SELECTION',rightState:'HUMAN_SELECTED_GID_FIRST_WAVE03',productivity:'NON_PRODUCTIVE_SINGLE_CANDIDATE'},
+    provenance:['simpleway-hnk/proposals/language/HNK3000_A1_AUTHORING_WAVE_03_HUMAN_SELECTION_GATE_V1.json','simpleway-hnk/proposals/language/HNK3000_A1_WAVE_03_SELECTED_FORM_REGISTRATION_MANIFEST_V1.json'],
+    notes:[`HNK3000 A1 Wave 03 slot ${slotId}; primary domain ${primaryDomain}.`,'Governed authored primitive; not recovered historical HNK.','Registration grants one HNK3000 core credit only; it does not promote FROZEN authority, productivity, grammar, curriculum binding or runtime use.'],
+  })),
 ];
 
 function compileCandidate(raw) {
@@ -130,7 +138,7 @@ export function validateHnkAuthoredRegistry() {
     KALA:['G23','G01','G14','G01'],AN:['G01','G12'],EN:['G02','G12'],KU:['G23','G05'],KE:['G23','G02'],ZAMI:['G32','G01','G11','G03']
   };
   for(const [form,glyphIds] of Object.entries(fixed)){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(!entry)errors.push(`${form} candidate missing`);else if(JSON.stringify(entry.glyphIds)!==JSON.stringify(glyphIds))errors.push(`${form} glyph sequence drift`);}
-  if(HNK_AUTHORED_CANDIDATES.length!==100)errors.push(`Expected 100 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
+  if(HNK_AUTHORED_CANDIDATES.length!==140)errors.push(`Expected 140 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
   const numerals=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_NUMERAL_0_9');
   if(numerals.length!==10)errors.push(`Expected 10 numeral candidates, got ${numerals.length}`);
   for(const entry of numerals){if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} numeral certainty drift`);if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} numeral productivity drift`);if(!entry.lessons.includes('L01'))errors.push(`${entry.id} L01 numeral binding missing`);}
@@ -142,15 +150,18 @@ export function validateHnkAuthoredRegistry() {
   if(!ne?.notes.some((note)=>note.includes('restricted to predicate negation inside the governed STR005 course frame')))errors.push('NE L02 STR005 scope boundary missing');
   for(const recovered of ['VANI','VAME'])if(HNK_AUTHORED_CANDIDATES_BY_FORM[recovered])errors.push(`${recovered} must remain recovered-only, not duplicated in authored registry`);
   const hnk3000A1=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_HNK3000_A1');
-  if(hnk3000A1.length!==80)errors.push(`Expected 80 HNK3000 A1 authored candidates through Wave 02, got ${hnk3000A1.length}`);
+  if(hnk3000A1.length!==120)errors.push(`Expected 120 HNK3000 A1 authored candidates through Wave 03, got ${hnk3000A1.length}`);
   for(const entry of hnk3000A1){
     if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} HNK3000 A1 certainty drift`);
     if(entry.lessons.length!==0)errors.push(`${entry.id} HNK3000 A1 candidate must remain curriculum-unbound`);
     if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} HNK3000 A1 productivity drift`);
-    const n=Number(entry.id.slice(5)); if(!Number.isInteger(n)||n<21||n>100)errors.push(`${entry.id} outside reserved HNK3000 A1 Wave 01-02 AUTH range`);
+    const n=Number(entry.id.slice(5)); if(!Number.isInteger(n)||n<21||n>140)errors.push(`${entry.id} outside reserved HNK3000 A1 Wave 01-03 AUTH range`);
   }
   const wave02=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.notes.some((note)=>note.startsWith('HNK3000 A1 Wave 02 slot ')));
   if(wave02.length!==40)errors.push(`Expected 40 HNK3000 A1 Wave 02 candidates, got ${wave02.length}`);
   for(const entry of wave02){const n=Number(entry.id.slice(5));if(!Number.isInteger(n)||n<61||n>100)errors.push(`${entry.id} outside reserved Wave 02 AUTH range`);}
+  const wave03=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.notes.some((note)=>note.startsWith('HNK3000 A1 Wave 03 slot ')));
+  if(wave03.length!==40)errors.push(`Expected 40 HNK3000 A1 Wave 03 candidates, got ${wave03.length}`);
+  for(const entry of wave03){const n=Number(entry.id.slice(5));if(!Number.isInteger(n)||n<101||n>140)errors.push(`${entry.id} outside reserved Wave 03 AUTH range`);}
   return {ok:errors.length===0,errors};
 }
