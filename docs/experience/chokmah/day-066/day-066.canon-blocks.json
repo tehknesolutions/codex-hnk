@@ -1,0 +1,11 @@
+{
+  "id":"HNK-CHOKMAH-D066-CANON-BLOCKS-V1",
+  "kind":"hnk.canon_blocks",
+  "source":{"day":66,"path":"content/canon/atziluth/chokmah/dia-066.md","blob_sha":"a6d48785ee355f734cadda61b0bb3810b125bf5e","source_plan_sha256":"49917dc66e8401d17d3af362d2370bf532e7388145b6d481bae18d48e95cac59","counted_words":705,"target_words":705,"chapter":2,"sephira":"Chokmah","world":"Atziluth","angel":"Iezalel","level":2,"xp":200,"editorial_version":"1.1","epistemic_protocol":"HNK-EP-1.1","reference_status":"REFERENCE_APPROVED","canonical_reference":"assets/canonical/shared/gneo-geo/cockpit-gneo-geo-hnk-master-v1.svg"},
+  "blocks":[
+    {"id":"jachin-doctrine","pillar":"JACHIN","kind":"DOCTRINE","word_count":137},{"id":"jachin-kavanah","pillar":"JACHIN","kind":"KAVANAH","word_count":72},{"id":"jachin-ordalia","pillar":"JACHIN","kind":"ORDALIA","word_count":26},
+    {"id":"boaz-doctrine","pillar":"BOAZ","kind":"DOCTRINE","word_count":137},{"id":"boaz-kavanah","pillar":"BOAZ","kind":"KAVANAH","word_count":72},{"id":"boaz-ordalia","pillar":"BOAZ","kind":"ORDALIA","word_count":26},
+    {"id":"middle-doctrine","pillar":"MIDDLE","kind":"DOCTRINE","word_count":137},{"id":"middle-kavanah","pillar":"MIDDLE","kind":"KAVANAH","word_count":72},{"id":"middle-ordalia","pillar":"MIDDLE","kind":"ORDALIA","word_count":26}
+  ],
+  "uncounted_sections":["SELO_TEURGICO_DE_IEZALEL","REFERENCIA_CANONICA_GNEO_GEO","MATRIZ_EPISTEMICA_HNK","SEGURANCA_DA_PRATICA","QR_CODE_INTERATIVO","ESPELHO_DA_ALMA"]
+}

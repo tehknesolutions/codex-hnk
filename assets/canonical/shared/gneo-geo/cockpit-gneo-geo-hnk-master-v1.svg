@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc"
+  data-hnk-canonical-reference="hnk.gneo_geo.v1"
+  data-hnk-day066-master="cockpit-gneo-geo-hnk-master-v1.svg"
+  data-hnk-node-circuit-equivalence="false"
+  data-hnk-ritual-route="none">
+<title id="title">Cockpit Gneo Geo HNK Master V1 — Day 066</title>
+<desc id="desc">HNK-original canonical derivative of Gneo Geo V1: fixed North, double-octagram geometry, eight informational nodes, cardinal axes and Blue Pearl at the command center. Node numbers are display/accessibility labels, not ritual order or automatic Consciousness Circuit mappings.</desc>
+<defs>
+  <radialGradient id="blue-pearl-gradient" cx="35%" cy="30%" r="70%">
+    <stop offset="0%" stop-color="#d8f4ff"/>
+    <stop offset="45%" stop-color="#3a8dff"/>
+    <stop offset="100%" stop-color="#071b5c"/>
+  </radialGradient>
+</defs>
+<style>
+  .star{fill:none;stroke:currentColor;stroke-width:7;stroke-linejoin:round}
+  .ring{fill:none;stroke:currentColor;stroke-width:4;stroke-dasharray:12 12}
+  .spoke{stroke:currentColor;stroke-width:4;opacity:.72}
+  .axis{stroke:currentColor;stroke-width:3;opacity:.38;stroke-dasharray:10 14}
+  .node{fill:#000;stroke:currentColor;stroke-width:7}
+  .pearl{fill:url(#blue-pearl-gradient);stroke:#fff;stroke-width:8}
+  .label{fill:currentColor;font:600 34px sans-serif}
+  .cardinal{fill:currentColor;font:600 25px sans-serif;letter-spacing:4px}
+  .center-label{fill:#fff;font:700 25px sans-serif}
+</style>
+<g id="gneo-geo-day066-master-v1">
+  <polygon id="inner-square-a" points="600,340 860,600 600,860 340,600" class="star"/>
+  <polygon id="inner-square-b" points="783.85,416.15 783.85,783.85 416.15,783.85 416.15,416.15" class="star"/>
+  <polygon id="outer-square-a" points="756.9,221.21 978.79,756.9 443.1,978.79 221.21,443.1" class="star"/>
+  <polygon id="outer-square-b" points="978.79,443.1 756.9,978.79 221.21,756.9 443.1,221.21" class="star"/>
+  <circle id="node-ring" cx="600" cy="600" r="335" class="ring"/>
+  <line id="axis-ns" x1="600" y1="155" x2="600" y2="1045" class="axis"/>
+  <line id="axis-ew" x1="155" y1="600" x2="1045" y2="600" class="axis"/>
+  <line id="spoke-1" x1="600" y1="600" x2="600" y2="265" class="spoke"/>
+  <line id="spoke-2" x1="600" y1="600" x2="836.88" y2="363.12" class="spoke"/>
+  <line id="spoke-3" x1="600" y1="600" x2="935" y2="600" class="spoke"/>
+  <line id="spoke-4" x1="600" y1="600" x2="836.88" y2="836.88" class="spoke"/>
+  <line id="spoke-5" x1="600" y1="600" x2="600" y2="935" class="spoke"/>
+  <line id="spoke-6" x1="600" y1="600" x2="363.12" y2="836.88" class="spoke"/>
+  <line id="spoke-7" x1="600" y1="600" x2="265" y2="600" class="spoke"/>
+  <line id="spoke-8" x1="600" y1="600" x2="363.12" y2="363.12" class="spoke"/>
+  <g id="node-1"><circle cx="600" cy="265" r="38" class="node"/><text x="600" y="275" text-anchor="middle" class="label">1</text></g>
+  <g id="node-2"><circle cx="836.88" cy="363.12" r="38" class="node"/><text x="836.88" y="373.12" text-anchor="middle" class="label">2</text></g>
+  <g id="node-3"><circle cx="935" cy="600" r="38" class="node"/><text x="935" y="610" text-anchor="middle" class="label">3</text></g>
+  <g id="node-4"><circle cx="836.88" cy="836.88" r="38" class="node"/><text x="836.88" y="846.88" text-anchor="middle" class="label">4</text></g>
+  <g id="node-5"><circle cx="600" cy="935" r="38" class="node"/><text x="600" y="945" text-anchor="middle" class="label">5</text></g>
+  <g id="node-6"><circle cx="363.12" cy="836.88" r="38" class="node"/><text x="363.12" y="846.88" text-anchor="middle" class="label">6</text></g>
+  <g id="node-7"><circle cx="265" cy="600" r="38" class="node"/><text x="265" y="610" text-anchor="middle" class="label">7</text></g>
+  <g id="node-8"><circle cx="363.12" cy="363.12" r="38" class="node"/><text x="363.12" y="373.12" text-anchor="middle" class="label">8</text></g>
+  <circle id="blue-pearl-command-center" cx="600" cy="600" r="54" class="pearl"/>
+  <text x="600" y="609" text-anchor="middle" class="center-label">O</text>
+  <text x="600" y="105" text-anchor="middle" class="cardinal">N</text>
+  <text x="1090" y="608" text-anchor="middle" class="cardinal">E</text>
+  <text x="600" y="1115" text-anchor="middle" class="cardinal">S</text>
+  <text x="110" y="608" text-anchor="middle" class="cardinal">W</text>
+</g>
+</svg>
