@@ -1,7 +1,7 @@
 {
   "id":"HNK-CHOKMAH-D070-QUEST-PACK-V2",
   "day":70,
-  "release_state":"REFERENCE_LOCKED__RUNTIME_DRAFT_READY",
+  "release_state":"REFERENCE_LOCKED__RUNTIME_DRAFT_READY__STATIC_QA_PENDING",
   "source_sha":"bb1e47aee510fe9df58a46f697ebafb9005e223e",
   "xp":200,
   "attribute_gain":0,
@@ -9,6 +9,8 @@
   "practice":{"active":{"positions":["BACK","CHEST","ABOVE_KETHER"],"minimum_seconds_legacy":1,"canonical_duration":null,"blue_light_imagery_only":true},"control":{"positions":["BACK","CHEST","ABOVE_KETHER"],"neutral_blue_markers":true,"similar_duration":true,"minimum_seconds_legacy":1},"comparison":{"no_winner":true,"null_or_control_better_valid":true,"objective_shield_claim_forbidden":true},"middle":{"psalm":"9:9","formula":"MEM-BET-HE","risk_measure_named_count":1,"responsibility_named_count":1,"location_and_time_reconfirmed":true}},
   "safety":{"invulnerability_forbidden":true,"real_safety_preserved":true,"medical_care_preserved":true,"legal_prudence_preserved":true,"grandiosity_stop":true,"compulsive_repetition_stop":true},
   "privacy":{"vault":"OPTIONAL_E2EE","server_plaintext":false},
-  "backend":{"target_validator":"day070_v2","registry_state":"DRAFT_REFERENCE_LOCKED"},
-  "remaining_blockers":["CANONICAL_TETRAGRAMMATON_MASTER_NOT_MATERIALIZED","CANONICAL_REFERENCE_REGISTRY_FILE_NOT_MATERIALIZED","UPSTREAM_DAY045_AUDIO_PUBLICATION","WEB_EXPO_RUNTIME","STATIC_VALIDATOR_EXECUTION","DEVICE_BROWSER_QA"]
+  "backend":{"target_validator":"day070_v2","registry_state":"DRAFT_REFERENCE_LOCKED","activation_migration_present":false},
+  "runtime":{"web":"LOCKED_SURFACE_IMPLEMENTED_UNVERIFIED","expo":"LOCKED_SURFACE_IMPLEMENTED_UNVERIFIED","completion_enabled":false},
+  "proofs":["DAY070_V2_REFERENCE_LOCK_PASS","DAY070_REFERENCE_LOCK_LEGACY_TRIGGER_COMPAT_PASS"],
+  "remaining_blockers":["CANONICAL_TETRAGRAMMATON_MASTER_NOT_MATERIALIZED","CANONICAL_REFERENCE_REGISTRY_FILE_NOT_MATERIALIZED","UPSTREAM_DAY045_AUDIO_PUBLICATION","STATIC_VALIDATOR_EXECUTION","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
