@@ -1,0 +1,2 @@
+update hnk_private.completion_contract_registry set status='active',updated_at=now() where completion_contract_id='HNK-CHOKMAH-D071-COMP-V2' and day=71 and validator_key='day071_v2' and canonical_source_sha='6dfa6b5768bd7cdc2812d5dbfc68a8bc66ad90c3';
+do $do$ begin if not exists(select 1 from hnk_private.completion_contract_registry where completion_contract_id='HNK-CHOKMAH-D071-COMP-V2' and status='active') then raise exception 'day071_activation_failed'; end if; end $do$;
