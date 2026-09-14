@@ -1,16 +1,16 @@
 {
   "kind":"hnk.quest_definition",
   "id":"HNK-CHOKMAH-D070-V2",
-  "version":"0.1.1",
+  "version":"0.2.0",
   "day":70,
   "title":"Ativação de Escudos do Tetragrammaton",
-  "status":"REFERENCE_LOCKED__RUNTIME_DRAFT_READY__STATIC_QA_PENDING",
+  "status":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
   "canonical":{"source_sha":"bb1e47aee510fe9df58a46f697ebafb9005e223e","xp":200,"attribute_gain":0},
   "requires":{"previous_day":69,"grade":2,"title":"Iniciado","chapter":2,"sephira":"Chokmah","upstream_day045_lock":true},
-  "reference":{"master_id":"pantaculo-tetragrammaton-hnk-master-v1.svg","expected_path":"assets/canonical/chokmah/pantaculo-tetragrammaton-hnk-master-v1.svg","expected_sha256":"16cd1d9ff1cc256f570d526bc6c6bfd249d06957d972f87f51168011cb78451b","orientation":"UPRIGHT_NOT_MIRRORED","candidate_asset_key":"hnk.tetragrammaton.day070.candidate.v1","candidate_sha256":"bf0e187137457b969695906fbabfce876a72500c21d115e18266220fc1bb6f52","candidate_canonical":false,"candidate_may_unlock":false},
-  "runtime":{"active_min_seconds":1,"control_min_seconds":1,"canonical_duration_gate":null,"positions_required":["BACK","CHEST","ABOVE_KETHER"],"control":"THREE_NEUTRAL_BLUE_MARKERS_SAME_POSITIONS_SIMILAR_DURATION","vault":"OPTIONAL_E2EE","backend_registry":"DRAFT_REFERENCE_LOCKED","web":"LOCKED_SURFACE_IMPLEMENTED_UNVERIFIED","expo":"LOCKED_SURFACE_IMPLEMENTED_UNVERIFIED","completion_enabled":false},
-  "proofs":["DAY070_V2_REFERENCE_LOCK_PASS","DAY070_REFERENCE_LOCK_LEGACY_TRIGGER_COMPAT_PASS"],
-  "safety":{"invulnerability_claim_forbidden":true,"real_safety_must_remain":true,"medical_legal_and_everyday_prudence_preserved":true,"grandiosity_or_compulsive_repetition_requires_stop":true,"objective_physical_shield_claim_forbidden":true,"no_condition_declared_spiritually_superior":true},
+  "reference":{"asset_key":"hnk.tetragrammaton.day070.v1.master","master_id":"pantaculo-tetragrammaton-hnk-master-v1.svg","path":"assets/canonical/chokmah/pantaculo-tetragrammaton-hnk-master-v1.svg","sha256":"26cd747bc3397c5dba08dbaf159f55b6a90c19b7b0e64b326a12bee389760989","orientation":"UPRIGHT_NOT_MIRRORED","approval_state":"approved","supersedes_historical_sha256":"16cd1d9ff1cc256f570d526bc6c6bfd249d06957d972f87f51168011cb78451b","supersession_record":"docs/design/canonical-references/HNK_TETRAGRAMMATON_D070_SUPERSESSION_V1.md"},
+  "runtime":{"active_min_seconds_legacy":1,"control_min_seconds_legacy":1,"canonical_duration_gate":null,"positions_required":["BACK","CHEST","ABOVE_KETHER"],"control":"THREE_NEUTRAL_BLUE_MARKERS_SAME_POSITIONS_SIMILAR_DURATION","vault":"OPTIONAL_E2EE","backend_registry":"ACTIVE","web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED","completion_enabled":true},
+  "proofs":["DAY070_V2_SUPERSEDED_REFERENCE_BASE_PASS","DAY070_V2_SUPERSESSION_ATTACK_BATCH_PASS","DAY070_V2_SUPERSESSION_TRIGGER_PASS"],
+  "safety":{"invulnerability_claim_forbidden":true,"real_safety_must_remain":true,"medical_legal_and_everyday_prudence_preserved":true,"grandiosity_or_compulsive_repetition_requires_stop":true,"objective_physical_shield_claim_forbidden":true,"measurable_aura_claim_forbidden":true,"no_condition_declared_spiritually_superior":true},
   "privacy":{"practice_record":"MASTER_ID_CHECKSUM_TIMES_SCORES_FLAGS_AND_OPAQUE_UUID_ONLY","server_plaintext":false},
-  "blockers":["CANONICAL_TETRAGRAMMATON_MASTER_NOT_MATERIALIZED","CANONICAL_REFERENCE_REGISTRY_FILE_NOT_MATERIALIZED","UPSTREAM_DAY045_AUDIO_PUBLICATION","STATIC_VALIDATOR_EXECUTION","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+  "blockers":["UPSTREAM_DAY045_AUDIO_PUBLICATION","FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK","STATIC_VALIDATOR_EXECUTION","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
 }
