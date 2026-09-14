@@ -71,5 +71,6 @@ export * from "./day068.js";
 export * from "./day069.js";
 export * from "./day070.js";
 export * from "./day071.js";
+export * from "./day072.js";
 export * from "./service.js";
 export * from "./offline.js";
