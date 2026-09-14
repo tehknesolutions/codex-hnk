@@ -1,7 +1,7 @@
 import { getGlyph, transliterationToGlyphIds } from '@hnk/glyphs';
 import { HNK_MASTER_LEXICON } from './index.mjs';
 
-export const HNK_AUTHORED_REGISTRY_VERSION = '1.7.0-candidate';
+export const HNK_AUTHORED_REGISTRY_VERSION = '1.8.0-candidate';
 export const HNK_AUTHORED_REGISTRY_STATUS = 'GOVERNED_AUTHORING_CANDIDATES';
 export const HNK_AUTHORED_REGISTRY_SOURCE = 'SIMPLEWAY_HNK_AUTHORING_2026-09-10';
 
@@ -106,6 +106,56 @@ const RAW_AUTHORED_CANDIDATES = [
     provenance:['simpleway-hnk/proposals/language/HNK_L01_VOCABULARY_GAP_8_FORM_MAPPING_REVIEW_V1.json','simpleway-hnk/curriculum/cycle-01/L01-kether/recovery/token-hypotheses.v1.json'],
     notes:['Governed v1 mapping; not a historically recovered standalone gloss.','Semantic range remains speak/use-language in scoped L01 communicative contexts.'],
   },
+  ...[
+    ['AUTH-021','NYPOSA','nome','name','HNK3000-A1-D01-S001','D01'],
+    ['AUTH-022','ROBOVE','sobrenome','surname','HNK3000-A1-D01-S002','D01'],
+    ['AUTH-023','KYMERU','idade','age','HNK3000-A1-D01-S003','D01'],
+    ['AUTH-024','DAPOPO','aniversário','birthday','HNK3000-A1-D01-S004','D01'],
+    ['AUTH-025','VEROHA','data de nascimento','date of birth','HNK3000-A1-D01-S005','D01'],
+    ['AUTH-026','DYTYMA','nacionalidade','nationality','HNK3000-A1-D01-S006','D01'],
+    ['AUTH-027','KYVUMA','país','country','HNK3000-A1-D01-S007','D01'],
+    ['AUTH-028','MOROHE','endereço','address','HNK3000-A1-D01-S008','D01'],
+    ['AUTH-029','PUBYHA','número de telefone','phone number','HNK3000-A1-D01-S009','D01'],
+    ['AUTH-030','KUZUBU','e-mail','email','HNK3000-A1-D01-S010','D01'],
+    ['AUTH-031','HEHODE','documento de identidade','identity document','HNK3000-A1-D01-S011','D01'],
+    ['AUTH-032','REMEMU','estado civil','marital status','HNK3000-A1-D01-S012','D01'],
+    ['AUTH-033','KOPUMO','pessoa','person','HNK3000-A1-D01-S013','D01'],
+    ['AUTH-034','PUPUKU','família','family','HNK3000-A1-D02-S001','D02'],
+    ['AUTH-035','NEKUVO','progenitor / responsável parental','parent','HNK3000-A1-D02-S002','D02'],
+    ['AUTH-036','DYSANE','criança / filho genérico','child','HNK3000-A1-D02-S005','D02'],
+    ['AUTH-037','KEVYPO','filho','son','HNK3000-A1-D02-S006','D02'],
+    ['AUTH-038','RUNOLO','filha','daughter','HNK3000-A1-D02-S007','D02'],
+    ['AUTH-039','SYNONU','irmão','brother','HNK3000-A1-D02-S008','D02'],
+    ['AUTH-040','PABYSO','irmã','sister','HNK3000-A1-D02-S009','D02'],
+    ['AUTH-041','SUTADO','marido','husband','HNK3000-A1-D02-S010','D02'],
+    ['AUTH-042','HEDUDO','esposa','wife','HNK3000-A1-D02-S011','D02'],
+    ['AUTH-043','BUNABU','parceiro(a)','partner','HNK3000-A1-D02-S012','D02'],
+    ['AUTH-044','LEPEDE','amigo(a)','friend','HNK3000-A1-D02-S013','D02'],
+    ['AUTH-045','TEBAHA','homem','man','HNK3000-A1-D02-S014','D02'],
+    ['AUTH-046','DOSETY','mulher','woman','HNK3000-A1-D02-S015','D02'],
+    ['AUTH-047','LOZYVY','menino','boy','HNK3000-A1-D02-S016','D02'],
+    ['AUTH-048','BYROLU','menina','girl','HNK3000-A1-D02-S017','D02'],
+    ['AUTH-049','ROZOSO','bebê','baby','HNK3000-A1-D02-S018','D02'],
+    ['AUTH-050','PUZODO','avó','grandmother','HNK3000-A1-D02-S019','D02'],
+    ['AUTH-051','VUHABO','avô','grandfather','HNK3000-A1-D02-S020','D02'],
+    ['AUTH-052','HATOSE','corpo','body','HNK3000-A1-D03-S001','D03'],
+    ['AUTH-053','MAZUBE','cabeça','head','HNK3000-A1-D03-S002','D03'],
+    ['AUTH-054','DEPYZU','rosto','face','HNK3000-A1-D03-S003','D03'],
+    ['AUTH-055','RAKUTA','olho','eye','HNK3000-A1-D03-S004','D03'],
+    ['AUTH-056','KEBEBU','orelha / ouvido externo','ear','HNK3000-A1-D03-S005','D03'],
+    ['AUTH-057','ZAVOHE','nariz','nose','HNK3000-A1-D03-S006','D03'],
+    ['AUTH-058','VUZULO','boca','mouth','HNK3000-A1-D03-S007','D03'],
+    ['AUTH-059','VOTASO','dente','tooth','HNK3000-A1-D03-S008','D03'],
+    ['AUTH-060','ZYPETE','pescoço','neck','HNK3000-A1-D03-S009','D03'],
+  ].map(([id, transliteration, pt, en, slotId, primaryDomain]) => ({
+    id,
+    transliteration,
+    meaning:{pt,en},
+    authority:'CANDIDATE', certainty:'AUTHORED_PRIMITIVE', sourceClass:'AUTHORING_PROPOSAL', historicalRecoveryClaim:false, lessons:[],
+    morphology:{schema:'PRIMITIVE_AUTHORED_HNK3000_A1',leftState:'SEMANTIC_SLOT_DEFINED_BEFORE_FORM_SELECTION',rightState:'HUMAN_SELECTED_GID_FIRST_WAVE01',productivity:'NON_PRODUCTIVE_SINGLE_CANDIDATE'},
+    provenance:['simpleway-hnk/proposals/language/HNK3000_A1_AUTHORING_WAVE_01_HUMAN_SELECTION_GATE_V1.json','simpleway-hnk/proposals/language/HNK3000_A1_WAVE_01_SELECTED_FORM_REGISTRATION_MANIFEST_V1.json'],
+    notes:[`HNK3000 A1 Wave 01 slot ${slotId}; primary domain ${primaryDomain}.`,'Governed authored primitive; not recovered historical HNK.','Registration grants one HNK3000 core credit only; it does not promote FROZEN authority, productivity, grammar, curriculum binding or runtime use.'],
+  })),
 ];
 
 function compileCandidate(raw) {
@@ -141,7 +191,7 @@ export function validateHnkAuthoredRegistry() {
     KALA:['G23','G01','G14','G01'],AN:['G01','G12'],EN:['G02','G12'],KU:['G23','G05'],KE:['G23','G02'],ZAMI:['G32','G01','G11','G03']
   };
   for(const [form,glyphIds] of Object.entries(fixed)){const entry=HNK_AUTHORED_CANDIDATES_BY_FORM[form];if(!entry)errors.push(`${form} candidate missing`);else if(JSON.stringify(entry.glyphIds)!==JSON.stringify(glyphIds))errors.push(`${form} glyph sequence drift`);}
-  if(HNK_AUTHORED_CANDIDATES.length!==20)errors.push(`Expected 20 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
+  if(HNK_AUTHORED_CANDIDATES.length!==60)errors.push(`Expected 60 authored candidates, got ${HNK_AUTHORED_CANDIDATES.length}`);
   const numerals=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_NUMERAL_0_9');
   if(numerals.length!==10)errors.push(`Expected 10 numeral candidates, got ${numerals.length}`);
   for(const entry of numerals){if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} numeral certainty drift`);if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} numeral productivity drift`);if(!entry.lessons.includes('L01'))errors.push(`${entry.id} L01 numeral binding missing`);}
@@ -152,5 +202,13 @@ export function validateHnkAuthoredRegistry() {
   const ne=HNK_AUTHORED_CANDIDATES_BY_FORM.NE;
   if(!ne?.notes.some((note)=>note.includes('restricted to predicate negation inside the governed STR005 course frame')))errors.push('NE L02 STR005 scope boundary missing');
   for(const recovered of ['VANI','VAME'])if(HNK_AUTHORED_CANDIDATES_BY_FORM[recovered])errors.push(`${recovered} must remain recovered-only, not duplicated in authored registry`);
+  const wave01=HNK_AUTHORED_CANDIDATES.filter((entry)=>entry.morphology.schema==='PRIMITIVE_AUTHORED_HNK3000_A1');
+  if(wave01.length!==40)errors.push(`Expected 40 HNK3000 A1 Wave 01 candidates, got ${wave01.length}`);
+  for(const entry of wave01){
+    if(entry.certainty!=='AUTHORED_PRIMITIVE')errors.push(`${entry.id} Wave 01 certainty drift`);
+    if(entry.lessons.length!==0)errors.push(`${entry.id} Wave 01 must remain curriculum-unbound`);
+    if(entry.morphology.productivity!=='NON_PRODUCTIVE_SINGLE_CANDIDATE')errors.push(`${entry.id} Wave 01 productivity drift`);
+    const n=Number(entry.id.slice(5)); if(!Number.isInteger(n)||n<21||n>60)errors.push(`${entry.id} outside reserved Wave 01 AUTH range`);
+  }
   return {ok:errors.length===0,errors};
 }
