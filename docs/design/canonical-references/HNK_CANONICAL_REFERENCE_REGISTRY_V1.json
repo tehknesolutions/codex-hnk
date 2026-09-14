@@ -1,0 +1,48 @@
+{
+  "kind": "hnk.canonical_reference_registry",
+  "version": "1.0.0",
+  "status": "MATERIALIZED_CANONICAL_REFERENCES_V1",
+  "complete_global_catalog": false,
+  "note": "This file materializes the canonical references currently required by runtime gates. It is not asserted to be an exhaustive catalog of every project asset.",
+  "references": [
+    {
+      "asset_key": "hnk.gneo_geo.v1.master",
+      "scope": "day",
+      "day": 28,
+      "approval_state": "approved",
+      "historical_sha256": "2547d18241651980ed1668408b189ecfd1eb28acb400cdf6c1d96e7514d90436",
+      "current_repo_path": "assets/canonical/shared/gneo-geo/cockpit-gneo-geo-hnk-master-v1.svg",
+      "fixed_north": true,
+      "nodes_circuits_equivalent": false,
+      "role": "historical_parent_authority"
+    },
+    {
+      "asset_key": "hnk.gneo_geo.day066.v1.master",
+      "scope": "day",
+      "day": 66,
+      "approval_state": "approved",
+      "sha256": "c8ac82fc3ccb2155a6c9f289c438a01894f0fd6666322720b95dde434c208ed6",
+      "repo_path": "assets/canonical/shared/gneo-geo/cockpit-gneo-geo-hnk-master-v1.svg",
+      "fixed_north": true,
+      "blue_pearl_centered": true,
+      "nodes_circuits_equivalent": false,
+      "ritual_route_defined": false,
+      "freeze": "docs/design/canonical-references/HNK_GNEO_GEO_REFERENCE_FREEZE_V1.md"
+    },
+    {
+      "asset_key": "hnk.tetragrammaton.day070.v1.master",
+      "scope": "day",
+      "day": 70,
+      "approval_state": "approved",
+      "sha256": "26cd747bc3397c5dba08dbaf159f55b6a90c19b7b0e64b326a12bee389760989",
+      "repo_path": "assets/canonical/chokmah/pantaculo-tetragrammaton-hnk-master-v1.svg",
+      "upright": true,
+      "mirrored": false,
+      "project_generated": true,
+      "supersedes_historical_sha256": "16cd1d9ff1cc256f570d526bc6c6bfd249d06957d972f87f51168011cb78451b",
+      "candidate_parent_sha256": "bf0e187137457b969695906fbabfce876a72500c21d115e18266220fc1bb6f52",
+      "freeze": "docs/design/canonical-references/HNK_TETRAGRAMMATON_D070_REFERENCE_FREEZE_V1.md",
+      "supersession": "docs/design/canonical-references/HNK_TETRAGRAMMATON_D070_SUPERSESSION_V1.md"
+    }
+  ]
+}
