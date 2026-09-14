@@ -10,9 +10,11 @@ This package computes reproducible oracle data. It does not promote symbolic mea
 
 `@hnk/glyphs` remains authoritative for G01–G40 identity, phoneme, world ID and runtime visual state. The authored oracle registry remains a separate governed layer under `docs/oraculum/registry/`.
 
+Interpretation profiles are overlays. Changing `profileId` must never change the raw seed, I Ching state, Path-32, HNK glyph, Tarot index, astrology selectors, alchemy selectors, colors or sigil. This corrects the earlier candidate serialization in which `PROFILE_ID` participated in the commit.
+
 ## Deterministic pipeline
 
-`canonical input -> SHA-256 seed -> fixed bit fields -> unbiased bounded selections -> structured raw result`
+`canonical input -> SHA-256 seed -> fixed bit fields -> unbiased bounded selections -> structured raw result -> profile overlay`
 
 Implemented fields:
 
@@ -34,14 +36,22 @@ The V0.4 engine accepts a 54-character base-6 facelet state in canonical `U R F 
 
 `RITUAL_32` additionally requires exactly 32 standard face-turn tokens (`U R F D L B`, optional `2` or `'`).
 
+## V0.4 raw commit
+
+`HNK-ORACULUM-CUBE/V0.4|MODE|INTENT|CUBE_STATE|MOVES`
+
+`profileId` is metadata for downstream correspondence/interpretation and is deliberately excluded from the raw commit.
+
 ## Reproducibility
 
 The locked test vector is:
 
 - intent: `Qual padrão precisa se manifestar?`
 - solved canonical state: `000000000111111111222222222333333333444444444555555555`
-- profile: `HNK_ORACULUM_DEFAULT_V1`
 - mode: `STATE`
-- seed: `147a32d82ac5d72d65b9e0e912db069e42c03ca98c47f17d76cd7162fbd02b4a`
+- raw commit: `HNK-ORACULUM-CUBE/V0.4|STATE|Qual padrão precisa se manifestar?|000000000111111111222222222333333333444444444555555555|NULL`
+- seed: `df6bcd1bfd58288fb8f7d7e0f22b69d7e305a24429ba4445c242efc000e3b6fc`
+
+The same raw input must produce this seed under every interpretation profile.
 
 Any future change that intentionally changes this vector must increment the protocol/version rather than silently rewriting V0.4 history.
