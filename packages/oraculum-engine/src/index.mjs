@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { getGlyph, glyphIdFromNumber, HNK40_GLYPH_IDS } from '@hnk/glyphs';
 
-export const ORACULUM_PROTOCOL = 'HNK-ORACULUM-CUBE/V0.1';
+export const ORACULUM_PROTOCOL = 'HNK-ORACULUM-CUBE/V0.4';
 export const ORACULUM_ENGINE_VERSION = '0.4.0-candidate';
 export const DEFAULT_PROFILE_ID = 'HNK_ORACULUM_DEFAULT_V1';
 export const ORACULUM_MODES = Object.freeze({ STATE: 'STATE', RITUAL_32: 'RITUAL_32' });
@@ -99,7 +99,7 @@ export function buildOracleCommit({ intent, cubeState, mode = ORACULUM_MODES.STA
   const normalizedCubeState = normalizeCubeState(cubeState);
   const normalizedProfileId = assertProfileId(profileId);
   const normalizedMoves = normalizeMoves(mode, moves);
-  const commit = [ORACULUM_PROTOCOL, normalizedProfileId, mode, normalizedIntent, normalizedCubeState, normalizedMoves].join('|');
+  const commit = [ORACULUM_PROTOCOL, mode, normalizedIntent, normalizedCubeState, normalizedMoves].join('|');
   return Object.freeze({
     protocol: ORACULUM_PROTOCOL,
     profileId: normalizedProfileId,
