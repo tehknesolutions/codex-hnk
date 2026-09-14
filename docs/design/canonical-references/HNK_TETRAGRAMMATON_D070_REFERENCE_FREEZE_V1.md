@@ -1,29 +1,56 @@
 # HNK TETRAGRAMMATON D070 — REFERENCE FREEZE V1
 
-Status: `REFERENCE_LOCKED__EXPECTED_MASTER_NOT_MATERIALIZED`
+Status: `REFERENCE_APPROVED__SUPERSESSION_V1`
 
-## Canonical expectation
+## Authority
+
 - Day: 070 / Mebahel IV / Chokmah / Atziluth.
-- Canonical source blob: `bb1e47aee510fe9df58a46f697ebafb9005e223e`.
-- Expected canonical path: `assets/canonical/chokmah/pantaculo-tetragrammaton-hnk-master-v1.svg`.
-- Expected SHA-256: `16cd1d9ff1cc256f570d526bc6c6bfd249d06957d972f87f51168011cb78451b`.
+- Historical canonical source blob: `bb1e47aee510fe9df58a46f697ebafb9005e223e`.
+- The 705 counted words remain unchanged.
+- Canonical path: `assets/canonical/chokmah/pantaculo-tetragrammaton-hnk-master-v1.svg`.
+- Active SHA-256: `26cd747bc3397c5dba08dbaf159f55b6a90c19b7b0e64b326a12bee389760989`.
 - Orientation: upright; never mirrored.
-- Canonical registry document expected by the canon: `docs/design/canonical-references/HNK_CANONICAL_REFERENCE_REGISTRY_V1.json`.
+- Supersession record: `docs/design/canonical-references/HNK_TETRAGRAMMATON_D070_SUPERSESSION_V1.md`.
+- Registry: `docs/design/canonical-references/HNK_CANONICAL_REFERENCE_REGISTRY_V1.json`.
 
-## Current repository evidence
-The expected canonical SVG and global canonical-reference registry are not materialized in the current repository tree and no historical commit for the expected SVG path was found.
+## Historical checksum
 
-## Candidate bridge
-- Asset key: `hnk.tetragrammaton.day070.candidate.v1`.
-- Repo path: `assets/candidates/chokmah/pantaculo-tetragrammaton-hnk-candidate-v1.svg`.
-- Candidate SHA-256: `bf0e187137457b969695906fbabfce876a72500c21d115e18266220fc1bb6f52`.
-- Approval state: `draft`.
-- Provenance: original HNK vector candidate informed by a user-supplied visual reference; the source raster is not redistributed.
-- Candidate is upright and non-mirrored, but it is **not canonical** and does not satisfy the expected checksum.
+The Day 070 source historically referenced SHA-256:
+`16cd1d9ff1cc256f570d526bc6c6bfd249d06957d972f87f51168011cb78451b`.
 
-## Release rule
-Day070 MUST remain reference-locked until either:
-1. the historical approved master matching the expected SHA-256 is recovered and materialized; or
-2. a new explicit canonical decision supersedes the historical checksum/path, updates the canon/freeze/registry coherently, and is approved before runtime activation.
+That asset could not be recovered from the current repository, `Tehkne-Solutions/hnk-codex-365`, or other repositories accessible through the connected GitHub account. It is therefore retained as historical provenance only and is superseded for runtime use.
 
-No candidate, visual similarity, user perception, or approximate geometry may bypass this gate.
+## Active master
+
+- Asset key: `hnk.tetragrammaton.day070.v1.master`.
+- Repo path: `assets/canonical/chokmah/pantaculo-tetragrammaton-hnk-master-v1.svg`.
+- SHA-256: `26cd747bc3397c5dba08dbaf159f55b6a90c19b7b0e64b326a12bee389760989`.
+- Project-generated: yes.
+- Upright: yes.
+- Mirrored: no.
+- Source raster redistributed: no.
+
+## Candidate provenance
+
+The intermediate candidate remains recorded as a historical bridge:
+- asset key: `hnk.tetragrammaton.day070.candidate.v1`;
+- SHA-256: `bf0e187137457b969695906fbabfce876a72500c21d115e18266220fc1bb6f52`;
+- approval state: `draft`.
+
+The candidate row is not the active master and must not be used as a substitute for the approved master key.
+
+## Semantic freeze
+
+The asset is a symbolic/traditional operator only. It does not establish:
+- a physical barrier;
+- measurable aura;
+- invulnerability;
+- protection from external threats;
+- neurological mechanism;
+- superiority of the active condition over the neutral control.
+
+The Day 070 safety, HNK-EP and return gates remain unchanged.
+
+## Publication distinction
+
+Canonical repository materialization and Supabase Storage publication are distinct. The repository master may be canonical while Storage publication remains pending.
