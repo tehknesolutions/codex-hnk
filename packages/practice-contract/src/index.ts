@@ -66,4 +66,5 @@ export * from "./day064.js";
 export * from "./day065.js";
 export * from "./day066.js";
 export * from "./day067.js";
+export * from "./day068.js";
 export * from "./sync.js";
