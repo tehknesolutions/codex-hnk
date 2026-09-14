@@ -1,5 +1,13 @@
 export const PROFILE_REGISTRY_VERSION = 'HNK-ORACULUM-PROFILES/V1';
 
+export const PROFILE_SOURCES = Object.freeze({
+  SY_CORE_V1:Object.freeze({url:'https://www.sefaria.org/Sefer_Yetzirah_Gra_Version.1',note:'Gra Version 1:2 — ten Sefirot, 22 Foundation Letters, 3 Mothers, 7 Doubles, 12 Elementals'}),
+  ICHING_KING_WEN_V1:Object.freeze({url:'https://plato.stanford.edu/archives/fall2019/entries/chinese-change/appendix.html',note:'Trigram/hexagram structure and bottom-to-top line convention'}),
+  HERMETIC_GD_V1:Object.freeze({url:'https://www.hermetics.org/tarocchi.html',note:'Golden Dawn Tarot/Hebrew/path/astrological attribution table'}),
+  TAROT_GD_V1:Object.freeze({url:'https://s3.us-west-1.wasabisys.com/luminist/EB/R/Regardie%20-%20The%20Complete%20Golden%20Dawn.pdf',note:'Book T suit-element attributions'}),
+  ASTRO_CLASSICAL_V1:Object.freeze({url:'HNK_PROFILE_INTERNAL',note:'Classical zodiac element triplicities; profile-scoped, not part of raw protocol'})
+});
+
 export const ZODIAC_ELEMENTS = Object.freeze({
   ARIES:'FIRE', TAURUS:'EARTH', GEMINI:'AIR', CANCER:'WATER',
   LEO:'FIRE', VIRGO:'EARTH', LIBRA:'AIR', SCORPIO:'WATER',
@@ -52,12 +60,12 @@ export const HNK_ORACULUM_PROFILES = Object.freeze({
     layers:Object.freeze(['SY_CORE_V1','KABBALAH_TREE_V1','ICHING_KING_WEN_V1','HERMETIC_GD_V1','TAROT_GD_V1','ASTRO_CLASSICAL_V1','HNK_ELEMENT_TENSION_V1']),
     candidateHnkOracleSemantics:false
   }),
-  SY_CORE_V1:Object.freeze({authority:'SOURCE_VERIFIED',scope:'10_SEFIROT_22_LETTERS_3_7_12'}),
+  SY_CORE_V1:Object.freeze({authority:'SOURCE_VERIFIED',scope:'10_SEFIROT_22_LETTERS_3_7_12',source:PROFILE_SOURCES.SY_CORE_V1}),
   KABBALAH_TREE_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'LATER_KABBALAH_NAMED_SEFIROT'}),
-  ICHING_KING_WEN_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'TRIGRAMS_AND_KING_WEN_NUMBERING'}),
-  HERMETIC_GD_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'HEBREW_TAROT_ASTRO_ATTRIBUTIONS'}),
-  TAROT_GD_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'SUIT_ELEMENT_ATTRIBUTIONS'}),
-  ASTRO_CLASSICAL_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'ZODIAC_ELEMENT_TRIPLICITIES'}),
+  ICHING_KING_WEN_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'TRIGRAMS_AND_KING_WEN_NUMBERING',source:PROFILE_SOURCES.ICHING_KING_WEN_V1}),
+  HERMETIC_GD_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'HEBREW_TAROT_ASTRO_ATTRIBUTIONS',source:PROFILE_SOURCES.HERMETIC_GD_V1}),
+  TAROT_GD_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'SUIT_ELEMENT_ATTRIBUTIONS',source:PROFILE_SOURCES.TAROT_GD_V1}),
+  ASTRO_CLASSICAL_V1:Object.freeze({authority:'PROFILE_VERIFIED',scope:'ZODIAC_ELEMENT_TRIPLICITIES',source:PROFILE_SOURCES.ASTRO_CLASSICAL_V1}),
   HNK_ELEMENT_TENSION_V1:Object.freeze({authority:'HNK_AUTHORED_CANDIDATE',oppositions:Object.freeze([Object.freeze(['FIRE','WATER']),Object.freeze(['AIR','EARTH'])])})
 });
 
