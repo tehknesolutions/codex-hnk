@@ -1,0 +1,13 @@
+{
+  "id":"HNK-CHOKMAH-D068-QUEST-PACK-V2","version":"0.1.1","release_state":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING","day":68,
+  "canonical":{"source_sha":"176ebffccc845a909f5d1d2bdb88181b94809afb","xp":200,"attribute_gain":0},
+  "rules":{"sources_exactly":3,"fast_max_seconds":43200,"control_max_seconds":43200,"legacy_technical_minimum_seconds":1,"early_exit_valid":true,"review_days":7},
+  "fast":{"essential_exceptions_required":true,"critical_alerts_preserved":true,"responsibilities_preserved":true,"early_exit_reason_required_when_used":true,"no_moral_purity":true,"no_automatic_critical_blocking":true},
+  "control":{"comparable_other_day":true,"normal_use_no_behavior_improvement":true},
+  "comparison":{"no_winner":true,"null_or_control_better_valid":true,"egregore_metaphor_not_literalized":true,"no_single_cause_claim":true,"confounds_considered":true,"communication_harm_adjusts_rule":true,"sustainable_rule":true},
+  "middle":{"psalm":"9:9","formula":"MEM-BET-HE","source_to_limit_count":1,"source_to_keep_count":1,"responsibility_not_silenced_count":1,"deliberate_reconnection":true,"review_days":7},
+  "privacy":{"source_names_server_side":false,"private_prose_server_side":false,"vault":"OPTIONAL_E2EE","practice_record":"STRUCTURED_METRICS_FLAGS_ONLY"},
+  "backend":{"status":"ACTIVE","validator":"day068_v2","migrations":["20260914111047_day068_completion_contract_v2_draft","20260914111207_activate_day068_completion_contract_v2"],"proofs":["DAY068_V2_EARLY_EXIT_VALID_PASS","DAY068_V2_ATTACK_BATCH_PASS","DAY068_V2_LEGACY_TRIGGER_COMPAT_PASS"]},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED"},
+  "blockers":["UPSTREAM_DAY045_AUDIO_PUBLICATION","FULL_COMPLETION_RPC_AFTER_UPSTREAM_UNLOCK","WEB_BUILD_VERIFY","EXPO_BUILD_VERIFY","DEVICE_BROWSER_QA"]
+}
