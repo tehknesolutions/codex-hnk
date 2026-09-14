@@ -14,8 +14,8 @@ import {
 const SOLVED = '000000000111111111222222222333333333444444444555555555';
 const INTENT = 'Qual padrão precisa se manifestar?';
 
-const EXPECTED_COMMIT = 'HNK-ORACULUM-CUBE/V0.1|HNK_ORACULUM_DEFAULT_V1|STATE|Qual padrão precisa se manifestar?|000000000111111111222222222333333333444444444555555555|NULL';
-const EXPECTED_SEED = '147a32d82ac5d72d65b9e0e912db069e42c03ca98c47f17d76cd7162fbd02b4a';
+const EXPECTED_COMMIT = 'HNK-ORACULUM-CUBE/V0.4|STATE|Qual padrão precisa se manifestar?|000000000111111111222222222333333333444444444555555555|NULL';
+const EXPECTED_SEED = 'df6bcd1bfd58288fb8f7d7e0f22b69d7e305a24429ba4445c242efc000e3b6fc';
 
 test('same canonical input is byte-for-byte deterministic', () => {
   const a = runOracle({ intent: INTENT, cubeState: SOLVED });
@@ -28,25 +28,27 @@ test('same canonical input is byte-for-byte deterministic', () => {
 
 test('locked V0.4 vector decodes exact fields', () => {
   const result = runOracle({ intent: INTENT, cubeState: SOLVED });
-  assert.equal(result.path32.index, 21);
-  assert.equal(result.hnk.glyphId, 'G26');
-  assert.equal(result.tarot.cardIndex, 55);
-  assert.equal(result.astrology.zodiac, 'ARIES');
-  assert.equal(result.astrology.planet, 'MERCURY');
-  assert.equal(result.astrology.element, 'WATER');
-  assert.equal(result.alchemy.principle, 'SULFUR');
+  assert.equal(result.path32.index, 24);
+  assert.equal(result.hnk.glyphId, 'G39');
+  assert.equal(result.tarot.cardIndex, 71);
+  assert.equal(result.astrology.zodiac, 'SAGITTARIUS');
+  assert.equal(result.astrology.zodiacSelection.retryCount, 1);
+  assert.equal(result.astrology.planet, 'MARS');
+  assert.equal(result.astrology.planetSelection.retryCount, 1);
+  assert.equal(result.astrology.element, 'AIR');
+  assert.equal(result.alchemy.principle, 'SALT');
   assert.equal(result.alchemy.phase, 'CITRINITAS');
-  assert.equal(result.numerology.raw, 47);
-  assert.equal(result.colors.essence, '#B96B2D');
-  assert.equal(result.colors.shadow, '#4694D2');
-  assert.equal(result.colors.manifestation, '#6B2DB9');
-  assert.deepEqual(result.iching.movingLines, [1, 4, 6]);
-  assert.equal(result.iching.primary.lowerTrigram.id, 'KUN');
-  assert.equal(result.iching.primary.upperTrigram.id, 'GEN');
-  assert.equal(result.iching.primary.kingWen, 23);
-  assert.equal(result.iching.resulting.lowerTrigram.id, 'ZHEN');
-  assert.equal(result.iching.resulting.upperTrigram.id, 'ZHEN');
-  assert.equal(result.iching.resulting.kingWen, 51);
+  assert.equal(result.numerology.raw, 194);
+  assert.equal(result.colors.essence, '#447DC7');
+  assert.equal(result.colors.shadow, '#BB8238');
+  assert.equal(result.colors.manifestation, '#7DC744');
+  assert.deepEqual(result.iching.movingLines, [1, 3, 4]);
+  assert.equal(result.iching.primary.lowerTrigram.id, 'LI');
+  assert.equal(result.iching.primary.upperTrigram.id, 'LI');
+  assert.equal(result.iching.primary.kingWen, 30);
+  assert.equal(result.iching.resulting.lowerTrigram.id, 'KUN');
+  assert.equal(result.iching.resulting.upperTrigram.id, 'GEN');
+  assert.equal(result.iching.resulting.kingWen, 23);
   assert.equal(result.sigil.points.length, 16);
 });
 
@@ -73,12 +75,19 @@ test('RITUAL_32 locks exactly 32 normalized Singmaster moves', () => {
   assert.throws(() => buildOracleCommit({ intent: 'Teste ritual', cubeState: SOLVED, mode: ORACULUM_MODES.RITUAL_32, moves: [...moves.slice(0, 31), 'X'] }), /Invalid Singmaster/);
 });
 
-test('profile is seed-domain separated', () => {
+test('profiles are interpretation overlays and cannot mutate the raw oracle', () => {
   const base = runOracle({ intent: INTENT, cubeState: SOLVED, profileId: DEFAULT_PROFILE_ID });
   const alternate = runOracle({ intent: INTENT, cubeState: SOLVED, profileId: 'TEST_PROFILE_V1' });
-  assert.notEqual(base.raw.seed256, alternate.raw.seed256);
-  assert.equal(base.hnk.authority, '@hnk/glyphs');
-  assert.equal(alternate.hnk.authority, '@hnk/glyphs');
+  assert.equal(base.raw.seed256, alternate.raw.seed256);
+  assert.deepEqual(base.raw, alternate.raw);
+  assert.deepEqual(base.iching, alternate.iching);
+  assert.deepEqual(base.path32, alternate.path32);
+  assert.deepEqual(base.hnk, alternate.hnk);
+  assert.deepEqual(base.tarot, alternate.tarot);
+  assert.deepEqual(base.astrology, alternate.astrology);
+  assert.deepEqual(base.alchemy, alternate.alchemy);
+  assert.deepEqual(base.colors, alternate.colors);
+  assert.notEqual(base.profileId, alternate.profileId);
 });
 
 test('source-chain dedupe keeps one strongest contribution per dependency chain', () => {
