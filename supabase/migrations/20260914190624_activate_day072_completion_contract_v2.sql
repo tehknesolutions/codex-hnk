@@ -1,0 +1,1 @@
+update hnk_private.completion_contract_registry set status='active',updated_at=now() where completion_contract_id='HNK-CHOKMAH-D072-COMP-V2' and validator_key='day072_v2' and canonical_source_sha='44c11fee26aef72ebb686ab5f8fd8f27f1239cb2';
