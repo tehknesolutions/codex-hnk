@@ -1,4 +1,5 @@
 export const PROFILE_REGISTRY_VERSION: string;
+export const PROFILE_SOURCES: Readonly<Record<string,Readonly<{ url:string; note:string }>>>;
 export const ZODIAC_ELEMENTS: Readonly<Record<string,string>>;
 export const TRIGRAM_ARCHETYPES: Readonly<Record<string,Readonly<{ image:string; element?:string }>>>;
 export const KABBALAH_TREE_10: ReadonlyArray<string>;
