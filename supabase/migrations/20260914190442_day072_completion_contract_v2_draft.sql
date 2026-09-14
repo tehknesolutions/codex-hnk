@@ -1,0 +1,70 @@
+create or replace function hnk_private.validate_day072_completion_v2(p_evidence jsonb,p_expected_source_sha text)
+returns void language plpgsql set search_path='' as $fn$
+declare a jsonb; c jsonb; p jsonb; m jsonb; s jsonb; symptoms jsonb; k text; score_key text; ref text; reason text; support text; lighting text; performed boolean;
+begin
+ if jsonb_typeof(p_evidence) is distinct from 'object' then raise exception 'day072_v2_evidence_object_required'; end if;
+ if exists(select 1 from jsonb_object_keys(p_evidence) q where q not in ('protocol_version','source_sha','session_id','mode','active','control','comparison','middle','private_vault_entry_ref','private_vault_e2ee_confirmed','practice_record_no_private_prose_confirmed','voluntary_completion_confirmed','final_safety_clear_confirmed','safety_stop_occurred','safety_stop_reason')) then raise exception 'day072_v2_unknown_top_field'; end if;
+ if p_evidence->>'protocol_version' is distinct from 'HNK-CHOKMAH-D072-V2' then raise exception 'day072_v2_protocol_invalid'; end if;
+ if p_evidence->>'source_sha' is distinct from p_expected_source_sha or p_expected_source_sha is distinct from '44c11fee26aef72ebb686ab5f8fd8f27f1239cb2' then raise exception 'day072_v2_source_sha_invalid'; end if;
+ if nullif(btrim(p_evidence->>'session_id'),'') is null or (p_evidence->>'session_id') !~* '^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$' then raise exception 'day072_v2_session_uuid_required'; end if;
+ if coalesce(p_evidence->>'mode','first_completion') not in ('first_completion','revisit') then raise exception 'day072_v2_mode_invalid'; end if;
+ ref:=p_evidence->>'private_vault_entry_ref'; if ref is null or ref!~*'^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$' then raise exception 'day072_v2_vault_ref_required'; end if;
+ if p_evidence->'private_vault_e2ee_confirmed' is distinct from 'true'::jsonb then raise exception 'day072_v2_vault_e2ee_required'; end if;
+ if p_evidence->'practice_record_no_private_prose_confirmed' is distinct from 'true'::jsonb or p_evidence->'voluntary_completion_confirmed' is distinct from 'true'::jsonb or p_evidence->'final_safety_clear_confirmed' is distinct from 'true'::jsonb then raise exception 'day072_v2_completion_boundary_missing'; end if;
+ reason:=coalesce(p_evidence->>'safety_stop_reason','NONE'); if reason not in ('NONE','OCULAR_PAIN','DIZZINESS','GROWING_FEAR','DISORIENTATION','FIRE_RISK','OTHER') then raise exception 'day072_v2_safety_reason_invalid'; end if; if p_evidence->'safety_stop_occurred' is distinct from 'false'::jsonb or reason<>'NONE' then raise exception 'day072_v2_unresolved_safety_stop'; end if;
+ a:=p_evidence->'active'; if jsonb_typeof(a) is distinct from 'object' then raise exception 'day072_v2_active_required'; end if;
+ if exists(select 1 from jsonb_object_keys(a) q where q not in ('duration_seconds','completed_confirmed','support','support_selected_confirmed','lighting_mode','electric_fallback_used','fire_safety_preserved_confirmed','stable_posture_confirmed','diffuse_gaze_confirmed','no_forced_focus_confirmed','conditions_preregistered_confirmed','distance_recorded_confirmed','lighting_recorded_confirmed','posture_recorded_confirmed','interruptions_count','visual_form_present','visual_description_saved_before_interpretation_confirmed','interpretation_separated_confirmed','external_presence_not_claimed_confirmed','high_impact_decision_not_used_confirmed','scores','symptoms')) then raise exception 'day072_v2_unknown_active_field'; end if;
+ if not coalesce(hnk_private.jsonb_is_nonnegative_integer(a->'duration_seconds'),false) or (a->>'duration_seconds')::int<>900 then raise exception 'day072_v2_exact_900_seconds_required'; end if;
+ support:=a->>'support'; if support not in ('SILVER_MIRROR','BLACK_BOWL_CLEAN_WATER') then raise exception 'day072_v2_support_invalid'; end if;
+ lighting:=a->>'lighting_mode'; if lighting not in ('CANDLE_BEHIND_SHOULDERS','ELECTRIC_STABLE_FALLBACK') then raise exception 'day072_v2_lighting_invalid'; end if;
+ if jsonb_typeof(a->'electric_fallback_used') is distinct from 'boolean' or (a->>'electric_fallback_used')::boolean <> (lighting='ELECTRIC_STABLE_FALLBACK') then raise exception 'day072_v2_electric_fallback_incoherent'; end if;
+ if jsonb_typeof(a->'visual_form_present') is distinct from 'boolean' then raise exception 'day072_v2_visual_form_flag_invalid'; end if;
+ if not coalesce(hnk_private.jsonb_is_nonnegative_integer(a->'interruptions_count'),false) then raise exception 'day072_v2_interruptions_invalid'; end if;
+ foreach k in array array['completed_confirmed','support_selected_confirmed','fire_safety_preserved_confirmed','stable_posture_confirmed','diffuse_gaze_confirmed','no_forced_focus_confirmed','conditions_preregistered_confirmed','distance_recorded_confirmed','lighting_recorded_confirmed','posture_recorded_confirmed','visual_description_saved_before_interpretation_confirmed','interpretation_separated_confirmed','external_presence_not_claimed_confirmed','high_impact_decision_not_used_confirmed'] loop if a->k is distinct from 'true'::jsonb then raise exception 'day072_v2_active_boundary_required:%',k; end if; end loop;
+ s:=a->'scores'; if jsonb_typeof(s) is distinct from 'object' then raise exception 'day072_v2_active_scores_required'; end if;
+ foreach score_key in array array['ocular_discomfort_before','ocular_discomfort_after','fear_before','fear_after','orientation_before','orientation_after','expectation'] loop if not coalesce(hnk_private.jsonb_is_nonnegative_integer(s->score_key),false) or (s->>score_key)::int>10 then raise exception 'day072_v2_active_score_invalid:%',score_key; end if; end loop;
+ symptoms:=a->'symptoms'; if jsonb_typeof(symptoms) is distinct from 'object' then raise exception 'day072_v2_symptoms_required'; end if;
+ if exists(select 1 from jsonb_object_keys(symptoms) q where q not in ('ocular_pain','dizziness','growing_fear','disorientation')) then raise exception 'day072_v2_unknown_symptom'; end if;
+ foreach k in array array['ocular_pain','dizziness','growing_fear','disorientation'] loop if jsonb_typeof(symptoms->k) is distinct from 'boolean' then raise exception 'day072_v2_symptom_invalid:%',k; end if; if (symptoms->>k)::boolean then raise exception 'day072_v2_stop_symptom_present:%',k; end if; end loop;
+ c:=p_evidence->'control'; if jsonb_typeof(c) is distinct from 'object' then raise exception 'day072_v2_control_required'; end if; performed:=coalesce((c->>'performed')::boolean,false); if jsonb_typeof(c->'performed') is distinct from 'boolean' then raise exception 'day072_v2_control_performed_invalid'; end if;
+ if not performed then if exists(select 1 from jsonb_object_keys(c) q where q<>'performed') then raise exception 'day072_v2_control_false_extra_field'; end if; else
+   if exists(select 1 from jsonb_object_keys(c) q where q not in ('performed','duration_seconds','neutral_dark_surface_confirmed','same_posture_and_lighting_confirmed','no_water_or_mirror_confirmed','no_forced_degradation_confirmed','similar_duration_confirmed','scores')) then raise exception 'day072_v2_unknown_control_field'; end if;
+   if not coalesce(hnk_private.jsonb_is_nonnegative_integer(c->'duration_seconds'),false) or (c->>'duration_seconds')::int<1 then raise exception 'day072_v2_control_duration_invalid'; end if;
+   foreach k in array array['neutral_dark_surface_confirmed','same_posture_and_lighting_confirmed','no_water_or_mirror_confirmed','no_forced_degradation_confirmed','similar_duration_confirmed'] loop if c->k is distinct from 'true'::jsonb then raise exception 'day072_v2_control_boundary_required:%',k; end if; end loop;
+   s:=c->'scores'; if jsonb_typeof(s) is distinct from 'object' then raise exception 'day072_v2_control_scores_required'; end if;
+   foreach score_key in array array['ocular_discomfort','fear','orientation','expectation'] loop if not coalesce(hnk_private.jsonb_is_nonnegative_integer(s->score_key),false) or (s->>score_key)::int>10 then raise exception 'day072_v2_control_score_invalid:%',score_key; end if; end loop;
+ end if;
+ p:=p_evidence->'comparison'; if jsonb_typeof(p) is distinct from 'object' then raise exception 'day072_v2_comparison_required'; end if;
+ if exists(select 1 from jsonb_object_keys(p) q where q not in ('layers_separated_confirmed','pareidolia_not_moralized_confirmed','diagnosis_not_claimed_confirmed','prophecy_not_claimed_confirmed','external_presence_not_claimed_confirmed','superiority_not_claimed_confirmed','high_impact_decision_not_used_confirmed','no_xp_bonus_for_effect_confirmed','uncertainty_preserved_confirmed','control_interpretation_deferred_confirmed')) then raise exception 'day072_v2_unknown_comparison_field'; end if;
+ foreach k in array array['layers_separated_confirmed','pareidolia_not_moralized_confirmed','diagnosis_not_claimed_confirmed','prophecy_not_claimed_confirmed','external_presence_not_claimed_confirmed','superiority_not_claimed_confirmed','high_impact_decision_not_used_confirmed','no_xp_bonus_for_effect_confirmed','uncertainty_preserved_confirmed','control_interpretation_deferred_confirmed'] loop if p->k is distinct from 'true'::jsonb then raise exception 'day072_v2_comparison_boundary_required:%',k; end if; end loop;
+ m:=p_evidence->'middle'; if jsonb_typeof(m) is distinct from 'object' then raise exception 'day072_v2_middle_required'; end if;
+ if exists(select 1 from jsonb_object_keys(m) q where q not in ('lighting_restored_confirmed','body_moved_confirmed','orientation_confirmed','thanks_to_god_confirmed','visual_facts_named_count','subjective_experience_named_count','open_interpretation_named_count','no_chasing_stronger_image_confirmed','next_day_not_auto_started_confirmed','return_confirmed')) then raise exception 'day072_v2_unknown_middle_field'; end if;
+ foreach k in array array['lighting_restored_confirmed','body_moved_confirmed','orientation_confirmed','thanks_to_god_confirmed','no_chasing_stronger_image_confirmed','next_day_not_auto_started_confirmed','return_confirmed'] loop if m->k is distinct from 'true'::jsonb then raise exception 'day072_v2_middle_boundary_required:%',k; end if; end loop;
+ if not coalesce(hnk_private.jsonb_is_nonnegative_integer(m->'visual_facts_named_count'),false) or (m->>'visual_facts_named_count')::int<1 then raise exception 'day072_v2_visual_fact_required'; end if;
+ if not coalesce(hnk_private.jsonb_is_nonnegative_integer(m->'subjective_experience_named_count'),false) or (m->>'subjective_experience_named_count')::int<>1 then raise exception 'day072_v2_one_subjective_experience_required'; end if;
+ if not coalesce(hnk_private.jsonb_is_nonnegative_integer(m->'open_interpretation_named_count'),false) or (m->>'open_interpretation_named_count')::int<>1 then raise exception 'day072_v2_one_open_interpretation_required'; end if;
+ perform hnk_private.validate_day072_scalar_evidence_v1(jsonb_build_object('protocol_completed',true,'return_confirmed',m->'return_confirmed','active_completed',a->'completed_confirmed','support_selected',a->'support_selected_confirmed','visual_preregister_saved',a->'visual_description_saved_before_interpretation_confirmed','interpretation_separated',a->'interpretation_separated_confirmed','external_presence_not_claimed',p->'external_presence_not_claimed_confirmed','high_impact_decision_not_used',p->'high_impact_decision_not_used_confirmed','fire_safety_preserved',a->'fire_safety_preserved_confirmed','lighting_restored',m->'lighting_restored_confirmed','orientation_restored',m->'orientation_confirmed','vault_saved',true,'safety_clear',p_evidence->'final_safety_clear_confirmed','electric_fallback_used',a->'electric_fallback_used','visual_form_present',a->'visual_form_present','active_seconds',a->'duration_seconds'));
+end $fn$;
+
+create or replace function hnk_private.enforce_chokmah_day072_scalar_evidence()
+returns trigger language plpgsql security definer set search_path='' as $fn$
+declare existing boolean; source_sha text; source_status text;
+begin
+ if new.day<>72 or new.state not in ('evidence_pending','complete') then return new; end if;
+ select exists(select 1 from public.day_completions where user_id=new.user_id and day=72) into existing; if existing then return new; end if;
+ select source_sha,status into source_sha,source_status from public.codex_days where day=72;
+ if source_status is distinct from 'canon' then raise exception 'day072_canonical_day_not_available'; end if;
+ if source_sha is distinct from '44c11fee26aef72ebb686ab5f8fd8f27f1239cb2' then raise exception 'day072_canonical_source_sha_mismatch'; end if;
+ if new.evidence->>'protocol_version'='HNK-CHOKMAH-D072-V2' then perform hnk_private.validate_day072_completion_v2(new.evidence,source_sha); else perform hnk_private.validate_day072_scalar_evidence_v1(new.evidence); end if;
+ return new;
+end $fn$;
+
+do $do$ declare ddl text; begin
+ select pg_get_functiondef('hnk_private.validate_completion_contract_v2(text,jsonb,text)'::regprocedure) into ddl;
+ if position('day072_v2' in ddl)=0 then ddl:=replace(ddl,$needle$  else raise exception 'unsupported_completion_validator:%',p_validator_key;$needle$,$replacement$  when 'day072_v2' then perform hnk_private.validate_day072_completion_v2(p_evidence,p_expected_source_sha);
+  else raise exception 'unsupported_completion_validator:%',p_validator_key;$replacement$); if position('day072_v2' in ddl)=0 then raise exception 'day072_dispatcher_patch_failed'; end if; execute ddl; end if;
+end $do$;
+
+insert into hnk_private.completion_contract_registry(completion_contract_id,quest_definition_id,day,canonical_source_sha,contract_version,validator_key,status,created_at,updated_at)
+values('HNK-CHOKMAH-D072-COMP-V2','HNK-CHOKMAH-D072-V2',72,'44c11fee26aef72ebb686ab5f8fd8f27f1239cb2','2.0.0','day072_v2','draft',now(),now())
+on conflict(completion_contract_id) do update set quest_definition_id=excluded.quest_definition_id,day=excluded.day,canonical_source_sha=excluded.canonical_source_sha,contract_version=excluded.contract_version,validator_key=excluded.validator_key,status='draft',updated_at=now();
