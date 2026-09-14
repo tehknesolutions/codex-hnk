@@ -1,0 +1,12 @@
+{
+  "id":"HNK-CHOKMAH-D066-COMPLETION-SERVICE-V1","day":66,"checkpoint":"RUNTIME_IMPLEMENTED__BUILD_SMOKE_QA_PENDING",
+  "registry":{"completion_contract_id":"HNK-CHOKMAH-D066-COMP-V2","quest_definition_id":"HNK-CHOKMAH-D066-V2","validator_key":"day066_v2","contract_version":"2.0.0","status":"active","canonical_source_sha":"a6d48785ee355f734cadda61b0bb3810b125bf5e"},
+  "canonical":{"xp":200,"attribute_gain":0,"chapter":2,"sephira":"Chokmah","angel":"Iezalel"},
+  "reference":{"parent_asset_key":"hnk.gneo_geo.v1.master","parent_sha256":"2547d18241651980ed1668408b189ecfd1eb28acb400cdf6c1d96e7514d90436","day066_asset_key":"hnk.gneo_geo.day066.v1.master","master_id":"cockpit-gneo-geo-hnk-master-v1.svg","sha256":"c8ac82fc3ccb2155a6c9f289c438a01894f0fd6666322720b95dde434c208ed6","freeze":"docs/design/canonical-references/HNK_GNEO_GEO_REFERENCE_FREEZE_V1.md","repo_materialized":true,"storage_publication_pending":true},
+  "validator":{"reference_minimum_null_result":"DAY066_V2_REFERENCE_MINIMUM_NULL_RESULT_PASS","attack_batch_result":"DAY066_V2_ATTACK_BATCH_PASS","legacy_trigger_compatibility":"DAY066_V2_LEGACY_TRIGGER_COMPAT_PASS","attack_count":24,"active_canonical_duration_gate_seconds":null,"control_canonical_duration_gate_seconds":null,"legacy_technical_minimum_seconds":1,"control_may_outperform_active":true,"external_travel_required":false},
+  "privacy":{"vault_optional":true,"vault_e2ee_if_used":true,"server_plaintext":false,"practice_record_private_prose":false},
+  "rollback":{"real_users_persisted":0,"real_sessions_persisted":0},
+  "runtime":{"web":"IMPLEMENTED_UNVERIFIED","expo":"IMPLEMENTED_UNVERIFIED"},
+  "progression":{"previous_day":65,"next_day":67,"chapter":2,"sephira":"Chokmah","grade":2,"title":"Iniciado","expected_event":"NEXT_DAY_UNLOCKED"},
+  "limits":{"day045_completion_contract_status":"draft","full_completion_rpc_after_upstream_unlock":"PENDING","web_build":"PENDING","expo_build":"PENDING","device_browser_qa":"PENDING"}
+}
