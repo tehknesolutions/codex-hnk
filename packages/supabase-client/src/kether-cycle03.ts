@@ -22,7 +22,7 @@ export function resolveSitaelRoute(currentDay:number|null|undefined):SitaelRoute
  return{activeDay:null,cycleComplete:true,nextCycleDay:16};
 }
 
-export function parseSitaelFragment(crown:Json):SitaelFragmentState{
+export function parseSitaelFragment(crown:unknown):SitaelFragmentState{
  if(typeof crown!=='object'||crown===null||Array.isArray(crown))throw new Error('invalid_kether_crown_state');
  const cycles=(crown as Record<string,Json|undefined>).cycles;if(!Array.isArray(cycles))throw new Error('invalid_kether_crown_state');
  for(const cycle of cycles){
@@ -35,7 +35,7 @@ export function parseSitaelFragment(crown:Json):SitaelFragmentState{
  throw new Error('sitael_fragment_missing');
 }
 
-export function assertSitaelProgress(crown:Json,expectedCompletedDays:number):SitaelFragmentState{
+export function assertSitaelProgress(crown:unknown,expectedCompletedDays:number):SitaelFragmentState{
  if(!Number.isInteger(expectedCompletedDays)||expectedCompletedDays<0||expectedCompletedDays>5)throw new Error('invalid_sitael_expected_progress');
  const fragment=parseSitaelFragment(crown);
  const expectedLit=expectedCompletedDays===5;
