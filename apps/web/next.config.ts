@@ -24,6 +24,16 @@ const nextConfig: NextConfig = {
     '@hnk/vault-web-crypto-lab',
     '@hnk/visual-contract',
   ],
+  webpack(config) {
+    config.resolve.extensionAlias = {
+      ...(config.resolve.extensionAlias ?? {}),
+      '.js': ['.ts', '.tsx', '.js'],
+      '.jsx': ['.tsx', '.jsx'],
+      '.mjs': ['.mts', '.mjs'],
+      '.cjs': ['.cts', '.cjs'],
+    };
+    return config;
+  },
 };
 
 export default nextConfig;
