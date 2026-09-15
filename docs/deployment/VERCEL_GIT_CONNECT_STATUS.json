@@ -1,7 +1,7 @@
 {
   "kind": "hnk.deployment_gate",
   "id": "HNK-VERCEL-GIT-CONNECT-V1",
-  "status": "WRONG_REPOSITORY_CONNECTED__CUTOVER_BLOCKED",
+  "status": "CONNECTED_CORRECT_REPOSITORY__AWAITING_FIRST_MAIN_DEPLOY",
   "repository": "tehknesolutions/codex-hnk",
   "production_branch": "main",
   "vercel": {
@@ -14,21 +14,19 @@
   },
   "observed_git_connection": {
     "provider": "github",
-    "repository": "tehknesolutions/cubo-hnk",
-    "branch_examples": ["feat/bootstrap-hoc-v1", "feat/v08-cube-legality"],
-    "latest_observed_deployment": "dpl_DZ2fhkay7raTubBR9gQ521VDYYui",
-    "latest_observed_commit": "9d3f8e503e4feedf9455dde1f1ad0bd697f44df3",
-    "latest_observed_target": null,
+    "repository": "tehknesolutions/codex-hnk",
+    "confirmed_by": "vercel_project_settings_screenshot",
+    "previous_repository": "tehknesolutions/cubo-hnk",
+    "legacy_preview_deployments_still_visible": true,
     "production_overwrite_observed": false
   },
-  "required_correction": {
-    "disconnect_repository": "tehknesolutions/cubo-hnk",
-    "connect_repository": "tehknesolutions/codex-hnk",
-    "production_branch": "main",
-    "root_directory": "apps/web"
+  "trigger": {
+    "purpose": "first post-connect main push to verify automatic Vercel deployment",
+    "expected_repository": "tehknesolutions/codex-hnk",
+    "expected_branch": "main"
   },
   "acceptance": {
-    "git_link_matches": false,
+    "git_link_matches": true,
     "main_auto_deploy_verified": false,
     "production_alias_verified_after_git_deploy": false,
     "day_072_route_verified_after_cutover": false
