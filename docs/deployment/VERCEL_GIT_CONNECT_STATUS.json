@@ -1,7 +1,7 @@
 {
   "kind": "hnk.deployment_gate",
   "id": "HNK-VERCEL-GIT-CONNECT-V1",
-  "status": "GIT_CONNECTED__ROOT_DIRECTORY_MISCONFIGURED",
+  "status": "ROOT_DIRECTORY_UPDATED__VERIFYING_DEPLOY",
   "repository": "tehknesolutions/codex-hnk",
   "production_branch": "main",
   "vercel": {
@@ -28,9 +28,11 @@
     "error_message": "Command npm run build exited with 1",
     "root_cause": "Vercel built from repository root and ran npm install; pnpm workspaces therefore lacked TypeScript binaries such as tsc."
   },
-  "required_correction": {
-    "project_setting": "Root Directory",
-    "value": "apps/web"
+  "verification": {
+    "purpose": "second main push after Root Directory was updated to apps/web",
+    "expected_repository": "tehknesolutions/codex-hnk",
+    "expected_branch": "main",
+    "expected_root_directory": "apps/web"
   },
   "acceptance": {
     "git_link_matches": true,
