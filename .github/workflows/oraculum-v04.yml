@@ -1,0 +1,26 @@
+name: HNK Oraculum V0.4-V0.5
+
+on:
+  push:
+    branches:
+      - feat/hnk-oraculum-v03
+  pull_request:
+    paths:
+      - 'packages/oraculum-engine/**'
+      - 'docs/oraculum/**'
+      - '.github/workflows/oraculum-v04.yml'
+
+jobs:
+  deterministic-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: corepack enable
+      - run: corepack prepare pnpm@12.1.0 --activate
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm --filter @hnk/oraculum-engine typecheck
+      - run: pnpm --filter @hnk/oraculum-engine test

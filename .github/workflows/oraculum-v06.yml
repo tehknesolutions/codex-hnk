@@ -1,0 +1,32 @@
+name: HNK Oraculum V0.6
+
+on:
+  push:
+    branches:
+      - feat/hnk-oraculum-v03
+  pull_request:
+    paths:
+      - 'packages/oraculum-engine/**'
+      - 'apps/web/app/oraculum/**'
+      - 'apps/web/app/api/oraculum/**'
+      - 'apps/web/oraculum-ui-contract.test.mjs'
+      - 'apps/web/package.json'
+      - 'docs/oraculum/**'
+      - '.github/workflows/oraculum-v06.yml'
+
+jobs:
+  physical-consultation-surface:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: corepack enable
+      - run: corepack prepare pnpm@12.1.0 --activate
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm --filter @hnk/oraculum-engine typecheck
+      - run: pnpm --filter @hnk/oraculum-engine test
+      - run: pnpm --filter @hnk/web typecheck
+      - run: pnpm --dir apps/web node --test oraculum-ui-contract.test.mjs
