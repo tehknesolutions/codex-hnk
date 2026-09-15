@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import '@hnk/ui/styles/kether.css';
+import { WebHnkRuntimeProvider } from './_runtime/WebHnkRuntime';
 
 export const metadata: Metadata = {
   title: 'HNK Codex',
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <WebHnkRuntimeProvider>{children}</WebHnkRuntimeProvider>
+      </body>
     </html>
   );
 }
