@@ -1,0 +1,30 @@
+name: HNK Oraculum V0.7 Camera
+
+on:
+  push:
+    branches:
+      - feat/hnk-oraculum-v07-camera
+  pull_request:
+    paths:
+      - 'apps/web/app/oraculum/camera/**'
+      - 'apps/web/app/oraculum/CameraCapture.tsx'
+      - 'apps/web/app/oraculum/camera-*'
+      - 'apps/web/oraculum-camera.test.mjs'
+      - 'docs/oraculum/HNK_ORACULUM_CAMERA_CAPTURE_V0.7.md'
+      - '.github/workflows/oraculum-v07.yml'
+
+jobs:
+  camera-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: corepack enable
+      - run: corepack prepare pnpm@12.1.0 --activate
+      - run: pnpm install --no-frozen-lockfile
+      - run: node apps/web/oraculum-camera.test.mjs
+      - run: pnpm --filter @hnk/oraculum-engine test
+      - run: pnpm --filter @hnk/web typecheck
