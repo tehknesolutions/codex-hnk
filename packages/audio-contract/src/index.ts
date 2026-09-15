@@ -115,7 +115,7 @@ export const DAY002_AUDIO_RENDER_SHA256 = 'f2d62825612af7e79b62965dbc28d9066dfb0
 export const DAY002_AUDIO_SAMPLE_RATE = 44_100 as const;
 export const DAY002_AUDIO_LOOP_SECONDS = 1 as const;
 
-export const DAY002_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze({
+export const DAY002_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze<HnkAudioPreset>({
   id: DAY002_AUDIO_PRESET_ID,
   version: '1.0.0',
   status: 'published',
