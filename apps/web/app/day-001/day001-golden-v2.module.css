@@ -452,5 +452,5 @@
 @media (prefers-reduced-motion: reduce) {
   .spark,
   .crown b { box-shadow: none; text-shadow: none; }
-  * { scroll-behavior: auto !important; }
+  .shell * { scroll-behavior: auto !important; }
 }
