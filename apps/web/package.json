@@ -8,6 +8,7 @@
     "@hnk/audio-contract":"workspace:*",
     "@hnk/glyphs":"workspace:*",
     "@hnk/linguas":"workspace:*",
+    "@hnk/oraculum-engine":"workspace:*",
     "@hnk/quest-engine":"workspace:*",
     "@hnk/quest-library":"workspace:*",
     "@hnk/real-world-action-contract":"workspace:*",
