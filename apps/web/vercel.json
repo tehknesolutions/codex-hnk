@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "corepack pnpm install",
-  "buildCommand": "corepack pnpm build"
+  "buildCommand": "corepack pnpm exec next build --webpack"
 }
