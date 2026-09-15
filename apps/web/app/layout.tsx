@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import '@hnk/ui/styles/kether.css';
+import { WebClientHydrationGate } from './_runtime/WebClientHydrationGate';
 import { WebHnkRuntimeProvider } from './_runtime/WebHnkRuntime';
 
 export const metadata: Metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="pt-BR">
       <body>
-        <WebHnkRuntimeProvider>{children}</WebHnkRuntimeProvider>
+        <WebClientHydrationGate>
+          <WebHnkRuntimeProvider>{children}</WebHnkRuntimeProvider>
+        </WebClientHydrationGate>
       </body>
     </html>
   );
