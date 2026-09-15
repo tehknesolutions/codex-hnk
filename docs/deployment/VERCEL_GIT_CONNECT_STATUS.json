@@ -1,0 +1,20 @@
+{
+  "kind": "hnk.deployment_gate",
+  "id": "HNK-VERCEL-GIT-CONNECT-V1",
+  "status": "PENDING_MANUAL_VERCEL_GIT_CONNECT",
+  "repository": "tehknesolutions/codex-hnk",
+  "production_branch": "main",
+  "vercel": {
+    "team": "thales-dvfs-projects",
+    "team_id": "team_GAFmMllTKaWx5iGEa8sTZJ0T",
+    "project": "codex-hnk-app",
+    "project_id": "prj_mYZ4jhXE4nxDDrRziPraWKL7J1Aq",
+    "root_directory": "apps/web",
+    "production_domain": "codex-hnk-app.vercel.app"
+  },
+  "acceptance": {
+    "git_link_matches": false,
+    "main_auto_deploy_verified": false,
+    "production_alias_verified_after_git_deploy": false
+  }
+}
