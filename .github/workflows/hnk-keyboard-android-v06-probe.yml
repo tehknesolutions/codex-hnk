@@ -1,0 +1,112 @@
+name: HNK Keyboard Android V0.6 Probe Build
+
+on:
+  push:
+    branches:
+      - build/hnk-keyboard-android-v06-probe
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK packages
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Recover and validate 40 HNK vector drawables
+        working-directory: tools/hnk-keyboard-android-v02
+        run: |
+          python3 - <<'PY'
+          import base64, gzip, json, pathlib
+          root = pathlib.Path('tools')
+          parts = [(root / f'vectors.part{i}.b64').read_text(encoding='utf-8').strip() for i in range(1,6)]
+          raw = ''.join(parts)
+          files = None
+          repaired = None
+          try:
+              files = json.loads(gzip.decompress(base64.b64decode(raw)).decode('utf-8'))
+              repaired = raw
+          except Exception:
+              p1, rest = parts[0], ''.join(parts[1:])
+              for i in range(len(p1)):
+                  candidate = p1[:i] + p1[i+1:] + rest
+                  try:
+                      obj = json.loads(gzip.decompress(base64.b64decode(candidate)).decode('utf-8'))
+                      if isinstance(obj, dict) and len(obj) == 40:
+                          files = obj
+                          repaired = candidate
+                          print(f'recovered by removing one character at part1 index {i}')
+                          break
+                  except Exception:
+                      pass
+          if not isinstance(files, dict) or len(files) != 40:
+              raise SystemExit('Could not recover exactly 40 vector drawables')
+          out = pathlib.Path('app/src/main/res/drawable')
+          out.mkdir(parents=True, exist_ok=True)
+          for name, content in files.items():
+              (out / name).write_text(content, encoding='utf-8')
+          actual = sorted(p.name for p in out.glob('glyph_g*.xml'))
+          expected = [f'glyph_g{i:02d}.xml' for i in range(1,41)]
+          assert actual == expected, (len(actual), actual[:3], actual[-3:])
+          print('VECTOR_COUNT=40')
+          PY
+
+      - name: Patch isolated V0.6 probe identity
+        working-directory: tools/hnk-keyboard-android-v02
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('app/build.gradle')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace("applicationId 'com.hnk.keyboard'", "applicationId 'com.hnk.keyboard.probe'")
+          s = s.replace('minSdk 26', 'minSdk 23')
+          s = s.replace('versionCode 2', 'versionCode 6')
+          s = s.replace("versionName '0.2.0'", "versionName '0.6.0-probe'")
+          p.write_text(s, encoding='utf-8')
+
+          m = Path('app/src/main/AndroidManifest.xml')
+          s = m.read_text(encoding='utf-8')
+          s = s.replace('android:label="HNK Keyboard"', 'android:label="HNK Keyboard V0.6 Probe"')
+          s = s.replace('android:name=".HnkInputMethodService"', 'android:name="com.hnk.keyboard.HnkInputMethodService"')
+          s = s.replace('android:name=".MainActivity"', 'android:name="com.hnk.keyboard.MainActivity"')
+          m.write_text(s, encoding='utf-8')
+          print(p.read_text(encoding='utf-8'))
+          PY
+
+      - name: Build debug APK with Gradle
+        working-directory: tools/hnk-keyboard-android-v02
+        run: gradle --no-daemon clean :app:assembleDebug
+
+      - name: Validate APK structure and signature
+        run: |
+          APK=tools/hnk-keyboard-android-v02/app/build/outputs/apk/debug/app-debug.apk
+          test -f "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions "$APK"
+          sha256sum "$APK"
+          stat -c 'SIZE=%s' "$APK"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HNK-Keyboard-Android-V06-Probe-debug
+          path: tools/hnk-keyboard-android-v02/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 7
