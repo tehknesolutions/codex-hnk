@@ -15,6 +15,10 @@
     "./cycle1": {
       "types": "./src/cycle1.d.ts",
       "import": "./src/cycle1.mjs"
+    },
+    "./grammar-core-v1": {
+      "types": "./src/grammar-core-v1.d.ts",
+      "import": "./src/grammar-core-v1.mjs"
     }
   },
   "scripts": {
