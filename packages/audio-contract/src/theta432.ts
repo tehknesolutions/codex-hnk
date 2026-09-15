@@ -5,7 +5,7 @@ export const HNK_THETA432_AUDIO_RENDER_SHA256 = '381e06f1ae0ef4a97c063635d8d80d3
 export const HNK_THETA432_AUDIO_SAMPLE_RATE = 44_100 as const;
 export const HNK_THETA432_AUDIO_LOOP_SECONDS = 1 as const;
 
-export const HNK_THETA432_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze({
+export const HNK_THETA432_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze<HnkAudioPreset>({
   id: HNK_THETA432_AUDIO_PRESET_ID,
   version: '1.0.0',
   status: 'published',
