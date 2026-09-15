@@ -22,7 +22,7 @@ export function resolveJelielRoute(currentDay: number | null | undefined): Jelie
   return { activeDay: null, cycleComplete: true, nextCycleDay: 11 };
 }
 
-export function parseJelielFragment(crown: Json): JelielFragmentState {
+export function parseJelielFragment(crown: unknown): JelielFragmentState {
   if (typeof crown !== 'object' || crown === null || Array.isArray(crown)) throw new Error('invalid_kether_crown_state');
   const cycles = (crown as Record<string, Json | undefined>).cycles;
   if (!Array.isArray(cycles)) throw new Error('invalid_kether_crown_state');
@@ -36,7 +36,7 @@ export function parseJelielFragment(crown: Json): JelielFragmentState {
   throw new Error('jeliel_fragment_missing');
 }
 
-export function assertJelielFragmentLit(crown: Json): JelielFragmentState {
+export function assertJelielFragmentLit(crown: unknown): JelielFragmentState {
   const fragment = parseJelielFragment(crown);
   if (!fragment.lit || fragment.completedDays !== 5) throw new Error('jeliel_fragment_not_lit');
   return fragment;
