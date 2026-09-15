@@ -2,12 +2,6 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // Production emit is allowed while repository-wide TypeScript debt is tracked
-  // separately. This does NOT mark typecheck as passing; CI/typecheck remains a
-  // distinct release gate until the historical errors are reconciled.
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   transpilePackages: [
     '@hnk/assets',
     '@hnk/audio-contract',
