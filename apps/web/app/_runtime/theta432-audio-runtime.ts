@@ -13,11 +13,11 @@ export class Theta432WebAudioRuntime implements AudioRuntimePort {
   private context: AudioContext | null = null;
   private master: GainNode | null = null;
   private oscillators: OscillatorNode[] = [];
-  private state: AudioRuntimeSnapshot['state'] = 'idle';
+  private status: AudioRuntimeSnapshot['status'] = 'IDLE';
   private volume = 0.5;
 
   snapshot(): AudioRuntimeSnapshot {
-    return { profileId: this.profileId, state: this.state, volume: this.volume };
+    return { profileId: this.profileId, status: this.status, started: this.context !== null, volume: this.volume };
   }
 
   async start(volume = this.volume): Promise<void> {
@@ -25,7 +25,7 @@ export class Theta432WebAudioRuntime implements AudioRuntimePort {
     if (this.context) {
       this.setVolume(this.volume);
       if (this.context.state === 'suspended') await this.context.resume();
-      this.state = 'playing';
+      this.status = 'PLAYING';
       return;
     }
 
@@ -57,17 +57,17 @@ export class Theta432WebAudioRuntime implements AudioRuntimePort {
     this.context = context;
     this.master = master;
     this.oscillators = [left, right];
-    this.state = 'playing';
+    this.status = 'PLAYING';
   }
 
   async pause(): Promise<void> {
     if (this.context?.state === 'running') await this.context.suspend();
-    if (this.context) this.state = 'paused';
+    if (this.context) this.status = 'PAUSED';
   }
 
   async resume(): Promise<void> {
     if (this.context?.state === 'suspended') await this.context.resume();
-    if (this.context) this.state = 'playing';
+    if (this.context) this.status = 'PLAYING';
   }
 
   setVolume(volume: number): void {
@@ -83,7 +83,7 @@ export class Theta432WebAudioRuntime implements AudioRuntimePort {
     this.oscillators = [];
     this.master = null;
     this.context = null;
-    this.state = 'stopped';
+    this.status = 'STOPPED';
     if (context && context.state !== 'closed') await context.close();
   }
 }
