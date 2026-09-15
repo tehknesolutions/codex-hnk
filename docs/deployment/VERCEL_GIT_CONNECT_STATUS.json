@@ -1,7 +1,7 @@
 {
   "kind": "hnk.deployment_gate",
   "id": "HNK-VERCEL-GIT-CONNECT-V1",
-  "status": "CONNECTED_CORRECT_REPOSITORY__AWAITING_FIRST_MAIN_DEPLOY",
+  "status": "GIT_CONNECTED__ROOT_DIRECTORY_MISCONFIGURED",
   "repository": "tehknesolutions/codex-hnk",
   "production_branch": "main",
   "vercel": {
@@ -9,25 +9,33 @@
     "team_id": "team_GAFmMllTKaWx5iGEa8sTZJ0T",
     "project": "codex-hnk-app",
     "project_id": "prj_mYZ4jhXE4nxDDrRziPraWKL7J1Aq",
-    "root_directory": "apps/web",
+    "required_root_directory": "apps/web",
     "production_domain": "codex-hnk-app.vercel.app"
   },
   "observed_git_connection": {
     "provider": "github",
     "repository": "tehknesolutions/codex-hnk",
     "confirmed_by": "vercel_project_settings_screenshot",
-    "previous_repository": "tehknesolutions/cubo-hnk",
-    "legacy_preview_deployments_still_visible": true,
-    "production_overwrite_observed": false
+    "previous_repository": "tehknesolutions/cubo-hnk"
   },
-  "trigger": {
-    "purpose": "first post-connect main push to verify automatic Vercel deployment",
-    "expected_repository": "tehknesolutions/codex-hnk",
-    "expected_branch": "main"
+  "first_main_deploy": {
+    "deployment_id": "dpl_E7ZexQhv1cYuNKvAcwwDhiRPraRh",
+    "commit": "c4e49fba697cd42c966b17634a879ddda5e173c4",
+    "branch": "main",
+    "target": "production",
+    "state": "ERROR",
+    "error_code": "ENOENT",
+    "error_message": "Command npm run build exited with 1",
+    "root_cause": "Vercel built from repository root and ran npm install; pnpm workspaces therefore lacked TypeScript binaries such as tsc."
+  },
+  "required_correction": {
+    "project_setting": "Root Directory",
+    "value": "apps/web"
   },
   "acceptance": {
     "git_link_matches": true,
-    "main_auto_deploy_verified": false,
+    "main_auto_deploy_verified": true,
+    "root_directory_verified": false,
     "production_alias_verified_after_git_deploy": false,
     "day_072_route_verified_after_cutover": false
   }
