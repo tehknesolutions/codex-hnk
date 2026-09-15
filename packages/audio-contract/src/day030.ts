@@ -11,7 +11,7 @@ export const DAY030_AUDIO_PEAK_CEILING = 0.12 as const;
 const FREEZE_REF = 'docs/audio/HNK_DAY030_ASMR_FREEZE_V1.md';
 const CANON_REF = 'Tehkne-Solutions/hnk-codex-365:canon/capitulo-01-kether/dia-030.md';
 
-export const DAY030_ASMR_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze({
+export const DAY030_ASMR_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze<HnkAudioPreset>({
   id: DAY030_ASMR_AUDIO_PRESET_ID,
   version: '1.0.0',
   status: 'approved',
@@ -50,7 +50,7 @@ export const DAY030_ASMR_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze({
   },
 });
 
-export const DAY030_CONTROL_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze({
+export const DAY030_CONTROL_AUDIO_PRESET_V1: HnkAudioPreset = Object.freeze<HnkAudioPreset>({
   id: DAY030_CONTROL_AUDIO_PRESET_ID,
   version: '1.0.0',
   status: 'approved',
