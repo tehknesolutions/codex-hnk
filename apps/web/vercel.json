@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "corepack pnpm install",
-  "buildCommand": "corepack pnpm exec next build --webpack"
+  "buildCommand": "node ../../scripts/validate-portal073-materialization.mjs && node ../../scripts/validate-portal073-vault-materialization.mjs && corepack pnpm exec next build --webpack"
 }
