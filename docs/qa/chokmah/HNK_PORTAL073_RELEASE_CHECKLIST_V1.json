@@ -1,0 +1,49 @@
+{
+  "schema": "HNK-PORTAL073-RELEASE-CHECKLIST-V1",
+  "portal_day": 73,
+  "state": "FAIL_CLOSED__APPROVED_NOT_PUBLISHED",
+  "canonical": {
+    "tuner_preset_id": "HNK-ANGELIC-TUNER-D073-V1",
+    "transition_active_preset_id": "HNK-PORTAL073-CHOKMAH-BINAH-ACTIVE-V1",
+    "transition_control_preset_id": "HNK-PORTAL073-CHOKMAH-BINAH-CONTROL-V1",
+    "sigil_asset_id": "HNK-REF-MAGICIAN-MERCURY-V1",
+    "sigil_sha256": "8c7b95f81aee0689ec3497380c4c3841634ca311dbfa09eed50c757809a97209",
+    "evidence_schema": "HNK-PORTAL-073-EVIDENCE-V1",
+    "operator_state_required_before_qa": "approved",
+    "operator_state_required_for_production": "published"
+  },
+  "upstream": {
+    "day045_audio_publication": "resolved",
+    "day045_final_qa": "locked",
+    "day070_reference_gate": "resolved_by_canonical_supersession",
+    "day071_runtime": "implemented_sequence_locked",
+    "day072_runtime": "implemented_sequence_locked"
+  },
+  "release_gates": {
+    "day045_final_validator_execution": false,
+    "day045_expo_execution": false,
+    "day045_interactive_listening_device_qa": false,
+    "portal_audio_validator_execution": false,
+    "portal_static_validator_execution": false,
+    "audio_contract_typecheck_execution": false,
+    "supabase_client_typecheck_execution": false,
+    "mobile_typecheck_execution": false,
+    "expo_web_export_smoke": false,
+    "browser_day072_portal073_qa": false,
+    "expo_device_lifecycle_qa": false,
+    "vault_encrypt_receipt_completion_e2e": false,
+    "independent_connection_concurrency_e2e": false,
+    "xp_500_exactly_once_runtime_proof": false,
+    "iniciado_teurgo_exactly_once_runtime_proof": false,
+    "day074_unlock_no_autostart_runtime_proof": false,
+    "portal_operator_set_published": false,
+    "portal073_production_enabled": false
+  },
+  "forbidden_inferences": [
+    "web_build_implies_mobile_pass",
+    "historical_transaction_proof_implies_current_concurrency_pass",
+    "approved_implies_published",
+    "implementation_implies_runtime_qa_pass",
+    "canonical_storage_implies_xp_awardable"
+  ]
+}
