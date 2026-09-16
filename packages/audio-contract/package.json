@@ -8,6 +8,7 @@
     "./theta432": "./src/theta432.ts",
     "./day030": "./src/day030.ts",
     "./day036": "./src/day036.ts",
+    "./portal073": "./src/portal073.ts",
     "./analysis": "./src/analysis.ts",
     "./pcm-wav": "./src/pcm-wav.ts"
   },
