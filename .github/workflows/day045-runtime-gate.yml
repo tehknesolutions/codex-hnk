@@ -1,0 +1,67 @@
+name: Day 045 Published Master Runtime Gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/experience/chokmah/day-045/**'
+      - 'docs/audio/**'
+      - 'packages/audio-contract/**'
+      - 'packages/completion-contract/**'
+      - 'packages/practice-contract/**'
+      - 'apps/web/app/day-045/**'
+      - 'apps/mobile/src/app/day-045.tsx'
+      - 'apps/mobile/src/features/chokmah/Day045AudioReadinessMobile.tsx'
+      - 'apps/mobile/package.json'
+      - 'supabase/migrations/*day045*'
+      - 'supabase/migrations/*haziel_audio*'
+      - 'scripts/validate-day045-runtime-integration.mjs'
+      - '.github/workflows/day045-runtime-gate.yml'
+  pull_request:
+    paths:
+      - 'docs/experience/chokmah/day-045/**'
+      - 'docs/audio/**'
+      - 'packages/audio-contract/**'
+      - 'packages/completion-contract/**'
+      - 'packages/practice-contract/**'
+      - 'apps/web/app/day-045/**'
+      - 'apps/mobile/src/app/day-045.tsx'
+      - 'apps/mobile/src/features/chokmah/Day045AudioReadinessMobile.tsx'
+      - 'apps/mobile/package.json'
+      - 'supabase/migrations/*day045*'
+      - 'supabase/migrations/*haziel_audio*'
+      - 'scripts/validate-day045-runtime-integration.mjs'
+      - '.github/workflows/day045-runtime-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  day045-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Day 045 publication and runtime contract
+        run: node scripts/validate-day045-runtime-integration.mjs
+
+  runtime-typecheck:
+    needs: day045-contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm --filter @hnk/web typecheck
+      - run: pnpm --filter @hnk/mobile typecheck
