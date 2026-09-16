@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" role="img" aria-labelledby="title desc">
+<title id="title">HNK Magician Mercury Sigil V1</title>
+<desc id="desc">Canonical HNK primary Magician sigil anchored to the Golden Dawn attribution Magician = Mercury and Unicode U+263F. Upright, not mirrored, project-authored geometry.</desc>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M78 58 Q120 18 162 58" stroke="#111111" stroke-width="16"/>
+  <circle cx="120" cy="112" r="48" stroke="#111111" stroke-width="16"/>
+  <path d="M120 160 L120 244 M82 206 L158 206" stroke="#111111" stroke-width="16"/>
+  <path d="M78 58 Q120 18 162 58" stroke="#B3192E" stroke-width="5"/>
+  <circle cx="120" cy="112" r="48" stroke="#B3192E" stroke-width="5"/>
+  <path d="M120 160 L120 244 M82 206 L158 206" stroke="#B3192E" stroke-width="5"/>
+</g>
+</svg>
