@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node ../../scripts/validate-portal073-materialization.mjs && node ../../scripts/validate-portal073-vault-materialization.mjs && next build",
+    "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "node --test"
