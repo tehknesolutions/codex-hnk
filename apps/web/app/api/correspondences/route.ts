@@ -1,5 +1,11 @@
 import { createResearch001Registry } from "@hnk/correspondence-registry";
-import type { CorrespondenceDecision } from "@hnk/correspondence-contract";
+
+type CorrespondenceDecision =
+  | "REFERENCE"
+  | "CANDIDATE"
+  | "CANON"
+  | "RESEARCH_ONLY"
+  | "EXCLUDE_OPERATIONALLY";
 
 const registry = createResearch001Registry();
 
