@@ -10,6 +10,7 @@ const validators = [
   "scripts/validate-research-decision-layer.mjs",
   "scripts/validate-research-human-gate.mjs",
   "scripts/validate-research-human-gate-batch-001.mjs",
+  "scripts/validate-research-001-canon-promotions.mjs",
 ];
 
 for (const validator of validators) {

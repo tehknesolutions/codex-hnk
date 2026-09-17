@@ -1,0 +1,28 @@
+{
+  "approval_id": "HNK-HUMAN-GATE-RESEARCH-001-BATCH-001-APPROVAL",
+  "protocol": "HNK_HUMAN_GATE_PROTOCOL_V1",
+  "source_batch": "canon/governance/human-gates/research-001-batch-001.json",
+  "status": "APPROVED_BY_HUMAN",
+  "approved_by": "TW-DVF",
+  "approved_at": "2026-09-17T15:50:00Z",
+  "approval_signal": "SIGA",
+  "approval_scope": "Approve Human Gate Batch 001 exactly as proposed in the immediately preceding gate.",
+  "human_decision": true,
+  "machine_can_decide": false,
+  "non_destructive_history": true,
+  "decision_count": 38,
+  "summary": {
+    "PROMOTE_TO_HNK_CANON": 22,
+    "KEEP_AS_CANDIDATE": 11,
+    "RECLASSIFY_AS_REFERENCE": 5,
+    "MOVE_TO_RESEARCH_ONLY": 0,
+    "EXCLUDE_OPERATIONALLY": 0
+  },
+  "locks": [
+    "SOURCE_RECORDS_PRESERVED",
+    "BATCH_RECOMMENDATION_RATIONALES_PRESERVED",
+    "BATCH_CONSTRAINTS_PRESERVED",
+    "HNK_CANON_RECORDS_MUST_BE_SEPARATELY_AUTHORED",
+    "NO_HISTORICAL_AUTHORITY_IMPERSONATION"
+  ]
+}
