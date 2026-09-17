@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { researchLabEnabled } from "../../lib/research/auth";
 import { admissionSummary, validateAdmissionDecisionLayer } from "../../lib/research/admission";
+import { humanGateSummary, validateHumanGateRuntime } from "../../lib/research/human-gate";
+import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/canon-registry";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
 import styles from "./research.module.css";
 
@@ -10,17 +12,21 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Research Lab",
-  description: "Laboratório privado de pesquisa, proveniência, correspondências e decisões do HNK Codex.",
+  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões e cânone do HNK Codex.",
   robots: { index: false, follow: false },
 };
 
 export default function ResearchLabHome() {
   if (!researchLabEnabled()) notFound();
 
-  const registry = createResearch001Registry();
-  const registryValidation = registry.validate();
+  const correspondenceRegistry = createResearch001Registry();
+  const registryValidation = correspondenceRegistry.validate();
   const decisionValidation = validateAdmissionDecisionLayer();
   const decisionSummary = admissionSummary();
+  const humanGateValidation = validateHumanGateRuntime();
+  const humanGate = humanGateSummary();
+  const canonValidation = validateCanonRegistry();
+  const canon = canonRegistrySummary();
 
   return (
     <main className={styles.shell}>
@@ -28,14 +34,15 @@ export default function ResearchLabHome() {
         <p className={styles.eyebrow}>HNK CODEX · PRIVATE RESEARCH</p>
         <h1>Research Lab</h1>
         <p>
-          Uma superfície para separar fonte, linhagem, conflito, decisão Codex e eventual autoria HNK
-          sem apagar divergências nem promover material automaticamente ao cânone.
+          Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate e autoria HNK
+          sem apagar divergências nem confundir referência histórica com cânone.
         </p>
         <div className={styles.locks}>
           <span>PRIVATE</span>
           <span>PROVENANCE FIRST</span>
-          <span>NONE_AUTOMATIC</span>
+          <span>NO AUTO-PROMOTION</span>
           <span>HUMAN GATE</span>
+          <span>HNK_AUTHORED CANON</span>
         </div>
       </header>
 
@@ -43,12 +50,22 @@ export default function ResearchLabHome() {
         <article>
           <span className={registryValidation.ok ? styles.good : styles.bad} />
           <strong>Correspondence Registry</strong>
-          <p>{registry.records.length} registros · {registry.gaps.length} source gaps</p>
+          <p>{correspondenceRegistry.records.length} registros · {correspondenceRegistry.gaps.length} source gaps</p>
         </article>
         <article>
           <span className={decisionValidation.ok ? styles.good : styles.bad} />
           <strong>Decision Layer</strong>
-          <p>{decisionSummary.items} itens · {decisionSummary.human_gate_pending} aguardando Human Gate</p>
+          <p>{decisionSummary.items} itens catalogados</p>
+        </article>
+        <article>
+          <span className={humanGateValidation.ok ? styles.good : styles.bad} />
+          <strong>Human Gate</strong>
+          <p>{humanGate.decided}/{humanGate.candidates} decididos · {humanGate.pending} pendentes</p>
+        </article>
+        <article>
+          <span className={canonValidation.ok ? styles.good : styles.bad} />
+          <strong>Canon Registry</strong>
+          <p>{canon.records} registros · {canon.authority}</p>
         </article>
       </section>
 
@@ -72,11 +89,31 @@ export default function ResearchLabHome() {
           </p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+
+        <Link href="/research/human-gate" className={styles.moduleCard}>
+          <p className={styles.kicker}>03 · AUTORIDADE HUMANA</p>
+          <h2>Human Gate</h2>
+          <p>
+            Audite decisões explícitas, recomendações não vinculantes e a fronteira que impede qualquer
+            promoção automática de candidato para HNK_CANON.
+          </p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
+
+        <Link href="/research/canon" className={styles.moduleCard}>
+          <p className={styles.kicker}>04 · HNK_AUTHORED</p>
+          <h2>Canon Registry</h2>
+          <p>
+            Consulte os registros que atravessaram o Human Gate e foram reescritos como material HNK,
+            mantendo trace completo até pesquisa, decisão e aprovação.
+          </p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK CANON</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON</code>
       </section>
     </main>
   );
