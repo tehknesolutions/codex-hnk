@@ -21,6 +21,7 @@
     "@hnk/experiment-protocol": "workspace:*",
     "@hnk/measurement-contract": "workspace:*",
     "@hnk/replication-registry": "workspace:*",
+    "@hnk/reviewed-claim-registry": "workspace:*",
     "@hnk/runtime-session-artifact": "workspace:*",
     "@hnk/symbolic-runtime-contract": "workspace:*"
   },
