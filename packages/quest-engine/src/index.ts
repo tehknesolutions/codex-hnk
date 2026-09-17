@@ -8,3 +8,4 @@ export * from "./catalog.js";
 export * from "./audio-runtime.js";
 export * from "./audio-controller.js";
 export * from "./persistence.js";
+export * from "./canon.js";
