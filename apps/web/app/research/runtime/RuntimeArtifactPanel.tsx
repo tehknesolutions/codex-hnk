@@ -54,8 +54,7 @@ export default function RuntimeArtifactPanel({ session, initialCurrentState, onL
     if (!left || !right) return null;
     try {
       return compareRuntimeSessionArtifacts(left, right);
-    } catch (error) {
-      setArtifactError(error instanceof Error ? error.message : "COMPARE_FAILED");
+    } catch {
       return null;
     }
   }, [left, right]);
