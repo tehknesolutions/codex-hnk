@@ -1,4 +1,4 @@
-import type { CanonRecord } from "@hnk/canon-contract";
+import type { HnkCanonRecord } from "@hnk/canon-contract";
 
 export type SymbolicRuntimePhase =
   | "INTENTION_CAPTURED"
@@ -101,7 +101,7 @@ export const HNK_SYMBOLIC_RUNTIME_VERSION: "1.0.0";
 export const HNK_SYMBOLIC_RUNTIME_PHASES: readonly SymbolicRuntimePhase[];
 export const HNK_SYMBOLIC_RUNTIME_EVENTS: readonly SymbolicRuntimeEventType[];
 export const HNK_SYMBOLIC_RUNTIME_CANON_SOURCES: readonly string[];
-export const HNK_SYMBOLIC_RUNTIME_CANON: readonly CanonRecord[];
+export const HNK_SYMBOLIC_RUNTIME_CANON: readonly HnkCanonRecord[];
 
 export function allowedSymbolicRuntimeEvents(phase: SymbolicRuntimePhase): readonly SymbolicRuntimeEventType[];
 export function createSymbolicRuntimeSession(input: SymbolicRuntimeSessionInput): SymbolicRuntimeSession;
