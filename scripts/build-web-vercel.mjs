@@ -13,6 +13,7 @@ const validators = [
   "scripts/validate-research-001-canon-promotions.mjs",
   "scripts/validate-research-canon-registry.mjs",
   "scripts/validate-hnk-canon-contract.mjs",
+  "scripts/validate-hnk-symbolic-runtime-contract.mjs",
 ];
 
 for (const validator of validators) {
