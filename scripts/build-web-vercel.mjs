@@ -18,6 +18,7 @@ const validators = [
   "scripts/validate-hnk-runtime-session-artifact.mjs",
   "scripts/validate-hnk-experiment-protocol.mjs",
   "scripts/validate-hnk-experiment-attestation.mjs",
+  "scripts/validate-hnk-measurement-contract.mjs",
 ];
 
 for (const validator of validators) {
