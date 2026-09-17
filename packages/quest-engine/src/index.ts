@@ -16,3 +16,4 @@ export * from "./experiment-attestation.js";
 export * from "./measurement-contract.js";
 export * from "./evidence-ledger.js";
 export * from "./replication-registry.js";
+export * from "./evidence-synthesis.js";
