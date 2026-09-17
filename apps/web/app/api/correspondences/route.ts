@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "node:crypto";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
 
 type CorrespondenceDecision =
@@ -19,11 +20,28 @@ const DECISIONS: readonly CorrespondenceDecision[] = [
   "EXCLUDE_OPERATIONALLY",
 ];
 
+function secureEqual(left: string, right: string): boolean {
+  const a = Buffer.from(left);
+  const b = Buffer.from(right);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+
+function authorized(request: Request): boolean {
+  if (process.env.HNK_RESEARCH_LAB_ENABLED !== "true") return false;
+  const configuredToken = process.env.HNK_RESEARCH_LAB_TOKEN;
+  if (!configuredToken) return false;
+
+  const authorization = request.headers.get("authorization");
+  if (!authorization?.startsWith("Bearer ")) return false;
+  return secureEqual(authorization.slice(7), configuredToken);
+}
+
 function json(body: unknown, status = 200): Response {
   return Response.json(body, {
     status,
     headers: {
-      "Cache-Control": "public, max-age=300, s-maxage=3600",
+      "Cache-Control": "private, no-store",
       "X-HNK-Data-Scope": "REFERENCE_ONLY",
       "X-HNK-Canon-Import": "NONE_AUTOMATIC",
     },
@@ -31,6 +49,20 @@ function json(body: unknown, status = 200): Response {
 }
 
 export function GET(request: Request): Response {
+  if (process.env.HNK_RESEARCH_LAB_ENABLED !== "true") {
+    return new Response(null, { status: 404, headers: { "Cache-Control": "private, no-store" } });
+  }
+
+  if (!authorized(request)) {
+    return new Response(null, {
+      status: 401,
+      headers: {
+        "Cache-Control": "private, no-store",
+        "WWW-Authenticate": "Bearer realm=\"HNK Research Lab\"",
+      },
+    });
+  }
+
   const url = new URL(request.url);
   const subject_id = url.searchParams.get("subject_id") ?? undefined;
   const domain = url.searchParams.get("domain") ?? undefined;
