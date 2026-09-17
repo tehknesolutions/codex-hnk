@@ -12,6 +12,7 @@ const validators = [
   "scripts/validate-research-human-gate-batch-001.mjs",
   "scripts/validate-research-001-canon-promotions.mjs",
   "scripts/validate-research-canon-registry.mjs",
+  "scripts/validate-hnk-canon-contract.mjs",
 ];
 
 for (const validator of validators) {
