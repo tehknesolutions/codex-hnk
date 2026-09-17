@@ -17,3 +17,5 @@ export * from "./measurement-contract.js";
 export * from "./evidence-ledger.js";
 export * from "./replication-registry.js";
 export * from "./evidence-synthesis.js";
+export * from "./claim-dossier.js";
+export * from "./evidence-review-gate.js";
