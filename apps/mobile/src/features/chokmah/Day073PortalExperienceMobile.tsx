@@ -1,0 +1,43 @@
+import {useEffect,useMemo,useState} from 'react';
+import {AppState,Platform,Pressable,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
+import {setAudioModeAsync,useAudioPlayer,useAudioPlayerStatus} from 'expo-audio';
+import * as FileSystem from 'expo-file-system/legacy';
+import {HNK_PORTAL073_ACTIVE_PRESET_V1,HNK_PORTAL073_DURATION_SECONDS,createPortal073ActiveLoopWavBytes} from '@hnk/audio-contract/portal073';
+import {useHnkAuth} from '../auth/AuthContext';
+import {MAGICIAN_MERCURY_SIGIL_SHA256,MagicianMercurySigilV1} from './MagicianMercurySigilV1';
+import {savePortal073EncryptedVault} from './portal073-vault';
+import {PORTAL073_PRODUCTION_ENABLED,PORTAL073_SIGIL_ID,PORTAL073_TRANSITION_PRESET_ID,PORTAL073_TUNER_ID} from './runtime-definitions/portal073';
+
+const TARGET=HNK_PORTAL073_DURATION_SECONDS;
+const B64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+function toB64(bytes:Uint8Array){let o='';for(let i=0;i<bytes.length;i+=3){const a=bytes[i]??0,hb=i+1<bytes.length,hc=i+2<bytes.length,b=hb?bytes[i+1]!:0,c=hc?bytes[i+2]!:0,v=(a<<16)|(b<<8)|c;o+=B64[(v>>18)&63]+B64[(v>>12)&63]+(hb?B64[(v>>6)&63]:'=')+(hc?B64[v&63]:'=')}return o}
+async function audioUri(){const b=toB64(createPortal073ActiveLoopWavBytes());if(Platform.OS==='web')return`data:audio/wav;base64,${b}`;if(!FileSystem.cacheDirectory)throw new Error('audio_cache_directory_unavailable');const uri=`${FileSystem.cacheDirectory}${HNK_PORTAL073_ACTIVE_PRESET_V1.id}.wav`;await FileSystem.writeAsStringAsync(uri,b,{encoding:FileSystem.EncodingType.Base64});return uri}
+function clock(v:number){return`${String(Math.floor(v/60)).padStart(2,'0')}:${String(v%60).padStart(2,'0')}`}
+
+export function Day073PortalExperienceMobile(){
+ const auth=useHnkAuth(),player=useAudioPlayer(null,{updateInterval:250}),status=useAudioPlayerStatus(player);
+ const[ready,setReady]=useState(false),[seconds,setSeconds]=useState(0),[volume,setVolume]=useState(4),[induction,setInduction]=useState(false),[sigil,setSigil]=useState(false),[returned,setReturned]=useState(false),[safe,setSafe]=useState(false),[diary,setDiary]=useState(''),[receipt,setReceipt]=useState<string|null>(null),[checksum,setChecksum]=useState<string|null>(null),[error,setError]=useState<string|null>(null);
+ const published=Boolean(PORTAL073_PRODUCTION_ENABLED),operators=useMemo(()=>PORTAL073_TRANSITION_PRESET_ID===HNK_PORTAL073_ACTIVE_PRESET_V1.id&&PORTAL073_SIGIL_ID==='HNK-REF-MAGICIAN-MERCURY-V1',[ ]);
+ useEffect(()=>{let live=true;if(!published)return()=>{live=false};void(async()=>{try{await setAudioModeAsync({allowsRecording:false,playsInSilentMode:true});const uri=await audioUri();if(!live)return;player.replace({uri,name:HNK_PORTAL073_ACTIVE_PRESET_V1.id});player.loop=true;setReady(true)}catch(e){if(live)setError(e instanceof Error?e.message:'portal073_audio_failed')}})();return()=>{live=false;player.pause()}},[player,published]);
+ useEffect(()=>{player.volume=Math.max(0,Math.min(.8,volume/10))},[player,volume]);
+ useEffect(()=>{const sub=AppState.addEventListener('change',x=>{if(x!=='active')player.pause()});return()=>sub.remove()},[player]);
+ useEffect(()=>{if(!status.playing||seconds>=TARGET)return;const t=setInterval(()=>setSeconds(v=>Math.min(TARGET,v+1)),1000);return()=>clearInterval(t)},[seconds,status.playing]);
+ useEffect(()=>{if(seconds>=TARGET)player.pause()},[player,seconds]);
+ function stop(){player.pause();setSafe(false);setError('portal073_safety_stop__completion_blocked')}
+ async function saveVault(){if(!published)throw new Error('portal073_not_published');if(!returned)throw new Error('portal073_return_gate_required_before_vault');if(!auth.client||!auth.userId)throw new Error('portal073_authenticated_vault_required');const r=await savePortal073EncryptedVault({client:auth.client,userId:auth.userId,diary});setReceipt(r.receiptId);setChecksum(r.checksumSha256);setDiary('')}
+ const executable=published&&operators&&ready;
+ return <ScrollView contentContainerStyle={s.shell}><Text style={s.kicker}>CHOKMAH → BINAH · PORTAL 073</Text><Text style={s.title}>O Voo do Mago</Text>
+ {!published&&<Card title="G7/G8 · FAIL-CLOSED"><Text style={s.warn}>APPROVED_NOT_PUBLISHED</Text><Text style={s.text}>A experiência está materializada, mas áudio, Vault e conclusão permanecem inacessíveis até publicação autoritativa. Nenhum XP, Teurgo, Binah ou Day 074 é liberado.</Text></Card>}
+ {error&&<Text style={s.error}>{error}</Text>}
+ <Card title="Operadores canônicos"><Text style={s.text}>Tuner · {PORTAL073_TUNER_ID}</Text><Text style={s.text}>ACTIVE · {PORTAL073_TRANSITION_PRESET_ID} · 528/532 Hz · 600 s</Text><Text style={s.text}>Sigilo · {PORTAL073_SIGIL_ID}</Text><Text style={s.mono}>SHA-256 {MAGICIAN_MERCURY_SIGIL_SHA256}</Text><MagicianMercurySigilV1/></Card>
+ <Card title="Sintonizador · 10:00"><Text style={s.timer}>{clock(seconds)}</Text><Text style={s.text}>Sem autoplay. Volume ajustável. Parada imediata disponível.</Text><View style={s.row}><Button label="−" disabled={!executable} onPress={()=>setVolume(v=>Math.max(0,v-1))}/><Text style={s.text}>Volume {volume}/10</Text><Button label="+" disabled={!executable} onPress={()=>setVolume(v=>Math.min(8,v+1))}/></View><Button label={status.playing?'Pausar':'Iniciar ACTIVE'} disabled={!executable||seconds>=TARGET} onPress={()=>status.playing?player.pause():player.play()}/><Button label="PARAR AGORA" disabled={!executable} onPress={stop}/></Card>
+ <Card title="Checkpoint Dave Elman"><Text style={s.text}>Checkpoint obrigatório. Nenhum roteiro de indução é criado ou inferido nesta implementação.</Text><Button label={induction?'Checkpoint confirmado':'Confirmar checkpoint'} disabled={!published||seconds!==TARGET} onPress={()=>setInduction(true)}/></Card>
+ <Card title="Sigilo do Mago"><Text style={s.text}>Observe apenas o ativo canônico, ereto e não espelhado.</Text><Button label={sigil?'Sigilo confirmado':'Confirmar sigilo'} disabled={!published||!induction} onPress={()=>setSigil(true)}/></Card>
+ <Card title="Return Gate"><Text style={s.text}>O retorno deve ser confirmado antes de qualquer gravação no Vault.</Text><Button label={returned?'Retorno confirmado':'Confirmar retorno'} disabled={!published||!sigil} onPress={()=>setReturned(true)}/><Button label={safe?'Estado seguro confirmado':'Confirmar estado seguro'} disabled={!published||!returned} onPress={()=>setSafe(true)}/></Card>
+ <Card title="Vault E2EE"><TextInput multiline editable={published&&returned} value={diary} onChangeText={setDiary} placeholder="Diário privado" placeholderTextColor="#53636b" style={s.input}/><Button label={receipt?'Receipt registrado':'Criptografar e salvar'} disabled={!published||!returned||!safe||diary.trim().length<2||Boolean(receipt)} onPress={()=>void saveVault().catch(e=>setError(e instanceof Error?e.message:'portal073_vault_failed'))}/>{receipt&&<><Text style={s.mono}>receipt {receipt}</Text><Text style={s.mono}>checksum {checksum}</Text></>}</Card>
+ <Card title="Conclusão autoritativa"><Text style={s.text}>Ainda não materializada nesta fatia. O selo exige receipt autenticado, 600 s exatos, operadores verificados, Return Gate, safety clear e backend exactly-once/concurrency validado.</Text><Button label="SELAR PORTAL · BLOQUEADO" disabled onPress={()=>{}}/></Card>
+ </ScrollView>
+}
+function Card({title,children}:{title:string;children:React.ReactNode}){return <View style={s.card}><Text style={s.cardTitle}>{title}</Text>{children}</View>}
+function Button({label,disabled,onPress}:{label:string;disabled?:boolean;onPress:()=>void}){return <Pressable disabled={disabled} onPress={onPress} style={[s.button,disabled&&s.disabled]}><Text style={s.buttonText}>{label}</Text></Pressable>}
+const s=StyleSheet.create({shell:{padding:24,paddingBottom:60,backgroundColor:'#02050a',gap:16},kicker:{color:'#5f94aa',fontSize:10,letterSpacing:1.5},title:{color:'#e6f7ff',fontSize:34,fontWeight:'300'},text:{color:'#9bb0ba',fontSize:14,lineHeight:21},warn:{color:'#ffd7a1',fontWeight:'800'},error:{color:'#ff9c9c'},card:{borderWidth:1,borderColor:'#173342',borderRadius:14,padding:16,gap:10,backgroundColor:'#061018'},cardTitle:{color:'#d8f3ff',fontSize:17,fontWeight:'600'},mono:{color:'#7396a6',fontSize:10,lineHeight:15},timer:{color:'#e6f7ff',fontSize:42,fontVariant:['tabular-nums']},row:{flexDirection:'row',alignItems:'center',gap:12},button:{borderWidth:1,borderColor:'#39718b',padding:12,borderRadius:10,alignItems:'center'},disabled:{opacity:.35},buttonText:{color:'#d8f3ff',fontWeight:'700'},input:{borderWidth:1,borderColor:'#173342',borderRadius:10,padding:12,minHeight:110,color:'#e6f7ff',textAlignVertical:'top'}});
