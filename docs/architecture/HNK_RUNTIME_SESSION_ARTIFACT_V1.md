@@ -56,14 +56,16 @@ EVENT 2
   ↓
 REPLAYED SNAPSHOT
   ↓
-BYTE-STRUCTURAL JSON COMPARISON
+CANONICAL STRUCTURAL JSON COMPARISON
   ↓
 MATCH / MISMATCH
 ```
 
-An artifact is invalid when the stored snapshot cannot be reproduced by its own event history.
+Object keys are canonicalized before structural comparison, so harmless JSON key reordering does not produce a false mismatch.
 
-This detects snapshot tampering or drift without asserting anything about the metaphysical meaning of the session.
+An artifact is invalid when the stored snapshot cannot be reproduced by its own event history. This detects internal snapshot/event drift or one-sided tampering, but V1 does **not** provide cryptographic authorship/authenticity: an attacker who rewrites both event history and snapshot consistently could still produce a self-consistent artifact. A future signed-artifact layer may address authenticity separately.
+
+Replay integrity does not assert anything about the metaphysical meaning of the session.
 
 ## Import / export
 
@@ -88,8 +90,14 @@ Two valid artifacts can be compared side-by-side. V1 compares:
 - event count;
 - observation count;
 - feedback count;
+- intention;
 - initial state;
 - target state;
+- path ID;
+- symbolic-key reference;
+- Vessel/context reference;
+- raw-observation sequence;
+- feedback-action sequence;
 - result state;
 - evidence scope;
 - event-type sequence.
@@ -115,8 +123,8 @@ Therefore:
 `validate-hnk-runtime-session-artifact.mjs` enforces:
 
 - deterministic replay;
-- exact snapshot/replay match;
-- rejection of tampered snapshots;
+- canonical structural snapshot/replay match;
+- rejection of inconsistent/tampered snapshots;
 - versioned artifact/runtime IDs;
 - user-controlled file export;
 - local file import;
