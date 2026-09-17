@@ -6,14 +6,14 @@ import { admissionSummary, validateAdmissionDecisionLayer } from "../../lib/rese
 import { humanGateSummary, validateHumanGateRuntime } from "../../lib/research/human-gate";
 import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/canon-registry";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
-import { symbolicRuntimeSummary } from "@hnk/quest-engine";
+import { experimentProtocolSummary, symbolicRuntimeSummary } from "@hnk/quest-engine";
 import styles from "./research.module.css";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Research Lab",
-  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone e runtime do HNK Codex.",
+  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone, runtime e experimentos do HNK Codex.",
   robots: { index: false, follow: false },
 };
 
@@ -29,6 +29,7 @@ export default function ResearchLabHome() {
   const canonValidation = validateCanonRegistry();
   const canon = canonRegistrySummary();
   const runtime = symbolicRuntimeSummary();
+  const experiments = experimentProtocolSummary();
 
   return (
     <main className={styles.shell}>
@@ -36,8 +37,8 @@ export default function ResearchLabHome() {
         <p className={styles.eyebrow}>HNK CODEX · PRIVATE RESEARCH</p>
         <h1>Research Lab</h1>
         <p>
-          Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate, autoria HNK e
-          execução simbólica sem apagar divergências nem confundir referência histórica com cânone.
+          Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate, autoria HNK,
+          execução simbólica e experimentação preregistrada sem apagar divergências nem confundir registro com prova.
         </p>
         <div className={styles.locks}>
           <span>PRIVATE</span>
@@ -46,6 +47,7 @@ export default function ResearchLabHome() {
           <span>HUMAN GATE</span>
           <span>HNK_AUTHORED CANON</span>
           <span>EVIDENCE SCOPED RUNTIME</span>
+          <span>PREREGISTERED EXPERIMENTS</span>
         </div>
       </header>
 
@@ -74,6 +76,11 @@ export default function ResearchLabHome() {
           <span className={runtime.canon_contract_ok ? styles.good : styles.bad} />
           <strong>Symbolic Runtime</strong>
           <p>{runtime.canon_dependencies} dependências · {runtime.events} eventos</p>
+        </article>
+        <article>
+          <span className={experiments.preregistration_required ? styles.good : styles.bad} />
+          <strong>Experiment Protocol</strong>
+          <p>control required · preregistration locked</p>
         </article>
       </section>
 
@@ -127,11 +134,21 @@ export default function ResearchLabHome() {
           </p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+
+        <Link href="/research/experiments" className={styles.moduleCard}>
+          <p className={styles.kicker}>06 · EXPERIMENTAÇÃO PREREGISTRADA</p>
+          <h2>Experiment Protocol Lab</h2>
+          <p>
+            Defina pergunta, hipótese, variáveis, controle e critérios antes de executar; agrupe artifacts
+            válidos e mantenha descrição, interpretação e limitações separadas.
+          </p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT</code>
       </section>
     </main>
   );
