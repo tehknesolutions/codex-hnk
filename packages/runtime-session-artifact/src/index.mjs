@@ -25,8 +25,16 @@ function nonEmpty(value) {
   return typeof value === "string" && Boolean(value.trim());
 }
 
+function canonicalize(value) {
+  if (Array.isArray(value)) return value.map(canonicalize);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.keys(value).sort().map((key) => [key, canonicalize(value[key])]),
+  );
+}
+
 function sameJson(left, right) {
-  return JSON.stringify(left) === JSON.stringify(right);
+  return JSON.stringify(canonicalize(left)) === JSON.stringify(canonicalize(right));
 }
 
 function validateInitial(initial, issues) {
@@ -46,6 +54,7 @@ function validateArtifactShape(artifact) {
   if (artifact.artifact_id !== HNK_RUNTIME_SESSION_ARTIFACT_ID) issues.push(`unexpected artifact_id ${artifact.artifact_id}`);
   if (artifact.artifact_version !== HNK_RUNTIME_SESSION_ARTIFACT_VERSION) issues.push(`unexpected artifact_version ${artifact.artifact_version}`);
   if (!nonEmpty(artifact.exported_at)) issues.push("exported_at required");
+  if (nonEmpty(artifact.exported_at) && Number.isNaN(Date.parse(artifact.exported_at))) issues.push("exported_at must be an ISO-compatible timestamp");
   if (artifact.persistence !== "USER_CONTROLLED_FILE_ONLY") issues.push("persistence must be USER_CONTROLLED_FILE_ONLY");
   if (artifact.server_persistence !== false) issues.push("server_persistence must be false");
   if (artifact.browser_persistence !== false) issues.push("browser_persistence must be false");
@@ -182,6 +191,10 @@ export function compareRuntimeSessionArtifacts(left, right) {
 
   const leftTypes = left.session.events.map((event) => event.type).join(" → ");
   const rightTypes = right.session.events.map((event) => event.type).join(" → ");
+  const leftObservations = left.session.observations.map((item) => item.raw).join(" | ");
+  const rightObservations = right.session.observations.map((item) => item.raw).join(" | ");
+  const leftFeedbackActions = left.session.feedback.map((item) => item.next_action).join(" → ");
+  const rightFeedbackActions = right.session.feedback.map((item) => item.next_action).join(" → ");
 
   const metrics = [
     metric("phase", left.session.phase, right.session.phase),
@@ -189,8 +202,14 @@ export function compareRuntimeSessionArtifacts(left, right) {
     metric("event_count", left.session.events.length, right.session.events.length),
     metric("observation_count", left.session.observations.length, right.session.observations.length),
     metric("feedback_count", left.session.feedback.length, right.session.feedback.length),
+    metric("intention", left.initial.intention, right.initial.intention),
     metric("initial_state", left.initial.current_state, right.initial.current_state),
     metric("target_state", left.initial.target_state, right.initial.target_state),
+    metric("path_id", left.session.specification?.path_id ?? null, right.session.specification?.path_id ?? null),
+    metric("symbolic_key", left.session.symbolic_key?.reference ?? null, right.session.symbolic_key?.reference ?? null),
+    metric("vessel_context", left.session.vessel?.context_ref ?? null, right.session.vessel?.context_ref ?? null),
+    metric("observations_raw", leftObservations, rightObservations),
+    metric("feedback_actions", leftFeedbackActions, rightFeedbackActions),
     metric("result_state", left.session.result?.result_state ?? null, right.session.result?.result_state ?? null),
     metric("evidence_scope", left.session.result?.evidence_scope ?? null, right.session.result?.evidence_scope ?? null),
     metric("event_sequence", leftTypes, rightTypes),
