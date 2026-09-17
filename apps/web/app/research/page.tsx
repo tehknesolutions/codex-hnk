@@ -6,14 +6,20 @@ import { admissionSummary, validateAdmissionDecisionLayer } from "../../lib/rese
 import { humanGateSummary, validateHumanGateRuntime } from "../../lib/research/human-gate";
 import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/canon-registry";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
-import { experimentAttestationSummary, experimentProtocolSummary, measurementContractSummary, symbolicRuntimeSummary } from "@hnk/quest-engine";
+import {
+  evidenceLedgerSummary,
+  experimentAttestationSummary,
+  experimentProtocolSummary,
+  measurementContractSummary,
+  symbolicRuntimeSummary,
+} from "@hnk/quest-engine";
 import styles from "./research.module.css";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Research Lab",
-  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone, runtime, experimentos, attestation e medidas tipadas do HNK Codex.",
+  description: "Laboratório privado de pesquisa, proveniência, decisões, runtime, experimentação, medidas e evidence ledger do HNK Codex.",
   robots: { index: false, follow: false },
 };
 
@@ -32,6 +38,7 @@ export default function ResearchLabHome() {
   const experiments = experimentProtocolSummary();
   const attestation = experimentAttestationSummary();
   const measurement = measurementContractSummary();
+  const evidence = evidenceLedgerSummary();
 
   return (
     <main className={styles.shell}>
@@ -40,7 +47,7 @@ export default function ResearchLabHome() {
         <h1>Research Lab</h1>
         <p>
           Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate, autoria HNK,
-          execução simbólica, experimentação preregistrada e medidas tipadas sem apagar divergências nem confundir registro com prova.
+          execução simbólica, experimentação preregistrada, medidas tipadas e cobertura explícita de evidência.
         </p>
         <div className={styles.locks}>
           <span>PRIVATE</span>
@@ -52,6 +59,7 @@ export default function ResearchLabHome() {
           <span>PREREGISTERED EXPERIMENTS</span>
           <span>SHA-256 CONTENT ATTESTATION</span>
           <span>TYPED MEASUREMENT</span>
+          <span>EXPLICIT EVIDENCE COVERAGE</span>
         </div>
       </header>
 
@@ -96,75 +104,69 @@ export default function ResearchLabHome() {
           <strong>Measurement Contract</strong>
           <p>{Array.isArray(measurement.types) ? measurement.types.length : 0} metric types · descriptive only</p>
         </article>
+        <article>
+          <span className={evidence.explicit_insufficiency ? styles.good : styles.bad} />
+          <strong>Evidence Ledger</strong>
+          <p>requirements explicit · insufficiency visible</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
         <Link href="/research/correspondences" className={styles.moduleCard}>
           <p className={styles.kicker}>01 · PROVENIÊNCIA E CONFLITO</p>
           <h2>Correspondence Lab</h2>
-          <p>
-            Compare Sefer Yetzirah, Golden Dawn, Del Debbio, Éliphas Lévi e Crowley/Thoth sem colapsar
-            as tradições numa única tabela.
-          </p>
+          <p>Compare tradições e correspondências sem colapsar divergências numa única tabela.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
 
         <Link href="/research/decisions" className={styles.moduleCard}>
           <p className={styles.kicker}>02 · CODEX ADMISSION</p>
           <h2>Decision Layer</h2>
-          <p>
-            Veja por que cada elemento entra, permanece, fica em pesquisa, aguarda Human Gate ou é
-            excluído operacionalmente sem ser apagado do arquivo.
-          </p>
+          <p>Audite entrada, referência, pesquisa, exclusão operacional e candidatos sem apagar a origem.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
 
         <Link href="/research/human-gate" className={styles.moduleCard}>
           <p className={styles.kicker}>03 · AUTORIDADE HUMANA</p>
           <h2>Human Gate</h2>
-          <p>
-            Audite decisões explícitas, recomendações não vinculantes e a fronteira que impede qualquer
-            promoção automática de candidato para HNK_CANON.
-          </p>
+          <p>Preserve a fronteira entre recomendação de máquina e aprovação humana explícita.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
 
         <Link href="/research/canon" className={styles.moduleCard}>
           <p className={styles.kicker}>04 · HNK_AUTHORED</p>
           <h2>Canon Registry</h2>
-          <p>
-            Consulte os registros que atravessaram o Human Gate e foram reescritos como material HNK,
-            mantendo trace completo até pesquisa, decisão e aprovação.
-          </p>
+          <p>Consulte registros canônicos HNK com trace até pesquisa, decisão e Human Gate.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
 
         <Link href="/research/runtime" className={styles.moduleCard}>
           <p className={styles.kicker}>05 · CÂNONE OPERACIONAL</p>
           <h2>Symbolic Runtime Lab</h2>
-          <p>
-            Execute sessões efêmeras com intenção, State/Path, Quest, glifo-chave, Vessel, observação,
-            feedback e resultado com escopo explícito de evidência.
-          </p>
+          <p>Execute sessões com State/Path, Quest, observação, feedback e resultado evidence-scoped.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
 
         <Link href="/research/experiments" className={styles.moduleCard}>
           <p className={styles.kicker}>06 · EXPERIMENTAÇÃO PREREGISTRADA</p>
           <h2>Experiment Protocol Lab</h2>
-          <p>
-            Defina pergunta, hipótese, variáveis, controle e critérios antes de executar; agrupe artifacts
-            válidos, gere attestations SHA-256 e mantenha descrição, interpretação e limitações separadas.
-          </p>
+          <p>Preregistre controles, critérios, sessões e relatório com attestation SHA-256.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
 
         <Link href="/research/measurements" className={styles.moduleCard}>
           <p className={styles.kicker}>07 · TYPED MEASUREMENT</p>
           <h2>Measurement Contract Lab</h2>
+          <p>Converta variáveis em métricas tipadas, registre dados sem imputação e resuma descritivamente.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
+
+        <Link href="/research/evidence" className={styles.moduleCard}>
+          <p className={styles.kicker}>08 · EVIDENCE COVERAGE</p>
+          <h2>Evidence Ledger Lab</h2>
           <p>
-            Transforme as variáveis observadas preregistradas em métricas `NUMBER`, `BOOLEAN`, `CATEGORY`,
-            `TEXT`, `COUNT` ou `SCALE`, registre valores sem imputação e compare controle × experimental descritivamente.
+            Encadeie preregistration, artifacts, medidas e relatório; declare requisitos de uma afirmação e
+            torne cobertura completa, parcial ou insuficiente explicitamente auditável.
           </p>
           <span>ABRIR MÓDULO →</span>
         </Link>
@@ -172,7 +174,7 @@ export default function ResearchLabHome() {
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER</code>
       </section>
     </main>
   );
