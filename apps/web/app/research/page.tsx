@@ -6,13 +6,14 @@ import { admissionSummary, validateAdmissionDecisionLayer } from "../../lib/rese
 import { humanGateSummary, validateHumanGateRuntime } from "../../lib/research/human-gate";
 import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/canon-registry";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
+import { symbolicRuntimeSummary } from "@hnk/quest-engine";
 import styles from "./research.module.css";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Research Lab",
-  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões e cânone do HNK Codex.",
+  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone e runtime do HNK Codex.",
   robots: { index: false, follow: false },
 };
 
@@ -27,6 +28,7 @@ export default function ResearchLabHome() {
   const humanGate = humanGateSummary();
   const canonValidation = validateCanonRegistry();
   const canon = canonRegistrySummary();
+  const runtime = symbolicRuntimeSummary();
 
   return (
     <main className={styles.shell}>
@@ -34,8 +36,8 @@ export default function ResearchLabHome() {
         <p className={styles.eyebrow}>HNK CODEX · PRIVATE RESEARCH</p>
         <h1>Research Lab</h1>
         <p>
-          Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate e autoria HNK
-          sem apagar divergências nem confundir referência histórica com cânone.
+          Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate, autoria HNK e
+          execução simbólica sem apagar divergências nem confundir referência histórica com cânone.
         </p>
         <div className={styles.locks}>
           <span>PRIVATE</span>
@@ -43,6 +45,7 @@ export default function ResearchLabHome() {
           <span>NO AUTO-PROMOTION</span>
           <span>HUMAN GATE</span>
           <span>HNK_AUTHORED CANON</span>
+          <span>EVIDENCE SCOPED RUNTIME</span>
         </div>
       </header>
 
@@ -66,6 +69,11 @@ export default function ResearchLabHome() {
           <span className={canonValidation.ok ? styles.good : styles.bad} />
           <strong>Canon Registry</strong>
           <p>{canon.records} registros · {canon.authority}</p>
+        </article>
+        <article>
+          <span className={runtime.canon_contract_ok ? styles.good : styles.bad} />
+          <strong>Symbolic Runtime</strong>
+          <p>{runtime.canon_dependencies} dependências · {runtime.events} eventos</p>
         </article>
       </section>
 
@@ -109,11 +117,21 @@ export default function ResearchLabHome() {
           </p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+
+        <Link href="/research/runtime" className={styles.moduleCard}>
+          <p className={styles.kicker}>05 · CÂNONE OPERACIONAL</p>
+          <h2>Symbolic Runtime Lab</h2>
+          <p>
+            Execute sessões efêmeras com intenção, State/Path, Quest, glifo-chave, Vessel, observação,
+            feedback e resultado com escopo explícito de evidência.
+          </p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME</code>
       </section>
     </main>
   );
