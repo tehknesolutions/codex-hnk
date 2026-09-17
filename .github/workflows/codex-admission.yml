@@ -1,0 +1,28 @@
+name: Codex Admission
+
+on:
+  pull_request:
+    paths:
+      - 'canon/references/**'
+      - 'docs/architecture/CODEX_ADMISSION_PROTOCOL_V1.md'
+      - 'scripts/validate-codex-admission.mjs'
+      - '.github/workflows/codex-admission.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'canon/references/**'
+      - 'docs/architecture/CODEX_ADMISSION_PROTOCOL_V1.md'
+      - 'scripts/validate-codex-admission.mjs'
+      - '.github/workflows/codex-admission.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate admission catalogs
+        run: node scripts/validate-codex-admission.mjs
