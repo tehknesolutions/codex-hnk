@@ -6,14 +6,14 @@ import { admissionSummary, validateAdmissionDecisionLayer } from "../../lib/rese
 import { humanGateSummary, validateHumanGateRuntime } from "../../lib/research/human-gate";
 import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/canon-registry";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
-import { experimentProtocolSummary, symbolicRuntimeSummary } from "@hnk/quest-engine";
+import { experimentAttestationSummary, experimentProtocolSummary, symbolicRuntimeSummary } from "@hnk/quest-engine";
 import styles from "./research.module.css";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Research Lab",
-  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone, runtime e experimentos do HNK Codex.",
+  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone, runtime, experimentos e attestation do HNK Codex.",
   robots: { index: false, follow: false },
 };
 
@@ -30,6 +30,7 @@ export default function ResearchLabHome() {
   const canon = canonRegistrySummary();
   const runtime = symbolicRuntimeSummary();
   const experiments = experimentProtocolSummary();
+  const attestation = experimentAttestationSummary();
 
   return (
     <main className={styles.shell}>
@@ -48,6 +49,7 @@ export default function ResearchLabHome() {
           <span>HNK_AUTHORED CANON</span>
           <span>EVIDENCE SCOPED RUNTIME</span>
           <span>PREREGISTERED EXPERIMENTS</span>
+          <span>SHA-256 CONTENT ATTESTATION</span>
         </div>
       </header>
 
@@ -81,6 +83,11 @@ export default function ResearchLabHome() {
           <span className={experiments.preregistration_required ? styles.good : styles.bad} />
           <strong>Experiment Protocol</strong>
           <p>control required · preregistration locked</p>
+        </article>
+        <article>
+          <span className={attestation.hash_chain ? styles.good : styles.bad} />
+          <strong>Experiment Attestation</strong>
+          <p>{String(attestation.algorithm)} · content integrity only</p>
         </article>
       </section>
 
@@ -140,7 +147,7 @@ export default function ResearchLabHome() {
           <h2>Experiment Protocol Lab</h2>
           <p>
             Defina pergunta, hipótese, variáveis, controle e critérios antes de executar; agrupe artifacts
-            válidos e mantenha descrição, interpretação e limitações separadas.
+            válidos, gere attestations SHA-256 e mantenha descrição, interpretação e limitações separadas.
           </p>
           <span>ABRIR MÓDULO →</span>
         </Link>
@@ -148,7 +155,7 @@ export default function ResearchLabHome() {
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION</code>
       </section>
     </main>
   );

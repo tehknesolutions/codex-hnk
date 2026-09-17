@@ -1,4 +1,4 @@
-import { experimentProtocolSummary } from "@hnk/quest-engine";
+import { experimentAttestationSummary, experimentProtocolSummary } from "@hnk/quest-engine";
 import {
   researchJson,
   researchLabAuthorized,
@@ -19,6 +19,7 @@ export function GET(request: Request): Response {
     access: "PRIVATE_USER_CONTROLLED_FILE_ONLY",
     persistence: "NONE_AUTOMATIC",
     summary: experimentProtocolSummary(),
+    attestation: experimentAttestationSummary(),
     boundary: "EXPERIMENT_RECORD_NOT_CAUSAL_OR_METAPHYSICAL_PROOF",
   }, 200, "HNK_EXPERIMENT_PROTOCOL_PRIVATE");
 }

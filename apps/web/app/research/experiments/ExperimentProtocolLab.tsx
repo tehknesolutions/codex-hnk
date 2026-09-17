@@ -4,15 +4,18 @@ import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import {
   addExperimentArtifact,
+  createExperimentAttestation,
   createExperimentProtocol,
   experimentDescriptiveSummary,
   finalizeExperimentProtocol,
   parseExperimentProtocol,
   parseRuntimeSessionArtifact,
   serializeExperimentProtocol,
+  type HnkExperimentAttestation,
   type HnkExperimentProtocol,
   type HnkExperimentRole,
 } from "@hnk/quest-engine";
+import ExperimentAttestationPanel from "./ExperimentAttestationPanel";
 import styles from "../runtime/runtime.module.css";
 
 type Handshake = {
@@ -27,6 +30,12 @@ type Handshake = {
     deterministic_artifact_replay_required: boolean;
     causal_claim_permitted: false;
     metaphysical_proof_permitted: false;
+  };
+  attestation: {
+    algorithm: "SHA-256";
+    scope: "CONTENT_INTEGRITY_ONLY";
+    timestamp_authority: "NONE";
+    identity_signature: "NONE";
   };
 };
 
@@ -58,6 +67,7 @@ export default function ExperimentProtocolLab() {
   const [token, setToken] = useState("");
   const [handshake, setHandshake] = useState<Handshake | null>(null);
   const [protocol, setProtocol] = useState<HnkExperimentProtocol | null>(null);
+  const [baselineAttestation, setBaselineAttestation] = useState<HnkExperimentAttestation | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -100,7 +110,7 @@ export default function ExperimentProtocolLab() {
     try {
       setError("");
       const timestamp = now();
-      setProtocol(createExperimentProtocol({
+      const nextProtocol = createExperimentProtocol({
         experiment_id: id("experiment"),
         created_at: timestamp,
         locked_at: timestamp,
@@ -116,7 +126,9 @@ export default function ExperimentProtocolLab() {
           completion_criteria: lines(completionCriteria),
           exclusion_criteria: lines(exclusionCriteria),
         },
-      }));
+      });
+      setProtocol(nextProtocol);
+      setBaselineAttestation(createExperimentAttestation(nextProtocol, { generated_at: timestamp }));
     } catch (err) {
       setError(err instanceof Error ? err.message : "PREREGISTRATION_FAILED");
     }
@@ -147,6 +159,7 @@ export default function ExperimentProtocolLab() {
     try {
       setError("");
       setProtocol(parseExperimentProtocol(await file.text()));
+      setBaselineAttestation(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "EXPERIMENT_IMPORT_FAILED");
     }
@@ -179,7 +192,7 @@ export default function ExperimentProtocolLab() {
       <section className={styles.unlockPanel}>
         <p className={styles.kicker}>Acesso privado</p>
         <h2>Desbloquear Experiment Lab</h2>
-        <p>O token libera apenas a bancada. Experimentos e artifacts permanecem em arquivos controlados pelo usuário, sem persistência automática.</p>
+        <p>O token libera apenas a bancada. Experimentos, artifacts e attestations permanecem em arquivos controlados pelo usuário, sem persistência automática.</p>
         <form onSubmit={unlock} className={styles.unlockForm}>
           <input type="password" autoComplete="off" value={token} onChange={(event) => setToken(event.target.value)} placeholder="HNK_RESEARCH_LAB_TOKEN" required />
           <button disabled={loading}>{loading ? "Validando…" : "Entrar"}</button>
@@ -196,7 +209,7 @@ export default function ExperimentProtocolLab() {
           <span className={handshake.summary.deterministic_artifact_replay_required ? styles.goodDot : styles.badDot} />
           <div>
             <strong>{handshake.layer}</strong>
-            <p>Preregistration + control + experiment</p>
+            <p>Preregistration + control + experiment + SHA-256 attestation</p>
           </div>
         </article>
 
@@ -208,6 +221,7 @@ export default function ExperimentProtocolLab() {
         </div>
 
         <p className={styles.boundary}>{handshake.boundary}. O protocolo organiza registros e comparação descritiva; não concede prova causal ou metafísica.</p>
+        <p className={styles.boundary}>{handshake.attestation.scope} · {handshake.attestation.algorithm}. Sem assinatura de identidade ou timestamp confiável externo.</p>
 
         <label>
           Importar experimento JSON
@@ -236,7 +250,7 @@ export default function ExperimentProtocolLab() {
               <label>Critérios de conclusão<textarea value={completionCriteria} onChange={(event) => setCompletionCriteria(event.target.value)} required /></label>
               <label>Critérios de exclusão<textarea value={exclusionCriteria} onChange={(event) => setExclusionCriteria(event.target.value)} /></label>
             </div>
-            <button className={styles.primaryButton}>Selar preregistration</button>
+            <button className={styles.primaryButton}>Selar preregistration + gerar fingerprint</button>
           </form>
         ) : (
           <>
@@ -249,7 +263,7 @@ export default function ExperimentProtocolLab() {
               </div>
               <div>
                 <button className={styles.ghostButton} onClick={() => downloadProtocol(protocol)}>Exportar experimento</button>
-                <button className={styles.ghostButton} onClick={() => { setProtocol(null); setError(""); }}>Novo experimento</button>
+                <button className={styles.ghostButton} onClick={() => { setProtocol(null); setBaselineAttestation(null); setError(""); }}>Novo experimento</button>
               </div>
             </section>
 
@@ -284,6 +298,8 @@ export default function ExperimentProtocolLab() {
                 ))}
               </div>
             </section>
+
+            <ExperimentAttestationPanel protocol={protocol} baselineAttestation={baselineAttestation} />
 
             {protocol.status === "READY_TO_FINALIZE" ? (
               <form className={styles.stageCard} onSubmit={finalize}>

@@ -12,3 +12,4 @@ export * from "./canon.js";
 export * from "./symbolic-runtime.js";
 export * from "./runtime-session-artifact.js";
 export * from "./experiment-protocol.js";
+export * from "./experiment-attestation.js";
