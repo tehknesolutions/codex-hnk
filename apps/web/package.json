@@ -17,6 +17,7 @@
   "dependencies": {
     "@hnk/assets": "workspace:*",
     "@hnk/audio-contract": "workspace:*",
+    "@hnk/correspondence-registry": "workspace:*",
     "@hnk/glyphs": "workspace:*",
     "@hnk/linguas": "workspace:*",
     "@hnk/practice-contract": "workspace:*",
