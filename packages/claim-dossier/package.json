@@ -19,6 +19,7 @@
     "@hnk/experiment-attestation": "workspace:*"
   },
   "devDependencies": {
+    "@hnk/replication-registry": "workspace:*",
     "typescript": "~6.0.3"
   }
 }
