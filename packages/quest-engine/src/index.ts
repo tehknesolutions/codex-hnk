@@ -9,3 +9,4 @@ export * from "./audio-runtime.js";
 export * from "./audio-controller.js";
 export * from "./persistence.js";
 export * from "./canon.js";
+export * from "./symbolic-runtime.js";
