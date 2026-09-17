@@ -1,0 +1,26 @@
+{
+  "name": "@hnk/evidence-review-gate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@hnk/claim-dossier": "workspace:*",
+    "@hnk/experiment-attestation": "workspace:*"
+  },
+  "devDependencies": {
+    "@hnk/evidence-synthesis": "workspace:*",
+    "@hnk/replication-registry": "workspace:*",
+    "typescript": "~6.0.3"
+  }
+}

@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@hnk/canon-contract": "workspace:*",
+    "@hnk/claim-dossier": "workspace:*",
     "@hnk/evidence-ledger": "workspace:*",
+    "@hnk/evidence-review-gate": "workspace:*",
     "@hnk/evidence-synthesis": "workspace:*",
     "@hnk/experiment-attestation": "workspace:*",
     "@hnk/experiment-protocol": "workspace:*",
