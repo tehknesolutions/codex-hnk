@@ -67,6 +67,8 @@ export interface CreateReplicationRegistryInput {
   question: string;
   metric_id: string;
   created_at: string;
+  seed_run_id: string;
+  seed_added_at: string;
   seed_ledger: HnkEvidenceLedger;
 }
 
