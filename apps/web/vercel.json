@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "corepack pnpm install",
-  "buildCommand": "cd ../.. && node scripts/validate-portal073-interactive-slice.mjs && node scripts/validate-research-decision-layer.mjs && cd apps/web && corepack pnpm exec next build --webpack"
+  "buildCommand": "cd ../.. && node scripts/validate-portal073-interactive-slice.mjs && node scripts/validate-research-decision-layer.mjs && node scripts/validate-research-human-gate.mjs && cd apps/web && corepack pnpm exec next build --webpack"
 }
