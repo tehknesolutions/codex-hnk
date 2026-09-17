@@ -40,6 +40,14 @@ type Candidate = {
     machine_can_decide: false;
     explicit_human_approval_required: true;
     allowed_outcomes: HumanGateOutcome[];
+    recommendation?: {
+      source_item_id: string;
+      recommendation: HumanGateOutcome;
+      rationale: string;
+      constraints: string[];
+      authority: "NON_BINDING_MACHINE_RECOMMENDATION";
+      human_gate_status: "AWAITING_EXPLICIT_HUMAN_APPROVAL";
+    };
     decision?: {
       gate_id: string;
       outcome: HumanGateOutcome;
@@ -62,6 +70,15 @@ type Payload = {
     pending: number;
     decided: number;
     by_value: Record<HnkValue, number>;
+    recommendation_batch: {
+      batch_id: string;
+      status: string;
+      authority: string;
+      canon_import: string;
+      machine_can_decide: false;
+      explicit_human_approval_required: true;
+      by_recommendation: Record<HumanGateOutcome, number>;
+    };
   };
   count: number;
   records: Candidate[];
@@ -159,9 +176,10 @@ export default function HumanGateLab() {
           <article><strong>{payload?.summary.candidates ?? 0}</strong><span>candidatos</span></article>
           <article><strong>{payload?.summary.pending ?? 0}</strong><span>pendentes</span></article>
           <article><strong>{payload?.summary.decided ?? 0}</strong><span>decididos</span></article>
+          <article><strong>{payload?.summary.recommendation_batch?.by_recommendation.PROMOTE_TO_HNK_CANON ?? 0}</strong><span>recomendados p/ cânone</span></article>
         </div>
         <p className={styles.boundary}>
-          A interface não possui botão de aprovação. Uma decisão só existe quando um registro Human Gate explicitamente autorizado é acrescentado ao repositório.
+          Recomendações são não vinculantes. A interface não possui botão de aprovação. Uma decisão só existe quando um registro Human Gate explicitamente autorizado é acrescentado ao repositório.
         </p>
       </aside>
 
@@ -200,6 +218,7 @@ export default function HumanGateLab() {
           </div>
           <div className={styles.lockRowCompact}>
             <span>AUTOPROMOTION OFF</span>
+            <span>RECOMMENDATION ≠ DECISION</span>
             <span>HISTORY PRESERVED</span>
           </div>
         </div>
@@ -230,6 +249,17 @@ export default function HumanGateLab() {
                   <p>{record.item.risk_or_limit}</p>
                 </section>
               </div>
+
+              {record.human_gate.recommendation ? (
+                <section className={styles.decisionRecord}>
+                  <p className={styles.kicker}>RECOMENDAÇÃO NÃO VINCULANTE · BATCH 001</p>
+                  <strong>{humanize(record.human_gate.recommendation.recommendation)}</strong>
+                  <p>{record.human_gate.recommendation.rationale}</p>
+                  {record.human_gate.recommendation.constraints.map((constraint) => (
+                    <small key={constraint}>Constraint: {constraint}</small>
+                  ))}
+                </section>
+              ) : null}
 
               <dl className={styles.metaGrid}>
                 <div><dt>Classificação</dt><dd>{humanize(record.item.classification)}</dd></div>
