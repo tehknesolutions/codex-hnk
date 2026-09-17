@@ -7,7 +7,9 @@ import { humanGateSummary, validateHumanGateRuntime } from "../../lib/research/h
 import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/canon-registry";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
 import {
+  claimDossierSummary,
   evidenceLedgerSummary,
+  evidenceReviewGateSummary,
   evidenceSynthesisSummary,
   experimentAttestationSummary,
   experimentProtocolSummary,
@@ -43,6 +45,8 @@ export default function ResearchLabHome() {
   const evidence = evidenceLedgerSummary();
   const replication = replicationRegistrySummary();
   const synthesis = evidenceSynthesisSummary();
+  const claimDossier = claimDossierSummary();
+  const reviewGate = evidenceReviewGateSummary();
 
   return (
     <main className={styles.shell}>
@@ -66,6 +70,8 @@ export default function ResearchLabHome() {
           <span>EXPLICIT EVIDENCE COVERAGE</span>
           <span>DESCRIPTIVE REPLICATION</span>
           <span>CONVERGENCE / DIVERGENCE SYNTHESIS</span>
+          <span>CLAIM DOSSIER</span>
+          <span>HUMAN EVIDENCE REVIEW GATE</span>
         </div>
       </header>
 
@@ -125,6 +131,16 @@ export default function ResearchLabHome() {
           <strong>Evidence Synthesis</strong>
           <p>exact metric groups · convergence/divergence map</p>
         </article>
+        <article>
+          <span className={claimDossier.human_relevance_classification_required ? styles.good : styles.bad} />
+          <strong>Claim Dossier</strong>
+          <p>human relevance · gaps/conflicts preserved</p>
+        </article>
+        <article>
+          <span className={reviewGate.machine_can_decide === false ? styles.good : styles.bad} />
+          <strong>Evidence Review Gate</strong>
+          <p>explicit human signal · no auto canon</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -143,11 +159,17 @@ export default function ResearchLabHome() {
           <p>Agrupe Replication Registries por assinatura exata de métrica e construa uma matriz de convergência, divergência, MIXED e insuficiência por pergunta.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/claims" className={styles.moduleCard}>
+          <p className={styles.kicker}>11 · CLAIM DOSSIER + HUMAN REVIEW</p>
+          <h2>Claim Dossier & Evidence Review Gate</h2>
+          <p>Vincule afirmações a grupos de Evidence Synthesis, preserve lacunas/conflitos e exija uma decisão humana explícita sem promoção automática para verdade ou cânone.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE</code>
       </section>
     </main>
   );
