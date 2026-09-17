@@ -1,3 +1,4 @@
+export type { HnkCanonKind, HnkCanonRecord } from '@hnk/canon-contract';
 export type GlyphId = `G${string}`;
 export type WorldId = 'W1'|'W2'|'W3'|'W4';
 export type GlyphEntry = Readonly<{glyphId:GlyphId;phonemeIpa:string;worldId:WorldId;protoglyphColumn:number;candidatePua:string;candidatePuaDecimal:number;key:Readonly<{row:number;column:number;keyId:string}>;visualState:'VISUAL_FROZEN_CANDIDATE';svgSha256:string}>;

@@ -11,6 +11,9 @@
     "build": "tsc --noEmit",
     "test": "node -e \"console.log('quest-engine: contract/runtime core; integration tests live at repo level')\""
   },
+  "dependencies": {
+    "@hnk/canon-contract": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "~6.0.3"
   }

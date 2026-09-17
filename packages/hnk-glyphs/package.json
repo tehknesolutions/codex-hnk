@@ -7,11 +7,18 @@
     ".": {
       "types": "./src/index.d.ts",
       "import": "./src/index.mjs"
+    },
+    "./canon": {
+      "types": "./src/canon.d.ts",
+      "import": "./src/canon.mjs"
     }
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@hnk/canon-contract": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.2"
