@@ -9,9 +9,11 @@ import {
   symbolicRuntimeSummary,
   type EvidenceScope,
   type FeedbackAction,
+  type RuntimeSessionArtifact,
   type SymbolicRuntimeEvent,
   type SymbolicRuntimeSession,
 } from "@hnk/quest-engine";
+import RuntimeArtifactPanel from "./RuntimeArtifactPanel";
 import styles from "./runtime.module.css";
 
 type Handshake = {
@@ -112,6 +114,14 @@ export default function SymbolicRuntimeLab() {
     }
   }
 
+  function loadArtifact(artifact: RuntimeSessionArtifact) {
+    setError("");
+    setIntention(artifact.initial.intention);
+    setCurrentState(artifact.initial.current_state);
+    setTargetState(artifact.initial.target_state);
+    setSession(artifact.session);
+  }
+
   function resetSession() {
     setSession(null);
     setObservationRaw("");
@@ -205,30 +215,22 @@ export default function SymbolicRuntimeLab() {
                 <h3>Caminho e restrições</h3>
                 <label>Path ID<input value={pathId} onChange={(e) => setPathId(e.target.value)} /></label>
                 <label>Restrições<textarea value={constraints} onChange={(e) => setConstraints(e.target.value)} /></label>
-                <button
-                  className={styles.primaryButton}
-                  disabled={!allowed.includes("SPECIFY")}
-                  onClick={() => transact(event("SPECIFY", {
-                    path_id: pathId,
-                    from_state: session.current_state,
-                    to_state: session.target_state,
-                    constraints: constraints.split("\n").map((v) => v.trim()).filter(Boolean),
-                  }))}
-                >Aplicar especificação</button>
+                <button className={styles.primaryButton} disabled={!allowed.includes("SPECIFY")} onClick={() => transact(event("SPECIFY", {
+                  path_id: pathId,
+                  from_state: session.current_state,
+                  to_state: session.target_state,
+                  constraints: constraints.split("\n").map((v) => v.trim()).filter(Boolean),
+                }))}>Aplicar especificação</button>
               </section>
 
               <section className={styles.stageCard}>
                 <p className={styles.kicker}>03 · CONSTRUCT</p>
                 <h3>Quest / ação concreta</h3>
                 <label>Ação<textarea value={questAction} onChange={(e) => setQuestAction(e.target.value)} /></label>
-                <button
-                  className={styles.primaryButton}
-                  disabled={!allowed.includes("CONSTRUCT")}
-                  onClick={() => transact(event("CONSTRUCT", {
-                    construction_id: id("construction"),
-                    steps: [{ step_id: "step-001", action: questAction }],
-                  }))}
-                >Construir Quest</button>
+                <button className={styles.primaryButton} disabled={!allowed.includes("CONSTRUCT")} onClick={() => transact(event("CONSTRUCT", {
+                  construction_id: id("construction"),
+                  steps: [{ step_id: "step-001", action: questAction }],
+                }))}>Construir Quest</button>
               </section>
 
               <section className={styles.stageCard}>
@@ -240,14 +242,10 @@ export default function SymbolicRuntimeLab() {
                   <label>Context type<input value={vesselType} onChange={(e) => setVesselType(e.target.value)} /></label>
                   <label>Context ref<input value={vesselRef} onChange={(e) => setVesselRef(e.target.value)} /></label>
                 </div>
-                <button
-                  className={styles.primaryButton}
-                  disabled={!allowed.includes("BIND")}
-                  onClick={() => transact(event("BIND", {
-                    symbolic_key: { key_id: symbolicKey, reference: symbolicReference },
-                    vessel: { vessel_id: id("vessel"), context_type: vesselType, context_ref: vesselRef },
-                  }))}
-                >Vincular contexto</button>
+                <button className={styles.primaryButton} disabled={!allowed.includes("BIND")} onClick={() => transact(event("BIND", {
+                  symbolic_key: { key_id: symbolicKey, reference: symbolicReference },
+                  vessel: { vessel_id: id("vessel"), context_type: vesselType, context_ref: vesselRef },
+                }))}>Vincular contexto</button>
               </section>
 
               <section className={styles.stageCard}>
@@ -262,15 +260,11 @@ export default function SymbolicRuntimeLab() {
                 <h3>Observação ≠ interpretação</h3>
                 <label>Observação bruta<textarea value={observationRaw} onChange={(e) => setObservationRaw(e.target.value)} placeholder="O que ocorreu, sem explicar por quê." /></label>
                 <label>Interpretação opcional<textarea value={interpretation} onChange={(e) => setInterpretation(e.target.value)} placeholder="Sua leitura do ocorrido, separada do dado bruto." /></label>
-                <button
-                  className={styles.primaryButton}
-                  disabled={!allowed.includes("OBSERVE") || !observationRaw.trim()}
-                  onClick={() => transact(event("OBSERVE", {
-                    observation_id: id("observation"),
-                    raw: observationRaw,
-                    interpretation: interpretation || undefined,
-                  }))}
-                >Registrar observação</button>
+                <button className={styles.primaryButton} disabled={!allowed.includes("OBSERVE") || !observationRaw.trim()} onClick={() => transact(event("OBSERVE", {
+                  observation_id: id("observation"),
+                  raw: observationRaw,
+                  interpretation: interpretation || undefined,
+                }))}>Registrar observação</button>
               </section>
 
               <section className={styles.stageCard}>
@@ -278,11 +272,7 @@ export default function SymbolicRuntimeLab() {
                 <h3>Avaliação e próxima ação</h3>
                 <label>Avaliação<textarea value={assessment} onChange={(e) => setAssessment(e.target.value)} /></label>
                 <label>Próxima ação<select value={nextAction} onChange={(e) => setNextAction(e.target.value as FeedbackAction)}>{FEEDBACK_ACTIONS.map((v) => <option key={v}>{v}</option>)}</select></label>
-                <button
-                  className={styles.primaryButton}
-                  disabled={!allowed.includes("FEEDBACK") || !assessment.trim()}
-                  onClick={() => transact(event("FEEDBACK", { feedback_id: id("feedback"), assessment, next_action: nextAction }))}
-                >Registrar feedback</button>
+                <button className={styles.primaryButton} disabled={!allowed.includes("FEEDBACK") || !assessment.trim()} onClick={() => transact(event("FEEDBACK", { feedback_id: id("feedback"), assessment, next_action: nextAction }))}>Registrar feedback</button>
                 <button className={styles.ghostButton} disabled={!allowed.includes("CYCLE")} onClick={() => transact(event("CYCLE"))}>Novo ciclo</button>
               </section>
 
@@ -292,15 +282,11 @@ export default function SymbolicRuntimeLab() {
                 <label>Estado resultante<input value={resultState} onChange={(e) => setResultState(e.target.value)} /></label>
                 <label>Evidence scope<select value={evidenceScope} onChange={(e) => setEvidenceScope(e.target.value as EvidenceScope)}>{EVIDENCE_SCOPES.map((v) => <option key={v}>{v}</option>)}</select></label>
                 <label>Nota/evidência<textarea value={evidenceNote} onChange={(e) => setEvidenceNote(e.target.value)} /></label>
-                <button
-                  className={styles.primaryButton}
-                  disabled={!allowed.includes("COMPLETE")}
-                  onClick={() => transact(event("COMPLETE", {
-                    result_state: resultState,
-                    evidence_scope: evidenceScope,
-                    evidence: evidenceNote.trim() ? [{ note: evidenceNote.trim() }] : [],
-                  }))}
-                >Encerrar sessão</button>
+                <button className={styles.primaryButton} disabled={!allowed.includes("COMPLETE")} onClick={() => transact(event("COMPLETE", {
+                  result_state: resultState,
+                  evidence_scope: evidenceScope,
+                  evidence: evidenceNote.trim() ? [{ note: evidenceNote.trim() }] : [],
+                }))}>Encerrar sessão</button>
                 <button className={styles.dangerButton} disabled={!allowed.includes("ABORT")} onClick={() => transact(event("ABORT", { reason: "Abortado manualmente no Runtime Lab." }))}>Abortar</button>
               </section>
             </div>
@@ -328,6 +314,8 @@ export default function SymbolicRuntimeLab() {
                 </article>
               ) : null}
             </section>
+
+            <RuntimeArtifactPanel session={session} initialCurrentState={currentState} onLoadArtifact={loadArtifact} />
           </>
         )}
 
