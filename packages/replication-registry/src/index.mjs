@@ -279,10 +279,34 @@ function validateRun(run, signature, issues, seen) {
       issues.push(`${run.run_id}: ${side}.aggregate must be finite or null`);
     }
   }
-  const expectedEligible = run.direction !== "INSUFFICIENT";
+  const calculatedDirection =
+    run.control && run.experiment
+      ? descriptiveDirection(run.control, run.experiment)
+      : "INSUFFICIENT";
+  if (run.direction !== calculatedDirection) {
+    issues.push(`${run.run_id}: direction does not match stored descriptive aggregates`);
+  }
+  const expectedEligible = calculatedDirection !== "INSUFFICIENT";
   if (run.eligible !== expectedEligible) issues.push(`${run.run_id}: eligible must match direction sufficiency`);
-  if (!Array.isArray(run.insufficiency_reasons)) issues.push(`${run.run_id}: insufficiency_reasons must be an array`);
-  if (run.eligible && run.insufficiency_reasons?.length) issues.push(`${run.run_id}: eligible run cannot have insufficiency reasons`);
+
+  if (!Array.isArray(run.insufficiency_reasons)) {
+    issues.push(`${run.run_id}: insufficiency_reasons must be an array`);
+  } else {
+    const expectedReasons = [];
+    if (!run.control?.n) expectedReasons.push("NO_CONTROL_MEASUREMENTS");
+    if (!run.experiment?.n) expectedReasons.push("NO_EXPERIMENT_MEASUREMENTS");
+    if (JSON.stringify(run.insufficiency_reasons) !== JSON.stringify(expectedReasons)) {
+      issues.push(`${run.run_id}: insufficiency_reasons do not match stored counts`);
+    }
+  }
+  if (signature.metric_type === "BOOLEAN") {
+    for (const side of ["control", "experiment"]) {
+      const value = run[side]?.aggregate;
+      if (value !== null && value !== undefined && (value < 0 || value > 1)) {
+        issues.push(`${run.run_id}: BOOLEAN ${side}.aggregate must be in [0, 1]`);
+      }
+    }
+  }
 
   for (const [key, value] of [
     ["run_id", run.run_id],
