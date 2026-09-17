@@ -6,14 +6,14 @@ import { admissionSummary, validateAdmissionDecisionLayer } from "../../lib/rese
 import { humanGateSummary, validateHumanGateRuntime } from "../../lib/research/human-gate";
 import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/canon-registry";
 import { createResearch001Registry } from "@hnk/correspondence-registry";
-import { experimentAttestationSummary, experimentProtocolSummary, symbolicRuntimeSummary } from "@hnk/quest-engine";
+import { experimentAttestationSummary, experimentProtocolSummary, measurementContractSummary, symbolicRuntimeSummary } from "@hnk/quest-engine";
 import styles from "./research.module.css";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Research Lab",
-  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone, runtime, experimentos e attestation do HNK Codex.",
+  description: "Laboratório privado de pesquisa, proveniência, correspondências, decisões, cânone, runtime, experimentos, attestation e medidas tipadas do HNK Codex.",
   robots: { index: false, follow: false },
 };
 
@@ -31,6 +31,7 @@ export default function ResearchLabHome() {
   const runtime = symbolicRuntimeSummary();
   const experiments = experimentProtocolSummary();
   const attestation = experimentAttestationSummary();
+  const measurement = measurementContractSummary();
 
   return (
     <main className={styles.shell}>
@@ -39,7 +40,7 @@ export default function ResearchLabHome() {
         <h1>Research Lab</h1>
         <p>
           Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate, autoria HNK,
-          execução simbólica e experimentação preregistrada sem apagar divergências nem confundir registro com prova.
+          execução simbólica, experimentação preregistrada e medidas tipadas sem apagar divergências nem confundir registro com prova.
         </p>
         <div className={styles.locks}>
           <span>PRIVATE</span>
@@ -50,6 +51,7 @@ export default function ResearchLabHome() {
           <span>EVIDENCE SCOPED RUNTIME</span>
           <span>PREREGISTERED EXPERIMENTS</span>
           <span>SHA-256 CONTENT ATTESTATION</span>
+          <span>TYPED MEASUREMENT</span>
         </div>
       </header>
 
@@ -88,6 +90,11 @@ export default function ResearchLabHome() {
           <span className={attestation.hash_chain ? styles.good : styles.bad} />
           <strong>Experiment Attestation</strong>
           <p>{String(attestation.algorithm)} · content integrity only</p>
+        </article>
+        <article>
+          <span className={measurement.plan_locked_before_sessions ? styles.good : styles.bad} />
+          <strong>Measurement Contract</strong>
+          <p>{Array.isArray(measurement.types) ? measurement.types.length : 0} metric types · descriptive only</p>
         </article>
       </section>
 
@@ -151,11 +158,21 @@ export default function ResearchLabHome() {
           </p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+
+        <Link href="/research/measurements" className={styles.moduleCard}>
+          <p className={styles.kicker}>07 · TYPED MEASUREMENT</p>
+          <h2>Measurement Contract Lab</h2>
+          <p>
+            Transforme as variáveis observadas preregistradas em métricas `NUMBER`, `BOOLEAN`, `CATEGORY`,
+            `TEXT`, `COUNT` ou `SCALE`, registre valores sem imputação e compare controle × experimental descritivamente.
+          </p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT</code>
       </section>
     </main>
   );
