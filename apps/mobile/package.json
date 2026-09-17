@@ -7,6 +7,7 @@
   "dependencies":{
     "@hnk/assets":"workspace:*",
     "@hnk/audio-contract":"workspace:*",
+    "@hnk/canon-contract":"workspace:*",
     "@hnk/glyphs":"workspace:*",
     "@hnk/linguas":"workspace:*",
     "@hnk/quest-engine":"workspace:*",
