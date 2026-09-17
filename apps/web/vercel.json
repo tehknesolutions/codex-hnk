@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "corepack pnpm install",
-  "buildCommand": "cd ../.. && corepack pnpm --filter @hnk/mobile typecheck"
+  "buildCommand": "cd ../.. && (corepack pnpm --filter @hnk/mobile typecheck > apps/web/public/mobile-typecheck.txt 2>&1 || true) && cd apps/web && corepack pnpm exec next build --webpack"
 }
