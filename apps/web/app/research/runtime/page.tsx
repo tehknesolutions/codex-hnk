@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Symbolic Runtime Lab",
-  description: "Bancada privada e efêmera para executar o HNK Symbolic Runtime Contract V1.",
+  description: "Bancada privada e efêmera para executar, exportar, reproduzir e comparar sessões do HNK Symbolic Runtime Contract V1.",
   robots: { index: false, follow: false },
 };
 
@@ -24,7 +24,8 @@ export default function SymbolicRuntimeLabPage() {
           <h1>Symbolic Runtime Lab</h1>
           <p>
             Execute uma sessão simbólica HNK como máquina de estados auditável: intenção, caminho,
-            construção, contexto, observação, feedback e resultado.
+            construção, contexto, observação, feedback e resultado. Exporte artifacts JSON validados,
+            reproduza o histórico deterministicamente e compare sessões sem persistência automática.
           </p>
         </div>
         <Link href="/research" className={styles.backLink}>← Research Lab</Link>
@@ -33,6 +34,7 @@ export default function SymbolicRuntimeLabPage() {
       <div className={styles.locks}>
         <span>PRIVATE</span>
         <span>EPHEMERAL</span>
+        <span>USER-CONTROLLED ARTIFACTS</span>
         <span>NO SERVER PERSISTENCE</span>
         <span>CANON BACKED</span>
         <span>NOT METAPHYSICAL PROOF</span>
