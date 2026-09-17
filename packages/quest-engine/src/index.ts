@@ -14,3 +14,4 @@ export * from "./runtime-session-artifact.js";
 export * from "./experiment-protocol.js";
 export * from "./experiment-attestation.js";
 export * from "./measurement-contract.js";
+export * from "./evidence-ledger.js";
