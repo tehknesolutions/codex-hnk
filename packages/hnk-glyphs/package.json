@@ -13,6 +13,9 @@
     "test": "node --test test/*.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "@hnk/canon-contract": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "^5.9.2"
   }
