@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@hnk/canon-contract": "workspace:*",
+    "@hnk/runtime-session-artifact": "workspace:*",
     "@hnk/symbolic-runtime-contract": "workspace:*"
   },
   "devDependencies": {
