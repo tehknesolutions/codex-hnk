@@ -54,12 +54,12 @@ export function QuestBehavioralExperimentPhase({ directive, onResult, onComplete
       {directive.phase.interaction?.causality_claim_allowed === false ? <Text style={styles.notice}>A observação não prova causalidade médica, bioquímica, energética ou metafísica.</Text> : null}
 
       <Text style={styles.section}>ANTES</Text>
-      {ratings(beforeFields, before, (field, value) => setBefore((current) => ({ ...current, [field]: value }))}
+      {ratings(beforeFields, before, (field, value) => setBefore((current) => ({ ...current, [field]: value })))}
       {!started ? <Action label="INICIAR EXPERIMENTO" onPress={() => setStarted(true)} /> : null}
 
       {started ? <>
         <Text style={styles.section}>DEPOIS</Text>
-        {ratings(afterFields, after, (field, value) => setAfter((current) => ({ ...current, [field]: value }))}
+        {ratings(afterFields, after, (field, value) => setAfter((current) => ({ ...current, [field]: value })))}
         <Action label={observed ? 'OBSERVAÇÃO REGISTRADA ✓' : 'REGISTRAR OBSERVAÇÃO HONESTA'} onPress={() => setObserved((value) => !value)} />
       </> : null}
 
