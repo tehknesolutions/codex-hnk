@@ -15,6 +15,7 @@ import {
   experimentProtocolSummary,
   measurementContractSummary,
   replicationRegistrySummary,
+  reviewedClaimRegistrySummary,
   symbolicRuntimeSummary,
 } from "@hnk/quest-engine";
 import styles from "./research.module.css";
@@ -47,6 +48,7 @@ export default function ResearchLabHome() {
   const synthesis = evidenceSynthesisSummary();
   const claimDossier = claimDossierSummary();
   const reviewGate = evidenceReviewGateSummary();
+  const reviewedClaims = reviewedClaimRegistrySummary();
 
   return (
     <main className={styles.shell}>
@@ -72,6 +74,7 @@ export default function ResearchLabHome() {
           <span>CONVERGENCE / DIVERGENCE SYNTHESIS</span>
           <span>CLAIM DOSSIER</span>
           <span>HUMAN EVIDENCE REVIEW GATE</span>
+          <span>REVIEWED CLAIM REGISTRY</span>
         </div>
       </header>
 
@@ -141,6 +144,11 @@ export default function ResearchLabHome() {
           <strong>Evidence Review Gate</strong>
           <p>explicit human signal · no auto canon</p>
         </article>
+        <article>
+          <span className={reviewedClaims.non_destructive_history ? styles.good : styles.bad} />
+          <strong>Reviewed Claim Registry</strong>
+          <p>versioned human-reviewed claims · NOT_CANON</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -165,11 +173,17 @@ export default function ResearchLabHome() {
           <p>Vincule afirmações a grupos de Evidence Synthesis, preserve lacunas/conflitos e exija uma decisão humana explícita sem promoção automática para verdade ou cânone.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/reviewed-claims" className={styles.moduleCard}>
+          <p className={styles.kicker}>12 · REVIEWED CLAIM REGISTRY</p>
+          <h2>Reviewed Claim Registry</h2>
+          <p>Indexe claims já revisadas, mantenha versões superseded de forma não destrutiva e pesquise classificações humanas sem confundir review com verdade ou cânone.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY</code>
       </section>
     </main>
   );
