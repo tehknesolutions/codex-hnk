@@ -21,6 +21,7 @@ const validators = [
   "scripts/validate-hnk-measurement-contract.mjs",
   "scripts/validate-hnk-evidence-ledger.mjs",
   "scripts/validate-hnk-replication-registry.mjs",
+  "scripts/validate-hnk-evidence-synthesis.mjs",
 ];
 
 for (const validator of validators) {
