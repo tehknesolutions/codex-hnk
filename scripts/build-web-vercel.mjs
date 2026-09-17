@@ -15,6 +15,7 @@ const validators = [
   "scripts/validate-hnk-canon-contract.mjs",
   "scripts/validate-hnk-symbolic-runtime-contract.mjs",
   "scripts/validate-hnk-symbolic-runtime-lab.mjs",
+  "scripts/validate-hnk-runtime-session-artifact.mjs",
 ];
 
 for (const validator of validators) {
