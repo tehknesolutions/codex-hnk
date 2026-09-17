@@ -24,7 +24,10 @@ export default function CodexDecisionResearchPage() {
             <p className={styles.eyebrow}>HNK CODEX · RESEARCH LAB</p>
             <h1 className={styles.title}>Decision Layer</h1>
           </div>
-          <Link className={styles.labLink} href="/research/correspondences">Correspondence Lab →</Link>
+          <div className={styles.lockRow}>
+            <Link className={styles.labLink} href="/research/human-gate">Human Gate →</Link>
+            <Link className={styles.labLink} href="/research/correspondences">Correspondence Lab →</Link>
+          </div>
         </div>
         <p className={styles.lead}>
           Catálogo executável de entrada, permanência, quarentena e exclusão operacional.

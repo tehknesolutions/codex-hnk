@@ -1,0 +1,14 @@
+{
+  "registry_id": "HNK-HUMAN-GATE-RESEARCH-001-V1",
+  "protocol": "HNK_HUMAN_GATE_PROTOCOL_V1",
+  "source_research": "HNK-RESEARCH-001-KABBALAH-HERMETICA",
+  "source_catalogs": [
+    "canon/references/research-001-kabbalah-hermetica/catalog.json",
+    "canon/references/research-001-kabbalah-hermetica/comparative-pass-004/catalog.json"
+  ],
+  "status": "OPEN_FOR_EXPLICIT_HUMAN_REVIEW",
+  "canon_import": "EXPLICIT_HUMAN_APPROVAL_ONLY",
+  "machine_autopromotion": false,
+  "non_destructive_history": true,
+  "decisions": []
+}
