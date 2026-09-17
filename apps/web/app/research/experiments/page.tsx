@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Experiment Protocol Lab",
-  description: "Bancada privada para experimentos HNK preregistrados com controle, artifacts e relatório separado de interpretação.",
+  description: "Bancada privada para experimentos HNK preregistrados com controle, artifacts, SHA-256 attestation e relatório separado de interpretação.",
   robots: { index: false, follow: false },
 };
 
@@ -24,7 +24,7 @@ export default function ExperimentProtocolLabPage() {
           <h1>Experiment Protocol Lab</h1>
           <p>
             Preregistre pergunta, hipótese, variáveis e critérios antes da execução; depois organize artifacts
-            de controle e condição experimental sem converter diferenças em causalidade automática.
+            de controle e condição experimental com fingerprints verificáveis, sem converter diferenças em causalidade automática.
           </p>
         </div>
         <Link href="/research" className={styles.backLink}>← Research Lab</Link>
@@ -35,6 +35,9 @@ export default function ExperimentProtocolLabPage() {
         <span>PREREGISTRATION LOCKED</span>
         <span>CONTROL REQUIRED</span>
         <span>DETERMINISTIC ARTIFACT REPLAY</span>
+        <span>SHA-256 CONTENT INTEGRITY</span>
+        <span>NO IDENTITY SIGNATURE</span>
+        <span>NO TRUSTED TIMESTAMP</span>
         <span>NO AUTO PERSISTENCE</span>
         <span>NOT CAUSAL OR METAPHYSICAL PROOF</span>
       </div>
