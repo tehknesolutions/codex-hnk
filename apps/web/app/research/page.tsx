@@ -11,6 +11,7 @@ import {
   experimentAttestationSummary,
   experimentProtocolSummary,
   measurementContractSummary,
+  replicationRegistrySummary,
   symbolicRuntimeSummary,
 } from "@hnk/quest-engine";
 import styles from "./research.module.css";
@@ -19,7 +20,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "HNK Research Lab",
-  description: "Laboratório privado de pesquisa, proveniência, decisões, runtime, experimentação, medidas e evidence ledger do HNK Codex.",
+  description: "Laboratório privado de pesquisa, runtime, experimentação, evidência e replicação descritiva do HNK Codex.",
   robots: { index: false, follow: false },
 };
 
@@ -39,6 +40,7 @@ export default function ResearchLabHome() {
   const attestation = experimentAttestationSummary();
   const measurement = measurementContractSummary();
   const evidence = evidenceLedgerSummary();
+  const replication = replicationRegistrySummary();
 
   return (
     <main className={styles.shell}>
@@ -46,8 +48,8 @@ export default function ResearchLabHome() {
         <p className={styles.eyebrow}>HNK CODEX · PRIVATE RESEARCH</p>
         <h1>Research Lab</h1>
         <p>
-          Uma superfície para separar fonte, linhagem, conflito, decisão Codex, Human Gate, autoria HNK,
-          execução simbólica, experimentação preregistrada, medidas tipadas e cobertura explícita de evidência.
+          Uma superfície para separar fonte, linhagem, decisão, autoria HNK, execução simbólica,
+          experimentação preregistrada, medidas, evidência e repetibilidade descritiva.
         </p>
         <div className={styles.locks}>
           <span>PRIVATE</span>
@@ -60,6 +62,7 @@ export default function ResearchLabHome() {
           <span>SHA-256 CONTENT ATTESTATION</span>
           <span>TYPED MEASUREMENT</span>
           <span>EXPLICIT EVIDENCE COVERAGE</span>
+          <span>DESCRIPTIVE REPLICATION</span>
         </div>
       </header>
 
@@ -108,6 +111,11 @@ export default function ResearchLabHome() {
           <span className={evidence.explicit_insufficiency ? styles.good : styles.bad} />
           <strong>Evidence Ledger</strong>
           <p>requirements explicit · insufficiency visible</p>
+        </article>
+        <article>
+          <span className={replication.exact_metric_signature_required ? styles.good : styles.bad} />
+          <strong>Replication Registry</strong>
+          <p>independent runs · descriptive direction only</p>
         </article>
       </section>
 
@@ -164,9 +172,16 @@ export default function ResearchLabHome() {
         <Link href="/research/evidence" className={styles.moduleCard}>
           <p className={styles.kicker}>08 · EVIDENCE COVERAGE</p>
           <h2>Evidence Ledger Lab</h2>
+          <p>Encadeie fontes verificáveis e torne cobertura completa, parcial ou insuficiente explicitamente auditável.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
+
+        <Link href="/research/replications" className={styles.moduleCard}>
+          <p className={styles.kicker}>09 · DESCRIPTIVE REPLICATION</p>
+          <h2>Replication Registry Lab</h2>
           <p>
-            Encadeie preregistration, artifacts, medidas e relatório; declare requisitos de uma afirmação e
-            torne cobertura completa, parcial ou insuficiente explicitamente auditável.
+            Agrupe Evidence Ledgers de experiment IDs independentes sob uma assinatura de métrica congelada
+            e veja repetição, divergência e insuficiência sem inferência automática de verdade ou causalidade.
           </p>
           <span>ABRIR MÓDULO →</span>
         </Link>
@@ -174,7 +189,7 @@ export default function ResearchLabHome() {
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY</code>
       </section>
     </main>
   );
