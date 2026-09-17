@@ -1,5 +1,6 @@
 import gateRegistry from "../../../../canon/governance/human-gates/research-001.json";
 import recommendationBatch from "../../../../canon/governance/human-gates/research-001-batch-001.json";
+import batchApproval from "../../../../canon/governance/human-gates/research-001-batch-001-approval.json";
 import {
   HNK_VALUES,
   decisionLayerFor,
@@ -68,6 +69,23 @@ interface HumanGateRecommendationBatch {
   items: HumanGateRecommendation[];
 }
 
+interface HumanGateBatchApproval {
+  approval_id: string;
+  protocol: string;
+  source_batch: string;
+  status: "APPROVED_BY_HUMAN";
+  approved_by: string;
+  approved_at: string;
+  approval_signal: string;
+  approval_scope: string;
+  human_decision: true;
+  machine_can_decide: false;
+  non_destructive_history: true;
+  decision_count: number;
+  summary: Partial<Record<HumanGateOutcome, number>>;
+  locks: string[];
+}
+
 export interface HumanGateQuery {
   q?: string;
   item_id?: string;
@@ -90,6 +108,7 @@ export interface HumanGateReviewItem {
 
 const registry = gateRegistry as HumanGateRegistry;
 const batch = recommendationBatch as HumanGateRecommendationBatch;
+const approval = batchApproval as HumanGateBatchApproval;
 const candidates = queryAdmissionItems({ decision: "CANDIDATE" });
 const decisionsByItem = new Map(registry.decisions.map((decision) => [decision.source_item_id, decision]));
 const recommendationsByItem = new Map(batch.items.map((recommendation) => [recommendation.source_item_id, recommendation]));
@@ -166,12 +185,20 @@ export function humanGateSummary() {
     by_value,
     recommendation_batch: {
       batch_id: batch.batch_id,
-      status: batch.status,
+      source_status: batch.status,
       authority: batch.recommendation_authority,
       canon_import: batch.canon_import,
       machine_can_decide: batch.machine_can_decide,
       explicit_human_approval_required: batch.explicit_human_approval_required,
       by_recommendation,
+      approval: {
+        approval_id: approval.approval_id,
+        status: approval.status,
+        approved_by: approval.approved_by,
+        approved_at: approval.approved_at,
+        approval_signal: approval.approval_signal,
+        human_decision: approval.human_decision,
+      },
     },
   };
 }
@@ -188,12 +215,20 @@ export function validateHumanGateRuntime() {
   if (registry.non_destructive_history !== true) issues.push("non_destructive_history must remain true");
 
   if (batch.protocol !== registry.protocol) issues.push(`recommendation batch protocol mismatch: ${batch.protocol}`);
-  if (batch.status !== "PROPOSED_AWAITING_HUMAN_APPROVAL") issues.push(`unexpected recommendation batch status ${batch.status}`);
+  if (batch.status !== "PROPOSED_AWAITING_HUMAN_APPROVAL") issues.push(`source recommendation batch must remain preserved as proposal: ${batch.status}`);
   if (batch.recommendation_authority !== "NON_BINDING_MACHINE_RECOMMENDATION") issues.push("recommendation authority must remain non-binding");
-  if (batch.canon_import !== "NONE") issues.push("recommendation batch cannot import canon");
+  if (batch.canon_import !== "NONE") issues.push("recommendation batch cannot import canon by itself");
   if (batch.machine_can_decide !== false) issues.push("recommendation batch machine_can_decide must remain false");
   if (batch.explicit_human_approval_required !== true) issues.push("recommendation batch must require explicit human approval");
   if (batch.items.length !== candidates.length) issues.push(`recommendation batch must cover all candidates: ${batch.items.length}/${candidates.length}`);
+
+  if (approval.protocol !== registry.protocol) issues.push(`batch approval protocol mismatch: ${approval.protocol}`);
+  if (approval.status !== "APPROVED_BY_HUMAN") issues.push(`unexpected batch approval status ${approval.status}`);
+  if (approval.human_decision !== true) issues.push("batch approval must be a human decision");
+  if (approval.machine_can_decide !== false) issues.push("batch approval cannot grant machine decision authority");
+  if (!approval.approved_by.trim()) issues.push("batch approval approved_by required");
+  if (!approval.approved_at.trim()) issues.push("batch approval approved_at required");
+  if (approval.decision_count !== candidates.length) issues.push(`batch approval decision_count mismatch: ${approval.decision_count}/${candidates.length}`);
 
   for (const candidateId of candidateIds) {
     if (!recommendationIds.has(candidateId)) issues.push(`recommendation missing for ${candidateId}`);
@@ -202,7 +237,7 @@ export function validateHumanGateRuntime() {
     if (!candidateIds.has(recommendation.source_item_id)) issues.push(`recommendation source is not a candidate: ${recommendation.source_item_id}`);
     if (!HUMAN_GATE_OUTCOMES.includes(recommendation.recommendation)) issues.push(`${recommendation.source_item_id}: invalid recommendation`);
     if (recommendation.authority !== "NON_BINDING_MACHINE_RECOMMENDATION") issues.push(`${recommendation.source_item_id}: recommendation authority drift`);
-    if (recommendation.human_gate_status !== "AWAITING_EXPLICIT_HUMAN_APPROVAL") issues.push(`${recommendation.source_item_id}: recommendation Human Gate status drift`);
+    if (recommendation.human_gate_status !== "AWAITING_EXPLICIT_HUMAN_APPROVAL") issues.push(`${recommendation.source_item_id}: source recommendation Human Gate status drift`);
     if (!recommendation.rationale.trim()) issues.push(`${recommendation.source_item_id}: recommendation rationale required`);
     if (!recommendation.constraints.length) issues.push(`${recommendation.source_item_id}: recommendation constraint required`);
   }
@@ -212,12 +247,18 @@ export function validateHumanGateRuntime() {
     sourceIds.add(decision.source_item_id);
 
     const item = candidates.find((candidate) => candidate.id === decision.source_item_id);
+    const recommendation = recommendationsByItem.get(decision.source_item_id);
     if (!item) issues.push(`${decision.gate_id}: source candidate not found`);
     if (!HUMAN_GATE_OUTCOMES.includes(decision.outcome)) issues.push(`${decision.gate_id}: invalid outcome`);
     if (!decision.approved_by.trim()) issues.push(`${decision.gate_id}: approved_by required`);
     if (!decision.rationale.trim()) issues.push(`${decision.gate_id}: rationale required`);
     if (item && decision.source_item_version !== item.version) issues.push(`${decision.gate_id}: source version mismatch`);
+    if (recommendation && decision.outcome !== recommendation.recommendation) issues.push(`${decision.gate_id}: decision differs from approved Batch 001 recommendation`);
+    if (decision.approved_by !== approval.approved_by) issues.push(`${decision.gate_id}: approver mismatch with Batch 001 approval`);
+    if (decision.approved_at !== approval.approved_at) issues.push(`${decision.gate_id}: approval timestamp mismatch with Batch 001 approval`);
   }
+
+  if (registry.decisions.length !== candidates.length) issues.push(`Batch 001 approval requires all ${candidates.length} decisions, found ${registry.decisions.length}`);
 
   return { ok: issues.length === 0, issues };
 }
