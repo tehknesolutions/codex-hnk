@@ -7,6 +7,10 @@
     ".": {
       "types": "./src/index.d.ts",
       "import": "./src/index.mjs"
+    },
+    "./canon": {
+      "types": "./src/canon.d.ts",
+      "import": "./src/canon.mjs"
     }
   },
   "scripts": {
