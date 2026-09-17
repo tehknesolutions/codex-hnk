@@ -19,6 +19,8 @@
     "@hnk/experiment-attestation": "workspace:*"
   },
   "devDependencies": {
+    "@hnk/evidence-synthesis": "workspace:*",
+    "@hnk/replication-registry": "workspace:*",
     "typescript": "~6.0.3"
   }
 }
