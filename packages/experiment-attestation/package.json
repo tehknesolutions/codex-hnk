@@ -18,6 +18,8 @@
     "@hnk/experiment-protocol": "workspace:*"
   },
   "devDependencies": {
+    "@hnk/runtime-session-artifact": "workspace:*",
+    "@hnk/symbolic-runtime-contract": "workspace:*",
     "typescript": "~6.0.3"
   }
 }
