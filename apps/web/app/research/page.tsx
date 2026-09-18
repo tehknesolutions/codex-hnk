@@ -19,6 +19,7 @@ import {
   replicationRegistrySummary,
   researchArtifactLibrarySummary,
   researchWorkspaceSnapshotSummary,
+  workspaceSnapshotRegistrySummary,
   reviewedClaimRegistrySummary,
   symbolicRuntimeSummary,
 } from "@hnk/quest-engine";
@@ -57,6 +58,7 @@ export default function ResearchLabHome() {
   const reevaluationBatch = claimReevaluationBatchScannerSummary();
   const artifactLibrary = researchArtifactLibrarySummary();
   const workspaceSnapshot = researchWorkspaceSnapshotSummary();
+  const workspaceSnapshotRegistry = workspaceSnapshotRegistrySummary();
 
   return (
     <main className={styles.shell}>
@@ -87,6 +89,7 @@ export default function ResearchLabHome() {
           <span>RE-EVALUATION BATCH SCANNER</span>
           <span>ARTIFACT LIBRARY</span>
           <span>WORKSPACE SNAPSHOT</span>
+          <span>SNAPSHOT REGISTRY</span>
         </div>
       </header>
 
@@ -181,6 +184,11 @@ export default function ResearchLabHome() {
           <strong>Workspace Snapshot</strong>
           <p>root SHA-256 · compare · exact restore</p>
         </article>
+        <article>
+          <span className={workspaceSnapshotRegistry.machine_can_choose_head === false ? styles.good : styles.bad} />
+          <strong>Snapshot Registry</strong>
+          <p>timeline · forks · explicit human HEAD</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -235,11 +243,17 @@ export default function ResearchLabHome() {
           <p>Congele Artifact Library, Reviewed Claim Registry e Re-evaluation Queue num único root digest; compare checkpoints e restaure os componentes exatos.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/workspace-snapshot-registry" className={styles.moduleCard}>
+          <p className={styles.kicker}>17 · WORKSPACE SNAPSHOT REGISTRY</p>
+          <h2>Snapshot Registry</h2>
+          <p>Catalogue checkpoints por digest, valide parent → child, detecte forks, trace ancestry, compare qualquer par e mova HEAD somente por ação humana explícita.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY</code>
       </section>
     </main>
   );
