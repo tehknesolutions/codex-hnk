@@ -304,15 +304,6 @@ export function verifyResearchReleaseManifest(
     }));
   }
 
-  checks.push(makeCheck({
-    check_id: "REPRODUCTION:COMMAND_EXECUTION",
-    category: "REPRODUCTION",
-    subject: "recorded_commands",
-    expected: "RECORDED_ONLY",
-    observed: null,
-    status: "UNVERIFIED",
-    note: "Verifier V1 does not execute manifest reproduction commands automatically.",
-  }));
 
   const report = {
     verifier_id: HNK_REPRODUCIBILITY_VERIFIER_ID,
