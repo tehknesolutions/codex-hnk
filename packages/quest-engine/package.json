@@ -14,6 +14,7 @@
   "dependencies": {
     "@hnk/canon-contract": "workspace:*",
     "@hnk/claim-dossier": "workspace:*",
+    "@hnk/claim-reevaluation-queue": "workspace:*",
     "@hnk/evidence-ledger": "workspace:*",
     "@hnk/evidence-review-gate": "workspace:*",
     "@hnk/evidence-synthesis": "workspace:*",
