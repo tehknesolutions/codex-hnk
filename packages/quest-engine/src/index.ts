@@ -23,3 +23,4 @@ export * from "./reviewed-claim-registry.js";
 export * from "./claim-reevaluation-queue.js";
 export * from "./claim-reevaluation-batch-scanner.js";
 export * from "./research-artifact-library.js";
+export * from "./research-workspace-snapshot.js";
