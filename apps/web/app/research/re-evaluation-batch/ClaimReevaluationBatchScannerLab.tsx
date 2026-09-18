@@ -9,7 +9,9 @@ import {
   parseClaimDossier,
   parseClaimReevaluationQueue,
   parseEvidenceSynthesis,
+  parseResearchArtifactLibrary,
   parseReviewedClaimRegistry,
+  resolveReevaluationArtifactBundle,
   scanClaimReevaluationBatch,
   serializeClaimReevaluationBatchScan,
   serializeClaimReevaluationQueue,
@@ -17,6 +19,7 @@ import {
   type HnkClaimReevaluationBatchScan,
   type HnkClaimReevaluationQueue,
   type HnkEvidenceSynthesis,
+  type HnkResearchArtifactLibrary,
   type HnkReviewedClaimRegistry,
 } from "@hnk/quest-engine";
 import styles from "../runtime/runtime.module.css";
@@ -70,6 +73,8 @@ export default function ClaimReevaluationBatchScannerLab() {
 
   const [reviewedRegistry, setReviewedRegistry] =
     useState<HnkReviewedClaimRegistry | null>(null);
+  const [artifactLibrary, setArtifactLibrary] =
+    useState<HnkResearchArtifactLibrary | null>(null);
   const [dossiers, setDossiers] = useState<HnkClaimDossier[]>([]);
   const [syntheses, setSyntheses] = useState<HnkEvidenceSynthesis[]>([]);
   const [queue, setQueue] = useState<HnkClaimReevaluationQueue | null>(null);
@@ -121,6 +126,32 @@ export default function ClaimReevaluationBatchScannerLab() {
       setScan(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "REVIEWED_REGISTRY_IMPORT_FAILED");
+    }
+  }
+
+  async function importArtifactLibrary(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    try {
+      setError("");
+      setArtifactLibrary(parseResearchArtifactLibrary(await file.text()));
+      setScan(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "ARTIFACT_LIBRARY_IMPORT_FAILED");
+    }
+  }
+
+  function resolveInputsFromArtifactLibrary() {
+    if (!artifactLibrary || !reviewedRegistry) return;
+    try {
+      setError("");
+      const bundle = resolveReevaluationArtifactBundle(artifactLibrary, reviewedRegistry);
+      setDossiers([...bundle.original_dossiers]);
+      setSyntheses([...bundle.candidate_syntheses]);
+      setScan(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "ARTIFACT_LIBRARY_RESOLUTION_FAILED");
     }
   }
 
@@ -274,6 +305,15 @@ export default function ClaimReevaluationBatchScannerLab() {
           <input type="file" accept="application/json,.json" onChange={importRegistry} />
         </label>
         <label>
+          Research Artifact Library
+          <input type="file" accept="application/json,.json" onChange={importArtifactLibrary} />
+        </label>
+        {artifactLibrary && reviewedRegistry ? (
+          <button className={styles.ghostButton} onClick={resolveInputsFromArtifactLibrary}>
+            Resolver inputs automaticamente da Artifact Library
+          </button>
+        ) : null}
+        <label>
           Dossiers originais — múltiplos arquivos
           <input type="file" multiple accept="application/json,.json" onChange={importDossiers} />
         </label>
@@ -350,8 +390,8 @@ export default function ClaimReevaluationBatchScannerLab() {
           <p className={styles.kicker}>02 · BATCH INPUT COVERAGE</p>
           <h2>Scan de todas as claims ativas</h2>
           <p>
-            registry={reviewedRegistry?.registry_key ?? "—"} · dossiers={dossiers.length} ·
-            candidate_syntheses={syntheses.length}
+            registry={reviewedRegistry?.registry_key ?? "—"} · artifact_library={artifactLibrary?.library_key ?? "—"} ·
+            dossiers={dossiers.length} · candidate_syntheses={syntheses.length}
           </p>
           <button
             className={styles.primaryButton}
