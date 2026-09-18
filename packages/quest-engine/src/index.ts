@@ -30,3 +30,4 @@ export * from "./reproducibility-verifier.js";
 export * from "./release-verification-registry.js";
 export * from "./deployment-gate-registry.js";
 export * from "./deployment-execution-receipt.js";
+export * from "./production-verification-registry.js";
