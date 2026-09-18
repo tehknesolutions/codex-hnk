@@ -32,6 +32,7 @@ const validators = [
   "scripts/validate-hnk-research-release-manifest.mjs",
   "scripts/validate-hnk-reproducibility-verifier.mjs",
   "scripts/validate-hnk-release-verification-registry.mjs",
+  "scripts/validate-hnk-deployment-gate-registry.mjs",
 ];
 
 for (const validator of validators) {
