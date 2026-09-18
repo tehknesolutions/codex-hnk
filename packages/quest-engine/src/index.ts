@@ -29,3 +29,4 @@ export * from "./research-release-manifest.js";
 export * from "./reproducibility-verifier.js";
 export * from "./release-verification-registry.js";
 export * from "./deployment-gate-registry.js";
+export * from "./deployment-execution-receipt.js";
