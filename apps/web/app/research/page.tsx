@@ -8,6 +8,7 @@ import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/
 import { createResearch001Registry } from "@hnk/correspondence-registry";
 import {
   claimDossierSummary,
+  claimReevaluationBatchScannerSummary,
   claimReevaluationQueueSummary,
   evidenceLedgerSummary,
   evidenceReviewGateSummary,
@@ -51,6 +52,7 @@ export default function ResearchLabHome() {
   const reviewGate = evidenceReviewGateSummary();
   const reviewedClaims = reviewedClaimRegistrySummary();
   const reevaluationQueue = claimReevaluationQueueSummary();
+  const reevaluationBatch = claimReevaluationBatchScannerSummary();
 
   return (
     <main className={styles.shell}>
@@ -78,6 +80,7 @@ export default function ResearchLabHome() {
           <span>HUMAN EVIDENCE REVIEW GATE</span>
           <span>REVIEWED CLAIM REGISTRY</span>
           <span>CLAIM RE-EVALUATION QUEUE</span>
+          <span>RE-EVALUATION BATCH SCANNER</span>
         </div>
       </header>
 
@@ -157,6 +160,11 @@ export default function ResearchLabHome() {
           <strong>Claim Re-evaluation Queue</strong>
           <p>snapshot drift detection · human review required</p>
         </article>
+        <article>
+          <span className={reevaluationBatch.machine_can_change_classification === false ? styles.good : styles.bad} />
+          <strong>Re-evaluation Batch Scanner</strong>
+          <p>all active claims · explicit coverage gaps</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -193,11 +201,17 @@ export default function ResearchLabHome() {
           <p>Detecte quando um novo snapshot da mesma Evidence Synthesis torna uma claim ativa candidata a nova revisão, sem reclassificação automática.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/re-evaluation-batch" className={styles.moduleCard}>
+          <p className={styles.kicker}>14 · RE-EVALUATION BATCH SCANNER</p>
+          <h2>Re-evaluation Batch Scanner</h2>
+          <p>Varra todas as claims ativas, preserve dossiers ou syntheses ausentes como gaps explícitos e materialize somente REVIEW_DUE na fila.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → CLAIM RE-EVALUATION QUEUE</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE</code>
       </section>
     </main>
   );
