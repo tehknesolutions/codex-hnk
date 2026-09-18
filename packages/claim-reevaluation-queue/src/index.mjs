@@ -531,7 +531,7 @@ export function claimReevaluationQueueSummary() {
     reasons: [...HNK_REEVALUATION_REASONS],
     trigger: "SAME_SYNTHESIS_KEY_WITH_CHANGED_SYNTHESIS_DIGEST",
     linked_group_comparison: true,
-    new_groups_flagged_as_unclassified_not_relevant,
+    new_groups_flagged_as_unclassified_not_relevant: true,
     review_due_status: "REVIEW_DUE",
     next_workflow: "CREATE_NEW_CLAIM_DOSSIER_AND_HUMAN_REVIEW",
     machine_can_decide_review: false,
