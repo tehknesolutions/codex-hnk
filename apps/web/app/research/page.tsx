@@ -17,6 +17,7 @@ import {
   experimentProtocolSummary,
   measurementContractSummary,
   replicationRegistrySummary,
+  researchArtifactLibrarySummary,
   reviewedClaimRegistrySummary,
   symbolicRuntimeSummary,
 } from "@hnk/quest-engine";
@@ -53,6 +54,7 @@ export default function ResearchLabHome() {
   const reviewedClaims = reviewedClaimRegistrySummary();
   const reevaluationQueue = claimReevaluationQueueSummary();
   const reevaluationBatch = claimReevaluationBatchScannerSummary();
+  const artifactLibrary = researchArtifactLibrarySummary();
 
   return (
     <main className={styles.shell}>
@@ -81,6 +83,7 @@ export default function ResearchLabHome() {
           <span>REVIEWED CLAIM REGISTRY</span>
           <span>CLAIM RE-EVALUATION QUEUE</span>
           <span>RE-EVALUATION BATCH SCANNER</span>
+          <span>ARTIFACT LIBRARY</span>
         </div>
       </header>
 
@@ -165,6 +168,11 @@ export default function ResearchLabHome() {
           <strong>Re-evaluation Batch Scanner</strong>
           <p>all active claims · explicit coverage gaps</p>
         </article>
+        <article>
+          <span className={artifactLibrary.machine_inferred_relevance === false ? styles.good : styles.bad} />
+          <strong>Artifact Library</strong>
+          <p>append-only snapshots · deterministic input resolution</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -207,11 +215,17 @@ export default function ResearchLabHome() {
           <p>Varra todas as claims ativas, preserve dossiers ou syntheses ausentes como gaps explícitos e materialize somente REVIEW_DUE na fila.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/artifacts" className={styles.moduleCard}>
+          <p className={styles.kicker}>15 · EVIDENCE SNAPSHOT CATALOG</p>
+          <h2>Artifact Library</h2>
+          <p>Catalogue Claim Dossiers e Evidence Synthesis por digest, key e revisão; resolva automaticamente os inputs corretos para o Batch Scanner.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE</code>
       </section>
     </main>
   );
