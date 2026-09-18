@@ -17,7 +17,7 @@ function clock(v:number){return`${String(Math.floor(v/60)).padStart(2,'0')}:${St
 export function Day073PortalExperienceMobile(){
  const auth=useHnkAuth(),player=useAudioPlayer(null,{updateInterval:250}),status=useAudioPlayerStatus(player);
  const[ready,setReady]=useState(false),[seconds,setSeconds]=useState(0),[volume,setVolume]=useState(4),[induction,setInduction]=useState(false),[sigil,setSigil]=useState(false),[returned,setReturned]=useState(false),[safe,setSafe]=useState(false),[diary,setDiary]=useState(''),[receipt,setReceipt]=useState<string|null>(null),[checksum,setChecksum]=useState<string|null>(null),[error,setError]=useState<string|null>(null);
- const published=Boolean(PORTAL073_PRODUCTION_ENABLED),operators=useMemo(()=>PORTAL073_TRANSITION_PRESET_ID===HNK_PORTAL073_ACTIVE_PRESET_V1.id&&PORTAL073_SIGIL_ID==='HNK-REF-MAGICIAN-MERCURY-V1',[ ]);
+ const published=Boolean(PORTAL073_PRODUCTION_ENABLED),operators=useMemo(()=>PORTAL073_TUNER_ID==='HNK-ANGELIC-TUNER-D073-V1'&&PORTAL073_TRANSITION_PRESET_ID===HNK_PORTAL073_ACTIVE_PRESET_V1.id&&PORTAL073_SIGIL_ID==='HNK-REF-MAGICIAN-MERCURY-V1',[]);
  useEffect(()=>{let live=true;if(!published)return()=>{live=false};void(async()=>{try{await setAudioModeAsync({allowsRecording:false,playsInSilentMode:true});const uri=await audioUri();if(!live)return;player.replace({uri,name:HNK_PORTAL073_ACTIVE_PRESET_V1.id});player.loop=true;setReady(true)}catch(e){if(live)setError(e instanceof Error?e.message:'portal073_audio_failed')}})();return()=>{live=false;player.pause()}},[player,published]);
  useEffect(()=>{player.volume=Math.max(0,Math.min(.8,volume/10))},[player,volume]);
  useEffect(()=>{const sub=AppState.addEventListener('change',x=>{if(x!=='active')player.pause()});return()=>sub.remove()},[player]);
