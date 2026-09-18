@@ -24,6 +24,7 @@
     "@hnk/measurement-contract": "workspace:*",
     "@hnk/replication-registry": "workspace:*",
     "@hnk/research-artifact-library": "workspace:*",
+    "@hnk/release-verification-registry": "workspace:*",
     "@hnk/reproducibility-verifier": "workspace:*",
     "@hnk/research-release-manifest": "workspace:*",
     "@hnk/research-workspace-snapshot": "workspace:*",

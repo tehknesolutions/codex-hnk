@@ -20,6 +20,7 @@ import {
   researchArtifactLibrarySummary,
   researchReleaseManifestSummary,
   reproducibilityVerifierSummary,
+  releaseVerificationRegistrySummary,
   researchWorkspaceSnapshotSummary,
   workspaceSnapshotRegistrySummary,
   reviewedClaimRegistrySummary,
@@ -61,6 +62,7 @@ export default function ResearchLabHome() {
   const artifactLibrary = researchArtifactLibrarySummary();
   const releaseManifest = researchReleaseManifestSummary();
   const reproducibilityVerifier = reproducibilityVerifierSummary();
+  const releaseVerificationRegistry = releaseVerificationRegistrySummary();
   const workspaceSnapshot = researchWorkspaceSnapshotSummary();
   const workspaceSnapshotRegistry = workspaceSnapshotRegistrySummary();
 
@@ -96,6 +98,7 @@ export default function ResearchLabHome() {
           <span>SNAPSHOT REGISTRY</span>
           <span>RELEASE MANIFEST</span>
           <span>REPRODUCIBILITY VERIFIER</span>
+          <span>HUMAN RELEASE GATE</span>
         </div>
       </header>
 
@@ -205,6 +208,11 @@ export default function ResearchLabHome() {
           <strong>Reproducibility Verifier</strong>
           <p>MATCH · DRIFT · MISSING · UNVERIFIED</p>
         </article>
+        <article>
+          <span className={releaseVerificationRegistry.machine_can_accept_release === false ? styles.good : styles.bad} />
+          <strong>Human Release Gate</strong>
+          <p>MATCH ≠ acceptance · explicit report-bound decision</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -277,11 +285,17 @@ export default function ResearchLabHome() {
           <p>Compare um Reproducibility Pack com Git, runtime e fontes observadas e produza MATCH, DRIFT, MISSING ou UNVERIFIED sem executar comandos automaticamente.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/release-verification-registry" className={styles.moduleCard}>
+          <p className={styles.kicker}>20 · VERIFICATION REGISTRY + HUMAN RELEASE GATE</p>
+          <h2>Human Release Gate</h2>
+          <p>Preserve Verification Reports por digest e aceite, rejeite ou retenha uma release somente por decisão humana explícita sobre um report específico.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER → VERIFICATION REGISTRY → HUMAN RELEASE GATE</code>
       </section>
     </main>
   );

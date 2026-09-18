@@ -27,3 +27,4 @@ export * from "./research-workspace-snapshot.js";
 export * from "./research-workspace-snapshot-registry.js";
 export * from "./research-release-manifest.js";
 export * from "./reproducibility-verifier.js";
+export * from "./release-verification-registry.js";
