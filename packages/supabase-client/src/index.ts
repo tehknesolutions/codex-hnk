@@ -77,6 +77,7 @@ export * from './day069-v2';
 export * from './day070-v2';
 export * from './day071-v2';
 export * from './day072-v2';
+export * from './day073-v2';
 export * from './kether-cycle01';
 export * from './kether-cycle02';
 export * from './kether-cycle03';
