@@ -1,0 +1,28 @@
+{
+  "name": "@hnk/research-release-manifest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@hnk/experiment-attestation": "workspace:*",
+    "@hnk/research-workspace-snapshot-registry": "workspace:*"
+  },
+  "devDependencies": {
+    "@hnk/claim-reevaluation-queue": "workspace:*",
+    "@hnk/research-artifact-library": "workspace:*",
+    "@hnk/research-workspace-snapshot": "workspace:*",
+    "@hnk/reviewed-claim-registry": "workspace:*",
+    "typescript": "~6.0.3"
+  }
+}
