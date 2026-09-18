@@ -25,6 +25,7 @@ const validators = [
   "scripts/validate-hnk-claim-dossier-review-gate.mjs",
   "scripts/validate-hnk-reviewed-claim-registry.mjs",
   "scripts/validate-hnk-claim-reevaluation-queue.mjs",
+  "scripts/validate-hnk-claim-reevaluation-batch-scanner.mjs",
 ];
 
 for (const validator of validators) {

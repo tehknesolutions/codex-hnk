@@ -21,3 +21,4 @@ export * from "./claim-dossier.js";
 export * from "./evidence-review-gate.js";
 export * from "./reviewed-claim-registry.js";
 export * from "./claim-reevaluation-queue.js";
+export * from "./claim-reevaluation-batch-scanner.js";
