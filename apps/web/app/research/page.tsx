@@ -65,6 +65,7 @@ export default function ResearchLabHome() {
   const reproducibilityVerifier = reproducibilityVerifierSummary();
   const releaseVerificationRegistry = releaseVerificationRegistrySummary();
   const deploymentGate = deploymentGateRegistrySummary();
+  const deploymentReceipt = deploymentExecutionReceiptSummary();
   const workspaceSnapshot = researchWorkspaceSnapshotSummary();
   const workspaceSnapshotRegistry = workspaceSnapshotRegistrySummary();
 
@@ -102,6 +103,7 @@ export default function ResearchLabHome() {
           <span>REPRODUCIBILITY VERIFIER</span>
           <span>HUMAN RELEASE GATE</span>
           <span>HUMAN DEPLOYMENT GATE</span>
+          <span>DEPLOYMENT EXECUTION RECEIPT</span>
         </div>
       </header>
 
@@ -221,6 +223,11 @@ export default function ResearchLabHome() {
           <strong>Human Deployment Gate</strong>
           <p>RELEASE_ACCEPTED ≠ deployment authorization</p>
         </article>
+        <article>
+          <span className={deploymentReceipt.production_readiness_inferred === false ? styles.good : styles.bad} />
+          <strong>Deployment Execution Receipt</strong>
+          <p>authorization ≠ execution · exact commit binding</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -305,11 +312,17 @@ export default function ResearchLabHome() {
           <p>Nomeie somente releases atualmente aceitas, invalide candidates quando a evidência mudar e autorize deployment apenas por decisão humana explícita sobre um candidate ainda ELIGIBLE.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/deployment-receipts" className={styles.moduleCard}>
+          <p className={styles.kicker}>22 · DEPLOYMENT EXECUTION RECEIPT</p>
+          <h2>Execution Receipt</h2>
+          <p>Registre a execução observada somente para candidates ainda aprovados, com commit exato, provider metadata SHA-256 e resultado sem inferir readiness.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER → VERIFICATION REGISTRY → HUMAN RELEASE GATE → DEPLOYMENT CANDIDATE → HUMAN DEPLOYMENT GATE</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER → VERIFICATION REGISTRY → HUMAN RELEASE GATE → DEPLOYMENT CANDIDATE → HUMAN DEPLOYMENT GATE → DEPLOYMENT EXECUTION RECEIPT</code>
       </section>
     </main>
   );

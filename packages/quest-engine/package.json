@@ -18,6 +18,7 @@
     "@hnk/claim-reevaluation-queue": "workspace:*",
     "@hnk/evidence-ledger": "workspace:*",
     "@hnk/evidence-review-gate": "workspace:*",
+    "@hnk/deployment-execution-receipt": "workspace:*",
     "@hnk/deployment-gate-registry": "workspace:*",
     "@hnk/evidence-synthesis": "workspace:*",
     "@hnk/experiment-attestation": "workspace:*",
