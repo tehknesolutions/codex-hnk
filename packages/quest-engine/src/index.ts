@@ -20,3 +20,4 @@ export * from "./evidence-synthesis.js";
 export * from "./claim-dossier.js";
 export * from "./evidence-review-gate.js";
 export * from "./reviewed-claim-registry.js";
+export * from "./claim-reevaluation-queue.js";
