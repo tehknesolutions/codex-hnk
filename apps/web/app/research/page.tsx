@@ -8,6 +8,7 @@ import { canonRegistrySummary, validateCanonRegistry } from "../../lib/research/
 import { createResearch001Registry } from "@hnk/correspondence-registry";
 import {
   claimDossierSummary,
+  claimReevaluationQueueSummary,
   evidenceLedgerSummary,
   evidenceReviewGateSummary,
   evidenceSynthesisSummary,
@@ -49,6 +50,7 @@ export default function ResearchLabHome() {
   const claimDossier = claimDossierSummary();
   const reviewGate = evidenceReviewGateSummary();
   const reviewedClaims = reviewedClaimRegistrySummary();
+  const reevaluationQueue = claimReevaluationQueueSummary();
 
   return (
     <main className={styles.shell}>
@@ -75,6 +77,7 @@ export default function ResearchLabHome() {
           <span>CLAIM DOSSIER</span>
           <span>HUMAN EVIDENCE REVIEW GATE</span>
           <span>REVIEWED CLAIM REGISTRY</span>
+          <span>CLAIM RE-EVALUATION QUEUE</span>
         </div>
       </header>
 
@@ -149,6 +152,11 @@ export default function ResearchLabHome() {
           <strong>Reviewed Claim Registry</strong>
           <p>versioned human-reviewed claims · NOT_CANON</p>
         </article>
+        <article>
+          <span className={reevaluationQueue.machine_can_change_classification === false ? styles.good : styles.bad} />
+          <strong>Claim Re-evaluation Queue</strong>
+          <p>snapshot drift detection · human review required</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -179,11 +187,17 @@ export default function ResearchLabHome() {
           <p>Indexe claims já revisadas, mantenha versões superseded de forma não destrutiva e pesquise classificações humanas sem confundir review com verdade ou cânone.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/re-evaluations" className={styles.moduleCard}>
+          <p className={styles.kicker}>13 · CLAIM RE-EVALUATION QUEUE</p>
+          <h2>Claim Re-evaluation Queue</h2>
+          <p>Detecte quando um novo snapshot da mesma Evidence Synthesis torna uma claim ativa candidata a nova revisão, sem reclassificação automática.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → CLAIM RE-EVALUATION QUEUE</code>
       </section>
     </main>
   );
