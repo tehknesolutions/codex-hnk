@@ -9,6 +9,7 @@ import { createResearch001Registry } from "@hnk/correspondence-registry";
 import {
   claimDossierSummary,
   claimReevaluationBatchScannerSummary,
+  deploymentGateRegistrySummary,
   claimReevaluationQueueSummary,
   evidenceLedgerSummary,
   evidenceReviewGateSummary,
@@ -63,6 +64,7 @@ export default function ResearchLabHome() {
   const releaseManifest = researchReleaseManifestSummary();
   const reproducibilityVerifier = reproducibilityVerifierSummary();
   const releaseVerificationRegistry = releaseVerificationRegistrySummary();
+  const deploymentGate = deploymentGateRegistrySummary();
   const workspaceSnapshot = researchWorkspaceSnapshotSummary();
   const workspaceSnapshotRegistry = workspaceSnapshotRegistrySummary();
 
@@ -99,6 +101,7 @@ export default function ResearchLabHome() {
           <span>RELEASE MANIFEST</span>
           <span>REPRODUCIBILITY VERIFIER</span>
           <span>HUMAN RELEASE GATE</span>
+          <span>HUMAN DEPLOYMENT GATE</span>
         </div>
       </header>
 
@@ -213,6 +216,11 @@ export default function ResearchLabHome() {
           <strong>Human Release Gate</strong>
           <p>MATCH ≠ acceptance · explicit report-bound decision</p>
         </article>
+        <article>
+          <span className={deploymentGate.machine_can_approve_deployment === false ? styles.good : styles.bad} />
+          <strong>Human Deployment Gate</strong>
+          <p>RELEASE_ACCEPTED ≠ deployment authorization</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -291,11 +299,17 @@ export default function ResearchLabHome() {
           <p>Preserve Verification Reports por digest e aceite, rejeite ou retenha uma release somente por decisão humana explícita sobre um report específico.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/deployment-gate" className={styles.moduleCard}>
+          <p className={styles.kicker}>21 · DEPLOYMENT CANDIDATE + HUMAN DEPLOYMENT GATE</p>
+          <h2>Human Deployment Gate</h2>
+          <p>Nomeie somente releases atualmente aceitas, invalide candidates quando a evidência mudar e autorize deployment apenas por decisão humana explícita sobre um candidate ainda ELIGIBLE.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER → VERIFICATION REGISTRY → HUMAN RELEASE GATE</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER → VERIFICATION REGISTRY → HUMAN RELEASE GATE → DEPLOYMENT CANDIDATE → HUMAN DEPLOYMENT GATE</code>
       </section>
     </main>
   );
