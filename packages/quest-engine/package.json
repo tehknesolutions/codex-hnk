@@ -20,6 +20,7 @@
     "@hnk/evidence-review-gate": "workspace:*",
     "@hnk/deployment-execution-receipt": "workspace:*",
     "@hnk/deployment-gate-registry": "workspace:*",
+    "@hnk/production-verification-registry": "workspace:*",
     "@hnk/evidence-synthesis": "workspace:*",
     "@hnk/experiment-attestation": "workspace:*",
     "@hnk/experiment-protocol": "workspace:*",

@@ -9,7 +9,9 @@ import { createResearch001Registry } from "@hnk/correspondence-registry";
 import {
   claimDossierSummary,
   claimReevaluationBatchScannerSummary,
+  deploymentExecutionReceiptSummary,
   deploymentGateRegistrySummary,
+  productionVerificationRegistrySummary,
   claimReevaluationQueueSummary,
   evidenceLedgerSummary,
   evidenceReviewGateSummary,
@@ -66,6 +68,7 @@ export default function ResearchLabHome() {
   const releaseVerificationRegistry = releaseVerificationRegistrySummary();
   const deploymentGate = deploymentGateRegistrySummary();
   const deploymentReceipt = deploymentExecutionReceiptSummary();
+  const productionVerification = productionVerificationRegistrySummary();
   const workspaceSnapshot = researchWorkspaceSnapshotSummary();
   const workspaceSnapshotRegistry = workspaceSnapshotRegistrySummary();
 
@@ -104,6 +107,7 @@ export default function ResearchLabHome() {
           <span>HUMAN RELEASE GATE</span>
           <span>HUMAN DEPLOYMENT GATE</span>
           <span>DEPLOYMENT EXECUTION RECEIPT</span>
+          <span>HUMAN PRODUCTION GATE</span>
         </div>
       </header>
 
@@ -228,6 +232,11 @@ export default function ResearchLabHome() {
           <strong>Deployment Execution Receipt</strong>
           <p>authorization ≠ execution · exact commit binding</p>
         </article>
+        <article>
+          <span className={productionVerification.machine_can_accept_production === false ? styles.good : styles.bad} />
+          <strong>Human Production Gate</strong>
+          <p>execution ≠ production acceptance · latest evidence only</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -318,11 +327,17 @@ export default function ResearchLabHome() {
           <p>Registre a execução observada somente para candidates ainda aprovados, com commit exato, provider metadata SHA-256 e resultado sem inferir readiness.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/production-verification" className={styles.moduleCard}>
+          <p className={styles.kicker}>23 · POST-DEPLOYMENT VERIFICATION + HUMAN PRODUCTION GATE</p>
+          <h2>Human Production Gate</h2>
+          <p>Preserve receipts, registre URL/health/smoke observations e derive PRODUCTION_ACCEPTED somente por decisão humana explícita sobre o latest receipt + latest PASS verification.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER → VERIFICATION REGISTRY → HUMAN RELEASE GATE → DEPLOYMENT CANDIDATE → HUMAN DEPLOYMENT GATE → DEPLOYMENT EXECUTION RECEIPT</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER → VERIFICATION REGISTRY → HUMAN RELEASE GATE → DEPLOYMENT CANDIDATE → HUMAN DEPLOYMENT GATE → DEPLOYMENT EXECUTION RECEIPT → POST-DEPLOYMENT VERIFICATION → HUMAN PRODUCTION GATE</code>
       </section>
     </main>
   );
