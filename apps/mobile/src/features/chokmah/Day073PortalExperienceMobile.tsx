@@ -6,6 +6,7 @@ import {HNK_PORTAL073_ACTIVE_PRESET_V1,HNK_PORTAL073_DURATION_SECONDS,createPort
 import {useHnkAuth} from '../auth/AuthContext';
 import {MAGICIAN_MERCURY_SIGIL_SHA256,MagicianMercurySigilV1} from './MagicianMercurySigilV1';
 import {savePortal073EncryptedVault} from './portal073-vault';
+import {buildPortal073CompletionEvidence} from './portal073-completion-evidence';
 import {PORTAL073_PRODUCTION_ENABLED,PORTAL073_SIGIL_ID,PORTAL073_TRANSITION_PRESET_ID,PORTAL073_TUNER_ID} from './runtime-definitions/portal073';
 
 const TARGET=HNK_PORTAL073_DURATION_SECONDS;
@@ -26,6 +27,8 @@ export function Day073PortalExperienceMobile(){
  function stop(){player.pause();setSafe(false);setError('portal073_safety_stop__completion_blocked')}
  async function saveVault(){if(!published)throw new Error('portal073_not_published');if(!returned)throw new Error('portal073_return_gate_required_before_vault');if(!auth.client||!auth.userId)throw new Error('portal073_authenticated_vault_required');const r=await savePortal073EncryptedVault({client:auth.client,userId:auth.userId,diary});setReceipt(r.receiptId);setChecksum(r.checksumSha256);setDiary('')}
  const executable=published&&operators&&ready;
+ const sealEvidenceReady=published&&operators&&ready&&seconds===TARGET&&induction&&sigil&&returned&&safe&&Boolean(receipt)&&Boolean(checksum);
+ function verifySealEvidence(){if(!sealEvidenceReady||!receipt||!checksum)throw new Error('portal073_seal_evidence_not_ready');return buildPortal073CompletionEvidence({sessionId:receipt,vaultReceiptId:receipt,vaultChecksumSha256:checksum})}
  return <ScrollView contentContainerStyle={s.shell}><Text style={s.kicker}>CHOKMAH → BINAH · PORTAL 073</Text><Text style={s.title}>O Voo do Mago</Text>
  {!published&&<Card title="G7/G8 · FAIL-CLOSED"><Text style={s.warn}>APPROVED_NOT_PUBLISHED</Text><Text style={s.text}>A experiência está materializada, mas áudio, Vault e conclusão permanecem inacessíveis até publicação autoritativa. Nenhum XP, Teurgo, Binah ou Day 074 é liberado.</Text></Card>}
  {error&&<Text style={s.error}>{error}</Text>}
@@ -35,7 +38,7 @@ export function Day073PortalExperienceMobile(){
  <Card title="Sigilo do Mago"><Text style={s.text}>Observe apenas o ativo canônico, ereto e não espelhado.</Text><Button label={sigil?'Sigilo confirmado':'Confirmar sigilo'} disabled={!published||!induction} onPress={()=>setSigil(true)}/></Card>
  <Card title="Return Gate"><Text style={s.text}>O retorno deve ser confirmado antes de qualquer gravação no Vault.</Text><Button label={returned?'Retorno confirmado':'Confirmar retorno'} disabled={!published||!sigil} onPress={()=>setReturned(true)}/><Button label={safe?'Estado seguro confirmado':'Confirmar estado seguro'} disabled={!published||!returned} onPress={()=>setSafe(true)}/></Card>
  <Card title="Vault E2EE"><TextInput multiline editable={published&&returned} value={diary} onChangeText={setDiary} placeholder="Diário privado" placeholderTextColor="#53636b" style={s.input}/><Button label={receipt?'Receipt registrado':'Criptografar e salvar'} disabled={!published||!returned||!safe||diary.trim().length<2||Boolean(receipt)} onPress={()=>void saveVault().catch(e=>setError(e instanceof Error?e.message:'portal073_vault_failed'))}/>{receipt&&<><Text style={s.mono}>receipt {receipt}</Text><Text style={s.mono}>checksum {checksum}</Text></>}</Card>
- <Card title="Conclusão autoritativa"><Text style={s.text}>Ainda não materializada nesta fatia. O selo exige receipt autenticado, 600 s exatos, operadores verificados, Return Gate, safety clear e backend exactly-once/concurrency validado.</Text><Button label="SELAR PORTAL · BLOQUEADO" disabled onPress={()=>{}}/></Card>
+ <Card title="Conclusão autoritativa"><Text style={s.text}>Pré-selo materializado em modo fail-closed. A evidência só pode ser construída após 600 s exatos, operadores, indução, sigilo, Return Gate, safety e Vault autenticado. A chamada de completion continua deliberadamente desconectada.</Text><Button label={sealEvidenceReady?'VALIDAR PRÉ-SELO · SEM ENVIAR':'SELAR PORTAL · BLOQUEADO'} disabled={!sealEvidenceReady} onPress={()=>{try{verifySealEvidence();setError('portal073_preseal_validated__completion_not_sent')}catch(e){setError(e instanceof Error?e.message:'portal073_preseal_failed')}}}/></Card>
  </ScrollView>
 }
 function Card({title,children}:{title:string;children:React.ReactNode}){return <View style={s.card}><Text style={s.cardTitle}>{title}</Text>{children}</View>}
