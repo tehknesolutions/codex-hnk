@@ -29,6 +29,7 @@ const validators = [
   "scripts/validate-hnk-research-artifact-library.mjs",
   "scripts/validate-hnk-research-workspace-snapshot.mjs",
   "scripts/validate-hnk-workspace-snapshot-registry.mjs",
+  "scripts/validate-hnk-research-release-manifest.mjs",
 ];
 
 for (const validator of validators) {
