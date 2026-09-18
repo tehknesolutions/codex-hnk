@@ -1,0 +1,31 @@
+export {
+  HNK_DEPLOYMENT_ELIGIBILITY_STATUSES,
+  HNK_DEPLOYMENT_GATE_DECISIONS,
+  HNK_DEPLOYMENT_GATE_REGISTRY_BOUNDARY,
+  HNK_DEPLOYMENT_GATE_REGISTRY_ID,
+  HNK_DEPLOYMENT_GATE_REGISTRY_VERSION,
+  createDeploymentGateRegistry,
+  decideHumanDeploymentGate,
+  deploymentGateRegistryIndex,
+  deploymentGateRegistryProjection,
+  deploymentGateRegistrySummary,
+  evaluateDeploymentCandidate,
+  nominateDeploymentCandidate,
+  parseDeploymentGateRegistry,
+  serializeDeploymentGateRegistry,
+  validateDeploymentGateRegistry,
+} from "@hnk/deployment-gate-registry";
+
+export type {
+  CreateDeploymentGateRegistryInput,
+  DecideHumanDeploymentGateInput,
+  DeploymentGateRegistryIndex,
+  DeploymentGateRegistryValidation,
+  HnkDeploymentCandidate,
+  HnkDeploymentCandidateEvaluation,
+  HnkDeploymentEligibilityStatus,
+  HnkDeploymentGateDecision,
+  HnkDeploymentGateRegistry,
+  HnkHumanDeploymentGateDecisionEvent,
+  NominateDeploymentCandidateInput,
+} from "@hnk/deployment-gate-registry";
