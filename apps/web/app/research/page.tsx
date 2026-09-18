@@ -18,6 +18,7 @@ import {
   measurementContractSummary,
   replicationRegistrySummary,
   researchArtifactLibrarySummary,
+  researchWorkspaceSnapshotSummary,
   reviewedClaimRegistrySummary,
   symbolicRuntimeSummary,
 } from "@hnk/quest-engine";
@@ -55,6 +56,7 @@ export default function ResearchLabHome() {
   const reevaluationQueue = claimReevaluationQueueSummary();
   const reevaluationBatch = claimReevaluationBatchScannerSummary();
   const artifactLibrary = researchArtifactLibrarySummary();
+  const workspaceSnapshot = researchWorkspaceSnapshotSummary();
 
   return (
     <main className={styles.shell}>
@@ -84,6 +86,7 @@ export default function ResearchLabHome() {
           <span>CLAIM RE-EVALUATION QUEUE</span>
           <span>RE-EVALUATION BATCH SCANNER</span>
           <span>ARTIFACT LIBRARY</span>
+          <span>WORKSPACE SNAPSHOT</span>
         </div>
       </header>
 
@@ -173,6 +176,11 @@ export default function ResearchLabHome() {
           <strong>Artifact Library</strong>
           <p>append-only snapshots · deterministic input resolution</p>
         </article>
+        <article>
+          <span className={workspaceSnapshot.component_digest_binding ? styles.good : styles.bad} />
+          <strong>Workspace Snapshot</strong>
+          <p>root SHA-256 · compare · exact restore</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -221,11 +229,17 @@ export default function ResearchLabHome() {
           <p>Catalogue Claim Dossiers e Evidence Synthesis por digest, key e revisão; resolva automaticamente os inputs corretos para o Batch Scanner.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/workspace-snapshots" className={styles.moduleCard}>
+          <p className={styles.kicker}>16 · RESEARCH WORKSPACE SNAPSHOT</p>
+          <h2>Workspace Snapshot</h2>
+          <p>Congele Artifact Library, Reviewed Claim Registry e Re-evaluation Queue num único root digest; compare checkpoints e restaure os componentes exatos.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT</code>
       </section>
     </main>
   );
