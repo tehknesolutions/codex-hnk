@@ -303,10 +303,10 @@ export function evaluateDeploymentCandidate(
   );
 
   let eligibilityStatus = "ELIGIBLE";
-  if (!state.status.accepted) {
-    eligibilityStatus = "RELEASE_NOT_ACCEPTED";
-  } else if (!reportMatches || !decisionMatches) {
+  if (!reportMatches || !decisionMatches) {
     eligibilityStatus = "STALE_RELEASE_STATE";
+  } else if (!state.status.accepted) {
+    eligibilityStatus = "RELEASE_NOT_ACCEPTED";
   }
 
   const approved =
