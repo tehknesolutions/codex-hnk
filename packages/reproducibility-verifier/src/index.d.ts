@@ -15,6 +15,13 @@ export interface HnkVerificationFileObservation {
   source_text: string;
 }
 
+export interface HnkVerificationValidatorExecutionObservation {
+  validator_id: string;
+  result: "PASS" | "FAIL" | "NOT_EXECUTED" | "INFRASTRUCTURE_BLOCKED";
+  executed_at?: string | null;
+  environment?: string | null;
+}
+
 export interface HnkReproducibilityObservedState {
   git?: {
     repository_full_name?: string | null;
@@ -26,6 +33,7 @@ export interface HnkReproducibilityObservedState {
     package_manager?: string | null;
   };
   files?: HnkVerificationFileObservation[];
+  validator_executions?: HnkVerificationValidatorExecutionObservation[];
 }
 
 export interface HnkReproducibilityCheck {
