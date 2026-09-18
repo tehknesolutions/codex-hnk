@@ -19,6 +19,7 @@ import {
   replicationRegistrySummary,
   researchArtifactLibrarySummary,
   researchReleaseManifestSummary,
+  reproducibilityVerifierSummary,
   researchWorkspaceSnapshotSummary,
   workspaceSnapshotRegistrySummary,
   reviewedClaimRegistrySummary,
@@ -59,6 +60,7 @@ export default function ResearchLabHome() {
   const reevaluationBatch = claimReevaluationBatchScannerSummary();
   const artifactLibrary = researchArtifactLibrarySummary();
   const releaseManifest = researchReleaseManifestSummary();
+  const reproducibilityVerifier = reproducibilityVerifierSummary();
   const workspaceSnapshot = researchWorkspaceSnapshotSummary();
   const workspaceSnapshotRegistry = workspaceSnapshotRegistrySummary();
 
@@ -93,6 +95,7 @@ export default function ResearchLabHome() {
           <span>WORKSPACE SNAPSHOT</span>
           <span>SNAPSHOT REGISTRY</span>
           <span>RELEASE MANIFEST</span>
+          <span>REPRODUCIBILITY VERIFIER</span>
         </div>
       </header>
 
@@ -197,6 +200,11 @@ export default function ResearchLabHome() {
           <strong>Release Manifest</strong>
           <p>HEAD + Git + contracts + validator evidence</p>
         </article>
+        <article>
+          <span className={reproducibilityVerifier.production_readiness_inferred === false ? styles.good : styles.bad} />
+          <strong>Reproducibility Verifier</strong>
+          <p>MATCH · DRIFT · MISSING · UNVERIFIED</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -263,11 +271,17 @@ export default function ResearchLabHome() {
           <p>Sele o HEAD explícito com commit Git, versões e fontes dos contratos, fontes/estado dos validators e comandos de reprodução sem inferir Production PASS.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/reproducibility-verifier" className={styles.moduleCard}>
+          <p className={styles.kicker}>19 · REPRODUCIBILITY VERIFIER</p>
+          <h2>Verify Release</h2>
+          <p>Compare um Reproducibility Pack com Git, runtime e fontes observadas e produza MATCH, DRIFT, MISSING ou UNVERIFIED sem executar comandos automaticamente.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST → REPRODUCIBILITY VERIFIER</code>
       </section>
     </main>
   );
