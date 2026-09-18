@@ -308,7 +308,7 @@ export default function ResearchReleaseManifestLab() {
       <section className={styles.mainPanel}>
         <section className={styles.stageCard}>
           <p className={styles.kicker}>01 · CONTRACT SOURCE BINDINGS</p>
-          <h2>Vincular contratos por SHA-256 dos bytes exatos</h2>
+          <h2>Vincular contratos por SHA-256 do texto-fonte exato</h2>
           <div className={styles.twoCols}>
             <label>Contract ID<input value={contractId} onChange={(event) => setContractId(event.target.value)} /></label>
             <label>Version<input value={contractVersion} onChange={(event) => setContractVersion(event.target.value)} /></label>
