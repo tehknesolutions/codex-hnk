@@ -18,6 +18,7 @@ import {
   measurementContractSummary,
   replicationRegistrySummary,
   researchArtifactLibrarySummary,
+  researchReleaseManifestSummary,
   researchWorkspaceSnapshotSummary,
   workspaceSnapshotRegistrySummary,
   reviewedClaimRegistrySummary,
@@ -57,6 +58,7 @@ export default function ResearchLabHome() {
   const reevaluationQueue = claimReevaluationQueueSummary();
   const reevaluationBatch = claimReevaluationBatchScannerSummary();
   const artifactLibrary = researchArtifactLibrarySummary();
+  const releaseManifest = researchReleaseManifestSummary();
   const workspaceSnapshot = researchWorkspaceSnapshotSummary();
   const workspaceSnapshotRegistry = workspaceSnapshotRegistrySummary();
 
@@ -90,6 +92,7 @@ export default function ResearchLabHome() {
           <span>ARTIFACT LIBRARY</span>
           <span>WORKSPACE SNAPSHOT</span>
           <span>SNAPSHOT REGISTRY</span>
+          <span>RELEASE MANIFEST</span>
         </div>
       </header>
 
@@ -189,6 +192,11 @@ export default function ResearchLabHome() {
           <strong>Snapshot Registry</strong>
           <p>timeline · forks · explicit human HEAD</p>
         </article>
+        <article>
+          <span className={releaseManifest.production_readiness_inferred === false ? styles.good : styles.bad} />
+          <strong>Release Manifest</strong>
+          <p>HEAD + Git + contracts + validator evidence</p>
+        </article>
       </section>
 
       <section className={styles.modules}>
@@ -249,11 +257,17 @@ export default function ResearchLabHome() {
           <p>Catalogue checkpoints por digest, valide parent → child, detecte forks, trace ancestry, compare qualquer par e mova HEAD somente por ação humana explícita.</p>
           <span>ABRIR MÓDULO →</span>
         </Link>
+        <Link href="/research/releases" className={styles.moduleCard}>
+          <p className={styles.kicker}>18 · RESEARCH RELEASE MANIFEST</p>
+          <h2>Reproducibility Pack</h2>
+          <p>Sele o HEAD explícito com commit Git, versões e fontes dos contratos, fontes/estado dos validators e comandos de reprodução sem inferir Production PASS.</p>
+          <span>ABRIR MÓDULO →</span>
+        </Link>
       </section>
 
       <section className={styles.pipeline}>
         <p className={styles.kicker}>PIPELINE SELADO</p>
-        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY</code>
+        <code>SOURCE → PROVENANCE → CATALOG → CONFLICT → DECISION → HUMAN GATE → HNK_AUTHORED CANON → SYMBOLIC RUNTIME → SESSION ARTIFACTS → PREREGISTERED EXPERIMENT → CONTENT ATTESTATION → TYPED MEASUREMENT → EVIDENCE LEDGER → REPLICATION REGISTRY → EVIDENCE SYNTHESIS → CLAIM DOSSIER → EVIDENCE REVIEW GATE → REVIEWED CLAIM REGISTRY → ARTIFACT LIBRARY → RE-EVALUATION BATCH SCANNER → CLAIM RE-EVALUATION QUEUE → WORKSPACE SNAPSHOT → SNAPSHOT REGISTRY → RELEASE MANIFEST</code>
       </section>
     </main>
   );
