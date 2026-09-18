@@ -34,6 +34,11 @@ function cleanString(value, field) {
   return value.trim();
 }
 
+function exactSourceText(value, field) {
+  if (!nonEmpty(value)) throw new TypeError(`${field} must be a non-empty string`);
+  return value;
+}
+
 function headBindings(registry) {
   if (!registry.head_snapshot_digest) {
     throw new Error("workspace snapshot registry HEAD must be explicitly set before release");
@@ -59,7 +64,7 @@ export function createReleaseContractBinding(input) {
     throw new TypeError("release contract binding input required");
   }
 
-  const sourceText = cleanString(input.source_text, "source_text");
+  const sourceText = exactSourceText(input.source_text, "source_text");
   return deepFreeze({
     contract_id: cleanString(input.contract_id, "contract_id"),
     contract_version: cleanString(input.contract_version, "contract_version"),
