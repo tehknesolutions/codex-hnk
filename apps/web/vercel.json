@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "corepack pnpm install",
-  "buildCommand": "cd ../.. && node scripts/build-web-vercel.mjs"
+  "buildCommand": "cd ../.. && node scripts/qa-day045-vercel-executor.mjs"
 }
