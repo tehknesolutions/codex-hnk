@@ -1,0 +1,53 @@
+{
+  "schema_version": "HNK-7X7-CORPUS-COVERAGE-V2-SNAPSHOT",
+  "basis": "36 external concepts + 15 internal concepts; mappings already recorded in registries",
+  "semantics": "coverage is indexing, not truth, importance, or HNK_APPROVED",
+  "external": {
+    "concepts": 36,
+    "sources": 9,
+    "covered": 22,
+    "empty": 27,
+    "percent": 44.9,
+    "pillars": {
+      "P01": "5/7",
+      "P02": "4/7",
+      "P03": "5/7",
+      "P04": "4/7",
+      "P05": "1/7",
+      "P06": "0/7",
+      "P07": "3/7"
+    }
+  },
+  "internal": {
+    "concepts": 15,
+    "sources": 7,
+    "covered": 19,
+    "empty": 30,
+    "percent": 38.78,
+    "pillars": {
+      "P01": "0/7",
+      "P02": "0/7",
+      "P03": "0/7",
+      "P04": "0/7",
+      "P05": "7/7",
+      "P06": "7/7",
+      "P07": "5/7"
+    }
+  },
+  "combined": {
+    "concepts": 51,
+    "sources": 16,
+    "covered": 37,
+    "empty": 12,
+    "percent": 75.51,
+    "pillars": {
+      "P01": "5/7",
+      "P02": "4/7",
+      "P03": "5/7",
+      "P04": "4/7",
+      "P05": "7/7",
+      "P06": "7/7",
+      "P07": "5/7"
+    }
+  }
+}

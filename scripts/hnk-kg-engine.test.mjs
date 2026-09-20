@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import {getNode,findNodes,neighbors,traverse,provenanceFor,stats} from "./hnk-kg-engine.mjs";
+assert.equal(stats().nodes,16);
+assert.equal(stats().edges,8);
+assert.equal(getNode("N-MERCURY").label,"Mercury");
+assert.equal(findNodes("mercur").length,1);
+const mercury=neighbors("N-MERCURY");
+assert.equal(mercury.length,1);
+assert.equal(mercury[0].node.id,"N-PHILOSOPHERS-STONE");
+assert.equal(mercury[0].edge.status,"SOURCE_ASSERTED");
+assert.equal(provenanceFor("N-MERCURY")[0].source_id,"SRC-026");
+assert.ok(traverse("N-PHILOSOPHERS-STONE",{depth:1}).some(x=>x.node.id==="N-GOLD"));
+assert.ok(traverse("N-TAROT-MAJOR",{depth:1}).some(x=>x.node.id==="N-HEBREW-LETTERS"));
+console.log("HNK_KG_QUERY_ENGINE_PASS: find / neighbors / traverse / provenance / stats");

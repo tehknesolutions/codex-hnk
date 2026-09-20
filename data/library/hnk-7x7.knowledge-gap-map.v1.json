@@ -1,0 +1,114 @@
+{
+  "schema_version": "HNK-KNOWLEDGE-GAP-MAP-V1",
+  "basis": {
+    "coverage": "HNK-7X7-CORPUS-COVERAGE-V2",
+    "covered_domains": 37,
+    "total_domains": 49,
+    "gaps": 12
+  },
+  "policy": [
+    "GAP_IS_NOT_DEFICIENCY_OF_TRUTH",
+    "NO_FORCED_49_OF_49",
+    "EVIDENCE_BEFORE_MAPPING",
+    "PROVENANCE_REQUIRED",
+    "INTERNAL_AND_EXTERNAL_REMAIN_DISTINGUISHABLE"
+  ],
+  "gaps": [
+    {
+      "domain_id": "P01-L06",
+      "name": "Criação Espiritual",
+      "definition": "criação consciente de práticas, experiências e estruturas.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL+EXTERNAL",
+      "evidence_needed": "práticas/estruturas espirituais explicitamente criadas, não apenas descritas"
+    },
+    {
+      "domain_id": "P01-L07",
+      "name": "Manifestação Espiritual",
+      "definition": "incorporação da orientação espiritual na vida e nas obras.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL+EXTERNAL",
+      "evidence_needed": "evidência de orientação espiritual incorporada em vida/obra"
+    },
+    {
+      "domain_id": "P02-L02",
+      "name": "Percepção Mágica",
+      "definition": "leitura de padrões, símbolos, relações e experiências.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "EXTERNAL_FIRST",
+      "evidence_needed": "fontes que ensinem leitura/observação de padrões sem inferir operação"
+    },
+    {
+      "domain_id": "P02-L06",
+      "name": "Criação Mágica",
+      "definition": "desenvolvimento de sistemas, sigilos, rituais e tecnomagia.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL+EXTERNAL",
+      "evidence_needed": "artefatos de criação mágica/tecnomágica com proveniência explícita"
+    },
+    {
+      "domain_id": "P02-L07",
+      "name": "Manifestação Mágica",
+      "definition": "aplicação orientada da intenção e transformação no mundo vivido.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL+EXTERNAL",
+      "evidence_needed": "registro de aplicação/manifestação; não confundir alegação de eficácia com fato verificado"
+    },
+    {
+      "domain_id": "P03-L04",
+      "name": "Experimentação",
+      "definition": "hipóteses, testes, comparação, mensuração e iteração.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL_FIRST",
+      "evidence_needed": "protocolos/testes/experimentos explícitos nos repos e fontes científicas"
+    },
+    {
+      "domain_id": "P03-L07",
+      "name": "Aplicação Científica",
+      "definition": "conhecimento convertido em solução, método ou tecnologia verificável.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL_FIRST",
+      "evidence_needed": "produto/método que documente aplicação de conhecimento e verificação"
+    },
+    {
+      "domain_id": "P04-L02",
+      "name": "Percepção Filosófica",
+      "definition": "questionamento e reconhecimento de pressupostos.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "EXTERNAL_FIRST",
+      "evidence_needed": "passagens explicitamente reflexivas/críticas"
+    },
+    {
+      "domain_id": "P04-L06",
+      "name": "Criação Filosófica",
+      "definition": "formulação de novos modelos conceituais.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL_FIRST",
+      "evidence_needed": "modelos conceituais originais documentados pelo HNK"
+    },
+    {
+      "domain_id": "P04-L07",
+      "name": "Filosofia Vivida",
+      "definition": "visão transformada em orientação, decisão e modo de vida.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL+EXTERNAL",
+      "evidence_needed": "princípios convertidos em decisões/prática documentada"
+    },
+    {
+      "domain_id": "P07-L03",
+      "name": "Linguagem da Ação",
+      "definition": "missões, protocolos, regras, métricas e feedback.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL_FIRST",
+      "evidence_needed": "contratos de missão, protocolo, métricas, gates e feedback"
+    },
+    {
+      "domain_id": "P07-L07",
+      "name": "Manifestação",
+      "definition": "intenção convertida em realidade tangível, transformação ou obra.",
+      "status": "EMPTY_IN_COMBINED_V2",
+      "search_priority": "INTERNAL_FIRST",
+      "evidence_needed": "artefatos/produtos efetivamente materializados com evidência"
+    }
+  ]
+}

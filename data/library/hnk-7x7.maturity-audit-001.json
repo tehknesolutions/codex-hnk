@@ -1,0 +1,179 @@
+{
+  "schema_version": "HNK-7X7-MATURITY-AUDIT-001",
+  "status": "EVIDENCE_DERIVED_PARTIAL",
+  "scope": [
+    "FORMALIZATION",
+    "PRAXIS",
+    "GOVERNANCE",
+    "CROSS_LINK_DENSITY"
+  ],
+  "rules": [
+    "NO_SINGLE_COMPOSITE_SCORE",
+    "UNKNOWN_IS_NOT_ZERO",
+    "NO_AUTOMATIC_CANON_PROMOTION",
+    "EDGE_COUNT_REQUIRES_TYPED_GRAPH_EVIDENCE"
+  ],
+  "findings": [
+    {
+      "domain_id": "P03-L04",
+      "formalization": 3,
+      "praxis": 3,
+      "governance": 2,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C004",
+        "INT001-C005"
+      ],
+      "note": "Experiment/evidence pipeline and executable release gates are documented; execution evidence is part of the practice contract."
+    },
+    {
+      "domain_id": "P03-L07",
+      "formalization": 3,
+      "praxis": 2,
+      "governance": 2,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C005"
+      ],
+      "note": "Verifiable application exists as protocol/system; full observed execution is not generalized from one runbook."
+    },
+    {
+      "domain_id": "P04-L06",
+      "formalization": 2,
+      "praxis": 2,
+      "governance": 2,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C006"
+      ],
+      "note": "Explicit epistemic model is documented and used in governance."
+    },
+    {
+      "domain_id": "P07-L03",
+      "formalization": 3,
+      "praxis": 3,
+      "governance": 2,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C002",
+        "INT001-C007",
+        "INT007-C003"
+      ],
+      "note": "Action language is encoded in validators, gates, states, metrics/provenance and operating rules."
+    },
+    {
+      "domain_id": "P07-L07",
+      "formalization": 2,
+      "praxis": 2,
+      "governance": 2,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C008"
+      ],
+      "note": "Manifestation criterion is documented; final success remains conditional on executed evidence."
+    },
+    {
+      "domain_id": "P06-L03",
+      "formalization": 3,
+      "praxis": 2,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C002",
+        "INT006-C001",
+        "INT007-C002"
+      ],
+      "note": "Code/schemas/protocols are directly evidenced across internal products."
+    },
+    {
+      "domain_id": "P06-L04",
+      "formalization": 3,
+      "praxis": 3,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C002",
+        "INT004-C001",
+        "INT006-C001"
+      ],
+      "note": "Build/program/test operations are materialized in manifests and validators."
+    },
+    {
+      "domain_id": "P06-L07",
+      "formalization": 3,
+      "praxis": 2,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT001-C001",
+        "INT002-C002",
+        "INT004-C001",
+        "INT005-C003"
+      ],
+      "note": "Functional/deployable artifacts are documented; production acceptance is not inferred."
+    },
+    {
+      "domain_id": "P05-L06",
+      "formalization": 2,
+      "praxis": 2,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT005-C002",
+        "INT006-C001",
+        "INT007-C001"
+      ],
+      "note": "Original artistic creation is evidenced in Drawing, Strangeverse and Storyforge."
+    },
+    {
+      "domain_id": "P05-L07",
+      "formalization": 2,
+      "praxis": 2,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "INT002-C002",
+        "INT007-C001"
+      ],
+      "note": "Experiencable/derived works are documented."
+    },
+    {
+      "domain_id": "P02-L06",
+      "formalization": 2,
+      "praxis": 1,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "B003-P02-L06"
+      ],
+      "note": "Created magical/technomagical systems are documented as project/chat candidates; executable/practice evidence needs dedicated audit."
+    },
+    {
+      "domain_id": "P02-L07",
+      "formalization": 2,
+      "praxis": 2,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "PRJ004-C004"
+      ],
+      "note": "Material application in product architecture is documented; no independent claim of supernatural efficacy is inferred."
+    },
+    {
+      "domain_id": "P04-L02",
+      "formalization": 1,
+      "praxis": 1,
+      "governance": 1,
+      "cross_link_density": "UNKNOWN",
+      "evidence": [
+        "PRJ004-C002",
+        "PRJ004-C003"
+      ],
+      "note": "Explicit self-questioning/review exists, but deeper repeated practice evidence remains to audit."
+    }
+  ],
+  "cross_link_audit": {
+    "status": "BLOCKED_PENDING_GRAPH_INTEGRATION",
+    "reason": "Current typed graph seed/correspondence registry does not yet integrate the new internal/project concept batches, so cross-link density would be fabricated if scored now."
+  }
+}

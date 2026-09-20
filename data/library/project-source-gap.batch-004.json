@@ -1,0 +1,62 @@
+{
+  "schema_version": "HNK-PROJECT-SOURCE-GAP-BATCH-004",
+  "status": "PROJECT_FILE_DERIVED_CANDIDATE",
+  "policy": [
+    "SOURCE_TERMINOLOGY_FIRST",
+    "NO_AUTOMATIC_FACTUAL_ENDORSEMENT",
+    "NO_FORCED_49_OF_49"
+  ],
+  "sources": [
+    {
+      "source": "codex_matriz_disciplinar_nao_linear.md",
+      "concepts": [
+        {
+          "id": "PRJ004-C001",
+          "term": "Prática desde o Dia 1",
+          "claim": "A matriz pedagógica declara acesso inicial aos conceitos fundamentais das vertentes Astral, Tecnomagia, Comportamento, Teurgia e Bioenergia e estrutura progressão não linear.",
+          "domains": [
+            "P02-L02"
+          ],
+          "basis": "design pedagógico de percepção/leitura transversal de vertentes e relações; candidate"
+        },
+        {
+          "id": "PRJ004-C002",
+          "term": "Quest de Alinhamento",
+          "claim": "A plataforma compara progressão entre trilhas e reage a desequilíbrios com Quest de Alinhamento e modulação de XP.",
+          "domains": [
+            "P04-L02"
+          ],
+          "basis": "torna pressupostos/progressão desequilibrada objeto explícito de revisão; candidate"
+        }
+      ]
+    },
+    {
+      "source": "capitulo_8_plano_escrita.md",
+      "concepts": [
+        {
+          "id": "PRJ004-C003",
+          "term": "Autoquestionamento de Hod",
+          "claim": "O plano inclui pergunta explícita sobre se a mente lógica se submeteu à intuição espiritual ou se a Tecnomagia foi usada para controle/poder egóico.",
+          "domains": [
+            "P04-L02"
+          ],
+          "basis": "questionamento explícito de pressupostos, intenção e motivação; candidate"
+        }
+      ]
+    },
+    {
+      "source": "codex_365_arquitetura_final.md",
+      "concepts": [
+        {
+          "id": "PRJ004-C004",
+          "term": "Manifestação como arquitetura de prática",
+          "claim": "A arquitetura integra livro e plataforma transmídia com práticas mensuradas por RPG, geradores de sigilos, calculadoras gemátricas e sistemas digitais.",
+          "domains": [
+            "P02-L07"
+          ],
+          "basis": "evidência de aplicação material de práticas mágicas no produto; não é prova independente de eficácia sobrenatural"
+        }
+      ]
+    }
+  ]
+}

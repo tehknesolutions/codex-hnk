@@ -1,0 +1,196 @@
+{
+  "schema_version": "HNK-LIBRARY-EXPANSION-BATCH-001",
+  "status": "SOURCE_DERIVED",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "title": "Os Portais do Alef Beit",
+      "author": "Ricardo Ribeiro",
+      "pages_reviewed": "2-14/156",
+      "concepts": [
+        {
+          "id": "SRC001-C001",
+          "term": "22 letras / Alef Beit",
+          "claim": "A obra organiza seu percurso em 22 letras, de Alef a Tav, tratadas como portais temáticos.",
+          "locator": "pp.5-6",
+          "domains": [
+            "P01-L03",
+            "P02-L03"
+          ]
+        },
+        {
+          "id": "SRC001-C002",
+          "term": "Pictografia cananeia e letras hebraicas",
+          "claim": "A introdução apresenta uma leitura de origem pictográfica cananeia/fenícia para as formas e significados das letras hebraicas.",
+          "locator": "pp.10-14",
+          "domains": [
+            "P04-L03",
+            "P05-L03"
+          ]
+        },
+        {
+          "id": "SRC001-C003",
+          "term": "Interpretação do nome",
+          "claim": "O autor propõe substituir letras do primeiro nome por letras hebraicas e realizar uma interpretação profética dos códigos atribuídos ao nome.",
+          "locator": "p.8",
+          "domains": [
+            "P01-L04",
+            "P02-L04",
+            "P07-L04"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-013",
+      "title": "Cabala: Tradição Secreta do Ocidente",
+      "author": "Papus",
+      "pages_reviewed": "6-16/477 + sumário",
+      "concepts": [
+        {
+          "id": "SRC013-C001",
+          "term": "Arquitetura temática da Cabala",
+          "claim": "O sumário separa tradição hebraica, Massorá, Mishná, Cabala, alfabeto hebraico, nomes divinos, Sephiroth, filosofia, Sepher Yetzirah e Cabala prática.",
+          "locator": "pp.8-10",
+          "domains": [
+            "P02-L01",
+            "P04-L01"
+          ]
+        },
+        {
+          "id": "SRC013-C002",
+          "term": "Sepher Yetzirah — estrutura",
+          "claim": "A obra anuncia tratamento das dez Sephiroth, 22 letras, três mães, sete duplas, doze simples, 50 portas da Inteligência e 32 caminhos da Sabedoria.",
+          "locator": "p.9",
+          "domains": [
+            "P02-L03",
+            "P04-L03"
+          ]
+        },
+        {
+          "id": "SRC013-C003",
+          "term": "72 nomes / gênios",
+          "claim": "O sumário inclui seção de Cabala prática dedicada aos 72 gênios correspondentes aos 72 nomes, atribuída a Lenain.",
+          "locator": "p.9",
+          "domains": [
+            "P02-L03",
+            "P02-L04"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-014",
+      "title": "Cabala, Meditação e Cura",
+      "pages_reviewed": "search-confirmed passages",
+      "concepts": [
+        {
+          "id": "SRC014-C001",
+          "term": "72 nomes de Deus — meditação",
+          "claim": "A fonte apresenta os 72 nomes de Deus como prática meditativa diária com visualização de letras e gesto corporal.",
+          "locator": "p.7",
+          "domains": [
+            "P01-L04",
+            "P02-L04",
+            "P07-L04"
+          ]
+        },
+        {
+          "id": "SRC014-C002",
+          "term": "Tetragrama — visualização",
+          "claim": "A fonte contém prática/seção identificada como Tetragrama — Visualização.",
+          "locator": "p.8",
+          "domains": [
+            "P01-L03",
+            "P02-L04"
+          ]
+        },
+        {
+          "id": "SRC014-C003",
+          "term": "Zodíaco e meses hebraicos",
+          "claim": "A fonte relaciona signos e meses hebraicos a objetivos de conexão, incluindo Gêmeos/Sivan e Capricórnio/Tevet.",
+          "locator": "pp.53,60",
+          "domains": [
+            "P02-L03",
+            "P01-L03"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-020",
+      "title": "Dogma e Ritual de Alta Magia",
+      "pages_reviewed": "34-37/521",
+      "concepts": [
+        {
+          "id": "SRC020-C001",
+          "term": "Tarot como chave interpretativa",
+          "claim": "A fonte apresenta o Tarot como chave para interpretar mistérios da Cabala e quadrados mágicos atribuídos a Agrippa e Paracelso.",
+          "locator": "p.34",
+          "domains": [
+            "P02-L03",
+            "P04-L03"
+          ]
+        },
+        {
+          "id": "SRC020-C002",
+          "term": "Sete gênios planetários",
+          "claim": "A passagem introduz sete quadrados mágicos dos gênios planetários e associa a estrutura ao Tarot.",
+          "locator": "pp.34-35",
+          "domains": [
+            "P02-L03",
+            "P03-L03"
+          ]
+        },
+        {
+          "id": "SRC020-C003",
+          "term": "Síntese Cabala e magismo",
+          "claim": "A fonte formula uma síntese simbólica envolvendo Cabala, magos, triângulo, quadrado, sete anjos e multiplicação do tetragrama.",
+          "locator": "pp.34-35",
+          "domains": [
+            "P02-L05",
+            "P04-L05"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-023",
+      "title": "Faça a sua própria magia",
+      "author": "Amanda Lovelace",
+      "pages_reviewed": "6-12/295",
+      "concepts": [
+        {
+          "id": "SRC023-C001",
+          "term": "Estrutura pedagógica da obra",
+          "claim": "O sumário organiza o livro em básico, intuição, ciclos e mais magia.",
+          "locator": "p.9",
+          "domains": [
+            "P02-L01",
+            "P07-L04"
+          ]
+        },
+        {
+          "id": "SRC023-C002",
+          "term": "Magia cotidiana simples",
+          "claim": "A autora apresenta práticas mágicas pequenas, acessíveis e integradas ao cotidiano como abordagem válida de sua proposta.",
+          "locator": "pp.11-12",
+          "domains": [
+            "P02-L04",
+            "P07-L02"
+          ]
+        },
+        {
+          "id": "SRC023-C003",
+          "term": "Prática incorporada a rotina existente",
+          "claim": "A autora relata começar incorporando sua prática ao ato cotidiano de preparar e tomar café.",
+          "locator": "p.12",
+          "domains": [
+            "P02-L04",
+            "P07-L04"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,831 @@
+{
+  "schema_version": "HNK-KG-GENERATED-V1",
+  "generated_from": [
+    "library.sources.registry.json",
+    "concepts.pilot.registry.json",
+    "correspondences.registry.json",
+    "hnk-7x7.registry.json"
+  ],
+  "nodes": [
+    {
+      "id": "SRC-001",
+      "type": "SOURCE",
+      "label": "565474540-Os-Portais-Alef-Beit-Ajustado-para-Ebook.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-002",
+      "type": "SOURCE",
+      "label": "A Bíblia em 100 Minutos.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-003",
+      "type": "SOURCE",
+      "label": "A Ciência da Prática Espiritual.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-004",
+      "type": "SOURCE",
+      "label": "A Ciência Descobre Deus.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-005",
+      "type": "SOURCE",
+      "label": "A Ciência e o Campo Akáshico Uma Teoria Integral de Tudo.mobi",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-006",
+      "type": "SOURCE",
+      "label": "A Magia.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-007",
+      "type": "SOURCE",
+      "label": "Apostila de Grego Bíblico.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-008",
+      "type": "SOURCE",
+      "label": "As Chaves de Enoch.mobi",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-009",
+      "type": "SOURCE",
+      "label": "Bruxa Natural.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-010",
+      "type": "SOURCE",
+      "label": "Bruxaria Moderna.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-011",
+      "type": "SOURCE",
+      "label": "Budismo Para Leigos.mobi",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-012",
+      "type": "SOURCE",
+      "label": "Cabala e a arte de Preservação da Alegria.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-013",
+      "type": "SOURCE",
+      "label": "Cabala Tradição Secreta do Ocidente.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-014",
+      "type": "SOURCE",
+      "label": "Cabala, Meditação e Cura.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-015",
+      "type": "SOURCE",
+      "label": "Como aumentar a capacidade do seu cérebro.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-016",
+      "type": "SOURCE",
+      "label": "Depressão Como Derrotar o Gigante.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-017",
+      "type": "SOURCE",
+      "label": "Desdobramento Consciente Viagem Astral.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-018",
+      "type": "SOURCE",
+      "label": "Despertar Um guia para a espiritualidade sem religião.mobi",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-019",
+      "type": "SOURCE",
+      "label": "Desvendando o Código Judaico.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-020",
+      "type": "SOURCE",
+      "label": "Dogma E Ritual De Alta Magia.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-021",
+      "type": "SOURCE",
+      "label": "Ego Transformado.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-022",
+      "type": "SOURCE",
+      "label": "Encontros Astrais.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-023",
+      "type": "SOURCE",
+      "label": "Faça a sua Própria Magia.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-024",
+      "type": "SOURCE",
+      "label": "hermetic-kabbalah-tarot-marcelo-del-debbio.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-025",
+      "type": "SOURCE",
+      "label": "kabbalah-hermetica-marcelo-del-debbio-5(1).pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "SRC-026",
+      "type": "SOURCE",
+      "label": "Psicotropicon Quimiognose Alquímica para Psiconautas Responsáveis.pdf",
+      "authority": "SOURCE"
+    },
+    {
+      "id": "P01-L01",
+      "type": "HNK_DOMAIN",
+      "label": "Fundamento — Espiritualidade",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P01-L02",
+      "type": "HNK_DOMAIN",
+      "label": "Percepção — Espiritualidade",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P01-L03",
+      "type": "HNK_DOMAIN",
+      "label": "Linguagem — Espiritualidade",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P01-L04",
+      "type": "HNK_DOMAIN",
+      "label": "Operação — Espiritualidade",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P01-L05",
+      "type": "HNK_DOMAIN",
+      "label": "Integração — Espiritualidade",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P01-L06",
+      "type": "HNK_DOMAIN",
+      "label": "Criação — Espiritualidade",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P01-L07",
+      "type": "HNK_DOMAIN",
+      "label": "Manifestação — Espiritualidade",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P02-L01",
+      "type": "HNK_DOMAIN",
+      "label": "Fundamento — Magia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P02-L02",
+      "type": "HNK_DOMAIN",
+      "label": "Percepção — Magia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P02-L03",
+      "type": "HNK_DOMAIN",
+      "label": "Linguagem — Magia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P02-L04",
+      "type": "HNK_DOMAIN",
+      "label": "Operação — Magia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P02-L05",
+      "type": "HNK_DOMAIN",
+      "label": "Integração — Magia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P02-L06",
+      "type": "HNK_DOMAIN",
+      "label": "Criação — Magia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P02-L07",
+      "type": "HNK_DOMAIN",
+      "label": "Manifestação — Magia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P03-L01",
+      "type": "HNK_DOMAIN",
+      "label": "Fundamento — Ciência",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P03-L02",
+      "type": "HNK_DOMAIN",
+      "label": "Percepção — Ciência",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P03-L03",
+      "type": "HNK_DOMAIN",
+      "label": "Linguagem — Ciência",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P03-L04",
+      "type": "HNK_DOMAIN",
+      "label": "Operação — Ciência",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P03-L05",
+      "type": "HNK_DOMAIN",
+      "label": "Integração — Ciência",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P03-L06",
+      "type": "HNK_DOMAIN",
+      "label": "Criação — Ciência",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P03-L07",
+      "type": "HNK_DOMAIN",
+      "label": "Manifestação — Ciência",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P04-L01",
+      "type": "HNK_DOMAIN",
+      "label": "Fundamento — Filosofia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P04-L02",
+      "type": "HNK_DOMAIN",
+      "label": "Percepção — Filosofia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P04-L03",
+      "type": "HNK_DOMAIN",
+      "label": "Linguagem — Filosofia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P04-L04",
+      "type": "HNK_DOMAIN",
+      "label": "Operação — Filosofia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P04-L05",
+      "type": "HNK_DOMAIN",
+      "label": "Integração — Filosofia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P04-L06",
+      "type": "HNK_DOMAIN",
+      "label": "Criação — Filosofia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P04-L07",
+      "type": "HNK_DOMAIN",
+      "label": "Manifestação — Filosofia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P05-L01",
+      "type": "HNK_DOMAIN",
+      "label": "Fundamento — Arte",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P05-L02",
+      "type": "HNK_DOMAIN",
+      "label": "Percepção — Arte",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P05-L03",
+      "type": "HNK_DOMAIN",
+      "label": "Linguagem — Arte",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P05-L04",
+      "type": "HNK_DOMAIN",
+      "label": "Operação — Arte",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P05-L05",
+      "type": "HNK_DOMAIN",
+      "label": "Integração — Arte",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P05-L06",
+      "type": "HNK_DOMAIN",
+      "label": "Criação — Arte",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P05-L07",
+      "type": "HNK_DOMAIN",
+      "label": "Manifestação — Arte",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P06-L01",
+      "type": "HNK_DOMAIN",
+      "label": "Fundamento — Tecnologia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P06-L02",
+      "type": "HNK_DOMAIN",
+      "label": "Percepção — Tecnologia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P06-L03",
+      "type": "HNK_DOMAIN",
+      "label": "Linguagem — Tecnologia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P06-L04",
+      "type": "HNK_DOMAIN",
+      "label": "Operação — Tecnologia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P06-L05",
+      "type": "HNK_DOMAIN",
+      "label": "Integração — Tecnologia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P06-L06",
+      "type": "HNK_DOMAIN",
+      "label": "Criação — Tecnologia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P06-L07",
+      "type": "HNK_DOMAIN",
+      "label": "Manifestação — Tecnologia",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P07-L01",
+      "type": "HNK_DOMAIN",
+      "label": "Fundamento — Práxis",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P07-L02",
+      "type": "HNK_DOMAIN",
+      "label": "Percepção — Práxis",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P07-L03",
+      "type": "HNK_DOMAIN",
+      "label": "Linguagem — Práxis",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P07-L04",
+      "type": "HNK_DOMAIN",
+      "label": "Operação — Práxis",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P07-L05",
+      "type": "HNK_DOMAIN",
+      "label": "Integração — Práxis",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P07-L06",
+      "type": "HNK_DOMAIN",
+      "label": "Criação — Práxis",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "P07-L07",
+      "type": "HNK_DOMAIN",
+      "label": "Manifestação — Práxis",
+      "authority": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "id": "SRC024-C001",
+      "type": "CONCEPT",
+      "label": "Hermetic Kabbalah Tarot",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC024-C002",
+      "type": "CONCEPT",
+      "label": "Major Arcana correspondence schema",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC024-C003",
+      "type": "CONCEPT",
+      "label": "Minor Arcana correspondence schema",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC024-C004",
+      "type": "CONCEPT",
+      "label": "Court correspondence schema",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC026-C001",
+      "type": "CONCEPT",
+      "label": "Psiconáutica",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC026-C002",
+      "type": "CONCEPT",
+      "label": "Alquimia como metodologia de consciência",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC026-C003",
+      "type": "CONCEPT",
+      "label": "Sete metais / estados de consciência",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC026-C004",
+      "type": "CONCEPT",
+      "label": "Grande Obra em quatro estágios",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC026-C005",
+      "type": "CONCEPT",
+      "label": "Via Seca e Via Úmida",
+      "authority": "SOURCE_DERIVED"
+    },
+    {
+      "id": "SRC026-C006",
+      "type": "CONCEPT",
+      "label": "Memento Mori — Aviso Legal",
+      "authority": "SOURCE_DERIVED"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "GEN-SRC024-C001-SOURCE",
+      "from": "SRC024-C001",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-024",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "pp.2-4"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC024-C001-P02-L03",
+      "from": "SRC024-C001",
+      "relation": "INDEXED_IN",
+      "to": "P02-L03",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "pp.2-4"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC024-C001-P05-L03",
+      "from": "SRC024-C001",
+      "relation": "INDEXED_IN",
+      "to": "P05-L03",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "pp.2-4"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC024-C002-SOURCE",
+      "from": "SRC024-C002",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-024",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.5"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC024-C002-P02-L03",
+      "from": "SRC024-C002",
+      "relation": "INDEXED_IN",
+      "to": "P02-L03",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.5"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC024-C002-P05-L03",
+      "from": "SRC024-C002",
+      "relation": "INDEXED_IN",
+      "to": "P05-L03",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.5"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC024-C003-SOURCE",
+      "from": "SRC024-C003",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-024",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.8"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC024-C003-P02-L03",
+      "from": "SRC024-C003",
+      "relation": "INDEXED_IN",
+      "to": "P02-L03",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.8"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC024-C004-SOURCE",
+      "from": "SRC024-C004",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-024",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.13"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC024-C004-P02-L03",
+      "from": "SRC024-C004",
+      "relation": "INDEXED_IN",
+      "to": "P02-L03",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.13"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C001-SOURCE",
+      "from": "SRC026-C001",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-026",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.8-10"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC026-C001-P03-L02",
+      "from": "SRC026-C001",
+      "relation": "INDEXED_IN",
+      "to": "P03-L02",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.8-10"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C001-P01-L02",
+      "from": "SRC026-C001",
+      "relation": "INDEXED_IN",
+      "to": "P01-L02",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.8-10"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C002-SOURCE",
+      "from": "SRC026-C002",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-026",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.12"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC026-C002-P02-L01",
+      "from": "SRC026-C002",
+      "relation": "INDEXED_IN",
+      "to": "P02-L01",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.12"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C002-P03-L01",
+      "from": "SRC026-C002",
+      "relation": "INDEXED_IN",
+      "to": "P03-L01",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.12"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C002-P04-L01",
+      "from": "SRC026-C002",
+      "relation": "INDEXED_IN",
+      "to": "P04-L01",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.12"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C003-SOURCE",
+      "from": "SRC026-C003",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-026",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.12-14"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC026-C003-P02-L03",
+      "from": "SRC026-C003",
+      "relation": "INDEXED_IN",
+      "to": "P02-L03",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.12-14"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C003-P04-L03",
+      "from": "SRC026-C003",
+      "relation": "INDEXED_IN",
+      "to": "P04-L03",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.12-14"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C004-SOURCE",
+      "from": "SRC026-C004",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-026",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.14-15"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC026-C004-P02-L04",
+      "from": "SRC026-C004",
+      "relation": "INDEXED_IN",
+      "to": "P02-L04",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.14-15"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C004-P07-L04",
+      "from": "SRC026-C004",
+      "relation": "INDEXED_IN",
+      "to": "P07-L04",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.14-15"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C005-SOURCE",
+      "from": "SRC026-C005",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-026",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.16"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC026-C005-P02-L04",
+      "from": "SRC026-C005",
+      "relation": "INDEXED_IN",
+      "to": "P02-L04",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.16"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C005-P04-L03",
+      "from": "SRC026-C005",
+      "relation": "INDEXED_IN",
+      "to": "P04-L03",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.16"
+      },
+      "status": "HNK_CANDIDATE"
+    },
+    {
+      "edge_id": "GEN-SRC026-C006-SOURCE",
+      "from": "SRC026-C006",
+      "relation": "DERIVED_FROM",
+      "to": "SRC-026",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.3-4"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "GEN-SRC026-C006-P07-L01",
+      "from": "SRC026-C006",
+      "relation": "INDEXED_IN",
+      "to": "P07-L01",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.3-4"
+      },
+      "status": "HNK_CANDIDATE"
+    }
+  ]
+}

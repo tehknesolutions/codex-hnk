@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+const root=new URL("../",import.meta.url),read=p=>JSON.parse(fs.readFileSync(new URL(p,root),"utf8"));
+const registry=read("data/library/hnk-7x7.registry.json");
+const nodes=[],edges=[];const nodeIds=new Set(),edgeIds=new Set();
+const addNode=n=>{if(!nodeIds.has(n.id)){nodeIds.add(n.id);nodes.push(n)}};
+const addEdge=e=>{if(edgeIds.has(e.edge_id))throw Error("duplicate edge "+e.edge_id);edgeIds.add(e.edge_id);edges.push(e)};
+for(const d of registry.domains)addNode({id:d.domain_id,type:"HNK_DOMAIN",label:d.name});
+let seq=1;
+const ingest=(kind,sourceId,label,concepts,status="HNK_CANDIDATE")=>{
+ addNode({id:sourceId,type:"SOURCE",label,source_kind:kind});
+ for(const c of concepts||[]){
+  const cid=c.concept_id||c.id;addNode({id:cid,type:"CONCEPT",label:c.term||c.claim||c.source_claim||cid,status});
+  addEdge({edge_id:"IKG-E"+String(seq++).padStart(4,"0"),from:cid,relation:"DERIVED_FROM",to:sourceId,provenance:{source_id:sourceId,locator:c.locator||c.basis||"registry"},status});
+  for(const d of c.domains||[])addEdge({edge_id:"IKG-E"+String(seq++).padStart(4,"0"),from:cid,relation:"INDEXED_IN",to:d,provenance:{source_id:sourceId,locator:c.locator||c.basis||"registry"},status});
+ }
+};
+const p=read("data/library/concepts.pilot.registry.json");for(const c of p.concepts)ingest("EXTERNAL",c.source_id,c.source_id,[c],"HNK_CANDIDATE");
+for(const path of ["data/library/expansion.batch-001.json","data/library/expansion.batch-002.json"]){const b=read(path);for(const s of b.sources)ingest("EXTERNAL",s.source_id,s.source_id,s.concepts,"HNK_CANDIDATE")}
+for(const path of ["data/library/internal.batch-001.json","data/library/internal.batch-002.json"]){const b=read(path);for(const s of b.sources)ingest("GITHUB_REPOSITORY",s.id,s.repository,s.concepts,"HNK_CANDIDATE")}
+const b3=read("data/library/internal.batch-003.project-chat-review.json");
+for(const f of b3.findings.filter(x=>x.status==="SUPPORTED_CANDIDATE"))ingest("PROJECT_CHAT","PROJECT-CHAT-B003","Project/chat evidence batch 003",[{id:"B003-"+f.domain_id,term:f.rationale,domains:[f.domain_id],locator:"internal.batch-003.project-chat-review.json"}],"HNK_CANDIDATE");
+const b4=read("data/library/project-source-gap.batch-004.json");for(const s of b4.sources)ingest("PROJECT_FILE","PROJECT-"+s.source,s.source,s.concepts,"HNK_CANDIDATE");
+nodes.sort((a,b)=>a.id.localeCompare(b.id));edges.sort((a,b)=>a.edge_id.localeCompare(b.edge_id));
+const out={schema_version:"HNK-KNOWLEDGE-GRAPH-INTEGRATED-V1",principle:"PROVENANCE_FIRST__NO_AUTOMATIC_CANON_PROMOTION",summary:{nodes:nodes.length,edges:edges.length,domains:registry.domains.length},nodes,edges};
+process.stdout.write(JSON.stringify(out,null,2)+"\n");

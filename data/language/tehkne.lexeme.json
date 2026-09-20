@@ -1,0 +1,27 @@
+{
+  "schema_version": "HNK-LANGUAGE-CANON-LEXEME-V1",
+  "authority": "AUTHOR_APPROVED",
+  "decision": "APPROVED",
+  "lexeme": "TEHKNE",
+  "meaning_pt": "TECNOLOGIA",
+  "scope": "LEXICAL",
+  "distinctions": [
+    {
+      "form": "TEHKNE",
+      "role": "HNK_LANGUAGE_LEXEME"
+    },
+    {
+      "form": "TEHKNÉ",
+      "role": "PROPER_NAME_BRAND_CONTEXT"
+    }
+  ],
+  "non_inferences": [
+    "NO_AUTOMATIC_INFLECTION",
+    "NO_AUTOMATIC_DERIVATION",
+    "NO_GRAMMAR_RULE_INFERRED_FROM_LEXEME"
+  ],
+  "provenance": {
+    "decision": "Author approval in HNK Codex project",
+    "issue": 176
+  }
+}

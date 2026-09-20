@@ -1,0 +1,74 @@
+{
+  "schema_version": "HNK-INTERNAL-CORPUS-BATCH-002",
+  "status": "INTERNAL_SOURCE_DERIVED",
+  "purpose": "TARGETED_GAP_CLOSURE",
+  "policy": [
+    "EVIDENCE_BEFORE_MAPPING",
+    "NO_FORCED_49_OF_49",
+    "SOURCE_CLAIM_NOT_AUTOMATIC_HNK_CANON"
+  ],
+  "sources": [
+    {
+      "id": "INT-GH-001",
+      "repository": "tehknesolutions/codex-hnk",
+      "evidence": [
+        {
+          "path": "docs/qa/chokmah/HNK_CHOKMAH_RELEASE_GATE_EXECUTION_V1.md",
+          "sha": "retrieved-live-2026-09-20"
+        },
+        {
+          "path": "docs/status/HNK_CODEX_EXECUTION_FIRST_STATUS_2026-09-18.md",
+          "sha": "retrieved-live-2026-09-20"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "INT001-C004",
+          "term": "Experiment / Evidence pipeline",
+          "claim": "O status executivo registra uma cadeia operacional explícita em que SYMBOLIC RUNTIME é seguido por EXPERIMENT / EVIDENCE e HUMAN REVIEW, distinguindo implementação de prova executada.",
+          "domains": [
+            "P03-L04"
+          ],
+          "locator": "docs/status/HNK_CODEX_EXECUTION_FIRST_STATUS_2026-09-18.md §7"
+        },
+        {
+          "id": "INT001-C005",
+          "term": "Executable release experiment",
+          "claim": "O runbook define execução controlada com comandos, exit codes, stdout, typechecks, browser/device QA, medições temporais, concorrência e critérios fail-closed.",
+          "domains": [
+            "P03-L04",
+            "P03-L07"
+          ],
+          "locator": "docs/qa/chokmah/HNK_CHOKMAH_RELEASE_GATE_EXECUTION_V1.md Gates A–E"
+        },
+        {
+          "id": "INT001-C006",
+          "term": "Epistemic boundary model",
+          "claim": "O projeto formaliza distinções entre tradição, história, interpretação, experiência e ciência e exige decisão humana para promoção de Research a cânone.",
+          "domains": [
+            "P04-L06"
+          ],
+          "locator": "docs/status/HNK_CODEX_EXECUTION_FIRST_STATUS_2026-09-18.md §6"
+        },
+        {
+          "id": "INT001-C007",
+          "term": "Operational action language",
+          "claim": "O projeto expressa trabalho como gates, estados, evidências requeridas, critérios de passagem, prioridades P0–P7 e regras fail-closed.",
+          "domains": [
+            "P07-L03"
+          ],
+          "locator": "docs/qa/chokmah/HNK_CHOKMAH_RELEASE_GATE_EXECUTION_V1.md; docs/status/HNK_CODEX_EXECUTION_FIRST_STATUS_2026-09-18.md §9"
+        },
+        {
+          "id": "INT001-C008",
+          "term": "Material manifestation criterion",
+          "claim": "A condição de sucesso exige sistema acessível por progressão legítima, Web/Mobile com QA, runtime executável, visual Premium concluído e prova auditável de release/deploy/production.",
+          "domains": [
+            "P07-L07"
+          ],
+          "locator": "docs/status/HNK_CODEX_EXECUTION_FIRST_STATUS_2026-09-18.md §10"
+        }
+      ]
+    }
+  ]
+}
