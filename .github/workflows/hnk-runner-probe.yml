@@ -1,0 +1,20 @@
+name: HNK Runner Probe
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/hnk-runner-probe.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  runner-probe:
+    name: "PROBE 0 · Runner shell only"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Runner heartbeat
+        shell: bash
+        run: |
+          echo "HNK_RUNNER_HEARTBEAT"
+          uname -a
+          node --version || true
+          echo "HNK_RUNNER_PROBE_PASS"
