@@ -1,0 +1,18 @@
+:root {
+  --hnk-grimoire-bg: #080706;
+  --hnk-parchment-1: #d4b98b;
+  --hnk-parchment-2: #9f7c4d;
+  --hnk-ink: #24170d;
+  --hnk-metal-dark: #171513;
+  --hnk-gold: #c89a45;
+  --hnk-gold-light: #f0cf7a;
+  --hnk-depth-0: 0;
+  --hnk-depth-ink: 1;
+  --hnk-depth-emboss: 2;
+  --hnk-depth-metal: 3;
+  --hnk-depth-emissive: 4;
+  --hnk-depth-interaction: 5;
+  --hnk-page-radius: 18px;
+  --hnk-reading-max: 72ch;
+}
+/* Candidate visual tokens. Exact production palette remains subject to canonical visual lock. */
