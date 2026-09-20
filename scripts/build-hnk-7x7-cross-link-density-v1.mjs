@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+import fs from "node:fs";const root=new URL("../",import.meta.url),read=p=>JSON.parse(fs.readFileSync(new URL(p,root),"utf8"));
+const g=read("data/library/knowledge-graph.integrated.v1.json"),r=read("data/library/hnk-7x7.registry.json");
+const cells=r.domains.map(d=>{const incoming=g.edges.filter(e=>e.relation==="INDEXED_IN"&&e.to===d.domain_id);const concepts=new Set(incoming.map(e=>e.from));const sourceEdges=g.edges.filter(e=>concepts.has(e.from)&&e.relation==="DERIVED_FROM");const sources=new Set(sourceEdges.map(e=>e.to));const typed=incoming.length+sourceEdges.length;const level=typed===0?0:typed<=2?1:typed<=5?2:3;return {domain_id:d.domain_id,name:d.name,indexed_concepts:concepts.size,source_nodes:sources.size,typed_edge_count:typed,cross_link_density:level,rule:"V1 counts only DERIVED_FROM + INDEXED_IN edges; richer semantic relations pending"}});
+process.stdout.write(JSON.stringify({schema_version:"HNK-7X7-CROSS-LINK-DENSITY-V1",semantics:"STRUCTURAL_DENSITY_NOT_IMPORTANCE_OR_TRUTH",cells},null,2)+"\n");
