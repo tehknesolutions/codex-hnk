@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import {domainsForPillar,labDomains,labPillars,semanticEdgeCount} from './knowledge';
+import {conceptRegistry} from './convergence';
+import sources from '../../../../data/library/library.sources.registry.json';
+import CodexSearch from './CodexSearch';
 
 export default function LaboratoryPage(){
+ const searchItems=[
+  ...labDomains.map(d=>({id:d.id,label:d.name,kind:'DOMAIN' as const,href:'/laboratorio/dominios/'+d.id,meta:d.pillarId+' · '+d.levelId})),
+  ...conceptRegistry.map(c=>({id:c.id,label:c.term??c.id,kind:'CONCEPT' as const,href:'/laboratorio/conceitos/'+c.id,meta:c.origin})),
+  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE' as const,href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'}))
+ ];
  return <main className="grimoire-stage" data-hnk-theme="living-grimoire">
   <header className="grimoire-masthead"><div><span className="mast-sigil">✦</span><strong>HNK</strong><small>CODEX · LIVING GRIMOIRE</small></div><nav><Link href="/">Início</Link><a href="#pilares">Pilares</a><a href="#dominios">Domínios</a><Link href="/laboratorio/biblioteca">Biblioteca</Link></nav><span className="canon-chip">KNOWLEDGE GRAPH</span></header>
   <section className="grimoire-book">
@@ -17,6 +25,6 @@ export default function LaboratoryPage(){
     <p className="epistemic-note">A tela lê o registry canônico. Visualização não promove conteúdo nem cria correspondências.</p>
    </article>
   </section>
-  <footer className="grimoire-command"><label><span>⌕</span><input aria-label="Buscar no Codex" placeholder="Buscar conceito, domínio, fonte ou glifo…"/></label><div><span className="pulse"/> Laboratório · read-only</div></footer>
+  <footer className="grimoire-command"><CodexSearch items={searchItems}/><div><span className="pulse"/> Laboratório · read-only</div></footer>
  </main>
 }
