@@ -1,0 +1,54 @@
+{
+  "schema_version": "HNK-INTERNAL-CORPUS-SOURCES-V1",
+  "authority": "HNK_INTERNAL_EVIDENCE",
+  "rules": [
+    "PROVENANCE_REQUIRED",
+    "NO_AUTOMATIC_CANON_PROMOTION",
+    "N_TO_N_7X7_ALLOWED",
+    "INTERNAL_AND_EXTERNAL_COVERAGE_SEPARATE"
+  ],
+  "sources": [
+    {
+      "id": "INT-GH-001",
+      "kind": "GITHUB_REPOSITORY",
+      "repository": "tehknesolutions/codex-hnk",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "INT-GH-002",
+      "kind": "GITHUB_REPOSITORY",
+      "repository": "Tehkne-Solutions/hnk-codex-365",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "INT-GH-003",
+      "kind": "GITHUB_REPOSITORY",
+      "repository": "Tehkne-Solutions/codex-hnk-app",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "INT-GH-004",
+      "kind": "GITHUB_REPOSITORY",
+      "repository": "Tehkne-Solutions/tehkne-site",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "INT-GH-005",
+      "kind": "GITHUB_REPOSITORY",
+      "repository": "Tehkne-Solutions/simpleway-drawing",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "INT-GH-006",
+      "kind": "GITHUB_REPOSITORY",
+      "repository": "tehknesolutions/alakazam-strangeverse",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "INT-GH-007",
+      "kind": "GITHUB_REPOSITORY",
+      "repository": "tehknesolutions/tehkne-storyforge",
+      "status": "VERIFIED"
+    }
+  ]
+}
