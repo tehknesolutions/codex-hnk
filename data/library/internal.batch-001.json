@@ -1,0 +1,238 @@
+{
+  "schema_version": "HNK-INTERNAL-CORPUS-BATCH-001",
+  "status": "INTERNAL_SOURCE_DERIVED",
+  "evidence_policy": "README_AND_MANIFEST_ONLY",
+  "sources": [
+    {
+      "id": "INT-GH-001",
+      "repository": "tehknesolutions/codex-hnk",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ],
+      "concepts": [
+        {
+          "id": "INT001-C001",
+          "term": "Monorepo Web + Mobile HNK",
+          "claim": "O repositório declara apps reais Web e Mobile e pacotes compartilhados para canon, quests, áudio, progressão, Vault, evidência, pesquisa, release, deploy e produção.",
+          "domains": [
+            "P06-L01",
+            "P06-L05",
+            "P06-L07"
+          ],
+          "locator": "README.md"
+        },
+        {
+          "id": "INT001-C002",
+          "term": "Governança executável e validação",
+          "claim": "O package manifest expõe build, typecheck, test e uma cadeia extensa de validators por Day, catálogo, atributos e escalabilidade.",
+          "domains": [
+            "P06-L03",
+            "P06-L04",
+            "P07-L03"
+          ],
+          "locator": "package.json"
+        },
+        {
+          "id": "INT001-C003",
+          "term": "Execution-first",
+          "claim": "A regra operacional declarada prioriza fechamento de gates verificáveis antes de expansão arquitetural.",
+          "domains": [
+            "P07-L01",
+            "P07-L04"
+          ],
+          "locator": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "INT-GH-002",
+      "repository": "Tehkne-Solutions/hnk-codex-365",
+      "evidence": [
+        "README.md"
+      ],
+      "concepts": [
+        {
+          "id": "INT002-C001",
+          "term": "Pipeline editorial Codex 365",
+          "claim": "Markdown canônico, manifest editorial, templates, scripts de validação/compilação e automação de manuscrito formam um pipeline editorial explícito.",
+          "domains": [
+            "P06-L02",
+            "P06-L04",
+            "P05-L04"
+          ],
+          "locator": "README.md"
+        },
+        {
+          "id": "INT002-C002",
+          "term": "Artefatos editoriais derivados",
+          "claim": "CODEX_MASTER.md e CODEX_MASTER.docx são gerados como artefatos derivados da fonte Markdown oficial.",
+          "domains": [
+            "P05-L07",
+            "P06-L07"
+          ],
+          "locator": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "INT-GH-003",
+      "repository": "Tehkne-Solutions/codex-hnk-app",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ],
+      "concepts": [
+        {
+          "id": "INT003-C001",
+          "term": "Stack multiplataforma HNK",
+          "claim": "A plataforma declara Expo/React Native, Next.js, TypeScript, Supabase, Vercel, Web Audio API, GitHub Actions, pnpm e Turborepo.",
+          "domains": [
+            "P06-L01",
+            "P06-L05"
+          ],
+          "locator": "README.md"
+        },
+        {
+          "id": "INT003-C002",
+          "term": "Separação conteúdo/plataforma",
+          "claim": "O Codex 365 publica conteúdo canônico; o app consome, apresenta, gamifica e registra a experiência.",
+          "domains": [
+            "P06-L02",
+            "P06-L05",
+            "P07-L05"
+          ],
+          "locator": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "INT-GH-004",
+      "repository": "Tehkne-Solutions/tehkne-site",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ],
+      "concepts": [
+        {
+          "id": "INT004-C001",
+          "term": "Site institucional Tehkné",
+          "claim": "O repositório se identifica como site institucional e o manifest registra aplicação Next/React com animação via Framer Motion.",
+          "domains": [
+            "P06-L04",
+            "P05-L05",
+            "P06-L07"
+          ],
+          "locator": "README.md + package.json"
+        }
+      ]
+    },
+    {
+      "id": "INT-GH-005",
+      "repository": "Tehkne-Solutions/simpleway-drawing",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ],
+      "concepts": [
+        {
+          "id": "INT005-C001",
+          "term": "Formação artística estruturada",
+          "claim": "A plataforma articula aprendizagem estruturada, prática deliberada, evidências de domínio, criação e evolução artística.",
+          "domains": [
+            "P05-L01",
+            "P05-L04",
+            "P07-L04"
+          ],
+          "locator": "README.md"
+        },
+        {
+          "id": "INT005-C002",
+          "term": "Observe → Build → Create",
+          "claim": "O arco Foundation Alpha explicita progressão de percepção, construção e criação, com capstone e before/after.",
+          "domains": [
+            "P05-L02",
+            "P05-L06",
+            "P07-L02"
+          ],
+          "locator": "README.md"
+        },
+        {
+          "id": "INT005-C003",
+          "term": "Arte + infraestrutura verificável",
+          "claim": "O produto combina conteúdo artístico versionado com Next.js, TypeScript, PostgreSQL, Drizzle, storage S3-compatible, schemas, CI e release gate remoto.",
+          "domains": [
+            "P05-L05",
+            "P06-L05",
+            "P06-L07"
+          ],
+          "locator": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "INT-GH-006",
+      "repository": "tehknesolutions/alakazam-strangeverse",
+      "evidence": [
+        "package.json"
+      ],
+      "concepts": [
+        {
+          "id": "INT006-C001",
+          "term": "Runtime web 3D do Strangeverse",
+          "claim": "O manifest confirma projeto web TypeScript/Vite com Three.js e comandos de build/preview.",
+          "domains": [
+            "P06-L03",
+            "P06-L04",
+            "P05-L06"
+          ],
+          "locator": "package.json"
+        }
+      ]
+    },
+    {
+      "id": "INT-GH-007",
+      "repository": "tehknesolutions/tehkne-storyforge",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ],
+      "concepts": [
+        {
+          "id": "INT007-C001",
+          "term": "Idea-to-universe-to-media",
+          "claim": "Storyforge se define como sistema de criação narrativa e produção transmídia que transforma intenção criativa em universo estruturado e múltiplas manifestações coerentes.",
+          "domains": [
+            "P05-L03",
+            "P05-L06",
+            "P05-L07",
+            "P06-L06"
+          ],
+          "locator": "README.md"
+        },
+        {
+          "id": "INT007-C002",
+          "term": "T-NIR e Media Compilers",
+          "claim": "A arquitetura usa representação narrativa independente de mídia e compiladores para literatura, quadrinhos, audiovisual, jogos e áudio.",
+          "domains": [
+            "P06-L03",
+            "P06-L06",
+            "P05-L05"
+          ],
+          "locator": "README.md"
+        },
+        {
+          "id": "INT007-C003",
+          "term": "Creator Authority e Provenance",
+          "claim": "A arquitetura declara autoridade do criador, canon-first e proveniência rastreável como princípios centrais.",
+          "domains": [
+            "P07-L01",
+            "P07-L03",
+            "P06-L02"
+          ],
+          "locator": "README.md"
+        }
+      ]
+    }
+  ]
+}
