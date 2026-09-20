@@ -5,5 +5,15 @@ import b1 from '../../../../../../../data/library/internal.batch-001.json';
 import b2 from '../../../../../../../data/library/internal.batch-002.json';
 import b3 from '../../../../../../../data/library/internal.batch-003.project-chat-review.json';
 import b4 from '../../../../../../../data/library/project-source-gap.batch-004.json';
-function concepts(){const out:any[]=[];for(const s of b1.sources)for(const c of s.concepts)out.push({...c,source:s.id,source_kind:'INTERNAL'});for(const s of b2.sources)for(const c of s.concepts)out.push({...c,source:s.id,source_kind:'INTERNAL'});for(const f of b3.findings)if(f.status==='SUPPORTED_CANDIDATE')out.push({id:'B003-'+f.domain_id,term:f.domain_id+' project/chat evidence',claim:f.rationale,domains:[f.domain_id],source:'PROJECT_CHAT_REVIEW',source_kind:'PROJECT_CHAT',status:'HNK_CANDIDATE'});for(const s of b4.sources)for(const c of s.concepts)out.push({...c,source:s.source,source_kind:'PROJECT_FILE',status:'HNK_CANDIDATE'});return out}
-export async function GET(_req:Request,{params}:{params:Promise<{domainId:string}>}){const {domainId}=await params;const domain=labDomains.find(d=>d.id===domainId);if(!domain)return NextResponse.json({error:'DOMAIN_NOT_FOUND'},{status:404});const evidence=concepts().filter(c=>c.domains?.includes(domainId));const maturity=audit.findings.find(x=>x.domain_id===domainId)??{domain_id:domainId,formalization:'UNKNOWN',praxis:'UNKNOWN',governance:'UNKNOWN',cross_link_density:'UNKNOWN'};return NextResponse.json({schema_version:'HNK-LAB-DOMAIN-FOLIO-V1',authority:'READ_ONLY_PROJECTION',domain,maturity,evidence,semantics:{evidence_count:evidence.length,unknown:'UNKNOWN_IS_NOT_ZERO'}})}
+
+type Evidence={id:string;term:string;claim:string;domains:string[];source:string;source_kind:'INTERNAL'|'PROJECT_CHAT'|'PROJECT_FILE';status?:string;locator?:string;basis?:string};
+
+function concepts():Evidence[]{
+ const out:Evidence[]=[];
+ for(const s of b1.sources)for(const c of s.concepts)out.push({...c,source:s.id,source_kind:'INTERNAL'});
+ for(const s of b2.sources)for(const c of s.concepts)out.push({...c,source:s.id,source_kind:'INTERNAL'});
+ for(const f of b3.findings)if(f.status==='SUPPORTED_CANDIDATE')out.push({id:'B003-'+f.domain_id,term:f.domain_id+' project/chat evidence',claim:f.rationale,domains:[f.domain_id],source:'PROJECT_CHAT_REVIEW',source_kind:'PROJECT_CHAT',status:'HNK_CANDIDATE'});
+ for(const s of b4.sources)for(const c of s.concepts)out.push({...c,source:s.source,source_kind:'PROJECT_FILE',status:'HNK_CANDIDATE'});
+ return out;
+}
+export async function GET(_req:Request,{params}:{params:Promise<{domainId:string}>}){const {domainId}=await params;const domain=labDomains.find(d=>d.id===domainId);if(!domain)return NextResponse.json({error:'DOMAIN_NOT_FOUND'},{status:404});const evidence=concepts().filter(c=>c.domains.includes(domainId));const maturity=audit.findings.find(x=>x.domain_id===domainId)??{domain_id:domainId,formalization:'UNKNOWN',praxis:'UNKNOWN',governance:'UNKNOWN',cross_link_density:'UNKNOWN'};return NextResponse.json({schema_version:'HNK-LAB-DOMAIN-FOLIO-V1',authority:'READ_ONLY_PROJECTION',domain,maturity,evidence,semantics:{evidence_count:evidence.length,unknown:'UNKNOWN_IS_NOT_ZERO'}})}
