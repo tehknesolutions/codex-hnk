@@ -1,0 +1,89 @@
+{
+  "schema_version": "HNK-LIVING-GRIMOIRE-UI-V1",
+  "status": "APPROVED_VISUAL_DIRECTION",
+  "name": "HNK CODEX — Living Grimoire UI",
+  "core_statement": "A interface não representa um grimório; a interface é o Codex vivo, navegável e computacional.",
+  "reference_asset": "approved concept image from 2026-09-20 conversation",
+  "principles": [
+    "GRIMOIRE_NOT_DASHBOARD",
+    "CANONICAL_HNK_GLYPHS_OVER_GENERIC_ARCANA",
+    "PAGES_ARE_INTERACTIVE_SURFACES",
+    "ORNAMENT_HAS_INFORMATIONAL_PURPOSE",
+    "PREMIUM_DETAIL_WITH_READABILITY",
+    "DESKTOP_AND_MOBILE_ARE_FIRST_CLASS",
+    "REDUCED_MOTION_SUPPORTED",
+    "KNOWLEDGE_STATUS_ALWAYS_VISIBLE"
+  ],
+  "visual_system": {
+    "materials": [
+      "aged parchment",
+      "embossed leather",
+      "dark metal",
+      "antique gold/brass",
+      "engraved stone",
+      "glass/gem inlays",
+      "subtle emissive glyph light"
+    ],
+    "depth": [
+      "page substrate",
+      "ink/engraving",
+      "embossed frame",
+      "metal fitting",
+      "gem/glyph emissive layer",
+      "floating interaction layer"
+    ],
+    "color_role": "Rich chromatic identities may distinguish pillars/domains; exact canonical palette requires dedicated lock.",
+    "motion": [
+      "page turn",
+      "glyph awakening",
+      "line tracing",
+      "subtle parallax/depth",
+      "matrix illumination",
+      "graph constellation reveal"
+    ],
+    "motion_rule": "Motion communicates state/navigation; never blocks reading."
+  },
+  "information_architecture": {
+    "cover": "entry / identity / resume state",
+    "spread_left": "pillar wheel / current context",
+    "spread_right": "active knowledge surface",
+    "surfaces": [
+      "7×7 Pillar Grimoire",
+      "49×49 Domain Matrix",
+      "Knowledge Graph Constellation",
+      "Domain Folio",
+      "Source Library",
+      "Provenance Marginalia",
+      "Laboratory"
+    ],
+    "domain_folio": [
+      "canonical domain identity",
+      "concepts",
+      "sources",
+      "maturity vector",
+      "semantic neighbors",
+      "open questions",
+      "status/provenance"
+    ]
+  },
+  "canon_rules": [
+    "Generic symbols in the concept image are visual placeholders only.",
+    "Production replaces placeholders with approved HNK glyphs/HENUVOKODAN/iconography when canonical assets exist.",
+    "No visual element may silently create a new canonical correspondence.",
+    "SOURCE_ASSERTED/HNK_CANDIDATE/HNK_APPROVED/UNRESOLVED remain inspectable."
+  ],
+  "responsive": {
+    "desktop": "open two-page grimoire as primary composition",
+    "tablet": "adaptive spread with preserved book object",
+    "mobile": "single-page folio/navigation; no forced miniature two-page spread"
+  },
+  "performance": {
+    "strategy": [
+      "progressive enhancement",
+      "layered CSS/SVG/WebGL only where valuable",
+      "lazy-load heavy ornament/3D",
+      "static fallback for decorative effects"
+    ],
+    "rule": "Visual richness cannot make knowledge inaccessible."
+  }
+}
