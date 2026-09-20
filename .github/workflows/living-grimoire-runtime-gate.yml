@@ -18,7 +18,6 @@ jobs:
       - name: Enable repository pnpm
         run: |
           corepack enable
-          corepack install
           pnpm --version
       - name: Install monorepo
         run: pnpm install --frozen-lockfile
