@@ -18,3 +18,8 @@
 .pillar-link-inspector>div{display:grid;grid-template-columns:auto 1fr;gap:.15rem .65rem;scroll-margin-top:1rem}
 .pillar-link-inspector>div span{text-align:right}.pillar-link-inspector>div small{grid-column:1/-1;opacity:.72}
 @media(max-width:720px){.pillar-link-ledger{grid-template-columns:1fr}.pillar-link-inspector>div{grid-template-columns:1fr}.pillar-link-inspector>div span{text-align:left}}
+
+
+.pillar-link-row small a,.pillar-link-inspector small a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.relation-card[id]{scroll-margin-top:1rem}
+.relation-card:target{outline:2px solid rgba(137,91,34,.62);outline-offset:2px;box-shadow:0 0 0 4px rgba(255,226,145,.14)}
