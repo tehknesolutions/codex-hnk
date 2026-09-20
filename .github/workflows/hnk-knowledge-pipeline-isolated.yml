@@ -1,0 +1,67 @@
+name: HNK Knowledge Pipeline Isolated Gate
+
+on:
+  pull_request:
+    paths:
+      - "data/library/**"
+      - "scripts/build-knowledge-graph-integrated-v1.mjs"
+      - "scripts/build-knowledge-graph-integrated-v2.mjs"
+      - "scripts/build-hnk-7x7-convergence-map-v1.mjs"
+      - "scripts/materialize-hnk-knowledge-v1.mjs"
+      - "scripts/validate-hnk-knowledge-materialization-v1.mjs"
+      - ".github/workflows/hnk-knowledge-pipeline-isolated.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kg-v1:
+    name: "KG 1/4 · Integrated V1"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/build-knowledge-graph-integrated-v1.mjs > /tmp/kg-v1.json
+      - run: node -e "const x=require('/tmp/kg-v1.json'); if(x.schema_version!=='HNK-KNOWLEDGE-GRAPH-INTEGRATED-V1') process.exit(1)"
+
+  kg-v2:
+    name: "KG 2/4 · Semantic V2"
+    needs: kg-v1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/build-knowledge-graph-integrated-v1.mjs > data/library/knowledge-graph.integrated.v1.json
+      - run: node scripts/build-knowledge-graph-integrated-v2.mjs > /tmp/kg-v2.json
+      - run: node -e "const x=require('/tmp/kg-v2.json'); if(x.schema_version!=='HNK-KNOWLEDGE-GRAPH-INTEGRATED-V2') process.exit(1)"
+
+  convergence:
+    name: "KG 3/4 · 7x7 Convergence"
+    needs: kg-v2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/build-knowledge-graph-integrated-v1.mjs > data/library/knowledge-graph.integrated.v1.json
+      - run: node scripts/build-knowledge-graph-integrated-v2.mjs > data/library/knowledge-graph.integrated.v2.json
+      - run: node scripts/build-hnk-7x7-convergence-map-v1.mjs > /tmp/convergence.json
+      - run: node -e "const x=require('/tmp/convergence.json'); if(x.schema_version!=='HNK-7X7-CONVERGENCE-MAP-V1') process.exit(1)"
+
+  validation:
+    name: "KG 4/4 · Materialization Contract"
+    needs: convergence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/materialize-hnk-knowledge-v1.mjs
+      - run: node scripts/validate-hnk-knowledge-materialization-v1.mjs
