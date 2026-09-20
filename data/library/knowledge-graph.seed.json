@@ -1,0 +1,175 @@
+{
+  "schema_version": "HNK-KG-SEED-V1",
+  "nodes": [
+    {
+      "id": "SRC-024",
+      "type": "SOURCE",
+      "label": "Hermetic Kabbalah Tarot"
+    },
+    {
+      "id": "SRC-026",
+      "type": "SOURCE",
+      "label": "Psicotropicon"
+    },
+    {
+      "id": "N-TAROT-MAJOR",
+      "type": "TAROT",
+      "label": "Major Arcana"
+    },
+    {
+      "id": "N-TAROT-MINOR",
+      "type": "TAROT",
+      "label": "Minor Arcana"
+    },
+    {
+      "id": "N-TREE-OF-LIFE",
+      "type": "SYMBOL",
+      "label": "Tree of Life"
+    },
+    {
+      "id": "N-HEBREW-LETTERS",
+      "type": "LETTER",
+      "label": "Hebrew Letters"
+    },
+    {
+      "id": "N-GEMATRIA",
+      "type": "NUMBER",
+      "label": "Gematric Value"
+    },
+    {
+      "id": "N-GD-COLORS",
+      "type": "COLOR",
+      "label": "Golden Dawn Color Scales"
+    },
+    {
+      "id": "N-SEVEN-METALS",
+      "type": "ALCHEMY",
+      "label": "Seven Metals"
+    },
+    {
+      "id": "N-MERCURY",
+      "type": "ALCHEMY",
+      "label": "Mercury"
+    },
+    {
+      "id": "N-GOLD",
+      "type": "ALCHEMY",
+      "label": "Gold"
+    },
+    {
+      "id": "N-SILVER",
+      "type": "ALCHEMY",
+      "label": "Silver"
+    },
+    {
+      "id": "N-DRY-PATH",
+      "type": "PRACTICE",
+      "label": "Dry Path"
+    },
+    {
+      "id": "N-WET-PATH",
+      "type": "PRACTICE",
+      "label": "Wet Path"
+    },
+    {
+      "id": "N-PHILOSOPHERS-STONE",
+      "type": "SYMBOL",
+      "label": "Philosopher's Stone diagram"
+    },
+    {
+      "id": "N-QUIMIOGNOSIS",
+      "type": "CONCEPT",
+      "label": "Quimiognosis"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "KG-E001",
+      "from": "N-TAROT-MAJOR",
+      "relation": "STRUCTURED_BY",
+      "to": "N-HEBREW-LETTERS",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.5"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "KG-E002",
+      "from": "N-TAROT-MAJOR",
+      "relation": "STRUCTURED_BY",
+      "to": "N-GEMATRIA",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.5"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "KG-E003",
+      "from": "N-TAROT-MINOR",
+      "relation": "STRUCTURED_BY",
+      "to": "N-GD-COLORS",
+      "provenance": {
+        "source_id": "SRC-024",
+        "locator": "p.8"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "KG-E004",
+      "from": "N-PHILOSOPHERS-STONE",
+      "relation": "REPRESENTS",
+      "to": "N-MERCURY",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.18"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "KG-E005",
+      "from": "N-PHILOSOPHERS-STONE",
+      "relation": "REPRESENTS",
+      "to": "N-GOLD",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.18"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "KG-E006",
+      "from": "N-PHILOSOPHERS-STONE",
+      "relation": "REPRESENTS",
+      "to": "N-SILVER",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "p.18"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "KG-E007",
+      "from": "N-DRY-PATH",
+      "relation": "CONTRASTS_WITH",
+      "to": "N-WET-PATH",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.19-22"
+      },
+      "status": "SOURCE_ASSERTED"
+    },
+    {
+      "edge_id": "KG-E008",
+      "from": "N-QUIMIOGNOSIS",
+      "relation": "RELATED_TO",
+      "to": "N-SEVEN-METALS",
+      "provenance": {
+        "source_id": "SRC-026",
+        "locator": "pp.33-40"
+      },
+      "status": "SOURCE_ASSERTED"
+    }
+  ]
+}
