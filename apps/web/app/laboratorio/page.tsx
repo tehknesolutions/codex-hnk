@@ -11,7 +11,7 @@ export default function LaboratoryPage(){
   ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE' as const,href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'}))
  ];
  return <main className="grimoire-stage" data-hnk-theme="living-grimoire">
-  <header className="grimoire-masthead"><div><span className="mast-sigil">✦</span><strong>HNK</strong><small>CODEX · LIVING GRIMOIRE</small></div><nav><Link href="/">Início</Link><a href="#pilares">Pilares</a><a href="#dominios">Domínios</a><Link href="/laboratorio/biblioteca">Biblioteca</Link></nav><span className="canon-chip">KNOWLEDGE GRAPH</span></header>
+  <header className="grimoire-masthead"><div><span className="mast-sigil">✦</span><strong>HNK</strong><small>CODEX · LIVING GRIMOIRE</small></div><nav><Link href="/">Início</Link><a href="#pilares">Pilares</a><a href="#dominios">Domínios</a><Link href="/laboratorio/biblioteca">Biblioteca</Link><Link href="/laboratorio/glifos">Glifos</Link></nav><span className="canon-chip">KNOWLEDGE GRAPH</span></header>
   <section className="grimoire-book">
    <div className="book-spine" aria-hidden="true"><span>H</span><span>N</span><span>K</span></div>
    <article className="grimoire-page left-page" id="pilares"><div className="page-corner corner-a"/><div className="page-corner corner-b"/><p className="folio-kicker">HNK · SETE PILARES</p><h1>Mapa do Ser, Saber e Fazer</h1><p className="folio-lead">CONSCIÊNCIA → CRIAÇÃO → TRANSFORMAÇÃO → MANIFESTAÇÃO</p>
