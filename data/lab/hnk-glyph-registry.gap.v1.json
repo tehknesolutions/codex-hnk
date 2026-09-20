@@ -1,6 +1,6 @@
 {
   "schema_version": "HNK-GLYPH-REGISTRY-RECOVERY-V1",
-  "status": "STRUCTURAL_REGISTRY_RECOVERED",
+  "status": "STRUCTURAL_AND_VISUAL_AUTHORITY_RECOVERED",
   "authority": "SOURCE_DERIVED_FROM_EXISTING_HNK40_REFERENCE_MATRIX",
   "source": {
     "repository": "tehknesolutions/codex-hnk",
@@ -9,7 +9,10 @@
     "matrix_id": "HNK40-REFERENCE-MATRIX-V1",
     "source_status": "SCAFFOLD_NO_REFERENCE_EQUIVALENCE_CLAIMS"
   },
-  "scope": {"expected":40,"structurally_recovered":40},
+  "scope": {
+    "expected": 40,
+    "structurally_recovered": 40
+  },
   "authority_boundaries": {
     "glyph_ids": "AUTHORITATIVE_VIA_HNK40_ENTRIES",
     "phonemes": "AUTHORITATIVE_VIA_HNK40_IPA",
@@ -31,7 +34,43 @@
     "STRUCTURAL_RECOVERY_DOES_NOT_PROMOTE_VISUAL_FORMS",
     "CANDIDATE_PUA_IS_NOT_OFFICIAL_VISUAL_IDENTITY",
     "PENDING_REFERENCE_EQUIVALENCES_REMAIN_PENDING",
-    "NO_NEW_CORRESPONDENCE_BY_INFERENCE"
+    "NO_NEW_CORRESPONDENCE_BY_INFERENCE",
+    "VISUAL_CANON_V2_DOES_NOT_CLAIM_LOST_LEGACY_ALPHABET_RECOVERY",
+    "FONT_ATTESTATION_DOES_NOT_BY_ITSELF_PUBLISH_BINARY_FILES"
   ],
-  "next_gate": "RECOVER_AND_VERIFY_VISUAL_ASSET_AUTHORITY"
+  "next_gate": "INGEST_VERIFIED_VISUAL_CANON_INTO_LIVING_GRIMOIRE",
+  "visual_authority": {
+    "status": "VISUAL-CANON-V2",
+    "source_repository": "tehknesolutions/simpleway-hnk",
+    "source_ref": "main",
+    "source_path": "src/hnk/hnk40-visual-canon-v2.mjs",
+    "glyph_count": 40,
+    "sprite_sha256": "87ee43f3785165397752a21eaceffcda8b3240748125062ca275bf8d46234ca4",
+    "ordered_set_sha256": "78668df0f707952b7c280de52526abaa2b7900597fb8ff362a3a08641fd1bce5",
+    "legacy_recovery_claim": false
+  },
+  "font_attestation": {
+    "status": "VERIFIED_BUILD",
+    "source_repository": "tehknesolutions/simpleway-hnk",
+    "source_ref": "main",
+    "source_path": "font/HNK_FONT_BUILD_ATTESTATION_V1_1.json",
+    "family": "HNK Visual Canon V2",
+    "version": "1.1.0",
+    "glyph_mappings": 99,
+    "inventory": {
+      "roots": 40,
+      "mx1": 59
+    },
+    "binaries": {
+      "ttf": {
+        "sha256": "7073e6cc5cd97a4535e2799c45ed179086687c5708230a5459f8fa4bcad0d4d0"
+      },
+      "otf": {
+        "sha256": "dbe7c9f225f7855acf618123298173dce044b35652cc0689dd57d3b4d8e9cea8"
+      },
+      "woff2": {
+        "sha256": "454d5b1a4156daa67251f246908c6e21838e4cc6fe84b49c4c36d4df5b691b40"
+      }
+    }
+  }
 }
