@@ -1,0 +1,10 @@
+import fs from "node:fs";
+const g=JSON.parse(fs.readFileSync(new URL("../data/library/knowledge-graph.generated.json",import.meta.url),"utf8"));
+const fail=m=>{throw new Error("[HNK-KG-INDEX] "+m)};
+if(!g.indexes?.by_type||!g.indexes?.by_source||!g.indexes?.by_status) fail("missing indexes");
+if(!g.heatmap_7x7||g.heatmap_7x7.total_domains!==49) fail("invalid 7x7 heatmap");
+const edgeIds=new Set(g.edges.map(e=>e.edge_id));
+for(const [src,ids] of Object.entries(g.indexes.by_source)) for(const id of ids) if(!edgeIds.has(id)) fail("dangling source index "+src+" -> "+id);
+const approved=(g.indexes.by_status.HNK_APPROVED||[]);
+if(approved.length) fail("generated graph contains automatic HNK_APPROVED");
+console.log("HNK_KG_INDEX_PASS: reverse indexes + 49-domain heatmap / 0 auto-approved");
