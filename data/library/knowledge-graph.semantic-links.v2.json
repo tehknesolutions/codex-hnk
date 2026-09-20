@@ -1,0 +1,131 @@
+{
+  "schema_version": "HNK-KG-SEMANTIC-LINKS-V2",
+  "status": "EVIDENCE_DERIVED_CANDIDATES",
+  "rules": [
+    "NO_AUTOMATIC_HNK_APPROVED",
+    "RELATION_MUST_BE_SUPPORTED_BY_EXISTING_CONCEPT_CLAIMS",
+    "NO_ONTOLOGICAL_EQUIVALENCE_BY_SIMILARITY"
+  ],
+  "edges": [
+    {
+      "id": "SEM-001",
+      "from": "INT001-C001",
+      "relation": "INTEGRATES_WITH",
+      "to": "INT003-C002",
+      "status": "HNK_CANDIDATE",
+      "basis": "Codex monorepo and app both document Web/Mobile/shared platform integration and content/platform separation."
+    },
+    {
+      "id": "SEM-002",
+      "from": "INT001-C002",
+      "relation": "INTEGRATES_WITH",
+      "to": "INT001-C007",
+      "status": "HNK_CANDIDATE",
+      "basis": "Executable validators and operational gates jointly implement governance/action language."
+    },
+    {
+      "id": "SEM-003",
+      "from": "INT001-C004",
+      "relation": "INTEGRATES_WITH",
+      "to": "INT001-C005",
+      "status": "HNK_CANDIDATE",
+      "basis": "Experiment/evidence pipeline is operationalized by the executable release experiment."
+    },
+    {
+      "id": "SEM-004",
+      "from": "INT001-C006",
+      "relation": "INTEGRATES_WITH",
+      "to": "INT007-C003",
+      "status": "HNK_CANDIDATE",
+      "basis": "Epistemic boundaries and Creator Authority/Provenance both formalize human-governed knowledge promotion."
+    },
+    {
+      "id": "SEM-005",
+      "from": "INT002-C001",
+      "relation": "USES",
+      "to": "INT002-C002",
+      "status": "HNK_CANDIDATE",
+      "basis": "Editorial pipeline produces derived CODEX_MASTER artifacts."
+    },
+    {
+      "id": "SEM-006",
+      "from": "INT005-C001",
+      "relation": "INTEGRATES_WITH",
+      "to": "INT005-C002",
+      "status": "HNK_CANDIDATE",
+      "basis": "Structured artistic formation uses Observe→Build→Create progression."
+    },
+    {
+      "id": "SEM-007",
+      "from": "INT005-C002",
+      "relation": "INTEGRATES_WITH",
+      "to": "INT005-C003",
+      "status": "HNK_CANDIDATE",
+      "basis": "Artistic progression is materialized in a verifiable software/content infrastructure."
+    },
+    {
+      "id": "SEM-008",
+      "from": "INT007-C001",
+      "relation": "USES",
+      "to": "INT007-C002",
+      "status": "HNK_CANDIDATE",
+      "basis": "Idea-to-universe-to-media architecture uses T-NIR and media compilers."
+    },
+    {
+      "id": "SEM-009",
+      "from": "INT007-C001",
+      "relation": "INTEGRATES_WITH",
+      "to": "INT007-C003",
+      "status": "HNK_CANDIDATE",
+      "basis": "Transmedia creation is governed by Creator Authority and provenance."
+    },
+    {
+      "id": "SEM-010",
+      "from": "INT006-C001",
+      "relation": "RELATED_TO",
+      "to": "INT007-C001",
+      "status": "HNK_CANDIDATE",
+      "basis": "Strangeverse runtime is an artistic/technological product while Storyforge documents multi-media universe realization; relation is contextual, not dependency."
+    },
+    {
+      "id": "SEM-011",
+      "from": "PRJ004-C004",
+      "relation": "INTEGRATES_WITH",
+      "to": "B003-P02-L06",
+      "status": "HNK_CANDIDATE",
+      "basis": "Project architecture materializes magical practice through systems including sigils/tools; Batch 003 documents creation of magical/technomagical systems."
+    },
+    {
+      "id": "SEM-012",
+      "from": "PRJ004-C002",
+      "relation": "INTEGRATES_WITH",
+      "to": "PRJ004-C003",
+      "status": "HNK_CANDIDATE",
+      "basis": "Quest de Alinhamento and Hod self-questioning both operationalize reflective review."
+    },
+    {
+      "id": "SEM-013",
+      "from": "INT001-C008",
+      "relation": "INTEGRATES_WITH",
+      "to": "PRJ004-C004",
+      "status": "HNK_CANDIDATE",
+      "basis": "Material manifestation criterion and project architecture both require ideas/practices to become concrete artifacts/systems."
+    },
+    {
+      "id": "SEM-014",
+      "from": "SRC026-C004",
+      "relation": "RELATED_TO",
+      "to": "SRC026-C005",
+      "status": "SOURCE_ASSERTED",
+      "basis": "Both concepts derive from Psicotropicon's alchemical practice architecture; relation is source-contextual."
+    },
+    {
+      "id": "SEM-015",
+      "from": "SRC024-C001",
+      "relation": "INTEGRATES_WITH",
+      "to": "SRC024-C002",
+      "status": "SOURCE_ASSERTED",
+      "basis": "The source presents the Major Arcana schema inside its Hermetic Kabbalah Tarot correspondence system."
+    }
+  ]
+}
