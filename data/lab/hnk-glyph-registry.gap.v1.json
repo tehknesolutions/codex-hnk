@@ -1,0 +1,26 @@
+{
+  "schema_version": "HNK-GLYPH-REGISTRY-GAP-V1",
+  "status": "SOURCE_GAP",
+  "authority": "DOCUMENTARY_GAP_ONLY",
+  "expected_scope": {
+    "hnk_glyphs": 40
+  },
+  "materialized_glyphs": [],
+  "search_audit": {
+    "repositories_checked": [
+      "tehknesolutions/codex-hnk",
+      "Tehkne-Solutions/hnk-codex-365",
+      "Tehkne-Solutions/codex-hnk-app"
+    ],
+    "terms": ["HENUVOKODAN", "glyph", "glifos", "G01"],
+    "result": "NO_CANONICAL_MACHINE_READABLE_GLYPH_REGISTRY_LOCATED"
+  },
+  "rules": [
+    "DO_NOT_INFER_GLYPH_IDENTITIES",
+    "DO_NOT_GENERATE_PLACEHOLDER_GLYPHS",
+    "DO_NOT_TREAT_HENUVOKODAN_AS_EQUIVALENT_TO_HNK_GLYPHS",
+    "REQUIRE_CANONICAL_SOURCE_BEFORE_INDEXING",
+    "ZERO_MATERIALIZED_GLYPHS_IS_NOT_ZERO_CANONICAL_GLYPHS"
+  ],
+  "next_gate": "LOCATE_OR_INGEST_CANONICAL_HNK_40_GLYPH_SOURCE"
+}
