@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import semantic from '../../../../data/library/knowledge-graph.semantic-links.v2.json';
+import semantic from '../../../../../data/library/knowledge-graph.semantic-links.v2.json';
 import {labDomains,labPillars} from '../knowledge';
 const points=[[50,9],[78,20],[91,49],[78,79],[50,91],[22,79],[9,49]];
 export default function ConvergencePage(){
