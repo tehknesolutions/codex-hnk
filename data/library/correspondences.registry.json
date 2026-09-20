@@ -1,0 +1,153 @@
+{
+  "schema_version": "HNK-LIBRARY-CORRESPONDENCES-V1",
+  "status": "SOURCE_DERIVED_CANDIDATES",
+  "rule": "Edges describe relationships asserted or structurally presented by sources; they are not automatic HNK ontological equivalences.",
+  "edges": [
+    {
+      "edge_id": "CORR-001",
+      "source_id": "SRC-024",
+      "from": "Major Arcana",
+      "relation": "STRUCTURED_BY",
+      "to": [
+        "22 paths",
+        "Hebrew letters",
+        "Golden Dawn path colors",
+        "Futhark rune equivalents",
+        "element/planet/sign",
+        "gematric value",
+        "Tree of Life path",
+        "two-dice equivalent"
+      ],
+      "locator": "p.5"
+    },
+    {
+      "edge_id": "CORR-002",
+      "source_id": "SRC-024",
+      "from": "Minor Arcana",
+      "relation": "STRUCTURED_BY",
+      "to": [
+        "Sephirot",
+        "Names of God",
+        "Kabbalistic angels",
+        "Goetic demons",
+        "decanatus",
+        "astrology",
+        "Tattwa",
+        "Hebrew letters",
+        "Golden Dawn color scales"
+      ],
+      "locator": "p.8"
+    },
+    {
+      "edge_id": "CORR-003",
+      "source_id": "SRC-024",
+      "from": "Tree of Life reference",
+      "relation": "PRESENTS",
+      "to": [
+        "Kether",
+        "Chokmah",
+        "Binah",
+        "Daath",
+        "Chesed",
+        "Geburah",
+        "Tipheret",
+        "Netzach",
+        "Hod",
+        "Yesod",
+        "Malkuth",
+        "four worlds",
+        "divine names",
+        "angelic orders",
+        "soul terms",
+        "veils",
+        "AIM/AIM SOPH/AIM SOPH AUR"
+      ],
+      "locator": "p.17"
+    },
+    {
+      "edge_id": "CORR-004",
+      "source_id": "SRC-026",
+      "from": "Philosopher's Stone diagram",
+      "relation": "MAPS",
+      "to": [
+        "Gold→outer circle",
+        "Silver→triangle",
+        "Lead/Copper/Iron/Tin→square",
+        "Mercury→inner circle"
+      ],
+      "locator": "p.18"
+    },
+    {
+      "edge_id": "CORR-005",
+      "source_id": "SRC-026",
+      "from": "Dry Path",
+      "relation": "CONTRASTS_WITH",
+      "to": [
+        "Wet Path"
+      ],
+      "locator": "pp.19-22"
+    },
+    {
+      "edge_id": "CORR-006",
+      "source_id": "SRC-026",
+      "from": "Dry Path",
+      "relation": "DESCRIBED_AS",
+      "to": [
+        "temporary/intense displacement",
+        "fire",
+        "ecstatic techniques"
+      ],
+      "locator": "pp.19-20"
+    },
+    {
+      "edge_id": "CORR-007",
+      "source_id": "SRC-026",
+      "from": "Wet Path",
+      "relation": "DESCRIBED_AS",
+      "to": [
+        "gradual expansion",
+        "water",
+        "durable transformation"
+      ],
+      "locator": "pp.21-22"
+    },
+    {
+      "edge_id": "CORR-008",
+      "source_id": "SRC-026",
+      "from": "Emerald Tablet",
+      "relation": "INTERPRETED_THROUGH",
+      "to": [
+        "Philosopher's Stone geometry",
+        "Dry Path",
+        "Wet Path",
+        "Solve et Coagula",
+        "Mercury/Gold/Silver/four lesser metals"
+      ],
+      "locator": "pp.24-27"
+    },
+    {
+      "edge_id": "CORR-009",
+      "source_id": "SRC-026",
+      "from": "Psychotropicon",
+      "relation": "CLASSIFIES_BY",
+      "to": [
+        "seven alchemical metals",
+        "practical effects"
+      ],
+      "locator": "pp.33-36"
+    },
+    {
+      "edge_id": "CORR-010",
+      "source_id": "SRC-026",
+      "from": "Quimiognosis",
+      "relation": "CONTEXTUALIZED_BY",
+      "to": [
+        "self-knowledge",
+        "self-transformation",
+        "set",
+        "setting"
+      ],
+      "locator": "pp.39-40"
+    }
+  ]
+}

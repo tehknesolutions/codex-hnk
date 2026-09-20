@@ -1,0 +1,188 @@
+{
+  "schema_version": "HNK-LIBRARY-CONCEPTS-PILOT-V1",
+  "status": "SOURCE_DERIVED_PILOT",
+  "rules": [
+    "SOURCE_TERMINOLOGY_FIRST",
+    "PROVENANCE_REQUIRED",
+    "N_TO_N_7X7_ALLOWED",
+    "NO_REAL_SYMBOLIC_GATE"
+  ],
+  "concepts": [
+    {
+      "concept_id": "SRC024-C001",
+      "source_id": "SRC-024",
+      "term": "Hermetic Kabbalah Tarot",
+      "source_claim": "Deck concebido para enfatizar relações simbólicas derivadas de autores/tradições iniciáticas citadas pelos autores.",
+      "locator": "pp.2-4",
+      "domains": [
+        "P02-L03",
+        "P05-L03"
+      ],
+      "tags": [
+        "tarot",
+        "kabbalah",
+        "symbolic-relations"
+      ]
+    },
+    {
+      "concept_id": "SRC024-C002",
+      "source_id": "SRC-024",
+      "term": "Major Arcana correspondence schema",
+      "source_claim": "Os 22 Arcanos Maiores são estruturados por número/caminho, letra hebraica, equivalente latino-hebraico, nome da letra, cor Golden Dawn, runa, elemento/planeta/signo, gematria, caminho na Árvore da Vida, dados e nome tradicional.",
+      "locator": "p.5",
+      "domains": [
+        "P02-L03",
+        "P05-L03"
+      ],
+      "tags": [
+        "major-arcana",
+        "hebrew",
+        "gematria",
+        "runes",
+        "astrology",
+        "tree-of-life",
+        "golden-dawn"
+      ]
+    },
+    {
+      "concept_id": "SRC024-C003",
+      "source_id": "SRC-024",
+      "term": "Minor Arcana correspondence schema",
+      "source_claim": "Os Arcanos Menores articulam nomes divinos, Sephirot, anjos/demônios, decanatos, astrologia, Tattwa, letras hebraicas e quatro escalas de cores Golden Dawn.",
+      "locator": "p.8",
+      "domains": [
+        "P02-L03"
+      ],
+      "tags": [
+        "minor-arcana",
+        "sephirot",
+        "angels",
+        "goetia",
+        "tattwa",
+        "astrology",
+        "colors"
+      ]
+    },
+    {
+      "concept_id": "SRC024-C004",
+      "source_id": "SRC-024",
+      "term": "Court correspondence schema",
+      "source_claim": "As cartas da corte incluem letra do arcano, naipe, equivalente MBTI, Tetragrammaton, dados, mundo, cor sefirótica, elemento, Sephirot, Yin/Yang, astrologia/estação e Tattwa.",
+      "locator": "p.13",
+      "domains": [
+        "P02-L03"
+      ],
+      "tags": [
+        "court",
+        "mbti",
+        "tetragrammaton",
+        "sephirot",
+        "astrology",
+        "tattwa"
+      ]
+    },
+    {
+      "concept_id": "SRC026-C001",
+      "source_id": "SRC-026",
+      "term": "Psiconáutica",
+      "source_claim": "O prefácio apresenta psiconáutica como exploração sistemática de estados não-ordinários de consciência e aproxima práticas farmacológicas e não-farmacológicas.",
+      "locator": "pp.8-10",
+      "domains": [
+        "P03-L02",
+        "P01-L02"
+      ],
+      "tags": [
+        "consciousness",
+        "psychonautics",
+        "altered-states"
+      ]
+    },
+    {
+      "concept_id": "SRC026-C002",
+      "source_id": "SRC-026",
+      "term": "Alquimia como metodologia de consciência",
+      "source_claim": "Na terminologia do autor, alquimia é definida como metodologia empírica para expansão intencional da consciência.",
+      "locator": "p.12",
+      "domains": [
+        "P02-L01",
+        "P03-L01",
+        "P04-L01"
+      ],
+      "tags": [
+        "alchemy",
+        "consciousness",
+        "methodology"
+      ]
+    },
+    {
+      "concept_id": "SRC026-C003",
+      "source_id": "SRC-026",
+      "term": "Sete metais / estados de consciência",
+      "source_claim": "O livro usa sete metais como eixo: Chumbo, Cobre, Ferro, Estanho, Mercúrio, Prata e Ouro, associados respectivamente a corpo/sobrevivência, emoções/convivência, intelecto/compreensão, volição/direção, autoconsciência, conexão espiritual e unidade.",
+      "locator": "pp.12-14",
+      "domains": [
+        "P02-L03",
+        "P04-L03"
+      ],
+      "tags": [
+        "seven-metals",
+        "lead",
+        "copper",
+        "iron",
+        "tin",
+        "mercury",
+        "silver",
+        "gold"
+      ]
+    },
+    {
+      "concept_id": "SRC026-C004",
+      "source_id": "SRC-026",
+      "term": "Grande Obra em quatro estágios",
+      "source_claim": "A Grande Obra é apresentada em Nigredo, Albedo, Citrinitas e Rubedo, relacionadas à retificação dos quatro metais menores, fixação de Mercúrio, fixação de Prata e Conjunção/Casamento Alquímico.",
+      "locator": "pp.14-15",
+      "domains": [
+        "P02-L04",
+        "P07-L04"
+      ],
+      "tags": [
+        "nigredo",
+        "albedo",
+        "citrinitas",
+        "rubedo",
+        "great-work"
+      ]
+    },
+    {
+      "concept_id": "SRC026-C005",
+      "source_id": "SRC-026",
+      "term": "Via Seca e Via Úmida",
+      "source_claim": "A fonte apresenta dois estilos alquímicos: Via Úmida, lenta e gradual, e Via Seca, acelerada e arriscada, inicialmente descritas por operações de laboratório.",
+      "locator": "p.16",
+      "domains": [
+        "P02-L04",
+        "P04-L03"
+      ],
+      "tags": [
+        "dry-path",
+        "wet-path",
+        "alchemy"
+      ]
+    },
+    {
+      "concept_id": "SRC026-C006",
+      "source_id": "SRC-026",
+      "term": "Memento Mori — Aviso Legal",
+      "source_claim": "O autor declara que o conteúdo deriva de seus estudos/experiências, não substitui profissionais de saúde ou tratamento e inclui advertência específica a grupos de risco.",
+      "locator": "pp.3-4",
+      "domains": [
+        "P07-L01"
+      ],
+      "tags": [
+        "author-warning",
+        "context",
+        "responsibility"
+      ]
+    }
+  ]
+}
