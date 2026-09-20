@@ -1,0 +1,69 @@
+{
+  "schema_version": "HNK-INTERNAL-CORPUS-BATCH-003",
+  "status": "PROJECT_CHAT_EVIDENCE_CANDIDATE",
+  "purpose": "SEVEN_REMAINING_GAPS_REVIEW",
+  "policy": [
+    "USER_AUTHORED_OR_PROJECT_EVIDENCE",
+    "NO_FORCED_49_OF_49",
+    "INFERENCE_MUST_BE_MARKED",
+    "NO_AUTOMATIC_CANON_PROMOTION"
+  ],
+  "findings": [
+    {
+      "domain_id": "P01-L06",
+      "status": "SUPPORTED_CANDIDATE",
+      "evidence": [
+        "HENUVOKODAN: 11 letras-portais + chave T/TW-DFV integrando sigilos, idioma, terapia, magia, Cabala e centralidade de Jesus.",
+        "HNK-MIG: dimensão interna governada por M-DVF, subordinada a TW-DVF e Jesus, com estrutura espiritual explicitamente criada."
+      ],
+      "rationale": "Há evidência de criação consciente de estruturas/práticas espirituais próprias."
+    },
+    {
+      "domain_id": "P01-L07",
+      "status": "SUPPORTED_CANDIDATE",
+      "evidence": [
+        "Codex HNK foi definido como sistema de magia/evolução espiritual/metafísica e MAV como manifestação pública cristã.",
+        "SimpleWay Academy foi descrita pelo criador como manifestação do chamado de Mestre."
+      ],
+      "rationale": "Há formulações autorais que ligam orientação espiritual a obras/projetos concretos."
+    },
+    {
+      "domain_id": "P02-L02",
+      "status": "REMAINS_OPEN",
+      "evidence": [],
+      "rationale": "Não foi recuperada evidência suficientemente explícita de método de percepção/leitura mágica para fechar o domínio sem inferência."
+    },
+    {
+      "domain_id": "P02-L06",
+      "status": "SUPPORTED_CANDIDATE",
+      "evidence": [
+        "Pedido/aprovação de sistema mágico-espiritual próprio com Grimório HNK, sigilos, gnose/transe e agentes IA.",
+        "Henuvokodan integrado a sigilos, idioma, protocolos e tecnomagia; Oraculum Cube combina cubo físico, intenção, código, perfis e ação."
+      ],
+      "rationale": "Há criação documentada de sistemas mágicos/tecnomágicos próprios."
+    },
+    {
+      "domain_id": "P02-L07",
+      "status": "REMAINS_OPEN",
+      "evidence": [
+        "Oraculum Cube termina em Ação Malkuth e fluxo INTENÇÃO → FORMA → CÓDIGO → SIGNIFICADO → MANIFESTAÇÃO."
+      ],
+      "rationale": "O artefato sustenta uma arquitetura de manifestação, mas não prova por si só transformação no mundo vivido; manter aberto evita confundir estrutura/alegação com resultado."
+    },
+    {
+      "domain_id": "P04-L02",
+      "status": "REMAINS_OPEN",
+      "evidence": [],
+      "rationale": "Não foi recuperada formulação explícita suficiente de questionamento/reconhecimento de pressupostos como prática filosófica."
+    },
+    {
+      "domain_id": "P04-L07",
+      "status": "SUPPORTED_CANDIDATE",
+      "evidence": [
+        "Método Tehkné: INTENÇÃO → ESTRUTURA → AÇÃO → MANIFESTAÇÃO.",
+        "GIP: Descoberta → Arquitetura → Desenvolvimento → Validação → Deploy, com regra de não avançar sem validação do Criador."
+      ],
+      "rationale": "Uma visão conceitual foi convertida em orientação operacional e tomada de decisão recorrente."
+    }
+  ]
+}
