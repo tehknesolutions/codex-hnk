@@ -1,0 +1,130 @@
+{
+  "schema_version": "HNK-KNOWLEDGE-GRAPH-V1",
+  "authority": "ARCHITECTURAL_SCHEMA",
+  "principle": "PROVENANCE_FIRST__NO_FORCED_ONTOLOGY",
+  "node_types": [
+    {
+      "id": "SOURCE",
+      "description": "Obra, documento ou corpus de origem."
+    },
+    {
+      "id": "CONCEPT",
+      "description": "Conceito atômico extraído ou aprovado."
+    },
+    {
+      "id": "SYMBOL",
+      "description": "Símbolo, forma, imagem, sigilo ou representação."
+    },
+    {
+      "id": "PRACTICE",
+      "description": "Prática, método, operação, exercício ou ritual."
+    },
+    {
+      "id": "PERSON",
+      "description": "Autor, pesquisador ou pessoa explicitamente referenciada."
+    },
+    {
+      "id": "TRADITION",
+      "description": "Tradição, escola, corrente ou sistema de origem."
+    },
+    {
+      "id": "HNK_DOMAIN",
+      "description": "Célula da matriz HNK-7×7."
+    },
+    {
+      "id": "HNK_GLYPH",
+      "description": "Glifo HNK aprovado."
+    },
+    {
+      "id": "CODEX_DAY",
+      "description": "Day/Fólio do Codex."
+    },
+    {
+      "id": "SEPHIRAH",
+      "description": "Sephirah quando explicitamente presente em fonte ou cânone."
+    },
+    {
+      "id": "PATH",
+      "description": "Caminho explicitamente identificado."
+    },
+    {
+      "id": "LETTER",
+      "description": "Letra/alfabeto explicitamente identificado."
+    },
+    {
+      "id": "TAROT",
+      "description": "Arcano/carta ou estrutura de Tarot."
+    },
+    {
+      "id": "ASTROLOGY",
+      "description": "Planeta, signo, decanato ou entidade astrológica."
+    },
+    {
+      "id": "COLOR",
+      "description": "Cor ou escala cromática."
+    },
+    {
+      "id": "NUMBER",
+      "description": "Número, gematria ou estrutura numérica."
+    },
+    {
+      "id": "ALCHEMY",
+      "description": "Metal, fase, operação ou estrutura alquímica."
+    },
+    {
+      "id": "CONSCIOUSNESS_STATE",
+      "description": "Estado/modelo de consciência apresentado pela fonte."
+    },
+    {
+      "id": "PRODUCT",
+      "description": "Produto, app, jogo, curso ou experiência HNK."
+    }
+  ],
+  "edge_types": [
+    "DERIVED_FROM",
+    "ASSERTED_BY",
+    "AUTHORED_BY",
+    "BELONGS_TO_TRADITION",
+    "STRUCTURED_BY",
+    "MAPS_TO",
+    "CORRESPONDS_TO",
+    "CONTRASTS_WITH",
+    "INTEGRATES_WITH",
+    "USES",
+    "EXPRESSES",
+    "PRACTICES",
+    "REPRESENTS",
+    "INDEXED_IN",
+    "RELATED_TO",
+    "HNK_APPROVED_LINK"
+  ],
+  "edge_contract": {
+    "required": [
+      "edge_id",
+      "from",
+      "relation",
+      "to",
+      "provenance",
+      "status"
+    ],
+    "statuses": [
+      "SOURCE_ASSERTED",
+      "HNK_CANDIDATE",
+      "HNK_APPROVED",
+      "UNRESOLVED"
+    ],
+    "rule": "SOURCE_ASSERTED edges preserve source claims; only HNK_APPROVED creates canonical HNK linkage."
+  },
+  "provenance_contract": {
+    "required": [
+      "source_id",
+      "locator"
+    ],
+    "optional": [
+      "quote_fragment",
+      "extraction_note",
+      "file_id"
+    ]
+  },
+  "ontology_rule": "No node or edge requires REAL/SYMBOLIC classification."
+}

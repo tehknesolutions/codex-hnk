@@ -1,0 +1,576 @@
+{
+  "schema_version": "HNK-7X7-V1",
+  "authority": "APPROVED_HNK_ARCHITECTURE",
+  "center": [
+    "CONSCIÊNCIA",
+    "CRIAÇÃO",
+    "TRANSFORMAÇÃO",
+    "MANIFESTAÇÃO"
+  ],
+  "pillars": [
+    {
+      "pillar_id": "P01",
+      "name": "ESPIRITUALIDADE",
+      "definition": "orientação, sentido, consciência, fé, transcendência, propósito, ética e experiência espiritual"
+    },
+    {
+      "pillar_id": "P02",
+      "name": "MAGIA",
+      "definition": "intenção, vontade, ritual, sigilos, correspondências, teurgia, tecnomagia, psicomagia e transformação"
+    },
+    {
+      "pillar_id": "P03",
+      "name": "CIÊNCIA",
+      "definition": "observação, investigação, experimentação, modelagem, mensuração e revisão"
+    },
+    {
+      "pillar_id": "P04",
+      "name": "FILOSOFIA",
+      "definition": "verdade, existência, conhecimento, mente, lógica, metafísica, ética e epistemologia"
+    },
+    {
+      "pillar_id": "P05",
+      "name": "ARTE",
+      "definition": "imagem, música, narrativa, linguagem, estética, arquitetura, criatividade e expressão"
+    },
+    {
+      "pillar_id": "P06",
+      "name": "TECNOLOGIA",
+      "definition": "software, IA, agentes, computação, interfaces, automação, sistemas e ferramentas"
+    },
+    {
+      "pillar_id": "P07",
+      "name": "PRÁXIS",
+      "definition": "experiência, treinamento, aplicação, transformação, game design, produto e manifestação"
+    }
+  ],
+  "levels": [
+    {
+      "level_id": "L01",
+      "name": "FUNDAMENTO",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais"
+    },
+    {
+      "level_id": "L02",
+      "name": "PERCEPÇÃO",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos"
+    },
+    {
+      "level_id": "L03",
+      "name": "LINGUAGEM",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição"
+    },
+    {
+      "level_id": "L04",
+      "name": "OPERAÇÃO",
+      "definition": "métodos, técnicas, ferramentas e ações"
+    },
+    {
+      "level_id": "L05",
+      "name": "INTEGRAÇÃO",
+      "definition": "conexão entre pilares e composição multidisciplinar"
+    },
+    {
+      "level_id": "L06",
+      "name": "CRIAÇÃO",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas"
+    },
+    {
+      "level_id": "L07",
+      "name": "MANIFESTAÇÃO",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação"
+    }
+  ],
+  "domains": [
+    {
+      "domain_id": "P01-L01",
+      "pillar_id": "P01",
+      "level_id": "L01",
+      "name": "Fundamento — Espiritualidade",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais no domínio de espiritualidade.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P01-L02",
+      "pillar_id": "P01",
+      "level_id": "L02",
+      "name": "Percepção — Espiritualidade",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos no domínio de espiritualidade.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P01-L03",
+      "pillar_id": "P01",
+      "level_id": "L03",
+      "name": "Linguagem — Espiritualidade",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição no domínio de espiritualidade.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P01-L04",
+      "pillar_id": "P01",
+      "level_id": "L04",
+      "name": "Operação — Espiritualidade",
+      "definition": "métodos, técnicas, ferramentas e ações no domínio de espiritualidade.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P01-L05",
+      "pillar_id": "P01",
+      "level_id": "L05",
+      "name": "Integração — Espiritualidade",
+      "definition": "conexão entre pilares e composição multidisciplinar no domínio de espiritualidade.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P01-L06",
+      "pillar_id": "P01",
+      "level_id": "L06",
+      "name": "Criação — Espiritualidade",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas no domínio de espiritualidade.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P01-L07",
+      "pillar_id": "P01",
+      "level_id": "L07",
+      "name": "Manifestação — Espiritualidade",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação no domínio de espiritualidade.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P02-L01",
+      "pillar_id": "P02",
+      "level_id": "L01",
+      "name": "Fundamento — Magia",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais no domínio de magia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P02-L02",
+      "pillar_id": "P02",
+      "level_id": "L02",
+      "name": "Percepção — Magia",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos no domínio de magia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P02-L03",
+      "pillar_id": "P02",
+      "level_id": "L03",
+      "name": "Linguagem — Magia",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição no domínio de magia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P02-L04",
+      "pillar_id": "P02",
+      "level_id": "L04",
+      "name": "Operação — Magia",
+      "definition": "métodos, técnicas, ferramentas e ações no domínio de magia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P02-L05",
+      "pillar_id": "P02",
+      "level_id": "L05",
+      "name": "Integração — Magia",
+      "definition": "conexão entre pilares e composição multidisciplinar no domínio de magia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P02-L06",
+      "pillar_id": "P02",
+      "level_id": "L06",
+      "name": "Criação — Magia",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas no domínio de magia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P02-L07",
+      "pillar_id": "P02",
+      "level_id": "L07",
+      "name": "Manifestação — Magia",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação no domínio de magia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P03-L01",
+      "pillar_id": "P03",
+      "level_id": "L01",
+      "name": "Fundamento — Ciência",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais no domínio de ciência.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P03-L02",
+      "pillar_id": "P03",
+      "level_id": "L02",
+      "name": "Percepção — Ciência",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos no domínio de ciência.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P03-L03",
+      "pillar_id": "P03",
+      "level_id": "L03",
+      "name": "Linguagem — Ciência",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição no domínio de ciência.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P03-L04",
+      "pillar_id": "P03",
+      "level_id": "L04",
+      "name": "Operação — Ciência",
+      "definition": "métodos, técnicas, ferramentas e ações no domínio de ciência.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P03-L05",
+      "pillar_id": "P03",
+      "level_id": "L05",
+      "name": "Integração — Ciência",
+      "definition": "conexão entre pilares e composição multidisciplinar no domínio de ciência.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P03-L06",
+      "pillar_id": "P03",
+      "level_id": "L06",
+      "name": "Criação — Ciência",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas no domínio de ciência.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P03-L07",
+      "pillar_id": "P03",
+      "level_id": "L07",
+      "name": "Manifestação — Ciência",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação no domínio de ciência.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P04-L01",
+      "pillar_id": "P04",
+      "level_id": "L01",
+      "name": "Fundamento — Filosofia",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais no domínio de filosofia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P04-L02",
+      "pillar_id": "P04",
+      "level_id": "L02",
+      "name": "Percepção — Filosofia",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos no domínio de filosofia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P04-L03",
+      "pillar_id": "P04",
+      "level_id": "L03",
+      "name": "Linguagem — Filosofia",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição no domínio de filosofia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P04-L04",
+      "pillar_id": "P04",
+      "level_id": "L04",
+      "name": "Operação — Filosofia",
+      "definition": "métodos, técnicas, ferramentas e ações no domínio de filosofia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P04-L05",
+      "pillar_id": "P04",
+      "level_id": "L05",
+      "name": "Integração — Filosofia",
+      "definition": "conexão entre pilares e composição multidisciplinar no domínio de filosofia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P04-L06",
+      "pillar_id": "P04",
+      "level_id": "L06",
+      "name": "Criação — Filosofia",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas no domínio de filosofia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P04-L07",
+      "pillar_id": "P04",
+      "level_id": "L07",
+      "name": "Manifestação — Filosofia",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação no domínio de filosofia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P05-L01",
+      "pillar_id": "P05",
+      "level_id": "L01",
+      "name": "Fundamento — Arte",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais no domínio de arte.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P05-L02",
+      "pillar_id": "P05",
+      "level_id": "L02",
+      "name": "Percepção — Arte",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos no domínio de arte.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P05-L03",
+      "pillar_id": "P05",
+      "level_id": "L03",
+      "name": "Linguagem — Arte",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição no domínio de arte.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P05-L04",
+      "pillar_id": "P05",
+      "level_id": "L04",
+      "name": "Operação — Arte",
+      "definition": "métodos, técnicas, ferramentas e ações no domínio de arte.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P05-L05",
+      "pillar_id": "P05",
+      "level_id": "L05",
+      "name": "Integração — Arte",
+      "definition": "conexão entre pilares e composição multidisciplinar no domínio de arte.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P05-L06",
+      "pillar_id": "P05",
+      "level_id": "L06",
+      "name": "Criação — Arte",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas no domínio de arte.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P05-L07",
+      "pillar_id": "P05",
+      "level_id": "L07",
+      "name": "Manifestação — Arte",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação no domínio de arte.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P06-L01",
+      "pillar_id": "P06",
+      "level_id": "L01",
+      "name": "Fundamento — Tecnologia",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais no domínio de tecnologia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P06-L02",
+      "pillar_id": "P06",
+      "level_id": "L02",
+      "name": "Percepção — Tecnologia",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos no domínio de tecnologia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P06-L03",
+      "pillar_id": "P06",
+      "level_id": "L03",
+      "name": "Linguagem — Tecnologia",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição no domínio de tecnologia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P06-L04",
+      "pillar_id": "P06",
+      "level_id": "L04",
+      "name": "Operação — Tecnologia",
+      "definition": "métodos, técnicas, ferramentas e ações no domínio de tecnologia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P06-L05",
+      "pillar_id": "P06",
+      "level_id": "L05",
+      "name": "Integração — Tecnologia",
+      "definition": "conexão entre pilares e composição multidisciplinar no domínio de tecnologia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P06-L06",
+      "pillar_id": "P06",
+      "level_id": "L06",
+      "name": "Criação — Tecnologia",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas no domínio de tecnologia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P06-L07",
+      "pillar_id": "P06",
+      "level_id": "L07",
+      "name": "Manifestação — Tecnologia",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação no domínio de tecnologia.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P07-L01",
+      "pillar_id": "P07",
+      "level_id": "L01",
+      "name": "Fundamento — Práxis",
+      "definition": "princípios, vocabulário, símbolos e conceitos essenciais no domínio de práxis.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P07-L02",
+      "pillar_id": "P07",
+      "level_id": "L02",
+      "name": "Percepção — Práxis",
+      "definition": "observação, reconhecimento, leitura e consciência dos fenômenos no domínio de práxis.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P07-L03",
+      "pillar_id": "P07",
+      "level_id": "L03",
+      "name": "Linguagem — Práxis",
+      "definition": "modelos, representações, códigos, correspondências e sistemas de descrição no domínio de práxis.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P07-L04",
+      "pillar_id": "P07",
+      "level_id": "L04",
+      "name": "Operação — Práxis",
+      "definition": "métodos, técnicas, ferramentas e ações no domínio de práxis.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P07-L05",
+      "pillar_id": "P07",
+      "level_id": "L05",
+      "name": "Integração — Práxis",
+      "definition": "conexão entre pilares e composição multidisciplinar no domínio de práxis.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P07-L06",
+      "pillar_id": "P07",
+      "level_id": "L06",
+      "name": "Criação — Práxis",
+      "definition": "produção de novos modelos, práticas, artefatos, experiências e sistemas no domínio de práxis.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    },
+    {
+      "domain_id": "P07-L07",
+      "pillar_id": "P07",
+      "level_id": "L07",
+      "name": "Manifestação — Práxis",
+      "definition": "aplicação completa em realidade, produto, experiência ou transformação no domínio de práxis.",
+      "relations": [],
+      "hnk_links": [],
+      "status": "APPROVED_ARCHITECTURE_V1"
+    }
+  ]
+}

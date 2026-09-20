@@ -1,0 +1,272 @@
+{
+  "schema_version": "HNK-LIBRARY-SOURCES-V1",
+  "source_count": 26,
+  "principles": {
+    "ontology": "NO_FORCED_REAL_SYMBOLIC_CLASSIFICATION",
+    "mapping": "N_TO_N",
+    "provenance": "REQUIRED",
+    "content": "SOURCE_TERMINOLOGY_FIRST"
+  },
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "title": "565474540-Os-Portais-Alef-Beit-Ajustado-para-Ebook.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000a810820ead6a1c88e42c995d",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-002",
+      "title": "A Bíblia em 100 Minutos.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000004604820eb86dae34b52da356",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-003",
+      "title": "A Ciência da Prática Espiritual.pdf",
+      "format": "pdf",
+      "source_file_id": "file_0000000025c0820e97bcb3eb0cbbd8a8",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-004",
+      "title": "A Ciência Descobre Deus.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000289c820eb4c536f510616dc4",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-005",
+      "title": "A Ciência e o Campo Akáshico Uma Teoria Integral de Tudo.mobi",
+      "format": "mobi",
+      "source_file_id": "file_000000004978820eabc9d868308e3949",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-006",
+      "title": "A Magia.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000a3f4820eb862133b2892fe0a",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-007",
+      "title": "Apostila de Grego Bíblico.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000bb40820eba20c11381101bef",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-008",
+      "title": "As Chaves de Enoch.mobi",
+      "format": "mobi",
+      "source_file_id": "file_00000000b874820e9267ac1197947c60",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-009",
+      "title": "Bruxa Natural.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000000d5c820ea5cf1df8f654ae0f",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-010",
+      "title": "Bruxaria Moderna.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000003598820e8ec236227c9c6e74",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-011",
+      "title": "Budismo Para Leigos.mobi",
+      "format": "mobi",
+      "source_file_id": "file_0000000036dc820e885444f44bf9043c",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-012",
+      "title": "Cabala e a arte de Preservação da Alegria.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000eb34820e9782c91a6a35b49c",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-013",
+      "title": "Cabala Tradição Secreta do Ocidente.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000cc14820eb30e25d71b25cc1c",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-014",
+      "title": "Cabala, Meditação e Cura.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000ae08820e916071eee892db7e",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-015",
+      "title": "Como aumentar a capacidade do seu cérebro.pdf",
+      "format": "pdf",
+      "source_file_id": "file_0000000091ac820e965087531f9fe1b0",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-016",
+      "title": "Depressão Como Derrotar o Gigante.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000006cf0820ebbabfdfbfc32c5ea",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-017",
+      "title": "Desdobramento Consciente Viagem Astral.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000000900820e81f9172d37c1db70",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-018",
+      "title": "Despertar Um guia para a espiritualidade sem religião.mobi",
+      "format": "mobi",
+      "source_file_id": "file_00000000b738820e8ec3bc6a57749d13",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-019",
+      "title": "Desvendando o Código Judaico.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000007c38820e90f63e6f8cc341f6",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-020",
+      "title": "Dogma E Ritual De Alta Magia.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000f138820ea6203294ad99ce85",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-021",
+      "title": "Ego Transformado.pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000688c820e99f99492dbf0ecc5",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-022",
+      "title": "Encontros Astrais.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000001f3c820eb420ea552272a777",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-023",
+      "title": "Faça a sua Própria Magia.pdf",
+      "format": "pdf",
+      "source_file_id": "file_0000000050bc820e9e902dc4c18836ff",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-024",
+      "title": "hermetic-kabbalah-tarot-marcelo-del-debbio.pdf",
+      "format": "pdf",
+      "source_file_id": "file_000000003b24820ea2b2c2543af88c61",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-025",
+      "title": "kabbalah-hermetica-marcelo-del-debbio-5(1).pdf",
+      "format": "pdf",
+      "source_file_id": "file_00000000e20c820eb4aca6a52db7e966",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    },
+    {
+      "source_id": "SRC-026",
+      "title": "Psicotropicon Quimiognose Alquímica para Psiconautas Responsáveis.pdf",
+      "format": "pdf",
+      "source_file_id": "file_0000000053b8820eabb62c4e8a52c625",
+      "authority": "SOURCE",
+      "ingestion_status": "INVENTORIED",
+      "hnk_7x7": [],
+      "metadata_status": "TITLE_FROM_UPLOAD; CONTENT_AUDIT_PENDING"
+    }
+  ]
+}
