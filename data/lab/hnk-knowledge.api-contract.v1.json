@@ -1,0 +1,101 @@
+{
+  "schema_version": "HNK-LAB-KNOWLEDGE-API-V1",
+  "status": "ARCHITECTURAL_CONTRACT",
+  "principles": [
+    "READ_ONLY_PROJECTION",
+    "PROVENANCE_VISIBLE",
+    "NO_CANON_PROMOTION",
+    "ZERO_IS_NOT_NO_RELATION",
+    "UNKNOWN_IS_NOT_ZERO"
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "route": "/api/knowledge/overview",
+      "returns": [
+        "graph_summary",
+        "coverage_summary",
+        "maturity_summary",
+        "convergence_summary"
+      ]
+    },
+    {
+      "id": "pillars",
+      "route": "/api/knowledge/pillars",
+      "returns": [
+        "7 pillars",
+        "7x7 convergence matrix"
+      ]
+    },
+    {
+      "id": "domains",
+      "route": "/api/knowledge/domains",
+      "returns": [
+        "49 domains",
+        "49x49 convergence matrix"
+      ]
+    },
+    {
+      "id": "domain",
+      "route": "/api/knowledge/domains/:domainId",
+      "returns": [
+        "domain metadata",
+        "concepts",
+        "sources",
+        "maturity vector",
+        "semantic neighbors",
+        "open questions"
+      ]
+    },
+    {
+      "id": "concept",
+      "route": "/api/knowledge/concepts/:conceptId",
+      "returns": [
+        "concept",
+        "provenance",
+        "domain mappings",
+        "semantic edges"
+      ]
+    },
+    {
+      "id": "source",
+      "route": "/api/knowledge/sources/:sourceId",
+      "returns": [
+        "source metadata",
+        "concepts",
+        "mapped domains"
+      ]
+    },
+    {
+      "id": "search",
+      "route": "/api/knowledge/search?q=",
+      "returns": [
+        "concept/source/domain matches"
+      ]
+    }
+  ],
+  "filters": [
+    "pillar",
+    "level",
+    "source_kind",
+    "status",
+    "relation",
+    "query"
+  ],
+  "ui_contract": {
+    "primary_surfaces": [
+      "7x7 pillar heatmap",
+      "49x49 domain matrix",
+      "knowledge graph explorer",
+      "domain inspector",
+      "provenance drawer"
+    ],
+    "required_badges": [
+      "SOURCE_ASSERTED",
+      "HNK_CANDIDATE",
+      "HNK_APPROVED",
+      "UNRESOLVED"
+    ],
+    "empty_state": "NO_MATERIALIZED_EVIDENCE"
+  }
+}
