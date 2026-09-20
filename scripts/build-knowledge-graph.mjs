@@ -38,7 +38,23 @@ for(const e of edges){
  if(!e.provenance?.source_id||!e.provenance?.locator) throw new Error("[HNK-KG-BUILD] missing provenance "+e.edge_id);
  if(e.status==="HNK_APPROVED") throw new Error("[HNK-KG-BUILD] generator cannot auto-promote HNK_APPROVED");
 }
-const graph={schema_version:"HNK-KG-GENERATED-V1",generated_from:["library.sources.registry.json","concepts.pilot.registry.json","correspondences.registry.json","hnk-7x7.registry.json"],nodes:[...nodes.values()].sort((a,b)=>a.id.localeCompare(b.id)),edges:edges.sort((a,b)=>a.edge_id.localeCompare(b.edge_id))};
+const sortedNodes=[...nodes.values()].sort((a,b)=>a.id.localeCompare(b.id));
+const sortedEdges=edges.sort((a,b)=>a.edge_id.localeCompare(b.edge_id));
+const byType=Object.fromEntries([...new Set(sortedNodes.map(n=>n.type))].sort().map(t=>[t,sortedNodes.filter(n=>n.type===t).map(n=>n.id)]));
+const bySource=Object.fromEntries(sources.sources.map(s=>[s.source_id,sortedEdges.filter(e=>e.provenance?.source_id===s.source_id).map(e=>e.edge_id)]));
+const byStatus=Object.fromEntries([...new Set(sortedEdges.map(e=>e.status))].sort().map(s=>[s,sortedEdges.filter(e=>e.status===s).map(e=>e.edge_id)]));
+const domainCoverage=domains.domains.map(d=>{
+ const refs=sortedEdges.filter(e=>e.relation==="INDEXED_IN"&&e.to===d.domain_id);
+ return {domain_id:d.domain_id,name:d.name,count:refs.length,concept_ids:[...new Set(refs.map(e=>e.from))].sort()};
+});
+const heatmap={
+ total_domains:domainCoverage.length,
+ occupied_domains:domainCoverage.filter(x=>x.count>0).length,
+ empty_domains:domainCoverage.filter(x=>x.count===0).length,
+ max_density:Math.max(0,...domainCoverage.map(x=>x.count)),
+ cells:domainCoverage
+};
+const graph={schema_version:"HNK-KG-GENERATED-V2",generated_from:["library.sources.registry.json","concepts.pilot.registry.json","correspondences.registry.json","hnk-7x7.registry.json"],nodes:sortedNodes,edges:sortedEdges,indexes:{by_type:byType,by_source:bySource,by_status:byStatus},heatmap_7x7:heatmap};
 const out=new URL("../data/library/knowledge-graph.generated.json",import.meta.url);
 fs.writeFileSync(out,JSON.stringify(graph,null,2)+"\n");
 console.log("HNK_KG_BUILD_PASS:",graph.nodes.length+" nodes / "+graph.edges.length+" edges");
