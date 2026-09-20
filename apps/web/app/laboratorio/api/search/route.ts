@@ -1,0 +1,15 @@
+import {NextRequest,NextResponse} from 'next/server';
+import {labDomains} from '../../knowledge';
+import {conceptRegistry} from '../../convergence';
+import sources from '../../../../../../data/library/library.sources.registry.json';
+const norm=(v:string)=>v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+export function GET(req:NextRequest){
+ const q=(req.nextUrl.searchParams.get('q')??'').trim();const needle=norm(q);
+ const items=[
+  ...labDomains.map(d=>({id:d.id,label:d.name,kind:'DOMAIN',href:'/laboratorio/dominios/'+d.id,meta:d.pillarId+' · '+d.levelId})),
+  ...conceptRegistry.map(c=>({id:c.id,label:c.term??c.id,kind:'CONCEPT',href:'/laboratorio/conceitos/'+c.id,meta:c.origin})),
+  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE',href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'}))
+ ];
+ const results=needle?items.filter(x=>norm(x.id+' '+x.label+' '+x.meta).includes(needle)).slice(0,24):[];
+ return NextResponse.json({schema_version:'HNK-LAB-SEARCH-V1',authority:'READ_ONLY_PROJECTION',query:q,results,summary:{matched:results.length,limit:24},coverage:{domains:labDomains.length,concepts:conceptRegistry.length,sources:sources.sources.length,glyphs:'NOT_INDEXED'},rules:['NO_INFERENCE','NO_CANON_PROMOTION','EMPTY_RESULT_MEANS_NO_MATERIALIZED_MATCH','GLYPHS_EXCLUDED_UNTIL_CANONICAL_INDEX']});
+}
