@@ -1,0 +1,152 @@
+{
+  "schema_version": "HNK-LIBRARY-EXPANSION-BATCH-002",
+  "status": "SOURCE_DERIVED",
+  "focus": "CIENCIA_ESPIRITUALIDADE_CONSCIENCIA",
+  "sources": [
+    {
+      "source_id": "SRC-003",
+      "title": "A Ciência da Prática Espiritual",
+      "author": "Rupert Sheldrake",
+      "pages_reviewed": "4-18/313 + indexed passages",
+      "concepts": [
+        {
+          "id": "SRC003-C001",
+          "term": "Sete famílias de práticas espirituais",
+          "claim": "A obra organiza a investigação em meditação, gratidão, reconexão com o mundo mais-que-humano, relação com plantas, rituais, canto/música e peregrinações/lugares sagrados.",
+          "locator": "p.8",
+          "domains": [
+            "P01-L01",
+            "P07-L04"
+          ]
+        },
+        {
+          "id": "SRC003-C002",
+          "term": "Ciência e prática espiritual",
+          "claim": "O autor apresenta o livro como investigação das relações entre ciência, história, filosofia, teologia, religião e prática espiritual.",
+          "locator": "p.10",
+          "domains": [
+            "P01-L05",
+            "P03-L05",
+            "P04-L05"
+          ]
+        },
+        {
+          "id": "SRC003-C003",
+          "term": "Ciência holística",
+          "claim": "O autor relata ter encontrado em Goethe uma concepção de ciência holística que integra experiência direta e entendimento.",
+          "locator": "p.13",
+          "domains": [
+            "P03-L01",
+            "P03-L05",
+            "P04-L05"
+          ]
+        },
+        {
+          "id": "SRC003-C004",
+          "term": "Ressonância mórfica",
+          "claim": "O autor descreve como hipótese própria uma transferência de memória na natureza associada a memória coletiva de forma e comportamento, reconhecendo-a como controversa.",
+          "locator": "pp.15-16",
+          "domains": [
+            "P03-L06",
+            "P04-L03"
+          ]
+        },
+        {
+          "id": "SRC003-C005",
+          "term": "Meditação sem requisito religioso",
+          "claim": "O autor relata ter aprendido Meditação Transcendental como prática apresentada de modo fisiológico e sem exigência de crença religiosa.",
+          "locator": "p.16",
+          "domains": [
+            "P01-L04",
+            "P07-L02"
+          ]
+        },
+        {
+          "id": "SRC003-C006",
+          "term": "Prática versus crença",
+          "claim": "A obra distingue práticas espirituais como experiência de suas interpretações por crenças e discute usos seculares e religiosos.",
+          "locator": "passagem indexada sobre sete tipos de prática",
+          "domains": [
+            "P01-L02",
+            "P04-L03",
+            "P07-L02"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-004",
+      "title": "A Ciência Descobre Deus",
+      "author": "Ariel A. Roth",
+      "pages_reviewed": "4-18/270 + indexed passages",
+      "concepts": [
+        {
+          "id": "SRC004-C001",
+          "term": "Ciência e hipótese de Deus",
+          "claim": "O autor defende que a investigação científica deveria admitir a possibilidade de Deus em seu repertório explicativo.",
+          "locator": "pp.11-12",
+          "domains": [
+            "P03-L01",
+            "P04-L04",
+            "P01-L05"
+          ]
+        },
+        {
+          "id": "SRC004-C002",
+          "term": "Complexidade e precisão como argumento",
+          "claim": "A obra anuncia como eixos argumentativos organização da matéria, precisão das forças físicas, complexidade do olho/cérebro, código genético e registro fóssil.",
+          "locator": "p.5",
+          "domains": [
+            "P03-L02",
+            "P04-L04"
+          ]
+        },
+        {
+          "id": "SRC004-C003",
+          "term": "Pioneiros da ciência e religião",
+          "claim": "O autor cita Kepler, Galileu, Boyle, Pascal, Lineu e Newton como exemplos históricos de cientistas que incluíam Deus em sua perspectiva.",
+          "locator": "p.12",
+          "domains": [
+            "P03-L05",
+            "P01-L05"
+          ]
+        },
+        {
+          "id": "SRC004-C004",
+          "term": "Duas visões de realidade",
+          "claim": "A introdução contrasta uma visão limitada ao observável natural com outra que admite realidade transcendente, propósito e Deus.",
+          "locator": "p.14",
+          "domains": [
+            "P04-L01",
+            "P01-L01"
+          ]
+        },
+        {
+          "id": "SRC004-C005",
+          "term": "Declaração de perspectiva e viés",
+          "claim": "O autor declara que o livro não é totalmente objetivo, assume seus pontos de vista e convida o leitor a avaliar os dados e manter diálogo aberto.",
+          "locator": "pp.14-15",
+          "domains": [
+            "P03-L01",
+            "P04-L04",
+            "P07-L01"
+          ]
+        }
+      ]
+    }
+  ],
+  "deferred": [
+    {
+      "source_id": "SRC-005",
+      "reason": "MOBI não retornou evidência textual confiável nesta rodada."
+    },
+    {
+      "source_id": "SRC-018",
+      "reason": "MOBI não retornou evidência textual confiável nesta rodada."
+    },
+    {
+      "source_id": "SRC-021",
+      "reason": "Busca desta rodada não recuperou passagem suficiente para extração atômica responsável."
+    }
+  ]
+}
