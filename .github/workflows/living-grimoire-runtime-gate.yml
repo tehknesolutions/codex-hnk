@@ -15,7 +15,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Enable repository pnpm
+      - name: Bootstrap diagnostics
+        run: |
+          node --version
+          corepack --version || true
+          test -f package.json
+          test -f pnpm-lock.yaml
+          grep -n '"packageManager"' package.json || true
+      - name: Enable pnpm
         run: |
           corepack enable
           pnpm --version
