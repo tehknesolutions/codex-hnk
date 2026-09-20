@@ -1,0 +1,84 @@
+{
+  "schema_version": "HNK-7X7-MATURITY-MODEL-V1",
+  "authority": "ARCHITECTURAL_CANDIDATE",
+  "principle": "COVERAGE_IS_NOT_MATURITY",
+  "dimensions": [
+    {
+      "id": "D1",
+      "name": "EVIDENCE_DEPTH",
+      "levels": {
+        "0": "none",
+        "1": "single assertion/artifact",
+        "2": "multiple passages/artifacts",
+        "3": "structured body of evidence"
+      }
+    },
+    {
+      "id": "D2",
+      "name": "SOURCE_DIVERSITY",
+      "levels": {
+        "0": "none",
+        "1": "one provenance family",
+        "2": "multiple internal or external sources",
+        "3": "internal + external triangulation"
+      }
+    },
+    {
+      "id": "D3",
+      "name": "FORMALIZATION",
+      "levels": {
+        "0": "unstructured",
+        "1": "named concept",
+        "2": "documented model/schema/protocol",
+        "3": "machine-readable/executable contract"
+      }
+    },
+    {
+      "id": "D4",
+      "name": "PRAXIS",
+      "levels": {
+        "0": "concept only",
+        "1": "proposed practice",
+        "2": "implemented practice/product",
+        "3": "observed execution with recorded evidence"
+      }
+    },
+    {
+      "id": "D5",
+      "name": "GOVERNANCE",
+      "levels": {
+        "0": "unreviewed",
+        "1": "candidate mapping",
+        "2": "human-reviewed",
+        "3": "HNK-approved/canonical"
+      }
+    },
+    {
+      "id": "D6",
+      "name": "CROSS_LINK_DENSITY",
+      "levels": {
+        "0": "isolated",
+        "1": "1-2 typed relations",
+        "2": "3-5 typed relations",
+        "3": "6+ typed relations across pillars"
+      }
+    }
+  ],
+  "rules": [
+    "NO_SINGLE_COMPOSITE_SCORE",
+    "NO_RANKING_OF_DOMAINS",
+    "KEEP_DIMENSIONS_SEPARATE",
+    "PROVENANCE_REQUIRED",
+    "UNKNOWN_IS_NOT_ZERO"
+  ],
+  "output_per_cell": [
+    "coverage_status",
+    "evidence_depth",
+    "source_diversity",
+    "formalization",
+    "praxis",
+    "governance",
+    "cross_link_density",
+    "open_questions"
+  ]
+}
