@@ -22,3 +22,20 @@ export const convergenceEdges=semantic.edges.map(e=>({
  to_domains:index.get(e.to)??[]
 }));
 export const unresolvedConvergenceEndpoints=convergenceEdges.filter(e=>e.from_domains.length===0||e.to_domains.length===0).map(e=>e.id);
+
+export type PillarLink={a:string;b:string;materialized_relations:number;semantic_edge_ids:string[]};
+const pillarOf=(domainId:string)=>domainId.slice(0,3);
+const pillarPairs=new Map<string,{a:string;b:string;ids:Set<string>}>();
+for(const edge of convergenceEdges){
+ const left=[...new Set(edge.from_domains.map(pillarOf))];
+ const right=[...new Set(edge.to_domains.map(pillarOf))];
+ for(const a of left)for(const b of right){
+  if(a===b)continue;
+  const [x,y]=[a,b].sort();
+  const key=x+'::'+y;
+  const current=pillarPairs.get(key)??{a:x,b:y,ids:new Set<string>()};
+  current.ids.add(edge.id);pillarPairs.set(key,current);
+ }
+}
+export const pillarConvergenceLinks:PillarLink[]=[...pillarPairs.values()].map(x=>({a:x.a,b:x.b,materialized_relations:x.ids.size,semantic_edge_ids:[...x.ids]})).sort((x,y)=>y.materialized_relations-x.materialized_relations||x.a.localeCompare(y.a)||x.b.localeCompare(y.b));
+export const maxPillarMaterializedRelations=Math.max(0,...pillarConvergenceLinks.map(x=>x.materialized_relations));
