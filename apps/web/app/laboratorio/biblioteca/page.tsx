@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import external from '../../../../data/library/library.sources.registry.json';
-import internal from '../../../../data/library/internal.sources.registry.json';
-import b1 from '../../../../data/library/expansion.batch-001.json';
-import b2 from '../../../../data/library/expansion.batch-002.json';
-import ib1 from '../../../../data/library/internal.batch-001.json';
-import ib2 from '../../../../data/library/internal.batch-002.json';
+import external from '../../../../../data/library/library.sources.registry.json';
+import internal from '../../../../../data/library/internal.sources.registry.json';
+import b1 from '../../../../../data/library/expansion.batch-001.json';
+import b2 from '../../../../../data/library/expansion.batch-002.json';
+import ib1 from '../../../../../data/library/internal.batch-001.json';
+import ib2 from '../../../../../data/library/internal.batch-002.json';
 
 const audited=new Map<string,number>();
 for(const s of [...b1.sources,...b2.sources])audited.set(s.source_id,s.concepts.length);
