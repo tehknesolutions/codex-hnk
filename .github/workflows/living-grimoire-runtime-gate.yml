@@ -12,15 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Enable Corepack
-        run: corepack enable
-      - name: Activate repository pnpm
-        run: corepack prepare pnpm@12.1.0 --activate
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
-          cache-dependency-path: pnpm-lock.yaml
+      - name: Enable repository pnpm
+        run: |
+          corepack enable
+          corepack install
+          pnpm --version
       - name: Install monorepo
         run: pnpm install --frozen-lockfile
       - name: TypeScript gate
