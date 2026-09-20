@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {labDomains,labPillars} from '../../knowledge';
-import audit from '../../../../../data/library/hnk-7x7.maturity-audit-001.json';
+import audit from '../../../../../../data/library/hnk-7x7.maturity-audit-001.json';
 export function generateStaticParams(){return labDomains.map(d=>({domainId:d.id}))}
 export default async function DomainFolio({params}:{params:Promise<{domainId:string}>}){const {domainId}=await params;const d=labDomains.find(x=>x.id===domainId);if(!d)notFound();const p=labPillars.find(x=>x.id===d.pillarId);const m=audit.findings.find(x=>x.domain_id===d.id);
  return <main className="folio-stage"><article className="domain-folio"><header><Link href="/laboratorio">← Voltar ao Grimório</Link><span>{d.id} · {p?.name}</span></header><p className="folio-kicker">{d.levelId} · DOMÍNIO HNK</p><h1>{d.name}</h1><p className="domain-definition">{d.definition}</p><div className="folio-seal">{d.id}</div><section><h2>Vetor de maturidade</h2><div className="maturity-grid">{[['Formalização',m?.formalization??'UNKNOWN'],['Práxis',m?.praxis??'UNKNOWN'],['Governança',m?.governance??'UNKNOWN'],['Conexões',m?.cross_link_density??'UNKNOWN']].map(([k,v])=><div key={k}><span>{k}</span><strong>{v}</strong></div>)}</div><p className="epistemic-note">Dimensões independentes. UNKNOWN não significa zero.</p></section><section><h2>Conhecimento relacionado</h2><p>O fólio possui endpoint read-only em <code>/laboratorio/api/domains/{d.id}</code>, que agrega evidências internas e de projeto materializadas para este domínio.</p></section><footer>APPROVED_ARCHITECTURE_V1 · visualização não altera o cânone</footer></article></main>
