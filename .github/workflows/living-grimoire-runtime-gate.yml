@@ -15,20 +15,38 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Bootstrap diagnostics
+      - name: Runtime gate with durable report
+        id: gate
+        shell: bash
         run: |
-          node --version
-          corepack --version || true
-          test -f package.json
-          test -f pnpm-lock.yaml
-          grep -n '"packageManager"' package.json || true
-      - name: Enable pnpm
+          set +e
+          REPORT=living-grimoire-runtime-report.txt
+          : > "$REPORT"
+          run_gate () {
+            echo "===== $1 =====" | tee -a "$REPORT"
+            shift
+            "$@" >> "$REPORT" 2>&1
+            code=$?
+            echo "exit_code=$code" | tee -a "$REPORT"
+            return $code
+          }
+          run_gate NODE node --version || FAILED=NODE
+          [ -n "$FAILED" ] || run_gate COREPACK corepack --version || FAILED=COREPACK
+          [ -n "$FAILED" ] || run_gate COREPACK_ENABLE corepack enable || FAILED=COREPACK_ENABLE
+          [ -n "$FAILED" ] || run_gate PNPM pnpm --version || FAILED=PNPM
+          [ -n "$FAILED" ] || run_gate INSTALL pnpm install --frozen-lockfile || FAILED=INSTALL
+          [ -n "$FAILED" ] || run_gate TYPECHECK pnpm --filter @hnk/web typecheck || FAILED=TYPECHECK
+          [ -n "$FAILED" ] || run_gate BUILD pnpm --filter @hnk/web build || FAILED=BUILD
+          echo "failed_stage=${FAILED:-NONE}" | tee -a "$REPORT"
+          echo "failed_stage=${FAILED:-NONE}" >> "$GITHUB_OUTPUT"
+      - name: Upload runtime report
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-grimoire-runtime-report
+          path: living-grimoire-runtime-report.txt
+          if-no-files-found: error
+      - name: Enforce runtime gate
+        if: steps.gate.outputs.failed_stage != 'NONE'
         run: |
-          corepack enable
-          pnpm --version
-      - name: Install monorepo
-        run: pnpm install --frozen-lockfile
-      - name: TypeScript gate
-        run: pnpm --filter @hnk/web typecheck
-      - name: Production build gate
-        run: pnpm --filter @hnk/web build
+          echo "Living Grimoire gate failed at: ${{ steps.gate.outputs.failed_stage }}"
+          exit 1
