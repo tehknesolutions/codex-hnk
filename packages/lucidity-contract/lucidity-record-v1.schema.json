@@ -7,70 +7,85 @@
   "required": ["id", "kind", "statement", "status", "provenance", "epistemic", "audit"],
   "properties": {
     "id": { "type": "string", "minLength": 1 },
-    "kind": {
-      "type": "string",
-      "enum": ["DATA", "SOURCE", "TESTIMONY", "HYPOTHESIS", "EXPERIMENT", "EVIDENCE", "CONTRADICTION", "CANON_CANDIDATE", "CANON", "REJECTED", "UNRESOLVED"]
-    },
+    "kind": { "type": "string", "enum": ["DATA","SOURCE","TESTIMONY","HYPOTHESIS","EXPERIMENT","EVIDENCE","CONTRADICTION","CANON_CANDIDATE","CANON","REJECTED","UNRESOLVED"] },
     "statement": { "type": "string", "minLength": 1 },
-    "status": {
-      "type": "string",
-      "enum": ["OBSERVED", "REPORTED", "CANDIDATE", "UNDER_TEST", "SUPPORTED", "CONTESTED", "HNK_APPROVED", "SUPERSEDED", "REJECTED", "UNRESOLVED"]
-    },
+    "status": { "type": "string", "enum": ["OBSERVED","REPORTED","CANDIDATE","UNDER_TEST","SUPPORTED","CONTESTED","HNK_APPROVED","SUPERSEDED","REJECTED","UNRESOLVED"] },
     "provenance": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["origin", "author", "enteredBy", "recordedAt"],
+      "type": "object", "additionalProperties": false,
+      "required": ["origin","author","enteredBy","recordedAt"],
       "properties": {
-        "origin": { "type": "string", "minLength": 1 },
-        "author": { "type": "string", "minLength": 1 },
-        "enteredBy": { "type": "string", "minLength": 1 },
-        "recordedAt": { "type": "string", "format": "date-time" },
-        "sourceRefs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+        "origin": {"type":"string","minLength":1},
+        "author": {"type":"string","minLength":1},
+        "enteredBy": {"type":"string","minLength":1},
+        "recordedAt": {"type":"string","format":"date-time"},
+        "sourceRefs": {"type":"array","items":{"type":"string"},"uniqueItems":true}
       }
     },
     "epistemic": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["belief", "doubt", "proofScope"],
-      "properties": {
-        "belief": { "type": "string", "minLength": 1 },
-        "doubt": { "type": "string", "minLength": 1 },
-        "proofScope": {
-          "type": "string",
-          "enum": ["NONE", "PERSONAL", "OPERATIONAL", "DOCUMENTARY", "EXPERIMENTAL", "REPLICATED", "HISTORICAL", "SCIENTIFIC", "SPIRITUAL_TESTIMONY"]
-        },
-        "evidenceRefs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-        "alternativeHypotheses": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-        "wouldChangeConclusion": { "type": "string" }
+      "type":"object","additionalProperties":false,
+      "required":["belief","doubt","proofScope"],
+      "properties":{
+        "belief":{"type":"string","minLength":1},
+        "doubt":{"type":"string","minLength":1},
+        "proofScope":{"type":"string","enum":["NONE","PERSONAL","OPERATIONAL","DOCUMENTARY","EXPERIMENTAL","REPLICATED","HISTORICAL","SCIENTIFIC","SPIRITUAL_TESTIMONY"]},
+        "evidenceRefs":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+        "alternativeHypotheses":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+        "wouldChangeConclusion":{"type":"string"}
       }
     },
     "authority": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "scope": { "type": "string" },
-        "approvedBy": { "type": ["string", "null"] },
-        "canonVersion": { "type": ["string", "null"] }
+      "type":"object","additionalProperties":false,
+      "properties":{
+        "scope":{"type":"string"},
+        "approvedBy":{"type":["string","null"]},
+        "canonVersion":{"type":["string","null"]}
       }
     },
     "challenge": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "isContested": { "type": "boolean" },
-        "challengeRefs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      "type":"object","additionalProperties":false,
+      "properties":{
+        "isContested":{"type":"boolean"},
+        "challengeRefs":{"type":"array","items":{"type":"string"},"uniqueItems":true}
       }
     },
     "audit": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["createdAt", "version"],
-      "properties": {
-        "createdAt": { "type": "string", "format": "date-time" },
-        "updatedAt": { "type": ["string", "null"], "format": "date-time" },
-        "version": { "type": "integer", "minimum": 1 },
-        "supersedes": { "type": ["string", "null"] }
+      "type":"object","additionalProperties":false,
+      "required":["createdAt","version"],
+      "properties":{
+        "createdAt":{"type":"string","format":"date-time"},
+        "updatedAt":{"type":["string","null"],"format":"date-time"},
+        "version":{"type":"integer","minimum":1},
+        "supersedes":{"type":["string","null"]}
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "HNK_APPROVED" } }, "required": ["status"] },
+      "then": {
+        "required": ["authority"],
+        "properties": {
+          "authority": {
+            "required": ["approvedBy"],
+            "properties": { "approvedBy": { "const": "TW" } }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "SUPERSEDED" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "audit": {
+            "required": ["supersedes"],
+            "properties": { "supersedes": { "type": "string", "minLength": 1 } }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "CANON" } }, "required": ["kind"] },
+      "then": { "properties": { "status": { "enum": ["HNK_APPROVED","SUPERSEDED"] } } }
+    }
+  ]
 }
