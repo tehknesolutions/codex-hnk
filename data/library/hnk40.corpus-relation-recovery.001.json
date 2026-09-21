@@ -1,0 +1,29 @@
+{
+  "schema_version": "HNK40-CORPUS-RELATION-RECOVERY-001",
+  "status": "REVIEWED_NO_GLYPH_ID_EDGE",
+  "reviewed_sources": [
+    {
+      "source": "codex_365_arquitetura_final.md",
+      "finding": "Contains HNK ritual/oracular correspondence architecture and sigil/server practices, but the retrieved evidence does not bind any claim to G01-G40."
+    },
+    {
+      "source": "codex_matriz_disciplinar_nao_linear.md",
+      "finding": "Contains sigil/tecnomagic practice architecture, but no retrieved G01-G40 relation."
+    },
+    {
+      "source": "capitulo_0_introducao_manual.md",
+      "finding": "Contains HNK app/practice architecture, but no retrieved G01-G40 relation."
+    },
+    {
+      "source": "capitulo_1_plano_escrita.md",
+      "finding": "Contains Kether sigil/portal practices, but no retrieved G01-G40 relation."
+    },
+    {
+      "source": "chat-gemini-Programa_Treinamento_HNK_Magik.md",
+      "finding": "Contains sigil generation, Sefer Yetzirah, gematria and multilingual visual references, but no retrieved G01-G40 relation."
+    }
+  ],
+  "conclusion": "CORPUS_SUPPORTS_SIGIL_AND_CORRESPONDENCE_ARCHITECTURE_BUT_NOT_G01_G40_BINDINGS",
+  "edge_delta": 0,
+  "next_gate": "LOCATE_EXPLICIT_G01_G40_OR_CREATOR_APPROVED_RELATION_SOURCE"
+}
