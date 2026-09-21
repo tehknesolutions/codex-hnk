@@ -1,0 +1,26 @@
+{
+  "schema_version": "HNK40-GLYPH-EVIDENCE-EDGES-V1",
+  "status": "NO_ELIGIBLE_SEMANTIC_EDGES",
+  "authority": "EVIDENCE_GATE",
+  "sources_reviewed": [
+    "packages/hnk-glyphs/reference/HNK40_REFERENCE_MATRIX_V1.json",
+    "data/library/internal.batch-001.json",
+    "data/library/internal.batch-002.json",
+    "data/library/project-source-gap.batch-004.json"
+  ],
+  "findings": {
+    "glyph_nodes": 40,
+    "approved_or_source_asserted_semantic_edges": 0,
+    "reference_language_mappings": "PENDING_RESEARCH",
+    "symbolic_initiatic_correspondences": "PENDING_SEPARATE_GOVERNANCE"
+  },
+  "rules": [
+    "NO_EDGE_FROM_PHONETIC_SIMILARITY",
+    "NO_EDGE_FROM_SAFE_TRANSLITERATION_ALONE",
+    "NO_EDGE_FROM_VISUAL_SIMILARITY",
+    "NO_EDGE_FROM_NUMEROLOGY_OR_PUA",
+    "NO_HNK40_HENUVOKODAN_EQUIVALENCE",
+    "EDGE_REQUIRES_EXPLICIT_SOURCE_LOCATOR_AND_GOVERNANCE_STATUS"
+  ],
+  "next_gate": "INGEST_EXPLICIT_GLYPH_RELATION_SOURCE_OR_CREATOR_APPROVAL"
+}
