@@ -1,0 +1,421 @@
+{
+  "schema_version": "HNK40-ORACULUM-AUTHORED-CANDIDATE-RELATIONS-V1",
+  "status": "HNK_AUTHORED_CANDIDATE",
+  "promotion": "NOT_PROMOTED_TO_HNK_CANON",
+  "consumption": "MANUAL_CANDIDATE_LAYER_ONLY",
+  "source": {
+    "title": "HNK ORACULUM CUBE — Manual V1.0 RC1",
+    "section": "Appendix B — Registry HNK40 completo (candidato)",
+    "pages": "25–32",
+    "source_status": "RELEASE CANDIDATE — not STABLE and not automatically promoted to HNK_CANON"
+  },
+  "governance": [
+    "DO_NOT_ALTER_PHONEME",
+    "DO_NOT_ALTER_TRANSLITERATION",
+    "DO_NOT_ALTER_GLYPH_FORM",
+    "DO_NOT_ALTER_LEXICON_OR_GRAMMAR",
+    "DO_NOT_AUTO_CONSUME_IN_GOVERNED_V0_5"
+  ],
+  "entries": [
+    {
+      "glyph_id": "G01",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Source",
+      "geometry": "CORE / CENTER",
+      "sigil": "CENTERING",
+      "light": "presence",
+      "shadow": "dispersion",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G02",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Choice",
+      "geometry": "PRINCIPAL_AXIS / LEFT_RIGHT",
+      "sigil": "DISCERNMENT",
+      "light": "clear distinction",
+      "shadow": "false binary",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G03",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Continuity",
+      "geometry": "PRINCIPAL_AXIS / FRONT_BACK",
+      "sigil": "CONTINUITY",
+      "light": "context",
+      "shadow": "living in replay",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G04",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Alignment",
+      "geometry": "PRINCIPAL_AXIS / DOWN_UP",
+      "sigil": "ALIGNMENT",
+      "light": "aspiration grounded in reality",
+      "shadow": "escape from material limits",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G05",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Vision",
+      "geometry": "FACE / UP",
+      "sigil": "VISION",
+      "light": "perspective",
+      "shadow": "abstraction",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G06",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Ground",
+      "geometry": "FACE / DOWN",
+      "sigil": "GROUNDING",
+      "light": "stability",
+      "shadow": "stagnation",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G07",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Emergence",
+      "geometry": "FACE / FRONT",
+      "sigil": "EMERGENCE",
+      "light": "readiness",
+      "shadow": "impulsiveness",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G08",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Memory",
+      "geometry": "FACE / BACK",
+      "sigil": "MEMORY",
+      "light": "learning",
+      "shadow": "attachment",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G09",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Action",
+      "geometry": "FACE / RIGHT",
+      "sigil": "ACTION",
+      "light": "agency",
+      "shadow": "force",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G10",
+      "world_candidate": "W1_ORIENTATION",
+      "role": "Reception",
+      "geometry": "FACE / LEFT",
+      "sigil": "RECEPTION",
+      "light": "listening",
+      "shadow": "passivity",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G11",
+      "world_candidate": "W2_FORMATION",
+      "role": "Declaration",
+      "geometry": "EDGE / UP_FRONT",
+      "sigil": "DECLARATION",
+      "light": "clarity",
+      "shadow": "premature certainty",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G12",
+      "world_candidate": "W2_FORMATION",
+      "role": "Reflection",
+      "geometry": "EDGE / UP_BACK",
+      "sigil": "REFLECTION",
+      "light": "pattern recognition",
+      "shadow": "nostalgia",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G13",
+      "world_candidate": "W2_FORMATION",
+      "role": "Initiative",
+      "geometry": "EDGE / UP_RIGHT",
+      "sigil": "INITIATIVE",
+      "light": "directed courage",
+      "shadow": "recklessness",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G14",
+      "world_candidate": "W2_FORMATION",
+      "role": "Inspiration",
+      "geometry": "EDGE / UP_LEFT",
+      "sigil": "INSPIRATION",
+      "light": "receptive imagination",
+      "shadow": "fantasy inflation",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G15",
+      "world_candidate": "W2_FORMATION",
+      "role": "Embodiment",
+      "geometry": "EDGE / DOWN_FRONT",
+      "sigil": "EMBODIMENT",
+      "light": "practical expression",
+      "shadow": "reductionism",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G16",
+      "world_candidate": "W2_FORMATION",
+      "role": "Foundation",
+      "geometry": "EDGE / DOWN_BACK",
+      "sigil": "FOUNDATION",
+      "light": "tested basis",
+      "shadow": "rigidity",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G17",
+      "world_candidate": "W2_FORMATION",
+      "role": "Execution",
+      "geometry": "EDGE / DOWN_RIGHT",
+      "sigil": "EXECUTION",
+      "light": "discipline",
+      "shadow": "mechanical overcontrol",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G18",
+      "world_candidate": "W2_FORMATION",
+      "role": "Care",
+      "geometry": "EDGE / DOWN_LEFT",
+      "sigil": "CARE",
+      "light": "support",
+      "shadow": "avoidance",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G19",
+      "world_candidate": "W2_FORMATION",
+      "role": "Advance",
+      "geometry": "EDGE / FRONT_RIGHT",
+      "sigil": "ADVANCE",
+      "light": "momentum",
+      "shadow": "haste",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G20",
+      "world_candidate": "W2_FORMATION",
+      "role": "Listening",
+      "geometry": "EDGE / FRONT_LEFT",
+      "sigil": "LISTENING",
+      "light": "sensitivity",
+      "shadow": "indecision",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G21",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Strategy",
+      "geometry": "EDGE / BACK_RIGHT",
+      "sigil": "STRATEGY",
+      "light": "learned action",
+      "shadow": "overplanning",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G22",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Integration",
+      "geometry": "EDGE / BACK_LEFT",
+      "sigil": "INTEGRATION",
+      "light": "reconciliation",
+      "shadow": "rumination",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G23",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Breakthrough",
+      "geometry": "VERTEX / UP_FRONT_RIGHT",
+      "sigil": "BREAKTHROUGH",
+      "light": "decisive emergence",
+      "shadow": "grandiosity",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G24",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Revelation",
+      "geometry": "VERTEX / UP_FRONT_LEFT",
+      "sigil": "REVELATION",
+      "light": "new understanding",
+      "shadow": "projection",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G25",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Mastery",
+      "geometry": "VERTEX / UP_BACK_RIGHT",
+      "sigil": "MASTERY",
+      "light": "skillful application",
+      "shadow": "control obsession",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G26",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Wisdom",
+      "geometry": "VERTEX / UP_BACK_LEFT",
+      "sigil": "WISDOM",
+      "light": "contextual judgment",
+      "shadow": "detachment",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G27",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Manifestation",
+      "geometry": "VERTEX / DOWN_FRONT_RIGHT",
+      "sigil": "MANIFESTATION",
+      "light": "tangible progress",
+      "shadow": "materialism",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G28",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Sustenance",
+      "geometry": "VERTEX / DOWN_FRONT_LEFT",
+      "sigil": "SUSTENANCE",
+      "light": "continuity of care",
+      "shadow": "dependency",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G29",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Stewardship",
+      "geometry": "VERTEX / DOWN_BACK_RIGHT",
+      "sigil": "STEWARDSHIP",
+      "light": "responsible continuity",
+      "shadow": "burden fixation",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G30",
+      "world_candidate": "W3_REALIZATION",
+      "role": "Root",
+      "geometry": "VERTEX / DOWN_BACK_LEFT",
+      "sigil": "ROOT",
+      "light": "belonging",
+      "shadow": "entrenchment",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G31",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Transmutation",
+      "geometry": "BODY_DIAGONAL / UFR_DBL",
+      "sigil": "TRANSMUTATION",
+      "light": "whole-system change",
+      "shadow": "destructive reversal",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G32",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Reversal",
+      "geometry": "BODY_DIAGONAL / UFL_DBR",
+      "sigil": "REVERSAL",
+      "light": "perspective inversion",
+      "shadow": "contrarianism",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G33",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Reconciliation",
+      "geometry": "BODY_DIAGONAL / UBR_DFL",
+      "sigil": "RECONCILIATION",
+      "light": "integration of opposites",
+      "shadow": "false harmony",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G34",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Renewal",
+      "geometry": "BODY_DIAGONAL / UBL_DFR",
+      "sigil": "RENEWAL",
+      "light": "recomposition",
+      "shadow": "reset addiction",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G35",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Balance",
+      "geometry": "OPPOSITE_EDGE_AXIS / UF_DB",
+      "sigil": "BALANCE",
+      "light": "dynamic equilibrium",
+      "shadow": "paralysis by balance",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G36",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Calibration",
+      "geometry": "OPPOSITE_EDGE_AXIS / UB_DF",
+      "sigil": "CALIBRATION",
+      "light": "measured adjustment",
+      "shadow": "perfectionism",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G37",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Reciprocity",
+      "geometry": "OPPOSITE_EDGE_AXIS / UR_DL",
+      "sigil": "RECIPROCITY",
+      "light": "fair exchange",
+      "shadow": "scorekeeping",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G38",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Coordination",
+      "geometry": "OPPOSITE_EDGE_AXIS / UL_DR",
+      "sigil": "COORDINATION",
+      "light": "complementary roles",
+      "shadow": "diffusion of responsibility",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G39",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Feedback",
+      "geometry": "OPPOSITE_EDGE_AXIS / FR_BL",
+      "sigil": "FEEDBACK",
+      "light": "learning loop",
+      "shadow": "reactivity",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    },
+    {
+      "glyph_id": "G40",
+      "world_candidate": "W4_INTEGRATION",
+      "role": "Synthesis",
+      "geometry": "OPPOSITE_EDGE_AXIS / FL_BR",
+      "sigil": "SYNTHESIS",
+      "light": "coherent whole",
+      "shadow": "forced coherence",
+      "authority": "HNK_AUTHORED_CANDIDATE"
+    }
+  ]
+}
