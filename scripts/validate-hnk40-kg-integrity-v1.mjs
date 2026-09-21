@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import {execFileSync} from "node:child_process";
+import {fileURLToPath} from "node:url";
 const read=p=>JSON.parse(fs.readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const matrix=read("packages/hnk-glyphs/reference/HNK40_REFERENCE_MATRIX_V1.json");
 const semantics=read("data/library/hnk40.approved-semantic-relations.v1.json");
 const visual=read("data/library/hnk40.visual-authority.v1.json");
-const graph=JSON.parse(execFileSync(process.execPath,[new URL("./build-knowledge-graph-integrated-v1.mjs",import.meta.url).pathname],{encoding:"utf8"}));
+const graph=JSON.parse(execFileSync(process.execPath,[fileURLToPath(new URL("./build-knowledge-graph-integrated-v1.mjs",import.meta.url))],{encoding:"utf8"}));
 const fail=m=>{throw Error("HNK40_KG_INTEGRITY_FAIL: "+m)};
 if(matrix.entries.length!==40)fail("matrix must contain 40 glyphs");
 if(semantics.status!=="HNK_APPROVED"||semantics.entries.length!==40)fail("approved semantics must contain 40 glyphs");
