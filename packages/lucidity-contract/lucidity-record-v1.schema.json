@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hnk.local/schemas/lucidity-record-v1.schema.json",
+  "title": "HNK Lucidity Record V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "kind", "statement", "status", "provenance", "epistemic", "audit"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "kind": {
+      "type": "string",
+      "enum": ["DATA", "SOURCE", "TESTIMONY", "HYPOTHESIS", "EXPERIMENT", "EVIDENCE", "CONTRADICTION", "CANON_CANDIDATE", "CANON", "REJECTED", "UNRESOLVED"]
+    },
+    "statement": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["OBSERVED", "REPORTED", "CANDIDATE", "UNDER_TEST", "SUPPORTED", "CONTESTED", "HNK_APPROVED", "SUPERSEDED", "REJECTED", "UNRESOLVED"]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "author", "enteredBy", "recordedAt"],
+      "properties": {
+        "origin": { "type": "string", "minLength": 1 },
+        "author": { "type": "string", "minLength": 1 },
+        "enteredBy": { "type": "string", "minLength": 1 },
+        "recordedAt": { "type": "string", "format": "date-time" },
+        "sourceRefs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "epistemic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["belief", "doubt", "proofScope"],
+      "properties": {
+        "belief": { "type": "string", "minLength": 1 },
+        "doubt": { "type": "string", "minLength": 1 },
+        "proofScope": {
+          "type": "string",
+          "enum": ["NONE", "PERSONAL", "OPERATIONAL", "DOCUMENTARY", "EXPERIMENTAL", "REPLICATED", "HISTORICAL", "SCIENTIFIC", "SPIRITUAL_TESTIMONY"]
+        },
+        "evidenceRefs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "alternativeHypotheses": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "wouldChangeConclusion": { "type": "string" }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "scope": { "type": "string" },
+        "approvedBy": { "type": ["string", "null"] },
+        "canonVersion": { "type": ["string", "null"] }
+      }
+    },
+    "challenge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "isContested": { "type": "boolean" },
+        "challengeRefs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["createdAt", "version"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": ["string", "null"], "format": "date-time" },
+        "version": { "type": "integer", "minimum": 1 },
+        "supersedes": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

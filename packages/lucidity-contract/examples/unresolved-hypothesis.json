@@ -1,0 +1,36 @@
+{
+  "id": "HNK-LUCIDITY-EXAMPLE-001",
+  "kind": "HYPOTHESIS",
+  "statement": "Example hypothesis kept unresolved until evidence supports a stronger status.",
+  "status": "UNRESOLVED",
+  "provenance": {
+    "origin": "HNK Lucidity Contract example",
+    "author": "HNK",
+    "enteredBy": "TW",
+    "recordedAt": "2026-09-21T22:10:00Z",
+    "sourceRefs": ["docs/governance/HNK_CONSTITUICAO_LUCIDEZ_V1.md"]
+  },
+  "epistemic": {
+    "belief": "The hypothesis may be considered seriously.",
+    "doubt": "No conclusion is licensed by this example.",
+    "proofScope": "NONE",
+    "evidenceRefs": [],
+    "alternativeHypotheses": [],
+    "wouldChangeConclusion": "New documented evidence."
+  },
+  "authority": {
+    "scope": "example-only",
+    "approvedBy": null,
+    "canonVersion": null
+  },
+  "challenge": {
+    "isContested": false,
+    "challengeRefs": []
+  },
+  "audit": {
+    "createdAt": "2026-09-21T22:10:00Z",
+    "updatedAt": null,
+    "version": 1,
+    "supersedes": null
+  }
+}
