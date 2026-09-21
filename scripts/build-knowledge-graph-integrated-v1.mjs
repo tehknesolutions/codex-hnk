@@ -7,6 +7,8 @@ const addNode=n=>{if(!nodeIds.has(n.id)){nodeIds.add(n.id);nodes.push(n)}};
 const addEdge=e=>{if(edgeIds.has(e.edge_id))throw Error("duplicate edge "+e.edge_id);edgeIds.add(e.edge_id);edges.push(e)};
 for(const d of registry.domains)addNode({id:d.domain_id,type:"HNK_DOMAIN",label:d.name});
 const glyphMatrix=read("packages/hnk-glyphs/reference/HNK40_REFERENCE_MATRIX_V1.json");
+const glyphEdgeGate=read("data/library/hnk40.glyph-evidence-edges.v1.json");
+if(glyphEdgeGate.findings.approved_or_source_asserted_semantic_edges!==0)throw Error("HNK40 edge gate changed: explicit edge ingestion not implemented");
 for(const g of glyphMatrix.entries)addNode({id:g.glyph_id,type:"HNK_GLYPH",label:g.safe_transliteration||g.glyph_id,phoneme_ipa:g.phoneme_ipa,world_id:g.world_id,protoglyph_column:g.protoglyph_column,candidate_pua:g.candidate_pua,visual_authority:"VISUAL-CANON-V2",status:"SOURCE_ASSERTED"});
 let seq=1;
 const ingest=(kind,sourceId,label,concepts,status="HNK_CANDIDATE")=>{
@@ -24,5 +26,5 @@ const b3=read("data/library/internal.batch-003.project-chat-review.json");
 for(const f of b3.findings.filter(x=>x.status==="SUPPORTED_CANDIDATE"))ingest("PROJECT_CHAT","PROJECT-CHAT-B003","Project/chat evidence batch 003",[{id:"B003-"+f.domain_id,term:f.rationale,domains:[f.domain_id],locator:"internal.batch-003.project-chat-review.json"}],"HNK_CANDIDATE");
 const b4=read("data/library/project-source-gap.batch-004.json");for(const s of b4.sources)ingest("PROJECT_FILE","PROJECT-"+s.source,s.source,s.concepts,"HNK_CANDIDATE");
 nodes.sort((a,b)=>a.id.localeCompare(b.id));edges.sort((a,b)=>a.edge_id.localeCompare(b.edge_id));
-const out={schema_version:"HNK-KNOWLEDGE-GRAPH-INTEGRATED-V1",principle:"PROVENANCE_FIRST__NO_AUTOMATIC_CANON_PROMOTION",summary:{nodes:nodes.length,edges:edges.length,domains:registry.domains.length,glyphs:glyphMatrix.entries.length},nodes,edges};
+const out={schema_version:"HNK-KNOWLEDGE-GRAPH-INTEGRATED-V1",principle:"PROVENANCE_FIRST__NO_AUTOMATIC_CANON_PROMOTION",summary:{nodes:nodes.length,edges:edges.length,domains:registry.domains.length,glyphs:glyphMatrix.entries.length,glyph_semantic_edges:glyphEdgeGate.findings.approved_or_source_asserted_semantic_edges},nodes,edges};
 process.stdout.write(JSON.stringify(out,null,2)+"\n");
