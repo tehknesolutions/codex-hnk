@@ -1,0 +1,41 @@
+{
+  "schema_version": "HNK40-AUTHORED-CANDIDATE-PROMOTION-GATE-V1",
+  "status": "READY_FOR_EXPLICIT_HUMAN_DECISION",
+  "candidate_registry": "data/library/hnk40.oraculum-authored-candidate-relations.v1.json",
+  "candidate_authority": "HNK_AUTHORED_CANDIDATE",
+  "scope": {
+    "glyphs": "G01-G40",
+    "fields": [
+      "world_candidate",
+      "role",
+      "geometry",
+      "sigil",
+      "light",
+      "shadow"
+    ]
+  },
+  "source": {
+    "title": "HNK ORACULUM CUBE — Manual V1.0 RC1",
+    "section": "Appendix B — Registry HNK40 completo (candidato)",
+    "pages": "25–32"
+  },
+  "decision": {
+    "prompt": "Promote the exact recovered compact G01-G40 candidate relation set to HNK_APPROVED semantic authority?",
+    "approval_tokens": [
+      "A.S.",
+      "AS",
+      "APROVADO. SIGA."
+    ],
+    "on_approval": "PROMOTE_EXACT_RELATION_SET_ONLY",
+    "on_rejection": "KEEP_HNK_AUTHORED_CANDIDATE"
+  },
+  "invariants": [
+    "NO_CHANGE_TO_PHONEME",
+    "NO_CHANGE_TO_TRANSLITERATION",
+    "NO_CHANGE_TO_GLYPH_FORM",
+    "NO_CHANGE_TO_LEXICON_OR_GRAMMAR",
+    "NO_REFERENCE_LANGUAGE_EQUIVALENCE_CREATED",
+    "NO_HNK40_HENUVOKODAN_EQUIVALENCE_CREATED",
+    "TRANSFORMATION_QUESTION_ACTION_REMAIN_SOURCE_CANDIDATE_UNLESS_SEPARATELY_PROMOTED"
+  ]
+}
