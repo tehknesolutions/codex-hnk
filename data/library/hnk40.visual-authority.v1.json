@@ -1,0 +1,20 @@
+{
+  "schema_version": "HNK40-VISUAL-AUTHORITY-V1",
+  "status": "VISUAL-CANON-V2",
+  "source_id": "HNK40-VISUAL-CANON-V2",
+  "artifact": "packages/hnk-glyphs/visual/hnk40-visual-canon-v2.mjs",
+  "glyph_count": 40,
+  "sprite_sha256": "87ee43f3785165397752a21eaceffcda8b3240748125062ca275bf8d46234ca4",
+  "ordered_set_sha256": "78668df0f707952b7c280de52526abaa2b7900597fb8ff362a3a08641fd1bce5",
+  "legacy_recovery_claim": false,
+  "scope": [
+    "G01-G40 visual SVG forms"
+  ],
+  "boundaries": [
+    "INDEPENDENT_FROM_REFERENCE_MATRIX_VISUAL_STATE",
+    "NO_PHONEME_CHANGE",
+    "NO_TRANSLITERATION_CHANGE",
+    "NO_SEMANTIC_PROMOTION",
+    "NO_HNK40_HENUVOKODAN_EQUIVALENCE"
+  ]
+}
