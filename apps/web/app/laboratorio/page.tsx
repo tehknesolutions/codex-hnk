@@ -3,12 +3,14 @@ import {domainsForPillar,labDomains,labPillars,semanticEdgeCount} from './knowle
 import {conceptRegistry} from './convergence';
 import sources from '../../../../data/library/library.sources.registry.json';
 import CodexSearch from './CodexSearch';
+import glyphs from '../../../../packages/hnk-glyphs/reference/HNK40_REFERENCE_MATRIX_V1.json';
 
 export default function LaboratoryPage(){
  const searchItems=[
   ...labDomains.map(d=>({id:d.id,label:d.name,kind:'DOMAIN' as const,href:'/laboratorio/dominios/'+d.id,meta:d.pillarId+' · '+d.levelId})),
   ...conceptRegistry.map(c=>({id:c.id,label:c.term??c.id,kind:'CONCEPT' as const,href:'/laboratorio/conceitos/'+c.id,meta:c.origin})),
-  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE' as const,href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'}))
+  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE' as const,href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'})),
+  ...glyphs.entries.map(g=>({id:g.glyph_id,label:g.safe_transliteration??g.glyph_id,kind:'GLYPH' as const,href:'/laboratorio/glifos/'+g.glyph_id,meta:g.phoneme_ipa+' · '+g.world_id}))
  ];
  return <main className="grimoire-stage" data-hnk-theme="living-grimoire">
   <header className="grimoire-masthead"><div><span className="mast-sigil">✦</span><strong>HNK</strong><small>CODEX · LIVING GRIMOIRE</small></div><nav><Link href="/">Início</Link><a href="#pilares">Pilares</a><a href="#dominios">Domínios</a><Link href="/laboratorio/biblioteca">Biblioteca</Link><Link href="/laboratorio/glifos">Glifos</Link></nav><span className="canon-chip">KNOWLEDGE GRAPH</span></header>
