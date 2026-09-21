@@ -10,7 +10,7 @@ const glyphMatrix=read("packages/hnk-glyphs/reference/HNK40_REFERENCE_MATRIX_V1.
 const glyphEdgeGate=read("data/library/hnk40.glyph-evidence-edges.v1.json");
 const glyphApproved=read("data/library/hnk40.approved-semantic-relations.v1.json");
 if(glyphApproved.status!=="HNK_APPROVED"||glyphApproved.entries.length!==40)throw Error("HNK40 approved relation registry invalid");
-for(const g of glyphMatrix.entries)addNode({id:g.glyph_id,type:"HNK_GLYPH",label:g.safe_transliteration||g.glyph_id,phoneme_ipa:g.phoneme_ipa,world_id:g.world_id,protoglyph_column:g.protoglyph_column,candidate_pua:g.candidate_pua,visual_authority:"VISUAL-CANON-V2",status:"SOURCE_ASSERTED"});
+for(const g of glyphMatrix.entries)addNode({id:g.glyph_id,type:"HNK_GLYPH",label:g.safe_transliteration||g.glyph_id,phoneme_ipa:g.phoneme_ipa,world_id:g.world_id,protoglyph_column:g.protoglyph_column,candidate_pua:g.candidate_pua,structural_visual_state:glyphMatrix.authority.visual_state,status:"SOURCE_ASSERTED"});
 for(const r of glyphApproved.entries){
  const fields=["world_candidate","role","geometry","sigil","light","shadow"];
  for(const field of fields){
