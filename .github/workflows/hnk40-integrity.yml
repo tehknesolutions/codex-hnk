@@ -1,0 +1,23 @@
+name: HNK40 Integrity Gate
+
+on:
+  pull_request:
+    paths:
+      - "packages/hnk-glyphs/**"
+      - "data/library/hnk40.*"
+      - "scripts/build-knowledge-graph-integrated-v1.mjs"
+      - "scripts/validate-hnk40-kg-integrity-v1.mjs"
+      - ".github/workflows/hnk40-integrity.yml"
+  workflow_dispatch:
+
+jobs:
+  hnk40-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate HNK40 Knowledge Graph integrity
+        run: node scripts/validate-hnk40-kg-integrity-v1.mjs
