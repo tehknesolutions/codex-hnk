@@ -14,7 +14,7 @@ if(glyphApproved.status!=="HNK_APPROVED"||glyphApproved.entries.length!==40)thro
 if(glyphVisualAuthority.status!=="VISUAL-CANON-V2"||glyphVisualAuthority.glyph_count!==40)throw Error("HNK40 visual authority registry invalid");
 for(const g of glyphMatrix.entries)addNode({id:g.glyph_id,type:"HNK_GLYPH",label:g.safe_transliteration||g.glyph_id,phoneme_ipa:g.phoneme_ipa,world_id:g.world_id,protoglyph_column:g.protoglyph_column,candidate_pua:g.candidate_pua,structural_visual_state:glyphMatrix.authority.visual_state,status:"SOURCE_ASSERTED"});
 addNode({id:glyphVisualAuthority.source_id,type:"SOURCE",label:"HNK40 Visual Canon V2",source_kind:"INTERNAL_CANONICAL_ARTIFACT",status:"SOURCE_ASSERTED"});
-for(const g of glyphMatrix.entries)addEdge({edge_id:`HNK40-${g.glyph_id}-VISUAL-CANON-V2`,from:g.glyph_id,relation:"REPRESENTS",to:glyphVisualAuthority.source_id,provenance:{source_id:glyphVisualAuthority.source_id,artifact:glyphVisualAuthority.artifact,sprite_sha256:glyphVisualAuthority.sprite_sha256,ordered_set_sha256:glyphVisualAuthority.ordered_set_sha256},status:"SOURCE_ASSERTED"});
+for(const g of glyphMatrix.entries)addEdge({edge_id:`HNK40-${g.glyph_id}-VISUAL-CANON-V2`,from:g.glyph_id,relation:"DERIVED_FROM",to:glyphVisualAuthority.source_id,provenance:{source_id:glyphVisualAuthority.source_id,artifact:glyphVisualAuthority.artifact,sprite_sha256:glyphVisualAuthority.sprite_sha256,ordered_set_sha256:glyphVisualAuthority.ordered_set_sha256},status:"SOURCE_ASSERTED"});
 for(const r of glyphApproved.entries){
  const fields=["world_candidate","role","geometry","sigil","light","shadow"];
  for(const field of fields){
