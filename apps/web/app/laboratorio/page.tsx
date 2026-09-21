@@ -4,13 +4,15 @@ import {conceptRegistry} from './convergence';
 import sources from '../../../../data/library/library.sources.registry.json';
 import CodexSearch from './CodexSearch';
 import glyphs from '../../../../packages/hnk-glyphs/reference/HNK40_REFERENCE_MATRIX_V1.json';
+import glyphSemantics from '../../../../data/library/hnk40.approved-semantic-relations.v1.json';
+import {HnkGlyph} from './glifos/HnkGlyph';
 
 export default function LaboratoryPage(){
  const searchItems=[
   ...labDomains.map(d=>({id:d.id,label:d.name,kind:'DOMAIN' as const,href:'/laboratorio/dominios/'+d.id,meta:d.pillarId+' · '+d.levelId})),
   ...conceptRegistry.map(c=>({id:c.id,label:c.term??c.id,kind:'CONCEPT' as const,href:'/laboratorio/conceitos/'+c.id,meta:c.origin})),
   ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE' as const,href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'})),
-  ...glyphs.entries.map(g=>({id:g.glyph_id,label:g.safe_transliteration??g.glyph_id,kind:'GLYPH' as const,href:'/laboratorio/glifos/'+g.glyph_id,meta:g.phoneme_ipa+' · '+g.world_id}))
+  ...glyphs.entries.map(g=>{const s=glyphSemantics.entries.find(x=>x.glyph_id===g.glyph_id);return {id:g.glyph_id,label:g.safe_transliteration??g.glyph_id,kind:'GLYPH' as const,href:'/laboratorio/glifos/'+g.glyph_id,meta:[g.phoneme_ipa,s?.world_candidate,s?.role,s?.sigil,s?.light,s?.shadow].filter(Boolean).join(' · ')}})
  ];
  return <main className="grimoire-stage" data-hnk-theme="living-grimoire">
   <header className="grimoire-masthead"><div><span className="mast-sigil">✦</span><strong>HNK</strong><small>CODEX · LIVING GRIMOIRE</small></div><nav><Link href="/">Início</Link><a href="#pilares">Pilares</a><a href="#dominios">Domínios</a><Link href="/laboratorio/biblioteca">Biblioteca</Link><Link href="/laboratorio/glifos">Glifos</Link></nav><span className="canon-chip">KNOWLEDGE GRAPH</span></header>
@@ -27,6 +29,7 @@ export default function LaboratoryPage(){
     <p className="epistemic-note">A tela lê o registry canônico. Visualização não promove conteúdo nem cria correspondências.</p>
    </article>
   </section>
+  <section className="constellation-book"><article className="constellation-page"><p className="folio-kicker">HNK-40 · CONSTELAÇÃO VIVA</p><h2>40 raízes · 4 mundos</h2><p>A camada semântica aprovada agora é uma entrada de primeira classe do Laboratório.</p><div className="relation-scroll">{glyphSemantics.entries.map(s=><Link className="relation-card" href={'/laboratorio/glifos/'+s.glyph_id} key={s.glyph_id}><header><span>{s.glyph_id}</span><b>{s.world_candidate}</b></header><HnkGlyph id={s.glyph_id}/><p><strong>{s.role}</strong> · {s.sigil}</p><small>☀ {s.light} · ◐ {s.shadow}</small></Link>)}</div><p><Link href="/laboratorio/glifos">Abrir constelação HNK-40 completa →</Link></p></article><article className="constellation-page relation-page"><p className="folio-kicker">AUTORIDADE</p><h2>{glyphSemantics.status}</h2><p>{glyphSemantics.entries.length}/40 raízes com conjunto compacto aprovado.</p><p>World · Role · Geometry · Sigil · Light · Shadow.</p><p className="constellation-rule">A interface consulta o cânone; a interface não cria o cânone.</p></article></section>
   <footer className="grimoire-command"><CodexSearch items={searchItems}/><div><span className="pulse"/> Laboratório · read-only</div></footer>
  </main>
 }
