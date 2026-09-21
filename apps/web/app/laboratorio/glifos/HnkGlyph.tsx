@@ -1,0 +1,3 @@
+import {HNK40_SPRITE_SVG,HNK40_VISUAL_CANON_V2} from '../../../../packages/hnk-glyphs/visual/hnk40-visual-canon-v2.mjs';
+export function HnkGlyph({id,size=72}:{id:string,size?:number}){if(!/^G(?:0[1-9]|[1-3][0-9]|40)$/.test(id))return null;return <span aria-label={id} title={id} style={{display:'inline-grid',placeItems:'center',width:size,height:size,color:'currentColor'}}><span aria-hidden dangerouslySetInnerHTML={{__html:HNK40_SPRITE_SVG}} style={{display:'none'}}/><svg viewBox="0 0 100 100" width={size} height={size} role="img"><use href={'#'+id}/></svg></span>}
+export {HNK40_VISUAL_CANON_V2};
