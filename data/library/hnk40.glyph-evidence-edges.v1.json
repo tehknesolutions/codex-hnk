@@ -1,18 +1,22 @@
 {
   "schema_version": "HNK40-GLYPH-EVIDENCE-EDGES-V1",
-  "status": "NO_ELIGIBLE_SEMANTIC_EDGES",
+  "status": "APPROVED_RELATIONS_AVAILABLE",
   "authority": "EVIDENCE_GATE",
   "sources_reviewed": [
     "packages/hnk-glyphs/reference/HNK40_REFERENCE_MATRIX_V1.json",
     "data/library/internal.batch-001.json",
     "data/library/internal.batch-002.json",
-    "data/library/project-source-gap.batch-004.json"
+    "data/library/project-source-gap.batch-004.json",
+    "data/library/hnk40.oraculum-authored-candidate-relations.v1.json",
+    "data/library/hnk40.authored-candidate-promotion-gate.v1.json",
+    "data/library/hnk40.approved-semantic-relations.v1.json"
   ],
   "findings": {
     "glyph_nodes": 40,
-    "approved_or_source_asserted_semantic_edges": 0,
+    "approved_or_source_asserted_semantic_edges": 240,
     "reference_language_mappings": "PENDING_RESEARCH",
-    "symbolic_initiatic_correspondences": "PENDING_SEPARATE_GOVERNANCE"
+    "symbolic_initiatic_correspondences": "PENDING_SEPARATE_GOVERNANCE",
+    "approved_relation_records": 40
   },
   "rules": [
     "NO_EDGE_FROM_PHONETIC_SIMILARITY",
@@ -20,7 +24,8 @@
     "NO_EDGE_FROM_VISUAL_SIMILARITY",
     "NO_EDGE_FROM_NUMEROLOGY_OR_PUA",
     "NO_HNK40_HENUVOKODAN_EQUIVALENCE",
-    "EDGE_REQUIRES_EXPLICIT_SOURCE_LOCATOR_AND_GOVERNANCE_STATUS"
+    "EDGE_REQUIRES_EXPLICIT_SOURCE_LOCATOR_AND_GOVERNANCE_STATUS",
+    "ONLY_EXACT_PROMOTED_FIELDS_MAY_BE_MATERIALIZED"
   ],
-  "next_gate": "INGEST_EXPLICIT_GLYPH_RELATION_SOURCE_OR_CREATOR_APPROVAL"
+  "next_gate": "MATERIALIZE_APPROVED_HNK40_RELATIONS_IN_KNOWLEDGE_GRAPH"
 }
