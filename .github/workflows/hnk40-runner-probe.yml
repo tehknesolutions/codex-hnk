@@ -1,0 +1,15 @@
+name: HNK40 Runner Probe
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/hnk40-runner-probe.yml"
+  workflow_dispatch:
+
+jobs:
+  runner-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Runner reached executable step
+        run: echo "HNK40_RUNNER_STEP_REACHED"
