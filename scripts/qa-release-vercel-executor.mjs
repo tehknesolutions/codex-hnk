@@ -6,6 +6,31 @@ const root = process.cwd();
 const outDir = path.join(root, "apps/web/public");
 fs.mkdirSync(outDir, { recursive: true });
 
+const contextChecks = [
+  "package.json",
+  "pnpm-workspace.yaml",
+  "apps/web/package.json",
+  "apps/web/vercel.json",
+  "scripts/qa-release-vercel-executor.mjs",
+];
+
+const context = {
+  schemaVersion: "HNK-VERCEL-CONTEXT-V1",
+  cwd: root,
+  node: process.version,
+  platform: process.platform,
+  path: process.env.PATH ?? "",
+  npmExecPath: process.env.npm_execpath ?? "",
+  checks: Object.fromEntries(contextChecks.map((relative) => [relative, fs.existsSync(path.join(root, relative))])),
+  vercel: {
+    sha: process.env.VERCEL_GIT_COMMIT_SHA ?? "",
+    ref: process.env.VERCEL_GIT_COMMIT_REF ?? "",
+  },
+};
+
+console.log("HNK_RELEASE_CONTEXT=" + JSON.stringify(context));
+fs.writeFileSync(path.join(outDir, "qa-release-context.json"), JSON.stringify(context, null, 2) + "\n");
+
 function run(label, command, args, { required = true } = {}) {
   const result = spawnSync(command, args, {
     cwd: root,
@@ -30,17 +55,6 @@ function run(label, command, args, { required = true } = {}) {
   return { exitCode, required, spawnError: result.error?.message ?? null };
 }
 
-fs.writeFileSync(
-  path.join(outDir, "qa-release-env.txt"),
-  [
-    `NODE=${process.version}`,
-    `PLATFORM=${process.platform}`,
-    `ARCH=${process.arch}`,
-    `VERCEL_GIT_COMMIT_SHA=${process.env.VERCEL_GIT_COMMIT_SHA ?? ""}`,
-    `VERCEL_GIT_COMMIT_REF=${process.env.VERCEL_GIT_COMMIT_REF ?? ""}`,
-  ].join("\n") + "\n",
-);
-
 const results = {
   web_typecheck: run("release-web-typecheck", "pnpm", ["--filter", "@hnk/web", "typecheck"]),
   web_build: run("release-web-build", "pnpm", ["--filter", "@hnk/web", "build"]),
@@ -48,7 +62,7 @@ const results = {
 
 fs.writeFileSync(
   path.join(outDir, "qa-release-summary.json"),
-  JSON.stringify({ schemaVersion: "HNK-RELEASE-QA-V1", executed: true, results }, null, 2) + "\n",
+  JSON.stringify({ schemaVersion: "HNK-RELEASE-QA-V1", executed: true, context, results }, null, 2) + "\n",
 );
 
 const failedRequired = Object.entries(results).filter(([, result]) => result.required && result.exitCode !== 0);
