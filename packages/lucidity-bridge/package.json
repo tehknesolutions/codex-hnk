@@ -7,11 +7,14 @@
     ".": "./src/index.mjs"
   },
   "scripts": {
-    "test": "node --test ./src/index.test.mjs"
+    "test": "node --test ./src/index.test.mjs ./test/l2-integration.test.mjs"
   },
   "dependencies": {
     "@hnk/claim-dossier": "workspace:*",
     "@hnk/evidence-review-gate": "workspace:*",
+    "@hnk/evidence-synthesis": "workspace:*",
+    "@hnk/experiment-attestation": "workspace:*",
+    "@hnk/replication-registry": "workspace:*",
     "@hnk/lucidity-contract": "workspace:*"
   }
 }
