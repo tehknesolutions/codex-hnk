@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Day001GoldenV2Web } from './Day001GoldenV2Web';
+import { LucidityPanel } from './LucidityPanel';
 import { WebAtriumBoundary, WebDay001RuntimeProvider } from './WebDay001Runtime';
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export default function Day001Page() {
     <WebDay001RuntimeProvider>
       <WebAtriumBoundary>
         <Day001GoldenV2Web />
+        <LucidityPanel state="LEGACY_UNCLASSIFIED" />
       </WebAtriumBoundary>
     </WebDay001RuntimeProvider>
   );
