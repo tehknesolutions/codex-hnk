@@ -1,0 +1,17 @@
+{
+  "name": "@hnk/lucidity-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "scripts": {
+    "test": "node --test ./src/index.test.mjs"
+  },
+  "dependencies": {
+    "@hnk/claim-dossier": "workspace:*",
+    "@hnk/evidence-review-gate": "workspace:*",
+    "@hnk/lucidity-contract": "workspace:*"
+  }
+}
