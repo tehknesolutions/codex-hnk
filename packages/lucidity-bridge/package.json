@@ -1,20 +1,17 @@
 {
   "name": "@hnk/lucidity-bridge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
-  "exports": {
-    ".": "./src/index.mjs"
-  },
-  "scripts": {
-    "test": "node --test ./src/index.test.mjs ./test/l2-integration.test.mjs"
-  },
+  "exports": { ".": "./src/index.mjs" },
+  "scripts": { "test": "node --test ./src/index.test.mjs ./test/l2-integration.test.mjs ./test/l31-telemetry.test.mjs" },
   "dependencies": {
     "@hnk/claim-dossier": "workspace:*",
     "@hnk/evidence-review-gate": "workspace:*",
     "@hnk/evidence-synthesis": "workspace:*",
     "@hnk/experiment-attestation": "workspace:*",
     "@hnk/replication-registry": "workspace:*",
-    "@hnk/lucidity-contract": "workspace:*"
+    "@hnk/lucidity-contract": "workspace:*",
+    "@hnk/lucidity-telemetry": "workspace:*"
   }
 }
