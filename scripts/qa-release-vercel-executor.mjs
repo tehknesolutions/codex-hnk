@@ -15,7 +15,7 @@ const contextChecks = [
 ];
 
 const context = {
-  schemaVersion: "HNK-VERCEL-CONTEXT-V1",
+  schemaVersion: "HNK-VERCEL-CONTEXT-V2",
   cwd: root,
   node: process.version,
   platform: process.platform,
@@ -28,7 +28,9 @@ const context = {
   },
 };
 
-console.log("HNK_RELEASE_CONTEXT=" + JSON.stringify(context));
+const contextLine = "HNK_RELEASE_CONTEXT=" + JSON.stringify(context);
+console.log(contextLine);
+console.error(contextLine);
 fs.writeFileSync(path.join(outDir, "qa-release-context.json"), JSON.stringify(context, null, 2) + "\n");
 
 function run(label, command, args, { required = true } = {}) {
@@ -40,19 +42,25 @@ function run(label, command, args, { required = true } = {}) {
     shell: process.platform === "win32",
   });
   const exitCode = result.status ?? -1;
+  const stdout = result.stdout ?? "";
+  const stderr = result.stderr ?? "";
+  const spawnError = result.error?.message ?? "";
   const text = [
     `LABEL=${label}`,
     `COMMAND=${command} ${args.join(" ")}`,
     `REQUIRED=${required}`,
     `EXIT_CODE=${exitCode}`,
-    `SPAWN_ERROR=${result.error?.message ?? ""}`,
+    `SPAWN_ERROR=${spawnError}`,
     "",
-    result.stdout ?? "",
-    result.stderr ?? "",
+    stdout,
+    stderr,
   ].join("\n");
   const lines = text.split(/\r?\n/);
   fs.writeFileSync(path.join(outDir, `qa-${label}.txt`), lines.slice(Math.max(0, lines.length - 240)).join("\n") + "\n");
-  return { exitCode, required, spawnError: result.error?.message ?? null };
+
+  const diagnostic = `HNK_RELEASE_STEP=${JSON.stringify({ label, command, args, required, exitCode, spawnError, stdoutTail: stdout.slice(-2000), stderrTail: stderr.slice(-2000) })}`;
+  console.error(diagnostic);
+  return { exitCode, required, spawnError: spawnError || null };
 }
 
 const results = {
@@ -62,12 +70,12 @@ const results = {
 
 fs.writeFileSync(
   path.join(outDir, "qa-release-summary.json"),
-  JSON.stringify({ schemaVersion: "HNK-RELEASE-QA-V1", executed: true, context, results }, null, 2) + "\n",
+  JSON.stringify({ schemaVersion: "HNK-RELEASE-QA-V2", executed: true, context, results }, null, 2) + "\n",
 );
 
 const failedRequired = Object.entries(results).filter(([, result]) => result.required && result.exitCode !== 0);
 if (failedRequired.length > 0) {
-  console.error(`HNK release QA failed: ${failedRequired.map(([name, result]) => `${name}=${result.exitCode}${result.spawnError ? ` (${result.spawnError})` : ""}`).join(", ")}`);
+  console.error(`HNK_RELEASE_FAILURE=${failedRequired.map(([name, result]) => `${name}=${result.exitCode}${result.spawnError ? ` (${result.spawnError})` : ""}`).join(", ")}`);
   process.exit(1);
 }
 
