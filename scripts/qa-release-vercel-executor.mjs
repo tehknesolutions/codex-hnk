@@ -12,6 +12,7 @@ function run(label, command, args, { required = true } = {}) {
     encoding: "utf8",
     env: process.env,
     maxBuffer: 16 * 1024 * 1024,
+    shell: process.platform === "win32",
   });
   const exitCode = result.status ?? -1;
   const text = [
@@ -19,13 +20,14 @@ function run(label, command, args, { required = true } = {}) {
     `COMMAND=${command} ${args.join(" ")}`,
     `REQUIRED=${required}`,
     `EXIT_CODE=${exitCode}`,
+    `SPAWN_ERROR=${result.error?.message ?? ""}`,
     "",
     result.stdout ?? "",
     result.stderr ?? "",
   ].join("\n");
   const lines = text.split(/\r?\n/);
   fs.writeFileSync(path.join(outDir, `qa-${label}.txt`), lines.slice(Math.max(0, lines.length - 240)).join("\n") + "\n");
-  return { exitCode, required };
+  return { exitCode, required, spawnError: result.error?.message ?? null };
 }
 
 fs.writeFileSync(
@@ -40,8 +42,8 @@ fs.writeFileSync(
 );
 
 const results = {
-  web_typecheck: run("release-web-typecheck", "corepack", ["pnpm", "--filter", "@hnk/web", "typecheck"]),
-  web_build: run("release-web-build", "corepack", ["pnpm", "--filter", "@hnk/web", "build"]),
+  web_typecheck: run("release-web-typecheck", "pnpm", ["--filter", "@hnk/web", "typecheck"]),
+  web_build: run("release-web-build", "pnpm", ["--filter", "@hnk/web", "build"]),
 };
 
 fs.writeFileSync(
@@ -51,7 +53,7 @@ fs.writeFileSync(
 
 const failedRequired = Object.entries(results).filter(([, result]) => result.required && result.exitCode !== 0);
 if (failedRequired.length > 0) {
-  console.error(`HNK release QA failed: ${failedRequired.map(([name, result]) => `${name}=${result.exitCode}`).join(", ")}`);
+  console.error(`HNK release QA failed: ${failedRequired.map(([name, result]) => `${name}=${result.exitCode}${result.spawnError ? ` (${result.spawnError})` : ""}`).join(", ")}`);
   process.exit(1);
 }
 
