@@ -10,7 +10,7 @@ export function GET(req:NextRequest){
  const items=[
   ...labDomains.map(d=>({id:d.id,label:d.name,kind:'DOMAIN',href:'/laboratorio/dominios/'+d.id,meta:d.pillarId+' · '+d.levelId})),
   ...conceptRegistry.map(c=>({id:c.id,label:c.term??c.id,kind:'CONCEPT',href:'/laboratorio/conceitos/'+c.id,meta:c.origin})),
-  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE',href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'})),
+  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE',href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:'AUTOR NÃO REGISTRADO'})),
   ...glyphs.entries.map(g=>{const s=glyphSemantics.entries.find(x=>x.glyph_id===g.glyph_id);return {id:g.glyph_id,label:g.safe_transliteration??g.glyph_id,kind:'GLYPH',href:'/laboratorio/glifos/'+g.glyph_id,meta:[g.phoneme_ipa,g.world_id,s?.role,s?.sigil,s?.light,s?.shadow].filter(Boolean).join(' · ')}})
  ];
  const results=needle?items.filter(x=>norm(x.id+' '+x.label+' '+x.meta).includes(needle)).slice(0,24):[];
