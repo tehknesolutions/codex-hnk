@@ -11,7 +11,7 @@ export default function LaboratoryPage(){
  const searchItems=[
   ...labDomains.map(d=>({id:d.id,label:d.name,kind:'DOMAIN' as const,href:'/laboratorio/dominios/'+d.id,meta:d.pillarId+' · '+d.levelId})),
   ...conceptRegistry.map(c=>({id:c.id,label:c.term??c.id,kind:'CONCEPT' as const,href:'/laboratorio/conceitos/'+c.id,meta:c.origin})),
-  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE' as const,href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:s.author??'AUTOR NÃO REGISTRADO'})),
+  ...sources.sources.map(s=>({id:s.source_id,label:s.title,kind:'SOURCE' as const,href:'/laboratorio/biblioteca/fontes/'+s.source_id,meta:'AUTOR NÃO REGISTRADO'})),
   ...glyphs.entries.map(g=>{const s=glyphSemantics.entries.find(x=>x.glyph_id===g.glyph_id);return {id:g.glyph_id,label:g.safe_transliteration??g.glyph_id,kind:'GLYPH' as const,href:'/laboratorio/glifos/'+g.glyph_id,meta:[g.phoneme_ipa,s?.world_candidate,s?.role,s?.sigil,s?.light,s?.shadow].filter(Boolean).join(' · ')}})
  ];
  return <main className="grimoire-stage" data-hnk-theme="living-grimoire">
