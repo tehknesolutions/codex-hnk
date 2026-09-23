@@ -12,11 +12,12 @@ type ConceptDomains=Map<string,string[]>;
 const index:ConceptDomains=new Map();
 const meta=new Map<string,{sourceId:string|null;term:string|null;origin:string}>();
 const add=(id:string,domains:string[],sourceId:string|null=null,term:string|null=null,origin:string='UNSPECIFIED')=>{index.set(id,[...new Set(domains)]);meta.set(id,{sourceId,term,origin})};
+const sourceIdOf=(source:{source_id?:string;id?:string;source?:string})=>source.source_id??source.id??source.source??null;
 for(const c of pilot.concepts)add(c.concept_id,c.domains,c.source_id,c.term,'EXTERNAL_PILOT');
-for(const batch of [external1,external2])for(const s of batch.sources)for(const c of s.concepts)add(c.id,c.domains,s.source_id,c.term??null,'EXTERNAL_EXPANSION');
-for(const batch of [internal1,internal2])for(const s of batch.sources)for(const c of s.concepts)add(c.id,c.domains,s.source_id,c.term??null,'INTERNAL_CORPUS');
-for(const f of review3.findings.filter(x=>x.status==='SUPPORTED_CANDIDATE'))add('B003-'+f.domain_id,[f.domain_id],null,f.domain_name??null,'PROJECT_CHAT_REVIEW');
-for(const s of gap4.sources)for(const c of s.concepts)add(c.id,c.domains,s.source_id??null,c.term??null,'PROJECT_SOURCE_GAP');
+for(const batch of [external1,external2])for(const s of batch.sources)for(const c of s.concepts)add(c.id,c.domains,sourceIdOf(s),c.term??null,'EXTERNAL_EXPANSION');
+for(const batch of [internal1,internal2])for(const s of batch.sources)for(const c of s.concepts)add(c.id,c.domains,sourceIdOf(s),c.term??null,'INTERNAL_CORPUS');
+for(const f of review3.findings.filter(x=>x.status==='SUPPORTED_CANDIDATE'))add('B003-'+f.domain_id,[f.domain_id],null,null,'PROJECT_CHAT_REVIEW');
+for(const s of gap4.sources)for(const c of s.concepts)add(c.id,c.domains,sourceIdOf(s),c.term??null,'PROJECT_SOURCE_GAP');
 
 export const convergenceEdges=semantic.edges.map(e=>({
  ...e,
