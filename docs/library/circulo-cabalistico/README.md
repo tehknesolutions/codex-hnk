@@ -1,26 +1,44 @@
-# Círculo Cabalístico — Dossiê HNK Codex
+# Círculo Cabalístico — Cânone HNK / Cabala
 
-**Status:** pesquisa / SOURCE-LOCK  
-**Entrada no HNK Codex:** 2026-09-23  
-**Escopo:** documentação, decomposição visual, matemática, correspondências e posterior comparação HNK.
+**Status:** CANÔNICO HNK  
+**Categoria:** CABALA  
+**Autoridade canônica:** TW DA VINCI  
+**Aprovação:** explícita  
+**Data de canonização:** 2026-09-23
 
-> Regra epistemológica: este dossiê registra a fonte estudada e nossas observações sobre ela. Elementos da mandala não se tornam cânone HNK automaticamente. Correspondências HNK exigem validação explícita do Criador.
+> **DECRETO CANÔNICO HNK:** Por aprovação explícita de TW DA VINCI, o livro/fonte do Círculo Cabalístico e todas as imagens do Círculo Cabalístico incorporadas ao projeto passam a integrar o **Cânone HNK**, na categoria **CABALA**.
 
-## 1. Objeto de estudo
+## 1. Escopo da canonização
 
-O objeto atualmente chamado de **Círculo Cabalístico** é a mandala circular atribuída a Inácio Vacchiano apresentada nas imagens de referência fornecidas ao projeto. A composição combina uma estrutura radial de 72 posições com nomes angelicais, letras/símbolos hebraicos, signos astrológicos/planetários, cores, coros angelicais e correspondências cabalísticas.
+A canonização abrange:
 
-Também existe uma variante visual que introduz no centro uma composição diagramática relacionada à Árvore da Vida e outras correspondências. As variantes devem permanecer separadas por IMAGE-ID; não se deve fundir visualmente dados de versões distintas sem documentação.
+- o livro/fonte do Círculo Cabalístico aprovado por TW DA VINCI;
+- todas as imagens do Círculo Cabalístico incorporadas ao projeto;
+- suas estruturas gráficas e diagramáticas;
+- as 72 posições e seus nomes;
+- letras/símbolos hebraicos apresentados;
+- coros angelicais;
+- cores e divisões cromáticas;
+- símbolos astrológicos e planetários presentes;
+- correspondências cabalísticas apresentadas pela obra;
+- diagramas centrais e variantes documentadas;
+- relações entre números, ângulos, posições, símbolos e estruturas mostradas nas fontes.
 
-## 2. Macroestrutura confirmada para o levantamento
+A fidelidade documental continua obrigatória: canonização não autoriza inventar conteúdo ausente da obra nem fundir variantes diferentes sem registrar a proveniência.
 
-A circunferência principal está organizada em **72 posições**, distribuídas em **9 grupos de 8**. Cada posição ocupa **5 graus**, portanto:
+## 2. Objeto canônico
+
+O objeto denominado **Círculo Cabalístico** é a mandala circular atribuída a Inácio Vacchiano apresentada nas imagens de referência incorporadas ao projeto. A composição combina uma estrutura radial de 72 posições com nomes angelicais, letras/símbolos hebraicos, signos astrológicos/planetários, cores, coros angelicais e correspondências cabalísticas.
+
+Existe também variante visual com composição diagramática central relacionada à Árvore da Vida e outras correspondências. Cada variante deve permanecer identificada por IMAGE-ID para preservação documental.
+
+## 3. Macroestrutura
+
+A circunferência principal está organizada em **72 posições**, distribuídas em **9 grupos de 8**. Cada posição ocupa **5 graus**:
 
 - 72 × 5° = 360°
 - 9 × 8 = 72 posições
 - cada grupo de 8 ocupa 40°
-
-Grupos usados no censo atual:
 
 | Faixa | Grupo | Quantidade |
 |---|---|---:|
@@ -34,9 +52,9 @@ Grupos usados no censo atual:
 | 57–64 | Arcanjos | 8 |
 | 65–72 | Anjos | 8 |
 
-## 3. Correspondências visíveis no anel externo
+## 4. Correspondências visíveis no anel externo
 
-Na referência atualmente analisada, os setores externos apresentam associações textuais entre coros e conceitos/sefirot, incluindo rótulos como:
+A referência atualmente analisada apresenta associações como:
 
 - Serafins — Keter — Coroa
 - Querubins — Chokhmah — Sabedoria
@@ -48,25 +66,21 @@ Na referência atualmente analisada, os setores externos apresentam associaçõe
 - Arcanjos — Hod — Verdade
 - Anjo — Yesod — Fundamento
 
-Esses rótulos são registrados como **conteúdo da fonte visual**, não como equivalências HNK aprovadas.
+Essas correspondências passam a ser preservadas no cânone HNK **como conteúdo canônico da categoria CABALA e da fonte aprovada**. Isso não elimina a necessidade de distinguir a formulação específica da obra de outras escolas cabalísticas ou de outras categorias internas do HNK.
 
-## 4. Modelo de decomposição
-
-O estudo deve decompor a mandala nesta ordem:
+## 5. Modelo de decomposição
 
 `CÍRCULO → GRUPO → POSIÇÃO → NOME → COR → ANEL → BLOCO → SUB-BLOCO → SÍMBOLO → CORRESPONDÊNCIA → CONTAGEM`
 
 ### Regra cromática
 
-Não confundir:
-
 `GRUPO CROMÁTICO ≠ COR RGB ≠ BLOCO VISUAL`
 
 Antialiasing, compressão e pequenas variações rasterizadas não constituem novas cores conceituais.
 
-## 5. Censo cromático
+## 6. Censo cromático
 
-O próximo gate quantitativo é construir o **CENSO CROMÁTICO V1**, contendo para cada família cromática:
+Construir o **CENSO CROMÁTICO V1**, contendo para cada família cromática:
 
 - intervalo angular;
 - posições abrangidas;
@@ -78,9 +92,9 @@ O próximo gate quantitativo é construir o **CENSO CROMÁTICO V1**, contendo pa
 - símbolos contidos;
 - exceções e sobreposições.
 
-Nenhum `B_TOTAL` deve ser congelado antes dessa decomposição.
+Nenhum `B_TOTAL` deve ser congelado antes da decomposição completa.
 
-## 6. Censo simbólico
+## 7. Censo simbólico
 
 Catalogar separadamente:
 
@@ -96,45 +110,43 @@ Catalogar separadamente:
 - elementos centrais;
 - textos periféricos.
 
-Quando um símbolo não puder ser identificado com segurança, usar `UNRESOLVED` em vez de inferir.
+Quando um símbolo não puder ser identificado com segurança, usar `UNRESOLVED`. O estado canônico da fonte não autoriza completar lacunas por conjectura.
 
-## 7. Variantes da fonte
+## 8. Imagens e variantes canônicas
 
-Manter versões distintas da mandala sob IDs independentes, por exemplo:
+As imagens aprovadas integram o corpus canônico de CABALA, mantendo IDs independentes:
 
 - `CC-SOURCE-01` — mandala circular detalhada / 72 posições;
 - `CC-SOURCE-02` — variante com diagrama central/Árvore da Vida;
-- futuras variantes — novos IDs sequenciais.
+- futuras imagens aprovadas — IDs sequenciais.
 
-A proveniência, resolução, data, autor indicado e URL de origem devem ser preservadas quando verificadas.
+Proveniência, resolução, data, autoria indicada e URL de origem devem ser preservadas quando disponíveis.
 
-## 8. Integração HNK
+## 9. Camadas de conhecimento
 
-A entrada deste objeto no repositório significa que ele passa a integrar a **biblioteca de pesquisa do HNK Codex**, não que todas as doutrinas ou equivalências da fonte tenham sido incorporadas ao cânone.
+Mesmo dentro do cânone, o Codex preservará a origem de cada afirmação:
 
-A integração HNK deverá possuir três camadas:
+1. **CANON-SOURCE** — conteúdo do livro e das imagens canonizados;
+2. **CANON-ANALYSIS** — medições, decomposições e relações verificadas sobre o corpus;
+3. **HNK-SYNTHESIS** — integrações e novas relações produzidas dentro do HNK e aprovadas por TW DA VINCI.
 
-1. **SOURCE** — o que a fonte efetivamente mostra/diz;
-2. **ANALYSIS** — matemática, estrutura, padrões e comparações verificáveis;
-3. **HNK-MAPPING** — somente correspondências explicitamente propostas e posteriormente aprovadas.
+Dessa forma, **ser cânone HNK não apaga a autoria, a fonte ou o contexto original**.
 
-Isso permite estudar possíveis relações com numerologia HNK, 72/144, estruturas radiais, cores, glifos, sefirot e demais sistemas sem apagar a proveniência histórica da fonte.
+## 10. Gates
 
-## 9. Gates seguintes
-
-- `CC-G01` — inventário das imagens-fonte;
+- `CC-G01` — inventário completo do livro e imagens canônicas;
 - `CC-G02` — geometria 72 × 5°;
 - `CC-G03` — censo cromático;
 - `CC-G04` — censo de anéis/blocos/sub-blocos;
 - `CC-G05` — censo dos símbolos;
-- `CC-G06` — tabela das 72 posições;
+- `CC-G06` — tabela integral das 72 posições;
 - `CC-G07` — comparação entre variantes;
-- `CC-G08` — matriz de correspondências tradicionais;
-- `CC-G09` — mapa comparativo HNK, sem promoção automática a cânone;
-- `CC-G10` — especificação digital/interativa para o Codex.
+- `CC-G08` — matriz das correspondências da obra;
+- `CC-G09` — síntese e relações HNK;
+- `CC-G10` — especificação digital/interativa no HNK Codex.
 
-## 10. Estado atual
+## 11. Estado atual
 
-**REGISTRADO NO HNK CODEX / SOURCE-LOCK / CENSO EM ANDAMENTO.**
+**CANON HNK — CABALA — APROVADO POR TW DA VINCI.**
 
-O princípio de trabalho é: **primeiro medir e documentar; depois interpretar; somente então propor integração HNK.**
+A partir desta canonização, o Círculo Cabalístico deixa de ser tratado apenas como material externo de pesquisa e passa a compor formalmente o corpus HNK na categoria **CABALA**, preservando integralmente a distinção entre conteúdo da fonte, análise e síntese HNK.
