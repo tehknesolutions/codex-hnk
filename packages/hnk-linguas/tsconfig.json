@@ -6,7 +6,8 @@
     "strict": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "target": "ES2022"
+    "target": "ES2022",
+    "types": []
   },
   "include": ["src/index.mjs", "src/index.d.ts"]
 }
