@@ -1,0 +1,53 @@
+name: Materialize AK Registry
+on:
+  push:
+    paths:
+      - '.github/workflows/materialize-ak-registry.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate and verify 475 AK records
+        shell: python
+        run: |
+          import csv, math
+          from pathlib import Path
+          p=Path('docs/library/circulo-cabalistico/CC-G04-F-AK-REGISTRY-V1.csv')
+          header=['AK_ID','REGION_ID','UNIT_TYPE','LOCAL_INDEX','PARENT_ID','POSITION_ID','CHOIR_ID','SECTOR12_ID','ANGLE_START_DEG','ANGLE_END_DEG','ATOMIC_STATUS','COLOR_ID','SYMBOL_ID','SOURCE_ID']
+          rows=[]
+          for c in range(1,10):
+              rows.append([f'AK-{c:04d}','OUTER-ANNULUS','HEADER_AK',c,f'CHOIR-{c:02d}','',f'CHOIR-{c:02d}','',(c-1)*40,c*40,'CONFIRMED','UNRESOLVED','UNRESOLVED','CC-SOURCE-01'])
+          n=10
+          for band in range(1,7):
+              for pos in range(1,73):
+                  choir=math.ceil(pos/8); sector=math.ceil(pos/6)
+                  rows.append([f'AK-{n:04d}','OUTER-ANNULUS',f'RADIAL_BAND_{band}',pos,f'POSITION-{pos:02d}',f'POSITION-{pos:02d}',f'CHOIR-{choir:02d}',f'SECTOR12-{sector:02d}',(pos-1)*5,pos*5,'CONFIRMED','UNRESOLVED','UNRESOLVED','CC-SOURCE-01']); n+=1
+          for sector in range(1,13):
+              rows.append([f'AK-{n:04d}','TRANSITION-12','TRANSITION_AK',sector,'TRANSITION-12','','',f'SECTOR12-{sector:02d}',(sector-1)*30,sector*30,'CONFIRMED','UNRESOLVED','UNRESOLVED','CC-SOURCE-01']); n+=1
+          for stratum,count in [('STRATUM-3',3),('STRATUM-7',7),('STRATUM-12',12)]:
+              for i in range(1,count+1):
+                  rows.append([f'AK-{n:04d}','ROSE-22','ROSE_PETAL',i,stratum,'','','','','','CONFIRMED','UNRESOLVED','UNRESOLVED','CC-SOURCE-01']); n+=1
+          ids=[r[0] for r in rows]
+          assert len(rows)==475
+          assert len(set(ids))==475
+          assert ids[0]=='AK-0001' and ids[-1]=='AK-0475'
+          assert ids==[f'AK-{i:04d}' for i in range(1,476)]
+          p.parent.mkdir(parents=True,exist_ok=True)
+          with p.open('w',newline='',encoding='utf-8') as f:
+              w=csv.writer(f,lineterminator='\n'); w.writerow(header); w.writerows(rows)
+          print('PASS records=475 unique=475 contiguous=AK-0001..AK-0475')
+      - name: Commit generated registry
+        run: |
+          git config user.name 'HNK Codex Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/library/circulo-cabalistico/CC-G04-F-AK-REGISTRY-V1.csv
+          git diff --cached --quiet && exit 0
+          git commit -m 'data: materializa 475 Atomic-Kodes individuais'
+          git push
