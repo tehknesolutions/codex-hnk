@@ -10,7 +10,7 @@ const v37=[
   ['AUTH-015','KALA',['G23','G01','G14','G01']],['AUTH-016','AN',['G01','G12']],['AUTH-017','EN',['G02','G12']],['AUTH-018','KU',['G23','G05']],['AUTH-019','KE',['G23','G02']],['AUTH-020','ZAMI',['G32','G01','G11','G03']],
 ];
 
-test('authored registry contains twenty governed Cycle 1 candidates',()=>{assert.equal(HNK_AUTHORED_CANDIDATES.length,20);assert.equal(HNK_AUTHORED_REGISTRY_STATS.candidates,20);assert.equal(HNK_AUTHORED_REGISTRY_STATS.cycle1Candidates,20);});
+test('authored registry contains 140 governed candidates while preserving the twenty-candidate Cycle 1 slice',()=>{assert.equal(HNK_AUTHORED_CANDIDATES.length,140);assert.equal(HNK_AUTHORED_REGISTRY_STATS.candidates,140);assert.equal(HNK_AUTHORED_REGISTRY_STATS.cycle1Candidates,20);});
 
 test('core authored candidates preserve their authorities',()=>{
   const kuvan=getAuthoredCandidate('kuvan'); assert.equal(kuvan.id,'AUTH-001'); assert.equal(kuvan.authority,'CANDIDATE'); assert.equal(kuvan.historicalRecoveryClaim,false); assert.deepEqual(kuvan.glyphIds,['G23','G05','G31','G01','G12']);
