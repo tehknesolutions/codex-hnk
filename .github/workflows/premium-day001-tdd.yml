@@ -1,0 +1,27 @@
+name: Premium Day 001 TDD
+
+on:
+  push:
+    branches: [feat/premium-day001-golden-master]
+    paths:
+      - 'apps/web/app/day-001/day001-premium-*'
+      - '.github/workflows/premium-day001-tdd.yml'
+  pull_request:
+    paths:
+      - 'apps/web/app/day-001/day001-premium-*'
+      - '.github/workflows/premium-day001-tdd.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test apps/web/app/day-001/day001-premium-contract.test.mjs apps/web/app/day-001/day001-premium-authority.test.mjs
