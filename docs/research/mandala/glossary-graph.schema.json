@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hnk://mandala/glossary-graph/v0.1",
+  "title": "HNK Cabalistic Glossary Knowledge Graph V0.1",
+  "type": "object",
+  "required": ["version", "entities", "relations"],
+  "properties": {
+    "version": {"const": "0.1"},
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "label", "authority"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"enum": ["MANDALA", "AK", "REGION", "RING", "SECTOR", "COLOR", "NUMBER", "SYMBOL", "HEBREW_LETTER", "SEFIRAH", "PATH", "ELEMENT", "PLANET", "ZODIAC", "SOUND", "HNK_CONCEPT", "GLYPH", "PIXEL", "ISOPIXEL", "VOXEL", "ENCODING", "SOURCE"]},
+          "label": {"type": "string"},
+          "authority": {"enum": ["OBSERVED", "MEASURED", "DERIVED", "EXTERNAL_REFERENCE", "HYPOTHESIS", "HNK_CANDIDATE", "HNK_CANONICAL", "UNRESOLVED"]},
+          "payload": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "from", "to", "authority", "provenance"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"enum": ["LOCATED_IN", "ADJACENT_TO", "CONTAINS", "ROTATES_TO", "MIRRORS", "OBSERVED_AS", "MEASURED_AS", "CORRESPONDS_TO", "DERIVED_FROM", "ENCODES", "TRANSFORMS_TO", "USES", "PROJECTS_TO"]},
+          "from": {"type": "string"},
+          "to": {"type": "string"},
+          "authority": {"enum": ["OBSERVED", "MEASURED", "DERIVED", "EXTERNAL_REFERENCE", "HYPOTHESIS", "HNK_CANDIDATE", "HNK_CANONICAL", "UNRESOLVED"]},
+          "tradition": {"type": ["string", "null"]},
+          "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+          "provenance": {"type": "array", "items": {"type": "string"}},
+          "payload": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
