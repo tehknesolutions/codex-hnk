@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "status": "HYPOTHESIS_TEST_SCAFFOLD",
+  "sourceAssetId": "HNK-MANDALA-SRC-0002",
+  "hypothesis": {
+    "id": "H-22",
+    "claim": "The central rose contains a structurally verifiable 3 + 7 + 12 = 22 organization relevant to its field topology.",
+    "status": "UNTESTED_BY_DEDICATED_MACHINE_PASS",
+    "targetFittingProhibited": true
+  },
+  "separationRule": "The central rose is an independent topology domain. Outer 72-sector polar boundaries MUST NOT be extended through the rose merely to manufacture fields.",
+  "candidateLayers": [
+    {"id":"CR-L1","expectedCountHypothesis":3,"observedCount":null,"status":"UNMEASURED"},
+    {"id":"CR-L2","expectedCountHypothesis":7,"observedCount":null,"status":"UNMEASURED"},
+    {"id":"CR-L3","expectedCountHypothesis":12,"observedCount":null,"status":"UNMEASURED"}
+  ],
+  "requiredPerCellEvidence": [
+    "closedOrDistinctRegionEvidence",
+    "angularOrTopologicalExtent",
+    "centroid",
+    "adjacency",
+    "observedColor",
+    "observedSymbolOrText",
+    "sourcePixelRegion",
+    "confidence"
+  ],
+  "pathResearch": {
+    "status":"SCAFFOLDED",
+    "principle":"If source-supported letter/symbol sequences traverse rose cells, represent the traversal as an ordered path over measured rose fields rather than as freehand geometry.",
+    "externalReferenceIsNotHNKCanon":true
+  },
+  "possibleOutcomeClasses": [
+    "SUPPORTED",
+    "PARTIALLY_SUPPORTED",
+    "REFUTED",
+    "UNRESOLVED"
+  ],
+  "promotionRule":"Only measured rose regions become CR-MF candidates. They receive AK identities only after adjacency/topology is stable under G4.",
+  "integrationTarget": {
+    "outerDomain":"MF:Rxx:Sxx",
+    "centralDomain":"CR-MF:Lx:Cxx",
+    "unification":"knowledge graph edges between independently measured domains",
+    "pixelRule":"A future HNK pixel/isopixel references the canonical field identity regardless of whether that field originated in outer polar topology or central rose topology."
+  }
+}
