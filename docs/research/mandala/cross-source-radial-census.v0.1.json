@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "status": "MEASURED_CROSS_SOURCE_CANDIDATE_NOT_CANONICAL",
+  "method": {
+    "description": "Radial edge-strength profiles sampled over 1440 angular positions and compared in normalized radius space. Source-specific central overlays are treated as confounders; outer-ring matches receive greater structural weight.",
+    "src0002": {"centerPx":{"x":449.5,"y":449.5},"radiusPx":449.0},
+    "src0003": {"centerPx":{"x":409.5,"y":429.5},"radiusPxCandidate":405.0},
+    "authority": "MEASURED"
+  },
+  "matches": [
+    {"src0002Px":169.0,"src0002Norm":0.3764,"src0003Px":154.5,"src0003Norm":0.3815,"deltaNorm":0.0051,"classification":"CROSS_SOURCE_SUPPORTED_CANDIDATE"},
+    {"src0002Px":230.5,"src0002Norm":0.5134,"src0003Px":200.5,"src0003Norm":0.4951,"deltaNorm":0.0183,"classification":"POSSIBLE_MATCH_OVERLAY_CONFOUNDED"},
+    {"src0002Px":309.5,"src0002Norm":0.6893,"src0003Px":284.0,"src0003Norm":0.7012,"deltaNorm":0.0119,"classification":"CROSS_SOURCE_SUPPORTED_CANDIDATE"},
+    {"src0002Px":388.0,"src0002Norm":0.8641,"src0003Px":347.0,"src0003Norm":0.8568,"deltaNorm":0.0073,"classification":"CROSS_SOURCE_SUPPORTED_CANDIDATE"},
+    {"src0002Px":420.0,"src0002Norm":0.9354,"src0003Px":380.5,"src0003Norm":0.9395,"deltaNorm":0.0041,"classification":"CROSS_SOURCE_SUPPORTED_CANDIDATE"}
+  ],
+  "src0002CandidatesWithoutCleanCrossMatch": [
+    {"radiusPx":162.5,"norm":0.3619,"note":"Close to the 169/154.5 family; may represent the second wall of one band or a distinct boundary. Do not merge yet."},
+    {"radiusPx":189.5,"norm":0.4220,"note":"No clean high-strength SRC-0003 counterpart in current profile."},
+    {"radiusPx":207.5,"norm":0.4621,"note":"No clean high-strength SRC-0003 counterpart in current profile; central overlay may confound."}
+  ],
+  "src0003AdditionalStrongOuterCandidates": [
+    {"radiusPx":302.0,"norm":0.7457},
+    {"radiusPx":317.5,"norm":0.7840},
+    {"radiusPx":332.0,"norm":0.8198},
+    {"radiusPx":364.0,"norm":0.8988},
+    {"radiusPx":389.0,"norm":0.9605}
+  ],
+  "interpretation": [
+    "At least four outer/near-outer radial families have close normalized-radius counterparts across both sources.",
+    "The strongest normalized agreements are near ~0.38, ~0.69-0.70, ~0.86 and ~0.94 of source radius.",
+    "The two sources are not geometrically identical in their inner composition; SRC-0003 contains a major central overlay and additional rings/graphics.",
+    "Cross-source agreement supports structural-family hypotheses but does not yet define canonical ring bands or AKs."
+  ],
+  "nextGate": "Use supported boundary families plus the per-source additional boundaries to classify actual structural bands, then intersect only verified bands with the 72-sector census."
+}
