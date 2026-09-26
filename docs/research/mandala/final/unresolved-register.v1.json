@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "status": "FINAL_UNRESOLVED_REGISTER",
+  "items": [
+    {
+      "id": "U01",
+      "scope": "L01",
+      "issue": "Exact semantic catalog of inner symbolic band A",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    },
+    {
+      "id": "U02",
+      "scope": "L02",
+      "issue": "Exact semantic catalog of inner symbolic band B",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    },
+    {
+      "id": "U03",
+      "scope": "L06",
+      "issue": "Exact per-sector semantic catalog of outer symbolic/astrological band",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    },
+    {
+      "id": "U04",
+      "scope": "R22",
+      "issue": "Exact rotation/mirroring mapping of the 7 Double and 12 Simple Hebrew letters onto SRC-0002 petal IDs",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    },
+    {
+      "id": "U05",
+      "scope": "CORE",
+      "issue": "Two of the Golden Cross six-square structure are occluded/merged by the central rose in the raster; source visibly exposes four arms while external Rose Cross tradition describes six squares.",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    },
+    {
+      "id": "U06",
+      "scope": "72_NAMES",
+      "issue": "Exact byte-for-byte transliteration spelling in SRC-0002 should be source-checked before promoting external transliteration variants as HNK canonical.",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    },
+    {
+      "id": "U07",
+      "scope": "SOUND_FREQUENCY",
+      "issue": "No acoustic frequency values are encoded by the source raster. Sound/frequency correspondences must come from a separate sourced or HNK-authored layer.",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    },
+    {
+      "id": "U08",
+      "scope": "SRC-0003_CENTER",
+      "issue": "SRC-0003 central overlay is a different composition and remains excluded from P0 rose topology.",
+      "blockingGeometry": false,
+      "blockingAKAddress": false
+    }
+  ],
+  "conclusion": "No unresolved item blocks freezing Mandala geometry/address space. They block only semantic/correspondence canonization where stated."
+}
