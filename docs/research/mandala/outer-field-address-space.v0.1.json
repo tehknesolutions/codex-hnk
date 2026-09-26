@@ -1,0 +1,60 @@
+{
+  "version": "0.1",
+  "status": "CONDITIONAL_ADDRESS_SPACE_NOT_AK",
+  "sourceModel": "shared-ring-sector-matrix-candidate.v0.1",
+  "purpose": "Define the complete deterministic address space implied by four shared candidate radial bands crossed with 72 candidate angular sectors, without promoting any address to AK or claiming that every intersection is structurally valid.",
+  "invariants": [
+    "MANDALA_FIRST",
+    "MF_IS_NOT_AK",
+    "FIELD_VALIDITY_REQUIRES_OBSERVED_BOUNDARY_CONTINUITY",
+    "CENTRAL_ROSE_EXCLUDED",
+    "441_NOT_ASSUMED",
+    "PIXEL_AND_ISOPIXEL_REMAIN_PROJECTIONS"
+  ],
+  "dimensions": {
+    "candidateRings": 4,
+    "candidateSectors": 72,
+    "conditionalAddressCount": 288,
+    "sectorStepDegrees": 5.0,
+    "sectorPhaseDegreesCandidate": 0.26
+  },
+  "rings": [
+    {"id":"R01","innerBoundaryNormalizedR":0.38,"outerBoundaryNormalizedR":0.50,"outerBoundaryStatus":"POSSIBLE_CROSS_SOURCE_MATCH","status":"CONDITIONAL"},
+    {"id":"R02","innerBoundaryNormalizedR":0.50,"outerBoundaryNormalizedR":0.695,"innerBoundaryStatus":"POSSIBLE_CROSS_SOURCE_MATCH","status":"CONDITIONAL"},
+    {"id":"R03","innerBoundaryNormalizedR":0.695,"outerBoundaryNormalizedR":0.86,"status":"CROSS_SOURCE_CANDIDATE"},
+    {"id":"R04","innerBoundaryNormalizedR":0.86,"outerBoundaryNormalizedR":0.94,"status":"CROSS_SOURCE_CANDIDATE"}
+  ],
+  "sectorDefinition": {
+    "idPattern":"S00..S71",
+    "thetaStartFormula":"phase + sectorIndex * 5deg",
+    "thetaEndFormula":"phase + (sectorIndex + 1) * 5deg",
+    "thetaCenterFormula":"phase + (sectorIndex + 0.5) * 5deg",
+    "wrap":"mod 360"
+  },
+  "fieldDefinition": {
+    "idPattern":"MF:R{01..04}:S{00..71}",
+    "count":288,
+    "canonicalIdentity":false,
+    "validStates":["UNMEASURED","SUPPORTED","PARTIAL","REFUTED","UNRESOLVED"],
+    "requiredEvidencePerField":["radialBandSupport","leftBoundarySupport","rightBoundarySupport","intersectionContinuity","sourceRefs"]
+  },
+  "topologyCandidate": {
+    "angularNeighbors":"same ring, sector (s-1 mod 72) and (s+1 mod 72)",
+    "radialNeighbors":"same sector, adjacent supported ring where defined",
+    "rotationGenerators":[
+      {"degrees":5,"sectorDelta":1,"status":"DERIVED_IF_72_VERIFIED"},
+      {"degrees":30,"sectorDelta":6,"status":"DERIVED_IF_72_VERIFIED"},
+      {"degrees":40,"sectorDelta":8,"status":"DERIVED_IF_72_VERIFIED"},
+      {"degrees":45,"sectorDelta":9,"status":"DERIVED_IF_72_VERIFIED"},
+      {"degrees":60,"sectorDelta":12,"status":"DERIVED_IF_72_VERIFIED"},
+      {"degrees":90,"sectorDelta":18,"status":"DERIVED_IF_72_VERIFIED"},
+      {"degrees":120,"sectorDelta":24,"status":"DERIVED_IF_72_VERIFIED"},
+      {"degrees":180,"sectorDelta":36,"status":"DERIVED_IF_72_VERIFIED"}
+    ]
+  },
+  "nextGate": {
+    "name":"MF-288 continuity census",
+    "passCondition":"Measure boundary continuity at every conditional ring×sector intersection and classify all 288 addresses without target-fitting cardinality.",
+    "promotionRule":"Only SUPPORTED fields enter the topology graph candidate. Stable AK IDs remain blocked until G4."
+  }
+}
