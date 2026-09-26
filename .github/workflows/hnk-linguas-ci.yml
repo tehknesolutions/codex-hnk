@@ -1,0 +1,32 @@
+name: HNK Linguas CI
+
+on:
+  push:
+    paths:
+      - 'packages/hnk-linguas/**'
+      - 'packages/hnk-glyphs/**'
+      - '.github/workflows/hnk-linguas-ci.yml'
+  pull_request:
+    paths:
+      - 'packages/hnk-linguas/**'
+      - 'packages/hnk-glyphs/**'
+      - '.github/workflows/hnk-linguas-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  test-hnk-linguas:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/hnk-linguas
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run HNK Linguas tests
+        run: npm test
