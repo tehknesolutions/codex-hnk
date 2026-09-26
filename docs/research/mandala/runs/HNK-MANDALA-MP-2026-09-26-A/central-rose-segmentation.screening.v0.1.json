@@ -1,0 +1,38 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "sourceAssetId":"HNK-MANDALA-SRC-0002",
+  "status":"SCREENING_ONLY_NOT_H22_ADJUDICATION",
+  "methodologicalNote":"This screening records only conservative structural conclusions available before a dedicated reproducible cell-label dataset is persisted. It does not claim a machine-verified 3/7/12 segmentation and does not promote H-22.",
+  "observations":[
+    {
+      "id":"CR-OBS-01",
+      "authority":"OBSERVED",
+      "claim":"The central rose is visually/compositionally distinct from the outer 72-fold annular domain and must retain an independent topology model."
+    },
+    {
+      "id":"CR-OBS-02",
+      "authority":"OBSERVED",
+      "claim":"SRC-0003 has a materially different central composition and is unsuitable as an independent cardinality confirmation for the SRC-0002 rose."
+    },
+    {
+      "id":"CR-OBS-03",
+      "authority":"HYPOTHESIS",
+      "claim":"A 3 + 7 + 12 layered organization may exist in SRC-0002, but it remains a target hypothesis until cells and layers are independently segmented and counted."
+    }
+  ],
+  "h22":{
+    "claim":"central rose has independently observed layers/cells totaling 3 + 7 + 12 = 22",
+    "status":"UNRESOLVED",
+    "reason":"No complete persisted machine-generated cell-label map with threshold sensitivity and adjacency graph exists yet."
+  },
+  "requiredForNextPromotion":[
+    "Persist exact central ROI and calibration parameters.",
+    "Persist independently detected closed-region/cell candidates with centroids, areas and boundary confidence.",
+    "Run sensitivity analysis over declared segmentation thresholds/scales.",
+    "Build adjacency graph from stable cells only.",
+    "Infer layers from geometry before comparing layer counts with 3/7/12.",
+    "Record H-22 as SUPPORTED, PARTIALLY_SUPPORTED, REFUTED or UNRESOLVED solely from that dataset."
+  ],
+  "blocked":["CR-MF promotion","AK assignment","canonical 22-cell claim","Hebrew/HNK semantic assignment from geometry"]
+}
