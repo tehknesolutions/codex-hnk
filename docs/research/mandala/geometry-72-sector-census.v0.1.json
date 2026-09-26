@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "status": "MEASURED_CANDIDATE_NOT_CANONICAL",
+  "sourceAssetId": "HNK-MANDALA-SRC-0002",
+  "calibration": {
+    "centerPx": {"x": 449.5, "y": 449.5},
+    "outerRadiusPxCandidate": 449.0,
+    "angularDivisionHypothesis": 72,
+    "theoreticalStepDegrees": 5.0,
+    "measuredPhaseDegreesCandidate": 0.26,
+    "meanAbsoluteAngularErrorDegreesCandidate": 0.277,
+    "rmsAngularErrorDegreesCandidate": 0.375,
+    "maxObservedAngularErrorDegreesCandidate": 0.66,
+    "predictedPositionsAboveGlobalP90": 65,
+    "predictedPositionCount": 72,
+    "measurementAuthority": "MEASURED",
+    "notes": [
+      "Values are the current machine-pass candidates and require a reproducible per-boundary table before promotion.",
+      "The 72-fold structure is not an AK cardinality claim.",
+      "A 72-fold partition mathematically implies a 5-degree theoretical sector step if verified."
+    ]
+  },
+  "sectorBoundaries": [
+    {"id":"B00","idealDegrees":0.26},{"id":"B01","idealDegrees":5.26},{"id":"B02","idealDegrees":10.26},{"id":"B03","idealDegrees":15.26},{"id":"B04","idealDegrees":20.26},{"id":"B05","idealDegrees":25.26},{"id":"B06","idealDegrees":30.26},{"id":"B07","idealDegrees":35.26},{"id":"B08","idealDegrees":40.26},{"id":"B09","idealDegrees":45.26},{"id":"B10","idealDegrees":50.26},{"id":"B11","idealDegrees":55.26},{"id":"B12","idealDegrees":60.26},{"id":"B13","idealDegrees":65.26},{"id":"B14","idealDegrees":70.26},{"id":"B15","idealDegrees":75.26},{"id":"B16","idealDegrees":80.26},{"id":"B17","idealDegrees":85.26},{"id":"B18","idealDegrees":90.26},{"id":"B19","idealDegrees":95.26},{"id":"B20","idealDegrees":100.26},{"id":"B21","idealDegrees":105.26},{"id":"B22","idealDegrees":110.26},{"id":"B23","idealDegrees":115.26},{"id":"B24","idealDegrees":120.26},{"id":"B25","idealDegrees":125.26},{"id":"B26","idealDegrees":130.26},{"id":"B27","idealDegrees":135.26},{"id":"B28","idealDegrees":140.26},{"id":"B29","idealDegrees":145.26},{"id":"B30","idealDegrees":150.26},{"id":"B31","idealDegrees":155.26},{"id":"B32","idealDegrees":160.26},{"id":"B33","idealDegrees":165.26},{"id":"B34","idealDegrees":170.26},{"id":"B35","idealDegrees":175.26},{"id":"B36","idealDegrees":180.26},{"id":"B37","idealDegrees":185.26},{"id":"B38","idealDegrees":190.26},{"id":"B39","idealDegrees":195.26},{"id":"B40","idealDegrees":200.26},{"id":"B41","idealDegrees":205.26},{"id":"B42","idealDegrees":210.26},{"id":"B43","idealDegrees":215.26},{"id":"B44","idealDegrees":220.26},{"id":"B45","idealDegrees":225.26},{"id":"B46","idealDegrees":230.26},{"id":"B47","idealDegrees":235.26},{"id":"B48","idealDegrees":240.26},{"id":"B49","idealDegrees":245.26},{"id":"B50","idealDegrees":250.26},{"id":"B51","idealDegrees":255.26},{"id":"B52","idealDegrees":260.26},{"id":"B53","idealDegrees":265.26},{"id":"B54","idealDegrees":270.26},{"id":"B55","idealDegrees":275.26},{"id":"B56","idealDegrees":280.26},{"id":"B57","idealDegrees":285.26},{"id":"B58","idealDegrees":290.26},{"id":"B59","idealDegrees":295.26},{"id":"B60","idealDegrees":300.26},{"id":"B61","idealDegrees":305.26},{"id":"B62","idealDegrees":310.26},{"id":"B63","idealDegrees":315.26},{"id":"B64","idealDegrees":320.26},{"id":"B65","idealDegrees":325.26},{"id":"B66","idealDegrees":330.26},{"id":"B67","idealDegrees":335.26},{"id":"B68","idealDegrees":340.26},{"id":"B69","idealDegrees":345.26},{"id":"B70","idealDegrees":350.26},{"id":"B71","idealDegrees":355.26}
+  ],
+  "nextMeasurement": {
+    "required": true,
+    "fields": ["observedDegrees", "signedErrorDegrees", "absoluteErrorDegrees", "responseStrength", "confidence", "radialSpanPx"],
+    "gate": "Populate all 72 observed boundary measurements from the locked source before declaring H-72 SUPPORTED."
+  }
+}
