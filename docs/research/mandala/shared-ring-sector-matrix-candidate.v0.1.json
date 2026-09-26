@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "status": "DERIVED_CANDIDATE_NOT_CANONICAL",
+  "sources": ["HNK-MANDALA-SRC-0002", "HNK-MANDALA-SRC-0003"],
+  "basis": {
+    "sharedNormalizedBoundaryCandidates": [0.38, 0.695, 0.86, 0.94],
+    "angularSectorCandidateCount": 72,
+    "angularStepDegrees": 5.0,
+    "note": "Shared radial boundaries are cross-source candidates. Applying all 72 sectors to every band is a structural hypothesis to test, not an observation."
+  },
+  "bands": [
+    {"id":"R00","rMinNorm":0.0,"rMaxNorm":0.38,"sectorCountCandidate":72,"fieldCountIfFullyPartitioned":72,"status":"CENTRAL_REGION_DO_NOT_PROMOTE_AS_POLAR_BAND"},
+    {"id":"R01","rMinNorm":0.38,"rMaxNorm":0.695,"sectorCountCandidate":72,"fieldCountIfFullyPartitioned":72,"status":"CANDIDATE_SHARED_BAND"},
+    {"id":"R02","rMinNorm":0.695,"rMaxNorm":0.86,"sectorCountCandidate":72,"fieldCountIfFullyPartitioned":72,"status":"CANDIDATE_SHARED_BAND"},
+    {"id":"R03","rMinNorm":0.86,"rMaxNorm":0.94,"sectorCountCandidate":72,"fieldCountIfFullyPartitioned":72,"status":"CANDIDATE_SHARED_BAND"},
+    {"id":"R04","rMinNorm":0.94,"rMaxNorm":1.0,"sectorCountCandidate":72,"fieldCountIfFullyPartitioned":72,"status":"CANDIDATE_SHARED_BAND"}
+  ],
+  "counts": {
+    "outerBandsOnlyIf72FoldPersists": 288,
+    "includingCentralRegionIfIncorrectlyForcedTo72": 360,
+    "canonicalFieldCount": null
+  },
+  "h441Assessment": {
+    "status": "UNRESOLVED",
+    "reason": "The shared outer-boundary model alone yields neither 441 nor evidence sufficient to refute it. Source-specific radial bands and central-rose topology remain unresolved."
+  },
+  "h22Assessment": {
+    "status": "UNRESOLVED",
+    "reason": "Central region is explicitly excluded from forced 72-sector topology and requires independent petal/path census."
+  },
+  "matrixAddressRule": "MF:R{01..04}:S{00..71}",
+  "matrixCandidateCellCount": 288,
+  "promotionRequirements": [
+    "Demonstrate that each of the 72 radial boundaries traverses each proposed outer band as a structural divider.",
+    "Measure source-specific radial boundaries rather than discarding them merely because they are not shared.",
+    "Separate central-rose topology from outer polar topology.",
+    "Generate per-cell evidence before assigning AK identities."
+  ]
+}
