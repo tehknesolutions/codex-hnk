@@ -1,0 +1,22 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "status":"TOPOLOGY_FREEZE_CANDIDATE_NOT_CANONICAL_AK",
+  "decision":"Freeze the measured coordinate architecture now and stop treating every ring-sector intersection as an atom. Atomic identity will be assigned to stable structural coordinates/units, while compound fields are represented compositionally.",
+  "coordinateArchitecture":{
+    "outer":{"angularBasis":{"count":72,"stepDeg":5,"status":"PARTIALLY_SUPPORTED_CROSS_SOURCE"},"radialBasis":{"candidateSharedBoundariesNormalized":[0.38,0.50,0.695,0.86,0.94],"derivedBands":4,"status":"MIXED_SUPPORT"},"compoundAddress":"MF:R{band}:S{sector}","conditionalCompoundCount":288,"atomicInterpretation":false},
+    "central":{"families":[{"id":"CR3","periodicity":3,"radialPx":[27,62],"status":"SUPPORTED_PERIODICITY_WITH_STRONG_LOCAL_CLOSURE"},{"id":"CR7","periodicity":7,"radialPx":[65,110],"status":"SUPPORTED_PERIODICITY_PARTIAL_CLOSURE"},{"id":"CR12","periodicity":12,"radialPx":[112,160],"status":"SUPPORTED_PERIODICITY_PARTIAL_CLOSURE"}],"candidateCompositionalUnitCount":22,"planarFaceCountCanonical":false},
+    "bridge":{"status":"UNFROZEN","rule":"No outer ray is extended into the central rose unless an observed boundary relation supports it."}
+  },
+  "atomicModelCandidate":{
+    "principle":"Use factorized coordinates rather than target-fitted raster cells.",
+    "outerSectorAtomsCandidate":72,
+    "centralCompositionalAtomsCandidate":22,
+    "radialBandStatesCandidate":4,
+    "important":"72 + 22 + 4 must not be interpreted as a final AK count yet; the three sets play different semantic/topological roles.",
+    "compoundFieldRule":"An outer field is an ordered tuple (sector, radial-band-state, relations), not necessarily a unique primitive atom.",
+    "glyphRule":"Glyphs may be paths over atomic/coordinate nodes and compound fields; bitmap occupancy is a projection."
+  },
+  "hypotheses":{"H72":"PARTIALLY_SUPPORTED","H22":"PARTIALLY_SUPPORTED","H441":"UNRESOLVED_AND_NOT_REQUIRED_BY_CURRENT_MODEL"},
+  "researchClosure":{"geometryPhase":"SUBSTANTIALLY_COMPLETE_FOR_SCHEMA_DESIGN","remainingValidation":"central planar-face enumeration and per-field cross-source refinement can continue as validation work without blocking schema/projection prototyping","g4":"LIMITED_CANDIDATE_MODE","allowedNow":["candidate AK namespace design","coordinate encoding","binary/hex encoding design","pixel/isopixel projection design","I-Ching correspondence research","sound/color correspondence schema","candidate glyph path generation"],"stillBlocked":["claiming a final canonical AK cardinality","canonical H-441","canonical 22 planar faces","silent reassignment of future canonical AK IDs"]}
+}
