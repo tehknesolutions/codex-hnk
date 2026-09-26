@@ -1,0 +1,13 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "sourceAssetId":"HNK-MANDALA-SRC-0002",
+  "status":"MEASURED_SCREENING_NOT_CELL_CENSUS",
+  "roi":{"centerPx":{"x":449.5,"y":449.5},"radiusPx":160},
+  "method":{"edgeDetector":"Canny","thresholdPairs":[[30,90],[50,150],[70,210],[90,270]],"contourAreaPx2":{"min":40,"max":15000},"centroidRadiusLimitPx":150,"stabilityClustering":{"algorithm":"DBSCAN","epsilonPx":4,"minSamples":3}},
+  "rawClosedContourCandidatesByThreshold":[{"threshold":[30,90],"count":164},{"threshold":[50,150],"count":155},{"threshold":[70,210],"count":151},{"threshold":[90,270],"count":134}],
+  "crossThresholdCentroidClusters":{"stableAcrossAtLeast3ThresholdSettings":89,"interpretation":"These are stable contour/centroid features, not 89 proven Mandala cells. Nested/double edges, symbols and internal strokes can create multiple contours per compositional cell."},
+  "conclusion":{"h22Status":"UNRESOLVED","reason":"Naive closed-contour counts vary from 134 to 164 and stable centroid clustering yields 89 features, demonstrating that edge contours cannot be equated directly with semantic/compositional cells. A topology-aware region-merging pass is required before cardinality testing.","antiTargetFittingResult":"No evidence-based operation performed in this screening produces 22 independent cells; no merging will be tuned to target 22."},
+  "nextPass":{"name":"topology-aware region merging","requirements":["collapse paired/double boundaries","separate symbol/internal-stroke contours from enclosing cell boundaries","use previously measured radial scales as geometry evidence rather than target layer counts","derive planar regions and adjacency","measure stability of merged regions across all four threshold settings","only then compare observed layer/cardinality structure with 3/7/12"]},
+  "blocked":["H-22 promotion","CR-MF promotion","AK assignment","semantic correspondence assignment"]
+}
