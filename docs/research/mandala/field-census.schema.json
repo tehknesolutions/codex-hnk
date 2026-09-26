@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hnk://mandala/field-census/v0.1",
+  "title": "HNK Mandala Field Census V0.1",
+  "type": "object",
+  "required": ["version", "sourceAssetId", "calibration", "structures", "hypothesisTests"],
+  "properties": {
+    "version": {"const": "0.1"},
+    "sourceAssetId": {"type": "string"},
+    "calibration": {
+      "type": "object",
+      "required": ["status", "center", "orientationDegrees", "outerRadius", "errorPx"],
+      "properties": {
+        "status": {"enum": ["UNRESOLVED", "MEASURED", "VERIFIED"]},
+        "center": {"type": ["object", "null"], "properties": {"x": {"type": "number"}, "y": {"type": "number"}}, "required": ["x", "y"], "additionalProperties": false},
+        "orientationDegrees": {"type": ["number", "null"]},
+        "outerRadius": {"type": ["number", "null"]},
+        "errorPx": {"type": ["number", "null"], "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "structures": {
+      "type": "object",
+      "required": ["rings", "sectors", "regions", "fields"],
+      "properties": {
+        "rings": {"type": "array"},
+        "sectors": {"type": "array"},
+        "regions": {"type": "array"},
+        "fields": {"type": "array"}
+      },
+      "additionalProperties": false
+    },
+    "hypothesisTests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "status", "evidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "claim": {"type": "string"},
+          "status": {"enum": ["UNTESTED", "SUPPORTED", "PARTIALLY_SUPPORTED", "REFUTED", "UNRESOLVED"]},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

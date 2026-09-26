@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "sourceAssetId": "HNK-MANDALA-SRC-0000",
+  "calibration": {
+    "status": "UNRESOLVED",
+    "center": null,
+    "orientationDegrees": null,
+    "outerRadius": null,
+    "errorPx": null
+  },
+  "structures": {
+    "rings": [],
+    "sectors": [],
+    "regions": [],
+    "fields": []
+  },
+  "hypothesisTests": [
+    {"id": "H-441", "claim": "The relevant source contains 441 canonical minimum fields arranged as 9 + 6x72.", "status": "UNTESTED", "evidence": []},
+    {"id": "H-72", "claim": "A verified 72-fold structural division exists in the relevant source.", "status": "UNTESTED", "evidence": []},
+    {"id": "H-22", "claim": "The central rose has a verified 3 + 7 + 12 = 22 field/petal structure.", "status": "UNTESTED", "evidence": []}
+  ]
+}
