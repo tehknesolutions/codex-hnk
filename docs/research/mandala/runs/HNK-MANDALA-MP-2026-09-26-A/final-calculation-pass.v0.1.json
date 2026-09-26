@@ -1,0 +1,29 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "status":"FINAL_CALCULATION_PASS_CONSOLIDATED_WITH_OPEN_FACE_ENUMERATION",
+  "purpose":"Collapse the accumulated Mandala research into one adjudication snapshot, explicitly separating measured results from unresolved topology so G4 is not opened prematurely.",
+  "verifiedResults":{
+    "outer72":{"status":"PARTIALLY_SUPPORTED","basis":"5-degree periodic family detected in SRC-0002 and independently present in SRC-0003; cross-source confirmation remains heterogeneous at individual boundaries."},
+    "outerConditionalAddressSpace":{"count":288,"meaning":"4 candidate radial bands x 72 candidate sectors; address space only, not canonical cell count."},
+    "mf288Screening":{"supported":60,"partial":68,"unresolved":160,"strongestRings":["R03","R04"],"fieldCountEstablished":false},
+    "centralRose":{"status":"PARTIALLY_SUPPORTED_3_7_12_PERIODICITY","families":[{"id":"CR3","count":3,"closureStrong":3},{"id":"CR7","count":7,"closureStrong":2},{"id":"CR12","count":12,"closureStrong":4}],"strictClosedFacesEstablished":false},
+    "H22":{"status":"PARTIALLY_SUPPORTED","reason":"Independent 3/7/12 periodic families occur at distinct radial scales, but 22 independently bounded planar faces have not been demonstrated."},
+    "H441":{"status":"UNRESOLVED","reason":"No measured topology currently yields or independently supports 441 atomic fields; target fitting is forbidden."}
+  },
+  "cardinalityBounds":{
+    "canonicalAKCount":"UNRESOLVED",
+    "outerStrongScreeningCount":60,
+    "outerStrongPlusPartialScreeningCount":128,
+    "centralPeriodicCandidateUnits":22,
+    "warning":"60, 128 and 22 are evidence-class/cardinality summaries, not quantities that may be arithmetically combined into a canonical AK total."
+  },
+  "finalBlockingProblem":{
+    "name":"planar face reconstruction + cross-source field refinement",
+    "central":"Trace actual rose walls, collapse double edges, mask internal symbol strokes, build planar graph and enumerate bounded faces without 22 as a target.",
+    "outer":"Refine the 288 conditional fields with cross-source boundary continuity; preserve source-specific and unresolved fields.",
+    "whyBlocking":"Atomic identity requires reproducible fields/faces, not periodicity or heuristic scores alone."
+  },
+  "g4":{"open":false,"reason":"Final canonical field cardinality and frozen topology are not yet established.","whatCanProceedNow":["schema engineering","projection mathematics","correspondence-layer research","noncanonical visualization"],"blocked":["canonical AK numbering","canonical glyph inventory","canonical pixel/isopixel grid","promotion of H-22","promotion of H-441"]},
+  "decision":"Stop micro-gating. The next executable research operation must batch the remaining central planar-face reconstruction and outer cross-source refinement, then emit one topology-freeze candidate and one final hypothesis adjudication."
+}
