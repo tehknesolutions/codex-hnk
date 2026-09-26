@@ -1,0 +1,386 @@
+{
+  "version": "1.0",
+  "status": "MANDALA_COMPUTABLE_V1_CANDIDATE_FREEZE",
+  "sourceAuthority": {
+    "primary": {
+      "id": "HNK-MANDALA-SRC-0002",
+      "sha256": "7ebf953481cdc0e09de44755bfae45044cb391c799a8ddb0d571ed43e0621ac9",
+      "dimensions": [
+        900,
+        900
+      ],
+      "role": "P0 geometry + central rose"
+    },
+    "crosscheck": {
+      "id": "HNK-MANDALA-SRC-0003",
+      "sha256": "99bd9b8c690431c052b318541319e6ba764b736d746a2f51cfe93f007489fbb1",
+      "dimensions": [
+        820,
+        859
+      ],
+      "decodedFormat": "JPEG despite .png filename",
+      "role": "outer geometry cross-check only"
+    }
+  },
+  "coordinateSystem": {
+    "centerPx": [
+      449.5,
+      449.5
+    ],
+    "outerRadiusPx": 449,
+    "thetaZero": "EAST",
+    "thetaPositive": "COUNTERCLOCKWISE",
+    "sector1StartDeg": 90,
+    "sectorCount": 72,
+    "sectorStepDeg": 5,
+    "choirCount": 9,
+    "sectorsPerChoir": 8,
+    "choirAngularSpanDeg": 40
+  },
+  "radialStructure": {
+    "centralRoseDomainPx": [
+      0,
+      160
+    ],
+    "roseOuterSeparatorPx": [
+      160,
+      168.5
+    ],
+    "sectorizedLayerBoundariesPx": [
+      168.5,
+      190.5,
+      208.5,
+      231.5,
+      310.5,
+      387.5,
+      419.5
+    ],
+    "sectorizedLayers": [
+      {
+        "id": "L01",
+        "r": [
+          168.5,
+          190.5
+        ],
+        "rho": [
+          0.375278,
+          0.424276
+        ],
+        "observedContent": "inner symbolic band A",
+        "semanticStatus": "UNRESOLVED"
+      },
+      {
+        "id": "L02",
+        "r": [
+          190.5,
+          208.5
+        ],
+        "rho": [
+          0.424276,
+          0.464365
+        ],
+        "observedContent": "inner symbolic band B",
+        "semanticStatus": "UNRESOLVED"
+      },
+      {
+        "id": "L03",
+        "r": [
+          208.5,
+          231.5
+        ],
+        "rho": [
+          0.464365,
+          0.51559
+        ],
+        "observedContent": "01-72 ordinal band",
+        "semanticStatus": "OBSERVED"
+      },
+      {
+        "id": "L04",
+        "r": [
+          231.5,
+          310.5
+        ],
+        "rho": [
+          0.51559,
+          0.691537
+        ],
+        "observedContent": "Latin/transliterated angel-name band",
+        "semanticStatus": "OBSERVED"
+      },
+      {
+        "id": "L05",
+        "r": [
+          310.5,
+          387.5
+        ],
+        "rho": [
+          0.691537,
+          0.863029
+        ],
+        "observedContent": "Hebrew angel-name band",
+        "semanticStatus": "OBSERVED"
+      },
+      {
+        "id": "L06",
+        "r": [
+          387.5,
+          419.5
+        ],
+        "rho": [
+          0.863029,
+          0.934298
+        ],
+        "observedContent": "outer symbolic/astrological band",
+        "semanticStatus": "PARTIALLY_RESOLVED"
+      }
+    ],
+    "choirBand": {
+      "id": "G",
+      "r": [
+        419.5,
+        449
+      ],
+      "rho": [
+        0.934298,
+        1
+      ],
+      "cells": 9,
+      "observedContent": "choir + sefirah + meaning labels"
+    },
+    "crossSourceBoundarySupport": [
+      {
+        "src2Rho": 0.691537,
+        "src3Rho": 0.69434,
+        "delta": 0.002803,
+        "status": "STRONG_SHARED"
+      },
+      {
+        "src2Rho": 0.863029,
+        "src3Rho": 0.855346,
+        "delta": 0.007683,
+        "status": "STRONG_SHARED"
+      },
+      {
+        "src2Rho": 0.934298,
+        "src3Rho": 0.938365,
+        "delta": 0.004066,
+        "status": "STRONG_SHARED"
+      },
+      {
+        "src2Rho": 0.424276,
+        "src3Rho": 0.408805,
+        "delta": 0.015471,
+        "status": "POSSIBLE_SHARED"
+      },
+      {
+        "src2Rho": 0.464365,
+        "src3Rho": 0.490566,
+        "delta": 0.026201,
+        "status": "SOURCE_DEPENDENT_OR_MERGED"
+      },
+      {
+        "src2Rho": 0.51559,
+        "src3Rho": 0.490566,
+        "delta": 0.025024,
+        "status": "SOURCE_DEPENDENT_OR_MERGED"
+      }
+    ]
+  },
+  "sixBySeventyTwoEvidence": {
+    "method": "For each of the six source bands, all 72 ideal 5-degree sector windows contain >10% non-background content when compared with the measured group background.",
+    "perLayer": [
+      {
+        "layer": "L01",
+        "minOccupancy": 0.247148,
+        "medianOccupancy": 0.431227,
+        "sectorsAbove10Pct": 72
+      },
+      {
+        "layer": "L02",
+        "minOccupancy": 0.236287,
+        "medianOccupancy": 0.577832,
+        "sectorsAbove10Pct": 72
+      },
+      {
+        "layer": "L03",
+        "minOccupancy": 0.234421,
+        "medianOccupancy": 0.387811,
+        "sectorsAbove10Pct": 72
+      },
+      {
+        "layer": "L04",
+        "minOccupancy": 0.124349,
+        "medianOccupancy": 0.251389,
+        "sectorsAbove10Pct": 72
+      },
+      {
+        "layer": "L05",
+        "minOccupancy": 0.168926,
+        "medianOccupancy": 0.338199,
+        "sectorsAbove10Pct": 72
+      },
+      {
+        "layer": "L06",
+        "minOccupancy": 0.131757,
+        "medianOccupancy": 0.257886,
+        "sectorsAbove10Pct": 72
+      }
+    ]
+  },
+  "cardinalities": {
+    "H72": {
+      "status": "SUPPORTED",
+      "meaning": "72 numbered angular sectors / 5 degrees each"
+    },
+    "H441": {
+      "status": "SUPPORTED_AS_OUTER_LAYOUT_BLOCK_COUNT",
+      "formula": "6*72 + 9",
+      "value": 441,
+      "warning": "441 is a source-layout block count, not yet the canonical AK count."
+    },
+    "H22": {
+      "status": "SUPPORTED_AS_CENTRAL_ROSE_COMPOSITION",
+      "formula": "3 + 7 + 12",
+      "value": 22,
+      "warning": "22 is the petal/letter topology, not 22 radial rectangles."
+    },
+    "majorAddressableFieldsCandidate": {
+      "formula": "441 + 22",
+      "value": 463,
+      "scope": "outer layout blocks + rose petals; core composite excluded"
+    },
+    "canonicalAKCount": "NOT_YET_FROZEN"
+  },
+  "groups": [
+    {
+      "id": 1,
+      "range": [
+        1,
+        8
+      ],
+      "choir": "Serafins",
+      "sefirah": "Keter",
+      "meaning": "Coroa",
+      "outerColor": "#FEFEFE",
+      "sectorColor": "#FF0000"
+    },
+    {
+      "id": 2,
+      "range": [
+        9,
+        16
+      ],
+      "choir": "Querubins",
+      "sefirah": "Chokhmah",
+      "meaning": "Sabedoria",
+      "outerColor": "#A9ABAE",
+      "sectorColor": "#FF7F00"
+    },
+    {
+      "id": 3,
+      "range": [
+        17,
+        24
+      ],
+      "choir": "Tronos",
+      "sefirah": "Binah",
+      "meaning": "Inteligência",
+      "outerColor": "#373435",
+      "sectorColor": "#FFBF00"
+    },
+    {
+      "id": 4,
+      "range": [
+        25,
+        32
+      ],
+      "choir": "Dominações",
+      "sefirah": "Chesed",
+      "meaning": "Misericórdia",
+      "outerColor": "#0000FF",
+      "sectorColor": "#FFFF00"
+    },
+    {
+      "id": 5,
+      "range": [
+        33,
+        40
+      ],
+      "choir": "Potestades",
+      "sefirah": "Gevurah",
+      "meaning": "Julgamento",
+      "outerColor": "#FF0000",
+      "sectorColor": "#41C07F"
+    },
+    {
+      "id": 6,
+      "range": [
+        41,
+        48
+      ],
+      "choir": "Virtudes",
+      "sefirah": "Tiphereth",
+      "meaning": "Beleza",
+      "outerColor": "#FFFF00",
+      "sectorColor": "#007F7F"
+    },
+    {
+      "id": 7,
+      "range": [
+        49,
+        56
+      ],
+      "choir": "Principados",
+      "sefirah": "Netzach",
+      "meaning": "Vitória",
+      "outerColor": "#3FBF7F",
+      "sectorColor": "#0000FF"
+    },
+    {
+      "id": 8,
+      "range": [
+        57,
+        64
+      ],
+      "choir": "Arcanjos",
+      "sefirah": "Hod",
+      "meaning": "Verdade",
+      "outerColor": "#FF7F00",
+      "sectorColor": "#7F007F"
+    },
+    {
+      "id": 9,
+      "range": [
+        65,
+        72
+      ],
+      "choir": "Anjos",
+      "sefirah": "Yesod",
+      "meaning": "Fundamento",
+      "outerColor": "#7F007F",
+      "sectorColor": "#BF3F7F"
+    }
+  ],
+  "core": {
+    "observed": {
+      "whiteCentralField": true,
+      "redRosePetals": 5,
+      "greenDiagonalRays": 4,
+      "goldCrossVisibleArms": 4
+    },
+    "externalReference": {
+      "redRosePetals": 5,
+      "greenRays": 4,
+      "goldenCrossSquares": 6,
+      "note": "Golden Dawn Rose Cross descriptions treat the center as a white field bearing a red five-petal rose, golden cross of six squares, and four green rays."
+    },
+    "countingRule": "Core is hierarchical/composite and excluded from H441/H22 and the 463 major-field count until HNK governance decides whether its subpieces become addressable AKs."
+  },
+  "gate": {
+    "geometryAnalysis": "SUBSTANTIALLY_COMPLETE",
+    "G3StructuralCensus": "PASS_FOR_COMPUTABLE_V1",
+    "G4AtomicKodeAssignment": "OPEN_FOR_CANDIDATE_ADDRESSING",
+    "canonicalAKNumbering": "BLOCKED_ONLY_BY_SCOPE_DECISION_AND_UNRESOLVED_SYMBOL_SEMANTICS"
+  }
+}
