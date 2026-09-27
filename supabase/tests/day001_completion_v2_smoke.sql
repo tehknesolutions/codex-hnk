@@ -11,6 +11,7 @@ create temporary table qa_ids (
 ) on commit drop;
 
 insert into qa_ids values (gen_random_uuid(), gen_random_uuid());
+grant select on qa_ids to authenticated;
 
 insert into auth.users (id, aud, role, email, email_confirmed_at, created_at, updated_at)
 select user_id, 'authenticated', 'authenticated',
@@ -27,6 +28,7 @@ select user_id from qa_ids
 on conflict (user_id) do nothing;
 
 create temporary table qa_results(label text primary key, payload jsonb) on commit drop;
+grant select, insert on qa_results to authenticated;
 
 insert into public.practice_sessions (
   id,user_id,day,client_session_id,mode,state,started_at,ended_at,duration_seconds,metrics,evidence
@@ -90,61 +92,32 @@ declare
   v_total int;
   v_evidence jsonb;
 begin
-  if (v_first->>'xp_awarded')::int <> 150 then
-    raise exception 'qa_day001_expected_150_xp';
-  end if;
-  if (v_first->>'first_completion')::boolean is not true then
-    raise exception 'qa_day001_expected_first_completion';
-  end if;
-  if v_first->>'completion_contract_id' <> 'HNK-KETHER-D001-COMP-V2' then
-    raise exception 'qa_day001_completion_contract_mismatch';
-  end if;
-  if v_replay <> v_first then
-    raise exception 'qa_day001_same_client_replay_not_stable';
-  end if;
+  if (v_first->>'xp_awarded')::int <> 150 then raise exception 'qa_day001_expected_150_xp'; end if;
+  if (v_first->>'first_completion')::boolean is not true then raise exception 'qa_day001_expected_first_completion'; end if;
+  if v_first->>'completion_contract_id' <> 'HNK-KETHER-D001-COMP-V2' then raise exception 'qa_day001_completion_contract_mismatch'; end if;
+  if v_replay <> v_first then raise exception 'qa_day001_same_client_replay_not_stable'; end if;
 
-  select count(*), coalesce(sum(amount),0)
-    into v_xp_count, v_xp_sum
-  from public.xp_events
-  where user_id=v_user and day=1;
+  select count(*), coalesce(sum(amount),0) into v_xp_count,v_xp_sum
+  from public.xp_events where user_id=v_user and day=1;
+  if v_xp_count <> 1 or v_xp_sum <> 150 then raise exception 'qa_day001_xp_idempotency_failed'; end if;
 
-  if v_xp_count <> 1 or v_xp_sum <> 150 then
-    raise exception 'qa_day001_xp_idempotency_failed';
-  end if;
+  select xp_total into v_total from public.user_progress where user_id=v_user;
+  if v_total <> 150 then raise exception 'qa_day001_total_xp_expected_150'; end if;
 
-  select xp_total into v_total
-  from public.user_progress
-  where user_id=v_user;
-
-  if v_total <> 150 then
-    raise exception 'qa_day001_total_xp_expected_150';
-  end if;
-
-  select evidence into v_evidence
-  from public.practice_sessions
-  where id=v_session;
-
-  if v_evidence ? 'intention'
-     or v_evidence ? 'mirror'
-     or v_evidence ? 'anchor'
-     or v_evidence ? 'distractions'
-     or (v_evidence->'soul_mirror') ? 'plaintext'
-     or (v_evidence->'soul_mirror') ? 'text'
+  select evidence into v_evidence from public.practice_sessions where id=v_session;
+  if v_evidence ? 'intention' or v_evidence ? 'mirror' or v_evidence ? 'anchor' or v_evidence ? 'distractions'
+     or (v_evidence->'soul_mirror') ? 'plaintext' or (v_evidence->'soul_mirror') ? 'text'
      or (v_evidence->'soul_mirror') ? 'content' then
     raise exception 'qa_day001_private_plaintext_persisted';
   end if;
-
-  if (v_evidence#>>'{boaz,environment_distractions_count}')::int <> 3 then
-    raise exception 'qa_day001_distraction_count_missing';
-  end if;
+  if (v_evidence#>>'{boaz,environment_distractions_count}')::int <> 3 then raise exception 'qa_day001_distraction_count_missing'; end if;
 end $$;
 
-select
-  'PASS' as result,
+select 'PASS' as result,
   (select payload->>'xp_awarded' from qa_results where label='first')::int as first_xp,
   (select payload->>'first_completion' from qa_results where label='first')::boolean as first_completion,
   (select payload->>'completion_contract_id' from qa_results where label='first') as completion_contract_id,
-  ((select payload from qa_results where label='first') = (select payload from qa_results where label='replay_same_client_id')) as replay_stable,
+  ((select payload from qa_results where label='first')=(select payload from qa_results where label='replay_same_client_id')) as replay_stable,
   (select count(*) from public.xp_events where user_id=(select user_id from qa_ids) and day=1) as xp_events,
   (select xp_total from public.user_progress where user_id=(select user_id from qa_ids)) as xp_total;
 
