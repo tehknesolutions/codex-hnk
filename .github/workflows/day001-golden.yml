@@ -1,8 +1,13 @@
-name: Day 001 Golden Gate Canary
+name: Day 001 Golden Gate
 
 on:
   pull_request:
     paths:
+      - 'apps/web/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'package.json'
       - '.github/workflows/day001-golden.yml'
   workflow_dispatch:
 
@@ -10,14 +15,30 @@ permissions:
   contents: read
 
 jobs:
-  runner-canary:
-    name: Day 001 runner canary
+  web-golden:
+    name: Day 001 web install + typecheck + build
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 20
     steps:
-      - name: Runner heartbeat
-        shell: bash
-        run: |
-          echo 'DAY001 RUNNER CANARY PASS'
-          echo "runner=$RUNNER_OS"
-          echo "sha=$GITHUB_SHA"
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: pnpm
+
+      - name: Frozen install
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck web
+        working-directory: apps/web
+        run: pnpm exec tsc --noEmit
+
+      - name: Build web
+        working-directory: apps/web
+        run: pnpm build
