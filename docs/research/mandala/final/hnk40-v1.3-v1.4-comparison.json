@@ -13,7 +13,8 @@
     "minimumVisibleSegments": 6,
     "totalVisibleSegments": 361,
     "orientationEquivalentPairs": 12,
-    "raster8Unique": 40
+    "raster8Unique": 40,
+    "crossWorldMinimumEdgeDistance": 4
   },
-  "tradeoff": "V1.4 improves edge separation and stroke economy while increasing exact orientation-equivalent pairs from 10 to 12. Human review must choose the preferred family."
+  "tradeoff": "V1.4 improves stroke economy and cross-world separation while preserving the same global Hamming floor (3); exact orientation-equivalent pairs increase from 10 to 12. Human review must choose the preferred family."
 }
