@@ -128,14 +128,31 @@ if(vectors.size!==(genesis.candidates??[]).length)errors.push('transport vector 
 const hnk40Spec=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-seed-family.v1.json'),'utf8'));
 const hnk40=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json'),'utf8'));
 const hnk40Seen=new Map();
+const hnk40ShapeSeen=new Map();
 
-const familyPatterns={
-  W1:{coords:[[0,0],[0,1],[1,1],[1,2],[2,2]],edges:['ANGULAR_NEXT','RADIAL_OUT','ANGULAR_NEXT','RADIAL_OUT']},
-  W2:{coords:[[0,0],[1,0],[1,1],[2,1],[2,0]],edges:['RADIAL_OUT','ANGULAR_NEXT','RADIAL_OUT','ANGULAR_PREV']},
-  W3:{coords:[[0,0],[0,-1],[1,-1],[1,-2],[2,-2]],edges:['ANGULAR_PREV','RADIAL_OUT','ANGULAR_PREV','RADIAL_OUT']},
-  W4:{coords:[[0,0],[1,0],[1,-1],[2,-1],[2,0]],edges:['RADIAL_OUT','ANGULAR_PREV','RADIAL_OUT','ANGULAR_NEXT']},
-};
 const wrapSector=(s)=>((s-1)%72+72)%72+1;
+const angularEdge=(bit)=>bit===0?'ANGULAR_NEXT':'ANGULAR_PREV';
+const bits4=(n)=>[3,2,1,0].map((shift)=>(n>>shift)&1);
+function expectedFamilyEdges(world,bits){
+  if(world==='W1')return [angularEdge(bits[0]),'RADIAL_OUT',angularEdge(bits[1]),'RADIAL_OUT',angularEdge(bits[2]),'RADIAL_IN',angularEdge(bits[3]),'RADIAL_IN'];
+  if(world==='W2')return ['RADIAL_OUT',angularEdge(bits[0]),'RADIAL_OUT',angularEdge(bits[1]),'RADIAL_IN',angularEdge(bits[2]),'RADIAL_IN',angularEdge(bits[3])];
+  if(world==='W3')return [angularEdge(bits[0]),'RADIAL_IN',angularEdge(bits[1]),'RADIAL_IN',angularEdge(bits[2]),'RADIAL_OUT',angularEdge(bits[3]),'RADIAL_OUT'];
+  return ['RADIAL_IN',angularEdge(bits[0]),'RADIAL_IN',angularEdge(bits[1]),'RADIAL_OUT',angularEdge(bits[2]),'RADIAL_OUT',angularEdge(bits[3])];
+}
+function advance(node,edge){
+  let {l,s}=node;
+  if(edge==='ANGULAR_NEXT')s=wrapSector(s+1);
+  else if(edge==='ANGULAR_PREV')s=wrapSector(s-1);
+  else if(edge==='RADIAL_OUT')l++;
+  else if(edge==='RADIAL_IN')l--;
+  return {l,s};
+}
+function expectedFamilyNodes(g,world,edges){
+  let node={l:(world==='W1'||world==='W2')?2:5,s:g};
+  const nodes=[node];
+  for(const edge of edges){node=advance(node,edge);nodes.push(node)}
+  return nodes.map(({l,s})=>`MF:L${String(l).padStart(2,'0')}:S${String(s).padStart(2,'0')}`);
+}
 function materializedPacket(candidate){
   const fullPath=candidate.path.map((node,index)=>{
     const mf=parseMF(node);
@@ -152,6 +169,9 @@ function materializedPacket(candidate){
 if(hnk40Spec.cardinality!==40)errors.push('HNK40 seed spec cardinality must be 40');
 if(hnk40.semanticAssignment!=='NONE')errors.push('HNK40 materialized registry must not assign semantics');
 if(hnk40.bindingAuthority!=='HNK_CANDIDATE')errors.push('HNK40 registry authority must remain HNK_CANDIDATE');
+if(hnk40.invariants?.nodesPerCandidate!==9)errors.push('HNK40 registry nodesPerCandidate must be 9');
+if(hnk40.invariants?.edgesPerCandidate!==8)errors.push('HNK40 registry edgesPerCandidate must be 8');
+if(hnk40.invariants?.packetBytesPerCandidate!==55)errors.push('HNK40 registry packetBytesPerCandidate must be 55');
 if((hnk40.candidates??[]).length!==40)errors.push(`HNK40 registry expected 40 candidates, got ${(hnk40.candidates??[]).length}`);
 
 for(let g=1;g<=40;g++){
@@ -160,14 +180,18 @@ for(let g=1;g<=40;g++){
   if(!c){fail(expectedId,'candidate missing');continue}
   if(c.glyphId!==expectedId)fail(expectedId,`registry order/id drift: got ${c.glyphId}`);
   if(c.bindingAuthority!=='HNK_CANDIDATE')fail(expectedId,'bindingAuthority must remain HNK_CANDIDATE');
-  const row=Math.floor((g-1)/10)+1, column=((g-1)%10)+1, world=`W${row}`;
+  const row=Math.floor((g-1)/10)+1, column=((g-1)%10)+1, world=`W${row}`, bits=bits4(column-1);
   if(c.sourceMatrix?.world!==world||c.sourceMatrix?.row!==row||c.sourceMatrix?.column!==column)fail(expectedId,'source 4x10 matrix coordinate drift');
-  const family=familyPatterns[world];
-  const expectedNodes=family.coords.map(([layer0,sectorOffset])=>`MF:L${String(layer0+1).padStart(2,'0')}:S${String(wrapSector(g+sectorOffset)).padStart(2,'0')}`);
+  if(c.columnBits!==bits.join(''))fail(expectedId,'columnBits drift');
+  const expectedEdges=expectedFamilyEdges(world,bits);
+  const expectedNodes=expectedFamilyNodes(g,world,expectedEdges);
   if(JSON.stringify(c.path)!==JSON.stringify(expectedNodes))fail(expectedId,'deterministic family PATH drift');
-  if(JSON.stringify(c.edges)!==JSON.stringify(family.edges))fail(expectedId,'deterministic family edge-pattern drift');
+  if(JSON.stringify(c.edges)!==JSON.stringify(expectedEdges))fail(expectedId,'deterministic family edge-pattern drift');
+
   const signature=(c.path??[]).join('>');
   if(hnk40Seen.has(signature))fail(expectedId,`duplicate HNK40 PATH of ${hnk40Seen.get(signature)}`);else hnk40Seen.set(signature,expectedId);
+  const shapeSignature=(c.edges??[]).join('>');
+  if(hnk40ShapeSeen.has(shapeSignature))fail(expectedId,`translation-normalized shape collision with ${hnk40ShapeSeen.get(shapeSignature)}`);else hnk40ShapeSeen.set(shapeSignature,expectedId);
 
   for(let i=0;i<(c.path??[]).length;i++){
     const mf=parseMF(c.path[i]);
@@ -193,6 +217,9 @@ for(let g=1;g<=40;g++){
   }catch(error){fail(expectedId,`materialized HNKP error: ${error.message}`)}
 }
 if(hnk40Seen.size!==40)errors.push(`Expected 40 unique HNK40 ordered PATHs, got ${hnk40Seen.size}`);
+if(hnk40ShapeSeen.size!==40)errors.push(`Expected 40 translation-normalized HNK40 shapes, got ${hnk40ShapeSeen.size}`);
+if(hnk40.invariants?.uniqueOrderedPaths!==40)errors.push('Materialized registry uniqueOrderedPaths must be 40');
+if(hnk40.invariants?.translationNormalizedUniqueShapes!==40)errors.push('Materialized registry translationNormalizedUniqueShapes must be 40');
 
 if(errors.length){
   console.error(`Glyph Genesis V1 FAIL (${errors.length})`);
