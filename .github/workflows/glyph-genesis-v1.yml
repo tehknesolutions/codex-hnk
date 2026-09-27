@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'docs/research/mandala/final/glyph-genesis-candidates.v1.json'
+      - 'docs/research/mandala/final/glyph-path-transport-profile.v1.json'
+      - 'docs/research/mandala/final/glyph-genesis-hnk40-seed-family.v1.json'
+      - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json'
       - 'scripts/validate-glyph-genesis-v1.mjs'
       - '.github/workflows/glyph-genesis-v1.yml'
   pull_request:
