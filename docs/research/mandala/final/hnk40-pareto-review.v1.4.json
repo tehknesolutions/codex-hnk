@@ -1,0 +1,609 @@
+{
+  "version": "1.4",
+  "status": "PARETO_REVIEW_PENDING",
+  "basis": "glyph-genesis-hnk40-candidates.v1.4.json",
+  "metrics": {
+    "minimumEdgeDistance": 3,
+    "minimumVisibleSegments": 6,
+    "totalVisibleSegments": 361,
+    "orientationEquivalentPairCount": 12,
+    "raster": {
+      "6": {
+        "unique": 28,
+        "collisionGroups": 7,
+        "collisions": [
+          [
+            "G01",
+            "G11"
+          ],
+          [
+            "G03",
+            "G23"
+          ],
+          [
+            "G04",
+            "G14",
+            "G18"
+          ],
+          [
+            "G05",
+            "G10",
+            "G25",
+            "G30"
+          ],
+          [
+            "G07",
+            "G27"
+          ],
+          [
+            "G08",
+            "G29",
+            "G34",
+            "G39"
+          ],
+          [
+            "G09",
+            "G28"
+          ]
+        ]
+      },
+      "8": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "10": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "12": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "16": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "24": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      }
+    },
+    "sameWorldMinimumEdgeDistance": 3,
+    "crossWorldMinimumEdgeDistance": 4
+  },
+  "orientationPairs": [
+    {
+      "a": "G07",
+      "b": "G10",
+      "transforms": [
+        "r180",
+        "mx"
+      ]
+    },
+    {
+      "a": "G08",
+      "b": "G09",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G12",
+      "b": "G16",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G13",
+      "b": "G23",
+      "transforms": [
+        "my"
+      ]
+    },
+    {
+      "a": "G13",
+      "b": "G33",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G17",
+      "b": "G20",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G18",
+      "b": "G19",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G23",
+      "b": "G33",
+      "transforms": [
+        "r180"
+      ]
+    },
+    {
+      "a": "G27",
+      "b": "G30",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G28",
+      "b": "G29",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G37",
+      "b": "G40",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G38",
+      "b": "G39",
+      "transforms": [
+        "mx"
+      ]
+    }
+  ],
+  "nearestEdgePairs": [
+    {
+      "a": "G01",
+      "b": "G03",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G01",
+      "b": "G04",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G01",
+      "b": "G05",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G01",
+      "b": "G06",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G01",
+      "b": "G09",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G01",
+      "b": "G10",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G02",
+      "b": "G03",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G02",
+      "b": "G04",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G02",
+      "b": "G05",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G02",
+      "b": "G06",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G02",
+      "b": "G09",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G02",
+      "b": "G10",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G03",
+      "b": "G07",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G03",
+      "b": "G08",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G04",
+      "b": "G07",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G04",
+      "b": "G08",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G05",
+      "b": "G07",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G05",
+      "b": "G08",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G06",
+      "b": "G07",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G06",
+      "b": "G08",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G07",
+      "b": "G09",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G08",
+      "b": "G10",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G11",
+      "b": "G13",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G11",
+      "b": "G14",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G11",
+      "b": "G15",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G11",
+      "b": "G16",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G11",
+      "b": "G19",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G11",
+      "b": "G20",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G12",
+      "b": "G13",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G12",
+      "b": "G14",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G12",
+      "b": "G15",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G12",
+      "b": "G16",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G12",
+      "b": "G19",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G12",
+      "b": "G20",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G13",
+      "b": "G17",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G13",
+      "b": "G18",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G14",
+      "b": "G17",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G14",
+      "b": "G18",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G15",
+      "b": "G17",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G15",
+      "b": "G18",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G16",
+      "b": "G17",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G16",
+      "b": "G18",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G17",
+      "b": "G19",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G18",
+      "b": "G20",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G21",
+      "b": "G23",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G21",
+      "b": "G24",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G21",
+      "b": "G25",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G21",
+      "b": "G26",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G21",
+      "b": "G29",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G21",
+      "b": "G30",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G22",
+      "b": "G23",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G22",
+      "b": "G24",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G22",
+      "b": "G25",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G22",
+      "b": "G26",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G22",
+      "b": "G29",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G22",
+      "b": "G30",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G23",
+      "b": "G27",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G23",
+      "b": "G28",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G24",
+      "b": "G27",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G24",
+      "b": "G28",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G25",
+      "b": "G27",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G25",
+      "b": "G28",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G26",
+      "b": "G27",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G26",
+      "b": "G28",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G27",
+      "b": "G29",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G28",
+      "b": "G30",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G31",
+      "b": "G33",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G31",
+      "b": "G34",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G31",
+      "b": "G35",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G31",
+      "b": "G36",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G31",
+      "b": "G39",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G31",
+      "b": "G40",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G32",
+      "b": "G33",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G32",
+      "b": "G34",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G32",
+      "b": "G35",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G32",
+      "b": "G36",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G32",
+      "b": "G39",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G32",
+      "b": "G40",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G33",
+      "b": "G37",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G33",
+      "b": "G38",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G34",
+      "b": "G37",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G34",
+      "b": "G38",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G35",
+      "b": "G37",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G35",
+      "b": "G38",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G36",
+      "b": "G37",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G36",
+      "b": "G38",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G37",
+      "b": "G39",
+      "edgeDistance": 3
+    },
+    {
+      "a": "G38",
+      "b": "G40",
+      "edgeDistance": 3
+    }
+  ],
+  "decision": "PENDING"
+}
