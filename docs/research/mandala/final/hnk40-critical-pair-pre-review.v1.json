@@ -1,0 +1,1224 @@
+{
+  "version": "1.0",
+  "status": "AI_STRUCTURAL_PRE_REVIEW_NON_AUTHORITATIVE",
+  "basis": [
+    "glyph-genesis-hnk40-candidates.v1.json",
+    "hnk40-glyph-confusability-review.v1.json"
+  ],
+  "scope": "10 CRITICAL pairs only",
+  "keyFinding": "All 10 CRITICAL pairs are identical through the first seven edges and differ only at the eighth/final angular decision.",
+  "implication": "Their distinction is concentrated in the terminal stroke. This is a real legibility risk at small size or fast reading and should be tested visually before any KEEP decision.",
+  "automaticPromotion": false,
+  "pairs": [
+    {
+      "pairId": "G11-G12",
+      "glyphAId": "G11",
+      "glyphBId": "G12",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 4,
+          "minY": 0,
+          "maxY": 2,
+          "width": 4,
+          "height": 2
+        },
+        "crc32": "41B4330E"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 3,
+          "minY": 0,
+          "maxY": 2,
+          "width": 3,
+          "height": 2
+        },
+        "crc32": "C163675D"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G13-G14",
+      "glyphAId": "G13",
+      "glyphBId": "G14",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 2,
+          "minY": 0,
+          "maxY": 2,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "BABADB6F"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 2,
+          "minY": 0,
+          "maxY": 2,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "B6C9AE21"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G15-G16",
+      "glyphAId": "G15",
+      "glyphBId": "G16",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 2,
+          "minY": 0,
+          "maxY": 2,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "2C5FB855"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 1,
+          "minY": 0,
+          "maxY": 2,
+          "width": 1,
+          "height": 2
+        },
+        "crc32": "D7B279A2"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G17-G18",
+      "glyphAId": "G17",
+      "glyphBId": "G18",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -1,
+          "maxX": 1,
+          "minY": 0,
+          "maxY": 2,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "70362E2C"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": -2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -2,
+          "maxX": 1,
+          "minY": 0,
+          "maxY": 2,
+          "width": 3,
+          "height": 2
+        },
+        "crc32": "9A45040A"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G19-G20",
+      "glyphAId": "G19",
+      "glyphBId": "G20",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -1,
+          "maxX": 2,
+          "minY": 0,
+          "maxY": 2,
+          "width": 3,
+          "height": 2
+        },
+        "crc32": "BE96F142"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -1,
+          "maxX": 1,
+          "minY": 0,
+          "maxY": 2,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "5CB89859"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G31-G32",
+      "glyphAId": "G31",
+      "glyphBId": "G32",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -1
+          },
+          {
+            "x": 3,
+            "y": -1
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 4,
+          "minY": -2,
+          "maxY": 0,
+          "width": 4,
+          "height": 2
+        },
+        "crc32": "2A91BFD2"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -1
+          },
+          {
+            "x": 3,
+            "y": -1
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 3,
+          "minY": -2,
+          "maxY": 0,
+          "width": 3,
+          "height": 2
+        },
+        "crc32": "897B3C23"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G33-G34",
+      "glyphAId": "G33",
+      "glyphBId": "G34",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 2,
+          "minY": -2,
+          "maxY": 0,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "4A2B1C8C"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -2
+          },
+          {
+            "x": 2,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 2,
+          "minY": -2,
+          "maxY": 0,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "465869C2"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G35-G36",
+      "glyphAId": "G35",
+      "glyphBId": "G36",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 2,
+          "minY": -2,
+          "maxY": 0,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "CBD69FDF"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": 0,
+          "maxX": 1,
+          "minY": -2,
+          "maxY": 0,
+          "width": 1,
+          "height": 2
+        },
+        "crc32": "A55CD7D9"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G37-G38",
+      "glyphAId": "G37",
+      "glyphBId": "G38",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -1,
+          "maxX": 1,
+          "minY": -2,
+          "maxY": 0,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "D99C39FE"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": -2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -2,
+          "maxX": 1,
+          "minY": -2,
+          "maxY": 0,
+          "width": 3,
+          "height": 2
+        },
+        "crc32": "3BB250E5"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    },
+    {
+      "pairId": "G39-G40",
+      "glyphAId": "G39",
+      "glyphBId": "G40",
+      "score": 12,
+      "difference": {
+        "edgeIndices0": [
+          7
+        ],
+        "edgeNumbersHuman": [
+          8
+        ],
+        "glyphAEdges": [
+          "ANGULAR_NEXT"
+        ],
+        "glyphBEdges": [
+          "ANGULAR_PREV"
+        ]
+      },
+      "glyphA": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -1,
+          "maxX": 2,
+          "minY": -2,
+          "maxY": 0,
+          "width": 3,
+          "height": 2
+        },
+        "crc32": "B3A1E7DC"
+      },
+      "glyphB": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "bbox": {
+          "minX": -1,
+          "maxX": 1,
+          "minY": -2,
+          "maxY": 0,
+          "width": 2,
+          "height": 2
+        },
+        "crc32": "5644B02C"
+      },
+      "structuralFinding": "Identical through edges 1–7; divergence occurs only at edge 8, the final angular decision.",
+      "provisionalReview": "HOLD_FOR_HUMAN_VISUAL",
+      "reason": "Critical structural proximity is confirmed. Machine analysis may prioritize the pair but must not decide canonical acceptance."
+    }
+  ]
+}
