@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "status": "PASS",
+  "group": {
+    "mfCg": "D9",
+    "order": 18,
+    "rotations": 9,
+    "reflections": 9,
+    "sectorRotationStep": 8,
+    "layerAction": "IDENTITY_ONLY"
+  },
+  "proof": {
+    "allCandidateTransformsPreserveEdges": true,
+    "nonIdentityRotationFixedReversalClasses": 0,
+    "reflectionOrderedAntiFixed": [
+      "4398",
+      "4398",
+      "4398",
+      "4398",
+      "4398",
+      "4398",
+      "4398",
+      "4398",
+      "4398"
+    ],
+    "reflectionFixedReversalClasses": [
+      "2199",
+      "2199",
+      "2199",
+      "2199",
+      "2199",
+      "2199",
+      "2199",
+      "2199",
+      "2199"
+    ]
+  },
+  "counts": {
+    "mfCgReversalBaseline": "47642247",
+    "mfCgD9Classes": "2647891",
+    "crDReversalBaseline": "12",
+    "crD_D12Classes": "1",
+    "major463GeometricClasses": "2647892"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "status": "PASS",
+  "renderer": {
+    "centerPx": [
+      449.5,
+      449.5
+    ],
+    "sectorStepDeg": 5,
+    "mfRepresentativeRadii": [
+      179.5,
+      199.5,
+      220,
+      271,
+      349,
+      403.5
+    ],
+    "cgRepresentativeRadius": 434.25,
+    "precisionDecimals": 9
+  },
+  "checks": {
+    "mfCgVertices": 441,
+    "frozenMfCgEdges": 873,
+    "coordinateCollisions": 0,
+    "edgeSegmentCollisions": 0,
+    "coordinateInjective": true,
+    "edgeSegmentInjective": true
+  },
+  "counts": {
+    "mfCgGeometricClasses": "2647891",
+    "crDGeometricClasses": "1",
+    "major463RenderDistinct": "2647892"
+  },
+  "boundary": "CR:D absolute placement is not frozen against MF+CG; no cross-component collapse is asserted."
+}
