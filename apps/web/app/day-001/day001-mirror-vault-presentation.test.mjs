@@ -13,10 +13,16 @@ assert.match(mirror, /styles\.privateVault/, 'Private Vault boundary must be vis
 assert.match(mirror, /LOCAL ONLY|SOMENTE LOCAL/, 'Private plaintext must be explicitly marked local-only');
 assert.match(mirror, /não entra na Evidence|nao entra na Evidence/i, 'Private plaintext must be excluded from Evidence');
 assert.match(mirror, /não sincroniza plaintext|nao sincroniza plaintext/i, 'Plaintext sync must remain disabled until a proper Vault exists');
-assert.match(mirror, /setIntention\(''\)/, 'Intention plaintext must be cleared after sealing');
-assert.match(mirror, /setMirror\(''\)/, 'Mirror plaintext must be cleared after sealing');
 assert.match(mirror, /voluntary/, 'Seal must remain explicitly voluntary');
 assert.match(mirror, /canSeal/, 'Server seal gate must remain authoritative');
-assert.doesNotMatch(mirror, /evidence:\s*\{[^}]*intention|evidence:\s*\{[^}]*mirror/s, 'Private plaintext must never be embedded in Evidence');
+
+// Post-seal cleanup and Evidence construction live in seal(), outside the mirror render slice.
+assert.match(source, /setIntention\(''\)/, 'Intention plaintext must be cleared after sealing');
+assert.match(source, /setMirror\(''\)/, 'Mirror plaintext must be cleared after sealing');
+const evidenceStart = source.indexOf('evidence:{');
+const evidenceEnd = source.indexOf('totalDurationSeconds', evidenceStart);
+assert.ok(evidenceStart >= 0 && evidenceEnd > evidenceStart, 'Authoritative Evidence payload must exist');
+const evidence = source.slice(evidenceStart, evidenceEnd);
+assert.doesNotMatch(evidence, /\bintention\b|\bmirror\b/, 'Private plaintext must never be embedded in Evidence');
 
 console.log('day001-mirror-vault-presentation: contract satisfied');
