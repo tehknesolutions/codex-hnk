@@ -291,9 +291,98 @@ if(v12SeenPaths.size!==40)errors.push(`HNK40 V1.2 expected 40 unique PATHs, got 
 if(v12SeenShapes.size!==40)errors.push(`HNK40 V1.2 expected 40 unique normalized shapes, got ${v12SeenShapes.size}`);
 if(minV12Distance<3)errors.push(`HNK40 V1.2 minimum pairwise edge distance must be >=3, got ${minV12Distance}`);
 
+
+const hnk40v13Spec=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-seed-family.v1.3.json'),'utf8'));
+const hnk40v13=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.3.json'),'utf8'));
+const v13SeenPaths=new Set(), v13SeenEdges=new Set(), v13SeenStatic=new Map();
+
+function v13StaticVisibleSignature(edges){
+  let x=0,y=0;
+  const pts=[[x,y]];
+  for(const edge of edges){
+    if(edge==='ANGULAR_NEXT')x++;
+    else if(edge==='ANGULAR_PREV')x--;
+    else if(edge==='RADIAL_OUT')y++;
+    else if(edge==='RADIAL_IN')y--;
+    pts.push([x,y]);
+  }
+  const minX=Math.min(...pts.map(p=>p[0])), minY=Math.min(...pts.map(p=>p[1]));
+  const norm=pts.map(([px,py])=>[px-minX,py-minY]);
+  const segments=new Set();
+  for(let i=0;i<norm.length-1;i++){
+    const a=norm[i],b=norm[i+1];
+    const sa=`${a[0]},${a[1]}`,sb=`${b[0]},${b[1]}`;
+    segments.add(sa<sb?`${sa}>${sb}`:`${sb}>${sa}`);
+  }
+  return [...segments].sort().join('|');
+}
+function v13Edges(world,b){
+  const A=(bit)=>bit===0?'ANGULAR_NEXT':'ANGULAR_PREV';
+  if(world==='W1')return [A(b[0]),'RADIAL_OUT',A(b[1]),A(b[2]),'RADIAL_OUT',A(b[3]),A(b[4]),'RADIAL_IN',A(b[5]),A(b[6]),'RADIAL_IN'];
+  if(world==='W2')return [A(b[0]),A(b[1]),'RADIAL_OUT','RADIAL_OUT',A(b[2]),A(b[3]),'RADIAL_IN',A(b[4]),A(b[5]),'RADIAL_IN',A(b[6])];
+  if(world==='W3')return [A(b[0]),A(b[1]),'RADIAL_IN',A(b[2]),'RADIAL_IN',A(b[3]),A(b[4]),'RADIAL_OUT',A(b[5]),A(b[6]),'RADIAL_OUT'];
+  return ['RADIAL_IN',A(b[0]),A(b[1]),A(b[2]),A(b[3]),'RADIAL_IN','RADIAL_OUT',A(b[4]),A(b[5]),'RADIAL_OUT',A(b[6])];
+}
+function v13ExpectedNodes(g,world,edges){
+  let node={l:(world==='W1'||world==='W2')?2:5,s:g};
+  const nodes=[node];
+  for(const edge of edges){node=advance(node,edge);nodes.push(node)}
+  return nodes.map(({l,s})=>`MF:L${String(l).padStart(2,'0')}:S${String(s).padStart(2,'0')}`);
+}
+
+if(hnk40v13Spec.cardinality!==40)errors.push('HNK40 V1.3 cardinality must be 40');
+if(hnk40v13.bindingAuthority!=='HNK_CANDIDATE')errors.push('HNK40 V1.3 authority must remain HNK_CANDIDATE');
+if(hnk40v13.semanticAssignment!=='NONE')errors.push('HNK40 V1.3 must not assign semantics');
+if(hnk40v13.invariants?.nodesPerCandidate!==12)errors.push('HNK40 V1.3 nodesPerCandidate must be 12');
+if(hnk40v13.invariants?.edgesPerCandidate!==11)errors.push('HNK40 V1.3 edgesPerCandidate must be 11');
+if(hnk40v13.invariants?.packetBytesPerCandidate!==70)errors.push('HNK40 V1.3 packetBytesPerCandidate must be 70');
+if((hnk40v13.candidates??[]).length!==40)errors.push('HNK40 V1.3 must materialize 40 candidates');
+
+for(let g=1;g<=40;g++){
+  const id=`G${String(g).padStart(2,'0')}`, c=hnk40v13.candidates?.[g-1];
+  if(!c){fail(id,'V1.3 candidate missing');continue}
+  const row=Math.floor((g-1)/10)+1,column=((g-1)%10)+1,world=`W${row}`,data4=column-1,bits=hamming74Bits(data4);
+  if(c.glyphId!==id)fail(id,'V1.3 glyph order drift');
+  if(c.sourceMatrix?.world!==world||c.sourceMatrix?.row!==row||c.sourceMatrix?.column!==column)fail(id,'V1.3 source matrix drift');
+  if(c.dataBits4!==data4.toString(2).padStart(4,'0'))fail(id,'V1.3 dataBits4 drift');
+  if(c.hamming74Bits!==bits.join(''))fail(id,'V1.3 Hamming(7,4) code drift');
+  const edges=v13Edges(world,bits),nodes=v13ExpectedNodes(g,world,edges);
+  if(JSON.stringify(c.edges)!==JSON.stringify(edges))fail(id,'V1.3 edge pattern drift');
+  if(JSON.stringify(c.path)!==JSON.stringify(nodes))fail(id,'V1.3 PATH drift');
+  const ps=c.path.join('>'), es=c.edges.join('>'), ss=v13StaticVisibleSignature(c.edges);
+  if(v13SeenPaths.has(ps))fail(id,'V1.3 duplicate ordered PATH'); else v13SeenPaths.add(ps);
+  if(v13SeenEdges.has(es))fail(id,'V1.3 duplicate ordered edge signature'); else v13SeenEdges.add(es);
+  if(v13SeenStatic.has(ss))fail(id,`V1.3 static-visible collision with ${v13SeenStatic.get(ss)}`); else v13SeenStatic.set(ss,id);
+  if(c.staticVisibleSignature!==ss)fail(id,'V1.3 stored static-visible signature drift');
+  for(let i=0;i<c.path.length-1;i++){
+    const a=parseMF(c.path[i]),b=parseMF(c.path[i+1]),edge=a&&b&&expectedEdge(a,b);
+    if(!edge||edge!==c.edges[i])fail(id,`V1.3 illegal adjacency at edge ${i+1}`);
+  }
+  try{
+    const packet=materializedPacket(c),decoded=decodePacket(packet);
+    if(JSON.stringify(decoded.nodes)!==JSON.stringify(c.path))fail(id,'V1.3 HNKP node round-trip mismatch');
+    if(JSON.stringify(decoded.edges)!==JSON.stringify(c.edges.map(e=>edgeEnum[e])))fail(id,'V1.3 HNKP edge round-trip mismatch');
+    if(c.hnkPacket?.bytes!==70||packet.length!==70)fail(id,'V1.3 packet byte count drift');
+    if(c.hnkPacket?.packetHex!==packet.toString('hex').toUpperCase())fail(id,'V1.3 packet HEX drift');
+    if(c.hnkPacket?.crc32Hex!==decoded.crc32Hex)fail(id,'V1.3 CRC32 drift');
+    if(c.hnkPacket?.base64url!==base64url(packet))fail(id,'V1.3 base64url drift');
+  }catch(error){fail(id,`V1.3 HNKP error: ${error.message}`)}
+}
+let minV13Distance=Infinity;
+for(let i=0;i<hnk40v13.candidates.length;i++)for(let j=i+1;j<hnk40v13.candidates.length;j++){
+  const a=hnk40v13.candidates[i].edges,b=hnk40v13.candidates[j].edges;
+  let d=0;for(let k=0;k<11;k++)if(a[k]!==b[k])d++;
+  if(d<minV13Distance)minV13Distance=d;
+}
+if(v13SeenPaths.size!==40)errors.push(`HNK40 V1.3 expected 40 unique PATHs, got ${v13SeenPaths.size}`);
+if(v13SeenEdges.size!==40)errors.push(`HNK40 V1.3 expected 40 unique edge signatures, got ${v13SeenEdges.size}`);
+if(v13SeenStatic.size!==40)errors.push(`HNK40 V1.3 expected 40 static-visible shapes, got ${v13SeenStatic.size}`);
+if(minV13Distance<3)errors.push(`HNK40 V1.3 minimum pairwise edge distance must be >=3, got ${minV13Distance}`);
+if(hnk40v13.invariants?.staticVisibleUniqueShapes!==40)errors.push('HNK40 V1.3 registry staticVisibleUniqueShapes must be 40');
+
 if(errors.length){
   console.error(`Glyph Genesis V1 FAIL (${errors.length})`);
   for(const e of errors)console.error(`- ${e}`);
   process.exit(1);
 }
-console.log(`Glyph Genesis PASS: ${genesis.candidates.length} semantic-target probes + ${hnk40.candidates.length} V1.1 seeds + ${hnk40v12.candidates.length} V1.2 Hamming-spaced seeds; topology, codec, projection derivability, PATH uniqueness, V1.2 min edge distance >=3, HNKP round-trips and authority boundaries verified.`);
+console.log(`Glyph Genesis PASS: ${genesis.candidates.length} semantic-target probes + ${hnk40.candidates.length} V1.1 seeds + ${hnk40v12.candidates.length} V1.2 Hamming-spaced seeds + ${hnk40v13.candidates.length} V1.3 static-visible-unique seeds; topology, codec, projection derivability, PATH uniqueness, static-visible uniqueness, min edge distance >=3, HNKP round-trips and authority boundaries verified.`);

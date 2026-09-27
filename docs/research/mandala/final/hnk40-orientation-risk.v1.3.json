@@ -1,0 +1,84 @@
+{
+  "version": "1.3",
+  "status": "ORIENTATION_RISK_ANALYSIS",
+  "basis": "glyph-genesis-hnk40-candidates.v1.3.json",
+  "definition": "Two static-visible signatures are transform-equivalent when one becomes the other under a D4 rotation/reflection after translation normalization.",
+  "pairCount": 10,
+  "pairs": [
+    {
+      "a": "G02",
+      "b": "G06",
+      "transforms": [
+        "mx",
+        "my"
+      ]
+    },
+    {
+      "a": "G03",
+      "b": "G13",
+      "transforms": [
+        "r180",
+        "mx"
+      ]
+    },
+    {
+      "a": "G07",
+      "b": "G10",
+      "transforms": [
+        "r180",
+        "mx"
+      ]
+    },
+    {
+      "a": "G08",
+      "b": "G09",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G17",
+      "b": "G20",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G18",
+      "b": "G19",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G27",
+      "b": "G30",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G28",
+      "b": "G29",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G37",
+      "b": "G40",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G38",
+      "b": "G39",
+      "transforms": [
+        "mx"
+      ]
+    }
+  ],
+  "interpretation": "Not a static collision in canonical orientation. Human review must decide whether mirror/rotation dependence is acceptable for the intended writing/rendering contexts.",
+  "automaticDecision": "NONE"
+}
