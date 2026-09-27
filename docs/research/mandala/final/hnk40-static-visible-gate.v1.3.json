@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "gate": "HNK40_STATIC_VISIBLE_UNIQUENESS",
+  "signatureDefinition": "translation-normalized set of unique undirected MF adjacency segments; ignores traversal order, traversal direction and duplicate retracing",
+  "v12": {
+    "status": "FAIL",
+    "orderedPaths": 40,
+    "uniqueStaticVisibleShapes": 26,
+    "collapsedIdentities": 14,
+    "collisionGroupCount": 12,
+    "collisionGroups": [
+      [
+        "G07",
+        "G15",
+        "G27",
+        "G35"
+      ],
+      [
+        "G02",
+        "G26"
+      ],
+      [
+        "G03",
+        "G23"
+      ],
+      [
+        "G05",
+        "G17"
+      ],
+      [
+        "G06",
+        "G22"
+      ],
+      [
+        "G10",
+        "G30"
+      ],
+      [
+        "G13",
+        "G33"
+      ],
+      [
+        "G16",
+        "G20"
+      ],
+      [
+        "G18",
+        "G39"
+      ],
+      [
+        "G19",
+        "G38"
+      ],
+      [
+        "G25",
+        "G37"
+      ],
+      [
+        "G36",
+        "G40"
+      ]
+    ],
+    "minimumPairwiseEdgeDistance": 3
+  },
+  "v13": {
+    "status": "PASS_STRUCTURAL_CANDIDATE",
+    "orderedPaths": 40,
+    "uniqueStaticVisibleShapes": 40,
+    "collisionGroupCount": 0,
+    "collisionGroups": [],
+    "minimumPairwiseEdgeDistance": 3
+  },
+  "authority": "HNK_CANDIDATE",
+  "semanticAssignment": "NONE",
+  "humanPromotionRequired": true
+}

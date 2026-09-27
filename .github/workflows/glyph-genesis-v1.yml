@@ -7,6 +7,10 @@ on:
       - 'docs/research/mandala/final/glyph-path-transport-profile.v1.json'
       - 'docs/research/mandala/final/glyph-genesis-hnk40-seed-family.v1.json'
       - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json'
+      - 'docs/research/mandala/final/glyph-genesis-hnk40-seed-family.v1.2.json'
+      - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.2.json'
+      - 'docs/research/mandala/final/hnk40-glyph-confusability-review.v1.2.json'
+      - 'docs/research/mandala/final/hnk40-glyph-genesis-contact-sheet-v1.2.svg'
       - 'scripts/validate-glyph-genesis-v1.mjs'
       - '.github/workflows/glyph-genesis-v1.yml'
   pull_request:

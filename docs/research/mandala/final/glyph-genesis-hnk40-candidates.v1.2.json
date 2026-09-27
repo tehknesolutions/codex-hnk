@@ -1,0 +1,1779 @@
+{
+  "version": "1.2-experimental",
+  "status": "HNK_CANDIDATE_MATERIALIZED_SEED_REGISTRY",
+  "generatedFrom": "glyph-genesis-hnk40-seed-family.v1.2.json",
+  "candidateCount": 40,
+  "bindingAuthority": "HNK_CANDIDATE",
+  "semanticAssignment": "NONE",
+  "invariants": {
+    "uniqueOrderedPaths": 40,
+    "translationNormalizedUniqueShapes": 40,
+    "minimumPairwiseEdgeDistance": 3,
+    "nodesPerCandidate": 12,
+    "edgesPerCandidate": 11,
+    "packetBytesPerCandidate": 70,
+    "humanPromotionRequired": true
+  },
+  "candidates": [
+    {
+      "glyphId": "G01",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S01",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L04:S06",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L03:S08",
+        "MF:L02:S08"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "E0EA621F",
+        "packetHex": "484E4B5001010C0481040004810401048204010482040204820403048304030483040404830405048204050482040604820407048104070003000003000002000002E0EA621F",
+        "base64url": "SE5LUAEBDASBBAAEgQQBBIIEAQSCBAIEggQDBIMEAwSDBAQEgwQFBIIEBQSCBAYEggQHBIEEBwADAAADAAACAAAC4OpiHw"
+      }
+    },
+    {
+      "glyphId": "G02",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S02",
+        "MF:L02:S01",
+        "MF:L03:S01",
+        "MF:L03:S72",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L04:S72",
+        "MF:L04:S01",
+        "MF:L03:S01",
+        "MF:L03:S02",
+        "MF:L03:S01",
+        "MF:L02:S01"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "D0DA938F",
+        "packetHex": "484E4B5001010C0481040104810400048204000482044704820400048304000483044704830400048204000482040104820400048104000103010003010002000102D0DA938F",
+        "base64url": "SE5LUAEBDASBBAEEgQQABIIEAASCBEcEggQABIMEAASDBEcEgwQABIIEAASCBAEEggQABIEEAAEDAQADAQACAAEC0NqTjw"
+      }
+    },
+    {
+      "glyphId": "G03",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S03",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L02:S04"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "CBCB1E42",
+        "packetHex": "484E4B5001010C0481040204810403048204030482040204820403048304030483040204830403048204030482040204820403048104030003010003010002010002CBCB1E42",
+        "base64url": "SE5LUAEBDASBBAIEgQQDBIIEAwSCBAIEggQDBIMEAwSDBAIEgwQDBIIEAwSCBAIEggQDBIEEAwADAQADAQACAQACy8seQg"
+      }
+    },
+    {
+      "glyphId": "G04",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S04",
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L04:S05",
+        "MF:L04:S06",
+        "MF:L04:S07",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L03:S05",
+        "MF:L02:S05"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "35C58B92",
+        "packetHex": "484E4B5001010C048104030481040204820402048204030482040404830404048304050483040604820406048204050482040404810404010300000300000201010235C58B92",
+        "base64url": "SE5LUAEBDASBBAMEgQQCBIIEAgSCBAMEggQEBIMEBASDBAUEgwQGBIIEBgSCBAUEggQEBIEEBAEDAAADAAACAQECNcWLkg"
+      }
+    },
+    {
+      "glyphId": "G05",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S05",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L04:S05",
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L02:S06"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "7D6BBFFA",
+        "packetHex": "484E4B5001010C04810404048104030482040304820404048204050483040504830404048304030482040304820404048204050481040501030000030101020000027D6BBFFA",
+        "base64url": "SE5LUAEBDASBBAQEgQQDBIIEAwSCBAQEggQFBIMEBQSDBAQEgwQDBIIEAwSCBAQEggQFBIEEBQEDAAADAQECAAACfWu_-g"
+      }
+    },
+    {
+      "glyphId": "G06",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S06",
+        "MF:L02:S07",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L04:S07",
+        "MF:L04:S08",
+        "MF:L04:S07",
+        "MF:L03:S07",
+        "MF:L03:S08",
+        "MF:L03:S07",
+        "MF:L02:S07"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "0961F2EC",
+        "packetHex": "484E4B5001010C04810405048104060482040604820405048204060483040604830407048304060482040604820407048204060481040600030100030001020001020961F2EC",
+        "base64url": "SE5LUAEBDASBBAUEgQQGBIIEBgSCBAUEggQGBIMEBgSDBAcEgwQGBIIEBgSCBAcEggQGBIEEBgADAQADAAECAAECCWHy7A"
+      }
+    },
+    {
+      "glyphId": "G07",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S07",
+        "MF:L02:S06",
+        "MF:L03:S06",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L04:S07",
+        "MF:L04:S06",
+        "MF:L03:S06",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L02:S06"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "349F0029",
+        "packetHex": "484E4B5001010C0481040604810405048204050482040404820405048304050483040604830405048204050482040404820405048104050103010003000102010002349F0029",
+        "base64url": "SE5LUAEBDASBBAYEgQQFBIIEBQSCBAQEggQFBIMEBQSDBAYEgwQFBIIEBQSCBAQEggQFBIEEBQEDAQADAAECAQACNJ8AKQ"
+      }
+    },
+    {
+      "glyphId": "G08",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S08",
+        "MF:L02:S09",
+        "MF:L03:S09",
+        "MF:L03:S10",
+        "MF:L03:S11",
+        "MF:L04:S11",
+        "MF:L04:S10",
+        "MF:L04:S09",
+        "MF:L03:S09",
+        "MF:L03:S08",
+        "MF:L03:S07",
+        "MF:L02:S07"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "0340341C",
+        "packetHex": "484E4B5001010C048104070481040804820408048204090482040A0483040A04830409048304080482040804820407048204060481040600030000030101020101020340341C",
+        "base64url": "SE5LUAEBDASBBAcEgQQIBIIECASCBAkEggQKBIMECgSDBAkEgwQIBIIECASCBAcEggQGBIEEBgADAAADAQECAQECA0A0HA"
+      }
+    },
+    {
+      "glyphId": "G09",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S09",
+        "MF:L02:S08",
+        "MF:L03:S08",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L04:S07",
+        "MF:L04:S08",
+        "MF:L03:S08",
+        "MF:L03:S09",
+        "MF:L03:S10",
+        "MF:L02:S10"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "32A5718B",
+        "packetHex": "484E4B5001010C048104080481040704820407048204060482040504830405048304060483040704820407048204080482040904810409010301010300000200000232A5718B",
+        "base64url": "SE5LUAEBDASBBAgEgQQHBIIEBwSCBAYEggQFBIMEBQSDBAYEgwQHBIIEBwSCBAgEggQJBIEECQEDAQEDAAACAAACMqVxiw"
+      }
+    },
+    {
+      "glyphId": "G10",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S10",
+        "MF:L02:S11",
+        "MF:L03:S11",
+        "MF:L03:S12",
+        "MF:L03:S11",
+        "MF:L04:S11",
+        "MF:L04:S10",
+        "MF:L04:S11",
+        "MF:L03:S11",
+        "MF:L03:S12",
+        "MF:L03:S11",
+        "MF:L02:S11"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "057A45BE",
+        "packetHex": "484E4B5001010C048104090481040A0482040A0482040B0482040A0483040A048304090483040A0482040A0482040B0482040A0481040A0003000103010002000102057A45BE",
+        "base64url": "SE5LUAEBDASBBAkEgQQKBIIECgSCBAsEggQKBIMECgSDBAkEgwQKBIIECgSCBAsEggQKBIEECgADAAEDAQACAAECBXpFvg"
+      }
+    },
+    {
+      "glyphId": "G11",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S11",
+        "MF:L03:S11",
+        "MF:L03:S12",
+        "MF:L03:S13",
+        "MF:L04:S13",
+        "MF:L04:S14",
+        "MF:L04:S15",
+        "MF:L03:S15",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L02:S17",
+        "MF:L02:S18"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "80316CD5",
+        "packetHex": "484E4B5001010C0481040A0482040A0482040B0482040C0483040C0483040D0483040E0482040E0482040F048204100481041004810411030000030000020000020080316CD5",
+        "base64url": "SE5LUAEBDASBBAoEggQKBIIECwSCBAwEgwQMBIMEDQSDBA4EggQOBIIEDwSCBBAEgQQQBIEEEQMAAAMAAAIAAAIAgDFs1Q"
+      }
+    },
+    {
+      "glyphId": "G12",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S12",
+        "MF:L03:S12",
+        "MF:L03:S11",
+        "MF:L03:S10",
+        "MF:L04:S10",
+        "MF:L04:S11",
+        "MF:L04:S10",
+        "MF:L03:S10",
+        "MF:L03:S11",
+        "MF:L03:S12",
+        "MF:L02:S12",
+        "MF:L02:S11"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "6BBBAEB4",
+        "packetHex": "484E4B5001010C0481040B0482040B0482040A04820409048304090483040A04830409048204090482040A0482040B0481040B0481040A03010103000102000002016BBBAEB4",
+        "base64url": "SE5LUAEBDASBBAsEggQLBIIECgSCBAkEgwQJBIMECgSDBAkEggQJBIIECgSCBAsEgQQLBIEECgMBAQMAAQIAAAIBa7uutA"
+      }
+    },
+    {
+      "glyphId": "G13",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S13",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L03:S13",
+        "MF:L04:S13",
+        "MF:L04:S14",
+        "MF:L04:S13",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L03:S13",
+        "MF:L02:S13",
+        "MF:L02:S14"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "ABA72D94",
+        "packetHex": "484E4B5001010C0481040C0482040C0482040D0482040C0483040C0483040D0483040C0482040C0482040D0482040C0481040C0481040D0300010300010200010200ABA72D94",
+        "base64url": "SE5LUAEBDASBBAwEggQMBIIEDQSCBAwEgwQMBIMEDQSDBAwEggQMBIIEDQSCBAwEgQQMBIEEDQMAAQMAAQIAAQIAq6ctlA"
+      }
+    },
+    {
+      "glyphId": "G14",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S14",
+        "MF:L03:S14",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L04:S14",
+        "MF:L04:S15",
+        "MF:L04:S16",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L02:S16",
+        "MF:L02:S15"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "385AFFAC",
+        "packetHex": "484E4B5001010C0481040D0482040D0482040C0482040D0483040D0483040E0483040F0482040F048204100482040F0481040F0481040E0301000300000200010201385AFFAC",
+        "base64url": "SE5LUAEBDASBBA0EggQNBIIEDASCBA0EgwQNBIMEDgSDBA8EggQPBIIEEASCBA8EgQQPBIEEDgMBAAMAAAIAAQIBOFr_rA"
+      }
+    },
+    {
+      "glyphId": "G15",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S15",
+        "MF:L03:S15",
+        "MF:L03:S14",
+        "MF:L03:S15",
+        "MF:L04:S15",
+        "MF:L04:S16",
+        "MF:L04:S15",
+        "MF:L03:S15",
+        "MF:L03:S14",
+        "MF:L03:S15",
+        "MF:L02:S15",
+        "MF:L02:S16"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "B8104730",
+        "packetHex": "484E4B5001010C0481040E0482040E0482040D0482040E0483040E0483040F0483040E0482040E0482040D0482040E0481040E0481040F0301000300010201000200B8104730",
+        "base64url": "SE5LUAEBDASBBA4EggQOBIIEDQSCBA4EgwQOBIMEDwSDBA4EggQOBIIEDQSCBA4EgQQOBIEEDwMBAAMAAQIBAAIAuBBHMA"
+      }
+    },
+    {
+      "glyphId": "G16",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S16",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L04:S16",
+        "MF:L04:S17",
+        "MF:L04:S18",
+        "MF:L03:S18",
+        "MF:L03:S17",
+        "MF:L03:S18",
+        "MF:L02:S18",
+        "MF:L02:S17"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "CB9E5A40",
+        "packetHex": "484E4B5001010C0481040F0482040F048204100482040F0483040F048304100483041104820411048204100482041104810411048104100300010300000201000201CB9E5A40",
+        "base64url": "SE5LUAEBDASBBA8EggQPBIIEEASCBA8EgwQPBIMEEASDBBEEggQRBIIEEASCBBEEgQQRBIEEEAMAAQMAAAIBAAIBy55aQA"
+      }
+    },
+    {
+      "glyphId": "G17",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S17",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L03:S15",
+        "MF:L04:S15",
+        "MF:L04:S16",
+        "MF:L04:S17",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L03:S15",
+        "MF:L02:S15",
+        "MF:L02:S16"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "BD3175C9",
+        "packetHex": "484E4B5001010C04810410048204100482040F0482040E0483040E0483040F04830410048204100482040F0482040E0481040E0481040F0301010300000201010200BD3175C9",
+        "base64url": "SE5LUAEBDASBBBAEggQQBIIEDwSCBA4EgwQOBIMEDwSDBBAEggQQBIIEDwSCBA4EgQQOBIEEDwMBAQMAAAIBAQIAvTF1yQ"
+      }
+    },
+    {
+      "glyphId": "G18",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S18",
+        "MF:L03:S18",
+        "MF:L03:S19",
+        "MF:L03:S20",
+        "MF:L04:S20",
+        "MF:L04:S21",
+        "MF:L04:S20",
+        "MF:L03:S20",
+        "MF:L03:S19",
+        "MF:L03:S18",
+        "MF:L02:S18",
+        "MF:L02:S17"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "DA9AD411",
+        "packetHex": "484E4B5001010C0481041104820411048204120482041304830413048304140483041304820413048204120482041104810411048104100300000300010201010201DA9AD411",
+        "base64url": "SE5LUAEBDASBBBEEggQRBIIEEgSCBBMEgwQTBIMEFASDBBMEggQTBIIEEgSCBBEEgQQRBIEEEAMAAAMAAQIBAQIB2prUEQ"
+      }
+    },
+    {
+      "glyphId": "G19",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S19",
+        "MF:L03:S19",
+        "MF:L03:S18",
+        "MF:L03:S17",
+        "MF:L04:S17",
+        "MF:L04:S16",
+        "MF:L04:S17",
+        "MF:L03:S17",
+        "MF:L03:S18",
+        "MF:L03:S19",
+        "MF:L02:S19",
+        "MF:L02:S20"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "98AC9669",
+        "packetHex": "484E4B5001010C04810412048204120482041104820410048304100483040F048304100482041004820411048204120481041204810413030101030100020000020098AC9669",
+        "base64url": "SE5LUAEBDASBBBIEggQSBIIEEQSCBBAEgwQQBIMEDwSDBBAEggQQBIIEEQSCBBIEgQQSBIEEEwMBAQMBAAIAAAIAmKyWaQ"
+      }
+    },
+    {
+      "glyphId": "G20",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S20",
+        "MF:L03:S20",
+        "MF:L03:S21",
+        "MF:L03:S22",
+        "MF:L04:S22",
+        "MF:L04:S21",
+        "MF:L04:S20",
+        "MF:L03:S20",
+        "MF:L03:S21",
+        "MF:L03:S22",
+        "MF:L02:S22",
+        "MF:L02:S21"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "20EA5926",
+        "packetHex": "484E4B5001010C048104130482041304820414048204150483041504830414048304130482041304820414048204150481041504810414030000030101020000020120EA5926",
+        "base64url": "SE5LUAEBDASBBBMEggQTBIIEFASCBBUEgwQVBIMEFASDBBMEggQTBIIEFASCBBUEgQQVBIEEFAMAAAMBAQIAAAIBIOpZJg"
+      }
+    },
+    {
+      "glyphId": "G21",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S21",
+        "MF:L05:S22",
+        "MF:L04:S22",
+        "MF:L04:S23",
+        "MF:L04:S24",
+        "MF:L03:S24",
+        "MF:L03:S25",
+        "MF:L03:S26",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L04:S28",
+        "MF:L05:S28"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "8CC58DC1",
+        "packetHex": "484E4B5001010C0484041404840415048304150483041604830417048204170482041804820419048304190483041A0483041B0484041B00020000020000030000038CC58DC1",
+        "base64url": "SE5LUAEBDASEBBQEhAQVBIMEFQSDBBYEgwQXBIIEFwSCBBgEggQZBIMEGQSDBBoEgwQbBIQEGwACAAACAAADAAADjMWNwQ"
+      }
+    },
+    {
+      "glyphId": "G22",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S22",
+        "MF:L05:S21",
+        "MF:L04:S21",
+        "MF:L04:S20",
+        "MF:L04:S21",
+        "MF:L03:S21",
+        "MF:L03:S20",
+        "MF:L03:S21",
+        "MF:L04:S21",
+        "MF:L04:S22",
+        "MF:L04:S21",
+        "MF:L05:S21"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "974227FA",
+        "packetHex": "484E4B5001010C0484041504840414048304140483041304830414048204140482041304820414048304140483041504830414048404140102010002010003000103974227FA",
+        "base64url": "SE5LUAEBDASEBBUEhAQUBIMEFASDBBMEgwQUBIIEFASCBBMEggQUBIMEFASDBBUEgwQUBIQEFAECAQACAQADAAEDl0In-g"
+      }
+    },
+    {
+      "glyphId": "G23",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S23",
+        "MF:L05:S24",
+        "MF:L04:S24",
+        "MF:L04:S23",
+        "MF:L04:S24",
+        "MF:L03:S24",
+        "MF:L03:S23",
+        "MF:L03:S24",
+        "MF:L04:S24",
+        "MF:L04:S23",
+        "MF:L04:S24",
+        "MF:L05:S24"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "73962E9D",
+        "packetHex": "484E4B5001010C048404160484041704830417048304160483041704820417048204160482041704830417048304160483041704840417000201000201000301000373962E9D",
+        "base64url": "SE5LUAEBDASEBBYEhAQXBIMEFwSDBBYEgwQXBIIEFwSCBBYEggQXBIMEFwSDBBYEgwQXBIQEFwACAQACAQADAQADc5YunQ"
+      }
+    },
+    {
+      "glyphId": "G24",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S24",
+        "MF:L05:S23",
+        "MF:L04:S23",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L03:S25",
+        "MF:L03:S26",
+        "MF:L03:S27",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L04:S25",
+        "MF:L05:S25"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "5339549D",
+        "packetHex": "484E4B5001010C048404170484041604830416048304170483041804820418048204190482041A0483041A04830419048304180484041801020000020000030101035339549D",
+        "base64url": "SE5LUAEBDASEBBcEhAQWBIMEFgSDBBcEgwQYBIIEGASCBBkEggQaBIMEGgSDBBkEgwQYBIQEGAECAAACAAADAQEDUzlUnQ"
+      }
+    },
+    {
+      "glyphId": "G25",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S25",
+        "MF:L05:S24",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L04:S26",
+        "MF:L03:S26",
+        "MF:L03:S25",
+        "MF:L03:S24",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L04:S26",
+        "MF:L05:S26"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "A2ADEF4A",
+        "packetHex": "484E4B5001010C0484041804840417048304170483041804830419048204190482041804820417048304170483041804830419048404190102000002010103000003A2ADEF4A",
+        "base64url": "SE5LUAEBDASEBBgEhAQXBIMEFwSDBBgEgwQZBIIEGQSCBBgEggQXBIMEFwSDBBgEgwQZBIQEGQECAAACAQEDAAADoq3vSg"
+      }
+    },
+    {
+      "glyphId": "G26",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S26",
+        "MF:L05:S27",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L03:S27",
+        "MF:L03:S28",
+        "MF:L03:S27",
+        "MF:L04:S27",
+        "MF:L04:S28",
+        "MF:L04:S27",
+        "MF:L05:S27"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "C77EFA41",
+        "packetHex": "484E4B5001010C048404190484041A0483041A048304190483041A0482041A0482041B0482041A0483041A0483041B0483041A0484041A0002010002000103000103C77EFA41",
+        "base64url": "SE5LUAEBDASEBBkEhAQaBIMEGgSDBBkEgwQaBIIEGgSCBBsEggQaBIMEGgSDBBsEgwQaBIQEGgACAQACAAEDAAEDx376QQ"
+      }
+    },
+    {
+      "glyphId": "G27",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S27",
+        "MF:L05:S26",
+        "MF:L04:S26",
+        "MF:L04:S25",
+        "MF:L04:S26",
+        "MF:L03:S26",
+        "MF:L03:S27",
+        "MF:L03:S26",
+        "MF:L04:S26",
+        "MF:L04:S25",
+        "MF:L04:S26",
+        "MF:L05:S26"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "FA800884",
+        "packetHex": "484E4B5001010C0484041A04840419048304190483041804830419048204190482041A04820419048304190483041804830419048404190102010002000103010003FA800884",
+        "base64url": "SE5LUAEBDASEBBoEhAQZBIMEGQSDBBgEgwQZBIIEGQSCBBoEggQZBIMEGQSDBBgEgwQZBIQEGQECAQACAAEDAQAD-oAIhA"
+      }
+    },
+    {
+      "glyphId": "G28",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S28",
+        "MF:L05:S29",
+        "MF:L04:S29",
+        "MF:L04:S30",
+        "MF:L04:S31",
+        "MF:L03:S31",
+        "MF:L03:S30",
+        "MF:L03:S29",
+        "MF:L04:S29",
+        "MF:L04:S28",
+        "MF:L04:S27",
+        "MF:L05:S27"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "BF71A578",
+        "packetHex": "484E4B5001010C0484041B0484041C0483041C0483041D0483041E0482041E0482041D0482041C0483041C0483041B0483041A0484041A0002000002010103010103BF71A578",
+        "base64url": "SE5LUAEBDASEBBsEhAQcBIMEHASDBB0EgwQeBIIEHgSCBB0EggQcBIMEHASDBBsEgwQaBIQEGgACAAACAQEDAQEDv3GleA"
+      }
+    },
+    {
+      "glyphId": "G29",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S29",
+        "MF:L05:S28",
+        "MF:L04:S28",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L03:S26",
+        "MF:L03:S27",
+        "MF:L03:S28",
+        "MF:L04:S28",
+        "MF:L04:S29",
+        "MF:L04:S30",
+        "MF:L05:S30"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "F8D6D89D",
+        "packetHex": "484E4B5001010C0484041C0484041B0483041B0483041A04830419048204190482041A0482041B0483041B0483041C0483041D0484041D0102010102000003000003F8D6D89D",
+        "base64url": "SE5LUAEBDASEBBwEhAQbBIMEGwSDBBoEgwQZBIIEGQSCBBoEggQbBIMEGwSDBBwEgwQdBIQEHQECAQECAAADAAAD-NbYnQ"
+      }
+    },
+    {
+      "glyphId": "G30",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S30",
+        "MF:L05:S31",
+        "MF:L04:S31",
+        "MF:L04:S32",
+        "MF:L04:S31",
+        "MF:L03:S31",
+        "MF:L03:S30",
+        "MF:L03:S31",
+        "MF:L04:S31",
+        "MF:L04:S32",
+        "MF:L04:S31",
+        "MF:L05:S31"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "BD277561",
+        "packetHex": "484E4B5001010C0484041D0484041E0483041E0483041F0483041E0482041E0482041D0482041E0483041E0483041F0483041E0484041E0002000102010003000103BD277561",
+        "base64url": "SE5LUAEBDASEBB0EhAQeBIMEHgSDBB8EgwQeBIIEHgSCBB0EggQeBIMEHgSDBB8EgwQeBIQEHgACAAECAQADAAEDvSd1YQ"
+      }
+    },
+    {
+      "glyphId": "G31",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S31",
+        "MF:L04:S31",
+        "MF:L04:S32",
+        "MF:L04:S33",
+        "MF:L03:S33",
+        "MF:L03:S34",
+        "MF:L03:S35",
+        "MF:L04:S35",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L05:S37",
+        "MF:L05:S38"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "0CB84980",
+        "packetHex": "484E4B5001010C0484041E0483041E0483041F04830420048204200482042104820422048304220483042304830424048404240484042502000002000003000003000CB84980",
+        "base64url": "SE5LUAEBDASEBB4EgwQeBIMEHwSDBCAEggQgBIIEIQSCBCIEgwQiBIMEIwSDBCQEhAQkBIQEJQIAAAIAAAMAAAMADLhJgA"
+      }
+    },
+    {
+      "glyphId": "G32",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S32",
+        "MF:L04:S32",
+        "MF:L04:S31",
+        "MF:L04:S30",
+        "MF:L03:S30",
+        "MF:L03:S31",
+        "MF:L03:S30",
+        "MF:L04:S30",
+        "MF:L04:S31",
+        "MF:L04:S32",
+        "MF:L05:S32",
+        "MF:L05:S31"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "71891F63",
+        "packetHex": "484E4B5001010C0484041F0483041F0483041E0483041D0482041D0482041E0482041D0483041D0483041E0483041F0484041F0484041E020101020001030000030171891F63",
+        "base64url": "SE5LUAEBDASEBB8EgwQfBIMEHgSDBB0EggQdBIIEHgSCBB0EgwQdBIMEHgSDBB8EhAQfBIQEHgIBAQIAAQMAAAMBcYkfYw"
+      }
+    },
+    {
+      "glyphId": "G33",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S33",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L04:S33",
+        "MF:L03:S33",
+        "MF:L03:S34",
+        "MF:L03:S33",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L04:S33",
+        "MF:L05:S33",
+        "MF:L05:S34"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "292A335C",
+        "packetHex": "484E4B5001010C0484042004830420048304210483042004820420048204210482042004830420048304210483042004840420048404210200010200010300010300292A335C",
+        "base64url": "SE5LUAEBDASEBCAEgwQgBIMEIQSDBCAEggQgBIIEIQSCBCAEgwQgBIMEIQSDBCAEhAQgBIQEIQIAAQIAAQMAAQMAKSozXA"
+      }
+    },
+    {
+      "glyphId": "G34",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S34",
+        "MF:L04:S34",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L03:S34",
+        "MF:L03:S35",
+        "MF:L03:S36",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L05:S36",
+        "MF:L05:S35"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "17B1A2E7",
+        "packetHex": "484E4B5001010C048404210483042104830420048304210482042104820422048204230483042304830424048304230484042304840422020100020000030001030117B1A2E7",
+        "base64url": "SE5LUAEBDASEBCEEgwQhBIMEIASDBCEEggQhBIIEIgSCBCMEgwQjBIMEJASDBCMEhAQjBIQEIgIBAAIAAAMAAQMBF7Gi5w"
+      }
+    },
+    {
+      "glyphId": "G35",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S35",
+        "MF:L04:S35",
+        "MF:L04:S34",
+        "MF:L04:S35",
+        "MF:L03:S35",
+        "MF:L03:S36",
+        "MF:L03:S35",
+        "MF:L04:S35",
+        "MF:L04:S34",
+        "MF:L04:S35",
+        "MF:L05:S35",
+        "MF:L05:S36"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "3A9D59F8",
+        "packetHex": "484E4B5001010C04840422048304220483042104830422048204220482042304820422048304220483042104830422048404220484042302010002000103010003003A9D59F8",
+        "base64url": "SE5LUAEBDASEBCIEgwQiBIMEIQSDBCIEggQiBIIEIwSCBCIEgwQiBIMEIQSDBCIEhAQiBIQEIwIBAAIAAQMBAAMAOp1Z-A"
+      }
+    },
+    {
+      "glyphId": "G36",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S36",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L03:S36",
+        "MF:L03:S37",
+        "MF:L03:S38",
+        "MF:L04:S38",
+        "MF:L04:S37",
+        "MF:L04:S38",
+        "MF:L05:S38",
+        "MF:L05:S37"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "2416515B",
+        "packetHex": "484E4B5001010C04840423048304230483042404830423048204230482042404820425048304250483042404830425048404250484042402000102000003010003012416515B",
+        "base64url": "SE5LUAEBDASEBCMEgwQjBIMEJASDBCMEggQjBIIEJASCBCUEgwQlBIMEJASDBCUEhAQlBIQEJAIAAQIAAAMBAAMBJBZRWw"
+      }
+    },
+    {
+      "glyphId": "G37",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S37",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L04:S35",
+        "MF:L03:S35",
+        "MF:L03:S36",
+        "MF:L03:S37",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L04:S35",
+        "MF:L05:S35",
+        "MF:L05:S36"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "EB769E72",
+        "packetHex": "484E4B5001010C0484042404830424048304230483042204820422048204230482042404830424048304230483042204840422048404230201010200000301010300EB769E72",
+        "base64url": "SE5LUAEBDASEBCQEgwQkBIMEIwSDBCIEggQiBIIEIwSCBCQEgwQkBIMEIwSDBCIEhAQiBIQEIwIBAQIAAAMBAQMA63aecg"
+      }
+    },
+    {
+      "glyphId": "G38",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S38",
+        "MF:L04:S38",
+        "MF:L04:S39",
+        "MF:L04:S40",
+        "MF:L03:S40",
+        "MF:L03:S41",
+        "MF:L03:S40",
+        "MF:L04:S40",
+        "MF:L04:S39",
+        "MF:L04:S38",
+        "MF:L05:S38",
+        "MF:L05:S37"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "B2713361",
+        "packetHex": "484E4B5001010C0484042504830425048304260483042704820427048204280482042704830427048304260483042504840425048404240200000200010301010301B2713361",
+        "base64url": "SE5LUAEBDASEBCUEgwQlBIMEJgSDBCcEggQnBIIEKASCBCcEgwQnBIMEJgSDBCUEhAQlBIQEJAIAAAIAAQMBAQMBsnEzYQ"
+      }
+    },
+    {
+      "glyphId": "G39",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S39",
+        "MF:L04:S39",
+        "MF:L04:S38",
+        "MF:L04:S37",
+        "MF:L03:S37",
+        "MF:L03:S36",
+        "MF:L03:S37",
+        "MF:L04:S37",
+        "MF:L04:S38",
+        "MF:L04:S39",
+        "MF:L05:S39",
+        "MF:L05:S40"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "11061345",
+        "packetHex": "484E4B5001010C048404260483042604830425048304240482042404820423048204240483042404830425048304260484042604840427020101020100030000030011061345",
+        "base64url": "SE5LUAEBDASEBCYEgwQmBIMEJQSDBCQEggQkBIIEIwSCBCQEgwQkBIMEJQSDBCYEhAQmBIQEJwIBAQIBAAMAAAMAEQYTRQ"
+      }
+    },
+    {
+      "glyphId": "G40",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S40",
+        "MF:L04:S40",
+        "MF:L04:S41",
+        "MF:L04:S42",
+        "MF:L03:S42",
+        "MF:L03:S41",
+        "MF:L03:S40",
+        "MF:L04:S40",
+        "MF:L04:S41",
+        "MF:L04:S42",
+        "MF:L05:S42",
+        "MF:L05:S41"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "B47599E4",
+        "packetHex": "484E4B5001010C0484042704830427048304280483042904820429048204280482042704830427048304280483042904840429048404280200000201010300000301B47599E4",
+        "base64url": "SE5LUAEBDASEBCcEgwQnBIMEKASDBCkEggQpBIIEKASCBCcEgwQnBIMEKASDBCkEhAQpBIQEKAIAAAIBAQMAAAMBtHWZ5A"
+      }
+    }
+  ]
+}

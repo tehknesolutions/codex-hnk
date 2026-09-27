@@ -1,0 +1,129 @@
+{
+  "version": "1.3-experimental",
+  "status": "HNK_CANDIDATE_STATIC_VISIBLE_UNIQUE_SEED_FAMILY",
+  "purpose": "Repair V1.2 static-render collisions while preserving Hamming(7,4) angular spacing, 12 nodes, 11 edges, the 4x10 source matrix and HNK_CANDIDATE governance.",
+  "supersedesForReview": "V1.2 remains provenance; V1.3 is preferred only for continued structural/human review after V1.2 failed the static-visible uniqueness gate.",
+  "authorityBoundary": {
+    "sourceGlyphAuthority": "HNK-KODE",
+    "structuralLaboratory": "CODEX-HNK",
+    "bindingAuthority": "HNK_CANDIDATE",
+    "semanticAssignment": "NONE",
+    "humanPromotionRequired": true
+  },
+  "cardinality": 40,
+  "codingLaw": {
+    "input": "column0 = 0..9 represented as data bits d1 d2 d3 d4",
+    "parity": [
+      "p1=d1 XOR d2 XOR d4",
+      "p2=d1 XOR d3 XOR d4",
+      "p4=d2 XOR d3 XOR d4"
+    ],
+    "codeword": "p1 p2 d1 p4 d2 d3 d4",
+    "semanticMeaning": "NONE"
+  },
+  "staticVisibleSignatureLaw": {
+    "definition": "translation-normalized set of undirected unique MF adjacency segments; stroke order, traversal direction and duplicate retracing are ignored",
+    "reason": "A static glyph, font outline, printed mark or non-animated SVG cannot rely on hidden traversal order for identity.",
+    "requiredUniqueCount": 40
+  },
+  "pathLaw": {
+    "angularDecisions": 7,
+    "radialDecisions": 4,
+    "totalEdges": 11,
+    "totalNodes": 12,
+    "startLayerByWorld": {
+      "W1": 2,
+      "W2": 2,
+      "W3": 5,
+      "W4": 5
+    },
+    "W1": [
+      "A0",
+      "RADIAL_OUT",
+      "A1",
+      "A2",
+      "RADIAL_OUT",
+      "A3",
+      "A4",
+      "RADIAL_IN",
+      "A5",
+      "A6",
+      "RADIAL_IN"
+    ],
+    "W2": [
+      "A0",
+      "A1",
+      "RADIAL_OUT",
+      "RADIAL_OUT",
+      "A2",
+      "A3",
+      "RADIAL_IN",
+      "A4",
+      "A5",
+      "RADIAL_IN",
+      "A6"
+    ],
+    "W3": [
+      "A0",
+      "A1",
+      "RADIAL_IN",
+      "A2",
+      "RADIAL_IN",
+      "A3",
+      "A4",
+      "RADIAL_OUT",
+      "A5",
+      "A6",
+      "RADIAL_OUT"
+    ],
+    "W4": [
+      "RADIAL_IN",
+      "A0",
+      "A1",
+      "A2",
+      "A3",
+      "RADIAL_IN",
+      "RADIAL_OUT",
+      "A4",
+      "A5",
+      "RADIAL_OUT",
+      "A6"
+    ],
+    "angularRule": "code bit 0 => ANGULAR_NEXT; code bit 1 => ANGULAR_PREV"
+  },
+  "minimalChangeFromV12": {
+    "W1": "unchanged",
+    "W2": {
+      "changedSlots": [
+        1,
+        3
+      ],
+      "from": "O A A O A A I A A I A",
+      "to": "A A O O A A I A A I A"
+    },
+    "W3": {
+      "changedSlots": [
+        2,
+        3
+      ],
+      "from": "A I A A I A A O A A O",
+      "to": "A A I A I A A O A A O"
+    },
+    "W4": {
+      "changedSlots": [
+        4,
+        6
+      ],
+      "from": "I A A I A A O A A O A",
+      "to": "I A A A A I O A A O A"
+    },
+    "totalScheduleSlotChanges": 6
+  },
+  "discriminabilityTarget": {
+    "minimumEdgeSignatureDistance": 3,
+    "observedMinimumEdgeSignatureDistance": 3,
+    "uniqueStaticVisibleShapes": 40
+  },
+  "transportProfile": "HNKP1-MF-TUPLE-BE",
+  "governance": "Structural success does not assign meaning and does not promote any G-ID."
+}
