@@ -1,0 +1,30 @@
+{
+  "root": "HNK",
+  "systems": {
+    "codex": {
+      "id": "CODEX-HNK",
+      "roles": ["REGISTRY", "GRIMOIRE", "TRAINING"],
+      "vertents": ["MAGICO", "ESPIRITUAL", "TECNOLOGIA", "ARTE", "CIENTIFICO"]
+    },
+    "kode": {
+      "id": "HNK-KODE",
+      "roles": ["HNK_LANGUAGE", "SPIRITUAL_LANGUAGE", "MAGIC_PHYSICAL_MANIFESTATION"]
+    },
+    "verse": {
+      "id": "HNK-VERSE",
+      "manifestation": ["DIGITAL", "ASTRAL", "MENTAL"]
+    }
+  },
+  "organization": {
+    "id": "GID/HNK",
+    "blocks": ["TEHKNE_SOLUTIONS", "SIMPLEWAY_ACADEMY", "HANDS_UP_CONSULTORIA"]
+  },
+  "technologyPlacement": ["HNK", "CODEX-HNK", "TECNOLOGIA", "TEHKNE_SOLUTIONS", "TEHKNE-OS"],
+  "invariants": [
+    "HNK_IS_MAXIMUM_DOMAIN",
+    "TEHKNE_OS_IS_NOT_HNK_ROOT",
+    "TEHKNE_OS_ENTERS_CODEX_THROUGH_TECHNOLOGY",
+    "IMPLEMENTATION_DOES_NOT_AUTO_PROMOTE_CANON",
+    "HNK_VERSE_RUNTIME_OUTPUT_IS_EVIDENCE_BEFORE_CANON"
+  ]
+}
