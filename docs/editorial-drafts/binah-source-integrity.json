@@ -1,0 +1,20 @@
+{
+  "schema": "HNK-BINAH-SOURCE-INTEGRITY-V1",
+  "sources": [
+    {
+      "name": "capitulo_3_plano_escrita.md",
+      "sha256": "79cf5b61f0dfb0e67bcba0afcb4ec534e21d5303fc135b9638519022fdecd832",
+      "role": "legacy_editorial_day_map_74_109"
+    },
+    {
+      "name": "codex_365_arquitetura_final.md",
+      "sha256": "6e671361b03a1f74963dfddd238dcd863cae2c94504cf12a48bda20decebe8d9",
+      "role": "legacy_architecture_range_and_chapter_contract"
+    },
+    {
+      "name": "CODEX HNK V3 Drive document",
+      "role": "later_drive_crosscheck_and_agent_directorate_mapping"
+    }
+  ],
+  "promotion": "NONE"
+}
