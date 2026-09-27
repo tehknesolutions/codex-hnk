@@ -1,0 +1,32 @@
+{
+  "version":"1.0",
+  "status":"ACTIVE_FINAL_SEMANTIC_BATCH",
+  "dependsOn":"MANDALA_COMPUTABLE_V1_CANDIDATE_FREEZE",
+  "purpose":"Resolve every remaining semantic/correspondence item that can be resolved from locked Mandala sources or independently sourced reference layers, without reopening frozen geometry.",
+  "workstreams":[
+    {"id":"SB01","scope":"L01","task":"Enumerate all 72 observed symbols in inner symbolic band A; assign source coordinates, sector ID, visual token class, confidence and provenance. Do not infer semantics from appearance."},
+    {"id":"SB02","scope":"L02","task":"Enumerate all 72 observed symbols in inner symbolic band B with the same evidence schema; detect repeated alphabets/families before naming them."},
+    {"id":"SB03","scope":"L06","task":"Enumerate the 72 outer symbolic/astrological cells and classify only visually defensible planetary/zodiacal/elemental/other symbol families; unresolved tokens remain opaque IDs."},
+    {"id":"SB04","scope":"R22","task":"Determine orientation, rotation and mirroring of 3 Mothers, 7 Doubles and 12 Simples against the P0 rose. Keep external Sefer Yetzirah/Hermetic mapping separate from source-observed geometry."},
+    {"id":"SB05","scope":"CORE","task":"Create hierarchical core model: white field, five-petal red rose, four green rays and visible gold-cross geometry; distinguish source-visible primitives from externally described six-square cross."},
+    {"id":"SB06","scope":"72_NAMES","task":"Transcribe source-visible Latin/transliterated and Hebrew names exactly before reconciling spelling variants with external references."},
+    {"id":"SB07","scope":"SOUND_FREQUENCY","task":"Do not derive frequencies from pixels. Build a typed correspondence slot so later sourced historical systems and HNK-authored sound mathematics can coexist without being conflated."},
+    {"id":"SB08","scope":"SRC0003","task":"Use SRC-0003 only to cross-check outer correspondences and repeated symbol families; never merge its alternate center into P0 Rose geometry."}
+  ],
+  "outputSchema":{
+    "observed":"directly visible/measured in locked source",
+    "derived":"mathematically derived from observed structure",
+    "externalReference":"independently sourced historical/esoteric correspondence",
+    "hnkCanonical":"explicit HNK governance decision",
+    "candidate":"research proposal awaiting approval",
+    "unresolved":"insufficient evidence"
+  },
+  "completionCriteria":[
+    "Every source-visible addressable cell has a stable ID even when semantic meaning is unresolved.",
+    "Every semantic claim carries authority/provenance.",
+    "No sound, mystical or linguistic correspondence is invented from raster geometry.",
+    "All unresolved tokens are explicit rather than silently omitted.",
+    "Result can feed G7 glossary and G4 AK-scope decision without changing Mandala geometry."
+  ],
+  "nextAfterBatch":"AK scope freeze + typed Cabalistic Glossary population + Pixel/IsoPixel projection design"
+}
