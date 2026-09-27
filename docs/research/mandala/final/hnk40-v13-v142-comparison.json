@@ -1,0 +1,21 @@
+{
+  "version": "1.4.2",
+  "status": "NON_AUTHORITATIVE_COMPARISON",
+  "v13": {
+    "minimumVisibleSegments": 4,
+    "totalVisibleSegments": 313,
+    "orientationEquivalentPairs": 10,
+    "raster8Unique": 40,
+    "raster6Unique": 30
+  },
+  "v142": {
+    "minimumVisibleSegments": 6,
+    "totalVisibleSegments": 351,
+    "orientationEquivalentPairs": 10,
+    "lowVisibleOrientationPairs": 1,
+    "maxOrientationDegree": 1,
+    "raster8Unique": 40,
+    "raster6Unique": 31
+  },
+  "interpretation": "V1.4.2 matches V1.3 orientation-pair count and 8px uniqueness while improving minimum/total visible segments and 6px distinctness."
+}
