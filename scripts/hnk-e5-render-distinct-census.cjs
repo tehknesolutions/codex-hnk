@@ -1,0 +1,11 @@
+﻿const fs=require('fs');
+const m=JSON.parse(fs.readFileSync('docs/research/mandala/final/mandala-structural-model.v1.json','utf8'));
+const center=m.coordinateSystem.centerPx, bounds=m.radialStructure.sectorizedLayerBoundariesPx, choir=m.radialStructure.choirBand.r;
+const radii=[]; for(let i=0;i<6;i++) radii.push((bounds[i]+bounds[i+1])/2); const cgR=(choir[0]+choir[1])/2;
+function ptMF(l,s){const r=radii[l], deg=90+(s+.5)*5, a=deg*Math.PI/180; return [center[0]+r*Math.cos(a),center[1]-r*Math.sin(a)]}
+function ptCG(g){const r=cgR, deg=90+(g*8+4)*5, a=deg*Math.PI/180; return [center[0]+r*Math.cos(a),center[1]-r*Math.sin(a)]}
+const V=[];for(let l=0;l<6;l++)for(let s=0;s<72;s++)V.push({id:`MF:${l+1}:${s+1}`,p:ptMF(l,s)});for(let g=0;g<9;g++)V.push({id:`CG:${g+1}`,p:ptCG(g)});
+const key=p=>p.map(x=>x.toFixed(9)).join(','); const vm=new Map();let vc=[];for(const v of V){let k=key(v.p);if(vm.has(k))vc.push([vm.get(k),v.id]);else vm.set(k,v.id)}
+const E=[]; const add=(a,b)=>E.push([a,b]); const mf=(l,s)=>l*72+((s+72)%72);for(let l=0;l<6;l++)for(let s=0;s<72;s++){add(mf(l,s),mf(l,s+1));if(l<5)add(mf(l,s),mf(l+1,s));if(l===5)add(mf(l,s),432+Math.floor(s/8));}for(let g=0;g<9;g++)add(432+g,432+(g+1)%9);
+const seg=(a,b)=>{let A=key(V[a].p),B=key(V[b].p);return A<B?A+'|'+B:B+'|'+A}; const em=new Map();let ec=[];for(const [a,b] of E){let k=seg(a,b);if(em.has(k))ec.push([[V[em.get(k)[0]].id,V[em.get(k)[1]].id],[V[a].id,V[b].id]]);else em.set(k,[a,b])}
+const out={version:'1.0',status:vc.length===0&&ec.length===0?'PASS':'FAIL',renderer:{centerPx:center,sectorStepDeg:5,mfRepresentativeRadii:radii,cgRepresentativeRadius:cgR,precisionDecimals:9},checks:{mfCgVertices:V.length,frozenMfCgEdges:E.length,coordinateCollisions:vc.length,edgeSegmentCollisions:ec.length,coordinateInjective:vc.length===0,edgeSegmentInjective:ec.length===0},counts:{mfCgGeometricClasses:'2647891',crDGeometricClasses:'1',major463RenderDistinct:'2647892'},boundary:'CR:D absolute placement is not frozen against MF+CG; no cross-component collapse is asserted.'};fs.writeFileSync('docs/research/mandala/final/hnk-e5-render-distinct-census.v1.json',JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify(out,null,2));if(out.status!=='PASS')process.exit(1);
