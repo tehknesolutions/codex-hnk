@@ -1,0 +1,579 @@
+{
+  "version": "1.3",
+  "status": "NON_AUTHORITATIVE_ASSISTED_REVIEW",
+  "basis": [
+    "glyph-genesis-hnk40-candidates.v1.3.json",
+    "hnk40-orientation-risk.v1.3.json",
+    "hnk40-static-visible-gate.v1.3.json"
+  ],
+  "authorityBoundary": {
+    "assistedRecommendation": "NON_CANONICAL",
+    "canonicalDecision": "PENDING",
+    "promotionRequiresExplicitHumanDecision": true,
+    "linguisticAuthority": "HNK-KODE"
+  },
+  "policy": {
+    "KEEP": "static-visible unique; distinct at >=8px; no severe stroke-economy trigger",
+    "HOLD": "6 unique visible segments plus orientation-equivalence and/or 6px collision",
+    "REVISE": "<=5 unique visible segments from an 11-step PATH",
+    "REJECT": "not assigned automatically"
+  },
+  "rasterScaleGate": {
+    "minimumCollisionFreeTestedSizePx": 8,
+    "sizes": {
+      "6": {
+        "unique": 30,
+        "collisionGroups": 7,
+        "collisions": [
+          [
+            "G02",
+            "G26"
+          ],
+          [
+            "G03",
+            "G23"
+          ],
+          [
+            "G04",
+            "G08",
+            "G29"
+          ],
+          [
+            "G05",
+            "G25"
+          ],
+          [
+            "G09",
+            "G24",
+            "G28"
+          ],
+          [
+            "G14",
+            "G18"
+          ],
+          [
+            "G31",
+            "G34",
+            "G38"
+          ]
+        ]
+      },
+      "8": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "10": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "12": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "16": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      },
+      "24": {
+        "unique": 40,
+        "collisionGroups": 0,
+        "collisions": []
+      }
+    }
+  },
+  "counts": {
+    "KEEP": 26,
+    "HOLD": 7,
+    "REVISE": 7,
+    "REJECT": 0
+  },
+  "rows": [
+    {
+      "glyphId": "G01",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G02",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G26"
+      ],
+      "assistedRecommendation": "HOLD",
+      "rationale": "Only 6 unique visible segments with exact orientation-equivalent peer and 6px raster collision.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G03",
+      "uniqueVisibleSegments": 5,
+      "retraceTraversals": 6,
+      "retraceRatio": 0.545,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G23"
+      ],
+      "assistedRecommendation": "REVISE",
+      "rationale": "11-step PATH collapses to 5 unique visible segments (6 retraced traversals); stroke economy should be improved.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G04",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G08",
+        "G29"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G05",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G25"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G06",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "HOLD",
+      "rationale": "Only 6 unique visible segments with exact orientation-equivalent peer.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G07",
+      "uniqueVisibleSegments": 5,
+      "retraceTraversals": 6,
+      "retraceRatio": 0.545,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "REVISE",
+      "rationale": "11-step PATH collapses to 5 unique visible segments (6 retraced traversals); stroke economy should be improved.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G08",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G04",
+        "G29"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G09",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G24",
+        "G28"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G10",
+      "uniqueVisibleSegments": 5,
+      "retraceTraversals": 6,
+      "retraceRatio": 0.545,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "REVISE",
+      "rationale": "11-step PATH collapses to 5 unique visible segments (6 retraced traversals); stroke economy should be improved.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G11",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G12",
+      "uniqueVisibleSegments": 8,
+      "retraceTraversals": 3,
+      "retraceRatio": 0.273,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G13",
+      "uniqueVisibleSegments": 5,
+      "retraceTraversals": 6,
+      "retraceRatio": 0.545,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "REVISE",
+      "rationale": "11-step PATH collapses to 5 unique visible segments (6 retraced traversals); stroke economy should be improved.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G14",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G18"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G15",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G16",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G17",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G18",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G14"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G19",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G20",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G21",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G22",
+      "uniqueVisibleSegments": 8,
+      "retraceTraversals": 3,
+      "retraceRatio": 0.273,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G23",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G03"
+      ],
+      "assistedRecommendation": "HOLD",
+      "rationale": "Only 6 unique visible segments with 6px raster collision.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G24",
+      "uniqueVisibleSegments": 10,
+      "retraceTraversals": 1,
+      "retraceRatio": 0.091,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G09",
+        "G28"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G25",
+      "uniqueVisibleSegments": 9,
+      "retraceTraversals": 2,
+      "retraceRatio": 0.182,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G05"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G26",
+      "uniqueVisibleSegments": 7,
+      "retraceTraversals": 4,
+      "retraceRatio": 0.364,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G02"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G27",
+      "uniqueVisibleSegments": 7,
+      "retraceTraversals": 4,
+      "retraceRatio": 0.364,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G28",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G09",
+        "G24"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G29",
+      "uniqueVisibleSegments": 11,
+      "retraceTraversals": 0,
+      "retraceRatio": 0,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G04",
+        "G08"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G30",
+      "uniqueVisibleSegments": 7,
+      "retraceTraversals": 4,
+      "retraceRatio": 0.364,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G31",
+      "uniqueVisibleSegments": 10,
+      "retraceTraversals": 1,
+      "retraceRatio": 0.091,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G34",
+        "G38"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G32",
+      "uniqueVisibleSegments": 5,
+      "retraceTraversals": 6,
+      "retraceRatio": 0.545,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "REVISE",
+      "rationale": "11-step PATH collapses to 5 unique visible segments (6 retraced traversals); stroke economy should be improved.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G33",
+      "uniqueVisibleSegments": 4,
+      "retraceTraversals": 7,
+      "retraceRatio": 0.636,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "REVISE",
+      "rationale": "11-step PATH collapses to 4 unique visible segments (7 retraced traversals); stroke economy should be improved.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G34",
+      "uniqueVisibleSegments": 8,
+      "retraceTraversals": 3,
+      "retraceRatio": 0.273,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [
+        "G31",
+        "G38"
+      ],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G35",
+      "uniqueVisibleSegments": 5,
+      "retraceTraversals": 6,
+      "retraceRatio": 0.545,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "REVISE",
+      "rationale": "11-step PATH collapses to 5 unique visible segments (6 retraced traversals); stroke economy should be improved.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G36",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": false,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "KEEP",
+      "rationale": "Passes static uniqueness and remains distinct at 8px.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G37",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "HOLD",
+      "rationale": "Only 6 unique visible segments with exact orientation-equivalent peer.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G38",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [
+        "G31",
+        "G34"
+      ],
+      "assistedRecommendation": "HOLD",
+      "rationale": "Only 6 unique visible segments with exact orientation-equivalent peer and 6px raster collision.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G39",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "HOLD",
+      "rationale": "Only 6 unique visible segments with exact orientation-equivalent peer.",
+      "canonicalDecision": "PENDING"
+    },
+    {
+      "glyphId": "G40",
+      "uniqueVisibleSegments": 6,
+      "retraceTraversals": 5,
+      "retraceRatio": 0.455,
+      "exactOrientationEquivalence": true,
+      "sixPxCollisionPeers": [],
+      "assistedRecommendation": "HOLD",
+      "rationale": "Only 6 unique visible segments with exact orientation-equivalent peer.",
+      "canonicalDecision": "PENDING"
+    }
+  ]
+}
