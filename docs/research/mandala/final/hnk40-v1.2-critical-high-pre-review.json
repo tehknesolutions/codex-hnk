@@ -1,0 +1,538 @@
+{
+  "version": "1.2",
+  "status": "NON_AUTHORITATIVE_STRUCTURAL_PRE_REVIEW",
+  "scope": "V1.2 CRITICAL+HIGH nearest pairs",
+  "pairCount": 4,
+  "finding": "V1.2 nearest pairs differ by at least three edge decisions, eliminating the one-edge terminal-stroke problem seen in V1.1.",
+  "automaticDecision": false,
+  "pairs": [
+    {
+      "pairId": "G12-G19",
+      "tier": "CRITICAL",
+      "score": 34,
+      "edgeDistance": 3,
+      "pointDistance": 4,
+      "differingEdgesHuman": [
+        5,
+        6,
+        11
+      ],
+      "glyphA": {
+        "id": "G12",
+        "edges": [
+          "ANGULAR_NEXT",
+          "ANGULAR_PREV",
+          "ANGULAR_PREV"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": -2,
+            "y": 2
+          },
+          {
+            "x": -1,
+            "y": 2
+          },
+          {
+            "x": -2,
+            "y": 2
+          },
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 0
+          }
+        ],
+        "crc32": "6BBBAEB4"
+      },
+      "glyphB": {
+        "id": "G19",
+        "edges": [
+          "ANGULAR_PREV",
+          "ANGULAR_NEXT",
+          "ANGULAR_NEXT"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": -2,
+            "y": 2
+          },
+          {
+            "x": -3,
+            "y": 2
+          },
+          {
+            "x": -2,
+            "y": 2
+          },
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "crc32": "98AC9669"
+      },
+      "structuralFinding": "The pair differs on 3 of 11 edges (5, 6, 11).",
+      "provisionalState": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "pairId": "G32-G39",
+      "tier": "CRITICAL",
+      "score": 34,
+      "edgeDistance": 3,
+      "pointDistance": 4,
+      "differingEdgesHuman": [
+        5,
+        6,
+        11
+      ],
+      "glyphA": {
+        "id": "G32",
+        "edges": [
+          "ANGULAR_NEXT",
+          "ANGULAR_PREV",
+          "ANGULAR_PREV"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -2,
+            "y": -1
+          },
+          {
+            "x": -2,
+            "y": -2
+          },
+          {
+            "x": -1,
+            "y": -2
+          },
+          {
+            "x": -2,
+            "y": -2
+          },
+          {
+            "x": -2,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 0
+          }
+        ],
+        "crc32": "71891F63"
+      },
+      "glyphB": {
+        "id": "G39",
+        "edges": [
+          "ANGULAR_PREV",
+          "ANGULAR_NEXT",
+          "ANGULAR_NEXT"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -2,
+            "y": -1
+          },
+          {
+            "x": -2,
+            "y": -2
+          },
+          {
+            "x": -3,
+            "y": -2
+          },
+          {
+            "x": -2,
+            "y": -2
+          },
+          {
+            "x": -2,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "crc32": "11061345"
+      },
+      "structuralFinding": "The pair differs on 3 of 11 edges (5, 6, 11).",
+      "provisionalState": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "pairId": "G02-G09",
+      "tier": "HIGH",
+      "score": 38,
+      "edgeDistance": 3,
+      "pointDistance": 8,
+      "differingEdgesHuman": [
+        4,
+        6,
+        10
+      ],
+      "glyphA": {
+        "id": "G02",
+        "edges": [
+          "ANGULAR_NEXT",
+          "ANGULAR_PREV",
+          "ANGULAR_PREV"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 2
+          },
+          {
+            "x": -2,
+            "y": 2
+          },
+          {
+            "x": -1,
+            "y": 2
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 0
+          }
+        ],
+        "crc32": "D0DA938F"
+      },
+      "glyphB": {
+        "id": "G09",
+        "edges": [
+          "ANGULAR_PREV",
+          "ANGULAR_NEXT",
+          "ANGULAR_NEXT"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -2,
+            "y": 1
+          },
+          {
+            "x": -3,
+            "y": 1
+          },
+          {
+            "x": -3,
+            "y": 2
+          },
+          {
+            "x": -2,
+            "y": 2
+          },
+          {
+            "x": -1,
+            "y": 2
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "crc32": "32A5718B"
+      },
+      "structuralFinding": "The pair differs on 3 of 11 edges (4, 6, 10).",
+      "provisionalState": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "pairId": "G22-G29",
+      "tier": "HIGH",
+      "score": 38,
+      "edgeDistance": 3,
+      "pointDistance": 8,
+      "differingEdgesHuman": [
+        4,
+        6,
+        10
+      ],
+      "glyphA": {
+        "id": "G22",
+        "edges": [
+          "ANGULAR_NEXT",
+          "ANGULAR_PREV",
+          "ANGULAR_PREV"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -2,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -2
+          },
+          {
+            "x": -2,
+            "y": -2
+          },
+          {
+            "x": -1,
+            "y": -2
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": 0
+          }
+        ],
+        "crc32": "974227FA"
+      },
+      "glyphB": {
+        "id": "G29",
+        "edges": [
+          "ANGULAR_PREV",
+          "ANGULAR_NEXT",
+          "ANGULAR_NEXT"
+        ],
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": 0
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": -2,
+            "y": -1
+          },
+          {
+            "x": -3,
+            "y": -1
+          },
+          {
+            "x": -3,
+            "y": -2
+          },
+          {
+            "x": -2,
+            "y": -2
+          },
+          {
+            "x": -1,
+            "y": -2
+          },
+          {
+            "x": -1,
+            "y": -1
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": -1
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "crc32": "F8D6D89D"
+      },
+      "structuralFinding": "The pair differs on 3 of 11 edges (4, 6, 10).",
+      "provisionalState": "PENDING_HUMAN_REVIEW"
+    }
+  ]
+}
