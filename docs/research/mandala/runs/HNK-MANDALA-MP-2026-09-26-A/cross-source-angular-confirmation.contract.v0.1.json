@@ -1,0 +1,34 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "status":"READY_FOR_EXECUTION",
+  "purpose":"Confirm or reject each SRC-0002 72-fold boundary candidate independently against SRC-0003 before MF-288 continuity promotion.",
+  "inputs":{
+    "src0002":{"sha256":"7ebf953481cdc0e09de44755bfae45044cb391c799a8ddb0d571ed43e0621ac9","role":"REFERENCE_BOUNDARY_FAMILY"},
+    "src0003":{"sha256":"99bd9b8c690431c052b318541319e6ba764b736d746a2f51cfe93f007489fbb1","role":"INDEPENDENT_OUTER_GEOMETRY_CROSSCHECK"},
+    "src0002AngularSummary":{"phaseDegrees":4.88,"stepDegrees":5.0,"maeDegrees":0.280417,"rmsDegrees":0.453172,"high":38,"medium":15,"low":19}
+  },
+  "normalization":{
+    "coordinateSystem":"polar normalized radius rho=r/R per source",
+    "phaseHandling":"estimate SRC-0003 phase independently; compare modulo 5 degrees after phase normalization",
+    "centralExclusion":"exclude source-specific central composition from angular confirmation",
+    "noImageWarpingForEvidence":true
+  },
+  "perBoundaryOutput":{
+    "ids":"B00..B71",
+    "requiredFields":["src0002ObservedDeg","src0002Confidence","src0003ObservedDeg","src0003ResponseStrength","src0003Confidence","phaseNormalizedDeltaDeg","sharedRadialSupport","classification"],
+    "classification":["CONFIRMED","PARTIAL","SRC0002_ONLY","SRC0003_ONLY","UNRESOLVED"]
+  },
+  "antiTargetFitting":[
+    "Do not seed SRC-0003 local maxima from SRC-0002 observed offsets; seed only the theoretical 5-degree family after independent SRC-0003 phase estimation.",
+    "Do not alter search windows per boundary to increase confirmation count.",
+    "Report sensitivity across declared outer radial windows.",
+    "Do not count text/symbol-local edges as shared radial support unless line evidence persists across a declared radial span."
+  ],
+  "h72PromotionRule":{
+    "current":"PARTIALLY_SUPPORTED",
+    "supportedRequires":"cross-source periodic family plus sufficient per-boundary continuity to justify a stable 72-sector topology; exact threshold must be declared before observing final confirmation count",
+    "fallback":"retain PARTIALLY_SUPPORTED or mark UNRESOLVED if cross-source evidence is heterogeneous"
+  },
+  "next":"Use confirmed/partial boundary evidence together with verified radial bands to populate MF:R01..R04:S00..S71 continuity records. No AK assignment in this run."
+}

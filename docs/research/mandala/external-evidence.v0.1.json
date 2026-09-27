@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "records": [
+    {
+      "id": "EXT-MANDALA-0001",
+      "authority": "EXTERNAL_REFERENCE",
+      "claim": "A consulted cabalistic source describes internal symbols/seals as traced by following Hebrew-name letter sequences positioned on the central rose of a Hermetic/Rosicrucian cross.",
+      "implication": "Supports researching ordered PATH over Mandala fields as a historical/source-derived construction method; does not establish HNK canon.",
+      "source": "a-cabala-de-hakash-ba-hakash-tomo-iii-revisado.pdf",
+      "status": "RECORDED_NOT_CANONICAL"
+    },
+    {
+      "id": "EXT-MANDALA-0002",
+      "authority": "EXTERNAL_REFERENCE",
+      "claim": "The consulted source describes a 72-genius system with temporal/angular correspondences.",
+      "implication": "72-related structures may be compared against measured Mandala geometry, but numeric coincidence is not evidence of identity.",
+      "source": "a-cabala-de-hakash-ba-hakash-tomo-iii-revisado.pdf",
+      "status": "RECORDED_NOT_CANONICAL"
+    }
+  ]
+}

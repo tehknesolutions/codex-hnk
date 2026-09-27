@@ -1,0 +1,16 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "sourceAssetId":"HNK-MANDALA-SRC-0002",
+  "status":"MEASURED_SCREENING_NOT_CELL_CANON",
+  "method":"Using the previously measured candidate radial bands and independently estimated angular phases, sample image-gradient evidence along each candidate wedge's left/right angular walls and inner/outer radial boundaries. Compare mean boundary evidence with wedge-interior gradient evidence. This tests local enclosure tendency; it does not by itself prove a planar cell.",
+  "sourceGeometry":{"width":900,"height":900,"centerPx":[450,450]},
+  "families":[
+    {"id":"CR3","radialPx":[27,62],"phaseDeg":41.88,"periodDeg":120.0,"wedgeCount":3,"allFourBoundariesStrongerThanInterior":3,"medianBoundaryToInteriorRatio":2.094,"interpretation":"All three candidate wedges show aggregate enclosure evidence, but this does not resolve the previously ambiguous third angular boundary; treat as supportive screening only."},
+    {"id":"CR7","radialPx":[65,110],"phaseDeg":11.777,"periodDeg":51.428571,"wedgeCount":7,"allFourBoundariesStrongerThanInterior":2,"medianBoundaryToInteriorRatio":1.870,"interpretation":"Aggregate boundary evidence is generally above interior evidence, but only 2/7 wedges satisfy the strict all-four-boundaries criterion. Several radial closures are weak; 7-fold periodicity remains stronger evidence than closed-cell count."},
+    {"id":"CR12","radialPx":[112,160],"phaseDeg":0.0,"periodDeg":30.0,"wedgeCount":12,"allFourBoundariesStrongerThanInterior":4,"medianBoundaryToInteriorRatio":1.884,"interpretation":"Most wedges have aggregate boundary evidence above their interiors, but only 4/12 pass the strict all-four-boundaries criterion. 12-fold periodicity is not yet equivalent to 12 independently closed planar cells."}
+  ],
+  "adjudication":{"H22":"PARTIALLY_SUPPORTED","change":false,"reason":"Independent 3/7/12 periodicity is supported at different radial scales and local enclosure tendency is present, but strict closed-cell evidence is heterogeneous, especially for 7- and 12-fold bands."},
+  "methodologicalConsequence":"Do not create 22 CR-MF identities yet. The next pass must trace connected boundary curves / planar faces rather than assume radial wedges are cells.",
+  "nextPass":{"name":"central rose planar-face reconstruction","requirements":["trace stable boundary curves","collapse double edges","mask internal symbol strokes","construct planar graph","enumerate bounded faces","map periodic families to faces only after enumeration","retain unresolved merges/splits"]}
+}

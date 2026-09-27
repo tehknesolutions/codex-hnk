@@ -1,0 +1,27 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "status":"READY_FOR_DEDICATED_MACHINE_PASS",
+  "sourceAssetId":"HNK-MANDALA-SRC-0002",
+  "purpose":"Measure the central rose independently from the outer 72-fold polar domain and adjudicate H-22 without target-fitting 3+7+12.",
+  "hardRules":[
+    "SRC-0003 must not be used to confirm central-rose cardinality because its central composition differs.",
+    "Do not project outer 5-degree rays through the rose to manufacture cells.",
+    "Detect boundaries, petals/cells, layers and adjacency before testing any 3/7/12 grouping.",
+    "Do not alter thresholds to obtain 22 cells.",
+    "Preserve unresolved or merged regions instead of manually splitting them.",
+    "No AK IDs are assigned in this pass."
+  ],
+  "pipeline":[
+    {"id":"CR-01","name":"central ROI calibration","output":["centerPx","roiRadiusPx","uncertaintyPx"]},
+    {"id":"CR-02","name":"boundary evidence extraction","output":["edgeEvidence","radialCurves","closedRegionCandidates"]},
+    {"id":"CR-03","name":"independent cell segmentation","output":["observedCells","centroids","areas","boundaryConfidence"]},
+    {"id":"CR-04","name":"adjacency graph","output":["touchingRelations","containment/layerRelations"]},
+    {"id":"CR-05","name":"layer inference","output":["observedLayerCount","cellsPerLayer","confidence"]},
+    {"id":"CR-06","name":"H-22 test","method":"Only after CR-01..CR-05 compare observed structure against 3+7+12=22.","allowedStatuses":["SUPPORTED","PARTIALLY_SUPPORTED","REFUTED","UNRESOLVED"]},
+    {"id":"CR-07","name":"path substrate preparation","output":["stable CR-MF candidate addresses","ordered-neighbor graph"],"note":"Addresses remain measurement identities until G4."}
+  ],
+  "sensitivityRequirement":"Run segmentation across a declared threshold/scale range and report regions stable across settings separately from threshold-sensitive regions.",
+  "requiredOutput":"central-rose-segmentation.json",
+  "promotionBoundary":"Even if H-22 is supported, symbolic Hebrew/HNK correspondences remain separate correspondence-layer assertions and do not arise from geometry alone."
+}

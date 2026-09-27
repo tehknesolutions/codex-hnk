@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "status": "G4_PREPARATION_LOCKED",
+  "purpose": "Define the exact promotion contract from measured Mandala fields to stable Atomic-Kode identities without assuming field count, raster resolution, H-441, H-22, or symbolic meaning.",
+  "inputs": {
+    "outerDomain": "supported MF:Rxx:Sxx records from MF-288 continuity census",
+    "centralDomain": "supported CR-MF:Lx:Cxx records from independent central-rose census",
+    "bridgeRelations": "observed/measured relations between outer and central domains from unified-field-topology-contract.v0.1"
+  },
+  "promotionPredicate": {
+    "allRequired": [
+      "field boundary is reproducibly identifiable in a locked source",
+      "field has stable domain-local address",
+      "field has measured geometry or compositional identity sufficient to distinguish it from neighbors",
+      "field adjacency/containment relations are recorded",
+      "field provenance points to locked source evidence",
+      "field is not an artifact produced only by text, ornament, compression, or arbitrary rasterization",
+      "field survives the relevant cross-source or source-specific classification rule",
+      "authority of every asserted property is explicit"
+    ]
+  },
+  "akIdentity": {
+    "format": "AK-####",
+    "assignmentOrder": "deterministic traversal defined only after supported topology is frozen",
+    "identityBasis": ["domain", "field identity", "topology", "source provenance"],
+    "notIdentityBasis": ["screen pixel coordinate", "color alone", "number coincidence", "external mystical correspondence alone", "visual similarity alone"],
+    "immutabilityRule": "Once a field is promoted to a canonical AK and referenced by canonical HNK artifacts, its AK ID must not be silently reassigned. Corrections require explicit supersession/migration records."
+  },
+  "topologyGraph": {
+    "nodeTypes": ["AK"],
+    "edgeTypes": ["ADJACENT_TO", "CONTAINS", "TOUCHES", "PATH_ENTER", "PATH_EXIT", "ROTATES_TO", "MIRRORS"],
+    "edgeAuthorityRequired": true,
+    "crossDomainEdgesRequireEvidence": true
+  },
+  "postPromotionLayers": {
+    "structural": ["AK_SET", "ORDERED_PATH", "FIELD_STATE", "RELATIONS"],
+    "correspondence": ["NUMBER", "COLOR", "SYMBOL", "HEBREW_LETTER", "SEFIRAH", "ELEMENT", "PLANET", "ZODIAC", "SOUND", "HNK_CONCEPT"],
+    "projection": ["PIXEL", "ISOPIXEL", "VOXEL", "BINARY", "HEX", "MATRIX", "QR_COMPATIBLE_ENCODING"],
+    "rule": "Correspondence and projection layers attach to AK/topology after structural identity; they do not create AK identity."
+  },
+  "glyphGenesisContract": {
+    "identity": "GLYPH := {AK_SET, ORDERED_PATH, FIELD_STATE, RELATIONS}",
+    "sameFieldsDifferentPathMayDiffer": true,
+    "bitmapIsCanonicalIdentity": false,
+    "isometricRenderIsCanonicalIdentity": false,
+    "requiredTraceability": "Every generated glyph manifestation must trace back to AK IDs and transformation/projection versions."
+  },
+  "g4OpenCondition": "Both outer and central censuses have explicit evidence statuses, supported fields have a frozen topology candidate, and unresolved regions are represented as unresolved rather than target-fitted.",
+  "g4PassCondition": "Every promoted AK satisfies the promotion predicate, IDs are assigned deterministically, topology validates without dangling references, and no AK depends on an arbitrary render grid.",
+  "blockedUntilThen": ["canonical AK numbering", "canonical pixel grid", "canonical isopixel grid", "canonical glyph inventory", "H-441 promotion", "H-22 promotion"]
+}

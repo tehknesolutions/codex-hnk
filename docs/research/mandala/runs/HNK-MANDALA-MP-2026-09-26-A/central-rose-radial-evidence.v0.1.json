@@ -1,0 +1,26 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "sourceAssetId":"HNK-MANDALA-SRC-0002",
+  "status":"MEASURED_SCREENING",
+  "source":{"width":900,"height":900,"centerPx":{"x":449.5,"y":449.5}},
+  "method":"Decode locked source bytes to RGB; compute grayscale spatial gradient magnitude; sample 1440 angular positions on concentric radii from 5 to 169.5 px at 0.5 px increments; aggregate circular edge response. This pass measures radial evidence only and does not segment cells.",
+  "strongRadialResponsesPx":[
+    {"radius":168.5,"meanGradient":71.66081,"interpretation":"strong outer central-domain boundary candidate"},
+    {"radius":161.5,"meanGradient":63.326702,"interpretation":"strong outer central-domain boundary candidate"},
+    {"radius":163.5,"meanGradient":58.885912,"interpretation":"nearby boundary response; may belong to same boundary family"},
+    {"radius":25.5,"meanGradient":35.876217,"interpretation":"strong inner radial boundary candidate"},
+    {"radius":63.0,"meanGradient":20.672314,"interpretation":"inner/middle radial boundary candidate"},
+    {"radius":110.5,"meanGradient":20.124107,"interpretation":"middle/outer radial boundary candidate"}
+  ],
+  "secondaryResponsesPx":[6.5,10.0,13.5,17.0,23.0,28.0,61.0,108.5,140.5,142.0,143.5,145.5,153.0,154.5],
+  "conclusion":{
+    "centralRoseHasMultipleRadialScales":true,
+    "threeLayerCountProven":false,
+    "sevenCellLayerProven":false,
+    "twelveCellLayerProven":false,
+    "h22Status":"UNRESOLVED",
+    "reason":"Radial evidence supports multiple structural scales but does not by itself establish independent closed cells or 3/7/12 cardinalities."
+  },
+  "next":"Perform closed-region/cell segmentation inside the central ROI, retain stable regions across threshold/scale sweeps, then infer adjacency and layers before H-22 comparison."
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hnk://mandala/ak/v0.1",
+  "title": "HNK Atomic-Kode Research Record V0.1",
+  "type": "object",
+  "required": ["id", "authority", "source", "polar", "topology", "observed"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^AK-[0-9]{4}$"},
+    "parent": {"type": ["string", "null"]},
+    "children": {"type": "array", "items": {"type": "string"}},
+    "source": {
+      "type": "object",
+      "required": ["assetId", "regionId"],
+      "properties": {
+        "assetId": {"type": ["string", "null"]},
+        "regionId": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "polar": {
+      "type": "object",
+      "properties": {
+        "ring": {"type": ["string", "null"]},
+        "sector": {"type": ["string", "null"]},
+        "rMin": {"type": ["number", "null"]},
+        "rMax": {"type": ["number", "null"]},
+        "thetaStart": {"type": ["number", "null"]},
+        "thetaEnd": {"type": ["number", "null"]},
+        "thetaCenter": {"type": ["number", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "topology": {
+      "type": "object",
+      "required": ["neighbors"],
+      "properties": {
+        "neighbors": {"type": "array", "items": {"type": "string"}},
+        "symmetryClass": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "observed": {
+      "type": "object",
+      "required": ["colors", "symbols", "text"],
+      "properties": {
+        "colors": {"type": "array"},
+        "symbols": {"type": "array"},
+        "text": {"type": "array"}
+      },
+      "additionalProperties": false
+    },
+    "authority": {"enum": ["OBSERVED", "MEASURED", "DERIVED", "EXTERNAL_REFERENCE", "HYPOTHESIS", "HNK_CANDIDATE", "HNK_CANONICAL", "UNRESOLVED"]}
+  },
+  "additionalProperties": false
+}

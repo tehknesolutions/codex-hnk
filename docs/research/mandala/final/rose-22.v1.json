@@ -1,0 +1,217 @@
+{
+  "version": "1.0",
+  "status": "SUPPORTED_COMPOSITIONAL_TOPOLOGY",
+  "sourceAssetId": "HNK-MANDALA-SRC-0002",
+  "geometry": {
+    "centerPx": [
+      449.5,
+      449.5
+    ],
+    "coreApproxRadiusPx": 26,
+    "motherBandPx": [
+      27,
+      62
+    ],
+    "doubleBandPx": [
+      65,
+      110
+    ],
+    "simpleBandPx": [
+      112,
+      160
+    ]
+  },
+  "sourceEvidence": {
+    "periodicity": {
+      "mothers": "3-fold supported; source color components are red/yellow/cyan",
+      "doubles": "7-fold strongly supported; seven approximately equal angular color sectors",
+      "simples": "12-fold strongly supported; twelve approximately 30-degree color sectors"
+    },
+    "sourceColorCentroidAnglesDeg": {
+      "motherRedApprox": 86.6,
+      "motherYellowApprox": 213.2,
+      "motherCyanApprox": 331.1
+    },
+    "measuredDoubleCentersDeg": [
+      37.491,
+      88.92,
+      140.348,
+      191.777,
+      243.206,
+      294.634,
+      346.063
+    ],
+    "measuredSimpleCentersDeg": [
+      15,
+      45,
+      75,
+      105,
+      135,
+      165,
+      195,
+      225,
+      255,
+      285,
+      315,
+      345
+    ]
+  },
+  "externalReference": {
+    "framework": "Sefer Yetzirah / Hermetic Rose Cross",
+    "mothers": [
+      {
+        "letter": "ש",
+        "name": "Shin",
+        "element": "Fire",
+        "sourceColorMatch": "red"
+      },
+      {
+        "letter": "א",
+        "name": "Aleph",
+        "element": "Air",
+        "sourceColorMatch": "yellow"
+      },
+      {
+        "letter": "מ",
+        "name": "Mem",
+        "element": "Water",
+        "sourceColorMatch": "cyan/blue"
+      }
+    ],
+    "doubles": [
+      {
+        "letter": "כ",
+        "name": "Kaph",
+        "planet": "Jupiter"
+      },
+      {
+        "letter": "ת",
+        "name": "Tav",
+        "planet": "Saturn"
+      },
+      {
+        "letter": "ג",
+        "name": "Gimel",
+        "planet": "Moon"
+      },
+      {
+        "letter": "ד",
+        "name": "Dalet",
+        "planet": "Venus"
+      },
+      {
+        "letter": "ב",
+        "name": "Bet",
+        "planet": "Mercury"
+      },
+      {
+        "letter": "ר",
+        "name": "Resh",
+        "planet": "Sun"
+      },
+      {
+        "letter": "פ",
+        "name": "Peh",
+        "planet": "Mars"
+      }
+    ],
+    "simples": [
+      {
+        "letter": "ה",
+        "name": "Heh",
+        "zodiac": "Aries"
+      },
+      {
+        "letter": "ק",
+        "name": "Qof",
+        "zodiac": "Pisces"
+      },
+      {
+        "letter": "צ",
+        "name": "Tzaddi",
+        "zodiac": "Aquarius"
+      },
+      {
+        "letter": "ע",
+        "name": "Ayin",
+        "zodiac": "Capricorn"
+      },
+      {
+        "letter": "ס",
+        "name": "Samekh",
+        "zodiac": "Sagittarius"
+      },
+      {
+        "letter": "נ",
+        "name": "Nun",
+        "zodiac": "Scorpio"
+      },
+      {
+        "letter": "ל",
+        "name": "Lamed",
+        "zodiac": "Libra"
+      },
+      {
+        "letter": "י",
+        "name": "Yod",
+        "zodiac": "Virgo"
+      },
+      {
+        "letter": "ט",
+        "name": "Tet",
+        "zodiac": "Leo"
+      },
+      {
+        "letter": "ח",
+        "name": "Chet",
+        "zodiac": "Cancer"
+      },
+      {
+        "letter": "ז",
+        "name": "Zayin",
+        "zodiac": "Gemini"
+      },
+      {
+        "letter": "ו",
+        "name": "Vav",
+        "zodiac": "Taurus"
+      }
+    ],
+    "mappingCaveat": "The letter families/order are externally supported. Exact rotation/mirroring onto the specific SRC-0002 petal centers remains a correspondence-layer task except for the three Mothers, whose primary-color matches are strong."
+  },
+  "fieldIds": {
+    "mothers": [
+      "R22:M01",
+      "R22:M02",
+      "R22:M03"
+    ],
+    "doubles": [
+      "R22:D01",
+      "R22:D02",
+      "R22:D03",
+      "R22:D04",
+      "R22:D05",
+      "R22:D06",
+      "R22:D07"
+    ],
+    "simples": [
+      "R22:S01",
+      "R22:S02",
+      "R22:S03",
+      "R22:S04",
+      "R22:S05",
+      "R22:S06",
+      "R22:S07",
+      "R22:S08",
+      "R22:S09",
+      "R22:S10",
+      "R22:S11",
+      "R22:S12"
+    ]
+  },
+  "authority": {
+    "petalCount": "OBSERVED+MEASURED+EXTERNAL_REFERENCE",
+    "familySemantics": "EXTERNAL_REFERENCE",
+    "exactSourcePetalToLetterRotation": "UNRESOLVED"
+  }
+}

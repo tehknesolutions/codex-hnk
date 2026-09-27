@@ -1,0 +1,32 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "sourceAssetId":"HNK-MANDALA-SRC-0002",
+  "status":"MEASURED_SCREENING_NOT_CELL_CENSUS",
+  "method":{
+    "centerPx":[450,450],
+    "angularSamples":1440,
+    "angularStepDeg":0.25,
+    "evidence":"median CIELAB difference between samples at theta-0.5deg and theta+0.5deg across each radial band",
+    "analysis":"real FFT of angular evidence; peak frequency is cycles per revolution",
+    "warning":"Fourier peaks demonstrate periodic image structure, not cell identity or semantic correspondence. Harmonics are expected."
+  },
+  "radialBandsPx":[
+    {"id":"CR-B0","range":[8,25],"result":"no useful angular variation under this statistic"},
+    {"id":"CR-B1","range":[27,62],"dominantCycles":[5,8,16,3,11,7,10,2],"note":"mixed central composition; 3-cycle component is present but not dominant"},
+    {"id":"CR-B2","range":[65,110],"dominantCycles":[14,21,7,35,28,42,49,56],"note":"strong 7-fold fundamental/harmonic family is present; 14 and 21 are stronger raw peaks than 7"},
+    {"id":"CR-B3","range":[112,160],"dominantCycles":[36,12,60,24,48,72],"note":"strong 12-fold fundamental/harmonic family is present; 36 is the strongest raw peak and 12 is second"}
+  ],
+  "hypothesisImpact":{
+    "H22Previous":"UNRESOLVED",
+    "H22Current":"PARTIALLY_SUPPORTED",
+    "basis":"Independent radial-band spectral screening reveals a 7-fold periodic family in the middle rose band and a 12-fold periodic family in the outer rose band, while a 3-cycle component exists in the inner mixed band. This is consistent with, but does not yet prove, a 3+7+12 organization.",
+    "limitations":[
+      "The 3-cycle component is not the dominant inner-band frequency.",
+      "Periodicities do not establish 22 distinct planar cells.",
+      "No stable merged-cell adjacency graph has yet been produced.",
+      "No Hebrew or HNK semantic correspondence follows from the geometry alone."
+    ]
+  },
+  "nextGate":"Use topology-aware merging and radial-band constraints to identify stable compositional sectors/cells. Test whether the middle band resolves to 7 stable units and outer band to 12 stable units, and independently determine the inner-band unit count without forcing 3."
+}

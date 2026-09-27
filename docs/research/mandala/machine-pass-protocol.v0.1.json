@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "status": "EXECUTION_PROTOCOL_READY",
+  "purpose": "Make the remaining MF-288 and H-22 censuses reproducible from locked source bytes instead of relying on visual judgment or prior narrative measurements.",
+  "sources": [
+    {"id":"HNK-MANDALA-SRC-0002","role":"P0_OUTER_AND_CENTRAL_ROSE","expectedWidth":900,"expectedHeight":900,"expectedSha256":"7ebf9534"},
+    {"id":"HNK-MANDALA-SRC-0003","role":"OUTER_GEOMETRY_CROSSCHECK_ONLY","expectedWidth":820,"expectedHeight":859,"expectedSha256":"99bd9b8c"}
+  ],
+  "stages": [
+    {"id":"MP-01","name":"Byte verification","outputs":["full sha256","decoded dimensions","mime/decoder format"],"gate":"exact locked bytes only"},
+    {"id":"MP-02","name":"Center and radius calibration","method":"estimate center/radius independently per source; retain uncertainty","outputs":["centerPx","outerRadiusPx","calibrationError"]},
+    {"id":"MP-03","name":"Polar normalization","method":"map samples to normalized (rho,theta) without treating normalized raster pixels as fields","outputs":["polar evidence surface"]},
+    {"id":"MP-04","name":"72-boundary census","method":"for each predicted 5-degree boundary search a bounded local angular neighborhood and measure line evidence across radial spans","outputs":["72 observed angles","signed errors","response strengths","radial spans","confidence"]},
+    {"id":"MP-05","name":"Radial census","method":"aggregate circular-edge evidence over theta; distinguish persistent circular boundaries from local text/symbol edges","outputs":["boundary radii","normalized radii","persistence","confidence"]},
+    {"id":"MP-06","name":"Cross-source radial matching","method":"match normalized radial boundaries with explicit tolerance and source-specific classification","outputs":["shared boundaries","source-specific boundaries","unresolved matches"]},
+    {"id":"MP-07","name":"MF-288 continuity census","method":"evaluate each conditional R01..R04 × S00..S71 address using radial and left/right angular boundary support","outputs":["288 field evidence records"]},
+    {"id":"MP-08","name":"Central rose segmentation","source":"SRC-0002 only","method":"segment compositional cells independently of outer 72-fold rays; count observed layers/cells before testing 3/7/12","outputs":["rose cells","adjacency","layer candidates","H-22 evidence"]},
+    {"id":"MP-09","name":"Topology freeze candidate","method":"build graph only from SUPPORTED fields/cells; preserve unresolved gaps","outputs":["outer topology","rose topology","evidenced bridge relations"]},
+    {"id":"MP-10","name":"Hypothesis adjudication","outputs":["H-72 status","H-441 status","H-22 status"],"allowedStatuses":["SUPPORTED","PARTIALLY_SUPPORTED","REFUTED","UNRESOLVED"]}
+  ],
+  "antiTargetFitting": [
+    "Do not alter thresholds to obtain 72, 441, 22 or any desired cardinality.",
+    "Report sensitivity across a declared threshold range.",
+    "Keep outer and central topology independent until evidenced bridge relations exist.",
+    "Do not infer symbolic meaning from geometry alone.",
+    "Do not assign AK IDs during measurement stages."
+  ],
+  "requiredArtifacts": [
+    "machine-pass-run-manifest.json",
+    "angular-72-observations.json",
+    "radial-observations.json",
+    "cross-source-normalized-radial.json",
+    "mf-288-continuity.json",
+    "central-rose-segmentation.json",
+    "hypothesis-adjudication.json"
+  ],
+  "completionGate": "Only a run with verified source hashes, declared parameters, complete per-field evidence and reproducible outputs can open G4 Atomic-Kode assignment."
+}

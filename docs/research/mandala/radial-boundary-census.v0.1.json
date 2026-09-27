@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "status": "MEASURED_CANDIDATE_NOT_CANONICAL",
+  "sourceAssetId": "HNK-MANDALA-SRC-0002",
+  "method": {
+    "centerPx": {"x": 449.5, "y": 449.5},
+    "radiusSampleRangePx": [80, 444],
+    "angularSamples": 1440,
+    "angularStepDegrees": 0.25,
+    "signal": "median absolute grayscale difference between adjacent radii over all sampled angles",
+    "purpose": "Prefer circumferentially persistent radial edges over local text/symbol edges."
+  },
+  "boundaries": [
+    {"id":"RB-00","radiusPx":161.5,"medianEdge":71.6667,"fractionAnglesEdgeGt30":0.7986,"fractionAnglesEdgeGt60":0.5958,"classification":"STRONG_CIRCUMFERENTIAL_CANDIDATE"},
+    {"id":"RB-01","radiusPx":168.5,"medianEdge":109.6667,"fractionAnglesEdgeGt30":0.9264,"fractionAnglesEdgeGt60":0.8222,"classification":"VERY_STRONG_CIRCUMFERENTIAL_CANDIDATE"},
+    {"id":"RB-02","radiusPx":190.5,"medianEdge":90.0,"fractionAnglesEdgeGt30":0.9278,"fractionAnglesEdgeGt60":0.7722,"classification":"VERY_STRONG_CIRCUMFERENTIAL_CANDIDATE"},
+    {"id":"RB-03","radiusPx":208.5,"medianEdge":89.0,"fractionAnglesEdgeGt30":0.9139,"fractionAnglesEdgeGt60":0.7618,"classification":"VERY_STRONG_CIRCUMFERENTIAL_CANDIDATE"},
+    {"id":"RB-04","radiusPx":231.5,"medianEdge":86.6667,"fractionAnglesEdgeGt30":0.8764,"fractionAnglesEdgeGt60":0.7333,"classification":"VERY_STRONG_CIRCUMFERENTIAL_CANDIDATE"},
+    {"id":"RB-05","radiusPx":310.5,"medianEdge":82.5,"fractionAnglesEdgeGt30":0.8549,"fractionAnglesEdgeGt60":0.7125,"classification":"VERY_STRONG_CIRCUMFERENTIAL_CANDIDATE"},
+    {"id":"RB-06","radiusPx":387.5,"medianEdge":89.6667,"fractionAnglesEdgeGt30":0.8639,"fractionAnglesEdgeGt60":0.7250,"classification":"VERY_STRONG_CIRCUMFERENTIAL_CANDIDATE"},
+    {"id":"RB-07","radiusPx":419.5,"medianEdge":90.3333,"fractionAnglesEdgeGt30":0.8715,"fractionAnglesEdgeGt60":0.7250,"classification":"VERY_STRONG_CIRCUMFERENTIAL_CANDIDATE"}
+  ],
+  "secondaryPeaks": [
+    {"radiusPx":154.5,"medianEdge":19.0},
+    {"radiusPx":110.5,"medianEdge":14.3333},
+    {"radiusPx":436.5,"medianEdge":9.0},
+    {"radiusPx":428.5,"medianEdge":7.0}
+  ],
+  "interpretation": [
+    "Eight radial positions, including the previously split 162-170 family, show circumferential persistence far stronger than secondary peaks.",
+    "RB-01 through RB-07 each exceed 85% angular coverage for edge magnitude >30; RB-00 is weaker but still persistent across ~80% of angles.",
+    "These measurements strongly support real circular/radial structural boundaries, but do not yet determine semantic ring identity or AK cardinality.",
+    "The close RB-00/RB-01 pair must be treated as two measured edges until source geometry proves they are the two sides of one border/stroke or distinct structural boundaries."
+  ],
+  "nextGate": [
+    "Cross-check normalized radial positions against SRC-0003 where homologous outer geometry exists.",
+    "Resolve boundary-to-band semantics and create candidate radial bands.",
+    "Intersect verified radial bands with the measured 72-sector model.",
+    "Count only valid structural intersections; do not infer 441 from arithmetic."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "status":"MEASURED_CROSS_SOURCE_NOT_CANONICAL",
+  "method":"Independent 5-degree phase estimation on each locked source using grayscale polar angular finite-difference response; outer radial windows only. SRC-0003 was not seeded with SRC-0002 observed offsets.",
+  "src0002":{"phaseDegrees":4.88,"outerWindowNormalizedApprox":[0.623,0.934]},
+  "src0003":{"phaseDegrees":1.38,"outerWindowNormalized":[0.70,0.94],"maeToOwn5DegFamily":0.628333,"rmsToOwn5DegFamily":0.768384,"maxAbsoluteError":1.23},
+  "phaseNormalizedComparison":{"meanAbsoluteBoundaryOffsetDeltaDegrees":0.708333,"rmsBoundaryOffsetDeltaDegrees":0.888937,"maxAbsoluteBoundaryOffsetDeltaDegrees":2.45,"within025Deg":21,"within050Deg":32,"within075Deg":37,"within100Deg":50,"within150Deg":70,"boundaryCount":72},
+  "classificationRule":{"CONFIRMED":"abs phase-normalized delta <= 1.0deg and both source response percentiles >= 75","PARTIAL":"abs delta <= 1.5deg and both response percentiles >= 50","SRC0002_ONLY":"SRC-0002 percentile >=75 and SRC-0003 percentile <50","SRC0003_ONLY":"SRC-0003 percentile >=75 and SRC-0002 percentile <50","UNRESOLVED":"otherwise"},
+  "classificationCounts":{"CONFIRMED":32,"PARTIAL":29,"SRC0002_ONLY":7,"SRC0003_ONLY":0,"UNRESOLVED":4},
+  "interpretation":{"H72":"PARTIALLY_SUPPORTED","reason":"Independent SRC-0003 analysis recovers a 5-degree periodic family and 61/72 boundaries are CONFIRMED or PARTIAL under a predeclared uniform classification rule, but only 32/72 meet the stronger CONFIRMED condition and source-specific art/text can still influence local maxima."},
+  "next":"Populate MF-288 continuity evidence using per-boundary support plus verified radial-band evidence; do not assign AK IDs."
+}

@@ -1,0 +1,48 @@
+{
+  "version":"0.1",
+  "runId":"HNK-MANDALA-MP-2026-09-26-A",
+  "sourceAssetId":"HNK-MANDALA-SRC-0002",
+  "status":"MEASURED_SCREENING_NOT_CELL_COUNT_PROOF",
+  "source":{"width":900,"height":900,"analysisCenterPx":[450,450]},
+  "method":"For each previously identified radial band, sample RGB over 1440 angular positions, average RGB along radius, compute centered angular RGB-difference magnitude, then independently search one uniform k-fold phase maximizing mean boundary response. Report percentile rank of each predicted boundary against the full angular response distribution. No target cell count is inferred from this test.",
+  "bands":[
+    {
+      "id":"CR-INNER",
+      "radiusPx":[27,62],
+      "k":3,
+      "periodDegrees":120.0,
+      "bestBoundaryPhaseDegrees":41.88,
+      "predictedBoundaryDegrees":[41.88,161.88,281.88],
+      "boundaryResponse":[90.3875,30.4865,7.1117],
+      "responsePercentiles":[1.0,0.94236,0.52083],
+      "medianBoundaryPercentile":0.94236,
+      "interpretation":"3-fold family has two high-response axes but the third is weak/ambiguous. 3-fold periodicity remains candidate/partial rather than a verified three-cell partition."
+    },
+    {
+      "id":"CR-MIDDLE",
+      "radiusPx":[65,110],
+      "k":7,
+      "periodDegrees":51.428571,
+      "bestBoundaryPhaseDegrees":11.777143,
+      "predictedBoundaryDegrees":[11.777143,63.205714,114.634286,166.062857,217.491429,268.92,320.348571],
+      "boundaryResponse":[13.2504,19.2343,16.5458,86.1623,46.8174,102.3173,34.8695],
+      "responsePercentiles":[0.75972,0.85833,0.82361,0.99792,0.98056,1.0,0.95069],
+      "medianBoundaryPercentile":0.95069,
+      "interpretation":"All seven predicted axes land above approximately the 76th percentile; five are above approximately the 82nd percentile and four above the 95th percentile. This is substantial local support for a seven-fold boundary family, but not yet proof of seven closed cells."
+    },
+    {
+      "id":"CR-OUTER",
+      "radiusPx":[112,160],
+      "k":12,
+      "periodDegrees":30.0,
+      "bestBoundaryPhaseDegrees":0.0,
+      "predictedBoundaryDegrees":[0,30,60,90,120,150,180,210,240,270,300,330],
+      "boundaryResponse":[129.8348,109.343,79.2226,154.3295,80.5633,132.2244,136.5798,138.1958,132.2999,38.0201,103.1124,70.1109],
+      "responsePercentiles":[0.99306,0.98542,0.96944,0.99931,0.97292,0.99514,0.99722,0.99792,0.99583,0.88056,0.97986,0.96319],
+      "medianBoundaryPercentile":0.98924,
+      "interpretation":"All twelve predicted axes are high-response locations; eleven exceed approximately the 96th percentile and the weakest remains approximately the 88th percentile. Strong local support exists for a 12-fold boundary family."
+    }
+  ],
+  "h22":{"status":"PARTIALLY_SUPPORTED","reason":"Independent band periodicity plus local phase/axis continuity strongly supports 7-fold and 12-fold structures and partially supports 3-fold structure. This still does not establish exactly 3+7+12 closed cells."},
+  "nextGate":"Build wedge/cell interior evidence between adjacent predicted boundaries, test radial closure at the measured band limits, and infer actual planar cells. Do not promote CR-MF or AK until closed-region topology is stable across sensitivity settings."
+}

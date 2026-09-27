@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "status": "RESEARCH_SCAFFOLD_NOT_CANONICAL",
+  "sourceAssetId": "HNK-MANDALA-SRC-0002",
+  "principle": "A candidate minimum Mandala field is an intersection of a verified radial band and a verified angular sector. It is not an AK until topology and identity gates pass.",
+  "angularModel": {
+    "candidateSectorCount": 72,
+    "candidateStepDegrees": 5.0,
+    "phaseDegreesCandidate": 0.26,
+    "status": "MEASURED_CANDIDATE"
+  },
+  "radialBoundaryFamiliesPxCandidate": [
+    {"id":"RB-01","rangePx":[162,170],"status":"UNRESOLVED_BOUNDARY_FAMILY"},
+    {"id":"RB-02","rangePx":[189,191],"status":"UNRESOLVED_BOUNDARY_FAMILY"},
+    {"id":"RB-03","rangePx":[207,209],"status":"UNRESOLVED_BOUNDARY_FAMILY"},
+    {"id":"RB-04","rangePx":[230,232],"status":"UNRESOLVED_BOUNDARY_FAMILY"},
+    {"id":"RB-05","rangePx":[309,311],"status":"UNRESOLVED_BOUNDARY_FAMILY"},
+    {"id":"RB-06","rangePx":[387,389],"status":"UNRESOLVED_BOUNDARY_FAMILY"},
+    {"id":"RB-07","rangePx":[419,421],"status":"UNRESOLVED_BOUNDARY_FAMILY"}
+  ],
+  "fieldAddressCandidate": {
+    "syntax": "MF:R{ring}:S{sector}",
+    "example": "MF:R04:S17",
+    "identityWarning": "MF addresses are measurement-space addresses. They MUST NOT be renamed AK until G3/G4 establish field cardinality and topology."
+  },
+  "fieldRecordTemplate": {
+    "id": "MF:R00:S00",
+    "ring": "R00",
+    "sector": "S00",
+    "rMinPx": null,
+    "rMaxPx": null,
+    "thetaStartDeg": null,
+    "thetaEndDeg": null,
+    "thetaCenterDeg": null,
+    "centroidPx": {"x": null, "y": null},
+    "neighbors": {"angularPrev": null, "angularNext": null, "radialIn": null, "radialOut": null},
+    "sourceEvidence": [],
+    "authority": "UNRESOLVED"
+  },
+  "requiredTests": [
+    "Resolve each radial boundary family into a measured radius with uncertainty.",
+    "Determine which radial families are structural boundaries versus text/symbol edge artifacts.",
+    "Populate 72 observed angular boundaries and their errors.",
+    "Cross-check external 72-fold geometry against SRC-0003.",
+    "Count resulting valid ring×sector fields without assuming 441.",
+    "Treat central rose separately; do not force polar outer-sector topology onto it.",
+    "Only after field census, derive adjacency graph and test whether each field can receive a stable AK identity."
+  ]
+}

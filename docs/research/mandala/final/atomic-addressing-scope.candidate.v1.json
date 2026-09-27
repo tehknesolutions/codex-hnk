@@ -1,0 +1,19 @@
+{
+  "version":"1.0",
+  "status":"CANDIDATE_AWAITING_HNK_CANON_FREEZE",
+  "basis":"MANDALA_COMPUTABLE_V1",
+  "principle":"Do not equate every visible block with one canonical Atomic-Kode. Preserve factorized identities so one HNK glyph can be a reversible path through Mandala coordinates.",
+  "namespaces":[
+    {"id":"SEC","cardinality":72,"pattern":"SEC:S01..S72","meaning":"angular sector identity","canonicalCandidate":true},
+    {"id":"LAY","cardinality":6,"pattern":"LAY:L01..L06","meaning":"sectorized radial layer identity","canonicalCandidate":true},
+    {"id":"GRP","cardinality":9,"pattern":"GRP:G01..G09","meaning":"choir/sefirah group identity","canonicalCandidate":true},
+    {"id":"R22","cardinality":22,"pattern":"R22:M01..M03 / D01..D07 / S01..S12","meaning":"central Rose petal identity","canonicalCandidate":true},
+    {"id":"CORE","cardinality":"HIERARCHICAL_UNFROZEN","pattern":"CORE:*","meaning":"central white field / five-petal rose / green rays / gold cross primitives","canonicalCandidate":false}
+  ],
+  "compositeAddress":{"pattern":"MF:<layer>:<sector>","count":432,"meaning":"derived outer cell address = LAY × SEC","atomic":false,"reason":"A composite coordinate can carry cell-specific content without requiring 432 independent primitive AK definitions."},
+  "outerLayout":{"formula":"432 composite MF cells + 9 GRP cells","count":441,"atomicInterpretation":"LAYOUT_BLOCK_COUNT_ONLY"},
+  "majorLayout":{"formula":"441 outer layout blocks + 22 Rose petals","count":463,"atomicInterpretation":"ADDRESS_SPACE_NOT_AK_COUNT"},
+  "candidatePrimitiveCount":{"formula":"72 SEC + 6 LAY + 9 GRP + 22 R22","count":109,"warning":"109 is a candidate primitive namespace count, not yet HNK canon and excludes CORE primitives."},
+  "encodingImplication":"A glyph/path can reference primitive nodes and/or composite MF addresses. BIN/HEX/QR/Pixel/IsoPixel should encode typed addresses, not rely on a flat 1..463 integer alone.",
+  "governanceDecisionNeeded":"Approve factorized primitive AK model, choose whether GRP and Rose petals are AKs or correspondence nodes, and define CORE scope before canonical AK numbering."
+}
