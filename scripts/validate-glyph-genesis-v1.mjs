@@ -4,22 +4,82 @@ import path from 'node:path';
 import process from 'node:process';
 
 const root=process.cwd();
-const file=path.join(root,'docs/research/mandala/final/glyph-genesis-candidates.v1.json');
-const doc=JSON.parse(fs.readFileSync(file,'utf8'));
+const genesis=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-candidates.v1.json'),'utf8'));
+const transport=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-path-transport-profile.v1.json'),'utf8'));
 const errors=[];
 const seenPaths=new Map();
+const edgeEnum=transport.edgeEnum;
 
-const hex=(value)=>value.toString(16).toUpperCase().padStart(4,'0');
-function frame(namespace,ordinal0){return (1<<10)|(namespace<<7)|ordinal0}
-function parseMF(node){const m=/^MF:L(0[1-6]):S(0[1-9]|[1-6][0-9]|7[0-2])$/.exec(node);return m?{l:+m[1],s:+m[2]}:null}
+const hex16=(value)=>value.toString(16).toUpperCase().padStart(4,'0');
+const frame=(namespace,ordinal0)=>(1<<10)|(namespace<<7)|ordinal0;
+function decodeFrame(value){
+  if((value&0xC000)!==0)throw new Error('transport padding bits must be 00');
+  const version=(value>>10)&15, namespace=(value>>7)&7, ordinal0=value&127;
+  if(version!==1)throw new Error(`frame version ${version} != 1`);
+  return {version,namespace,ordinal0};
+}
+function parseMF(node){
+  const m=/^MF:L(0[1-6]):S(0[1-9]|[1-6][0-9]|7[0-2])$/.exec(node);
+  return m?{l:+m[1],s:+m[2]}:null;
+}
 function expectedEdge(a,b){
-  if(a.l===b.l){if((a.s%72)+1===b.s)return 'ANGULAR_NEXT';if(((a.s+70)%72)+1===b.s)return 'ANGULAR_PREV'}
-  if(a.s===b.s){if(a.l+1===b.l)return 'RADIAL_OUT';if(a.l-1===b.l)return 'RADIAL_IN'}
+  if(a.l===b.l){
+    if((a.s%72)+1===b.s)return 'ANGULAR_NEXT';
+    if(((a.s+70)%72)+1===b.s)return 'ANGULAR_PREV';
+  }
+  if(a.s===b.s){
+    if(a.l+1===b.l)return 'RADIAL_OUT';
+    if(a.l-1===b.l)return 'RADIAL_IN';
+  }
   return null;
+}
+function crc32(buffer){
+  let crc=0xFFFFFFFF;
+  for(const byte of buffer){
+    crc^=byte;
+    for(let j=0;j<8;j++)crc=(crc>>>1)^((crc&1)?0xEDB88320:0);
+  }
+  return (crc^0xFFFFFFFF)>>>0;
+}
+function base64url(buffer){return buffer.toString('base64').replace(/=/g,'').replace(/\+/g,'-').replace(/\//g,'_')}
+function serializeCandidate(c){
+  const parts=[Buffer.from('HNKP','ascii'),Buffer.from([1,1,c.path.length])];
+  for(const item of c.path){
+    const [layHex,secHex]=item.mfTupleHex;
+    const b=Buffer.alloc(4);
+    b.writeUInt16BE(parseInt(layHex,16),0);
+    b.writeUInt16BE(parseInt(secHex,16),2);
+    parts.push(b);
+  }
+  parts.push(Buffer.from(c.path.slice(0,-1).map(item=>edgeEnum[item.edgeToNext])));
+  const body=Buffer.concat(parts);
+  const checksum=Buffer.alloc(4);
+  checksum.writeUInt32BE(crc32(body),0);
+  return Buffer.concat([body,checksum]);
+}
+function decodePacket(packet){
+  if(packet.length<11)throw new Error('packet too short');
+  if(packet.subarray(0,4).toString('ascii')!=='HNKP')throw new Error('bad magic');
+  if(packet[4]!==1||packet[5]!==1)throw new Error('unsupported version/flags');
+  const count=packet[6], expected=4+1+1+1+count*4+(count-1)+4;
+  if(packet.length!==expected)throw new Error(`packet length ${packet.length} != ${expected}`);
+  const storedCrc=packet.readUInt32BE(packet.length-4), actualCrc=crc32(packet.subarray(0,-4));
+  if(storedCrc!==actualCrc)throw new Error('CRC32 mismatch');
+  const nodes=[]; let off=7;
+  for(let i=0;i<count;i++){
+    const lay=decodeFrame(packet.readUInt16BE(off));
+    const sec=decodeFrame(packet.readUInt16BE(off+2)); off+=4;
+    if(lay.namespace!==1||lay.ordinal0>5)throw new Error('invalid LAY frame');
+    if(sec.namespace!==0||sec.ordinal0>71)throw new Error('invalid SEC frame');
+    nodes.push(`MF:L${String(lay.ordinal0+1).padStart(2,'0')}:S${String(sec.ordinal0+1).padStart(2,'0')}`);
+  }
+  const edges=[...packet.subarray(off,off+count-1)];
+  return {nodes,edges,crc32Hex:actualCrc.toString(16).toUpperCase().padStart(8,'0')};
 }
 function fail(id,msg){errors.push(`${id}: ${msg}`)}
 
-for(const c of doc.candidates??[]){
+const vectors=new Map((transport.vectors??[]).map(v=>[v.candidateId,v]));
+for(const c of genesis.candidates??[]){
   const id=c.candidateId??'<missing-id>';
   if(c.bindingAuthority!=='HNK_CANDIDATE')fail(id,'bindingAuthority must remain HNK_CANDIDATE');
   if(!Array.isArray(c.path)||c.path.length<2){fail(id,'path must contain at least two nodes');continue}
@@ -29,7 +89,7 @@ for(const c of doc.candidates??[]){
     const item=c.path[i], mf=parseMF(item.node);
     if(!mf){fail(id,`invalid MF node at ${i}: ${item.node}`);continue}
     const x=mf.s-1,y=mf.l-1;
-    const layHex=hex(frame(1,y)),secHex=hex(frame(0,x));
+    const layHex=hex16(frame(1,y)),secHex=hex16(frame(0,x));
     if(JSON.stringify(item.mfTupleHex)!==JSON.stringify([layHex,secHex]))fail(id,`codec mismatch at ${item.node}`);
     if(item.pixel?.planeId!=='MF'||item.pixel?.x!==x||item.pixel?.y!==y)fail(id,`PixelMap mismatch at ${item.node}`);
     const u=x-y,v=x+y;
@@ -42,7 +102,31 @@ for(const c of doc.candidates??[]){
       else if(item.edgeToNext!==edge)fail(id,`edge mismatch ${item.node}: stored=${item.edgeToNext}, expected=${edge}`);
     }else if(item.edgeToNext!==null)fail(id,'last node edgeToNext must be null');
   }
+
+  try{
+    const packet=serializeCandidate(c);
+    const decoded=decodePacket(packet);
+    const sourceNodes=c.path.map(n=>n.node);
+    const sourceEdges=c.path.slice(0,-1).map(n=>edgeEnum[n.edgeToNext]);
+    if(JSON.stringify(decoded.nodes)!==JSON.stringify(sourceNodes))fail(id,'HNKP node round-trip mismatch');
+    if(JSON.stringify(decoded.edges)!==JSON.stringify(sourceEdges))fail(id,'HNKP edge round-trip mismatch');
+    const vector=vectors.get(id);
+    if(!vector)fail(id,'missing HNKP transport vector');
+    else{
+      const packetHex=packet.toString('hex').toUpperCase();
+      if(vector.packetBytes!==packet.length)fail(id,'packet byte-count drift');
+      if(vector.packetHex!==packetHex)fail(id,'packet HEX vector drift');
+      if(vector.crc32Hex!==decoded.crc32Hex)fail(id,'CRC32 vector drift');
+      if(vector.base64url!==base64url(packet))fail(id,'base64url vector drift');
+    }
+  }catch(error){fail(id,`HNKP serialization error: ${error.message}`)}
 }
 
-if(errors.length){console.error(`Glyph Genesis V1 FAIL (${errors.length})`);for(const e of errors)console.error(`- ${e}`);process.exit(1)}
-console.log(`Glyph Genesis V1 PASS: ${doc.candidates.length} candidates; topology, typed codec, Pixel/IsoPixel/Voxel round-trips, authority gate and ordered-PATH uniqueness verified.`);
+if(vectors.size!==(genesis.candidates??[]).length)errors.push('transport vector count must equal candidate count');
+
+if(errors.length){
+  console.error(`Glyph Genesis V1 FAIL (${errors.length})`);
+  for(const e of errors)console.error(`- ${e}`);
+  process.exit(1);
+}
+console.log(`Glyph Genesis V1 PASS: ${genesis.candidates.length} candidates; topology, typed codec, Pixel/IsoPixel/Voxel round-trips, ordered-PATH uniqueness, HNKP serialization/CRC32/base64url vectors and authority gate verified.`);
