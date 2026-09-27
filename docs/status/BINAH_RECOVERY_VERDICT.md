@@ -1,0 +1,6 @@
+# Recovery verdict
+
+`SOURCE_FOUND`  
+`DAY_MAP_FOUND`  
+`CONFLICT_FOUND`  
+`CANON_NOT_PROMOTED`
