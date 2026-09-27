@@ -83,7 +83,7 @@
   "searchEvidence": {
     "feasibleStatesReviewed": 1804,
     "target": "min visible >=6, 40/40 at 8px, min edge distance >=3",
-    "note": "No reviewed feasible state matched V1.3's 10 orientation-equivalent pairs; best Pareto candidate has 12."
+    "note": "No reviewed feasible state matched V1.3's 10 orientation-equivalent pairs. This candidate preserves global minimum edge distance 3 and raises cross-world minimum distance to 4."
   },
   "metrics": {
     "staticVisibleUniqueShapes": 40,
@@ -91,7 +91,9 @@
     "minimumVisibleSegmentCount": 6,
     "totalVisibleSegments": 361,
     "orientationEquivalentPairs": 12,
-    "raster8Unique": 40
+    "raster8Unique": 40,
+    "sameWorldMinimumEdgeDistance": 3,
+    "crossWorldMinimumEdgeDistance": 4
   },
   "governance": "Experimental candidate only. Does not supersede V1.3 until human comparison."
 }
