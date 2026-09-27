@@ -1,0 +1,33 @@
+name: HNK40 E4 Projection Gate
+
+on:
+  push:
+    branches:
+      - research/hnk-kode-e4-hnk40-projection
+  pull_request:
+    paths:
+      - 'scripts/hnk40-e4-project.mjs'
+      - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.4.2.json'
+      - 'docs/research/mandala/final/hnkp-mandala-namespace-extension.v2.json'
+      - '.github/workflows/hnk40-e4-projection.yml'
+
+jobs:
+  e4-projection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Execute strict 40/40 projection
+        run: node scripts/hnk40-e4-project.mjs
+      - name: Verify generated evidence is PASS
+        run: |
+          node -e "const r=require('./docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json'); if(r.status!=='PASS') process.exit(1); console.log(r.summary)"
+      - name: Upload E4 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: hnk40-e4-projection-evidence
+          path: |
+            docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json
+            docs/research/mandala/final/HNK40-E4-GENESIS-PROJECTION-REPORT.md
