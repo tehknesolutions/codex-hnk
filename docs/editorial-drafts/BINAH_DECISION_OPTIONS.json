@@ -1,0 +1,10 @@
+{
+  "schema": "HNK-BINAH-MAPPING-DECISION-OPTIONS-V1",
+  "status": "HUMAN_CANON_DECISION_REQUIRED",
+  "options": {
+    "A": "preserve legacy 15-21 as Binah curricular regencies",
+    "B": "migrate Binah curriculum to V3 17-24 allocation",
+    "C": "preserve both under distinct namespaces: curricular_regency and organizational_agent_directorate"
+  },
+  "automatic_choice": false
+}
