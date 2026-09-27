@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "basis": {
+    "v13": "glyph-genesis-hnk40-candidates.v1.3.json",
+    "v14": "glyph-genesis-hnk40-candidates.v1.4.json"
+  },
+  "focusGlyphs": [
+    {
+      "glyphId": "G03",
+      "v13VisibleSegments": 5,
+      "v14VisibleSegments": 7,
+      "delta": 2
+    },
+    {
+      "glyphId": "G07",
+      "v13VisibleSegments": 5,
+      "v14VisibleSegments": 9,
+      "delta": 4
+    },
+    {
+      "glyphId": "G10",
+      "v13VisibleSegments": 5,
+      "v14VisibleSegments": 9,
+      "delta": 4
+    },
+    {
+      "glyphId": "G13",
+      "v13VisibleSegments": 5,
+      "v14VisibleSegments": 6,
+      "delta": 1
+    },
+    {
+      "glyphId": "G32",
+      "v13VisibleSegments": 5,
+      "v14VisibleSegments": 7,
+      "delta": 2
+    },
+    {
+      "glyphId": "G33",
+      "v13VisibleSegments": 4,
+      "v14VisibleSegments": 6,
+      "delta": 2
+    },
+    {
+      "glyphId": "G35",
+      "v13VisibleSegments": 5,
+      "v14VisibleSegments": 10,
+      "delta": 5
+    }
+  ],
+  "orientation": {
+    "v13Pairs": 10,
+    "v14Pairs": 12,
+    "added": [
+      {
+        "a": "G12",
+        "b": "G16",
+        "transforms": [
+          "mx"
+        ]
+      },
+      {
+        "a": "G13",
+        "b": "G23",
+        "transforms": [
+          "my"
+        ]
+      },
+      {
+        "a": "G13",
+        "b": "G33",
+        "transforms": [
+          "mx"
+        ]
+      },
+      {
+        "a": "G23",
+        "b": "G33",
+        "transforms": [
+          "r180"
+        ]
+      }
+    ],
+    "removed": [
+      {
+        "a": "G02",
+        "b": "G06",
+        "transforms": [
+          "mx",
+          "my"
+        ]
+      },
+      {
+        "a": "G03",
+        "b": "G13",
+        "transforms": [
+          "r180",
+          "mx"
+        ]
+      }
+    ],
+    "retainedCount": 8
+  },
+  "interpretation": "V1.4 improves all seven former REVISE glyphs to >=6 visible segments. Orientation risk changes composition as well as count; review added and removed pairs rather than only totals.",
+  "canonicalDecision": "PENDING"
+}
