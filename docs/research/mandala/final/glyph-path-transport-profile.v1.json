@@ -1,0 +1,75 @@
+{
+  "version": "1.0-experimental",
+  "status": "HNK_CANDIDATE_TRANSPORT_PROFILE",
+  "profileId": "HNKP1-MF-TUPLE-BE",
+  "purpose": "Freeze one deterministic experimental serialization profile for Glyph Genesis MF-only PATH candidates without promoting visual or linguistic canon.",
+  "basis": [
+    "glyph-path-packet-v1.json",
+    "atomic-kode-codec-vectors.v1.json",
+    "glyph-genesis-candidates.v1.json"
+  ],
+  "authorityBoundary": {
+    "packetSpec": "HNK_CANDIDATE",
+    "glyphBinding": "HNK_CANDIDATE",
+    "linguisticAuthority": "HNK-KODE",
+    "rule": "Successful serialization and round-trip prove transport integrity only."
+  },
+  "binaryLayout": [
+    {"field":"magic","bytes":4,"encoding":"ASCII","value":"HNKP"},
+    {"field":"version","bytes":1,"type":"u8","value":1},
+    {"field":"flags","bytes":1,"type":"u8","value":1,"meaning":"MF_TUPLE_NODES"},
+    {"field":"nodeCount","bytes":"varuint","v1Constraint":"0..127 encoded in one byte"},
+    {"field":"nodes","bytes":"4*nodeCount","item":"LAY typed-frame u16 BE + SEC typed-frame u16 BE"},
+    {"field":"edges","bytes":"nodeCount-1","item":"u8 edge enum from glyph-path-packet-v1"},
+    {"field":"state","bytes":0,"v1Constraint":"absent in this profile"},
+    {"field":"checksum","bytes":4,"type":"CRC32 IEEE big-endian","coverage":"all preceding bytes"}
+  ],
+  "edgeEnum": {
+    "ANGULAR_NEXT": 0,
+    "ANGULAR_PREV": 1,
+    "RADIAL_IN": 2,
+    "RADIAL_OUT": 3,
+    "CONTAINS": 4,
+    "MEMBER_OF": 5,
+    "ROSE_NEXT": 6,
+    "ROSE_PREV": 7,
+    "BRIDGE": 8
+  },
+  "roundTrip": [
+    "Parse magic/version/flags.",
+    "Read one-byte V1 nodeCount.",
+    "Decode each LAY/SEC u16 typed frame back to exact namespace and ordinal.",
+    "Reconstruct MF:Lxx:Syy.",
+    "Read exactly nodeCount-1 edge bytes.",
+    "Recompute CRC32 and require equality.",
+    "Require reconstructed ordered PATH and edges to equal the source candidate."
+  ],
+  "transportText": {
+    "prefix": "HNKP1:",
+    "encoding": "base64url without padding",
+    "authority": "TRANSPORT_ONLY"
+  },
+  "vectors": [
+    {
+      "candidateId": "GGV1-001",
+      "packetBytes": 35,
+      "crc32Hex": "96266279",
+      "packetHex": "484E4B5001010504800400048004010481040104810402048204020003000396266279",
+      "base64url": "SE5LUAEBBQSABAAEgAQBBIEEAQSBBAIEggQCAAMAA5YmYnk"
+    },
+    {
+      "candidateId": "GGV1-002",
+      "packetBytes": 35,
+      "crc32Hex": "DB547FC2",
+      "packetHex": "484E4B50010105048004080481040804810409048204090482040803000301DB547FC2",
+      "base64url": "SE5LUAEBBQSABAgEgQQIBIEECQSCBAkEggQIAwADAdtUf8I"
+    },
+    {
+      "candidateId": "GGV1-003",
+      "packetBytes": 35,
+      "crc32Hex": "FF99D066",
+      "packetHex": "484E4B50010105048004100480041104810411048104100482041000030103FF99D066",
+      "base64url": "SE5LUAEBBQSABBAEgAQRBIEEEQSBBBAEggQQAAMBA_-Z0GY"
+    }
+  ]
+}
