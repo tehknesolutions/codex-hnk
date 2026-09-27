@@ -25,7 +25,7 @@
       "world": "W1",
       "column": 1,
       "columnBits": "0000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G02",
@@ -55,7 +55,7 @@
       "world": "W1",
       "column": 2,
       "columnBits": "0001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G01",
@@ -85,7 +85,7 @@
       "world": "W1",
       "column": 3,
       "columnBits": "0010",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G04",
@@ -115,7 +115,7 @@
       "world": "W1",
       "column": 4,
       "columnBits": "0011",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G03",
@@ -145,7 +145,7 @@
       "world": "W1",
       "column": 5,
       "columnBits": "0100",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G06",
@@ -175,7 +175,7 @@
       "world": "W1",
       "column": 6,
       "columnBits": "0101",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G05",
@@ -205,7 +205,7 @@
       "world": "W1",
       "column": 7,
       "columnBits": "0110",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G08",
@@ -235,7 +235,7 @@
       "world": "W1",
       "column": 8,
       "columnBits": "0111",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G07",
@@ -265,7 +265,7 @@
       "world": "W1",
       "column": 9,
       "columnBits": "1000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G10",
@@ -295,7 +295,7 @@
       "world": "W1",
       "column": 10,
       "columnBits": "1001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G09",
@@ -325,7 +325,7 @@
       "world": "W2",
       "column": 1,
       "columnBits": "0000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G12",
@@ -355,7 +355,7 @@
       "world": "W2",
       "column": 2,
       "columnBits": "0001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G11",
@@ -385,7 +385,7 @@
       "world": "W2",
       "column": 3,
       "columnBits": "0010",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G14",
@@ -415,7 +415,7 @@
       "world": "W2",
       "column": 4,
       "columnBits": "0011",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G13",
@@ -445,7 +445,7 @@
       "world": "W2",
       "column": 5,
       "columnBits": "0100",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G16",
@@ -475,7 +475,7 @@
       "world": "W2",
       "column": 6,
       "columnBits": "0101",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G15",
@@ -505,7 +505,7 @@
       "world": "W2",
       "column": 7,
       "columnBits": "0110",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G18",
@@ -535,7 +535,7 @@
       "world": "W2",
       "column": 8,
       "columnBits": "0111",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G17",
@@ -565,7 +565,7 @@
       "world": "W2",
       "column": 9,
       "columnBits": "1000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G20",
@@ -595,7 +595,7 @@
       "world": "W2",
       "column": 10,
       "columnBits": "1001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G19",
@@ -625,7 +625,7 @@
       "world": "W3",
       "column": 1,
       "columnBits": "0000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G22",
@@ -655,7 +655,7 @@
       "world": "W3",
       "column": 2,
       "columnBits": "0001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G21",
@@ -685,7 +685,7 @@
       "world": "W3",
       "column": 3,
       "columnBits": "0010",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G24",
@@ -715,7 +715,7 @@
       "world": "W3",
       "column": 4,
       "columnBits": "0011",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G23",
@@ -745,7 +745,7 @@
       "world": "W3",
       "column": 5,
       "columnBits": "0100",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G26",
@@ -775,7 +775,7 @@
       "world": "W3",
       "column": 6,
       "columnBits": "0101",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G25",
@@ -805,7 +805,7 @@
       "world": "W3",
       "column": 7,
       "columnBits": "0110",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G28",
@@ -835,7 +835,7 @@
       "world": "W3",
       "column": 8,
       "columnBits": "0111",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G27",
@@ -865,7 +865,7 @@
       "world": "W3",
       "column": 9,
       "columnBits": "1000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G30",
@@ -895,7 +895,7 @@
       "world": "W3",
       "column": 10,
       "columnBits": "1001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "HIGH",
       "nearestRisks": [
         {
           "peer": "G29",
@@ -925,7 +925,7 @@
       "world": "W4",
       "column": 1,
       "columnBits": "0000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G32",
@@ -955,7 +955,7 @@
       "world": "W4",
       "column": 2,
       "columnBits": "0001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G31",
@@ -985,7 +985,7 @@
       "world": "W4",
       "column": 3,
       "columnBits": "0010",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G34",
@@ -1015,7 +1015,7 @@
       "world": "W4",
       "column": 4,
       "columnBits": "0011",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G33",
@@ -1045,7 +1045,7 @@
       "world": "W4",
       "column": 5,
       "columnBits": "0100",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G36",
@@ -1075,7 +1075,7 @@
       "world": "W4",
       "column": 6,
       "columnBits": "0101",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G35",
@@ -1105,7 +1105,7 @@
       "world": "W4",
       "column": 7,
       "columnBits": "0110",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G38",
@@ -1135,7 +1135,7 @@
       "world": "W4",
       "column": 8,
       "columnBits": "0111",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G37",
@@ -1165,7 +1165,7 @@
       "world": "W4",
       "column": 9,
       "columnBits": "1000",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G40",
@@ -1195,7 +1195,7 @@
       "world": "W4",
       "column": 10,
       "columnBits": "1001",
-      "priority": "CRITICAL_PAIR_FIRST",
+      "priority": "CRITICAL",
       "nearestRisks": [
         {
           "peer": "G39",
@@ -1220,5 +1220,11 @@
         "hnkPacketCrc32": "5644B02C"
       }
     }
-  ]
+  ],
+  "priorityPolicy": {
+    "CRITICAL": "nearest structural pair score = 12; review first",
+    "HIGH": "nearest structural pair score = 14; review second",
+    "NORMAL": "not present in current top-20 nearest-pair set",
+    "note": "Priority orders human review; it is not a quality judgment or promotion decision."
+  }
 }
