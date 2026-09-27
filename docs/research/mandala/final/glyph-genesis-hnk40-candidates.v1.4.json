@@ -17,7 +17,9 @@
     "nodesPerCandidate": 12,
     "edgesPerCandidate": 11,
     "packetBytesPerCandidate": 70,
-    "humanPromotionRequired": true
+    "humanPromotionRequired": true,
+    "sameWorldMinimumEdgeDistance": 3,
+    "crossWorldMinimumEdgeDistance": 4
   },
   "candidates": [
     {
