@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "status": "PARTIAL_EXACT",
+  "pathNodes": 12,
+  "pathEdges": 11,
+  "metric": "rawWalkCount",
+  "directed": true,
+  "addressed": true,
+  "symmetryReduction": "NONE",
+  "counts": {
+    "MF": "6141966264",
+    "MF_PLUS_CG": "7289051616",
+    "CR_T": "6144",
+    "CR_H": "14336",
+    "CR_D": "24576",
+    "MAJOR_463": "7289096672"
+  },
+  "warning": "This is the exact addressed raw-walk count, not yet the simple-path, render-distinct, symmetry-reduced, semantic, or language-assignable glyph count."
+}

@@ -10,24 +10,42 @@ on:
       - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.4.2.json'
       - 'docs/research/mandala/final/hnkp-mandala-namespace-extension.v2.json'
       - '.github/workflows/hnk40-e4-projection.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   e4-projection:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show runner and source state
+        shell: bash
+        run: |
+          set -euxo pipefail
+          node --version
+          pwd
+          test -f scripts/hnk40-e4-project.mjs
+          test -f docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.4.2.json
+          test -f docs/research/mandala/final/hnkp-mandala-namespace-extension.v2.json
+
       - name: Execute strict 40/40 projection
         run: node scripts/hnk40-e4-project.mjs
+
       - name: Verify generated evidence is PASS
         run: |
-          node -e "const r=require('./docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json'); if(r.status!=='PASS') process.exit(1); console.log(r.summary)"
+          node -e "const r=require('./docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json'); if(r.status!=='PASS') process.exit(1); console.log(JSON.stringify(r.summary))"
+
       - name: Upload E4 evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: hnk40-e4-projection-evidence
+          if-no-files-found: warn
           path: |
             docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json
             docs/research/mandala/final/HNK40-E4-GENESIS-PROJECTION-REPORT.md
