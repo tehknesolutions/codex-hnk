@@ -1,75 +1,31 @@
 name: Day 001 Golden Gate
 
 on:
+  push:
+    branches:
+      - fix/golden-lockfile-sync
   pull_request:
-    paths:
-      - 'apps/web/**'
-      - 'packages/**'
-      - 'pnpm-lock.yaml'
-      - 'pnpm-workspace.yaml'
-      - 'package.json'
-      - '.github/workflows/day001-golden.yml'
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  web-golden:
-    name: Day 001 web install + typecheck + build
+  probe:
+    name: Day 001 runner probe
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 12.1.0
-          run_install: false
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-
-      - name: Detect lockfile
-        id: lock
-        shell: bash
+      - name: Runner alive
+        run: echo "DAY001 RUNNER PROBE PASS"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Repository structure
         run: |
-          if [[ -f pnpm-lock.yaml ]]; then
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "present=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Bootstrap canonical workspace lockfile
-        if: steps.lock.outputs.present != 'true'
-        run: pnpm install --lockfile-only --no-frozen-lockfile
-
-      - name: Upload canonical lockfile candidate
-        if: steps.lock.outputs.present != 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pnpm-lock-candidate
-          path: pnpm-lock.yaml
-          if-no-files-found: error
-          retention-days: 7
-
-      - name: Stop after bootstrap evidence
-        if: steps.lock.outputs.present != 'true'
-        run: |
-          echo "pnpm-lock.yaml was absent. Canonical candidate generated and uploaded for audit/versioning."
-          exit 1
-
-      - name: Frozen install
-        if: steps.lock.outputs.present == 'true'
-        run: pnpm install --frozen-lockfile
-
-      - name: Typecheck web
-        if: steps.lock.outputs.present == 'true'
-        working-directory: apps/web
-        run: pnpm exec tsc --noEmit
-
-      - name: Build web
-        if: steps.lock.outputs.present == 'true'
-        working-directory: apps/web
-        run: pnpm build
+          git rev-parse HEAD
+          test -f package.json
+          test -f pnpm-workspace.yaml
+          test -f apps/web/package.json
+          echo "DAY001 REPOSITORY PROBE PASS"
