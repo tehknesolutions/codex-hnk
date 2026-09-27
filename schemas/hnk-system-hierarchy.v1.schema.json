@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hnk.local/schemas/hnk-system-hierarchy.v1.schema.json",
+  "title": "HNK System Hierarchy V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["root", "systems", "organization", "technologyPlacement", "invariants"],
+  "properties": {
+    "root": { "const": "HNK" },
+    "systems": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["codex", "kode", "verse"],
+      "properties": {
+        "codex": {
+          "type": "object",
+          "required": ["id", "roles", "vertents"],
+          "properties": {
+            "id": { "const": "CODEX-HNK" },
+            "roles": { "const": ["REGISTRY", "GRIMOIRE", "TRAINING"] },
+            "vertents": { "const": ["MAGICO", "ESPIRITUAL", "TECNOLOGIA", "ARTE", "CIENTIFICO"] }
+          }
+        },
+        "kode": {
+          "type": "object",
+          "required": ["id", "roles"],
+          "properties": {
+            "id": { "const": "HNK-KODE" },
+            "roles": { "const": ["HNK_LANGUAGE", "SPIRITUAL_LANGUAGE", "MAGIC_PHYSICAL_MANIFESTATION"] }
+          }
+        },
+        "verse": {
+          "type": "object",
+          "required": ["id", "manifestation"],
+          "properties": {
+            "id": { "const": "HNK-VERSE" },
+            "manifestation": { "const": ["DIGITAL", "ASTRAL", "MENTAL"] }
+          }
+        }
+      }
+    },
+    "organization": {
+      "type": "object",
+      "required": ["id", "blocks"],
+      "properties": {
+        "id": { "const": "GID/HNK" },
+        "blocks": { "const": ["TEHKNE_SOLUTIONS", "SIMPLEWAY_ACADEMY", "HANDS_UP_CONSULTORIA"] }
+      }
+    },
+    "technologyPlacement": {
+      "const": ["HNK", "CODEX-HNK", "TECNOLOGIA", "TEHKNE_SOLUTIONS", "TEHKNE-OS"]
+    },
+    "invariants": {
+      "type": "array",
+      "contains": { "const": "TEHKNE_OS_IS_NOT_HNK_ROOT" }
+    }
+  }
+}
