@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "status": "HNK_CANDIDATE_EXPERIMENTAL",
+  "purpose": "Begin Glyph Genesis with topology-valid, reversible PATH candidates bound only to already-governed linguistic targets. These bindings are experiments and do not promote a new linguistic or visual canon.",
+  "authorityBoundary": {
+    "linguisticAuthority": "HNK-KODE",
+    "structuralLaboratory": "CODEX-HNK",
+    "rule": "CODEX-HNK may author and test mathematical PATH candidates; semantic/linguistic authority remains in HNK-KODE and candidate PATH bindings require an explicit human promotion gate before becoming canonical glyph identity.",
+    "visualRule": "No rendered Pixel/IsoPixel/Voxel/Mandala image is identity. The ordered typed PATH is the candidate identity substrate."
+  },
+  "basis": [
+    "mandala-topology-registry.v1.json",
+    "atomic-kode-codec-vectors.v1.json",
+    "pixelmap-v1.json",
+    "isopixel-voxel-v1.json",
+    "glyph-path-packet-v1.json"
+  ],
+  "sourceTargets": {
+    "repository": "tehknesolutions/HNK-KODE",
+    "registry": "packages/hnk-linguas/src/index.mjs",
+    "selectionLaw": "V1 Genesis vectors use only FROZEN lexemes with recovered meanings. The PATH itself remains HNK_CANDIDATE until separately approved."
+  },
+  "projectionLaw": {
+    "mfPixel": "x=sector1-1; y=layer1-1",
+    "iso": "u=x-y; v=x+y",
+    "voxel": "x=sector1-1; y=0; z=layer1-1",
+    "mfMachineTuple": "[LAY hex16, SEC hex16]",
+    "roundTripRequirement": "Every stored projection MUST recover the exact ordered MF typed-address sequence."
+  },
+  "candidates": [
+    {
+      "candidateId": "GGV1-001",
+      "target": {"lexemeId":"LEX-001","transliteration":"VAMAKALA","meaningPt":"apelido / nome familiar","sourceAuthority":"FROZEN"},
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        {"node":"MF:L01:S01","edgeToNext":"ANGULAR_NEXT","mfTupleHex":["0480","0400"],"pixel":{"planeId":"MF","x":0,"y":0},"iso":{"u":0,"v":0},"voxel":{"planeId":"MF","x":0,"y":0,"z":0}},
+        {"node":"MF:L01:S02","edgeToNext":"RADIAL_OUT","mfTupleHex":["0480","0401"],"pixel":{"planeId":"MF","x":1,"y":0},"iso":{"u":1,"v":1},"voxel":{"planeId":"MF","x":1,"y":0,"z":0}},
+        {"node":"MF:L02:S02","edgeToNext":"ANGULAR_NEXT","mfTupleHex":["0481","0401"],"pixel":{"planeId":"MF","x":1,"y":1},"iso":{"u":0,"v":2},"voxel":{"planeId":"MF","x":1,"y":0,"z":1}},
+        {"node":"MF:L02:S03","edgeToNext":"RADIAL_OUT","mfTupleHex":["0481","0402"],"pixel":{"planeId":"MF","x":2,"y":1},"iso":{"u":1,"v":3},"voxel":{"planeId":"MF","x":2,"y":0,"z":1}},
+        {"node":"MF:L03:S03","edgeToNext":null,"mfTupleHex":["0482","0402"],"pixel":{"planeId":"MF","x":2,"y":2},"iso":{"u":0,"v":4},"voxel":{"planeId":"MF","x":2,"y":0,"z":2}}
+      ]
+    },
+    {
+      "candidateId": "GGV1-002",
+      "target": {"lexemeId":"LEX-002","transliteration":"SARADAYA","meaningPt":"origem / local de nascimento","sourceAuthority":"FROZEN"},
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        {"node":"MF:L01:S09","edgeToNext":"RADIAL_OUT","mfTupleHex":["0480","0408"],"pixel":{"planeId":"MF","x":8,"y":0},"iso":{"u":8,"v":8},"voxel":{"planeId":"MF","x":8,"y":0,"z":0}},
+        {"node":"MF:L02:S09","edgeToNext":"ANGULAR_NEXT","mfTupleHex":["0481","0408"],"pixel":{"planeId":"MF","x":8,"y":1},"iso":{"u":7,"v":9},"voxel":{"planeId":"MF","x":8,"y":0,"z":1}},
+        {"node":"MF:L02:S10","edgeToNext":"RADIAL_OUT","mfTupleHex":["0481","0409"],"pixel":{"planeId":"MF","x":9,"y":1},"iso":{"u":8,"v":10},"voxel":{"planeId":"MF","x":9,"y":0,"z":1}},
+        {"node":"MF:L03:S10","edgeToNext":"ANGULAR_PREV","mfTupleHex":["0482","0409"],"pixel":{"planeId":"MF","x":9,"y":2},"iso":{"u":7,"v":11},"voxel":{"planeId":"MF","x":9,"y":0,"z":2}},
+        {"node":"MF:L03:S09","edgeToNext":null,"mfTupleHex":["0482","0408"],"pixel":{"planeId":"MF","x":8,"y":2},"iso":{"u":6,"v":10},"voxel":{"planeId":"MF","x":8,"y":0,"z":2}}
+      ]
+    },
+    {
+      "candidateId": "GGV1-003",
+      "target": {"lexemeId":"LEX-003","transliteration":"VALIVAN","meaningPt":"escritório","sourceAuthority":"FROZEN"},
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        {"node":"MF:L01:S17","edgeToNext":"ANGULAR_NEXT","mfTupleHex":["0480","0410"],"pixel":{"planeId":"MF","x":16,"y":0},"iso":{"u":16,"v":16},"voxel":{"planeId":"MF","x":16,"y":0,"z":0}},
+        {"node":"MF:L01:S18","edgeToNext":"RADIAL_OUT","mfTupleHex":["0480","0411"],"pixel":{"planeId":"MF","x":17,"y":0},"iso":{"u":17,"v":17},"voxel":{"planeId":"MF","x":17,"y":0,"z":0}},
+        {"node":"MF:L02:S18","edgeToNext":"ANGULAR_PREV","mfTupleHex":["0481","0411"],"pixel":{"planeId":"MF","x":17,"y":1},"iso":{"u":16,"v":18},"voxel":{"planeId":"MF","x":17,"y":0,"z":1}},
+        {"node":"MF:L02:S17","edgeToNext":"RADIAL_OUT","mfTupleHex":["0481","0410"],"pixel":{"planeId":"MF","x":16,"y":1},"iso":{"u":15,"v":17},"voxel":{"planeId":"MF","x":16,"y":0,"z":1}},
+        {"node":"MF:L03:S17","edgeToNext":null,"mfTupleHex":["0482","0410"],"pixel":{"planeId":"MF","x":16,"y":2},"iso":{"u":14,"v":18},"voxel":{"planeId":"MF","x":16,"y":0,"z":2}}
+      ]
+    }
+  ],
+  "validation": {
+    "candidateCount": 3,
+    "nodesPerCandidate": 5,
+    "edgePolicy": "Every consecutive pair must be an edge in P6 □ C72.",
+    "projectionPolicy": "Pixel and IsoPixel are lossless only with plane metadata; Voxel retains the typed MF source tuple.",
+    "semanticPolicy": "A valid round trip proves encoding integrity, not semantic truth or canonical glyph status.",
+    "promotionGate": "HUMAN_APPROVAL_REQUIRED"
+  },
+  "next": "Implement an executable validator that checks topology, tuple codec, Pixel/IsoPixel/Voxel round trips, uniqueness and HNKP serialization for every Genesis candidate before any candidate is proposed for canonical promotion."
+}
