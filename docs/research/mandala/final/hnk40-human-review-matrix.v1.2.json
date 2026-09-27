@@ -1,0 +1,1344 @@
+{
+  "version": "1.2",
+  "status": "HUMAN_REVIEW_PENDING",
+  "preferredStructuralFamily": "HNK40_V1.2_HAMMING_SPACED",
+  "decisionEnum": [
+    "PENDING",
+    "KEEP",
+    "REVISE",
+    "REJECT",
+    "HOLD"
+  ],
+  "machinePriorityIsNonAuthoritative": true,
+  "priorityPolicy": {
+    "CRITICAL": "minimum structural review score <= 34",
+    "HIGH": "minimum score 35..38",
+    "MEDIUM": "minimum score 39..42",
+    "NORMAL": "not present inside current nearest-pair review window"
+  },
+  "counts": {
+    "CRITICAL": 4,
+    "HIGH": 4,
+    "MEDIUM": 21,
+    "NORMAL": 11
+  },
+  "rows": [
+    {
+      "glyphId": "G01",
+      "world": "W1",
+      "row": 1,
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "E0EA621F"
+      }
+    },
+    {
+      "glyphId": "G02",
+      "world": "W1",
+      "row": 1,
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "priority": "HIGH",
+      "nearestRisks": [
+        {
+          "peer": "G09",
+          "score": 38,
+          "edgeDistance": 3,
+          "pointDistance": 8
+        },
+        {
+          "peer": "G05",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "D0DA938F"
+      }
+    },
+    {
+      "glyphId": "G03",
+      "world": "W1",
+      "row": 1,
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G08",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "CBCB1E42"
+      }
+    },
+    {
+      "glyphId": "G04",
+      "world": "W1",
+      "row": 1,
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "35C58B92"
+      }
+    },
+    {
+      "glyphId": "G05",
+      "world": "W1",
+      "row": 1,
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G02",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G07",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "7D6BBFFA"
+      }
+    },
+    {
+      "glyphId": "G06",
+      "world": "W1",
+      "row": 1,
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G08",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "0961F2EC"
+      }
+    },
+    {
+      "glyphId": "G07",
+      "world": "W1",
+      "row": 1,
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G05",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G09",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "349F0029"
+      }
+    },
+    {
+      "glyphId": "G08",
+      "world": "W1",
+      "row": 1,
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G03",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G06",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G10",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "0340341C"
+      }
+    },
+    {
+      "glyphId": "G09",
+      "world": "W1",
+      "row": 1,
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "priority": "HIGH",
+      "nearestRisks": [
+        {
+          "peer": "G02",
+          "score": 38,
+          "edgeDistance": 3,
+          "pointDistance": 8
+        },
+        {
+          "peer": "G07",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "32A5718B"
+      }
+    },
+    {
+      "glyphId": "G10",
+      "world": "W1",
+      "row": 1,
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G08",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "057A45BE"
+      }
+    },
+    {
+      "glyphId": "G11",
+      "world": "W2",
+      "row": 2,
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "80316CD5"
+      }
+    },
+    {
+      "glyphId": "G12",
+      "world": "W2",
+      "row": 2,
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "priority": "CRITICAL",
+      "nearestRisks": [
+        {
+          "peer": "G19",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G15",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "6BBBAEB4"
+      }
+    },
+    {
+      "glyphId": "G13",
+      "world": "W2",
+      "row": 2,
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G18",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "ABA72D94"
+      }
+    },
+    {
+      "glyphId": "G14",
+      "world": "W2",
+      "row": 2,
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "385AFFAC"
+      }
+    },
+    {
+      "glyphId": "G15",
+      "world": "W2",
+      "row": 2,
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G12",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G17",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "B8104730"
+      }
+    },
+    {
+      "glyphId": "G16",
+      "world": "W2",
+      "row": 2,
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G18",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "CB9E5A40"
+      }
+    },
+    {
+      "glyphId": "G17",
+      "world": "W2",
+      "row": 2,
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G15",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G19",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "BD3175C9"
+      }
+    },
+    {
+      "glyphId": "G18",
+      "world": "W2",
+      "row": 2,
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G13",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G16",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G20",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "DA9AD411"
+      }
+    },
+    {
+      "glyphId": "G19",
+      "world": "W2",
+      "row": 2,
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "priority": "CRITICAL",
+      "nearestRisks": [
+        {
+          "peer": "G12",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G17",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "98AC9669"
+      }
+    },
+    {
+      "glyphId": "G20",
+      "world": "W2",
+      "row": 2,
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G18",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "20EA5926"
+      }
+    },
+    {
+      "glyphId": "G21",
+      "world": "W3",
+      "row": 3,
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "8CC58DC1"
+      }
+    },
+    {
+      "glyphId": "G22",
+      "world": "W3",
+      "row": 3,
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "priority": "HIGH",
+      "nearestRisks": [
+        {
+          "peer": "G29",
+          "score": 38,
+          "edgeDistance": 3,
+          "pointDistance": 8
+        },
+        {
+          "peer": "G25",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "974227FA"
+      }
+    },
+    {
+      "glyphId": "G23",
+      "world": "W3",
+      "row": 3,
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G28",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "73962E9D"
+      }
+    },
+    {
+      "glyphId": "G24",
+      "world": "W3",
+      "row": 3,
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "5339549D"
+      }
+    },
+    {
+      "glyphId": "G25",
+      "world": "W3",
+      "row": 3,
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G22",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G27",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "A2ADEF4A"
+      }
+    },
+    {
+      "glyphId": "G26",
+      "world": "W3",
+      "row": 3,
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G28",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "C77EFA41"
+      }
+    },
+    {
+      "glyphId": "G27",
+      "world": "W3",
+      "row": 3,
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G25",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G29",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "FA800884"
+      }
+    },
+    {
+      "glyphId": "G28",
+      "world": "W3",
+      "row": 3,
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G23",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G26",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G30",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "BF71A578"
+      }
+    },
+    {
+      "glyphId": "G29",
+      "world": "W3",
+      "row": 3,
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "priority": "HIGH",
+      "nearestRisks": [
+        {
+          "peer": "G22",
+          "score": 38,
+          "edgeDistance": 3,
+          "pointDistance": 8
+        },
+        {
+          "peer": "G27",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "F8D6D89D"
+      }
+    },
+    {
+      "glyphId": "G30",
+      "world": "W3",
+      "row": 3,
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G28",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "BD277561"
+      }
+    },
+    {
+      "glyphId": "G31",
+      "world": "W4",
+      "row": 4,
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "0CB84980"
+      }
+    },
+    {
+      "glyphId": "G32",
+      "world": "W4",
+      "row": 4,
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "priority": "CRITICAL",
+      "nearestRisks": [
+        {
+          "peer": "G39",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G35",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "71891F63"
+      }
+    },
+    {
+      "glyphId": "G33",
+      "world": "W4",
+      "row": 4,
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G38",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "292A335C"
+      }
+    },
+    {
+      "glyphId": "G34",
+      "world": "W4",
+      "row": 4,
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "17B1A2E7"
+      }
+    },
+    {
+      "glyphId": "G35",
+      "world": "W4",
+      "row": 4,
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G32",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "3A9D59F8"
+      }
+    },
+    {
+      "glyphId": "G36",
+      "world": "W4",
+      "row": 4,
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "2416515B"
+      }
+    },
+    {
+      "glyphId": "G37",
+      "world": "W4",
+      "row": 4,
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "EB769E72"
+      }
+    },
+    {
+      "glyphId": "G38",
+      "world": "W4",
+      "row": 4,
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "priority": "MEDIUM",
+      "nearestRisks": [
+        {
+          "peer": "G33",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "B2713361"
+      }
+    },
+    {
+      "glyphId": "G39",
+      "world": "W4",
+      "row": 4,
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "priority": "CRITICAL",
+      "nearestRisks": [
+        {
+          "peer": "G32",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        }
+      ],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "11061345"
+      }
+    },
+    {
+      "glyphId": "G40",
+      "world": "W4",
+      "row": 4,
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "priority": "NORMAL",
+      "nearestRisks": [],
+      "decision": "PENDING",
+      "reviewer": null,
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "notes": ""
+      },
+      "provenance": {
+        "candidateRegistry": "glyph-genesis-hnk40-candidates.v1.2.json",
+        "packetCrc32": "B47599E4"
+      }
+    }
+  ]
+}
