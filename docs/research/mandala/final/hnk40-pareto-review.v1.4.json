@@ -72,7 +72,9 @@
         "collisionGroups": 0,
         "collisions": []
       }
-    }
+    },
+    "sameWorldMinimumEdgeDistance": 3,
+    "crossWorldMinimumEdgeDistance": 4
   },
   "orientationPairs": [
     {
