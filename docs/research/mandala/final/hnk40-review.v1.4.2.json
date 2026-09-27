@@ -1,0 +1,159 @@
+{
+  "version": "1.4.2",
+  "status": "HUMAN_COMPARISON_PENDING",
+  "metrics": {
+    "staticVisibleUniqueShapes": 40,
+    "minimumPairwiseEdgeDistance": 3,
+    "sameWorldMinimumEdgeDistance": 3,
+    "crossWorldMinimumEdgeDistance": 3,
+    "minimumVisibleSegmentCount": 6,
+    "totalVisibleSegments": 351,
+    "orientationEquivalentPairs": 10,
+    "lowVisibleOrientationPairs": 1,
+    "maxOrientationDegree": 1,
+    "raster8Unique": 40,
+    "raster6Unique": 31
+  },
+  "sixSegmentGlyphs": [
+    "G13",
+    "G23",
+    "G33"
+  ],
+  "orientationPairs": [
+    {
+      "a": "G07",
+      "b": "G10",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G08",
+      "b": "G09",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G15",
+      "b": "G16",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G17",
+      "b": "G20",
+      "transforms": [
+        "r90",
+        "mx"
+      ]
+    },
+    {
+      "a": "G18",
+      "b": "G19",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G23",
+      "b": "G33",
+      "transforms": [
+        "my"
+      ]
+    },
+    {
+      "a": "G27",
+      "b": "G30",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G28",
+      "b": "G29",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G37",
+      "b": "G40",
+      "transforms": [
+        "mx"
+      ]
+    },
+    {
+      "a": "G38",
+      "b": "G39",
+      "transforms": [
+        "mx"
+      ]
+    }
+  ],
+  "raster": {
+    "6": {
+      "unique": 31,
+      "collisionGroups": 7,
+      "collisions": [
+        [
+          "G03",
+          "G13",
+          "G23"
+        ],
+        [
+          "G04",
+          "G34",
+          "G39"
+        ],
+        [
+          "G08",
+          "G29"
+        ],
+        [
+          "G09",
+          "G28"
+        ],
+        [
+          "G12",
+          "G26"
+        ],
+        [
+          "G15",
+          "G17"
+        ],
+        [
+          "G16",
+          "G20"
+        ]
+      ]
+    },
+    "8": {
+      "unique": 40,
+      "collisionGroups": 0,
+      "collisions": []
+    },
+    "10": {
+      "unique": 40,
+      "collisionGroups": 0,
+      "collisions": []
+    },
+    "12": {
+      "unique": 40,
+      "collisionGroups": 0,
+      "collisions": []
+    },
+    "16": {
+      "unique": 40,
+      "collisionGroups": 0,
+      "collisions": []
+    },
+    "24": {
+      "unique": 40,
+      "collisionGroups": 0,
+      "collisions": []
+    }
+  },
+  "canonicalDecision": "PENDING"
+}
