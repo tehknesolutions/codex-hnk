@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "status": "E2_GRAPH_TOPOLOGY_CANDIDATE",
+  "sourceRegistry": "hnk-kode-mandala-address-registry.v1.json",
+  "sourceGeometry": "mandala-structural-model.v1.json",
+  "vertexCount": 463,
+  "principle": "Only source-supported or purely grid-topological adjacency is promoted. Unsupported cross-domain geometry remains unresolved.",
+  "edgeClasses": {
+    "MF_ANGULAR": {
+      "status": "SUPPORTED",
+      "directedMoves": ["ANGULAR_NEXT", "ANGULAR_PREV"],
+      "law": "Within a fixed layer L, S01..S72 form a cycle C72. NEXT wraps S72->S01; PREV wraps S01->S72.",
+      "undirectedEdgeCount": 432
+    },
+    "MF_RADIAL": {
+      "status": "SUPPORTED",
+      "directedMoves": ["RADIAL_OUT", "RADIAL_IN"],
+      "law": "Within a fixed sector S, adjacent sectorized layers connect L01-L02-L03-L04-L05-L06.",
+      "undirectedEdgeCount": 360
+    },
+    "MF_CG": {
+      "status": "SUPPORTED_BY_OUTER_BAND_PARTITION",
+      "directedMoves": ["TO_CHOIR", "FROM_CHOIR"],
+      "law": "Each L06 sector connects to the choir/sefirah group whose 8-sector range contains that sector.",
+      "undirectedEdgeCount": 72
+    },
+    "MF_CR": {
+      "status": "UNRESOLVED",
+      "law": "No one-to-one sector-to-Rose adjacency is promoted because the measured source establishes the Rose domain and 3+7+12 topology but does not freeze an exact sector/petal rotational binding."
+    },
+    "CR_INTERNAL": {
+      "status": "PARTIALLY_RESOLVED",
+      "law": "T3, H7 and D12 are known cyclic petal/letter families. Their internal cyclic adjacency may be represented independently, but cross-family radial/petal correspondence remains unresolved.",
+      "subgraphs": {
+        "CR_T": {"topology": "C3", "undirectedEdgeCount": 3},
+        "CR_H": {"topology": "C7", "undirectedEdgeCount": 7},
+        "CR_D": {"topology": "C12", "undirectedEdgeCount": 12}
+      },
+      "crossFamilyEdges": "UNRESOLVED"
+    },
+    "CG_CG": {
+      "status": "DERIVED_FROM_9_OUTER_GROUPS",
+      "law": "CG01..CG09 follow the outer circumference in cyclic order C9.",
+      "undirectedEdgeCount": 9
+    },
+    "HC_ANY": {
+      "status": "FORBIDDEN_IN_E2",
+      "law": "HC is outside the 463-address registry and receives no graph edges until its scope/sub-addressing gate closes."
+    }
+  },
+  "supportedSubgraph": {
+    "MF": {
+      "topology": "P6 □ C72",
+      "vertices": 432,
+      "undirectedEdges": 792,
+      "derivation": "6*C72 angular edges + 5*72 radial edges = 432 + 360"
+    },
+    "MF_plus_CG": {
+      "vertices": 441,
+      "knownUndirectedEdges": 873,
+      "derivation": "792 MF + 72 MF-CG + 9 CG-CG"
+    },
+    "CR_knownInternal": {
+      "vertices": 22,
+      "knownUndirectedEdges": 22,
+      "derivation": "C3 + C7 + C12"
+    },
+    "major463": {
+      "vertices": 463,
+      "knownUndirectedEdges": 895,
+      "connectedComponentsUnderOnlyFrozenEdges": 4,
+      "components": ["MF+CG (441)", "CR:T (3)", "CR:H (7)", "CR:D (12)"],
+      "warning": "The four-component result is intentional evidence of unresolved Rose attachment/cross-family geometry, not permission to invent bridge edges."
+    }
+  },
+  "pathPolicy": {
+    "allowedNow": ["MF_ANGULAR", "MF_RADIAL", "MF_CG", "CG_CG", "CR_T_CYCLE", "CR_H_CYCLE", "CR_D_CYCLE"],
+    "blockedNow": ["MF_CR", "CR_CROSS_FAMILY", "HC_ANY"],
+    "semanticMeaning": "NONE",
+    "humanGateRequiredForNewEdgeClass": true
+  },
+  "compatibility": {
+    "hnk40": "All existing HNK40 paths use MF_ANGULAR/MF_RADIAL only and remain valid under E2.",
+    "e1RegistryDigestExpected": "c533da127d69ad49707f979b5b6dcade0b1ab64691fe4c0fee2cc3015487c44d"
+  },
+  "nextGate": "E3_HNKP_NAMESPACE_EXTENSION"
+}
