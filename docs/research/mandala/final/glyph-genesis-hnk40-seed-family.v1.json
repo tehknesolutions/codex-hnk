@@ -1,0 +1,54 @@
+{
+  "version": "1.1-experimental",
+  "status": "HNK_CANDIDATE_STRUCTURAL_SEED_FAMILY",
+  "purpose": "Define 40 deterministic HNK40 Glyph Genesis structural seeds that remain distinct after angular-translation normalization. This is a structural search space, not canonical glyph art.",
+  "authorityBoundary": {
+    "sourceGlyphAuthority": "tehknesolutions/HNK-KODE packages/hnk-glyphs",
+    "sourceGlyphState": "PREPRODUCTION_NOT_OFFICIAL",
+    "structuralLaboratory": "CODEX-HNK",
+    "bindingAuthority": "HNK_CANDIDATE",
+    "semanticAssignment": "NONE",
+    "humanPromotionRequired": true,
+    "rule": "A generated PATH may be mathematically valid without being visually, phonologically, semantically or canonically approved."
+  },
+  "cardinality": 40,
+  "sourceIndex": {
+    "glyphIds": "G01..G40",
+    "matrix": "4 rows × 10 columns",
+    "rowFormula": "row = floor((g-1)/10)+1",
+    "columnFormula": "column = ((g-1) mod 10)+1",
+    "columnBits": "4-bit binary(column-1), MSB first",
+    "startSectorFormula": "sector1 = g",
+    "startLayerByWorld": {"W1":2,"W2":2,"W3":5,"W4":5}
+  },
+  "shapeLaw": {
+    "angularBitRule": "At each A position, bit 0 => ANGULAR_NEXT; bit 1 => ANGULAR_PREV.",
+    "W1": ["A0","RADIAL_OUT","A1","RADIAL_OUT","A2","RADIAL_IN","A3","RADIAL_IN"],
+    "W2": ["RADIAL_OUT","A0","RADIAL_OUT","A1","RADIAL_IN","A2","RADIAL_IN","A3"],
+    "W3": ["A0","RADIAL_IN","A1","RADIAL_IN","A2","RADIAL_OUT","A3","RADIAL_OUT"],
+    "W4": ["RADIAL_IN","A0","RADIAL_IN","A1","RADIAL_OUT","A2","RADIAL_OUT","A3"]
+  },
+  "wrapLaw": "All sector arithmetic is modulo 72 with human sector range S01..S72.",
+  "projectionLaw": {
+    "pixel": "x=sector1-1; y=layer1-1",
+    "iso": "u=x-y; v=x+y",
+    "voxel": "x=sector1-1; y=0; z=layer1-1",
+    "mfTuple": "[LAY typed-frame hex16, SEC typed-frame hex16]"
+  },
+  "transportProfile": "HNKP1-MF-TUPLE-BE",
+  "shapeEquivalence": {
+    "translationNormalizedSignature": "ordered edge sequence",
+    "requiredUniqueCount": 40,
+    "reason": "Absolute sector translation alone must not be the only source of candidate distinctness."
+  },
+  "invariants": [
+    "Exactly 40 candidate IDs are generated: G01..G40.",
+    "Every candidate contains exactly nine MF nodes and eight legal MF edges.",
+    "Every ordered PATH is unique.",
+    "All 40 angular-translation-normalized edge signatures are unique.",
+    "Every node round-trips through typed MF tuple, PixelMap, IsoPixel and Voxel.",
+    "Every candidate serializes through HNKP1-MF-TUPLE-BE and decodes to the identical ordered PATH.",
+    "No family rule assigns meaning, phoneme, sacred correspondence, color, sound or visual-canon status."
+  ],
+  "next": "Materialize V1.1, validate 40 topology/transport vectors and normalized-shape uniqueness, then expose the candidates for human visual review."
+}

@@ -1,0 +1,1500 @@
+{
+  "version": "1.1-experimental",
+  "status": "HNK_CANDIDATE_MATERIALIZED_SEED_REGISTRY",
+  "generatedFrom": "glyph-genesis-hnk40-seed-family.v1.json",
+  "transportProfile": "HNKP1-MF-TUPLE-BE",
+  "candidateCount": 40,
+  "bindingAuthority": "HNK_CANDIDATE",
+  "semanticAssignment": "NONE",
+  "storageLaw": "Only ordered typed PATH, explicit edge sequence, source 4x10 matrix coordinates, column bits and deterministic HNKP vectors are materialized. Pixel/IsoPixel/Voxel remain derivable projections and are intentionally not duplicated here.",
+  "invariants": {
+    "uniqueOrderedPaths": 40,
+    "translationNormalizedUniqueShapes": 40,
+    "nodesPerCandidate": 9,
+    "edgesPerCandidate": 8,
+    "packetBytesPerCandidate": 55,
+    "humanPromotionRequired": true
+  },
+  "candidates": [
+    {
+      "glyphId": "G01",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 1
+      },
+      "columnBits": "0000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S01",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L02:S05"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "2940D0B5",
+        "packetHex": "484E4B5001010904810400048104010482040104820402048304020483040304820403048204040481040400030003000200022940D0B5",
+        "base64url": "SE5LUAEBCQSBBAAEgQQBBIIEAQSCBAIEgwQCBIMEAwSCBAMEggQEBIEEBAADAAMAAgACKUDQtQ"
+      }
+    },
+    {
+      "glyphId": "G02",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 2
+      },
+      "columnBits": "0001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S02",
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L03:S05",
+        "MF:L03:S04",
+        "MF:L02:S04"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "4FD12788",
+        "packetHex": "484E4B5001010904810401048104020482040204820403048304030483040404820404048204030481040300030003000201024FD12788",
+        "base64url": "SE5LUAEBCQSBBAEEgQQCBIIEAgSCBAMEgwQDBIMEBASCBAQEggQDBIEEAwADAAMAAgECT9EniA"
+      }
+    },
+    {
+      "glyphId": "G03",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 3
+      },
+      "columnBits": "0010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S03",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L04:S05",
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L02:S05"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "D76C2575",
+        "packetHex": "484E4B500101090481040204810403048204030482040404830404048304030482040304820404048104040003000301020002D76C2575",
+        "base64url": "SE5LUAEBCQSBBAIEgQQDBIIEAwSCBAQEgwQEBIMEAwSCBAMEggQEBIEEBAADAAMBAgAC12wldQ"
+      }
+    },
+    {
+      "glyphId": "G04",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 4
+      },
+      "columnBits": "0011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S04",
+        "MF:L02:S05",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L04:S05",
+        "MF:L03:S05",
+        "MF:L03:S04",
+        "MF:L02:S04"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "0464C73B",
+        "packetHex": "484E4B5001010904810403048104040482040404820405048304050483040404820404048204030481040300030003010201020464C73B",
+        "base64url": "SE5LUAEBCQSBBAMEgQQEBIIEBASCBAUEgwQFBIMEBASCBAQEggQDBIEEAwADAAMBAgECBGTHOw"
+      }
+    },
+    {
+      "glyphId": "G05",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 5
+      },
+      "columnBits": "0100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S05",
+        "MF:L02:S06",
+        "MF:L03:S06",
+        "MF:L03:S05",
+        "MF:L04:S05",
+        "MF:L04:S06",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L02:S07"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "A420CB59",
+        "packetHex": "484E4B500101090481040404810405048204050482040404830404048304050482040504820406048104060003010300020002A420CB59",
+        "base64url": "SE5LUAEBCQSBBAQEgQQFBIIEBQSCBAQEgwQEBIMEBQSCBAUEggQGBIEEBgADAQMAAgACpCDLWQ"
+      }
+    },
+    {
+      "glyphId": "G06",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 6
+      },
+      "columnBits": "0101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S06",
+        "MF:L02:S07",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L04:S07",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L02:S06"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "3E15248A",
+        "packetHex": "484E4B5001010904810405048104060482040604820405048304050483040604820406048204050481040500030103000201023E15248A",
+        "base64url": "SE5LUAEBCQSBBAUEgQQGBIIEBgSCBAUEgwQFBIMEBgSCBAYEggQFBIEEBQADAQMAAgECPhUkig"
+      }
+    },
+    {
+      "glyphId": "G07",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 7
+      },
+      "columnBits": "0110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S07",
+        "MF:L02:S08",
+        "MF:L03:S08",
+        "MF:L03:S07",
+        "MF:L04:S07",
+        "MF:L04:S06",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L02:S07"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "F6DF16B3",
+        "packetHex": "484E4B500101090481040604810407048204070482040604830406048304050482040504820406048104060003010301020002F6DF16B3",
+        "base64url": "SE5LUAEBCQSBBAYEgQQHBIIEBwSCBAYEgwQGBIMEBQSCBAUEggQGBIEEBgADAQMBAgAC9t8Wsw"
+      }
+    },
+    {
+      "glyphId": "G08",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 8
+      },
+      "columnBits": "0111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S08",
+        "MF:L02:S09",
+        "MF:L03:S09",
+        "MF:L03:S08",
+        "MF:L04:S08",
+        "MF:L04:S07",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L02:S06"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "6930C0B4",
+        "packetHex": "484E4B5001010904810407048104080482040804820407048304070483040604820406048204050481040500030103010201026930C0B4",
+        "base64url": "SE5LUAEBCQSBBAcEgQQIBIIECASCBAcEgwQHBIMEBgSCBAYEggQFBIEEBQADAQMBAgECaTDAtA"
+      }
+    },
+    {
+      "glyphId": "G09",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 9
+      },
+      "columnBits": "1000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S09",
+        "MF:L02:S08",
+        "MF:L03:S08",
+        "MF:L03:S09",
+        "MF:L04:S09",
+        "MF:L04:S10",
+        "MF:L03:S10",
+        "MF:L03:S11",
+        "MF:L02:S11"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "DFFF92BD",
+        "packetHex": "484E4B50010109048104080481040704820407048204080483040804830409048204090482040A0481040A0103000300020002DFFF92BD",
+        "base64url": "SE5LUAEBCQSBBAgEgQQHBIIEBwSCBAgEgwQIBIMECQSCBAkEggQKBIEECgEDAAMAAgAC3_-SvQ"
+      }
+    },
+    {
+      "glyphId": "G10",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 10
+      },
+      "columnBits": "1001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S10",
+        "MF:L02:S09",
+        "MF:L03:S09",
+        "MF:L03:S10",
+        "MF:L04:S10",
+        "MF:L04:S11",
+        "MF:L03:S11",
+        "MF:L03:S10",
+        "MF:L02:S10"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "401044BA",
+        "packetHex": "484E4B5001010904810409048104080482040804820409048304090483040A0482040A04820409048104090103000300020102401044BA",
+        "base64url": "SE5LUAEBCQSBBAkEgQQIBIIECASCBAkEgwQJBIMECgSCBAoEggQJBIEECQEDAAMAAgECQBBEug"
+      }
+    },
+    {
+      "glyphId": "G11",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 1
+      },
+      "columnBits": "0000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S11",
+        "MF:L03:S11",
+        "MF:L03:S12",
+        "MF:L04:S12",
+        "MF:L04:S13",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L02:S14",
+        "MF:L02:S15"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "41B4330E",
+        "packetHex": "484E4B500101090481040A0482040A0482040B0483040B0483040C0482040C0482040D0481040D0481040E030003000200020041B4330E",
+        "base64url": "SE5LUAEBCQSBBAoEggQKBIIECwSDBAsEgwQMBIIEDASCBA0EgQQNBIEEDgMAAwACAAIAQbQzDg"
+      }
+    },
+    {
+      "glyphId": "G12",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 2
+      },
+      "columnBits": "0001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S12",
+        "MF:L03:S12",
+        "MF:L03:S13",
+        "MF:L04:S13",
+        "MF:L04:S14",
+        "MF:L03:S14",
+        "MF:L03:S15",
+        "MF:L02:S15",
+        "MF:L02:S14"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "C163675D",
+        "packetHex": "484E4B500101090481040B0482040B0482040C0483040C0483040D0482040D0482040E0481040E0481040D0300030002000201C163675D",
+        "base64url": "SE5LUAEBCQSBBAsEggQLBIIEDASDBAwEgwQNBIIEDQSCBA4EgQQOBIEEDQMAAwACAAIBwWNnXQ"
+      }
+    },
+    {
+      "glyphId": "G13",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 3
+      },
+      "columnBits": "0010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S13",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L04:S14",
+        "MF:L04:S15",
+        "MF:L03:S15",
+        "MF:L03:S14",
+        "MF:L02:S14",
+        "MF:L02:S15"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "BABADB6F",
+        "packetHex": "484E4B500101090481040C0482040C0482040D0483040D0483040E0482040E0482040D0481040D0481040E0300030002010200BABADB6F",
+        "base64url": "SE5LUAEBCQSBBAwEggQMBIIEDQSDBA0EgwQOBIIEDgSCBA0EgQQNBIEEDgMAAwACAQIAurrbbw"
+      }
+    },
+    {
+      "glyphId": "G14",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 4
+      },
+      "columnBits": "0011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S14",
+        "MF:L03:S14",
+        "MF:L03:S15",
+        "MF:L04:S15",
+        "MF:L04:S16",
+        "MF:L03:S16",
+        "MF:L03:S15",
+        "MF:L02:S15",
+        "MF:L02:S14"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "B6C9AE21",
+        "packetHex": "484E4B500101090481040D0482040D0482040E0483040E0483040F0482040F0482040E0481040E0481040D0300030002010201B6C9AE21",
+        "base64url": "SE5LUAEBCQSBBA0EggQNBIIEDgSDBA4EgwQPBIIEDwSCBA4EgQQOBIEEDQMAAwACAQIBtsmuIQ"
+      }
+    },
+    {
+      "glyphId": "G15",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 5
+      },
+      "columnBits": "0100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S15",
+        "MF:L03:S15",
+        "MF:L03:S16",
+        "MF:L04:S16",
+        "MF:L04:S15",
+        "MF:L03:S15",
+        "MF:L03:S16",
+        "MF:L02:S16",
+        "MF:L02:S17"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "2C5FB855",
+        "packetHex": "484E4B500101090481040E0482040E0482040F0483040F0483040E0482040E0482040F0481040F0481041003000301020002002C5FB855",
+        "base64url": "SE5LUAEBCQSBBA4EggQOBIIEDwSDBA8EgwQOBIIEDgSCBA8EgQQPBIEEEAMAAwECAAIALF-4VQ"
+      }
+    },
+    {
+      "glyphId": "G16",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 6
+      },
+      "columnBits": "0101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S16",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L04:S17",
+        "MF:L04:S16",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L02:S17",
+        "MF:L02:S16"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "D7B279A2",
+        "packetHex": "484E4B500101090481040F0482040F04820410048304100483040F0482040F04820410048104100481040F0300030102000201D7B279A2",
+        "base64url": "SE5LUAEBCQSBBA8EggQPBIIEEASDBBAEgwQPBIIEDwSCBBAEgQQQBIEEDwMAAwECAAIB17J5og"
+      }
+    },
+    {
+      "glyphId": "G17",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 7
+      },
+      "columnBits": "0110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S17",
+        "MF:L03:S17",
+        "MF:L03:S18",
+        "MF:L04:S18",
+        "MF:L04:S17",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L02:S16",
+        "MF:L02:S17"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "70362E2C",
+        "packetHex": "484E4B500101090481041004820410048204110483041104830410048204100482040F0481040F04810410030003010201020070362E2C",
+        "base64url": "SE5LUAEBCQSBBBAEggQQBIIEEQSDBBEEgwQQBIIEEASCBA8EgQQPBIEEEAMAAwECAQIAcDYuLA"
+      }
+    },
+    {
+      "glyphId": "G18",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 8
+      },
+      "columnBits": "0111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S18",
+        "MF:L03:S18",
+        "MF:L03:S19",
+        "MF:L04:S19",
+        "MF:L04:S18",
+        "MF:L03:S18",
+        "MF:L03:S17",
+        "MF:L02:S17",
+        "MF:L02:S16"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "9A45040A",
+        "packetHex": "484E4B5001010904810411048204110482041204830412048304110482041104820410048104100481040F03000301020102019A45040A",
+        "base64url": "SE5LUAEBCQSBBBEEggQRBIIEEgSDBBIEgwQRBIIEEQSCBBAEgQQQBIEEDwMAAwECAQIBmkUECg"
+      }
+    },
+    {
+      "glyphId": "G19",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 9
+      },
+      "columnBits": "1000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S19",
+        "MF:L03:S19",
+        "MF:L03:S18",
+        "MF:L04:S18",
+        "MF:L04:S19",
+        "MF:L03:S19",
+        "MF:L03:S20",
+        "MF:L02:S20",
+        "MF:L02:S21"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "BE96F142",
+        "packetHex": "484E4B500101090481041204820412048204110483041104830412048204120482041304810413048104140301030002000200BE96F142",
+        "base64url": "SE5LUAEBCQSBBBIEggQSBIIEEQSDBBEEgwQSBIIEEgSCBBMEgQQTBIEEFAMBAwACAAIAvpbxQg"
+      }
+    },
+    {
+      "glyphId": "G20",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 10
+      },
+      "columnBits": "1001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S20",
+        "MF:L03:S20",
+        "MF:L03:S19",
+        "MF:L04:S19",
+        "MF:L04:S20",
+        "MF:L03:S20",
+        "MF:L03:S21",
+        "MF:L02:S21",
+        "MF:L02:S20"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "5CB89859",
+        "packetHex": "484E4B5001010904810413048204130482041204830412048304130482041304820414048104140481041303010300020002015CB89859",
+        "base64url": "SE5LUAEBCQSBBBMEggQTBIIEEgSDBBIEgwQTBIIEEwSCBBQEgQQUBIEEEwMBAwACAAIBXLiYWQ"
+      }
+    },
+    {
+      "glyphId": "G21",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 1
+      },
+      "columnBits": "0000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S21",
+        "MF:L05:S22",
+        "MF:L04:S22",
+        "MF:L04:S23",
+        "MF:L03:S23",
+        "MF:L03:S24",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L05:S25"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "A989E1F6",
+        "packetHex": "484E4B500101090484041404840415048304150483041604820416048204170483041704830418048404180002000200030003A989E1F6",
+        "base64url": "SE5LUAEBCQSEBBQEhAQVBIMEFQSDBBYEggQWBIIEFwSDBBcEgwQYBIQEGAACAAIAAwADqYnh9g"
+      }
+    },
+    {
+      "glyphId": "G22",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 2
+      },
+      "columnBits": "0001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S22",
+        "MF:L05:S23",
+        "MF:L04:S23",
+        "MF:L04:S24",
+        "MF:L03:S24",
+        "MF:L03:S25",
+        "MF:L04:S25",
+        "MF:L04:S24",
+        "MF:L05:S24"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "ED212156",
+        "packetHex": "484E4B500101090484041504840416048304160483041704820417048204180483041804830417048404170002000200030103ED212156",
+        "base64url": "SE5LUAEBCQSEBBUEhAQWBIMEFgSDBBcEggQXBIIEGASDBBgEgwQXBIQEFwACAAIAAwED7SEhVg"
+      }
+    },
+    {
+      "glyphId": "G23",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 3
+      },
+      "columnBits": "0010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S23",
+        "MF:L05:S24",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L03:S25",
+        "MF:L03:S24",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L05:S25"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "D5724223",
+        "packetHex": "484E4B500101090484041604840417048304170483041804820418048204170483041704830418048404180002000201030003D5724223",
+        "base64url": "SE5LUAEBCQSEBBYEhAQXBIMEFwSDBBgEggQYBIIEFwSDBBcEgwQYBIQEGAACAAIBAwAD1XJCIw"
+      }
+    },
+    {
+      "glyphId": "G24",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 4
+      },
+      "columnBits": "0011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S24",
+        "MF:L05:S25",
+        "MF:L04:S25",
+        "MF:L04:S26",
+        "MF:L03:S26",
+        "MF:L03:S25",
+        "MF:L04:S25",
+        "MF:L04:S24",
+        "MF:L05:S24"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "9400BB57",
+        "packetHex": "484E4B5001010904840417048404180483041804830419048204190482041804830418048304170484041700020002010301039400BB57",
+        "base64url": "SE5LUAEBCQSEBBcEhAQYBIMEGASDBBkEggQZBIIEGASDBBgEgwQXBIQEFwACAAIBAwEDlAC7Vw"
+      }
+    },
+    {
+      "glyphId": "G25",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 5
+      },
+      "columnBits": "0100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S25",
+        "MF:L05:S26",
+        "MF:L04:S26",
+        "MF:L04:S25",
+        "MF:L03:S25",
+        "MF:L03:S26",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L05:S27"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "F8E75A4C",
+        "packetHex": "484E4B50010109048404180484041904830419048304180482041804820419048304190483041A0484041A0002010200030003F8E75A4C",
+        "base64url": "SE5LUAEBCQSEBBgEhAQZBIMEGQSDBBgEggQYBIIEGQSDBBkEgwQaBIQEGgACAQIAAwAD-OdaTA"
+      }
+    },
+    {
+      "glyphId": "G26",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 6
+      },
+      "columnBits": "0101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S26",
+        "MF:L05:S27",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L03:S26",
+        "MF:L03:S27",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L05:S26"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "62D2B59F",
+        "packetHex": "484E4B50010109048404190484041A0483041A04830419048204190482041A0483041A0483041904840419000201020003010362D2B59F",
+        "base64url": "SE5LUAEBCQSEBBkEhAQaBIMEGgSDBBkEggQZBIIEGgSDBBoEgwQZBIQEGQACAQIAAwEDYtK1nw"
+      }
+    },
+    {
+      "glyphId": "G27",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 7
+      },
+      "columnBits": "0110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S27",
+        "MF:L05:S28",
+        "MF:L04:S28",
+        "MF:L04:S27",
+        "MF:L03:S27",
+        "MF:L03:S26",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L05:S27"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "AA1887A6",
+        "packetHex": "484E4B500101090484041A0484041B0483041B0483041A0482041A04820419048304190483041A0484041A0002010201030003AA1887A6",
+        "base64url": "SE5LUAEBCQSEBBoEhAQbBIMEGwSDBBoEggQaBIIEGQSDBBkEgwQaBIQEGgACAQIBAwADqhiHpg"
+      }
+    },
+    {
+      "glyphId": "G28",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 8
+      },
+      "columnBits": "0111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S28",
+        "MF:L05:S29",
+        "MF:L04:S29",
+        "MF:L04:S28",
+        "MF:L03:S28",
+        "MF:L03:S27",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L05:S26"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "85B47D06",
+        "packetHex": "484E4B500101090484041B0484041C0483041C0483041B0482041B0482041A0483041A0483041904840419000201020103010385B47D06",
+        "base64url": "SE5LUAEBCQSEBBsEhAQcBIMEHASDBBsEggQbBIIEGgSDBBoEgwQZBIQEGQACAQIBAwEDhbR9Bg"
+      }
+    },
+    {
+      "glyphId": "G29",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 9
+      },
+      "columnBits": "1000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S29",
+        "MF:L05:S28",
+        "MF:L04:S28",
+        "MF:L04:S29",
+        "MF:L03:S29",
+        "MF:L03:S30",
+        "MF:L04:S30",
+        "MF:L04:S31",
+        "MF:L05:S31"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "0EAEFE2C",
+        "packetHex": "484E4B500101090484041C0484041B0483041B0483041C0482041C0482041D0483041D0483041E0484041E01020002000300030EAEFE2C",
+        "base64url": "SE5LUAEBCQSEBBwEhAQbBIMEGwSDBBwEggQcBIIEHQSDBB0EgwQeBIQEHgECAAIAAwADDq7-LA"
+      }
+    },
+    {
+      "glyphId": "G30",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 10
+      },
+      "columnBits": "1001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S30",
+        "MF:L05:S29",
+        "MF:L04:S29",
+        "MF:L04:S30",
+        "MF:L03:S30",
+        "MF:L03:S31",
+        "MF:L04:S31",
+        "MF:L04:S30",
+        "MF:L05:S30"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "2102048C",
+        "packetHex": "484E4B500101090484041D0484041C0483041C0483041D0482041D0482041E0483041E0483041D0484041D01020002000301032102048C",
+        "base64url": "SE5LUAEBCQSEBB0EhAQcBIMEHASDBB0EggQdBIIEHgSDBB4EgwQdBIQEHQECAAIAAwEDIQIEjA"
+      }
+    },
+    {
+      "glyphId": "G31",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 1
+      },
+      "columnBits": "0000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S31",
+        "MF:L04:S31",
+        "MF:L04:S32",
+        "MF:L03:S32",
+        "MF:L03:S33",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L05:S34",
+        "MF:L05:S35"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "2A91BFD2",
+        "packetHex": "484E4B500101090484041E0483041E0483041F0482041F048204200483042004830421048404210484042202000200030003002A91BFD2",
+        "base64url": "SE5LUAEBCQSEBB4EgwQeBIMEHwSCBB8EggQgBIMEIASDBCEEhAQhBIQEIgIAAgADAAMAKpG_0g"
+      }
+    },
+    {
+      "glyphId": "G32",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 2
+      },
+      "columnBits": "0001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S32",
+        "MF:L04:S32",
+        "MF:L04:S33",
+        "MF:L03:S33",
+        "MF:L03:S34",
+        "MF:L04:S34",
+        "MF:L04:S35",
+        "MF:L05:S35",
+        "MF:L05:S34"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "897B3C23",
+        "packetHex": "484E4B500101090484041F0483041F048304200482042004820421048304210483042204840422048404210200020003000301897B3C23",
+        "base64url": "SE5LUAEBCQSEBB8EgwQfBIMEIASCBCAEggQhBIMEIQSDBCIEhAQiBIQEIQIAAgADAAMBiXs8Iw"
+      }
+    },
+    {
+      "glyphId": "G33",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 3
+      },
+      "columnBits": "0010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S33",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L03:S34",
+        "MF:L03:S35",
+        "MF:L04:S35",
+        "MF:L04:S34",
+        "MF:L05:S34",
+        "MF:L05:S35"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "4A2B1C8C",
+        "packetHex": "484E4B5001010904840420048304200483042104820421048204220483042204830421048404210484042202000200030103004A2B1C8C",
+        "base64url": "SE5LUAEBCQSEBCAEgwQgBIMEIQSCBCEEggQiBIMEIgSDBCEEhAQhBIQEIgIAAgADAQMASiscjA"
+      }
+    },
+    {
+      "glyphId": "G34",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 4
+      },
+      "columnBits": "0011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S34",
+        "MF:L04:S34",
+        "MF:L04:S35",
+        "MF:L03:S35",
+        "MF:L03:S36",
+        "MF:L04:S36",
+        "MF:L04:S35",
+        "MF:L05:S35",
+        "MF:L05:S34"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "465869C2",
+        "packetHex": "484E4B500101090484042104830421048304220482042204820423048304230483042204840422048404210200020003010301465869C2",
+        "base64url": "SE5LUAEBCQSEBCEEgwQhBIMEIgSCBCIEggQjBIMEIwSDBCIEhAQiBIQEIQIAAgADAQMBRlhpwg"
+      }
+    },
+    {
+      "glyphId": "G35",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 5
+      },
+      "columnBits": "0100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S35",
+        "MF:L04:S35",
+        "MF:L04:S36",
+        "MF:L03:S36",
+        "MF:L03:S35",
+        "MF:L04:S35",
+        "MF:L04:S36",
+        "MF:L05:S36",
+        "MF:L05:S37"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "CBD69FDF",
+        "packetHex": "484E4B500101090484042204830422048304230482042304820422048304220483042304840423048404240200020103000300CBD69FDF",
+        "base64url": "SE5LUAEBCQSEBCIEgwQiBIMEIwSCBCMEggQiBIMEIgSDBCMEhAQjBIQEJAIAAgEDAAMAy9af3w"
+      }
+    },
+    {
+      "glyphId": "G36",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 6
+      },
+      "columnBits": "0101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S36",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L03:S37",
+        "MF:L03:S36",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L05:S37",
+        "MF:L05:S36"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "A55CD7D9",
+        "packetHex": "484E4B500101090484042304830423048304240482042404820423048304230483042404840424048404230200020103000301A55CD7D9",
+        "base64url": "SE5LUAEBCQSEBCMEgwQjBIMEJASCBCQEggQjBIMEIwSDBCQEhAQkBIQEIwIAAgEDAAMBpVzX2Q"
+      }
+    },
+    {
+      "glyphId": "G37",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 7
+      },
+      "columnBits": "0110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S37",
+        "MF:L04:S37",
+        "MF:L04:S38",
+        "MF:L03:S38",
+        "MF:L03:S37",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L05:S36",
+        "MF:L05:S37"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "D99C39FE",
+        "packetHex": "484E4B500101090484042404830424048304250482042504820424048304240483042304840423048404240200020103010300D99C39FE",
+        "base64url": "SE5LUAEBCQSEBCQEgwQkBIMEJQSCBCUEggQkBIMEJASDBCMEhAQjBIQEJAIAAgEDAQMA2Zw5_g"
+      }
+    },
+    {
+      "glyphId": "G38",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 8
+      },
+      "columnBits": "0111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S38",
+        "MF:L04:S38",
+        "MF:L04:S39",
+        "MF:L03:S39",
+        "MF:L03:S38",
+        "MF:L04:S38",
+        "MF:L04:S37",
+        "MF:L05:S37",
+        "MF:L05:S36"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "3BB250E5",
+        "packetHex": "484E4B5001010904840425048304250483042604820426048204250483042504830424048404240484042302000201030103013BB250E5",
+        "base64url": "SE5LUAEBCQSEBCUEgwQlBIMEJgSCBCYEggQlBIMEJQSDBCQEhAQkBIQEIwIAAgEDAQMBO7JQ5Q"
+      }
+    },
+    {
+      "glyphId": "G39",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 9
+      },
+      "columnBits": "1000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S39",
+        "MF:L04:S39",
+        "MF:L04:S38",
+        "MF:L03:S38",
+        "MF:L03:S39",
+        "MF:L04:S39",
+        "MF:L04:S40",
+        "MF:L05:S40",
+        "MF:L05:S41"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "B3A1E7DC",
+        "packetHex": "484E4B500101090484042604830426048304250482042504820426048304260483042704840427048404280201020003000300B3A1E7DC",
+        "base64url": "SE5LUAEBCQSEBCYEgwQmBIMEJQSCBCUEggQmBIMEJgSDBCcEhAQnBIQEKAIBAgADAAMAs6Hn3A"
+      }
+    },
+    {
+      "glyphId": "G40",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 10
+      },
+      "columnBits": "1001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S40",
+        "MF:L04:S40",
+        "MF:L04:S39",
+        "MF:L03:S39",
+        "MF:L03:S40",
+        "MF:L04:S40",
+        "MF:L04:S41",
+        "MF:L05:S41",
+        "MF:L05:S40"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "hnkPacket": {
+        "bytes": 55,
+        "crc32Hex": "5644B02C",
+        "packetHex": "484E4B5001010904840427048304270483042604820426048204270483042704830428048404280484042702010200030003015644B02C",
+        "base64url": "SE5LUAEBCQSEBCcEgwQnBIMEJgSCBCYEggQnBIMEJwSDBCgEhAQoBIQEJwIBAgADAAMBVkSwLA"
+      }
+    }
+  ]
+}

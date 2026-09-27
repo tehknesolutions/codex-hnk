@@ -1,0 +1,154 @@
+{
+  "version": "1.0",
+  "status": "HNK_CANDIDATE_REVIEW_ANALYSIS",
+  "basis": "glyph-genesis-hnk40-candidates.v1.json",
+  "distanceModel": {
+    "edgeDistance": "Hamming distance over 8-edge normalized signatures",
+    "pointDistance": "sum Manhattan distance over 9 translation-normalized path nodes",
+    "score": "10*edgeDistance + pointDistance; lower means structurally more confusable",
+    "caveat": "Heuristic for review prioritization only; not a canonical similarity metric."
+  },
+  "nearestPairs": [
+    {
+      "a": "G11",
+      "b": "G12",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G13",
+      "b": "G14",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G15",
+      "b": "G16",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G17",
+      "b": "G18",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G19",
+      "b": "G20",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G31",
+      "b": "G32",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G33",
+      "b": "G34",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G35",
+      "b": "G36",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G37",
+      "b": "G38",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G39",
+      "b": "G40",
+      "edgeDistance": 1,
+      "pointDistance": 2,
+      "score": 12
+    },
+    {
+      "a": "G01",
+      "b": "G02",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G03",
+      "b": "G04",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G05",
+      "b": "G06",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G07",
+      "b": "G08",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G09",
+      "b": "G10",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G21",
+      "b": "G22",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G23",
+      "b": "G24",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G25",
+      "b": "G26",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G27",
+      "b": "G28",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    },
+    {
+      "a": "G29",
+      "b": "G30",
+      "edgeDistance": 1,
+      "pointDistance": 4,
+      "score": 14
+    }
+  ],
+  "gatePolicy": "Pairs listed here should be visually reviewed first. No KEEP/REVISE/REJECT/HOLD decision is automated."
+}
