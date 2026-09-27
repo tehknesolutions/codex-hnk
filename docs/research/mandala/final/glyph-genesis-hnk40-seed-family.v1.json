@@ -1,0 +1,72 @@
+{
+  "version": "1.0-experimental",
+  "status": "HNK_CANDIDATE_STRUCTURAL_SEED_FAMILY",
+  "purpose": "Define a deterministic, non-semantic 40-member Glyph Genesis seed family for G01..G40 using the frozen Mandala MF topology. This is a structural search space, not canonical glyph art.",
+  "authorityBoundary": {
+    "sourceGlyphAuthority": "tehknesolutions/HNK-KODE packages/hnk-glyphs",
+    "sourceGlyphState": "PREPRODUCTION_NOT_OFFICIAL",
+    "structuralLaboratory": "CODEX-HNK",
+    "bindingAuthority": "HNK_CANDIDATE",
+    "semanticAssignment": "NONE",
+    "humanPromotionRequired": true,
+    "rule": "A generated PATH may be mathematically valid without being visually, phonologically, semantically or canonically approved."
+  },
+  "cardinality": 40,
+  "sourceIndex": {
+    "glyphIds": "G01..G40",
+    "matrix": "4 rows × 10 columns",
+    "rowFormula": "row = floor((g-1)/10)+1",
+    "columnFormula": "column = ((g-1) mod 10)+1",
+    "startSectorFormula": "sector1 = g",
+    "startLayer": "L01"
+  },
+  "families": {
+    "W1": {
+      "glyphs": "G01..G10",
+      "edgePattern": ["ANGULAR_NEXT","RADIAL_OUT","ANGULAR_NEXT","RADIAL_OUT"],
+      "coordinatePattern": ["L01:S0","L01:S+1","L02:S+1","L02:S+2","L03:S+2"]
+    },
+    "W2": {
+      "glyphs": "G11..G20",
+      "edgePattern": ["RADIAL_OUT","ANGULAR_NEXT","RADIAL_OUT","ANGULAR_PREV"],
+      "coordinatePattern": ["L01:S0","L02:S0","L02:S+1","L03:S+1","L03:S0"]
+    },
+    "W3": {
+      "glyphs": "G21..G30",
+      "edgePattern": ["ANGULAR_PREV","RADIAL_OUT","ANGULAR_PREV","RADIAL_OUT"],
+      "coordinatePattern": ["L01:S0","L01:S-1","L02:S-1","L02:S-2","L03:S-2"]
+    },
+    "W4": {
+      "glyphs": "G31..G40",
+      "edgePattern": ["RADIAL_OUT","ANGULAR_PREV","RADIAL_OUT","ANGULAR_NEXT"],
+      "coordinatePattern": ["L01:S0","L02:S0","L02:S-1","L03:S-1","L03:S0"]
+    }
+  },
+  "wrapLaw": "All sector arithmetic is modulo 72 with human sector range S01..S72.",
+  "projectionLaw": {
+    "pixel": "x=sector1-1; y=layer1-1",
+    "iso": "u=x-y; v=x+y",
+    "voxel": "x=sector1-1; y=0; z=layer1-1",
+    "mfTuple": "[LAY typed-frame hex16, SEC typed-frame hex16]"
+  },
+  "transportProfile": "HNKP1-MF-TUPLE-BE",
+  "invariants": [
+    "Exactly 40 candidate IDs are generated: G01..G40.",
+    "Every candidate contains exactly five MF nodes and four legal MF edges.",
+    "Every ordered PATH is unique.",
+    "Every node round-trips through typed MF tuple, PixelMap, IsoPixel and Voxel.",
+    "Every candidate can serialize through HNKP1-MF-TUPLE-BE and decode to the identical ordered PATH.",
+    "No family rule assigns meaning, phoneme, sacred correspondence, color, sound or visual-canon status."
+  ],
+  "reviewVectors": [
+    {"glyphId":"G01","world":"W1","start":"MF:L01:S01","end":"MF:L03:S03"},
+    {"glyphId":"G10","world":"W1","start":"MF:L01:S10","end":"MF:L03:S12"},
+    {"glyphId":"G11","world":"W2","start":"MF:L01:S11","end":"MF:L03:S11"},
+    {"glyphId":"G20","world":"W2","start":"MF:L01:S20","end":"MF:L03:S20"},
+    {"glyphId":"G21","world":"W3","start":"MF:L01:S21","end":"MF:L03:S19"},
+    {"glyphId":"G30","world":"W3","start":"MF:L01:S30","end":"MF:L03:S28"},
+    {"glyphId":"G31","world":"W4","start":"MF:L01:S31","end":"MF:L03:S31"},
+    {"glyphId":"G40","world":"W4","start":"MF:L01:S40","end":"MF:L03:S40"}
+  ],
+  "next": "Materialize the 40 candidates deterministically, compute HNKP vectors, reject any collision or broken round-trip, then expose the family for human visual review without semantic promotion."
+}
