@@ -1,0 +1,37 @@
+{
+  "schema": "HNK-BINAH-DAY074-ADMISSION-CANDIDATE-V1",
+  "status": "ADMISSION_CANDIDATE_NOT_CANON",
+  "day": 74,
+  "page": 74,
+  "sephira": "Binah",
+  "world": "Atziluth",
+  "level": {
+    "number": 3,
+    "title": "Teurgo"
+  },
+  "title": "O Bisturi da Sacerdotisa",
+  "legacy_cycle": {
+    "number": 1,
+    "name": "A Purificação Intelectual de Hariel",
+    "angel_candidate": "Hariel",
+    "mapping_status": "CONFLICT_OPEN_15_21_VS_17_24"
+  },
+  "focus": [
+    "omissoes",
+    "frases incompletas",
+    "precisao de fonte"
+  ],
+  "practice_source_locked": "Mapear frases incompletas recorrentes; registrar tres auto-acusacoes; aplicar a pergunta de especificidade de fonte: Quem especificamente disse isso?",
+  "source_xp": 100,
+  "xp_authority": "NOT_AWARDABLE_UNTIL_CANON_ADMISSION_AND_SERVER_CONTRACT",
+  "source": {
+    "file": "capitulo_3_plano_escrita.md",
+    "sha256": "79cf5b61f0dfb0e67bcba0afcb4ec534e21d5303fc135b9638519022fdecd832"
+  },
+  "blocks": [
+    "angel_agent_mapping_resolution",
+    "epistemic_review",
+    "canonical_admission",
+    "server_progression_contract"
+  ]
+}
