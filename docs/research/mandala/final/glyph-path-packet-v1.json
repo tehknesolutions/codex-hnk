@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "status": "HNK_CANON_V1",
+  "purpose": "Define a reversible glyph-path packet suitable for BIN/HEX storage and QR transport.",
+  "glyphIdentity": "GLYPH := ordered PATH + version + optional semantic/correspondence refs",
+  "packet": {
+    "magic": "HNKP",
+    "version": 1,
+    "fields": [
+      {
+        "name": "flags",
+        "type": "u8"
+      },
+      {
+        "name": "nodeCount",
+        "type": "varuint"
+      },
+      {
+        "name": "nodes",
+        "type": "sequence",
+        "item": "typed 14-bit AK frame OR canonical MF tuple token"
+      },
+      {
+        "name": "edges",
+        "type": "sequence",
+        "item": "edge enum between consecutive nodes"
+      },
+      {
+        "name": "state",
+        "type": "optional",
+        "item": "field/glyph state bits"
+      },
+      {
+        "name": "checksum",
+        "type": "CRC32 or stronger versioned integrity code"
+      }
+    ]
+  },
+  "nodeKinds": {
+    "AK": "14-bit typed Atomic-Kode frame",
+    "MF": "tag + layer0(3 bits) + sector0(7 bits) = 10 payload bits",
+    "futureCORE": "reserved tag"
+  },
+  "edgeEnum": {
+    "ANGULAR_NEXT": 0,
+    "ANGULAR_PREV": 1,
+    "RADIAL_IN": 2,
+    "RADIAL_OUT": 3,
+    "CONTAINS": 4,
+    "MEMBER_OF": 5,
+    "ROSE_NEXT": 6,
+    "ROSE_PREV": 7,
+    "BRIDGE": 8
+  },
+  "qrTransport": {
+    "canonicalTextPrefix": "HNKP1:",
+    "payload": "base32/base64url of binary packet",
+    "rule": "QR is a transport surface, not semantic authority",
+    "reversible": true
+  },
+  "visualProjection": {
+    "pixel": "render PATH nodes through PixelMap coordinates",
+    "isopixel": "render the same nodes through iso2D transform",
+    "mandala": "render through cylindrical Mandala coordinates",
+    "invariant": "all three must decode/reference the same underlying PATH"
+  },
+  "next": "Generate first HNK glyph candidates only from approved linguistic/semantic targets by authoring PATHs; do not draw first and reverse-engineer meaning afterward."
+}

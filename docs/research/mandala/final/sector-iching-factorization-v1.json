@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "status": "HNK_CANON_V1_COMPUTATIONAL_LAYER",
+  "purpose": "Exploit the exact factorization 72 = 9 × 8 to expose an I-Ching-compatible 3-bit trigram slot without claiming historical or mystical equivalence.",
+  "sectorFactorization": {
+    "formula": "sector0 = group0*8 + slot0",
+    "group0": "0..8",
+    "slot0": "0..7",
+    "reconstruction": "sector1 = group0*8 + slot0 + 1",
+    "proof": "9 groups × 8 slots = 72 sectors"
+  },
+  "bits": {
+    "groupBits": "4 bits encode 0..8",
+    "trigramSlotBits": "3 bits encode 0..7",
+    "sectorFactorBits": "7 bits = GGGGTTT",
+    "relationToSECOrdinal": "GGGGTTT numerically equals sector0 when group0 occupies the high 4 bits and slot0 the low 3 bits only for base-8 composition; canonical interpretation is factorized fields, not plain 7-bit ordinal."
+  },
+  "trigramIndex": [
+    {
+      "slot0": 0,
+      "bits": "000"
+    },
+    {
+      "slot0": 1,
+      "bits": "001"
+    },
+    {
+      "slot0": 2,
+      "bits": "010"
+    },
+    {
+      "slot0": 3,
+      "bits": "011"
+    },
+    {
+      "slot0": 4,
+      "bits": "100"
+    },
+    {
+      "slot0": 5,
+      "bits": "101"
+    },
+    {
+      "slot0": 6,
+      "bits": "110"
+    },
+    {
+      "slot0": 7,
+      "bits": "111"
+    }
+  ],
+  "authorityLaw": "The 3-bit value is an HNK computational trigram slot. Naming it Qian/Kun/etc or assigning traditional I-Ching meaning requires a separately sourced permutation table and must be stored as EXTERNAL_REFERENCE or HNK_CANONICAL after approval.",
+  "useCases": [
+    "compact sector addressing",
+    "binary glyph-path features",
+    "8-way transformation families",
+    "future I-Ching correspondence overlay without changing sector identity"
+  ],
+  "next": "Add an externally sourced trigram-name permutation only if/when chosen; keep the raw 3-bit slot stable regardless of that semantic overlay."
+}

@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "status": "HNK_CANON_V1",
+  "basis": "pixelmap-v1",
+  "principle": "IsoPixel and Voxel are deterministic coordinate projections of canonical PixelMap addresses. The typed Mandala address remains authority.",
+  "iso2D": {
+    "integerTransform": {
+      "u": "x-y",
+      "v": "x+y"
+    },
+    "inverse": {
+      "x": "(u+v)/2",
+      "y": "(v-u)/2"
+    },
+    "validity": "u and v must have equal parity; planeId is carried separately",
+    "reversible": true,
+    "note": "This is a lattice transform, not a perspective rendering."
+  },
+  "voxel": {
+    "canonicalTuple": "{planeId,x,y,z}",
+    "zLaw": {
+      "MF": "z = layer0 (0..5) when using sector-lattice view; y may be 0 in the voxel view",
+      "GRP": "z = 6",
+      "R22_M": "z = 7",
+      "R22_D": "z = 8",
+      "R22_S": "z = 9",
+      "CORE_RESERVED": "z >= 10 reserved"
+    },
+    "alternativeMFMapping": "(x=sector0,y=0,z=layer0) preserves the 72×6 cylinder as six stacked cyclic rings.",
+    "reversible": true
+  },
+  "isoFromVoxel": {
+    "renderTransform": {
+      "u": "2*(x-y)",
+      "v": "x+y-2*z"
+    },
+    "authority": "RENDER_ONLY unless original {planeId,x,y,z} is retained alongside u,v",
+    "reason": "3D→2D projection is many-to-one in general."
+  },
+  "cylindricalMandalaRender": {
+    "angleDeg": "90 + 5*x for SEC/MF sector index x",
+    "radius": "versioned function of layer/plane",
+    "cartesianRender": {
+      "X": "R*cos(theta)",
+      "Y": "R*sin(theta)"
+    },
+    "authority": "RENDER_ONLY",
+    "note": "Useful for drawing the Mandala, never for canonical decoding because floating-point geometry is not the identity layer."
+  },
+  "seamLaw": "SEC/MF x=71 and x=0 are adjacent even if a flat or isometric render shows a seam.",
+  "next": "Define path rendering rules that convert ordered Mandala PATH nodes into reversible pixel/iso tokens plus optional cylindrical artwork."
+}

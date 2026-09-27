@@ -1,0 +1,33 @@
+{
+  "version":"1.0",
+  "status":"HNK_CANON_V1_STRUCTURAL",
+  "basis":"atomic-kode-registry.v1 + atomic-kode-codec-vectors.v1",
+  "counts":{"primitiveAK":109,"SEC":72,"LAY":6,"GRP":9,"R22":22,"MF":432,"MFUndirectedEdges":792,"groupContainmentEdges":72},
+  "generators":{
+    "SEC":{"ids":"SEC:S01..S72","ak":"AK-001..AK-072","thetaCenterDeg":"92.5 + 5*(s-1), modulo 360","prev":"S((s+70) mod 72)+1","next":"S(s mod 72)+1","group":"floor((s-1)/8)+1"},
+    "LAY":{"ids":"LAY:L01..L06","ak":"AK-073..AK-078","prev":"L(l-1) when l>1","next":"L(l+1) when l<6"},
+    "GRP":{"ids":"GRP:G01..G09","ak":"AK-079..AK-087","sectorMembership":"S(8*(g-1)+1)..S(8*g)","prev":"G((g+7) mod 9)+1","next":"G(g mod 9)+1"},
+    "R22":{"mothers":"R22:M01..M03 = AK-088..090","doubles":"R22:D01..D07 = AK-091..097","simples":"R22:S01..S12 = AK-098..109","familyTopology":"C3 + C7 + C12","crossFamilyBridges":"UNFROZEN_PENDING_EXACT_PETAL_ADJACENCY"},
+    "MF":{"ids":"MF:L01:S01..MF:L06:S72","flatIndex0":"72*(l-1)+(s-1)","coordinate":"(layer=l, sector=s)","angularPrev":"MF:L[l]:S[((s+70) mod 72)+1]","angularNext":"MF:L[l]:S[(s mod 72)+1]","radialIn":"MF:L[l-1]:S[s] when l>1","radialOut":"MF:L[l+1]:S[s] when l<6","primitiveFactors":["LAY:L[l]","SEC:S[s]"],"group":"GRP:G[floor((s-1)/8)+1]"}
+  },
+  "mfLayerRanges":[
+    {"layer":"L01","flatIndex0":[0,71],"humanRange":"MF-001..MF-072"},
+    {"layer":"L02","flatIndex0":[72,143],"humanRange":"MF-073..MF-144"},
+    {"layer":"L03","flatIndex0":[144,215],"humanRange":"MF-145..MF-216"},
+    {"layer":"L04","flatIndex0":[216,287],"humanRange":"MF-217..MF-288"},
+    {"layer":"L05","flatIndex0":[288,359],"humanRange":"MF-289..MF-360"},
+    {"layer":"L06","flatIndex0":[360,431],"humanRange":"MF-361..MF-432"}
+  ],
+  "edgeCensus":{"SEC_C72":72,"LAY_P6":5,"MF_ANGULAR":432,"MF_RADIAL":360,"MF_TOTAL":792,"GRP_C9":9,"GRP_CONTAINS_SEC":72,"ROSE_WITHIN_FAMILY":22},
+  "invariants":[
+    "Every MF has exactly two angular neighbors.",
+    "MFs in L01/L06 have one radial neighbor; MFs in L02..L05 have two.",
+    "Every SEC belongs to exactly one GRP; every GRP contains exactly eight SEC.",
+    "Every MF factors into exactly one LAY and one SEC and inherits the SEC group.",
+    "No MF creates a new primitive AK.",
+    "Rose family cycles are canonical structurally; exact Hebrew-letter rotation and cross-family petal adjacency remain correspondence/topology refinements.",
+    "CORE is excluded from V1 primitive and MF counts."
+  ],
+  "pixelProjectionRequirements":{"mustRepresent":["109 primitive typed nodes","432 MF composite coordinates","cyclic angular adjacency","six-level radial adjacency","9x8 group containment","3/7/12 Rose family identities","ordered PATH traversal"],"mustBeReversible":true,"gridSize":"NOT_PRESELECTED","nextDerivation":"Find the smallest discrete topology-preserving PixelMap family satisfying these invariants; then derive IsoPixel from the same IDs rather than inventing a second coordinate system."},
+  "completion":"This registry closes the deterministic outer topology formula and MF coordinate table without storing 432 repetitive records. Any MF or neighbor can be generated exactly from the formulas above."
+}

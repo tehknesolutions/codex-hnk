@@ -1,0 +1,178 @@
+{
+  "version": "1.0",
+  "status": "HNK_CANON_V1",
+  "purpose": "Define the smallest topology-aware discrete PixelMap family for the frozen Mandala V1 address spaces without choosing decorative resolution.",
+  "laws": [
+    "One active canonical field address maps to exactly one logical pixel in its field atlas.",
+    "Logical planes preserve namespace/family topology; packed raster transport may contain reserved/null slots.",
+    "Angular wrap is semantic topology metadata, not duplicated seam pixels.",
+    "A bitmap without plane/topology metadata is RENDER_ONLY."
+  ],
+  "fieldAtlas": {
+    "activePixels": 463,
+    "planes": [
+      {
+        "id": "MF",
+        "width": 72,
+        "height": 6,
+        "active": 432,
+        "x": "sector0 0..71",
+        "y": "layer0 0..5",
+        "wrapX": true,
+        "topology": "P6 □ C72"
+      },
+      {
+        "id": "GRP",
+        "width": 9,
+        "height": 1,
+        "active": 9,
+        "x": "group0 0..8",
+        "y": 0,
+        "wrapX": true,
+        "topology": "C9"
+      },
+      {
+        "id": "R22_M",
+        "width": 3,
+        "height": 1,
+        "active": 3,
+        "x": "mother0 0..2",
+        "y": 0,
+        "wrapX": true,
+        "topology": "C3"
+      },
+      {
+        "id": "R22_D",
+        "width": 7,
+        "height": 1,
+        "active": 7,
+        "x": "double0 0..6",
+        "y": 0,
+        "wrapX": true,
+        "topology": "C7"
+      },
+      {
+        "id": "R22_S",
+        "width": 12,
+        "height": 1,
+        "active": 12,
+        "x": "simple0 0..11",
+        "y": 0,
+        "wrapX": true,
+        "topology": "C12"
+      }
+    ],
+    "totalActive": "432+9+3+7+12 = 463",
+    "minimality": "Exactly 463 active pixels for 463 major addressable fields; no duplication is required."
+  },
+  "primitiveAtlas": {
+    "activePixels": 109,
+    "planes": [
+      {
+        "id": "SEC",
+        "width": 72,
+        "height": 1,
+        "active": 72,
+        "wrapX": true
+      },
+      {
+        "id": "LAY",
+        "width": 6,
+        "height": 1,
+        "active": 6,
+        "wrapX": false
+      },
+      {
+        "id": "GRP",
+        "width": 9,
+        "height": 1,
+        "active": 9,
+        "wrapX": true
+      },
+      {
+        "id": "R22_M",
+        "width": 3,
+        "height": 1,
+        "active": 3,
+        "wrapX": true
+      },
+      {
+        "id": "R22_D",
+        "width": 7,
+        "height": 1,
+        "active": 7,
+        "wrapX": true
+      },
+      {
+        "id": "R22_S",
+        "width": 12,
+        "height": 1,
+        "active": 12,
+        "wrapX": true
+      }
+    ]
+  },
+  "packedRasterTransport": {
+    "fixedWidth": 72,
+    "fieldGrid": {
+      "width": 72,
+      "height": 7,
+      "slots": 504,
+      "active": 463,
+      "reserved": 41,
+      "minimalHeightProof": "ceil(463/72)=7"
+    },
+    "primitiveGrid": {
+      "width": 72,
+      "height": 2,
+      "slots": 144,
+      "active": 109,
+      "reserved": 35,
+      "minimalHeightProof": "ceil(109/72)=2"
+    },
+    "fieldPacking": [
+      {
+        "rows": "0..5",
+        "content": "MF:L01..L06 × S01..S72"
+      },
+      {
+        "row": 6,
+        "cols": "0..8",
+        "content": "GRP:G01..G09"
+      },
+      {
+        "row": 6,
+        "cols": "9..11",
+        "content": "R22:M01..M03"
+      },
+      {
+        "row": 6,
+        "cols": "12..18",
+        "content": "R22:D01..D07"
+      },
+      {
+        "row": 6,
+        "cols": "19..30",
+        "content": "R22:S01..S12"
+      },
+      {
+        "row": 6,
+        "cols": "31..71",
+        "content": "RESERVED_NULL"
+      }
+    ],
+    "warning": "The 72×7 packed raster is a lossless address transport only when the packing/version metadata is present. It does not by itself preserve visual locality for every non-MF family."
+  },
+  "pixelToken": {
+    "canonical": "{atlasVersion, planeId, x, y}",
+    "optionalPayload": [
+      "typedAddress",
+      "AKAlias",
+      "stateBits",
+      "colorRef",
+      "semanticRefs"
+    ],
+    "decodeRule": "planeId+x+y MUST deterministically recover the exact typed Mandala address."
+  },
+  "next": "Use the logical field/primitive atlas coordinates as the source lattice for IsoPixel and Voxel transforms; never derive canonical identity from rendered RGB pixels."
+}

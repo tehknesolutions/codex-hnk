@@ -1,0 +1,25 @@
+{
+  "version":"1.0",
+  "status":"HNK_CANON_V1",
+  "frame":{"bits":14,"layout":"VVVVNNNOOOOOOO","versionBits":4,"namespaceBits":3,"ordinalBits":7,"version":1,"hexTransportBits":16,"hexPaddingHighBits":"00"},
+  "namespace":{"SEC":"000","LAY":"001","GRP":"010","R22_MOTHER":"011","R22_DOUBLE":"100","R22_SIMPLE":"101","CORE_RESERVED":"110","EXTENSION_RESERVED":"111"},
+  "algorithm":{"encode":"frame14 = (version << 10) | (namespace << 7) | zeroBasedOrdinal; hex16 = frame14 rendered as 4 uppercase hex digits","decode":"validate top two transport bits are 00; extract version=(value>>10)&15, namespace=(value>>7)&7, ordinal=value&127; reject ordinal outside namespace cardinality"},
+  "vectors":[
+    {"ak":"AK-001","typed":"SEC:S01","namespace":0,"ordinal0":0,"binary14":"00010000000000","hex16":"0400"},
+    {"ak":"AK-072","typed":"SEC:S72","namespace":0,"ordinal0":71,"binary14":"00010001000111","hex16":"0447"},
+    {"ak":"AK-073","typed":"LAY:L01","namespace":1,"ordinal0":0,"binary14":"00010010000000","hex16":"0480"},
+    {"ak":"AK-078","typed":"LAY:L06","namespace":1,"ordinal0":5,"binary14":"00010010000101","hex16":"0485"},
+    {"ak":"AK-079","typed":"GRP:G01","namespace":2,"ordinal0":0,"binary14":"00010100000000","hex16":"0500"},
+    {"ak":"AK-087","typed":"GRP:G09","namespace":2,"ordinal0":8,"binary14":"00010100001000","hex16":"0508"},
+    {"ak":"AK-088","typed":"R22:M01","namespace":3,"ordinal0":0,"binary14":"00010110000000","hex16":"0580"},
+    {"ak":"AK-090","typed":"R22:M03","namespace":3,"ordinal0":2,"binary14":"00010110000010","hex16":"0582"},
+    {"ak":"AK-091","typed":"R22:D01","namespace":4,"ordinal0":0,"binary14":"00011000000000","hex16":"0600"},
+    {"ak":"AK-097","typed":"R22:D07","namespace":4,"ordinal0":6,"binary14":"00011000000110","hex16":"0606"},
+    {"ak":"AK-098","typed":"R22:S01","namespace":5,"ordinal0":0,"binary14":"00011010000000","hex16":"0680"},
+    {"ak":"AK-109","typed":"R22:S12","namespace":5,"ordinal0":11,"binary14":"00011010001011","hex16":"068B"}
+  ],
+  "compositeMF":{"logical":"MF:Lxx:Syy","encoding":"tuple(LAY typed frame, SEC typed frame)","flatCellIndexCandidate":"(layerOrdinal0 * 72) + sectorOrdinal0","flatRange":"0..431","authority":"tuple is canonical; flat index is derived transport only"},
+  "topology":{"SEC":{"graph":"C72 cycle","degree":2},"LAY":{"graph":"P6 radial path","degree":"1 endpoints, 2 internal"},"MF":{"graph":"Cartesian product P6 □ C72","nodes":432,"angularEdges":432,"radialEdges":360,"undirectedEdges":792},"GRP":{"graph":"C9 cycle plus containment to eight SEC each","containmentEdges":72},"R22":{"graph":"three cyclic families C3, C7, C12 plus radial/bridge relations to be frozen after exact petal adjacency extraction"}},
+  "projectionInvariant":"Any Pixel/IsoPixel/Voxel representation called ENCODING must decode back to the exact typed node/path sequence. Otherwise it is RENDER_ONLY.",
+  "next":"Materialize full 109-node adjacency registry and 432 MF coordinate table, then define topology-preserving PixelMap dimensions from graph requirements rather than choosing a decorative grid size."
+}

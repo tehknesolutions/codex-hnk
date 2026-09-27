@@ -1,19 +1,22 @@
 {
   "version":"1.0",
-  "status":"CANDIDATE_AWAITING_HNK_CANON_FREEZE",
+  "status":"HNK_CANON_FROZEN_V1",
   "basis":"MANDALA_COMPUTABLE_V1",
-  "principle":"Do not equate every visible block with one canonical Atomic-Kode. Preserve factorized identities so one HNK glyph can be a reversible path through Mandala coordinates.",
+  "canonicalDecision":"The HNK Mandala uses a factorized primitive addressing model. Visible composite cells are not automatically independent Atomic-Kodes.",
+  "principle":"An Atomic-Kode identifies a reusable primitive coordinate/function in the Mandala graph. A Mandala Field may be a composition of Atomic-Kodes. A glyph is an ordered path over typed primitive and composite addresses.",
   "namespaces":[
-    {"id":"SEC","cardinality":72,"pattern":"SEC:S01..S72","meaning":"angular sector identity","canonicalCandidate":true},
-    {"id":"LAY","cardinality":6,"pattern":"LAY:L01..L06","meaning":"sectorized radial layer identity","canonicalCandidate":true},
-    {"id":"GRP","cardinality":9,"pattern":"GRP:G01..G09","meaning":"choir/sefirah group identity","canonicalCandidate":true},
-    {"id":"R22","cardinality":22,"pattern":"R22:M01..M03 / D01..D07 / S01..S12","meaning":"central Rose petal identity","canonicalCandidate":true},
-    {"id":"CORE","cardinality":"HIERARCHICAL_UNFROZEN","pattern":"CORE:*","meaning":"central white field / five-petal rose / green rays / gold cross primitives","canonicalCandidate":false}
+    {"id":"SEC","cardinality":72,"pattern":"SEC:S01..S72","meaning":"angular sector primitive","atomic":true,"canonical":true},
+    {"id":"LAY","cardinality":6,"pattern":"LAY:L01..L06","meaning":"sectorized radial-layer primitive","atomic":true,"canonical":true},
+    {"id":"GRP","cardinality":9,"pattern":"GRP:G01..G09","meaning":"choir/sefirah group primitive","atomic":true,"canonical":true},
+    {"id":"R22","cardinality":22,"pattern":"R22:M01..M03 / D01..D07 / S01..S12","meaning":"central Rose primitive","atomic":true,"canonical":true},
+    {"id":"CORE","cardinality":"HIERARCHICAL_UNFROZEN","pattern":"CORE:*","meaning":"central white field / five-petal rose / green rays / gold-cross primitives","atomic":false,"canonical":false,"reason":"Core sub-primitives require a separate topology decision and are not needed to address the frozen 109 primitive substrate."}
   ],
-  "compositeAddress":{"pattern":"MF:<layer>:<sector>","count":432,"meaning":"derived outer cell address = LAY × SEC","atomic":false,"reason":"A composite coordinate can carry cell-specific content without requiring 432 independent primitive AK definitions."},
-  "outerLayout":{"formula":"432 composite MF cells + 9 GRP cells","count":441,"atomicInterpretation":"LAYOUT_BLOCK_COUNT_ONLY"},
-  "majorLayout":{"formula":"441 outer layout blocks + 22 Rose petals","count":463,"atomicInterpretation":"ADDRESS_SPACE_NOT_AK_COUNT"},
-  "candidatePrimitiveCount":{"formula":"72 SEC + 6 LAY + 9 GRP + 22 R22","count":109,"warning":"109 is a candidate primitive namespace count, not yet HNK canon and excludes CORE primitives."},
-  "encodingImplication":"A glyph/path can reference primitive nodes and/or composite MF addresses. BIN/HEX/QR/Pixel/IsoPixel should encode typed addresses, not rely on a flat 1..463 integer alone.",
-  "governanceDecisionNeeded":"Approve factorized primitive AK model, choose whether GRP and Rose petals are AKs or correspondence nodes, and define CORE scope before canonical AK numbering."
+  "canonicalPrimitiveSubstrate":{"count":109,"formula":"72 SEC + 6 LAY + 9 GRP + 22 R22","flatAKNumberingPolicy":"AK-001..AK-109 may be assigned deterministically only as an alias layer over typed IDs; typed IDs remain primary authority."},
+  "compositeAddress":{"pattern":"MF:<layer>:<sector>","count":432,"meaning":"outer cell = LAY × SEC","atomic":false,"canonical":true},
+  "outerLayout":{"formula":"432 MF + 9 GRP","count":441,"meaning":"canonical outer layout block count","atomic":false},
+  "majorLayout":{"formula":"441 outer blocks + 22 R22","count":463,"meaning":"canonical major address-space count with CORE excluded","atomic":false},
+  "encodingLaw":"BIN/HEX/QR/Pixel/IsoPixel/Voxel encodings must preserve namespace/type plus identity. A flat integer alone is not a lossless canonical address unless accompanied by a versioned decoding table.",
+  "glyphLaw":"A canonical HNK glyph must ultimately be representable as an ordered, versioned, reversible PATH through Mandala addresses; visual rendering is a projection of that path, not the authority itself.",
+  "authorityOrder":["typed Mandala address","versioned path","derived flat AK alias","visual glyph projection"],
+  "next":"Generate deterministic AK-001..AK-109 alias registry, topology/neighbor graph, binary+hex typed encoding and Pixel/IsoPixel projection contracts while semantic extraction continues in parallel."
 }
