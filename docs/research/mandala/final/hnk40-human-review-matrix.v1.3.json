@@ -1,0 +1,1444 @@
+{
+  "version": "1.3",
+  "status": "HUMAN_REVIEW_PENDING",
+  "preferredStructuralFamily": "HNK40_V1.3_STATIC_VISIBLE_UNIQUE",
+  "machineGates": {
+    "orderedPaths": 40,
+    "edgeSignatures": 40,
+    "staticVisibleShapes": 40,
+    "minimumPairwiseEdgeDistance": 3
+  },
+  "machinePriorityIsNonAuthoritative": true,
+  "priorityPolicy": {
+    "CRITICAL": "minimum structural score <= 34",
+    "HIGH": "minimum structural score 35..40 OR exact mirror/rotation-equivalent peer",
+    "MEDIUM": "minimum structural score 41..44",
+    "NORMAL": "outside those review windows"
+  },
+  "counts": {
+    "CRITICAL": 4,
+    "HIGH": 21,
+    "MEDIUM": 8,
+    "NORMAL": 7
+  },
+  "transformEquivalentPairs": 10,
+  "rows": [
+    {
+      "glyphId": "G01",
+      "world": "W1",
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [],
+      "priority": "NORMAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G02",
+      "world": "W1",
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G06",
+          "transforms": [
+            "mx",
+            "my"
+          ]
+        }
+      ],
+      "nearestRisks": [],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G03",
+      "world": "W1",
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G13",
+          "transforms": [
+            "r180",
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G08",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G06",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G10",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G04",
+      "world": "W1",
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [],
+      "priority": "NORMAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G05",
+      "world": "W1",
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G07",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G06",
+      "world": "W1",
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G02",
+          "transforms": [
+            "mx",
+            "my"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G08",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G03",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G10",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G07",
+      "world": "W1",
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G10",
+          "transforms": [
+            "r180",
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G05",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G09",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G08",
+      "world": "W1",
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G09",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G03",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G06",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G10",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G09",
+      "world": "W1",
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G08",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G07",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G10",
+      "world": "W1",
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G07",
+          "transforms": [
+            "r180",
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G08",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G03",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G06",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G11",
+      "world": "W2",
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [],
+      "priority": "NORMAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G12",
+      "world": "W2",
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G19",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G15",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "CRITICAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G13",
+      "world": "W2",
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G03",
+          "transforms": [
+            "r180",
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G15",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G18",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G14",
+      "world": "W2",
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G16",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G15",
+      "world": "W2",
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G12",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        },
+        {
+          "peer": "G13",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G17",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G16",
+      "world": "W2",
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G14",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G18",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G17",
+      "world": "W2",
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G20",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G19",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G15",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G18",
+      "world": "W2",
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G19",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G20",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G13",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        },
+        {
+          "peer": "G16",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G19",
+      "world": "W2",
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G18",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G12",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G17",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "CRITICAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G20",
+      "world": "W2",
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G17",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G18",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G21",
+      "world": "W3",
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [],
+      "priority": "NORMAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G22",
+      "world": "W3",
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G29",
+          "score": 38,
+          "edgeDistance": 3,
+          "pointDistance": 8
+        },
+        {
+          "peer": "G25",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        },
+        {
+          "peer": "G27",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G23",
+      "world": "W3",
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G26",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G28",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G24",
+      "world": "W3",
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [],
+      "priority": "NORMAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G25",
+      "world": "W3",
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G22",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        },
+        {
+          "peer": "G27",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G26",
+      "world": "W3",
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G23",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G27",
+      "world": "W3",
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G30",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G29",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G22",
+          "score": 44,
+          "edgeDistance": 4,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G25",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G28",
+      "world": "W3",
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G29",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G30",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        },
+        {
+          "peer": "G23",
+          "score": 44,
+          "edgeDistance": 3,
+          "pointDistance": 14
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G29",
+      "world": "W3",
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G28",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G22",
+          "score": 38,
+          "edgeDistance": 3,
+          "pointDistance": 8
+        },
+        {
+          "peer": "G27",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G30",
+      "world": "W3",
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G27",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G28",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G31",
+      "world": "W4",
+      "column": 1,
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [],
+      "priority": "NORMAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G32",
+      "world": "W4",
+      "column": 2,
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G39",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        },
+        {
+          "peer": "G35",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "CRITICAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G33",
+      "world": "W4",
+      "column": 3,
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G38",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "MEDIUM",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G34",
+      "world": "W4",
+      "column": 4,
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [],
+      "priority": "NORMAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G35",
+      "world": "W4",
+      "column": 5,
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G37",
+          "score": 40,
+          "edgeDistance": 3,
+          "pointDistance": 10
+        },
+        {
+          "peer": "G32",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G36",
+      "world": "W4",
+      "column": 6,
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [],
+      "nearestRisks": [
+        {
+          "peer": "G38",
+          "score": 40,
+          "edgeDistance": 3,
+          "pointDistance": 10
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G37",
+      "world": "W4",
+      "column": 7,
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G40",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G35",
+          "score": 40,
+          "edgeDistance": 3,
+          "pointDistance": 10
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G38",
+      "world": "W4",
+      "column": 8,
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G39",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G36",
+          "score": 40,
+          "edgeDistance": 3,
+          "pointDistance": 10
+        },
+        {
+          "peer": "G33",
+          "score": 42,
+          "edgeDistance": 3,
+          "pointDistance": 12
+        }
+      ],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G39",
+      "world": "W4",
+      "column": 9,
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G38",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [
+        {
+          "peer": "G32",
+          "score": 34,
+          "edgeDistance": 3,
+          "pointDistance": 4
+        }
+      ],
+      "priority": "CRITICAL",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    },
+    {
+      "glyphId": "G40",
+      "world": "W4",
+      "column": 10,
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "machineStaticVisibleUnique": true,
+      "transformRisk": [
+        {
+          "peer": "G37",
+          "transforms": [
+            "mx"
+          ]
+        }
+      ],
+      "nearestRisks": [],
+      "priority": "HIGH",
+      "decision": "PENDING",
+      "review": {
+        "distinctness": null,
+        "confusability": null,
+        "strokeEconomy": null,
+        "balance": null,
+        "projectionStability": null,
+        "scaleRobustness": null,
+        "orientationRobustness": null,
+        "notes": ""
+      }
+    }
+  ]
+}
