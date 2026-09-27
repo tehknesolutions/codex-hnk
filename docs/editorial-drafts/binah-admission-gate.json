@@ -1,0 +1,11 @@
+{
+  "schema": "HNK-BINAH-ADMISSION-GATE-V1",
+  "source_recovered": true,
+  "day_range_recovered": true,
+  "mapping_conflict_resolved": false,
+  "epistemic_review_complete": false,
+  "day074_admitted": false,
+  "runtime_authorized": false,
+  "xp_authorized": false,
+  "state": "FAIL_CLOSED"
+}
