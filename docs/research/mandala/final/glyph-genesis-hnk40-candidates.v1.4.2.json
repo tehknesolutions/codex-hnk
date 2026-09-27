@@ -1,0 +1,1869 @@
+{
+  "version": "1.4.2",
+  "status": "HNK_CANDIDATE_DOMINANT",
+  "generatedFrom": "glyph-genesis-hnk40-seed-family.v1.4.2.json",
+  "candidateCount": 40,
+  "bindingAuthority": "HNK_CANDIDATE",
+  "semanticAssignment": "NONE",
+  "invariants": {
+    "uniqueOrderedPaths": 40,
+    "orderedEdgeSignatures": 40,
+    "staticVisibleUniqueShapes": 40,
+    "minimumPairwiseEdgeDistance": 3,
+    "sameWorldMinimumEdgeDistance": 3,
+    "crossWorldMinimumEdgeDistance": 3,
+    "minimumVisibleSegmentCount": 6,
+    "totalVisibleSegments": 351,
+    "orientationEquivalentPairs": 10,
+    "lowVisibleOrientationPairs": 1,
+    "maxOrientationDegree": 1,
+    "raster8Unique": 40,
+    "raster6Unique": 31,
+    "nodesPerCandidate": 12,
+    "edgesPerCandidate": 11,
+    "packetBytesPerCandidate": 70,
+    "humanPromotionRequired": true
+  },
+  "candidates": [
+    {
+      "glyphId": "G01",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S01",
+        "MF:L02:S02",
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L04:S07",
+        "MF:L03:S07",
+        "MF:L03:S08",
+        "MF:L02:S08"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>1,0|1,0>2,0|2,0>2,1|2,1>3,1|3,1>4,1|4,1>5,1|5,1>5,2|5,2>6,2|6,1>6,2|6,1>7,1|7,0>7,1",
+      "visibleSegmentCount": 11,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "470605EF",
+        "packetHex": "484E4B5001010C0481040004810401048104020482040204820403048204040482040504830405048304060482040604820407048104070000030000000300020002470605EF",
+        "base64url": "SE5LUAEBDASBBAAEgQQBBIEEAgSCBAIEggQDBIIEBASCBAUEgwQFBIMEBgSCBAYEggQHBIEEBwAAAwAAAAMAAgACRwYF7w"
+      }
+    },
+    {
+      "glyphId": "G02",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S02",
+        "MF:L02:S01",
+        "MF:L02:S72",
+        "MF:L03:S72",
+        "MF:L03:S01",
+        "MF:L03:S72",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L04:S02",
+        "MF:L03:S02",
+        "MF:L03:S01",
+        "MF:L02:S01"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>1,1|1,0>1,1|1,0>2,0|1,1>1,2|1,1>2,1|1,2>2,2|2,1>2,2",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "AE17064C",
+        "packetHex": "484E4B5001010C0481040104810400048104470482044704820400048204470482040004830400048304010482040104820400048104000101030001000300020102AE17064C",
+        "base64url": "SE5LUAEBDASBBAEEgQQABIEERwSCBEcEggQABIIERwSCBAAEgwQABIMEAQSCBAEEggQABIEEAAEBAwABAAMAAgECrhcGTA"
+      }
+    },
+    {
+      "glyphId": "G03",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S03",
+        "MF:L02:S04",
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S03",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L02:S04"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2",
+      "visibleSegmentCount": 7,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "2B5331C7",
+        "packetHex": "484E4B5001010C04810402048104030481040204820402048204030482040204820403048304030483040204820402048204030481040300010300010003010200022B5331C7",
+        "base64url": "SE5LUAEBDASBBAIEgQQDBIEEAgSCBAIEggQDBIIEAgSCBAMEgwQDBIMEAgSCBAIEggQDBIEEAwABAwABAAMBAgACK1Mxxw"
+      }
+    },
+    {
+      "glyphId": "G04",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S04",
+        "MF:L02:S03",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L04:S07",
+        "MF:L04:S06",
+        "MF:L03:S06",
+        "MF:L03:S05",
+        "MF:L02:S05"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>1,0|1,0>1,1|1,1>2,1|2,0>2,1|2,1>3,1|3,1>3,2|3,1>4,1|3,2>4,2|4,1>4,2",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "A131C261",
+        "packetHex": "484E4B5001010C0481040304810402048104030482040304820404048204050482040604830406048304050482040504820404048104040100030000000301020102A131C261",
+        "base64url": "SE5LUAEBDASBBAMEgQQCBIEEAwSCBAMEggQEBIIEBQSCBAYEgwQGBIMEBQSCBAUEggQEBIEEBAEAAwAAAAMBAgECoTHCYQ"
+      }
+    },
+    {
+      "glyphId": "G05",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S05",
+        "MF:L02:S04",
+        "MF:L02:S05",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L03:S05",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L02:S06"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2|1,1>2,1|2,0>2,1",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "5EDE37E2",
+        "packetHex": "484E4B5001010C04810404048104030481040404820404048204050482040404820403048304030483040404820404048204050481040501000300010103000200025EDE37E2",
+        "base64url": "SE5LUAEBDASBBAQEgQQDBIEEBASCBAQEggQFBIIEBASCBAMEgwQDBIMEBASCBAQEggQFBIEEBQEAAwABAQMAAgACXt434g"
+      }
+    },
+    {
+      "glyphId": "G06",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S06",
+        "MF:L02:S07",
+        "MF:L02:S06",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L03:S08",
+        "MF:L03:S07",
+        "MF:L04:S07",
+        "MF:L04:S08",
+        "MF:L03:S08",
+        "MF:L03:S07",
+        "MF:L02:S07"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>1,1|1,0>1,1|1,1>1,2|1,1>2,1|1,2>2,2|2,1>2,2",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "B0F32B87",
+        "packetHex": "484E4B5001010C0481040504810406048104050482040504820406048204070482040604830406048304070482040704820406048104060001030000010300020102B0F32B87",
+        "base64url": "SE5LUAEBDASBBAUEgQQGBIEEBQSCBAUEggQGBIIEBwSCBAYEgwQGBIMEBwSCBAcEggQGBIEEBgABAwAAAQMAAgECsPMrhw"
+      }
+    },
+    {
+      "glyphId": "G07",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S07",
+        "MF:L02:S06",
+        "MF:L02:S05",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L04:S05",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L02:S06"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,0>2,0|1,1>1,2|1,1>2,1",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "8645AFD6",
+        "packetHex": "484E4B5001010C04810406048104050481040404820404048204050482040604820405048304050483040404820404048204050481040501010300000103010200028645AFD6",
+        "base64url": "SE5LUAEBDASBBAYEgQQFBIEEBASCBAQEggQFBIIEBgSCBAUEgwQFBIMEBASCBAQEggQFBIEEBQEBAwAAAQMBAgAChkWv1g"
+      }
+    },
+    {
+      "glyphId": "G08",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S08",
+        "MF:L02:S09",
+        "MF:L02:S10",
+        "MF:L03:S10",
+        "MF:L03:S11",
+        "MF:L03:S10",
+        "MF:L03:S09",
+        "MF:L04:S09",
+        "MF:L04:S08",
+        "MF:L03:S08",
+        "MF:L03:S07",
+        "MF:L02:S07"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,1>1,1|1,0>2,0|1,1>1,2|1,2>2,2|2,0>3,0|2,1>2,2|2,1>3,1|3,0>3,1|3,1>4,1",
+      "visibleSegmentCount": 10,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "7EFD5F74",
+        "packetHex": "484E4B5001010C048104070481040804810409048204090482040A0482040904820408048304080483040704820407048204060481040600000300010103010201027EFD5F74",
+        "base64url": "SE5LUAEBDASBBAcEgQQIBIEECQSCBAkEggQKBIIECQSCBAgEgwQIBIMEBwSCBAcEggQGBIEEBgAAAwABAQMBAgECfv1fdA"
+      }
+    },
+    {
+      "glyphId": "G09",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S09",
+        "MF:L02:S08",
+        "MF:L02:S07",
+        "MF:L03:S07",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L03:S08",
+        "MF:L04:S08",
+        "MF:L04:S09",
+        "MF:L03:S09",
+        "MF:L03:S10",
+        "MF:L02:S10"
+      ],
+      "edges": [
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,1>1,1|1,0>1,1|1,0>2,0|1,1>2,1|2,0>3,0|2,1>2,2|2,2>3,2|3,1>3,2|3,1>4,1|4,0>4,1",
+      "visibleSegmentCount": 10,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "95C84AC8",
+        "packetHex": "484E4B5001010C048104080481040704810406048204060482040504820406048204070483040704830408048204080482040904810409010103010000030002000295C84AC8",
+        "base64url": "SE5LUAEBDASBBAgEgQQHBIEEBgSCBAYEggQFBIIEBgSCBAcEgwQHBIMECASCBAgEggQJBIEECQEBAwEAAAMAAgAClchKyA"
+      }
+    },
+    {
+      "glyphId": "G10",
+      "sourceMatrix": {
+        "world": "W1",
+        "row": 1,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S10",
+        "MF:L02:S11",
+        "MF:L02:S12",
+        "MF:L03:S12",
+        "MF:L03:S11",
+        "MF:L03:S10",
+        "MF:L03:S11",
+        "MF:L04:S11",
+        "MF:L04:S12",
+        "MF:L03:S12",
+        "MF:L03:S11",
+        "MF:L02:S11"
+      ],
+      "edges": [
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>1,0|0,1>1,1|1,0>1,1|1,0>2,0|1,1>1,2|1,1>2,1|1,2>2,2|2,0>2,1|2,1>2,2",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "6D70BA6A",
+        "packetHex": "484E4B5001010C048104090481040A0481040B0482040B0482040A048204090482040A0483040A0483040B0482040B0482040A0481040A00000301010003000201026D70BA6A",
+        "base64url": "SE5LUAEBDASBBAkEgQQKBIEECwSCBAsEggQKBIIECQSCBAoEgwQKBIMECwSCBAsEggQKBIEECgAAAwEBAAMAAgECbXC6ag"
+      }
+    },
+    {
+      "glyphId": "G11",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S11",
+        "MF:L03:S11",
+        "MF:L03:S12",
+        "MF:L04:S12",
+        "MF:L04:S13",
+        "MF:L04:S14",
+        "MF:L04:S15",
+        "MF:L03:S15",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L03:S18",
+        "MF:L02:S18"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,1>1,1|1,1>1,2|1,2>2,2|2,2>3,2|3,2>4,2|4,1>4,2|4,1>5,1|5,1>6,1|6,1>7,1|7,0>7,1",
+      "visibleSegmentCount": 11,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "06F42A13",
+        "packetHex": "484E4B5001010C0481040A0482040A0482040B0483040B0483040C0483040D0483040E0482040E0482040F048204100482041104810411030003000000020000000206F42A13",
+        "base64url": "SE5LUAEBDASBBAoEggQKBIIECwSDBAsEgwQMBIMEDQSDBA4EggQOBIIEDwSCBBAEggQRBIEEEQMAAwAAAAIAAAACBvQqEw"
+      }
+    },
+    {
+      "glyphId": "G12",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S12",
+        "MF:L03:S12",
+        "MF:L03:S11",
+        "MF:L04:S11",
+        "MF:L04:S10",
+        "MF:L04:S11",
+        "MF:L04:S10",
+        "MF:L03:S10",
+        "MF:L03:S11",
+        "MF:L03:S12",
+        "MF:L03:S11",
+        "MF:L02:S11"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2|1,1>2,1|2,0>2,1",
+      "visibleSegmentCount": 7,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "F0131CF0",
+        "packetHex": "484E4B5001010C0481040B0482040B0482040A0483040A048304090483040A04830409048204090482040A0482040B0482040A0481040A0301030100010200000102F0131CF0",
+        "base64url": "SE5LUAEBDASBBAsEggQLBIIECgSDBAoEgwQJBIMECgSDBAkEggQJBIIECgSCBAsEggQKBIEECgMBAwEAAQIAAAEC8BMc8A"
+      }
+    },
+    {
+      "glyphId": "G13",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S13",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L04:S14",
+        "MF:L04:S13",
+        "MF:L04:S14",
+        "MF:L04:S13",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L03:S13",
+        "MF:L03:S14",
+        "MF:L02:S14"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2",
+      "visibleSegmentCount": 6,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "0A43EEC3",
+        "packetHex": "484E4B5001010C0481040C0482040C0482040D0483040D0483040C0483040D0483040C0482040C0482040D0482040C0482040D0481040D03000301000102000100020A43EEC3",
+        "base64url": "SE5LUAEBDASBBAwEggQMBIIEDQSDBA0EgwQMBIMEDQSDBAwEggQMBIIEDQSCBAwEggQNBIEEDQMAAwEAAQIAAQACCkPuww"
+      }
+    },
+    {
+      "glyphId": "G14",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S14",
+        "MF:L03:S14",
+        "MF:L03:S13",
+        "MF:L04:S13",
+        "MF:L04:S14",
+        "MF:L04:S15",
+        "MF:L04:S16",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L03:S15",
+        "MF:L02:S15"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,2>2,2|2,0>2,1|2,1>3,1|2,2>3,2|3,1>3,2|3,1>4,1",
+      "visibleSegmentCount": 10,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "2C7329F1",
+        "packetHex": "484E4B5001010C0481040D0482040D0482040C0483040C0483040D0483040E0483040F0482040F048204100482040F0482040E0481040E03010300000002000101022C7329F1",
+        "base64url": "SE5LUAEBDASBBA0EggQNBIIEDASDBAwEgwQNBIMEDgSDBA8EggQPBIIEEASCBA8EggQOBIEEDgMBAwAAAAIAAQECLHMp8Q"
+      }
+    },
+    {
+      "glyphId": "G15",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S15",
+        "MF:L03:S15",
+        "MF:L03:S14",
+        "MF:L04:S14",
+        "MF:L04:S15",
+        "MF:L04:S16",
+        "MF:L04:S15",
+        "MF:L03:S15",
+        "MF:L03:S14",
+        "MF:L03:S15",
+        "MF:L03:S16",
+        "MF:L02:S16"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2|1,1>2,1|1,2>2,2|2,0>2,1",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "9675E07E",
+        "packetHex": "484E4B5001010C0481040E0482040E0482040D0483040D0483040E0483040F0483040E0482040E0482040D0482040E0482040F0481040F03010300000102010000029675E07E",
+        "base64url": "SE5LUAEBDASBBA4EggQOBIIEDQSDBA0EgwQOBIMEDwSDBA4EggQOBIIEDQSCBA4EggQPBIEEDwMBAwAAAQIBAAAClnXgfg"
+      }
+    },
+    {
+      "glyphId": "G16",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S16",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L04:S17",
+        "MF:L04:S16",
+        "MF:L04:S17",
+        "MF:L04:S18",
+        "MF:L03:S18",
+        "MF:L03:S17",
+        "MF:L03:S18",
+        "MF:L03:S17",
+        "MF:L02:S17"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2|1,1>2,1|1,2>2,2|2,1>2,2",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "BDB6403E",
+        "packetHex": "484E4B5001010C0481040F0482040F04820410048304100483040F048304100483041104820411048204100482041104820410048104100300030100000201000102BDB6403E",
+        "base64url": "SE5LUAEBDASBBA8EggQPBIIEEASDBBAEgwQPBIMEEASDBBEEggQRBIIEEASCBBEEggQQBIEEEAMAAwEAAAIBAAECvbZAPg"
+      }
+    },
+    {
+      "glyphId": "G17",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S17",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L04:S16",
+        "MF:L04:S15",
+        "MF:L04:S16",
+        "MF:L04:S17",
+        "MF:L03:S17",
+        "MF:L03:S16",
+        "MF:L03:S15",
+        "MF:L03:S16",
+        "MF:L02:S16"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2|1,1>2,1|1,2>2,2|2,0>2,1|2,1>2,2",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "1CD5B69E",
+        "packetHex": "484E4B5001010C04810410048204100482040F0483040F0483040E0483040F04830410048204100482040F0482040E0482040F0481040F03010301000002010100021CD5B69E",
+        "base64url": "SE5LUAEBDASBBBAEggQQBIIEDwSDBA8EgwQOBIMEDwSDBBAEggQQBIIEDwSCBA4EggQPBIEEDwMBAwEAAAIBAQACHNW2ng"
+      }
+    },
+    {
+      "glyphId": "G18",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S18",
+        "MF:L03:S18",
+        "MF:L03:S19",
+        "MF:L04:S19",
+        "MF:L04:S20",
+        "MF:L04:S21",
+        "MF:L04:S20",
+        "MF:L03:S20",
+        "MF:L03:S19",
+        "MF:L03:S18",
+        "MF:L03:S17",
+        "MF:L02:S17"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,1>1,1|1,0>1,1|1,1>2,1|2,1>2,2|2,1>3,1|2,2>3,2|3,1>3,2|3,2>4,2",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "CEB3024C",
+        "packetHex": "484E4B5001010C0481041104820411048204120483041204830413048304140483041304820413048204120482041104820410048104100300030000010201010102CEB3024C",
+        "base64url": "SE5LUAEBDASBBBEEggQRBIIEEgSDBBIEgwQTBIMEFASDBBMEggQTBIIEEgSCBBEEggQQBIEEEAMAAwAAAQIBAQECzrMCTA"
+      }
+    },
+    {
+      "glyphId": "G19",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S19",
+        "MF:L03:S19",
+        "MF:L03:S18",
+        "MF:L04:S18",
+        "MF:L04:S17",
+        "MF:L04:S16",
+        "MF:L04:S17",
+        "MF:L03:S17",
+        "MF:L03:S18",
+        "MF:L03:S19",
+        "MF:L03:S20",
+        "MF:L02:S20"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,2>1,2|1,1>1,2|1,1>2,1|1,2>2,2|2,1>2,2|2,1>3,1|3,0>3,1|3,1>4,1|4,0>4,1",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "3948553E",
+        "packetHex": "484E4B5001010C04810412048204120482041104830411048304100483040F04830410048204100482041104820412048204130481041303010301010002000000023948553E",
+        "base64url": "SE5LUAEBDASBBBIEggQSBIIEEQSDBBEEgwQQBIMEDwSDBBAEggQQBIIEEQSCBBIEggQTBIEEEwMBAwEBAAIAAAACOUhVPg"
+      }
+    },
+    {
+      "glyphId": "G20",
+      "sourceMatrix": {
+        "world": "W2",
+        "row": 2,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L02:S20",
+        "MF:L03:S20",
+        "MF:L03:S21",
+        "MF:L04:S21",
+        "MF:L04:S22",
+        "MF:L04:S21",
+        "MF:L04:S20",
+        "MF:L03:S20",
+        "MF:L03:S21",
+        "MF:L03:S22",
+        "MF:L03:S21",
+        "MF:L02:S21"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,1>1,2|1,1>2,1|1,2>2,2",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "34C38F7B",
+        "packetHex": "484E4B5001010C048104130482041304820414048304140483041504830414048304130482041304820414048204150482041404810414030003000101020000010234C38F7B",
+        "base64url": "SE5LUAEBDASBBBMEggQTBIIEFASDBBQEgwQVBIMEFASDBBMEggQTBIIEFASCBBUEggQUBIEEFAMAAwABAQIAAAECNMOPew"
+      }
+    },
+    {
+      "glyphId": "G21",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S21",
+        "MF:L06:S21",
+        "MF:L06:S22",
+        "MF:L06:S23",
+        "MF:L05:S23",
+        "MF:L05:S24",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L05:S27",
+        "MF:L05:S28"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,1>0,2|0,2>1,2|1,2>2,2|2,1>2,2|2,1>3,1|3,0>3,1|3,0>4,0|4,0>5,0|5,0>6,0|6,0>6,1|6,1>7,1",
+      "visibleSegmentCount": 11,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "DC928197",
+        "packetHex": "484E4B5001010C0484041404850414048504150485041604840416048404170483041704830418048304190483041A0484041A0484041B0300000200020000000300DC928197",
+        "base64url": "SE5LUAEBDASEBBQEhQQUBIUEFQSFBBYEhAQWBIQEFwSDBBcEgwQYBIMEGQSDBBoEhAQaBIQEGwMAAAIAAgAAAAMA3JKBlw"
+      }
+    },
+    {
+      "glyphId": "G22",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S22",
+        "MF:L06:S22",
+        "MF:L06:S21",
+        "MF:L06:S20",
+        "MF:L05:S20",
+        "MF:L05:S21",
+        "MF:L04:S21",
+        "MF:L04:S20",
+        "MF:L04:S21",
+        "MF:L04:S22",
+        "MF:L05:S22",
+        "MF:L05:S21"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,0>2,0|1,1>2,1|1,2>2,2|2,0>2,1|2,1>2,2",
+      "visibleSegmentCount": 10,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "C2A83F9A",
+        "packetHex": "484E4B5001010C0484041504850415048504140485041304840413048404140483041404830413048304140483041504840415048404140301010200020100000301C2A83F9A",
+        "base64url": "SE5LUAEBDASEBBUEhQQVBIUEFASFBBMEhAQTBIQEFASDBBQEgwQTBIMEFASDBBUEhAQVBIQEFAMBAQIAAgEAAAMBwqg_mg"
+      }
+    },
+    {
+      "glyphId": "G23",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S23",
+        "MF:L06:S23",
+        "MF:L06:S24",
+        "MF:L06:S23",
+        "MF:L05:S23",
+        "MF:L05:S24",
+        "MF:L04:S24",
+        "MF:L04:S23",
+        "MF:L04:S24",
+        "MF:L04:S23",
+        "MF:L05:S23",
+        "MF:L05:S24"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1",
+      "visibleSegmentCount": 6,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "7FA6FBB5",
+        "packetHex": "484E4B5001010C04840416048504160485041704850416048404160484041704830417048304160483041704830416048404160484041703000102000201000103007FA6FBB5",
+        "base64url": "SE5LUAEBDASEBBYEhQQWBIUEFwSFBBYEhAQWBIQEFwSDBBcEgwQWBIMEFwSDBBYEhAQWBIQEFwMAAQIAAgEAAQMAf6b7tQ"
+      }
+    },
+    {
+      "glyphId": "G24",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S24",
+        "MF:L06:S24",
+        "MF:L06:S23",
+        "MF:L06:S24",
+        "MF:L05:S24",
+        "MF:L05:S25",
+        "MF:L04:S25",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L05:S26",
+        "MF:L05:S25"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,2>1,2|1,1>1,2|1,1>2,1|2,0>2,1|2,0>3,0|2,1>3,1|3,0>3,1|3,0>4,0",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "C504D45C",
+        "packetHex": "484E4B5001010C04840417048504170485041604850417048404170484041804830418048304190483041A0483041904840419048404180301000200020000010301C504D45C",
+        "base64url": "SE5LUAEBDASEBBcEhQQXBIUEFgSFBBcEhAQXBIQEGASDBBgEgwQZBIMEGgSDBBkEhAQZBIQEGAMBAAIAAgAAAQMBxQTUXA"
+      }
+    },
+    {
+      "glyphId": "G25",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S25",
+        "MF:L06:S25",
+        "MF:L06:S24",
+        "MF:L06:S25",
+        "MF:L05:S25",
+        "MF:L05:S26",
+        "MF:L04:S26",
+        "MF:L04:S25",
+        "MF:L04:S24",
+        "MF:L04:S25",
+        "MF:L05:S25",
+        "MF:L05:S26"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>1,0|0,2>1,2|1,0>1,1|1,0>2,0|1,1>1,2|1,1>2,1|2,0>2,1",
+      "visibleSegmentCount": 7,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "5A40C46A",
+        "packetHex": "484E4B5001010C04840418048504180485041704850418048404180484041904830419048304180483041704830418048404180484041903010002000201010003005A40C46A",
+        "base64url": "SE5LUAEBDASEBBgEhQQYBIUEFwSFBBgEhAQYBIQEGQSDBBkEgwQYBIMEFwSDBBgEhAQYBIQEGQMBAAIAAgEBAAMAWkDEag"
+      }
+    },
+    {
+      "glyphId": "G26",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S26",
+        "MF:L06:S26",
+        "MF:L06:S27",
+        "MF:L06:S26",
+        "MF:L05:S26",
+        "MF:L05:S27",
+        "MF:L04:S27",
+        "MF:L04:S28",
+        "MF:L04:S27",
+        "MF:L04:S28",
+        "MF:L05:S28",
+        "MF:L05:S27"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,0>2,0|1,1>2,1|2,0>2,1",
+      "visibleSegmentCount": 7,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "80D340AB",
+        "packetHex": "484E4B5001010C04840419048504190485041A04850419048404190484041A0483041A0483041B0483041A0483041B0484041B0484041A030001020002000100030180D340AB",
+        "base64url": "SE5LUAEBDASEBBkEhQQZBIUEGgSFBBkEhAQZBIQEGgSDBBoEgwQbBIMEGgSDBBsEhAQbBIQEGgMAAQIAAgABAAMBgNNAqw"
+      }
+    },
+    {
+      "glyphId": "G27",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S27",
+        "MF:L06:S27",
+        "MF:L06:S26",
+        "MF:L06:S25",
+        "MF:L05:S25",
+        "MF:L05:S26",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L04:S26",
+        "MF:L04:S25",
+        "MF:L05:S25",
+        "MF:L05:S26"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,0>2,0|1,2>2,2|2,1>2,2",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "432BD2A7",
+        "packetHex": "484E4B5001010C0484041A0485041A04850419048504180484041804840419048304190483041A048304190483041804840418048404190301010200020001010300432BD2A7",
+        "base64url": "SE5LUAEBDASEBBoEhQQaBIUEGQSFBBgEhAQYBIQEGQSDBBkEgwQaBIMEGQSDBBgEhAQYBIQEGQMBAQIAAgABAQMAQyvSpw"
+      }
+    },
+    {
+      "glyphId": "G28",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S28",
+        "MF:L06:S28",
+        "MF:L06:S29",
+        "MF:L06:S30",
+        "MF:L05:S30",
+        "MF:L05:S31",
+        "MF:L04:S31",
+        "MF:L04:S30",
+        "MF:L04:S29",
+        "MF:L04:S28",
+        "MF:L05:S28",
+        "MF:L05:S27"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,1>1,1|1,0>1,1|1,0>2,0|1,1>1,2|1,2>2,2|2,0>3,0|2,2>3,2|3,0>4,0|3,1>3,2|3,1>4,1|4,0>4,1",
+      "visibleSegmentCount": 11,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "4A671EE7",
+        "packetHex": "484E4B5001010C0484041B0485041B0485041C0485041D0484041D0484041E0483041E0483041D0483041C0483041B0484041B0484041A03000002000201010103014A671EE7",
+        "base64url": "SE5LUAEBDASEBBsEhQQbBIUEHASFBB0EhAQdBIQEHgSDBB4EgwQdBIMEHASDBBsEhAQbBIQEGgMAAAIAAgEBAQMBSmce5w"
+      }
+    },
+    {
+      "glyphId": "G29",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S29",
+        "MF:L06:S29",
+        "MF:L06:S28",
+        "MF:L06:S27",
+        "MF:L05:S27",
+        "MF:L05:S26",
+        "MF:L04:S26",
+        "MF:L04:S27",
+        "MF:L04:S28",
+        "MF:L04:S29",
+        "MF:L05:S29",
+        "MF:L05:S30"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>1,1|1,0>2,0|1,1>1,2|1,2>2,2|2,0>3,0|2,2>3,2|3,0>3,1|3,1>3,2|3,1>4,1",
+      "visibleSegmentCount": 11,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "54AD69C1",
+        "packetHex": "484E4B5001010C0484041C0485041C0485041B0485041A0484041A04840419048304190483041A0483041B0483041C0484041C0484041D030101020102000000030054AD69C1",
+        "base64url": "SE5LUAEBDASEBBwEhQQcBIUEGwSFBBoEhAQaBIQEGQSDBBkEgwQaBIMEGwSDBBwEhAQcBIQEHQMBAQIBAgAAAAMAVK1pwQ"
+      }
+    },
+    {
+      "glyphId": "G30",
+      "sourceMatrix": {
+        "world": "W3",
+        "row": 3,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S30",
+        "MF:L06:S30",
+        "MF:L06:S31",
+        "MF:L06:S32",
+        "MF:L05:S32",
+        "MF:L05:S31",
+        "MF:L04:S31",
+        "MF:L04:S30",
+        "MF:L04:S31",
+        "MF:L04:S32",
+        "MF:L05:S32",
+        "MF:L05:S31"
+      ],
+      "edges": [
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,0>1,0|0,1>0,2|0,2>1,2|1,0>1,1|1,0>2,0|1,1>2,1|1,2>2,2|2,0>2,1|2,1>2,2",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "5DE1A581",
+        "packetHex": "484E4B5001010C0484041D0485041D0485041E0485041F0484041F0484041E0483041E0483041D0483041E0483041F0484041F0484041E03000002010201000003015DE1A581",
+        "base64url": "SE5LUAEBDASEBB0EhQQdBIUEHgSFBB8EhAQfBIQEHgSDBB4EgwQdBIMEHgSDBB8EhAQfBIQEHgMAAAIBAgEAAAMBXeGlgQ"
+      }
+    },
+    {
+      "glyphId": "G31",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 1
+      },
+      "dataBits4": "0000",
+      "hamming74Bits": "0000000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S31",
+        "MF:L04:S31",
+        "MF:L04:S32",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L04:S35",
+        "MF:L05:S35",
+        "MF:L05:S36",
+        "MF:L06:S36",
+        "MF:L06:S37",
+        "MF:L05:S37",
+        "MF:L05:S38"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|1,0>2,0|2,0>3,0|3,0>4,0|4,0>4,1|4,1>5,1|5,1>5,2|5,2>6,2|6,1>6,2|6,1>7,1",
+      "visibleSegmentCount": 11,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "41A77D39",
+        "packetHex": "484E4B5001010C0484041E0483041E0483041F048304200483042104830422048404220484042304850423048504240484042404840425020000000003000300020041A77D39",
+        "base64url": "SE5LUAEBDASEBB4EgwQeBIMEHwSDBCAEgwQhBIMEIgSEBCIEhAQjBIUEIwSFBCQEhAQkBIQEJQIAAAAAAwADAAIAQad9OQ"
+      }
+    },
+    {
+      "glyphId": "G32",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 2
+      },
+      "dataBits4": "0001",
+      "hamming74Bits": "1101001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S32",
+        "MF:L04:S32",
+        "MF:L04:S31",
+        "MF:L04:S30",
+        "MF:L04:S31",
+        "MF:L04:S30",
+        "MF:L05:S30",
+        "MF:L05:S31",
+        "MF:L06:S31",
+        "MF:L06:S32",
+        "MF:L05:S32",
+        "MF:L05:S31"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>1,1|1,0>2,0|1,1>1,2|1,1>2,1|1,2>2,2|2,0>2,1|2,1>2,2",
+      "visibleSegmentCount": 9,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "D72E2B3E",
+        "packetHex": "484E4B5001010C0484041F0483041F0483041E0483041D0483041E0483041D0484041D0484041E0485041E0485041F0484041F0484041E0201010001030003000201D72E2B3E",
+        "base64url": "SE5LUAEBDASEBB8EgwQfBIMEHgSDBB0EgwQeBIMEHQSEBB0EhAQeBIUEHgSFBB8EhAQfBIQEHgIBAQABAwADAAIB1y4rPg"
+      }
+    },
+    {
+      "glyphId": "G33",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 3
+      },
+      "dataBits4": "0010",
+      "hamming74Bits": "0101010",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S33",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L04:S33",
+        "MF:L05:S33",
+        "MF:L05:S34",
+        "MF:L06:S34",
+        "MF:L06:S33",
+        "MF:L05:S33",
+        "MF:L05:S34"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,1>1,2",
+      "visibleSegmentCount": 6,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "F88E709F",
+        "packetHex": "484E4B5001010C0484042004830420048304210483042004830421048304200484042004840421048504210485042004840420048404210200010001030003010200F88E709F",
+        "base64url": "SE5LUAEBDASEBCAEgwQgBIMEIQSDBCAEgwQhBIMEIASEBCAEhAQhBIUEIQSFBCAEhAQgBIQEIQIAAQABAwADAQIA-I5wnw"
+      }
+    },
+    {
+      "glyphId": "G34",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 4
+      },
+      "dataBits4": "0011",
+      "hamming74Bits": "1000011",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S34",
+        "MF:L04:S34",
+        "MF:L04:S33",
+        "MF:L04:S34",
+        "MF:L04:S35",
+        "MF:L04:S36",
+        "MF:L05:S36",
+        "MF:L05:S37",
+        "MF:L06:S37",
+        "MF:L06:S36",
+        "MF:L05:S36",
+        "MF:L05:S35"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,0>1,0|1,0>1,1|1,0>2,0|2,0>3,0|2,1>3,1|3,0>3,1|3,1>3,2|3,1>4,1|3,2>4,2|4,1>4,2",
+      "visibleSegmentCount": 10,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "2B7A15B4",
+        "packetHex": "484E4B5001010C04840421048304210483042004830421048304220483042304840423048404240485042404850423048404230484042202010000000300030102012B7A15B4",
+        "base64url": "SE5LUAEBDASEBCEEgwQhBIMEIASDBCEEgwQiBIMEIwSEBCMEhAQkBIUEJASFBCMEhAQjBIQEIgIBAAAAAwADAQIBK3oVtA"
+      }
+    },
+    {
+      "glyphId": "G35",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 5
+      },
+      "dataBits4": "0100",
+      "hamming74Bits": "1001100",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S35",
+        "MF:L04:S35",
+        "MF:L04:S34",
+        "MF:L04:S35",
+        "MF:L04:S36",
+        "MF:L04:S35",
+        "MF:L05:S35",
+        "MF:L05:S34",
+        "MF:L06:S34",
+        "MF:L06:S35",
+        "MF:L05:S35",
+        "MF:L05:S36"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>1,1|1,0>2,0|1,1>1,2|1,1>2,1",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "6D8EAED4",
+        "packetHex": "484E4B5001010C04840422048304220483042104830422048304230483042204840422048404210485042104850422048404220484042302010000010301030002006D8EAED4",
+        "base64url": "SE5LUAEBDASEBCIEgwQiBIMEIQSDBCIEgwQjBIMEIgSEBCIEhAQhBIUEIQSFBCIEhAQiBIQEIwIBAAABAwEDAAIAbY6u1A"
+      }
+    },
+    {
+      "glyphId": "G36",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 6
+      },
+      "dataBits4": "0101",
+      "hamming74Bits": "0100101",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S36",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L04:S38",
+        "MF:L05:S38",
+        "MF:L05:S37",
+        "MF:L06:S37",
+        "MF:L06:S38",
+        "MF:L05:S38",
+        "MF:L05:S37"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|1,0>2,0|1,1>1,2|1,1>2,1|1,2>2,2|2,0>2,1|2,1>2,2",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "483CE54C",
+        "packetHex": "484E4B5001010C0484042304830423048304240483042304830424048304250484042504840424048504240485042504840425048404240200010000030103000201483CE54C",
+        "base64url": "SE5LUAEBDASEBCMEgwQjBIMEJASDBCMEgwQkBIMEJQSEBCUEhAQkBIUEJASFBCUEhAQlBIQEJAIAAQAAAwEDAAIBSDzlTA"
+      }
+    },
+    {
+      "glyphId": "G37",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 7
+      },
+      "dataBits4": "0110",
+      "hamming74Bits": "1100110",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S37",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L04:S35",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L05:S37",
+        "MF:L05:S36",
+        "MF:L06:S36",
+        "MF:L06:S35",
+        "MF:L05:S35",
+        "MF:L05:S36"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>1,0|0,1>0,2|0,1>1,1|0,2>1,2|1,0>2,0|1,1>1,2|1,1>2,1|2,0>2,1",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "1E59B2C7",
+        "packetHex": "484E4B5001010C04840424048304240483042304830422048304230483042404840424048404230485042304850422048404220484042302010100000301030102001E59B2C7",
+        "base64url": "SE5LUAEBDASEBCQEgwQkBIMEIwSDBCIEgwQjBIMEJASEBCQEhAQjBIUEIwSFBCIEhAQiBIQEIwIBAQAAAwEDAQIAHlmyxw"
+      }
+    },
+    {
+      "glyphId": "G38",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 8
+      },
+      "dataBits4": "0111",
+      "hamming74Bits": "0001111",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S38",
+        "MF:L04:S38",
+        "MF:L04:S39",
+        "MF:L04:S40",
+        "MF:L04:S41",
+        "MF:L04:S40",
+        "MF:L05:S40",
+        "MF:L05:S39",
+        "MF:L06:S39",
+        "MF:L06:S38",
+        "MF:L05:S38",
+        "MF:L05:S37"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_PREV",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,1>1,1|1,0>1,1|1,0>2,0|1,1>1,2|1,2>2,2|2,0>3,0|2,1>2,2|2,1>3,1|3,0>3,1|3,0>4,0",
+      "visibleSegmentCount": 10,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "7063984A",
+        "packetHex": "484E4B5001010C04840425048304250483042604830427048304280483042704840427048404260485042604850425048404250484042402000000010301030102017063984A",
+        "base64url": "SE5LUAEBDASEBCUEgwQlBIMEJgSDBCcEgwQoBIMEJwSEBCcEhAQmBIUEJgSFBCUEhAQlBIQEJAIAAAABAwEDAQIBcGOYSg"
+      }
+    },
+    {
+      "glyphId": "G39",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 9
+      },
+      "dataBits4": "1000",
+      "hamming74Bits": "1110000",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S39",
+        "MF:L04:S39",
+        "MF:L04:S38",
+        "MF:L04:S37",
+        "MF:L04:S36",
+        "MF:L04:S37",
+        "MF:L05:S37",
+        "MF:L05:S38",
+        "MF:L06:S38",
+        "MF:L06:S39",
+        "MF:L05:S39",
+        "MF:L05:S40"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_NEXT"
+      ],
+      "staticVisibleSignature": "0,0>1,0|1,0>1,1|1,0>2,0|1,1>2,1|2,0>3,0|2,1>2,2|2,2>3,2|3,0>3,1|3,1>3,2|3,1>4,1",
+      "visibleSegmentCount": 10,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "5BED1551",
+        "packetHex": "484E4B5001010C04840426048304260483042504830424048304230483042404840424048404250485042504850426048404260484042702010101000300030002005BED1551",
+        "base64url": "SE5LUAEBDASEBCYEgwQmBIMEJQSDBCQEgwQjBIMEJASEBCQEhAQlBIUEJQSFBCYEhAQmBIQEJwIBAQEAAwADAAIAW-0VUQ"
+      }
+    },
+    {
+      "glyphId": "G40",
+      "sourceMatrix": {
+        "world": "W4",
+        "row": 4,
+        "column": 10
+      },
+      "dataBits4": "1001",
+      "hamming74Bits": "0011001",
+      "bindingAuthority": "HNK_CANDIDATE",
+      "path": [
+        "MF:L05:S40",
+        "MF:L04:S40",
+        "MF:L04:S41",
+        "MF:L04:S42",
+        "MF:L04:S41",
+        "MF:L04:S40",
+        "MF:L05:S40",
+        "MF:L05:S41",
+        "MF:L06:S41",
+        "MF:L06:S42",
+        "MF:L05:S42",
+        "MF:L05:S41"
+      ],
+      "edges": [
+        "RADIAL_IN",
+        "ANGULAR_NEXT",
+        "ANGULAR_NEXT",
+        "ANGULAR_PREV",
+        "ANGULAR_PREV",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_OUT",
+        "ANGULAR_NEXT",
+        "RADIAL_IN",
+        "ANGULAR_PREV"
+      ],
+      "staticVisibleSignature": "0,0>0,1|0,0>1,0|0,1>1,1|1,0>2,0|1,1>1,2|1,1>2,1|1,2>2,2|2,1>2,2",
+      "visibleSegmentCount": 8,
+      "hnkPacket": {
+        "bytes": 70,
+        "crc32Hex": "BE7F7179",
+        "packetHex": "484E4B5001010C0484042704830427048304280483042904830428048304270484042704840428048504280485042904840429048404280200000101030003000201BE7F7179",
+        "base64url": "SE5LUAEBDASEBCcEgwQnBIMEKASDBCkEgwQoBIMEJwSEBCcEhAQoBIUEKASFBCkEhAQpBIQEKAIAAAEBAwADAAIBvn9xeQ"
+      }
+    }
+  ]
+}
