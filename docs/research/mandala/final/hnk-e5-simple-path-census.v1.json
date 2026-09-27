@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "status": "PASS",
+  "pathLaw": {
+    "nodes": 12,
+    "repeatedAddress": false,
+    "ordered": true,
+    "symmetryReduction": "NONE"
+  },
+  "counts": {
+    "mf": "16535232",
+    "mfPlusCg": "95284494",
+    "crT": "0",
+    "crH": "0",
+    "crD": "24",
+    "major463": "95284518"
+  }
+}
