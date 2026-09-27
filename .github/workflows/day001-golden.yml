@@ -15,38 +15,50 @@ permissions:
   contents: read
 
 jobs:
-  web-golden:
-    name: Day 001 web install + typecheck + build
+  probe:
+    name: Day 001 environment probe
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - name: Repository probe
+        shell: bash
+        run: |
+          set -euxo pipefail
+          pwd
+          git rev-parse HEAD
+          test -f package.json
+          test -f pnpm-workspace.yaml
+          test -f apps/web/package.json
+          ls -la
 
+  bootstrap-lock:
+    name: Day 001 lockfile bootstrap
+    needs: probe
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
           version: 12.1.0
           run_install: false
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
-
-      - name: Detect lockfile
-        id: lock
+      - name: Toolchain probe
+        run: |
+          node --version
+          pnpm --version
+      - name: Generate lockfile only when absent
         shell: bash
         run: |
-          if [[ -f pnpm-lock.yaml ]]; then
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "present=false" >> "$GITHUB_OUTPUT"
+          set -euxo pipefail
+          if [[ ! -f pnpm-lock.yaml ]]; then
+            pnpm install --lockfile-only --no-frozen-lockfile
           fi
-
-      - name: Bootstrap canonical workspace lockfile
-        if: steps.lock.outputs.present != 'true'
-        run: pnpm install --lockfile-only --no-frozen-lockfile
-
+          test -s pnpm-lock.yaml
       - name: Upload canonical lockfile candidate
-        if: steps.lock.outputs.present != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: pnpm-lock-candidate
@@ -54,22 +66,24 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
-      - name: Stop after bootstrap evidence
-        if: steps.lock.outputs.present != 'true'
-        run: |
-          echo "pnpm-lock.yaml was absent. Canonical candidate generated and uploaded for audit/versioning."
-          exit 1
-
-      - name: Frozen install
-        if: steps.lock.outputs.present == 'true'
-        run: pnpm install --frozen-lockfile
-
-      - name: Typecheck web
-        if: steps.lock.outputs.present == 'true'
-        working-directory: apps/web
+  web-golden:
+    name: Day 001 web frozen install + typecheck + build
+    needs: bootstrap-lock
+    if: ${{ hashFiles('pnpm-lock.yaml') != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - working-directory: apps/web
         run: pnpm exec tsc --noEmit
-
-      - name: Build web
-        if: steps.lock.outputs.present == 'true'
-        working-directory: apps/web
+      - working-directory: apps/web
         run: pnpm build
