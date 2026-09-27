@@ -221,9 +221,79 @@ if(hnk40ShapeSeen.size!==40)errors.push(`Expected 40 translation-normalized HNK4
 if(hnk40.invariants?.uniqueOrderedPaths!==40)errors.push('Materialized registry uniqueOrderedPaths must be 40');
 if(hnk40.invariants?.translationNormalizedUniqueShapes!==40)errors.push('Materialized registry translationNormalizedUniqueShapes must be 40');
 
+const hnk40v12Spec=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-seed-family.v1.2.json'),'utf8'));
+const hnk40v12=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.2.json'),'utf8'));
+const v12SeenPaths=new Set(), v12SeenShapes=new Set();
+
+function hamming74Bits(n){
+  const d1=(n>>3)&1,d2=(n>>2)&1,d3=(n>>1)&1,d4=n&1;
+  const p1=d1^d2^d4,p2=d1^d3^d4,p4=d2^d3^d4;
+  return [p1,p2,d1,p4,d2,d3,d4];
+}
+const v12Angular=(bit)=>bit===0?'ANGULAR_NEXT':'ANGULAR_PREV';
+function v12Edges(world,b){
+  if(world==='W1')return [v12Angular(b[0]),'RADIAL_OUT',v12Angular(b[1]),v12Angular(b[2]),'RADIAL_OUT',v12Angular(b[3]),v12Angular(b[4]),'RADIAL_IN',v12Angular(b[5]),v12Angular(b[6]),'RADIAL_IN'];
+  if(world==='W2')return ['RADIAL_OUT',v12Angular(b[0]),v12Angular(b[1]),'RADIAL_OUT',v12Angular(b[2]),v12Angular(b[3]),'RADIAL_IN',v12Angular(b[4]),v12Angular(b[5]),'RADIAL_IN',v12Angular(b[6])];
+  if(world==='W3')return [v12Angular(b[0]),'RADIAL_IN',v12Angular(b[1]),v12Angular(b[2]),'RADIAL_IN',v12Angular(b[3]),v12Angular(b[4]),'RADIAL_OUT',v12Angular(b[5]),v12Angular(b[6]),'RADIAL_OUT'];
+  return ['RADIAL_IN',v12Angular(b[0]),v12Angular(b[1]),'RADIAL_IN',v12Angular(b[2]),v12Angular(b[3]),'RADIAL_OUT',v12Angular(b[4]),v12Angular(b[5]),'RADIAL_OUT',v12Angular(b[6])];
+}
+function v12ExpectedNodes(g,world,edges){
+  let node={l:(world==='W1'||world==='W2')?2:5,s:g};
+  const nodes=[node];
+  for(const edge of edges){node=advance(node,edge);nodes.push(node)}
+  return nodes.map(({l,s})=>`MF:L${String(l).padStart(2,'0')}:S${String(s).padStart(2,'0')}`);
+}
+function v12Packet(candidate){return materializedPacket(candidate)}
+
+if(hnk40v12Spec.cardinality!==40)errors.push('HNK40 V1.2 cardinality must be 40');
+if(hnk40v12.bindingAuthority!=='HNK_CANDIDATE')errors.push('HNK40 V1.2 authority must remain HNK_CANDIDATE');
+if(hnk40v12.semanticAssignment!=='NONE')errors.push('HNK40 V1.2 must not assign semantics');
+if(hnk40v12.invariants?.nodesPerCandidate!==12)errors.push('HNK40 V1.2 nodesPerCandidate must be 12');
+if(hnk40v12.invariants?.edgesPerCandidate!==11)errors.push('HNK40 V1.2 edgesPerCandidate must be 11');
+if(hnk40v12.invariants?.packetBytesPerCandidate!==70)errors.push('HNK40 V1.2 packetBytesPerCandidate must be 70');
+if((hnk40v12.candidates??[]).length!==40)errors.push('HNK40 V1.2 must materialize 40 candidates');
+
+for(let g=1;g<=40;g++){
+  const id=`G${String(g).padStart(2,'0')}`, c=hnk40v12.candidates?.[g-1];
+  if(!c){fail(id,'V1.2 candidate missing');continue}
+  const row=Math.floor((g-1)/10)+1,column=((g-1)%10)+1,world=`W${row}`,data4=column-1,bits=hamming74Bits(data4);
+  if(c.glyphId!==id)fail(id,'V1.2 glyph order drift');
+  if(c.sourceMatrix?.world!==world||c.sourceMatrix?.row!==row||c.sourceMatrix?.column!==column)fail(id,'V1.2 source matrix drift');
+  if(c.dataBits4!==data4.toString(2).padStart(4,'0'))fail(id,'V1.2 dataBits4 drift');
+  if(c.hamming74Bits!==bits.join(''))fail(id,'V1.2 Hamming(7,4) code drift');
+  const edges=v12Edges(world,bits), nodes=v12ExpectedNodes(g,world,edges);
+  if(JSON.stringify(c.edges)!==JSON.stringify(edges))fail(id,'V1.2 edge pattern drift');
+  if(JSON.stringify(c.path)!==JSON.stringify(nodes))fail(id,'V1.2 PATH drift');
+  const ps=c.path.join('>'), ss=c.edges.join('>');
+  if(v12SeenPaths.has(ps))fail(id,'V1.2 duplicate ordered PATH'); else v12SeenPaths.add(ps);
+  if(v12SeenShapes.has(ss))fail(id,'V1.2 duplicate normalized edge signature'); else v12SeenShapes.add(ss);
+  for(let i=0;i<c.path.length-1;i++){
+    const a=parseMF(c.path[i]),b=parseMF(c.path[i+1]),edge=a&&b&&expectedEdge(a,b);
+    if(!edge||edge!==c.edges[i])fail(id,`V1.2 illegal adjacency at edge ${i+1}`);
+  }
+  try{
+    const packet=v12Packet(c),decoded=decodePacket(packet);
+    if(JSON.stringify(decoded.nodes)!==JSON.stringify(c.path))fail(id,'V1.2 HNKP node round-trip mismatch');
+    if(JSON.stringify(decoded.edges)!==JSON.stringify(c.edges.map(e=>edgeEnum[e])))fail(id,'V1.2 HNKP edge round-trip mismatch');
+    if(c.hnkPacket?.bytes!==70||packet.length!==70)fail(id,'V1.2 packet byte count drift');
+    if(c.hnkPacket?.packetHex!==packet.toString('hex').toUpperCase())fail(id,'V1.2 packet HEX drift');
+    if(c.hnkPacket?.crc32Hex!==decoded.crc32Hex)fail(id,'V1.2 CRC32 drift');
+    if(c.hnkPacket?.base64url!==base64url(packet))fail(id,'V1.2 base64url drift');
+  }catch(error){fail(id,`V1.2 HNKP error: ${error.message}`)}
+}
+let minV12Distance=Infinity;
+for(let i=0;i<hnk40v12.candidates.length;i++)for(let j=i+1;j<hnk40v12.candidates.length;j++){
+  const a=hnk40v12.candidates[i].edges,b=hnk40v12.candidates[j].edges;
+  let d=0;for(let k=0;k<Math.max(a.length,b.length);k++)if(a[k]!==b[k])d++;
+  if(d<minV12Distance)minV12Distance=d;
+}
+if(v12SeenPaths.size!==40)errors.push(`HNK40 V1.2 expected 40 unique PATHs, got ${v12SeenPaths.size}`);
+if(v12SeenShapes.size!==40)errors.push(`HNK40 V1.2 expected 40 unique normalized shapes, got ${v12SeenShapes.size}`);
+if(minV12Distance<3)errors.push(`HNK40 V1.2 minimum pairwise edge distance must be >=3, got ${minV12Distance}`);
+
 if(errors.length){
   console.error(`Glyph Genesis V1 FAIL (${errors.length})`);
   for(const e of errors)console.error(`- ${e}`);
   process.exit(1);
 }
-console.log(`Glyph Genesis V1 PASS: ${genesis.candidates.length} semantic-target probes + ${hnk40.candidates.length} HNK40 structural seeds; topology, codec, derived Pixel/IsoPixel/Voxel round-trips, PATH uniqueness, HNKP serialization/CRC32/base64url vectors and authority boundaries verified.`);
+console.log(`Glyph Genesis PASS: ${genesis.candidates.length} semantic-target probes + ${hnk40.candidates.length} V1.1 seeds + ${hnk40v12.candidates.length} V1.2 Hamming-spaced seeds; topology, codec, projection derivability, PATH uniqueness, V1.2 min edge distance >=3, HNKP round-trips and authority boundaries verified.`);

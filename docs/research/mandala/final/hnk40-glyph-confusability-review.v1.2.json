@@ -1,0 +1,187 @@
+{
+  "version": "1.2",
+  "status": "HNK_CANDIDATE_REVIEW_ANALYSIS",
+  "basis": "glyph-genesis-hnk40-candidates.v1.2.json",
+  "improvementAgainstV11": {
+    "v11NearestEdgeDistance": 1,
+    "v12NearestEdgeDistance": 3,
+    "statement": "The structural seed family no longer contains one-edge nearest neighbors; every pair differs in at least three edge decisions."
+  },
+  "distanceModel": {
+    "edgeDistance": "Hamming distance over 11-edge normalized signatures",
+    "pointDistance": "sum Manhattan distance over 12 translation-normalized path nodes",
+    "score": "10*edgeDistance + pointDistance"
+  },
+  "minimumScore": 34,
+  "nearestPairs": [
+    {
+      "a": "G12",
+      "b": "G19",
+      "edgeDistance": 3,
+      "pointDistance": 4,
+      "score": 34
+    },
+    {
+      "a": "G32",
+      "b": "G39",
+      "edgeDistance": 3,
+      "pointDistance": 4,
+      "score": 34
+    },
+    {
+      "a": "G02",
+      "b": "G09",
+      "edgeDistance": 3,
+      "pointDistance": 8,
+      "score": 38
+    },
+    {
+      "a": "G22",
+      "b": "G29",
+      "edgeDistance": 3,
+      "pointDistance": 8,
+      "score": 38
+    },
+    {
+      "a": "G02",
+      "b": "G05",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G03",
+      "b": "G08",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G05",
+      "b": "G07",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G06",
+      "b": "G08",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G07",
+      "b": "G09",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G08",
+      "b": "G10",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G12",
+      "b": "G15",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G13",
+      "b": "G18",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G15",
+      "b": "G17",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G16",
+      "b": "G18",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G17",
+      "b": "G19",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G18",
+      "b": "G20",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G22",
+      "b": "G25",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G23",
+      "b": "G28",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G25",
+      "b": "G27",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G26",
+      "b": "G28",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G27",
+      "b": "G29",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G28",
+      "b": "G30",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G32",
+      "b": "G35",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    },
+    {
+      "a": "G33",
+      "b": "G38",
+      "edgeDistance": 3,
+      "pointDistance": 12,
+      "score": 42
+    }
+  ],
+  "gatePolicy": "Use for review prioritization only; no automatic KEEP/REVISE/REJECT/HOLD."
+}
