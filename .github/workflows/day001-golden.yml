@@ -30,15 +30,46 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: pnpm
+
+      - name: Detect lockfile
+        id: lock
+        shell: bash
+        run: |
+          if [[ -f pnpm-lock.yaml ]]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Bootstrap canonical workspace lockfile
+        if: steps.lock.outputs.present != 'true'
+        run: pnpm install --lockfile-only --no-frozen-lockfile
+
+      - name: Upload canonical lockfile candidate
+        if: steps.lock.outputs.present != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pnpm-lock-candidate
+          path: pnpm-lock.yaml
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Stop after bootstrap evidence
+        if: steps.lock.outputs.present != 'true'
+        run: |
+          echo "pnpm-lock.yaml was absent. Canonical candidate generated and uploaded for audit/versioning."
+          exit 1
 
       - name: Frozen install
+        if: steps.lock.outputs.present == 'true'
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck web
+        if: steps.lock.outputs.present == 'true'
         working-directory: apps/web
         run: pnpm exec tsc --noEmit
 
       - name: Build web
+        if: steps.lock.outputs.present == 'true'
         working-directory: apps/web
         run: pnpm build
