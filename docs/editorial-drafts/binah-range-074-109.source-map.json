@@ -1,0 +1,26 @@
+{
+  "schema": "HNK-BINAH-074-109-SOURCE-MAP-V1",
+  "status": "LEGACY_SOURCE_MAP_NOT_CANON",
+  "range": [74, 109],
+  "count": 36,
+  "source": {
+    "file": "capitulo_3_plano_escrita.md",
+    "sha256": "79cf5b61f0dfb0e67bcba0afcb4ec534e21d5303fc135b9638519022fdecd832"
+  },
+  "cycles": [
+    {"days":"74-78","legacy_regency":"Hariel","theme":"Purificacao Intelectual"},
+    {"days":"79-83","legacy_regency":"Hakamiah","theme":"Limites e Lealdade"},
+    {"days":"84-88","legacy_regency":"Lauviah","theme":"Espelho de Fogo"},
+    {"days":"89-93","legacy_regency":"Caliel","theme":"Espelho de Ar"},
+    {"days":"94-98","legacy_regency":"Leuviah","theme":"Espelho de Agua"},
+    {"days":"99-103","legacy_regency":"Pahaliah","theme":"Espelho de Terra"},
+    {"days":"104-108","legacy_regency":"Nelchael","theme":"Geometria"},
+    {"days":"109","legacy_regency":"Portal","theme":"Fim de Atziluth / transicao para Beriah-Chesed"}
+  ],
+  "mapping_conflict": {
+    "state": "OPEN",
+    "legacy_365": "Binah curricular cycles use angels 15-21",
+    "codex_v3_drive": "Chokmah agents 09-16; Binah/Tronos agents 17-24",
+    "required_decision": "Determine whether these are competing mappings or distinct namespaces before canonical promotion."
+  }
+}
