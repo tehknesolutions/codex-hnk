@@ -83,12 +83,42 @@ jobs:
           test -s "$RUNNER_TEMP/day001-canon.md"
 
       - name: Run Golden Day integrity gate
+        id: golden
         shell: bash
         env:
           HNK_DAY001_CANON_SOURCE: ${{ runner.temp }}/day001-canon.md
         run: |
-          set -euo pipefail
-          node scripts/validate-day001-golden.mjs
+          set +e
+          mkdir -p "$RUNNER_TEMP/day001-golden-diagnostics"
+          node scripts/validate-day001-golden.mjs 2>&1 | tee "$RUNNER_TEMP/day001-golden-diagnostics/golden.log"
+          status=${PIPESTATUS[0]}
+          echo "$status" > "$RUNNER_TEMP/day001-golden-diagnostics/exit-code.txt"
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload Golden diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: day001-golden-diagnostics-${{ github.run_id }}
+          path: ${{ runner.temp }}/day001-golden-diagnostics
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Enforce Golden result
+        if: always()
+        shell: bash
+        run: |
+          code='${{ steps.golden.outputs.exit_code }}'
+          if [ -z "$code" ]; then
+            echo 'DAY001 GOLDEN FAIL: validator exit code was not captured'
+            exit 1
+          fi
+          if [ "$code" != '0' ]; then
+            echo "DAY001 GOLDEN FAIL: validators returned $code; diagnostics artifact uploaded"
+            exit "$code"
+          fi
+          echo 'DAY001 GOLDEN PASS: diagnostics artifact uploaded'
 
   runtime-build:
     name: Golden Day 001 runtime build
