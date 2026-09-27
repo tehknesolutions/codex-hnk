@@ -1,6 +1,6 @@
 # E5 — Reversal Equivalence Gate
 
-Status: **PROPOSED STRUCTURAL QUOTIENT / HUMAN-CANON GATE**
+Status: **APPROVED / CANONICAL STRUCTURAL QUOTIENT**
 
 ## Input
 
@@ -11,7 +11,7 @@ Exact ordered N=12 simple-path census:
 - ordered traversal: preserved in source census
 - symmetry reduction: none in source census
 
-## Proposed equivalence
+## Canonical law — FORM ≠ EXECUTION
 
 For a simple path
 
@@ -21,13 +21,13 @@ define
 
 `reverse(P) = [v12, v11, ..., v1]`.
 
-The quotient proposal is:
+HNK-KODE canon adopts:
 
 `P ~ reverse(P)`
 
-**only if HNK canon declares traversal direction irrelevant to glyph identity.**
+for **geometric glyph identity**.
 
-This operation changes no visited address and no undirected edge. It changes only traversal direction.
+The identical undirected trace drawn from the opposite endpoint is the same base glyph. Traversal direction is preserved as independent operational metadata and may later carry phonetic, semantic, animation, ritual, or execution information without creating a second geometric glyph identity.
 
 ## Fixed-point proof
 
@@ -35,35 +35,36 @@ No N=12 simple path can satisfy `P = reverse(P)`.
 
 Equality would require `v1 = v12`; however the simple-path law forbids repeated addresses and N=12 has distinct endpoints. Therefore reversal acts freely on this census: every reversal orbit contains exactly two ordered paths.
 
-## Exact conditional quotient
+## Exact canonical quotient
 
 `95,284,518 / 2 = 47,642,259`
 
 Therefore:
 
 - ordered addressed simple paths: `95,284,518`
-- reversal-equivalence classes: `47,642,259`
+- canonical reversal-equivalence classes: `47,642,259`
 - fixed reversal classes: `0`
 - orbit size: exactly `2`
+- traversal direction: retained as metadata, not base-form identity
 
-## Canonical warning
+## Boundary of this approval
 
 `47,642,259` is **not yet the final render-distinct glyph count**.
 
-This gate does not apply:
+This canonical gate does not apply:
 
 - rotation,
 - reflection,
 - sector translation,
 - layer translation,
 - graph automorphism,
-- geometric/render equivalence,
+- geometric/render equivalence beyond reversal,
 - semantic equivalence.
 
-Those require separate proofs.
+Those require separate proofs and gates.
 
-## Decision gate
+## Canonical decision
 
-If HNK canon says drawing the identical undirected trace from the opposite endpoint is the same glyph, approve reversal equivalence and promote `47,642,259` as the next exact E5 count.
+**APPROVED:** drawing the identical undirected trace from the opposite endpoint is the same HNK geometric glyph.
 
-If traversal direction carries meaning, reject this quotient and retain `95,284,518` as the structural addressed count.
+The next exact E5 baseline is therefore **47,642,259 reversal classes**.
