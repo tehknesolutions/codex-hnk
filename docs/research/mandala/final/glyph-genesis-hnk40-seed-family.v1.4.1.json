@@ -1,0 +1,103 @@
+{
+  "version": "1.4.1-experimental",
+  "status": "HNK_CANDIDATE_ORIENTATION_BALANCED_PARETO",
+  "purpose": "Retain the V1.4 stroke-economy gain while restoring V1.3-level orientation-equivalence count and removing transform-risk concentration.",
+  "authorityBoundary": {
+    "sourceGlyphAuthority": "HNK-KODE",
+    "structuralLaboratory": "CODEX-HNK",
+    "bindingAuthority": "HNK_CANDIDATE",
+    "semanticAssignment": "NONE",
+    "humanPromotionRequired": true
+  },
+  "cardinality": 40,
+  "codingLaw": {
+    "code": "Hamming(7,4)",
+    "semanticMeaning": "NONE"
+  },
+  "pathLaw": {
+    "angularDecisions": 7,
+    "radialDecisions": 4,
+    "totalEdges": 11,
+    "totalNodes": 12,
+    "startLayerByWorld": {
+      "W1": 2,
+      "W2": 2,
+      "W3": 5,
+      "W4": 5
+    },
+    "schedules": {
+      "W1": [
+        "A",
+        "A",
+        "RADIAL_OUT",
+        "A",
+        "RADIAL_OUT",
+        "A",
+        "A",
+        "A",
+        "RADIAL_IN",
+        "A",
+        "RADIAL_IN"
+      ],
+      "W2": [
+        "RADIAL_OUT",
+        "A",
+        "RADIAL_OUT",
+        "A",
+        "A",
+        "A",
+        "RADIAL_IN",
+        "A",
+        "A",
+        "A",
+        "RADIAL_IN"
+      ],
+      "W3": [
+        "A",
+        "A",
+        "RADIAL_IN",
+        "A",
+        "RADIAL_IN",
+        "A",
+        "A",
+        "A",
+        "RADIAL_OUT",
+        "RADIAL_OUT",
+        "A"
+      ],
+      "W4": [
+        "RADIAL_IN",
+        "A",
+        "A",
+        "RADIAL_OUT",
+        "A",
+        "RADIAL_OUT",
+        "A",
+        "A",
+        "A",
+        "RADIAL_IN",
+        "A"
+      ]
+    }
+  },
+  "optimizationEvidence": {
+    "startingV14OrientationPairs": 12,
+    "finalOrientationPairs": 10,
+    "startingLowVisibleOrientationPairs": 3,
+    "finalLowVisibleOrientationPairs": 1,
+    "finalMaxOrientationDegree": 1
+  },
+  "metrics": {
+    "staticVisibleUniqueShapes": 40,
+    "minimumPairwiseEdgeDistance": 3,
+    "sameWorldMinimumEdgeDistance": 3,
+    "crossWorldMinimumEdgeDistance": 4,
+    "minimumVisibleSegmentCount": 6,
+    "totalVisibleSegments": 355,
+    "orientationEquivalentPairs": 10,
+    "lowVisibleOrientationPairs": 1,
+    "maxOrientationDegree": 1,
+    "raster8Unique": 40
+  },
+  "governance": "Experimental candidate. No semantic assignment or automatic promotion."
+}

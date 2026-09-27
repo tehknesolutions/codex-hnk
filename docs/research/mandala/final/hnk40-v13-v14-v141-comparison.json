@@ -1,0 +1,25 @@
+{
+  "version": "1.4.1",
+  "status": "NON_AUTHORITATIVE_COMPARISON",
+  "v13": {
+    "minimumVisibleSegments": 4,
+    "totalVisibleSegments": 313,
+    "orientationEquivalentPairs": 10,
+    "raster8Unique": 40
+  },
+  "v14": {
+    "minimumVisibleSegments": 6,
+    "totalVisibleSegments": 361,
+    "orientationEquivalentPairs": 12,
+    "raster8Unique": 40
+  },
+  "v141": {
+    "minimumVisibleSegments": 6,
+    "totalVisibleSegments": 355,
+    "orientationEquivalentPairs": 10,
+    "lowVisibleOrientationPairs": 1,
+    "maxOrientationDegree": 1,
+    "raster8Unique": 40
+  },
+  "interpretation": "V1.4.1 preserves V1.3's orientation-pair count while retaining the V1.4 stroke-economy floor of 6. It removes the V1.4 orientation-risk triangle."
+}
