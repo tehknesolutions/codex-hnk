@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "status": "CANDIDATE_ADDRESS_ARCHITECTURE",
+  "sourceModel": "mandala-structural-model.v1.json",
+  "cardinality": {
+    "MF": 432,
+    "CG": 9,
+    "CR": 22,
+    "majorAddressSpaceCandidate": 463,
+    "HC": "EXCLUDED_UNTIL_SCOPE_DECISION",
+    "canonicalAKCount": "NOT_YET_FROZEN"
+  },
+  "namespaces": {
+    "MF": {
+      "meaning": "regular Mandala field",
+      "syntax": "MF:L{01..06}:S{01..72}",
+      "dimensions": {"layers": 6, "sectors": 72},
+      "count": 432
+    },
+    "CG": {
+      "meaning": "choir/sefirah outer group cell",
+      "syntax": "CG:{01..09}",
+      "count": 9,
+      "sectorsPerGroup": 8
+    },
+    "CR": {
+      "meaning": "central Rose field",
+      "count": 22,
+      "subspaces": {
+        "T": {"syntax": "CR:T:{01..03}", "count": 3},
+        "H": {"syntax": "CR:H:{01..07}", "count": 7},
+        "D": {"syntax": "CR:D:{01..12}", "count": 12}
+      },
+      "exactPetalLetterRotation": "UNRESOLVED"
+    },
+    "HC": {
+      "meaning": "hierarchical central core",
+      "syntax": "HC:*",
+      "count": "UNFROZEN",
+      "addressable": false
+    }
+  },
+  "glyphLaw": {
+    "oneAddressEqualsOneGlyph": false,
+    "definition": "START_ADDRESS + ORDERED_PATH + EDGE_SEQUENCE + TRANSFORM_PROFILE",
+    "hnk40Role": "GENESIS_BENCHMARK_FAMILY"
+  },
+  "authority": {
+    "geometry": "MANDALA_COMPUTABLE_V1",
+    "linguisticMeaning": "HNK-KODE",
+    "automaticSemanticAssignment": false,
+    "humanGateRequired": true
+  },
+  "nextGates": [
+    "E1_ADDRESS_REGISTRY",
+    "E2_GRAPH_TOPOLOGY",
+    "E3_HNKP_NAMESPACE_EXTENSION",
+    "E4_HNK40_GENESIS_PROJECTION",
+    "E5_GLYPH_SPACE_CENSUS",
+    "E6_LINGUISTIC_BINDING_GATE"
+  ]
+}
