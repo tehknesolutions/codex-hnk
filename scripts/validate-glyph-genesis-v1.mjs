@@ -124,9 +124,79 @@ for(const c of genesis.candidates??[]){
 
 if(vectors.size!==(genesis.candidates??[]).length)errors.push('transport vector count must equal candidate count');
 
+
+const hnk40Spec=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-seed-family.v1.json'),'utf8'));
+const hnk40=JSON.parse(fs.readFileSync(path.join(root,'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json'),'utf8'));
+const hnk40Seen=new Map();
+
+const familyPatterns={
+  W1:{coords:[[0,0],[0,1],[1,1],[1,2],[2,2]],edges:['ANGULAR_NEXT','RADIAL_OUT','ANGULAR_NEXT','RADIAL_OUT']},
+  W2:{coords:[[0,0],[1,0],[1,1],[2,1],[2,0]],edges:['RADIAL_OUT','ANGULAR_NEXT','RADIAL_OUT','ANGULAR_PREV']},
+  W3:{coords:[[0,0],[0,-1],[1,-1],[1,-2],[2,-2]],edges:['ANGULAR_PREV','RADIAL_OUT','ANGULAR_PREV','RADIAL_OUT']},
+  W4:{coords:[[0,0],[1,0],[1,-1],[2,-1],[2,0]],edges:['RADIAL_OUT','ANGULAR_PREV','RADIAL_OUT','ANGULAR_NEXT']},
+};
+const wrapSector=(s)=>((s-1)%72+72)%72+1;
+function materializedPacket(candidate){
+  const fullPath=candidate.path.map((node,index)=>{
+    const mf=parseMF(node);
+    if(!mf)throw new Error(`invalid MF node: ${node}`);
+    return {
+      node,
+      edgeToNext:index<candidate.edges.length?candidate.edges[index]:null,
+      mfTupleHex:[hex16(frame(1,mf.l-1)),hex16(frame(0,mf.s-1))],
+    };
+  });
+  return serializeCandidate({path:fullPath});
+}
+
+if(hnk40Spec.cardinality!==40)errors.push('HNK40 seed spec cardinality must be 40');
+if(hnk40.semanticAssignment!=='NONE')errors.push('HNK40 materialized registry must not assign semantics');
+if(hnk40.bindingAuthority!=='HNK_CANDIDATE')errors.push('HNK40 registry authority must remain HNK_CANDIDATE');
+if((hnk40.candidates??[]).length!==40)errors.push(`HNK40 registry expected 40 candidates, got ${(hnk40.candidates??[]).length}`);
+
+for(let g=1;g<=40;g++){
+  const expectedId=`G${String(g).padStart(2,'0')}`;
+  const c=hnk40.candidates?.[g-1];
+  if(!c){fail(expectedId,'candidate missing');continue}
+  if(c.glyphId!==expectedId)fail(expectedId,`registry order/id drift: got ${c.glyphId}`);
+  if(c.bindingAuthority!=='HNK_CANDIDATE')fail(expectedId,'bindingAuthority must remain HNK_CANDIDATE');
+  const row=Math.floor((g-1)/10)+1, column=((g-1)%10)+1, world=`W${row}`;
+  if(c.sourceMatrix?.world!==world||c.sourceMatrix?.row!==row||c.sourceMatrix?.column!==column)fail(expectedId,'source 4x10 matrix coordinate drift');
+  const family=familyPatterns[world];
+  const expectedNodes=family.coords.map(([layer0,sectorOffset])=>`MF:L${String(layer0+1).padStart(2,'0')}:S${String(wrapSector(g+sectorOffset)).padStart(2,'0')}`);
+  if(JSON.stringify(c.path)!==JSON.stringify(expectedNodes))fail(expectedId,'deterministic family PATH drift');
+  if(JSON.stringify(c.edges)!==JSON.stringify(family.edges))fail(expectedId,'deterministic family edge-pattern drift');
+  const signature=(c.path??[]).join('>');
+  if(hnk40Seen.has(signature))fail(expectedId,`duplicate HNK40 PATH of ${hnk40Seen.get(signature)}`);else hnk40Seen.set(signature,expectedId);
+
+  for(let i=0;i<(c.path??[]).length;i++){
+    const mf=parseMF(c.path[i]);
+    if(!mf){fail(expectedId,`invalid MF node ${c.path[i]}`);continue}
+    const x=mf.s-1,y=mf.l-1,u=x-y,v=x+y;
+    if((u+v)%2||(v-u)%2||(u+v)/2!==x||(v-u)/2!==y)fail(expectedId,`derived IsoPixel inverse failed at ${c.path[i]}`);
+    if(i<c.path.length-1){
+      const next=parseMF(c.path[i+1]), edge=next&&expectedEdge(mf,next);
+      if(!edge)fail(expectedId,`non-adjacent generated step ${c.path[i]} -> ${c.path[i+1]}`);
+      else if(c.edges[i]!==edge)fail(expectedId,`generated edge mismatch at step ${i}`);
+    }
+  }
+
+  try{
+    const packet=materializedPacket(c);
+    const decoded=decodePacket(packet);
+    if(JSON.stringify(decoded.nodes)!==JSON.stringify(c.path))fail(expectedId,'materialized HNKP node round-trip mismatch');
+    if(JSON.stringify(decoded.edges)!==JSON.stringify(c.edges.map(e=>edgeEnum[e])))fail(expectedId,'materialized HNKP edge round-trip mismatch');
+    if(c.hnkPacket?.bytes!==packet.length)fail(expectedId,'materialized packet byte-count drift');
+    if(c.hnkPacket?.packetHex!==packet.toString('hex').toUpperCase())fail(expectedId,'materialized packet HEX drift');
+    if(c.hnkPacket?.crc32Hex!==decoded.crc32Hex)fail(expectedId,'materialized CRC32 drift');
+    if(c.hnkPacket?.base64url!==base64url(packet))fail(expectedId,'materialized base64url drift');
+  }catch(error){fail(expectedId,`materialized HNKP error: ${error.message}`)}
+}
+if(hnk40Seen.size!==40)errors.push(`Expected 40 unique HNK40 ordered PATHs, got ${hnk40Seen.size}`);
+
 if(errors.length){
   console.error(`Glyph Genesis V1 FAIL (${errors.length})`);
   for(const e of errors)console.error(`- ${e}`);
   process.exit(1);
 }
-console.log(`Glyph Genesis V1 PASS: ${genesis.candidates.length} candidates; topology, typed codec, Pixel/IsoPixel/Voxel round-trips, ordered-PATH uniqueness, HNKP serialization/CRC32/base64url vectors and authority gate verified.`);
+console.log(`Glyph Genesis V1 PASS: ${genesis.candidates.length} semantic-target probes + ${hnk40.candidates.length} HNK40 structural seeds; topology, codec, derived Pixel/IsoPixel/Voxel round-trips, PATH uniqueness, HNKP serialization/CRC32/base64url vectors and authority boundaries verified.`);
