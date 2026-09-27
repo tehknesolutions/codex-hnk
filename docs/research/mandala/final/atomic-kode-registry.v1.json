@@ -1,0 +1,46 @@
+{
+  "version":"1.0",
+  "status":"HNK_CANON_V1",
+  "authority":"Alias registry over canonical typed Mandala addresses; typed IDs remain primary.",
+  "orderingLaw":"SEC first in angular order S01..S72; then LAY L01..L06; then GRP G01..G09; then Rose Mothers M01..M03, Doubles D01..D07, Simples S01..S12.",
+  "ranges":[
+    {"ak":"AK-001..AK-072","namespace":"SEC","typed":"SEC:S01..SEC:S72","count":72},
+    {"ak":"AK-073..AK-078","namespace":"LAY","typed":"LAY:L01..LAY:L06","count":6},
+    {"ak":"AK-079..AK-087","namespace":"GRP","typed":"GRP:G01..GRP:G09","count":9},
+    {"ak":"AK-088..AK-090","namespace":"R22_MOTHER","typed":"R22:M01..R22:M03","count":3},
+    {"ak":"AK-091..AK-097","namespace":"R22_DOUBLE","typed":"R22:D01..R22:D07","count":7},
+    {"ak":"AK-098..AK-109","namespace":"R22_SIMPLE","typed":"R22:S01..R22:S12","count":12}
+  ],
+  "deterministicMapping":{
+    "SEC":"AK = sector ordinal (1..72)",
+    "LAY":"AK = 72 + layer ordinal",
+    "GRP":"AK = 78 + group ordinal",
+    "R22_MOTHER":"AK = 87 + mother ordinal",
+    "R22_DOUBLE":"AK = 90 + double ordinal",
+    "R22_SIMPLE":"AK = 97 + simple ordinal"
+  },
+  "machineEncodingV1":{
+    "typedFrame":"[version:4][namespace:3][ordinal:7]",
+    "totalBits":14,
+    "versionValue":1,
+    "namespaceCodes":{"SEC":"000","LAY":"001","GRP":"010","R22_MOTHER":"011","R22_DOUBLE":"100","R22_SIMPLE":"101","CORE_RESERVED":"110","EXTENSION_RESERVED":"111"},
+    "ordinalRule":"zero-based ordinal inside namespace encoded in 7 bits; unused ordinal values are invalid/reserved",
+    "hexRule":"14-bit frame is left-padded to 16 bits for 4-hex-digit transport; the two high padding bits MUST be 00",
+    "warning":"AK-### is human alias only. Lossless machine authority is the typed frame."
+  },
+  "topologyRules":[
+    "SEC:Snn has angular neighbors SEC:S(n-1) and SEC:S(n+1), modulo 72.",
+    "LAY:Lnn has radial neighbors previous/next layer where defined.",
+    "MF:Lxx:Syy is a composite intersection of one LAY and one SEC and is not an additional primitive AK.",
+    "GRP:Gnn contains exactly eight consecutive SEC sectors in V1.",
+    "R22 Mothers, Doubles and Simples form three ordered cyclic families; exact source-to-Hebrew rotation for Doubles/Simples remains a correspondence attribute, not an address identity.",
+    "CORE remains reserved outside AK-001..AK-109 until its topology is canonically frozen."
+  ],
+  "pathGrammarV1":{
+    "path":"PATH := NODE (EDGE NODE)*",
+    "node":"typed AK address or canonical composite MF address",
+    "edgeTypes":["ANGULAR_NEXT","ANGULAR_PREV","RADIAL_IN","RADIAL_OUT","CONTAINS","MEMBER_OF","ROSE_NEXT","ROSE_PREV","BRIDGE"],
+    "canonicalRequirement":"Every future canonical glyph must store its ordered PATH independently of its rendered image."
+  },
+  "next":"Generate executable encoder/decoder vectors and topology adjacency dataset; then derive Pixel/IsoPixel projection from this address graph."
+}
