@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-27",
+  "tracking": 322,
+  "source_recovery": "GREEN",
+  "range_074_109": "GREEN",
+  "legacy_day_map": "GREEN",
+  "mapping_reconciliation": "BLOCKED_HUMAN_DECISION",
+  "canonical_admission": "BLOCKED",
+  "day074_runtime": "BLOCKED",
+  "binah_release": "RED",
+  "next_gate": "resolve curricular_regency vs organizational_agent_directorate mapping"
+}
