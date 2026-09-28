@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "HNK-2647892-FAMILY-CENSUS-V1",
+  "mathematicalKernel": "HNK-2647892-MATH-KERNEL-V1",
+  "n": 12,
+  "method": "BURNSIDE_WEIGHTED_BY_REVERSAL_INVARIANT_FAMILY",
+  "proof": {
+    "orderedMfCgSimplePaths": 95284494,
+    "reversalClassesMfCg": 47642247,
+    "reflectionOrderedAntiFixed": [
+      4398,
+      4398,
+      4398,
+      4398,
+      4398,
+      4398,
+      4398,
+      4398,
+      4398
+    ],
+    "group": "D9",
+    "groupOrder": 18,
+    "mfCgGeometricClasses": 2647891,
+    "crDGeometricClasses": 1,
+    "totalGeometricClasses": 2647892
+  },
+  "familyDimensions": {
+    "coarse": {
+      "families": 256,
+      "outerTotal": 2647891,
+      "totalWithCrD": 2647892,
+      "min": 1,
+      "median": 600,
+      "p90": 21328,
+      "p99": 177827,
+      "max": 230784,
+      "singletons": 1,
+      "mean": 10343.32421875,
+      "distributionDigestSha256": "3f66e9ff8296c6c7548aeace5da8839e700e7e3354d1e02517ce24c44857abe9"
+    },
+    "topological": {
+      "families": 11492,
+      "outerTotal": 2647891,
+      "totalWithCrD": 2647892,
+      "min": 1,
+      "median": 128,
+      "p90": 528,
+      "p99": 1472,
+      "max": 2976,
+      "singletons": 45,
+      "mean": 230.411677688827,
+      "distributionDigestSha256": "1c50ac047a22665d08f931fae22edd29c006d2b354e0dd04c0cf4b16e76b7332"
+    },
+    "radialAngular": {
+      "families": 3041,
+      "outerTotal": 2647891,
+      "totalWithCrD": 2647892,
+      "min": 1,
+      "median": 104,
+      "p90": 2547,
+      "p99": 9856,
+      "max": 24192,
+      "singletons": 170,
+      "mean": 870.7303518579415,
+      "distributionDigestSha256": "93b61fe1c4c05e7233ffc7e02f2f779af9ac8cab99c2eaf16bf50c24997e639b"
+    }
+  },
+  "benchmarkComparison": {
+    "hnk40ProjectionCandidates": 42,
+    "hnk40Families": {
+      "coarse": 1,
+      "topological": 4,
+      "radialAngular": 6
+    },
+    "note": "HNK40 is a narrow benchmark family and is not representative of the full geometric family diversity."
+  },
+  "authority": "STRUCTURAL_ONLY",
+  "semanticsAssigned": 0
+}
