@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "HNK-2647892-MATH-KERNEL-V1",
+  "status": "RESEARCH_BASELINE",
+  "canonicalSemantics": false,
+  "n": 12,
+  "counts": {
+    "rawWalks": 7289096672,
+    "simplePaths": 95284518,
+    "reversalClasses": 47642259,
+    "geometricClasses": 2647892,
+    "renderDistinctClasses": 2647892
+  },
+  "burnside": {
+    "group": "D9",
+    "order": 18,
+    "mfCg": {
+      "nonIdentityRotationFixed": 0,
+      "reflections": 9,
+      "fixedPerReflection": 2199,
+      "quotientClasses": 2647891,
+      "identityFixed": 47642247,
+      "fixedReflectionTotal": 19791,
+      "burnsideNumerator": 47662038
+    },
+    "crDContribution": 1,
+    "totalClasses": 2647892,
+    "crD": {
+      "inputReversalClasses": 12,
+      "quotientClasses": 1
+    }
+  },
+  "structuralContext": {
+    "mfExternalPositions": 432,
+    "activeAddresses": 463,
+    "physicalSlots": 504,
+    "reservedSlots": 41,
+    "atomicKeys": 109
+  },
+  "invariants": [
+    "renderDistinctClasses == geometricClasses",
+    "burnside.totalClasses == counts.geometricClasses",
+    "activeAddresses != counts.geometricClasses",
+    "counts.geometricClasses is not vocabulary size"
+  ],
+  "languageBoundary": {
+    "automaticWordCount": false,
+    "automaticSemanticAssignment": false,
+    "nextPipeline": [
+      "GEOMETRIC_IDENTITY",
+      "KODESCRIPT_SIGNATURE",
+      "STRUCTURAL_FAMILY",
+      "LANGUAGE_ELIGIBILITY",
+      "MORPHEME_ROOT_CANDIDATE",
+      "PHONOLOGICAL_FORM",
+      "SEMANTIC_ASSIGNMENT",
+      "ACQUISITION_TARGET"
+    ]
+  },
+  "reversalClassesByComponent": {
+    "mfCg": 47642247,
+    "crD": 12,
+    "total": 47642259
+  }
+}
