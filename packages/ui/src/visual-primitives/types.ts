@@ -1,4 +1,4 @@
-import type { VisualProvenance } from "@hnk/visual-contract";
+import type { VisualProvenance } from "../../../visual-contract/src/visualTargetV1";
 
 export interface CodexFrameSpec {
   kind: "CodexFrame";
