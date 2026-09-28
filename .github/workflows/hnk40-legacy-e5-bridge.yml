@@ -1,0 +1,22 @@
+name: HNK40 Legacy E5 Bridge V1
+on:
+  push:
+    branches: [research/hnk40-legacy-e5-bridge]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/hnk40-legacy-e5-bridge-audit.mjs
+      - name: Assert diagnostic invariants
+        run: node -e "const r=require('./docs/research/mandala/final/hnk40-legacy-e5-bridge-audit.v1.json'); if(r.glyphCount!==40||r.directE5+r.requiresBridge!==40||r.canonicalPromotions!==0||r.semanticAssignmentsAdded!==0||r.sourceMutationCount!==0) process.exit(1)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hnk40-legacy-e5-bridge-audit-v1
+          path: docs/research/mandala/final/hnk40-legacy-e5-bridge-audit.v1.json
