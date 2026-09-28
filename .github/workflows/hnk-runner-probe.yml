@@ -1,5 +1,10 @@
 name: HNK Runner Probe
 on:
+  push:
+    branches:
+      - docs/visual-source-dissection-v1
+    paths:
+      - ".github/workflows/hnk-runner-probe.yml"
   pull_request:
     paths:
       - ".github/workflows/hnk-runner-probe.yml"
