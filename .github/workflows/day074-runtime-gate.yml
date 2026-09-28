@@ -38,7 +38,7 @@ permissions:
 jobs:
   runner-preflight:
     name: Day 074 runner preflight
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - name: Runner alive
@@ -50,7 +50,7 @@ jobs:
   day074-contract:
     name: Day 074 fail-closed contract
     needs: runner-preflight
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -67,7 +67,7 @@ jobs:
   runtime-typecheck:
     name: Day 074 runtime typecheck
     needs: day074-contract
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
