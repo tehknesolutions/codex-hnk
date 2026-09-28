@@ -15,7 +15,6 @@ jobs:
   runner-probe:
     name: "PROBE 0 · Runner shell only"
     runs-on: ubuntu-latest
-    continue-on-error: false
     steps:
       - name: Runner heartbeat
         shell: bash
