@@ -1,3 +1,4 @@
-export * from "./types.js";
-export * from "./day001.js";
-export * from "./adapter.js";
+export * from "./types";
+export * from "./adapter";
+export * from "./day001";
+export * from "./visualTargetV1";
