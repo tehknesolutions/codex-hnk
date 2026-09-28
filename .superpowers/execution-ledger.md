@@ -23,3 +23,4 @@ Task 2 Ruling: Desktop write cannot create scripts/lib because directory is abse
 - Task 3: GREEN; RED was 5 pass/1 fail (missing geometry rejection), then 9/9 combined Tasks 1-3 PASS after minimal guard.
 - Task 4: RED ENOENT artifact; GREEN artifact materialized 65098 bytes; 11/11 Tasks 1-4 PASS; summary 4/34/2/0/0.
 - Task 5: RED module-not-found; GREEN acquisition export 40 records, G17/G20 candidate sets; full Tasks 1-5 suite 14/14 PASS.
+- Task 6: full gate run before note 14/14 PASS; result note written; fresh post-note full gate 14/14 PASS and git diff --check clean.
