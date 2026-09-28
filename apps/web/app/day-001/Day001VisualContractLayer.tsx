@@ -1,8 +1,8 @@
 import { day001BoazAxis, day001Convergence, day001OriginCosmos, day001ReflectionField, day001TreeField } from "../../../../packages/visual-contract/src/day001";
 
-export function Day001VisualContractLayer() {
+export function Day001VisualContractLayer({ firstSpark = false }: { firstSpark?: boolean }) {
   return (
-    <section className="day001-contract-layer" aria-label="Day 001 visual contract">
+    <section className="day001-contract-layer" data-first-spark={firstSpark} aria-label="Day 001 visual contract">
       <div className="day001-contract-grid">
         <article className="day001-contract-card">
           <span className="kicker">ORIGIN COSMOS · {day001OriginCosmos.version}</span>
@@ -45,7 +45,7 @@ export function Day001VisualContractLayer() {
           <div className="tree-field" style={{ width: day001TreeField.geometry.width, height: day001TreeField.geometry.height }} aria-hidden="true">
             <i style={{ left: day001TreeField.geometry.stem.left, top: day001TreeField.geometry.stem.top, width: day001TreeField.geometry.stem.width, height: day001TreeField.geometry.stem.height }} />
             {day001TreeField.geometry.nodes.map(([x, y], index) => (
-              <b key={index} data-kether={index === day001TreeField.geometry.ketherNodeIndex} style={{ left: x, top: y, width: day001TreeField.geometry.nodeDiameter, height: day001TreeField.geometry.nodeDiameter }} />
+              <b key={index} data-kether={index === day001TreeField.geometry.ketherNodeIndex} data-lit={firstSpark && index === day001TreeField.geometry.ketherNodeIndex} style={{ left: x, top: y, width: day001TreeField.geometry.nodeDiameter, height: day001TreeField.geometry.nodeDiameter }} />
             ))}
           </div>
           <div><strong>Árvore · primeiro spark</strong><p>{day001TreeField.description} O estado iluminado continua server-derived.</p></div>
