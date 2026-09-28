@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "HNK40-ACQUISITION-CURRICULUM-BANDS-V1",
+  "status": "EXPERIMENTAL_ACQUISITION_PLAN",
+  "sources": {
+    "coverage": "data/acquisition/hnk-language-math-family-coverage.v1.json",
+    "eligibility": "data/acquisition/hnk40-language-eligibility.v1.json",
+    "familyCensus": "HNK-2647892-FAMILY-CENSUS-V1"
+  },
+  "rules": {
+    "CORE_OBSERVED": "E5 resolved AND observed in recovered master lexicon",
+    "EXPANSION_RESOLVED": "E5 resolved AND not observed in recovered master lexicon",
+    "AMBIGUOUS_HOLDOUT": "E5 identity ambiguity preserved; no forced canonical target",
+    "BLOCKED": "no usable structural projection"
+  },
+  "counts": {
+    "CORE_OBSERVED": 21,
+    "EXPANSION_RESOLVED": 17,
+    "AMBIGUOUS_HOLDOUT": 2,
+    "BLOCKED": 0
+  },
+  "bands": {
+    "CORE_OBSERVED": [
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G07",
+      "G11",
+      "G12",
+      "G14",
+      "G15",
+      "G18",
+      "G19",
+      "G21",
+      "G22",
+      "G23",
+      "G25",
+      "G26",
+      "G30",
+      "G31",
+      "G32",
+      "G40"
+    ],
+    "EXPANSION_RESOLVED": [
+      "G06",
+      "G08",
+      "G09",
+      "G10",
+      "G13",
+      "G16",
+      "G24",
+      "G27",
+      "G28",
+      "G29",
+      "G33",
+      "G34",
+      "G35",
+      "G36",
+      "G37",
+      "G38",
+      "G39"
+    ],
+    "AMBIGUOUS_HOLDOUT": [
+      "G17",
+      "G20"
+    ],
+    "BLOCKED": []
+  },
+  "acquisitionOrder": [
+    "CORE_OBSERVED",
+    "EXPANSION_RESOLVED",
+    "AMBIGUOUS_HOLDOUT"
+  ],
+  "semanticsAssigned": 0,
+  "authority": "EXPERIMENTAL_ACQUISITION_PLAN"
+}
