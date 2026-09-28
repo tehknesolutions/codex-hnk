@@ -1,4 +1,5 @@
 import { PortalHome } from "./_components/PortalHome";
+import { KnowledgeTree } from "./_components/KnowledgeTree";
 
 const spheres = [
   { n: '01', name: 'KETHER', days: '001—036', state: 'SELADA', href: '/day-001' },
@@ -46,6 +47,7 @@ export default function Home() {
       </section>
 
       <PortalHome />
+      <KnowledgeTree />
 
       <section className="archive" id="arquivo">
         <p className="archive-number">365</p>
