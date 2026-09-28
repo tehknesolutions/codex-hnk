@@ -1,3 +1,6 @@
+import { PortalHome } from "./_components/PortalHome";
+import { KnowledgeTree } from "./_components/KnowledgeTree";
+
 const spheres = [
   { n: '01', name: 'KETHER', days: '001—036', state: 'SELADA', href: '/day-001' },
   { n: '02', name: 'CHOKHMAH', days: '037—073', state: 'SELADA', href: '/day-037' },
@@ -43,22 +46,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="manifest" id="arvore">
-        <div className="section-head">
-          <div><p className="kicker">TRÍADE I · 109 DIAS</p><h2>A Árvore começa aqui.</h2></div>
-          <p>Kether → Chokhmah → Binah. As três primeiras esferas formam o primeiro corpo navegável do CODEX.</p>
-        </div>
-        <div className="sphere-grid">
-          {spheres.map((sphere) => (
-            <a className="sphere-card" href={sphere.href} key={sphere.name}>
-              <div className="card-index">{sphere.n}</div>
-              <div className="card-glyph">✦</div>
-              <div className="card-copy"><span>{sphere.days}</span><h3>{sphere.name}</h3><small>{sphere.state}</small></div>
-              <div className="card-arrow">↗</div>
-            </a>
-          ))}
-        </div>
-      </section>
+      <PortalHome />
+      <KnowledgeTree />
 
       <section className="archive" id="arquivo">
         <p className="archive-number">365</p>

@@ -1,0 +1,45 @@
+:where(.hnk-tree) {
+  --tree-line: color-mix(in srgb, var(--hnk-gold) 58%, transparent);
+  position: relative;
+  display: grid;
+  gap: 12px;
+  color: var(--hnk-parchment-1);
+}
+
+.hnk-tree__node {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--tree-line);
+  border-radius: 50%;
+  background: var(--hnk-metal-dark);
+  color: inherit;
+}
+
+.hnk-tree__node[data-state="lit"],
+.hnk-tree__node[data-state="selected"] {
+  border-color: var(--hnk-gold-light);
+  box-shadow: 0 0 28px rgb(240 207 122 / 18%);
+}
+
+.hnk-tree__connection {
+  height: 1px;
+  background: var(--tree-line);
+  transform-origin: left center;
+}
+
+.hnk-tree__legend {
+  font-family: var(--hnk-font-system, ui-monospace, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hnk-tree * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

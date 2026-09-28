@@ -1,0 +1,49 @@
+:where(.hnk-codex-frame) {
+  --frame-radius: var(--hnk-page-radius, 18px);
+  position: relative;
+  isolation: isolate;
+  border: 1px solid color-mix(in srgb, var(--hnk-gold) 58%, transparent);
+  border-radius: var(--frame-radius);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--hnk-metal-dark) 92%, transparent), var(--hnk-grimoire-bg));
+  color: var(--hnk-parchment-1);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--hnk-gold-light) 14%, transparent),
+    0 18px 60px rgb(0 0 0 / 32%);
+  overflow: clip;
+}
+
+.hnk-codex-frame::before,
+.hnk-codex-frame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hnk-codex-frame::before {
+  inset: 10px;
+  border: 1px solid color-mix(in srgb, var(--hnk-gold) 24%, transparent);
+  border-radius: calc(var(--frame-radius) - 7px);
+}
+
+.hnk-codex-frame::after {
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgb(240 207 122 / 8%), transparent 48%);
+}
+
+.hnk-codex-frame__content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(18px, 3vw, 36px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hnk-codex-frame *,
+  .hnk-codex-frame::before,
+  .hnk-codex-frame::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

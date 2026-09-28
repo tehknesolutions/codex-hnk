@@ -1,0 +1,51 @@
+:where(.hnk-portal) {
+  --portal-size: clamp(180px, 28vw, 420px);
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: min(100%, var(--portal-size));
+  min-height: var(--portal-size);
+  border: 1px solid color-mix(in srgb, var(--hnk-gold-light) 48%, transparent);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(240 207 122 / 12%), transparent 62%), var(--hnk-metal-dark);
+  color: var(--hnk-parchment-1);
+  box-shadow: inset 0 0 40px rgb(0 0 0 / 40%), 0 0 50px rgb(200 154 69 / 10%);
+  overflow: hidden;
+}
+
+.hnk-portal[data-state="active"] {
+  box-shadow:
+    inset 0 0 48px rgb(0 0 0 / 40%),
+    0 0 70px rgb(240 207 122 / 18%);
+}
+
+.hnk-portal__label {
+  position: relative;
+  z-index: 2;
+  max-width: 80%;
+  text-align: center;
+  font-family: var(--hnk-font-system, ui-monospace, monospace);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hnk-portal__artwork {
+  position: absolute;
+  inset: 8%;
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .hnk-portal {
+    --portal-size: min(82vw, 320px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hnk-portal {
+    transition: none;
+  }
+}

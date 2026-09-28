@@ -14,5 +14,30 @@
   --hnk-depth-interaction: 5;
   --hnk-page-radius: 18px;
   --hnk-reading-max: 72ch;
+
+  /* Visual Target V1 semantic aliases. */
+  --hnk-surface-cosmic: var(--hnk-grimoire-bg);
+  --hnk-surface-manuscript: var(--hnk-parchment-1);
+  --hnk-surface-panel: var(--hnk-metal-dark);
+  --hnk-material-parchment: var(--hnk-parchment-1);
+  --hnk-material-gold: var(--hnk-gold);
+  --hnk-material-obsidian: var(--hnk-grimoire-bg);
+  --hnk-material-metal: var(--hnk-metal-dark);
+  --hnk-motion-response: 180ms;
+  --hnk-motion-emission: 900ms;
+  --hnk-motion-breathing: 2200ms;
+  --hnk-motion-impact: 260ms;
+  --hnk-motion-transmutation: 1200ms;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hnk-motion-response: 1ms;
+    --hnk-motion-emission: 1ms;
+    --hnk-motion-breathing: 1ms;
+    --hnk-motion-impact: 1ms;
+    --hnk-motion-transmutation: 1ms;
+  }
+}
+
 /* Candidate visual tokens. Exact production palette remains subject to canonical visual lock. */
