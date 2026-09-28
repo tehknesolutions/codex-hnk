@@ -1,0 +1,293 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "HNK-LANGUAGE-MATH-FAMILY-COVERAGE-V1",
+  "sources": {
+    "masterLexicon": "packages/hnk-linguas/src/index.mjs",
+    "authoredRegistry": "packages/hnk-linguas/src/authored.mjs",
+    "glyphRuntime": "packages/hnk-glyphs/src/index.mjs",
+    "familyBenchmark": "data/benchmarks/hnk40-kodescript-family-classification.v1.json",
+    "mathematicalKernel": "HNK-2647892-MATH-KERNEL-V1"
+  },
+  "masterLexicon": {
+    "forms": 33,
+    "glyphTokens": 208,
+    "uniqueGlyphIds": 21,
+    "glyphIds": [
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G07",
+      "G11",
+      "G12",
+      "G14",
+      "G15",
+      "G18",
+      "G19",
+      "G21",
+      "G22",
+      "G23",
+      "G25",
+      "G26",
+      "G30",
+      "G31",
+      "G32",
+      "G40"
+    ],
+    "ambiguousE5GlyphsUsed": [],
+    "familyCoverage": {
+      "coarse": {
+        "count": 1,
+        "keys": [
+          "MF_CG|N:12-0-0|E:7-4-0-0-0"
+        ]
+      },
+      "topological": {
+        "count": 4,
+        "keys": [
+          "MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+          "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+          "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+          "MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:6|S:6"
+        ]
+      },
+      "radialAngular": {
+        "count": 5,
+        "keys": [
+          "R:2-4|A:7-4",
+          "R:2-4|A:7-5",
+          "R:2-4|A:7-6",
+          "R:2-4|A:7-7",
+          "R:3-4|A:7-3"
+        ]
+      }
+    },
+    "glyphUsage": [
+      {
+        "glyphId": "G01",
+        "count": 69
+      },
+      {
+        "glyphId": "G31",
+        "count": 19
+      },
+      {
+        "glyphId": "G14",
+        "count": 13
+      },
+      {
+        "glyphId": "G03",
+        "count": 12
+      },
+      {
+        "glyphId": "G15",
+        "count": 12
+      },
+      {
+        "glyphId": "G04",
+        "count": 11
+      },
+      {
+        "glyphId": "G11",
+        "count": 11
+      },
+      {
+        "glyphId": "G12",
+        "count": 11
+      },
+      {
+        "glyphId": "G26",
+        "count": 10
+      },
+      {
+        "glyphId": "G21",
+        "count": 8
+      },
+      {
+        "glyphId": "G05",
+        "count": 7
+      },
+      {
+        "glyphId": "G23",
+        "count": 6
+      },
+      {
+        "glyphId": "G40",
+        "count": 4
+      },
+      {
+        "glyphId": "G19",
+        "count": 3
+      },
+      {
+        "glyphId": "G22",
+        "count": 3
+      },
+      {
+        "glyphId": "G32",
+        "count": 3
+      },
+      {
+        "glyphId": "G02",
+        "count": 2
+      },
+      {
+        "glyphId": "G07",
+        "count": 1
+      },
+      {
+        "glyphId": "G18",
+        "count": 1
+      },
+      {
+        "glyphId": "G25",
+        "count": 1
+      },
+      {
+        "glyphId": "G30",
+        "count": 1
+      }
+    ]
+  },
+  "authoredCandidates": {
+    "forms": 140,
+    "glyphTokens": 791,
+    "uniqueGlyphIds": 19,
+    "glyphIds": [
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G07",
+      "G11",
+      "G12",
+      "G14",
+      "G15",
+      "G18",
+      "G19",
+      "G21",
+      "G22",
+      "G23",
+      "G26",
+      "G31",
+      "G32",
+      "G40"
+    ],
+    "ambiguousE5GlyphsUsed": [],
+    "familyCoverage": {
+      "coarse": {
+        "count": 1,
+        "keys": [
+          "MF_CG|N:12-0-0|E:7-4-0-0-0"
+        ]
+      },
+      "topological": {
+        "count": 4,
+        "keys": [
+          "MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+          "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+          "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+          "MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:6|S:6"
+        ]
+      },
+      "radialAngular": {
+        "count": 5,
+        "keys": [
+          "R:2-4|A:7-4",
+          "R:2-4|A:7-5",
+          "R:2-4|A:7-6",
+          "R:2-4|A:7-7",
+          "R:3-4|A:7-3"
+        ]
+      }
+    },
+    "glyphUsage": [
+      {
+        "glyphId": "G05",
+        "count": 84
+      },
+      {
+        "glyphId": "G04",
+        "count": 80
+      },
+      {
+        "glyphId": "G02",
+        "count": 73
+      },
+      {
+        "glyphId": "G01",
+        "count": 71
+      },
+      {
+        "glyphId": "G03",
+        "count": 44
+      },
+      {
+        "glyphId": "G40",
+        "count": 44
+      },
+      {
+        "glyphId": "G12",
+        "count": 37
+      },
+      {
+        "glyphId": "G15",
+        "count": 37
+      },
+      {
+        "glyphId": "G19",
+        "count": 35
+      },
+      {
+        "glyphId": "G23",
+        "count": 33
+      },
+      {
+        "glyphId": "G32",
+        "count": 32
+      },
+      {
+        "glyphId": "G21",
+        "count": 30
+      },
+      {
+        "glyphId": "G18",
+        "count": 29
+      },
+      {
+        "glyphId": "G31",
+        "count": 29
+      },
+      {
+        "glyphId": "G14",
+        "count": 28
+      },
+      {
+        "glyphId": "G11",
+        "count": 27
+      },
+      {
+        "glyphId": "G22",
+        "count": 27
+      },
+      {
+        "glyphId": "G07",
+        "count": 26
+      },
+      {
+        "glyphId": "G26",
+        "count": 25
+      }
+    ]
+  },
+  "findings": {
+    "currentCorpusDependsOnG17OrG20": false,
+    "currentCorpusBlockedByE5Ambiguity": false,
+    "geometryAutomaticallyAssignsMeaning": false,
+    "acquisitionPriorityBasis": "OBSERVED_GLYPH_USAGE_PLUS_STRUCTURAL_FAMILY_COVERAGE"
+  },
+  "authority": "ANALYTICAL_DERIVATION",
+  "semanticAssignmentsAdded": 0
+}
