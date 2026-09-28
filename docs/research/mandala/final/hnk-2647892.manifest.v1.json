@@ -61,5 +61,16 @@
     "mfCg": 47642247,
     "crD": 12,
     "total": 47642259
+  },
+  "familyCensus": {
+    "version": "HNK-2647892-FAMILY-CENSUS-V1",
+    "artifact": "data/math/hnk-2647892-family-census.v1.json",
+    "cardinality": {
+      "coarse": 256,
+      "topological": 11492,
+      "radialAngular": 3041
+    },
+    "eachPartitionTotal": 2647892,
+    "semanticsAssigned": 0
   }
 }
