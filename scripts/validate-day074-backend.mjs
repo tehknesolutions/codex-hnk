@@ -2,14 +2,20 @@ import fs from 'node:fs';
 const sql=fs.readFileSync('supabase/migrations/20260928020000_day074_authoritative_completion.sql','utf8');
 const checks=[
  ['rpc',sql.includes('complete_day074_v1')],
- ['auth',sql.includes('auth.uid()')],
- ['exactly three',sql.includes('p_self_accusation_count <> 3')],
+ ['authenticated',sql.includes('auth.uid()')&&sql.includes('to authenticated')],
+ ['exactly three',sql.includes('day074_exactly_three_entries_required')],
  ['portal073 prerequisite',sql.includes('day074_requires_portal073')],
- ['xp 100',sql.includes("100,'day074_first_completion'" )],
- ['xp idempotency',sql.includes("'day074:'||v_user_id::text")],
+ ['canonical source',sql.includes('canonical_source_sha_stale')],
+ ['xp from canonical day',sql.includes('select xp,source_sha')],
+ ['xp idempotency',sql.includes("v_uid::text||':day:74:completion:")],
+ ['completion idempotency',sql.includes('pg_advisory_xact_lock')&&sql.includes('completion_request_receipts')],
+ ['existing schema',sql.includes('day,completion_version,local_record_hash')],
  ['no private prose payload',!sql.includes('p_statement')&&!sql.includes('p_specificity_answer')],
- ['vault reference only',sql.includes('p_private_vault_entry_ref uuid')],
+ ['vault reference',sql.includes('private_vault_entry_ref')],
  ['no auto start',sql.includes("'day075_auto_started',false")],
- ['authenticated only',sql.includes('grant execute')&&sql.includes('to authenticated'))
+ ['fail closed evidence',sql.includes('practice_record_no_private_prose_confirmed')]
 ];
-let fail=0;for(const[n,ok]of checks){console.log(`${ok?'PASS':'FAIL'} ${n}`);if(!ok)fail++}if(fail)process.exit(1);console.log('DAY074_BACKEND_STATIC_GATE=PASS');
+let fail=0;
+for(const [name,ok] of checks){console.log((ok?'PASS ':'FAIL ')+name);if(!ok)fail++}
+if(fail)process.exit(1);
+console.log('DAY074_BACKEND_STATIC_GATE=PASS');
