@@ -11,7 +11,10 @@ on:
       - 'apps/web/app/day-074/**'
       - 'apps/mobile/src/app/day-074.tsx'
       - 'apps/mobile/src/features/binah/Day074Mobile.tsx'
+      - 'supabase/migrations/**'
       - 'scripts/validate-day074-runtime-integration.mjs'
+      - 'scripts/validate-day074-backend.mjs'
+      - 'scripts/validate-day074-security-boundary.mjs'
       - '.github/workflows/day074-runtime-gate.yml'
   pull_request:
     paths:
@@ -22,7 +25,10 @@ on:
       - 'apps/web/app/day-074/**'
       - 'apps/mobile/src/app/day-074.tsx'
       - 'apps/mobile/src/features/binah/Day074Mobile.tsx'
+      - 'supabase/migrations/**'
       - 'scripts/validate-day074-runtime-integration.mjs'
+      - 'scripts/validate-day074-backend.mjs'
+      - 'scripts/validate-day074-security-boundary.mjs'
       - '.github/workflows/day074-runtime-gate.yml'
   workflow_dispatch:
 
@@ -51,6 +57,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate Day074 backend invariants
+        run: node scripts/validate-day074-backend.mjs
+      - name: Validate Day074 security boundary
+        run: node scripts/validate-day074-security-boundary.mjs
       - name: Validate Day074 fail-closed integration
         run: node scripts/validate-day074-runtime-integration.mjs
 
