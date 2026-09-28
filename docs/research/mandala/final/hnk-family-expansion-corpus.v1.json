@@ -1,0 +1,2661 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "HNK-FAMILY-EXPANSION-CORPUS-V1",
+  "mathematicalKernel": "HNK-2647892-MATH-KERNEL-V1",
+  "familyCensus": "HNK-2647892-FAMILY-CENSUS-V1",
+  "selection": {
+    "seed": 2647892,
+    "prng": "MULBERRY32",
+    "coarseDiscoveryTarget": 120,
+    "maxTrials": 180000,
+    "coarseRank": "FNV1A32_THEN_LEXICOGRAPHIC",
+    "hnk40CoarseExcluded": "MF_CG|N:12-0-0|E:7-4-0-0-0",
+    "trainingRule": "9 discovered pure-MF coarse families + first 63 mixed coarse families by deterministic rank",
+    "holdoutRule": "next 23 mixed coarse families by deterministic rank + CR:D D12 class",
+    "reserveRule": "remaining discovered mixed coarse families",
+    "holdoutUnit": "COARSE_FAMILY",
+    "semanticSelection": false
+  },
+  "summary": {
+    "train": 72,
+    "holdout": 24,
+    "total": 96,
+    "reserveDiscoveredCoarseFamilies": 25,
+    "trainFamilyCardinality": {
+      "coarse": 72,
+      "topological": 72,
+      "radialAngular": 71
+    },
+    "holdoutFamilyCardinality": {
+      "coarse": 24,
+      "topological": 24,
+      "radialAngular": 24
+    },
+    "trainHoldoutCoarseOverlap": 0,
+    "semanticBindings": 0
+  },
+  "train": [
+    {
+      "identityId": "FEXP-T001",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S01",
+        "MF:L01:S72",
+        "MF:L01:S71",
+        "MF:L01:S70",
+        "MF:L01:S69",
+        "MF:L01:S68",
+        "MF:L01:S67",
+        "MF:L01:S66",
+        "MF:L01:S65",
+        "MF:L01:S64",
+        "MF:L02:S64",
+        "MF:L02:S65"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:10-1-0-0-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR|T:2|S:2",
+        "radialAngular": "R:1-1|A:10-9",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T002",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S02",
+        "MF:L01:S02",
+        "MF:L01:S01",
+        "MF:L02:S01",
+        "MF:L02:S72",
+        "MF:L01:S72",
+        "MF:L01:S71",
+        "MF:L02:S71",
+        "MF:L02:S70",
+        "MF:L01:S70",
+        "MF:L01:S69",
+        "MF:L02:S69"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:5-6-0-0-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:10|S:10",
+        "radialAngular": "R:1-6|A:5-5",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T003",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S01",
+        "MF:L01:S02",
+        "MF:L01:S03",
+        "MF:L01:S04",
+        "MF:L02:S04",
+        "MF:L02:S03",
+        "MF:L02:S02",
+        "MF:L02:S01",
+        "MF:L02:S72",
+        "MF:L02:S71",
+        "MF:L02:S70",
+        "MF:L03:S70"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:9-2-0-0-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL|T:3|S:3",
+        "radialAngular": "R:2-2|A:9-6",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T004",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S01",
+        "MF:L05:S01",
+        "MF:L04:S01",
+        "MF:L03:S01",
+        "MF:L02:S01",
+        "MF:L01:S01",
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:1-10-0-0-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:2|S:2",
+        "radialAngular": "R:5-10|A:1-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T005",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L02:S04",
+        "MF:L01:S04",
+        "MF:L01:S03",
+        "MF:L01:S02",
+        "MF:L01:S01",
+        "MF:L02:S01",
+        "MF:L03:S01"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:4-7-0-0-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:4|S:4",
+        "radialAngular": "R:3-7|A:4-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T006",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S03",
+        "MF:L01:S02",
+        "MF:L01:S01",
+        "MF:L01:S72",
+        "MF:L01:S71",
+        "MF:L01:S70",
+        "MF:L02:S70",
+        "MF:L03:S70",
+        "MF:L03:S71",
+        "MF:L02:S71",
+        "MF:L02:S72",
+        "MF:L02:S01"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:8-3-0-0-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR|T:4|S:4",
+        "radialAngular": "R:2-3|A:8-5",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T007",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S03",
+        "MF:L03:S03",
+        "MF:L02:S03",
+        "MF:L01:S03",
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:2-9-0-0-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:4|S:4",
+        "radialAngular": "R:5-9|A:2-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T008",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L03:S03",
+        "MF:L02:S03",
+        "MF:L01:S03",
+        "MF:L01:S04",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L03:S05"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:3-8-0-0-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:3-8|A:3-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T009",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S01",
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L02:S01",
+        "MF:L03:S01",
+        "MF:L03:S72",
+        "MF:L03:S71",
+        "MF:L02:S71",
+        "MF:L02:S70",
+        "MF:L03:S70",
+        "MF:L03:S69",
+        "MF:L04:S69"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:12-0-0|E:6-5-0-0-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:9|S:9",
+        "radialAngular": "R:3-5|A:6-5",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T010",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S03",
+        "MF:L06:S04",
+        "CG:01",
+        "MF:L06:S08",
+        "MF:L06:S07",
+        "MF:L05:S07",
+        "MF:L05:S08",
+        "MF:L05:S09",
+        "MF:L06:S09",
+        "MF:L06:S10",
+        "CG:02",
+        "MF:L06:S12"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:5-2-4-0-0",
+        "topological": "MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-2|A:5-9",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T011",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S04",
+        "MF:L01:S03",
+        "MF:L02:S03",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L04:S03",
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L05:S05",
+        "MF:L06:S05",
+        "CG:01"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:5-5-1-0-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_CG|T:8|S:8",
+        "radialAngular": "R:5-5|A:5-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T012",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S01",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S15",
+        "MF:L05:S15",
+        "MF:L04:S15",
+        "MF:L03:S15",
+        "MF:L02:S15"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:0-8-2-1-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_CG.CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:4|S:4",
+        "radialAngular": "R:4-8|A:0-14",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T013",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L06:S70",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "MF:L06:S63",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:5-1-5-0-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:1-1|A:5-12",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T014",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L05:S71",
+        "MF:L04:S71",
+        "MF:L03:S71",
+        "MF:L03:S70",
+        "MF:L04:S70",
+        "MF:L05:S70",
+        "MF:L06:S70",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:3-6-2-0-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_CG|T:5|S:5",
+        "radialAngular": "R:3-6|A:3-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T015",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S02",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "MF:L06:S02",
+        "MF:L05:S02",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:4-5-1-1-0",
+        "topological": "CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR|T:8|S:8",
+        "radialAngular": "R:3-5|A:4-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T016",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S02",
+        "MF:L05:S02",
+        "MF:L05:S01",
+        "MF:L04:S01",
+        "MF:L04:S72",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "CG:09",
+        "CG:08",
+        "CG:07"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:3-4-2-2-0",
+        "topological": "CG_CG.CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG|T:8|S:8",
+        "radialAngular": "R:2-4|A:3-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T017",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S02",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L05:S65",
+        "MF:L05:S64",
+        "MF:L06:S64",
+        "CG:08",
+        "MF:L06:S61",
+        "MF:L06:S60"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:3-2-6-0-0",
+        "topological": "MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.MF_CG.MF_ANGULAR.MF_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-2|A:3-14",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T018",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L04:S72",
+        "MF:L05:S72",
+        "MF:L05:S01",
+        "MF:L05:S02",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "CG:03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:5-3-1-2-0",
+        "topological": "CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+        "radialAngular": "R:3-3|A:5-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T019",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S02",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L05:S72",
+        "MF:L05:S71",
+        "MF:L05:S70",
+        "MF:L06:S70",
+        "MF:L06:S69",
+        "MF:L06:S68",
+        "MF:L06:S67",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:7-3-1-0-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-3|A:7-7",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T020",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "CG:08",
+        "MF:L06:S57",
+        "MF:L06:S56",
+        "MF:L06:S55",
+        "MF:L06:S54",
+        "MF:L06:S53",
+        "CG:07",
+        "MF:L06:S49",
+        "MF:L06:S50"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:6-0-4-1-0",
+        "topological": "MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR|T:6|S:6",
+        "radialAngular": "R:0-0|A:6-24",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T021",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S03",
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "MF:L06:S03",
+        "CG:01",
+        "CG:02",
+        "CG:03",
+        "CG:04"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:2-5-1-3-0",
+        "topological": "CG_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:5-5|A:2-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T022",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "MF:L06:S07",
+        "MF:L06:S08",
+        "MF:L05:S08",
+        "MF:L05:S09",
+        "MF:L06:S09",
+        "CG:02",
+        "MF:L06:S11"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:2-5-4-0-0",
+        "topological": "MF_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:3-5|A:2-7",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T023",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S03",
+        "MF:L01:S03",
+        "MF:L01:S04",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:2-6-3-0-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:5-6|A:2-4",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T024",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S03",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "MF:L06:S03",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "MF:L06:S57",
+        "MF:L06:S56",
+        "CG:07",
+        "MF:L06:S52",
+        "MF:L05:S52"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:3-2-4-2-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL|T:8|S:8",
+        "radialAngular": "R:1-2|A:3-23",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T025",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S03",
+        "CG:01",
+        "MF:L06:S07",
+        "MF:L05:S07",
+        "MF:L05:S08",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "MF:L06:S10",
+        "MF:L05:S10",
+        "MF:L05:S11",
+        "MF:L06:S11",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:4-4-3-0-0",
+        "topological": "MF_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG|T:8|S:8",
+        "radialAngular": "R:1-4|A:4-8",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T026",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S03",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "CG:01",
+        "CG:02",
+        "CG:03",
+        "CG:04",
+        "MF:L06:S31",
+        "MF:L05:S31",
+        "MF:L05:S32"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:3-3-2-3-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.CG_CG.CG_CG.CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR|T:8|S:8",
+        "radialAngular": "R:2-3|A:3-30",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T027",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L05:S05",
+        "MF:L05:S06",
+        "MF:L06:S06",
+        "CG:01",
+        "MF:L06:S07",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:5-3-3-0-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_CG|T:8|S:8",
+        "radialAngular": "R:2-3|A:5-6",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T028",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "CG:07",
+        "CG:06",
+        "MF:L06:S45",
+        "MF:L06:S46",
+        "MF:L05:S46",
+        "MF:L05:S47",
+        "MF:L06:S47"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:7-5-0|E:2-3-2-4-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.CG_CG.CG_CG.CG_CG.CG_CG.MF_CG.MF_RADIAL|T:7|S:7",
+        "radialAngular": "R:1-3|A:2-31",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T029",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L06:S70",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "MF:L05:S64",
+        "MF:L05:S63",
+        "MF:L06:S63",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:5-2-4-0-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-2|A:5-10",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T030",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S02",
+        "MF:L05:S01",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "MF:L06:S01",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S15",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "CG:03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:6-1-3-1-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-1|A:6-17",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T031",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S02",
+        "MF:L06:S03",
+        "CG:01",
+        "MF:L06:S07",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "CG:02",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "CG:03",
+        "CG:04",
+        "MF:L06:S28"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:4-0-6-1-0",
+        "topological": "MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:0-0|A:4-26",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T032",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L05:S01",
+        "MF:L05:S72",
+        "MF:L05:S71",
+        "MF:L05:S70",
+        "MF:L05:S69",
+        "MF:L06:S69",
+        "MF:L06:S68",
+        "MF:L06:S67",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:7-2-2-0-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG|T:6|S:6",
+        "radialAngular": "R:1-2|A:7-7",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T033",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S01",
+        "MF:L02:S01",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "MF:L06:S60",
+        "MF:L05:S60",
+        "MF:L04:S60"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:0-7-2-2-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_CG.CG_CG.CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:4|S:4",
+        "radialAngular": "R:5-7|A:0-13",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T034",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L06:S70",
+        "MF:L06:S69",
+        "CG:09",
+        "CG:08",
+        "CG:07",
+        "MF:L06:S50",
+        "MF:L06:S49",
+        "MF:L06:S48",
+        "CG:06"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:6-0-3-2-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_CG|T:5|S:5",
+        "radialAngular": "R:0-0|A:6-25",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T035",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S04",
+        "MF:L06:S03",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L05:S71",
+        "MF:L05:S70",
+        "MF:L06:S70",
+        "MF:L06:S69",
+        "CG:09",
+        "MF:L06:S68"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:7-2-2-0-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.MF_CG|T:5|S:5",
+        "radialAngular": "R:1-2|A:7-8",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T036",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L05:S05",
+        "MF:L06:S05",
+        "MF:L06:S06",
+        "MF:L06:S07",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "CG:07"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:3-4-1-3-0",
+        "topological": "CG_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:4-4|A:3-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T037",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S03",
+        "MF:L06:S04",
+        "MF:L06:S05",
+        "MF:L06:S06",
+        "MF:L06:S07",
+        "CG:01",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "MF:L06:S10",
+        "MF:L06:S11",
+        "MF:L06:S12",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:8-0-3-0-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG|T:3|S:3",
+        "radialAngular": "R:0-0|A:8-9",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T038",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S02",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "CG:03",
+        "MF:L06:S24",
+        "MF:L06:S25",
+        "MF:L06:S26",
+        "MF:L06:S27",
+        "CG:04"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:5-1-3-2-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-1|A:5-25",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T039",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S02",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "CG:08",
+        "CG:07",
+        "MF:L06:S56"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:4-2-4-1-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:2-2|A:4-18",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T040",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S02",
+        "MF:L03:S03",
+        "MF:L02:S03",
+        "MF:L01:S03",
+        "MF:L01:S04",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:2-7-1-1-0",
+        "topological": "CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR|T:5|S:5",
+        "radialAngular": "R:5-7|A:2-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T041",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S03",
+        "MF:L06:S04",
+        "CG:01",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L05:S72",
+        "MF:L05:S71",
+        "MF:L06:S71",
+        "MF:L06:S70",
+        "MF:L06:S69",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:6-2-3-0-0",
+        "topological": "MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-2|A:6-7",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T042",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L05:S05",
+        "MF:L05:S06",
+        "MF:L06:S06",
+        "MF:L06:S05",
+        "CG:01",
+        "CG:02",
+        "CG:03",
+        "MF:L06:S17",
+        "MF:L06:S18"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:5-2-2-2-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR|T:8|S:8",
+        "radialAngular": "R:2-2|A:5-15",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T043",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L05:S01",
+        "MF:L04:S01",
+        "MF:L03:S01",
+        "MF:L02:S01",
+        "MF:L02:S72",
+        "MF:L03:S72",
+        "MF:L04:S72",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:1-8-2-0-0",
+        "topological": "MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_CG|T:4|S:4",
+        "radialAngular": "R:4-8|A:1-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T044",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S03",
+        "MF:L02:S03",
+        "MF:L01:S03",
+        "MF:L01:S04",
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:09",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:1-7-1-2-0",
+        "topological": "CG_CG.CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:4|S:4",
+        "radialAngular": "R:5-7|A:1-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T045",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S03",
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "CG:01",
+        "MF:L06:S02",
+        "MF:L05:S02",
+        "MF:L04:S02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:2-7-2-0-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:5-7|A:2-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T046",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L05:S71",
+        "MF:L05:S70",
+        "MF:L06:S70",
+        "MF:L06:S69",
+        "MF:L06:S68",
+        "MF:L06:S67",
+        "MF:L06:S66",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:8-2-1-0-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG|T:5|S:5",
+        "radialAngular": "R:1-2|A:8-8",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T047",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S01",
+        "MF:L02:S01",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "CG:03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:2-5-3-1-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+        "radialAngular": "R:4-5|A:2-16",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T048",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S04",
+        "MF:L03:S03",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S11"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:4-3-2-2-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.CG_CG.CG_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:3-3|A:4-11",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T049",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S04",
+        "MF:L05:S04",
+        "MF:L04:S04",
+        "MF:L04:S03",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "CG:08",
+        "CG:07"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:2-4-3-2-0",
+        "topological": "CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:2-4|A:2-4",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T050",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S01",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "MF:L06:S59",
+        "MF:L06:S60",
+        "MF:L06:S61",
+        "MF:L05:S61",
+        "MF:L04:S61"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:3-4-2-2-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:2-4|A:3-15",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T051",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S02",
+        "MF:L03:S02",
+        "MF:L02:S02",
+        "MF:L01:S02",
+        "MF:L01:S01",
+        "MF:L02:S01",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:1-8-1-1-0",
+        "topological": "CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:4|S:4",
+        "radialAngular": "R:5-8|A:1-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T052",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S04",
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L05:S03",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S66",
+        "MF:L06:S67"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:4-3-4-0-0",
+        "topological": "MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR|T:7|S:7",
+        "radialAngular": "R:3-3|A:4-10",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T053",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L03:S07",
+        "MF:L04:S07",
+        "MF:L04:S06",
+        "MF:L05:S06",
+        "MF:L05:S05",
+        "MF:L06:S05",
+        "CG:01"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:6-4-1-0-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG|T:8|S:8",
+        "radialAngular": "R:3-4|A:6-4",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T054",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S01",
+        "MF:L02:S01",
+        "MF:L01:S01",
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S11"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:1-7-2-1-0",
+        "topological": "MF_CG.CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:5-7|A:1-10",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T055",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L05:S01",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:1-7-3-0-0",
+        "topological": "MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:5-7|A:1-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T056",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "MF:L06:S05",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "CG:08",
+        "MF:L06:S60"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:4-1-6-0-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-1|A:4-17",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T057",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L05:S01",
+        "MF:L04:S01",
+        "MF:L04:S72",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "CG:09",
+        "CG:01",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:3-4-3-1-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_CG|T:8|S:8",
+        "radialAngular": "R:2-4|A:3-9",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T058",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S01",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "MF:L06:S03",
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:3-6-1-1-0",
+        "topological": "CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:8|S:8",
+        "radialAngular": "R:4-6|A:3-3",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T059",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "CG:03",
+        "CG:04",
+        "MF:L06:S28",
+        "MF:L05:S28",
+        "MF:L04:S28"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:1-5-2-3-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_CG.CG_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:3-5|A:1-26",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T060",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "MF:L06:S03",
+        "MF:L05:S03",
+        "MF:L04:S03",
+        "MF:L03:S03",
+        "MF:L02:S03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:0-9-2-0-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:2|S:2",
+        "radialAngular": "R:5-9|A:0-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T061",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L03:S03",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L04:S03",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "MF:L06:S04",
+        "MF:L05:S04"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:4-5-2-0-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_CG.MF_CG.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:4-5|A:4-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T062",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "CG:01",
+        "MF:L06:S07",
+        "MF:L05:S07",
+        "MF:L05:S08",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "CG:02",
+        "CG:03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:4-2-3-2-0",
+        "topological": "CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR|T:9|S:9",
+        "radialAngular": "R:1-2|A:4-9",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T063",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "CG:02",
+        "MF:L06:S16",
+        "MF:L05:S16",
+        "MF:L04:S16",
+        "MF:L03:S16",
+        "MF:L03:S17",
+        "MF:L04:S17",
+        "MF:L05:S17",
+        "MF:L06:S17",
+        "CG:03",
+        "CG:04"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:1-6-2-2-0",
+        "topological": "CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_CG.CG_CG|T:6|S:6",
+        "radialAngular": "R:3-6|A:1-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T064",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "CG:07"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:4-3-1-3-0",
+        "topological": "CG_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+        "radialAngular": "R:3-3|A:4-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T065",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S02",
+        "MF:L02:S01",
+        "MF:L02:S72",
+        "MF:L03:S72",
+        "MF:L03:S01",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:09"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:5-4-1-1-0",
+        "topological": "CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR|T:6|S:6",
+        "radialAngular": "R:4-4|A:5-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T066",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S04",
+        "MF:L04:S05",
+        "MF:L03:S05",
+        "MF:L03:S06",
+        "MF:L04:S06",
+        "MF:L05:S06",
+        "MF:L05:S05",
+        "MF:L06:S05",
+        "MF:L06:S06",
+        "CG:01",
+        "CG:09",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:4-4-1-2-0",
+        "topological": "CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR|T:8|S:8",
+        "radialAngular": "R:3-4|A:4-2",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T067",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S02",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:09",
+        "MF:L06:S67",
+        "MF:L06:S66",
+        "MF:L05:S66",
+        "MF:L05:S65",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:4-3-3-1-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG|T:10|S:10",
+        "radialAngular": "R:1-3|A:4-10",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T068",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S02",
+        "MF:L05:S02",
+        "MF:L04:S02",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L05:S72",
+        "MF:L05:S71",
+        "MF:L05:S70",
+        "MF:L06:S70",
+        "CG:09",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:4-4-2-1-0",
+        "topological": "CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_CG|T:7|S:7",
+        "radialAngular": "R:2-4|A:4-4",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T069",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "MF:L06:S63",
+        "MF:L05:S63",
+        "MF:L04:S63",
+        "MF:L04:S64",
+        "MF:L05:S64",
+        "MF:L06:S64"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:1-6-2-2-0",
+        "topological": "MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_CG.CG_CG.CG_CG.MF_CG.MF_RADIAL.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:2-6|A:1-11",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T070",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S04",
+        "MF:L05:S04",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L06:S70",
+        "CG:09",
+        "CG:01",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:6-2-1-2-0",
+        "topological": "CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:1-2|A:6-6",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T071",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "CG:03",
+        "CG:04"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:3-3-3-2-0",
+        "topological": "CG_CG.MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:9|S:9",
+        "radialAngular": "R:3-3|A:3-15",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-T072",
+      "split": "TRAIN",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:02",
+        "CG:03",
+        "MF:L06:S18",
+        "MF:L05:S18"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:2-5-2-2-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.CG_CG.CG_CG.MF_CG.MF_RADIAL|T:8|S:8",
+        "radialAngular": "R:3-5|A:2-15",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    }
+  ],
+  "holdout": [
+    {
+      "identityId": "FEXP-H001",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S02",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "MF:L06:S18",
+        "CG:03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:5-2-3-1-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_CG|T:9|S:9",
+        "radialAngular": "R:2-2|A:5-18",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H002",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L06:S70",
+        "MF:L06:S69",
+        "CG:09",
+        "MF:L06:S66",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "MF:L06:S63",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:7-0-4-0-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG|T:4|S:4",
+        "radialAngular": "R:0-0|A:7-10",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H003",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S04",
+        "MF:L04:S04",
+        "MF:L03:S04",
+        "MF:L02:S04",
+        "MF:L01:S04",
+        "MF:L01:S05",
+        "MF:L02:S05",
+        "MF:L03:S05",
+        "MF:L04:S05",
+        "MF:L05:S05",
+        "MF:L06:S05",
+        "CG:01"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:1-9-1-0-0",
+        "topological": "MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:3|S:3",
+        "radialAngular": "R:5-9|A:1-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H004",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S01",
+        "CG:01",
+        "MF:L06:S06",
+        "MF:L05:S06",
+        "MF:L05:S07",
+        "MF:L04:S07",
+        "MF:L04:S08",
+        "MF:L05:S08",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "CG:02",
+        "MF:L06:S14"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:3-4-4-0-0",
+        "topological": "MF_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:2-4|A:3-13",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H005",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S01",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "MF:L06:S01",
+        "MF:L06:S02",
+        "CG:01",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "MF:L06:S10",
+        "MF:L06:S11",
+        "MF:L06:S12",
+        "CG:02"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:7-1-3-0-0",
+        "topological": "MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG|T:5|S:5",
+        "radialAngular": "R:1-1|A:7-12",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H006",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L05:S71",
+        "MF:L05:S70",
+        "MF:L05:S69",
+        "MF:L05:S68",
+        "MF:L05:S67",
+        "MF:L06:S67",
+        "CG:09",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:6-2-2-1-0",
+        "topological": "CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_CG|T:6|S:6",
+        "radialAngular": "R:1-2|A:6-6",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H007",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S04",
+        "MF:L05:S05",
+        "MF:L05:S06",
+        "MF:L05:S07",
+        "MF:L06:S07",
+        "CG:01",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S70",
+        "MF:L06:S71"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:6-1-4-0-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR|T:5|S:5",
+        "radialAngular": "R:1-1|A:6-9",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H008",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S01",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S12",
+        "MF:L06:S13",
+        "MF:L06:S14",
+        "MF:L06:S15",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "MF:L06:S18",
+        "MF:L06:S19",
+        "CG:03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:7-0-3-1-0",
+        "topological": "MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG|T:4|S:4",
+        "radialAngular": "R:0-0|A:7-18",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H009",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S01",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "CG:03",
+        "CG:04",
+        "MF:L06:S25",
+        "MF:L06:S24",
+        "MF:L06:S23"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:4-1-4-2-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR|T:9|S:9",
+        "radialAngular": "R:1-1|A:4-24",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H010",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S04",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S15",
+        "MF:L05:S15",
+        "MF:L05:S16",
+        "MF:L05:S17",
+        "MF:L06:S17",
+        "CG:03",
+        "CG:04",
+        "CG:05",
+        "CG:06"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:6-6-0|E:2-2-3-4-0",
+        "topological": "CG_CG.CG_CG.CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_CG.CG_CG.MF_CG|T:7|S:7",
+        "radialAngular": "R:1-2|A:2-13",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H011",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:09",
+        "MF:L06:S69",
+        "MF:L06:S68",
+        "MF:L05:S68"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:2-6-2-1-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:5-6|A:2-6",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H012",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S02",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "MF:L06:S70",
+        "CG:09",
+        "CG:01"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:7-2-1-1-0",
+        "topological": "CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_ANGULAR|T:6|S:6",
+        "radialAngular": "R:2-2|A:7-6",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H013",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "CG:08",
+        "MF:L06:S58",
+        "MF:L06:S57",
+        "MF:L06:S56",
+        "MF:L05:S56",
+        "MF:L05:S55",
+        "MF:L06:S55",
+        "CG:07"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:4-2-4-1-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG|T:9|S:9",
+        "radialAngular": "R:1-2|A:4-18",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H014",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L05:S65",
+        "MF:L04:S65",
+        "MF:L04:S64",
+        "MF:L05:S64",
+        "MF:L06:S64",
+        "CG:08",
+        "CG:07"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:2-4-4-1-0",
+        "topological": "CG_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_CG.MF_CG.MF_ANGULAR.MF_CG|T:7|S:7",
+        "radialAngular": "R:2-4|A:2-9",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H015",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "MF:L06:S04",
+        "MF:L06:S05",
+        "CG:01",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "CG:08",
+        "MF:L06:S63",
+        "MF:L06:S62",
+        "MF:L06:S61"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:5-1-4-1-0",
+        "topological": "MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_RADIAL|T:7|S:7",
+        "radialAngular": "R:1-1|A:5-16",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H016",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S01",
+        "MF:L03:S01",
+        "MF:L03:S72",
+        "MF:L04:S72",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "MF:L06:S01",
+        "CG:01",
+        "CG:09",
+        "CG:08",
+        "CG:07",
+        "MF:L06:S49"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:8-4-0|E:2-4-2-3-0",
+        "topological": "MF_CG.CG_CG.CG_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:6|S:6",
+        "radialAngular": "R:3-4|A:2-24",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H017",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S03",
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L05:S65",
+        "MF:L05:S64",
+        "MF:L06:S64",
+        "CG:08",
+        "MF:L06:S61"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:2-4-4-1-0",
+        "topological": "MF_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL|T:9|S:9",
+        "radialAngular": "R:1-4|A:2-15",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H018",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S03",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "CG:01",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "MF:L06:S10",
+        "MF:L06:S11",
+        "CG:02",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "CG:03"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:4-2-5-0-0",
+        "topological": "MF_CG.MF_ANGULAR.MF_CG.MF_CG.MF_ANGULAR.MF_ANGULAR.MF_ANGULAR.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:2-2|A:4-14",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H019",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L06:S04",
+        "MF:L06:S05",
+        "CG:01",
+        "CG:09",
+        "MF:L06:S65",
+        "MF:L06:S64",
+        "CG:08",
+        "CG:07",
+        "MF:L06:S49",
+        "MF:L06:S48",
+        "CG:06",
+        "MF:L06:S44"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:7-5-0|E:3-0-6-2-0",
+        "topological": "MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_CG.MF_CG|T:9|S:9",
+        "radialAngular": "R:0-0|A:3-33",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H020",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S01",
+        "MF:L01:S01",
+        "MF:L01:S72",
+        "MF:L02:S72",
+        "MF:L03:S72",
+        "MF:L04:S72",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S66",
+        "MF:L05:S66",
+        "MF:L04:S66"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:11-1-0|E:1-8-2-0-0",
+        "topological": "MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL|T:4|S:4",
+        "radialAngular": "R:5-8|A:1-7",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H021",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L02:S04",
+        "MF:L03:S04",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L05:S01",
+        "MF:L05:S72",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S69"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:1-6-4-0-0",
+        "topological": "MF_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_CG.MF_CG.MF_RADIAL.MF_RADIAL.MF_RADIAL.MF_RADIAL|T:5|S:5",
+        "radialAngular": "R:4-6|A:1-7",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H022",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "MF:L06:S03",
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L05:S05",
+        "MF:L06:S05",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S12"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:10-2-0|E:4-4-2-1-0",
+        "topological": "MF_CG.CG_CG.MF_CG.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_ANGULAR.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL|T:8|S:8",
+        "radialAngular": "R:2-4|A:4-10",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H023",
+      "split": "HOLDOUT",
+      "component": "MF_CG",
+      "path": [
+        "MF:L01:S01",
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L03:S01",
+        "MF:L04:S01",
+        "MF:L05:S01",
+        "MF:L05:S02",
+        "MF:L06:S02",
+        "CG:01",
+        "CG:09",
+        "CG:08"
+      ],
+      "familyKeys": {
+        "coarse": "MF_CG|N:9-3-0|E:3-5-1-2-0",
+        "topological": "CG_CG.CG_CG.MF_CG.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR.MF_RADIAL.MF_RADIAL.MF_ANGULAR|T:7|S:7",
+        "radialAngular": "R:5-5|A:3-1",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    },
+    {
+      "identityId": "FEXP-H024",
+      "split": "HOLDOUT",
+      "component": "CR_D",
+      "path": [
+        "CR:D:01",
+        "CR:D:02",
+        "CR:D:03",
+        "CR:D:04",
+        "CR:D:05",
+        "CR:D:06",
+        "CR:D:07",
+        "CR:D:08",
+        "CR:D:09",
+        "CR:D:10",
+        "CR:D:11",
+        "CR:D:12"
+      ],
+      "familyKeys": {
+        "coarse": "CR_D|N:0-0-12|E:0-0-0-0-11",
+        "topological": "CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE.CR_D_CYCLE|T:0|S:0",
+        "radialAngular": "R:0-0|A:0-NA",
+        "confusionNeighborhood": "UNCOMPUTED"
+      },
+      "authority": "STRUCTURAL_ONLY",
+      "semanticBinding": null
+    }
+  ],
+  "reserveCoarseFamilies": [
+    "MF_CG|N:11-1-0|E:4-6-1-0-0",
+    "MF_CG|N:9-3-0|E:3-3-4-1-0",
+    "MF_CG|N:9-3-0|E:3-3-5-0-0",
+    "MF_CG|N:8-4-0|E:4-1-5-1-0",
+    "MF_CG|N:11-1-0|E:8-1-2-0-0",
+    "MF_CG|N:9-3-0|E:1-6-3-1-0",
+    "MF_CG|N:11-1-0|E:2-8-1-0-0",
+    "MF_CG|N:10-2-0|E:8-1-1-1-0",
+    "MF_CG|N:7-5-0|E:3-2-3-3-0",
+    "MF_CG|N:10-2-0|E:5-4-2-0-0",
+    "MF_CG|N:8-4-0|E:3-2-5-1-0",
+    "MF_CG|N:11-1-0|E:6-3-2-0-0",
+    "MF_CG|N:10-2-0|E:6-2-2-1-0",
+    "MF_CG|N:7-5-0|E:1-4-3-3-0",
+    "MF_CG|N:9-3-0|E:2-6-1-2-0",
+    "MF_CG|N:11-1-0|E:3-6-2-0-0",
+    "MF_CG|N:10-2-0|E:3-5-3-0-0",
+    "MF_CG|N:10-2-0|E:3-5-2-1-0",
+    "MF_CG|N:10-2-0|E:6-3-1-1-0",
+    "MF_CG|N:10-2-0|E:5-3-2-1-0",
+    "MF_CG|N:9-3-0|E:1-5-4-1-0",
+    "MF_CG|N:11-1-0|E:3-7-1-0-0",
+    "MF_CG|N:11-1-0|E:5-4-2-0-0",
+    "MF_CG|N:9-3-0|E:2-6-2-1-0",
+    "MF_CG|N:8-4-0|E:5-0-5-1-0"
+  ],
+  "authority": "STRUCTURAL_ONLY"
+}
