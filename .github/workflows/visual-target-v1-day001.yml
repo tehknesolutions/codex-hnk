@@ -1,0 +1,38 @@
+name: Visual Target V1 Day 001 Gate
+
+on:
+  push:
+    branches:
+      - docs/visual-source-dissection-v1
+    paths:
+      - 'apps/web/app/day-001/**'
+      - 'packages/visual-contract/src/day001.ts'
+      - '.github/workflows/visual-target-v1-day001.yml'
+  pull_request:
+    paths:
+      - 'apps/web/app/day-001/**'
+      - 'packages/visual-contract/src/day001.ts'
+      - '.github/workflows/visual-target-v1-day001.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visual-contract:
+    name: Day 001 visual authority tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: First Spark authority
+        run: node --test apps/web/app/day-001/day001-visual-state-authority.test.mjs
+      - name: Art Pass mount
+        run: node --test apps/web/app/day-001/day001-art-pass-mount.test.mjs
+      - name: Art Pass selector contract
+        run: node --test apps/web/app/day-001/day001-art-pass-selector.test.mjs
+      - name: Art Pass act normalization
+        run: node --test apps/web/app/day-001/day001-art-pass-act-map.test.mjs
