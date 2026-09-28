@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "HNK-ACQUISITION-FREQUENCY-FRONTIER-V1",
+  "status": "ANALYTICAL_ACQUISITION_EVIDENCE",
+  "sources": {
+    "coverage": "data/acquisition/hnk-language-math-family-coverage.v1.json",
+    "familyBenchmark": "data/benchmarks/hnk40-kodescript-family-classification.v1.json"
+  },
+  "objective": "minimum glyph set meeting the same token-coverage threshold in both recovered master lexicon and authored candidate corpus",
+  "thresholds": {
+    "0.80": {
+      "minGlyphCount": 14,
+      "solutionCount": 700,
+      "representativeSelectionRule": "maximize sum of observed corpus coverages, then lexicographic tie-break",
+      "representativeGlyphIds": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G11",
+        "G12",
+        "G14",
+        "G15",
+        "G21",
+        "G23",
+        "G26",
+        "G31",
+        "G40"
+      ],
+      "masterCoverage": 0.9375,
+      "authoredCoverage": 0.8116308470290771
+    },
+    "0.90": {
+      "minGlyphCount": 16,
+      "solutionCount": 1,
+      "uniqueMinimalGlyphIds": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G11",
+        "G12",
+        "G14",
+        "G15",
+        "G18",
+        "G19",
+        "G21",
+        "G23",
+        "G31",
+        "G32",
+        "G40"
+      ],
+      "masterCoverage": 0.9230769230769231,
+      "authoredCoverage": 0.9013906447534766,
+      "familyCoverage": {
+        "coarse": 1,
+        "topological": 4,
+        "radialAngular": 5
+      }
+    },
+    "0.95": {
+      "minGlyphCount": 18,
+      "solutionCount": 7,
+      "representativeSelectionRule": "maximize sum of observed corpus coverages, then lexicographic tie-break",
+      "representativeGlyphIds": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G11",
+        "G12",
+        "G14",
+        "G15",
+        "G18",
+        "G19",
+        "G21",
+        "G22",
+        "G23",
+        "G26",
+        "G31",
+        "G32",
+        "G40"
+      ],
+      "masterCoverage": 0.9855769230769231,
+      "authoredCoverage": 0.9671302149178256
+    }
+  },
+  "constraints": {
+    "semanticAuthorityUnaffected": true,
+    "frequencyDoesNotPromoteCanon": true,
+    "ambiguousE5HoldoutsExcluded": [
+      "G17",
+      "G20"
+    ]
+  },
+  "acquisitionUse": "prioritize exposure efficiently while preserving separate authority and family-transfer experiments"
+}
