@@ -1,0 +1,60 @@
+name: Day 074 Binah Runtime Gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/canon/atziluth/binah/dia-074.md'
+      - 'packages/practice-contract/src/day074.ts'
+      - 'packages/practice-contract/src/types.ts'
+      - 'packages/practice-contract/src/sync.ts'
+      - 'apps/web/app/day-074/**'
+      - 'apps/mobile/src/app/day-074.tsx'
+      - 'apps/mobile/src/features/binah/Day074Mobile.tsx'
+      - 'scripts/validate-day074-runtime-integration.mjs'
+      - '.github/workflows/day074-runtime-gate.yml'
+  pull_request:
+    paths:
+      - 'content/canon/atziluth/binah/dia-074.md'
+      - 'packages/practice-contract/src/day074.ts'
+      - 'packages/practice-contract/src/types.ts'
+      - 'packages/practice-contract/src/sync.ts'
+      - 'apps/web/app/day-074/**'
+      - 'apps/mobile/src/app/day-074.tsx'
+      - 'apps/mobile/src/features/binah/Day074Mobile.tsx'
+      - 'scripts/validate-day074-runtime-integration.mjs'
+      - '.github/workflows/day074-runtime-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  day074-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Day074 fail-closed integration
+        run: node scripts/validate-day074-runtime-integration.mjs
+
+  runtime-typecheck:
+    needs: day074-contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm --filter @hnk/practice-contract typecheck
+      - run: pnpm --filter @hnk/web typecheck
+      - run: pnpm --filter @hnk/mobile typecheck
