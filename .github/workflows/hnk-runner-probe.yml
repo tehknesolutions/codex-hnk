@@ -14,7 +14,7 @@ permissions:
 jobs:
   runner-probe:
     name: "PROBE 0 · Runner shell only"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Runner heartbeat
         shell: bash
