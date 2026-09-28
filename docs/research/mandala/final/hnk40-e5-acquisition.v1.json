@@ -1,0 +1,451 @@
+{
+  "schemaVersion": "1.0.0",
+  "source": {
+    "schemaVersion": "1.0.0",
+    "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+  },
+  "records": [
+    {
+      "glyphId": "G01",
+      "resolutionStatus": "DIRECT",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G01-E5-84cbaab00402058d"
+      ],
+      "targetProjectionId": "G01-E5-84cbaab00402058d",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G02",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G02-E5-26c44b0e8748193f"
+      ],
+      "targetProjectionId": "G02-E5-26c44b0e8748193f",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G03",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G03-E5-9f935577de0c79de"
+      ],
+      "targetProjectionId": "G03-E5-9f935577de0c79de",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G04",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G04-E5-9baaf78e24d99b44"
+      ],
+      "targetProjectionId": "G04-E5-9baaf78e24d99b44",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G05",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G05-E5-b1c412985607762b"
+      ],
+      "targetProjectionId": "G05-E5-b1c412985607762b",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G06",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G06-E5-f1ac847a91d420de"
+      ],
+      "targetProjectionId": "G06-E5-f1ac847a91d420de",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G07",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G07-E5-a00b0c22e39e1c29"
+      ],
+      "targetProjectionId": "G07-E5-a00b0c22e39e1c29",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G08",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G08-E5-6d7a9082f5c56181"
+      ],
+      "targetProjectionId": "G08-E5-6d7a9082f5c56181",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G09",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G09-E5-aac0415b17da01e7"
+      ],
+      "targetProjectionId": "G09-E5-aac0415b17da01e7",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G10",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G10-E5-41e3244c82cccbf3"
+      ],
+      "targetProjectionId": "G10-E5-41e3244c82cccbf3",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G11",
+      "resolutionStatus": "DIRECT",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G11-E5-bdc463989b5de812"
+      ],
+      "targetProjectionId": "G11-E5-bdc463989b5de812",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G12",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G12-E5-54140fe2180e6a62"
+      ],
+      "targetProjectionId": "G12-E5-54140fe2180e6a62",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G13",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G13-E5-7b9e705579f5e2b8"
+      ],
+      "targetProjectionId": "G13-E5-7b9e705579f5e2b8",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G14",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G14-E5-9b77d3a02704709b"
+      ],
+      "targetProjectionId": "G14-E5-9b77d3a02704709b",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G15",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G15-E5-d4269d43c6c5d292"
+      ],
+      "targetProjectionId": "G15-E5-d4269d43c6c5d292",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G16",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G16-E5-78e122baafb136d9"
+      ],
+      "targetProjectionId": "G16-E5-78e122baafb136d9",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G17",
+      "resolutionStatus": "DERIVED_AMBIGUOUS",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G17-E5-ee584ad1394483f6",
+        "G17-E5-8e04f31a084076d4"
+      ],
+      "targetProjectionId": null,
+      "acquisitionMode": "CANDIDATE_SET"
+    },
+    {
+      "glyphId": "G18",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G18-E5-febc9f1c4a18f4c2"
+      ],
+      "targetProjectionId": "G18-E5-febc9f1c4a18f4c2",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G19",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G19-E5-4a501d40f405bc30"
+      ],
+      "targetProjectionId": "G19-E5-4a501d40f405bc30",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G20",
+      "resolutionStatus": "DERIVED_AMBIGUOUS",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G20-E5-66f496d3ca4416d8",
+        "G20-E5-bd35fd4f59c227a2"
+      ],
+      "targetProjectionId": null,
+      "acquisitionMode": "CANDIDATE_SET"
+    },
+    {
+      "glyphId": "G21",
+      "resolutionStatus": "DIRECT",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G21-E5-b4eaeb5fd4c0229a"
+      ],
+      "targetProjectionId": "G21-E5-b4eaeb5fd4c0229a",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G22",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G22-E5-6192a7cea8c7ad0f"
+      ],
+      "targetProjectionId": "G22-E5-6192a7cea8c7ad0f",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G23",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G23-E5-0b9f53b754fc0e86"
+      ],
+      "targetProjectionId": "G23-E5-0b9f53b754fc0e86",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G24",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G24-E5-b979138735d23ed6"
+      ],
+      "targetProjectionId": "G24-E5-b979138735d23ed6",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G25",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G25-E5-f39951085bdb4535"
+      ],
+      "targetProjectionId": "G25-E5-f39951085bdb4535",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G26",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G26-E5-d0cc8c2eb891c76b"
+      ],
+      "targetProjectionId": "G26-E5-d0cc8c2eb891c76b",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G27",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G27-E5-ab5b83615ae5e0c4"
+      ],
+      "targetProjectionId": "G27-E5-ab5b83615ae5e0c4",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G28",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G28-E5-6fe309e9feb0136a"
+      ],
+      "targetProjectionId": "G28-E5-6fe309e9feb0136a",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G29",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G29-E5-9bd00aac094ac483"
+      ],
+      "targetProjectionId": "G29-E5-9bd00aac094ac483",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G30",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G30-E5-59cbfe3dff2701f9"
+      ],
+      "targetProjectionId": "G30-E5-59cbfe3dff2701f9",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G31",
+      "resolutionStatus": "DIRECT",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G31-E5-272958bae4aa17ec"
+      ],
+      "targetProjectionId": "G31-E5-272958bae4aa17ec",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G32",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G32-E5-fa35897816f41fc9"
+      ],
+      "targetProjectionId": "G32-E5-fa35897816f41fc9",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G33",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G33-E5-84616f709a5e52b5"
+      ],
+      "targetProjectionId": "G33-E5-84616f709a5e52b5",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G34",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G34-E5-b51de3f6de2948b1"
+      ],
+      "targetProjectionId": "G34-E5-b51de3f6de2948b1",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G35",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G35-E5-7379825386d2f38c"
+      ],
+      "targetProjectionId": "G35-E5-7379825386d2f38c",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G36",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G36-E5-4ecfb3349ba10058"
+      ],
+      "targetProjectionId": "G36-E5-4ecfb3349ba10058",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G37",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G37-E5-b8298ae19e4a977f"
+      ],
+      "targetProjectionId": "G37-E5-b8298ae19e4a977f",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G38",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G38-E5-264e1f175757cd26"
+      ],
+      "targetProjectionId": "G38-E5-264e1f175757cd26",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G39",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G39-E5-95baf0f9f3453815"
+      ],
+      "targetProjectionId": "G39-E5-95baf0f9f3453815",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    },
+    {
+      "glyphId": "G40",
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+      "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+      "candidateProjectionIds": [
+        "G40-E5-71ef986bd298da9e"
+      ],
+      "targetProjectionId": "G40-E5-71ef986bd298da9e",
+      "acquisitionMode": "STRUCTURAL_TARGET"
+    }
+  ]
+}
