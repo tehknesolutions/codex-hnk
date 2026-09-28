@@ -1,5 +1,10 @@
 name: HNK Runner Probe
 on:
+  push:
+    branches:
+      - docs/visual-source-dissection-v1
+    paths:
+      - ".github/workflows/hnk-runner-probe.yml"
   pull_request:
     paths:
       - ".github/workflows/hnk-runner-probe.yml"
@@ -9,7 +14,7 @@ permissions:
 jobs:
   runner-probe:
     name: "PROBE 0 · Runner shell only"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Runner heartbeat
         shell: bash
