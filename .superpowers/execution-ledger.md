@@ -21,3 +21,4 @@ Task 2 Ruling: Desktop write cannot create scripts/lib because directory is abse
 - Task 2: complete at 1451b2a1; fresh test evidence: 3 pass, 0 fail; exact 4/34/2 state reproduced.
 - Task 3: RED prepared; integrity suite adds explicit legacy edge-geometry poison case expected to fail before guard.
 - Task 3: GREEN; RED was 5 pass/1 fail (missing geometry rejection), then 9/9 combined Tasks 1-3 PASS after minimal guard.
+- Task 4: RED ENOENT artifact; GREEN artifact materialized 65098 bytes; 11/11 Tasks 1-4 PASS; summary 4/34/2/0/0.

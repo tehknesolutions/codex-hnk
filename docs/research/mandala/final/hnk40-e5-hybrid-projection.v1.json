@@ -1,0 +1,2225 @@
+{
+  "schemaVersion": "1.0.0",
+  "source": {
+    "ref": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+    "status": "PASS"
+  },
+  "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+  "summary": {
+    "DIRECT": 4,
+    "DERIVED_UNIQUE": 34,
+    "DERIVED_AMBIGUOUS": 2,
+    "NO_E5_PROJECTION": 0,
+    "PENDING_RULE": 0
+  },
+  "records": [
+    {
+      "legacyIdentity": {
+        "glyphId": "G01",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "fa051b3bff8d92517913921592d5c71dd95cb20ee3a778bd36ef1cb2bbf8047f",
+        "legacyPath": [
+          "MF:L02:S01",
+          "MF:L02:S02",
+          "MF:L02:S03",
+          "MF:L03:S03",
+          "MF:L03:S04",
+          "MF:L03:S05",
+          "MF:L03:S06",
+          "MF:L04:S06",
+          "MF:L04:S07",
+          "MF:L03:S07",
+          "MF:L03:S08",
+          "MF:L02:S08"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G01-E5-84cbaab00402058d",
+          "path": [
+            "MF:L02:S01",
+            "MF:L02:S02",
+            "MF:L02:S03",
+            "MF:L03:S03",
+            "MF:L03:S04",
+            "MF:L03:S05",
+            "MF:L03:S06",
+            "MF:L04:S06",
+            "MF:L04:S07",
+            "MF:L03:S07",
+            "MF:L03:S08",
+            "MF:L02:S08"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 0,
+            "cyclicMandalaDistance": 0
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DIRECT",
+      "preferredProjectionId": "G01-E5-84cbaab00402058d",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G02",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "305e4728f0c060e1da30b4b28185e79c85eda164ec49093b840519edff08666e",
+        "legacyPath": [
+          "MF:L02:S02",
+          "MF:L02:S01",
+          "MF:L02:S72",
+          "MF:L03:S72",
+          "MF:L03:S01",
+          "MF:L03:S72",
+          "MF:L03:S01",
+          "MF:L04:S01",
+          "MF:L04:S02",
+          "MF:L03:S02",
+          "MF:L03:S01",
+          "MF:L02:S01"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G02-E5-26c44b0e8748193f",
+          "path": [
+            "MF:L02:S02",
+            "MF:L02:S01",
+            "MF:L02:S72",
+            "MF:L03:S72",
+            "MF:L03:S01",
+            "MF:L03:S02",
+            "MF:L03:S03",
+            "MF:L04:S03",
+            "MF:L04:S04",
+            "MF:L03:S04",
+            "MF:L03:S05",
+            "MF:L02:S05"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 18
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G02-E5-26c44b0e8748193f",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G03",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "d63089db69c25c1d0235a244a80c7e1b86df16a6d39d0b49fc9682272e79ce08",
+        "legacyPath": [
+          "MF:L02:S03",
+          "MF:L02:S04",
+          "MF:L02:S03",
+          "MF:L03:S03",
+          "MF:L03:S04",
+          "MF:L03:S03",
+          "MF:L03:S04",
+          "MF:L04:S04",
+          "MF:L04:S03",
+          "MF:L03:S03",
+          "MF:L03:S04",
+          "MF:L02:S04"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G03-E5-9f935577de0c79de",
+          "path": [
+            "MF:L02:S03",
+            "MF:L02:S02",
+            "MF:L02:S01",
+            "MF:L03:S01",
+            "MF:L03:S02",
+            "MF:L03:S03",
+            "MF:L03:S04",
+            "MF:L04:S04",
+            "MF:L04:S05",
+            "MF:L03:S05",
+            "MF:L03:S06",
+            "MF:L02:S06"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 16
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G03-E5-9f935577de0c79de",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G04",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "46b44df22de3f0fc125107c607235fb2412393cbea0a69d63f6309bca9d09424",
+        "legacyPath": [
+          "MF:L02:S04",
+          "MF:L02:S03",
+          "MF:L02:S04",
+          "MF:L03:S04",
+          "MF:L03:S05",
+          "MF:L03:S06",
+          "MF:L03:S07",
+          "MF:L04:S07",
+          "MF:L04:S06",
+          "MF:L03:S06",
+          "MF:L03:S05",
+          "MF:L02:S05"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G04-E5-9baaf78e24d99b44",
+          "path": [
+            "MF:L02:S04",
+            "MF:L02:S03",
+            "MF:L02:S02",
+            "MF:L03:S02",
+            "MF:L03:S03",
+            "MF:L03:S04",
+            "MF:L03:S05",
+            "MF:L04:S05",
+            "MF:L04:S04",
+            "MF:L05:S04",
+            "MF:L05:S03",
+            "MF:L04:S03"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 26
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G04-E5-9baaf78e24d99b44",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G05",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "7ea2895564eca98c073bd58862ab1e16fc2faaf517ebdc662933aa81ac839824",
+        "legacyPath": [
+          "MF:L02:S05",
+          "MF:L02:S04",
+          "MF:L02:S05",
+          "MF:L03:S05",
+          "MF:L03:S06",
+          "MF:L03:S05",
+          "MF:L03:S04",
+          "MF:L04:S04",
+          "MF:L04:S05",
+          "MF:L03:S05",
+          "MF:L03:S06",
+          "MF:L02:S06"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G05-E5-b1c412985607762b",
+          "path": [
+            "MF:L02:S05",
+            "MF:L02:S06",
+            "MF:L02:S07",
+            "MF:L03:S07",
+            "MF:L03:S06",
+            "MF:L03:S05",
+            "MF:L03:S04",
+            "MF:L04:S04",
+            "MF:L04:S05",
+            "MF:L05:S05",
+            "MF:L05:S06",
+            "MF:L04:S06"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 12
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G05-E5-b1c412985607762b",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G06",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "17c1519bd5805dfa13294353b140c28cd008e3aaf10e52193e26bf9f4d385c4b",
+        "legacyPath": [
+          "MF:L02:S06",
+          "MF:L02:S07",
+          "MF:L02:S06",
+          "MF:L03:S06",
+          "MF:L03:S07",
+          "MF:L03:S08",
+          "MF:L03:S07",
+          "MF:L04:S07",
+          "MF:L04:S08",
+          "MF:L03:S08",
+          "MF:L03:S07",
+          "MF:L02:S07"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G06-E5-f1ac847a91d420de",
+          "path": [
+            "MF:L02:S06",
+            "MF:L02:S05",
+            "MF:L02:S04",
+            "MF:L03:S04",
+            "MF:L03:S05",
+            "MF:L03:S06",
+            "MF:L03:S07",
+            "MF:L04:S07",
+            "MF:L04:S08",
+            "MF:L03:S08",
+            "MF:L03:S09",
+            "MF:L02:S09"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 14
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G06-E5-f1ac847a91d420de",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G07",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "abaa77f492102dbecad952e9b45bc42776951a8ccb5c397b0fe5210e57f324bf",
+        "legacyPath": [
+          "MF:L02:S07",
+          "MF:L02:S06",
+          "MF:L02:S05",
+          "MF:L03:S05",
+          "MF:L03:S06",
+          "MF:L03:S07",
+          "MF:L03:S06",
+          "MF:L04:S06",
+          "MF:L04:S05",
+          "MF:L03:S05",
+          "MF:L03:S06",
+          "MF:L02:S06"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G07-E5-a00b0c22e39e1c29",
+          "path": [
+            "MF:L02:S07",
+            "MF:L02:S06",
+            "MF:L02:S05",
+            "MF:L03:S05",
+            "MF:L03:S06",
+            "MF:L03:S07",
+            "MF:L03:S08",
+            "MF:L04:S08",
+            "MF:L04:S09",
+            "MF:L03:S09",
+            "MF:L03:S10",
+            "MF:L02:S10"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 20
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G07-E5-a00b0c22e39e1c29",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G08",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "9b5d4011684f45a3b493bc469e9715e389182b1189ba7305f97118c2b5a6a649",
+        "legacyPath": [
+          "MF:L02:S08",
+          "MF:L02:S09",
+          "MF:L02:S10",
+          "MF:L03:S10",
+          "MF:L03:S11",
+          "MF:L03:S10",
+          "MF:L03:S09",
+          "MF:L04:S09",
+          "MF:L04:S08",
+          "MF:L03:S08",
+          "MF:L03:S07",
+          "MF:L02:S07"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G08-E5-6d7a9082f5c56181",
+          "path": [
+            "MF:L02:S08",
+            "MF:L02:S09",
+            "MF:L02:S10",
+            "MF:L03:S10",
+            "MF:L03:S09",
+            "MF:L03:S08",
+            "MF:L03:S07",
+            "MF:L04:S07",
+            "MF:L04:S06",
+            "MF:L03:S06",
+            "MF:L03:S05",
+            "MF:L02:S05"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 16
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G08-E5-6d7a9082f5c56181",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G09",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "ca0cd9dced292b9d0b367a571382d95b55e1cd561e3004b687b202488f1805df",
+        "legacyPath": [
+          "MF:L02:S09",
+          "MF:L02:S08",
+          "MF:L02:S07",
+          "MF:L03:S07",
+          "MF:L03:S06",
+          "MF:L03:S07",
+          "MF:L03:S08",
+          "MF:L04:S08",
+          "MF:L04:S09",
+          "MF:L03:S09",
+          "MF:L03:S10",
+          "MF:L02:S10"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G09-E5-aac0415b17da01e7",
+          "path": [
+            "MF:L02:S09",
+            "MF:L02:S08",
+            "MF:L02:S07",
+            "MF:L03:S07",
+            "MF:L03:S08",
+            "MF:L03:S09",
+            "MF:L03:S10",
+            "MF:L04:S10",
+            "MF:L04:S11",
+            "MF:L03:S11",
+            "MF:L03:S12",
+            "MF:L02:S12"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 16
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G09-E5-aac0415b17da01e7",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G10",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "179a2a00229382b7adb8e82e63021c99fb34b451fbfe578b5794dd9193e71490",
+        "legacyPath": [
+          "MF:L02:S10",
+          "MF:L02:S11",
+          "MF:L02:S12",
+          "MF:L03:S12",
+          "MF:L03:S11",
+          "MF:L03:S10",
+          "MF:L03:S11",
+          "MF:L04:S11",
+          "MF:L04:S12",
+          "MF:L03:S12",
+          "MF:L03:S11",
+          "MF:L02:S11"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G10-E5-41e3244c82cccbf3",
+          "path": [
+            "MF:L02:S10",
+            "MF:L02:S11",
+            "MF:L02:S12",
+            "MF:L03:S12",
+            "MF:L03:S11",
+            "MF:L03:S10",
+            "MF:L03:S09",
+            "MF:L04:S09",
+            "MF:L04:S08",
+            "MF:L03:S08",
+            "MF:L03:S07",
+            "MF:L02:S07"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 20
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G10-E5-41e3244c82cccbf3",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G11",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "bd46a3e8df447e34684519926b9f1efa49a9f87c8dace24bb97c7cddded55705",
+        "legacyPath": [
+          "MF:L02:S11",
+          "MF:L03:S11",
+          "MF:L03:S12",
+          "MF:L04:S12",
+          "MF:L04:S13",
+          "MF:L04:S14",
+          "MF:L04:S15",
+          "MF:L03:S15",
+          "MF:L03:S16",
+          "MF:L03:S17",
+          "MF:L03:S18",
+          "MF:L02:S18"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G11-E5-bdc463989b5de812",
+          "path": [
+            "MF:L02:S11",
+            "MF:L03:S11",
+            "MF:L03:S12",
+            "MF:L04:S12",
+            "MF:L04:S13",
+            "MF:L04:S14",
+            "MF:L04:S15",
+            "MF:L03:S15",
+            "MF:L03:S16",
+            "MF:L03:S17",
+            "MF:L03:S18",
+            "MF:L02:S18"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 0,
+            "cyclicMandalaDistance": 0
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DIRECT",
+      "preferredProjectionId": "G11-E5-bdc463989b5de812",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G12",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "bb732c2eb118ceb8a811c475383fdbca43d4115fc3a566abea8602eca8720b26",
+        "legacyPath": [
+          "MF:L02:S12",
+          "MF:L03:S12",
+          "MF:L03:S11",
+          "MF:L04:S11",
+          "MF:L04:S10",
+          "MF:L04:S11",
+          "MF:L04:S10",
+          "MF:L03:S10",
+          "MF:L03:S11",
+          "MF:L03:S12",
+          "MF:L03:S11",
+          "MF:L02:S11"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G12-E5-54140fe2180e6a62",
+          "path": [
+            "MF:L02:S12",
+            "MF:L03:S12",
+            "MF:L03:S11",
+            "MF:L04:S11",
+            "MF:L04:S10",
+            "MF:L04:S09",
+            "MF:L04:S08",
+            "MF:L03:S08",
+            "MF:L03:S07",
+            "MF:L03:S06",
+            "MF:L03:S05",
+            "MF:L02:S05"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 28
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G12-E5-54140fe2180e6a62",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G13",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "a807b4429b35b4e31b8ca574cb06f7c82428c2ee4c1bc028ea55a1c57185e38b",
+        "legacyPath": [
+          "MF:L02:S13",
+          "MF:L03:S13",
+          "MF:L03:S14",
+          "MF:L04:S14",
+          "MF:L04:S13",
+          "MF:L04:S14",
+          "MF:L04:S13",
+          "MF:L03:S13",
+          "MF:L03:S14",
+          "MF:L03:S13",
+          "MF:L03:S14",
+          "MF:L02:S14"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G13-E5-7b9e705579f5e2b8",
+          "path": [
+            "MF:L02:S13",
+            "MF:L03:S13",
+            "MF:L03:S14",
+            "MF:L04:S14",
+            "MF:L04:S13",
+            "MF:L04:S12",
+            "MF:L04:S11",
+            "MF:L03:S11",
+            "MF:L03:S10",
+            "MF:L03:S09",
+            "MF:L03:S08",
+            "MF:L02:S08"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 26
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G13-E5-7b9e705579f5e2b8",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G14",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "f3fa71d5aa49eb9d448d9dfaacb6dcc4de6d8d65a08f9721f200ec7417bf9f29",
+        "legacyPath": [
+          "MF:L02:S14",
+          "MF:L03:S14",
+          "MF:L03:S13",
+          "MF:L04:S13",
+          "MF:L04:S14",
+          "MF:L04:S15",
+          "MF:L04:S16",
+          "MF:L03:S16",
+          "MF:L03:S17",
+          "MF:L03:S16",
+          "MF:L03:S15",
+          "MF:L02:S15"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G14-E5-9b77d3a02704709b",
+          "path": [
+            "MF:L02:S14",
+            "MF:L03:S14",
+            "MF:L03:S13",
+            "MF:L04:S13",
+            "MF:L04:S14",
+            "MF:L04:S15",
+            "MF:L04:S16",
+            "MF:L03:S16",
+            "MF:L03:S17",
+            "MF:L03:S18",
+            "MF:L03:S19",
+            "MF:L02:S19"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 10
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G14-E5-9b77d3a02704709b",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G15",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "9e7bb04b8f7deb289382795cfd4b6873789f4b40b75a7b14ff3ce141eec968c7",
+        "legacyPath": [
+          "MF:L02:S15",
+          "MF:L03:S15",
+          "MF:L03:S14",
+          "MF:L04:S14",
+          "MF:L04:S15",
+          "MF:L04:S16",
+          "MF:L04:S15",
+          "MF:L03:S15",
+          "MF:L03:S14",
+          "MF:L03:S15",
+          "MF:L03:S16",
+          "MF:L02:S16"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G15-E5-d4269d43c6c5d292",
+          "path": [
+            "MF:L02:S15",
+            "MF:L03:S15",
+            "MF:L03:S14",
+            "MF:L04:S14",
+            "MF:L04:S15",
+            "MF:L04:S16",
+            "MF:L04:S17",
+            "MF:L03:S17",
+            "MF:L03:S18",
+            "MF:L03:S19",
+            "MF:L03:S20",
+            "MF:L02:S20"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 20
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G15-E5-d4269d43c6c5d292",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G16",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "cd589e1b089d7e63d460101eb14dca7264beb7e8d9b2878ff1f3282c8735dbfb",
+        "legacyPath": [
+          "MF:L02:S16",
+          "MF:L03:S16",
+          "MF:L03:S17",
+          "MF:L04:S17",
+          "MF:L04:S16",
+          "MF:L04:S17",
+          "MF:L04:S18",
+          "MF:L03:S18",
+          "MF:L03:S17",
+          "MF:L03:S18",
+          "MF:L03:S17",
+          "MF:L02:S17"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G16-E5-78e122baafb136d9",
+          "path": [
+            "MF:L02:S16",
+            "MF:L03:S16",
+            "MF:L03:S17",
+            "MF:L04:S17",
+            "MF:L04:S18",
+            "MF:L04:S19",
+            "MF:L04:S20",
+            "MF:L03:S20",
+            "MF:L03:S21",
+            "MF:L03:S22",
+            "MF:L03:S23",
+            "MF:L02:S23"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 28
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G16-E5-78e122baafb136d9",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G17",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "0cbbc3cbd83642ba0d705bc57f000b6152d6b48a4ab2b1544f6ccbac06766465",
+        "legacyPath": [
+          "MF:L02:S17",
+          "MF:L03:S17",
+          "MF:L03:S16",
+          "MF:L04:S16",
+          "MF:L04:S15",
+          "MF:L04:S16",
+          "MF:L04:S17",
+          "MF:L03:S17",
+          "MF:L03:S16",
+          "MF:L03:S15",
+          "MF:L03:S16",
+          "MF:L02:S16"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G17-E5-ee584ad1394483f6",
+          "path": [
+            "MF:L02:S17",
+            "MF:L03:S17",
+            "MF:L03:S16",
+            "MF:L04:S16",
+            "MF:L04:S15",
+            "MF:L04:S14",
+            "MF:L04:S13",
+            "MF:L03:S13",
+            "MF:L03:S12",
+            "MF:L03:S11",
+            "MF:L03:S10",
+            "MF:L02:S10"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 30
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        },
+        {
+          "projectionId": "G17-E5-8e04f31a084076d4",
+          "path": [
+            "MF:L02:S17",
+            "MF:L03:S17",
+            "MF:L03:S16",
+            "MF:L04:S16",
+            "MF:L04:S17",
+            "MF:L04:S18",
+            "MF:L04:S19",
+            "MF:L03:S19",
+            "MF:L03:S20",
+            "MF:L03:S21",
+            "MF:L03:S22",
+            "MF:L02:S22"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 30
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_AMBIGUOUS",
+      "preferredProjectionId": null,
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "CANDIDATE_SET_ONLY"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G18",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "63394b91342e0190eddbcccedc5bda169c427899eb26ab8cda40a686e0f819d5",
+        "legacyPath": [
+          "MF:L02:S18",
+          "MF:L03:S18",
+          "MF:L03:S19",
+          "MF:L04:S19",
+          "MF:L04:S20",
+          "MF:L04:S21",
+          "MF:L04:S20",
+          "MF:L03:S20",
+          "MF:L03:S19",
+          "MF:L03:S18",
+          "MF:L03:S17",
+          "MF:L02:S17"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G18-E5-febc9f1c4a18f4c2",
+          "path": [
+            "MF:L02:S18",
+            "MF:L03:S18",
+            "MF:L03:S19",
+            "MF:L04:S19",
+            "MF:L04:S18",
+            "MF:L04:S17",
+            "MF:L04:S16",
+            "MF:L03:S16",
+            "MF:L03:S15",
+            "MF:L03:S14",
+            "MF:L03:S13",
+            "MF:L02:S13"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 30
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G18-E5-febc9f1c4a18f4c2",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G19",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "f4987dcac8819e481cc85db3eb86dc05e1ae749a5316599e3a70a6cd845902d8",
+        "legacyPath": [
+          "MF:L02:S19",
+          "MF:L03:S19",
+          "MF:L03:S18",
+          "MF:L04:S18",
+          "MF:L04:S17",
+          "MF:L04:S16",
+          "MF:L04:S17",
+          "MF:L03:S17",
+          "MF:L03:S18",
+          "MF:L03:S19",
+          "MF:L03:S20",
+          "MF:L02:S20"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G19-E5-4a501d40f405bc30",
+          "path": [
+            "MF:L02:S19",
+            "MF:L03:S19",
+            "MF:L03:S18",
+            "MF:L04:S18",
+            "MF:L04:S19",
+            "MF:L04:S20",
+            "MF:L04:S21",
+            "MF:L03:S21",
+            "MF:L03:S22",
+            "MF:L03:S23",
+            "MF:L03:S24",
+            "MF:L02:S24"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 30
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G19-E5-4a501d40f405bc30",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G20",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "02d0e09c72a5c4952800d9bd067e55259b2a4b64412eaf13e82f565f10472b64",
+        "legacyPath": [
+          "MF:L02:S20",
+          "MF:L03:S20",
+          "MF:L03:S21",
+          "MF:L04:S21",
+          "MF:L04:S22",
+          "MF:L04:S21",
+          "MF:L04:S20",
+          "MF:L03:S20",
+          "MF:L03:S21",
+          "MF:L03:S22",
+          "MF:L03:S21",
+          "MF:L02:S21"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G20-E5-66f496d3ca4416d8",
+          "path": [
+            "MF:L02:S20",
+            "MF:L03:S20",
+            "MF:L03:S21",
+            "MF:L04:S21",
+            "MF:L04:S20",
+            "MF:L04:S19",
+            "MF:L04:S18",
+            "MF:L03:S18",
+            "MF:L03:S17",
+            "MF:L03:S16",
+            "MF:L03:S15",
+            "MF:L02:S15"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 30
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        },
+        {
+          "projectionId": "G20-E5-bd35fd4f59c227a2",
+          "path": [
+            "MF:L02:S20",
+            "MF:L03:S20",
+            "MF:L03:S21",
+            "MF:L04:S21",
+            "MF:L04:S22",
+            "MF:L04:S23",
+            "MF:L04:S24",
+            "MF:L03:S24",
+            "MF:L03:S25",
+            "MF:L03:S26",
+            "MF:L03:S27",
+            "MF:L02:S27"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 30
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_AMBIGUOUS",
+      "preferredProjectionId": null,
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "CANDIDATE_SET_ONLY"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G21",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "51ebb6d61f66f059dc9499191fbb09b0284e02de2d7d5e269bfdbdbfc2a34b95",
+        "legacyPath": [
+          "MF:L05:S21",
+          "MF:L06:S21",
+          "MF:L06:S22",
+          "MF:L06:S23",
+          "MF:L05:S23",
+          "MF:L05:S24",
+          "MF:L04:S24",
+          "MF:L04:S25",
+          "MF:L04:S26",
+          "MF:L04:S27",
+          "MF:L05:S27",
+          "MF:L05:S28"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G21-E5-b4eaeb5fd4c0229a",
+          "path": [
+            "MF:L05:S21",
+            "MF:L06:S21",
+            "MF:L06:S22",
+            "MF:L06:S23",
+            "MF:L05:S23",
+            "MF:L05:S24",
+            "MF:L04:S24",
+            "MF:L04:S25",
+            "MF:L04:S26",
+            "MF:L04:S27",
+            "MF:L05:S27",
+            "MF:L05:S28"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 0,
+            "cyclicMandalaDistance": 0
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DIRECT",
+      "preferredProjectionId": "G21-E5-b4eaeb5fd4c0229a",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G22",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "b50444e3d67e3cc760dcc10666bcdbdcdd4bed1924eb75ddf607f4757925be9d",
+        "legacyPath": [
+          "MF:L05:S22",
+          "MF:L06:S22",
+          "MF:L06:S21",
+          "MF:L06:S20",
+          "MF:L05:S20",
+          "MF:L05:S21",
+          "MF:L04:S21",
+          "MF:L04:S20",
+          "MF:L04:S21",
+          "MF:L04:S22",
+          "MF:L05:S22",
+          "MF:L05:S21"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G22-E5-6192a7cea8c7ad0f",
+          "path": [
+            "MF:L05:S22",
+            "MF:L06:S22",
+            "MF:L06:S21",
+            "MF:L06:S20",
+            "MF:L05:S20",
+            "MF:L05:S21",
+            "MF:L04:S21",
+            "MF:L04:S22",
+            "MF:L04:S23",
+            "MF:L04:S24",
+            "MF:L05:S24",
+            "MF:L05:S23"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 10
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G22-E5-6192a7cea8c7ad0f",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G23",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "3055c4feb3e86dd2a563419d5117028403214835ddaa9d26438b865aa823372a",
+        "legacyPath": [
+          "MF:L05:S23",
+          "MF:L06:S23",
+          "MF:L06:S24",
+          "MF:L06:S23",
+          "MF:L05:S23",
+          "MF:L05:S24",
+          "MF:L04:S24",
+          "MF:L04:S23",
+          "MF:L04:S24",
+          "MF:L04:S23",
+          "MF:L05:S23",
+          "MF:L05:S24"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G23-E5-0b9f53b754fc0e86",
+          "path": [
+            "MF:L05:S23",
+            "MF:L06:S23",
+            "MF:L06:S22",
+            "MF:L06:S21",
+            "MF:L05:S21",
+            "MF:L05:S22",
+            "MF:L04:S22",
+            "MF:L04:S21",
+            "MF:L04:S20",
+            "MF:L04:S19",
+            "MF:L05:S19",
+            "MF:L05:S20"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 28
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G23-E5-0b9f53b754fc0e86",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G24",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "d984b8ae9c26fbc372fc4bdade79526ab59bd2f5c0c5444f3c65a101ceb8271a",
+        "legacyPath": [
+          "MF:L05:S24",
+          "MF:L06:S24",
+          "MF:L06:S23",
+          "MF:L06:S24",
+          "MF:L05:S24",
+          "MF:L05:S25",
+          "MF:L04:S25",
+          "MF:L04:S26",
+          "MF:L04:S27",
+          "MF:L04:S26",
+          "MF:L05:S26",
+          "MF:L05:S25"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G24-E5-b979138735d23ed6",
+          "path": [
+            "MF:L05:S24",
+            "MF:L06:S24",
+            "MF:L06:S23",
+            "MF:L06:S22",
+            "MF:L05:S22",
+            "MF:L05:S23",
+            "MF:L04:S23",
+            "MF:L04:S24",
+            "MF:L04:S25",
+            "MF:L04:S26",
+            "MF:L05:S26",
+            "MF:L05:S25"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 12
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G24-E5-b979138735d23ed6",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G25",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "0ef0a04cb82090baba0daf7acf3051a19185260a19a07431634dc4616114dcaa",
+        "legacyPath": [
+          "MF:L05:S25",
+          "MF:L06:S25",
+          "MF:L06:S24",
+          "MF:L06:S25",
+          "MF:L05:S25",
+          "MF:L05:S26",
+          "MF:L04:S26",
+          "MF:L04:S25",
+          "MF:L04:S24",
+          "MF:L04:S25",
+          "MF:L05:S25",
+          "MF:L05:S26"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G25-E5-f39951085bdb4535",
+          "path": [
+            "MF:L05:S25",
+            "MF:L06:S25",
+            "MF:L06:S24",
+            "MF:L06:S23",
+            "MF:L05:S23",
+            "MF:L05:S24",
+            "MF:L04:S24",
+            "MF:L04:S23",
+            "MF:L04:S22",
+            "MF:L04:S21",
+            "MF:L05:S21",
+            "MF:L05:S22"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 24
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G25-E5-f39951085bdb4535",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G26",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "058d4ab074290f9b9e08d52c7c3b2e7b8ea25ac7003bffb568c42193f2396e03",
+        "legacyPath": [
+          "MF:L05:S26",
+          "MF:L06:S26",
+          "MF:L06:S27",
+          "MF:L06:S26",
+          "MF:L05:S26",
+          "MF:L05:S27",
+          "MF:L04:S27",
+          "MF:L04:S28",
+          "MF:L04:S27",
+          "MF:L04:S28",
+          "MF:L05:S28",
+          "MF:L05:S27"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G26-E5-d0cc8c2eb891c76b",
+          "path": [
+            "MF:L05:S26",
+            "MF:L06:S26",
+            "MF:L06:S25",
+            "MF:L06:S24",
+            "MF:L05:S24",
+            "MF:L05:S25",
+            "MF:L04:S25",
+            "MF:L04:S26",
+            "MF:L04:S27",
+            "MF:L04:S28",
+            "MF:L05:S28",
+            "MF:L05:S27"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 12
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G26-E5-d0cc8c2eb891c76b",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G27",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "32136afb7934902b9151a807298ee147ae8688cf9da61f2b0cb18e4603f63f78",
+        "legacyPath": [
+          "MF:L05:S27",
+          "MF:L06:S27",
+          "MF:L06:S26",
+          "MF:L06:S25",
+          "MF:L05:S25",
+          "MF:L05:S26",
+          "MF:L04:S26",
+          "MF:L04:S27",
+          "MF:L04:S26",
+          "MF:L04:S25",
+          "MF:L05:S25",
+          "MF:L05:S26"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G27-E5-ab5b83615ae5e0c4",
+          "path": [
+            "MF:L05:S27",
+            "MF:L06:S27",
+            "MF:L06:S26",
+            "MF:L06:S25",
+            "MF:L05:S25",
+            "MF:L05:S26",
+            "MF:L04:S26",
+            "MF:L04:S25",
+            "MF:L04:S24",
+            "MF:L04:S23",
+            "MF:L05:S23",
+            "MF:L05:S24"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 10
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G27-E5-ab5b83615ae5e0c4",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G28",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "0dd15254fab1ab6f81b9e89a1fde44b926b318866ce47ada309920116dda83e8",
+        "legacyPath": [
+          "MF:L05:S28",
+          "MF:L06:S28",
+          "MF:L06:S29",
+          "MF:L06:S30",
+          "MF:L05:S30",
+          "MF:L05:S31",
+          "MF:L04:S31",
+          "MF:L04:S30",
+          "MF:L04:S29",
+          "MF:L04:S28",
+          "MF:L05:S28",
+          "MF:L05:S27"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G28-E5-6fe309e9feb0136a",
+          "path": [
+            "MF:L05:S28",
+            "MF:L06:S28",
+            "MF:L06:S29",
+            "MF:L06:S30",
+            "MF:L05:S30",
+            "MF:L05:S31",
+            "MF:L04:S31",
+            "MF:L04:S30",
+            "MF:L04:S29",
+            "MF:L04:S28",
+            "MF:L03:S28",
+            "MF:L03:S27"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 4
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G28-E5-6fe309e9feb0136a",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G29",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "7ac94839ea7d0b3ebf3a9c19e8c8f25a46234f47622dc2eb96a2b0aeac9676a5",
+        "legacyPath": [
+          "MF:L05:S29",
+          "MF:L06:S29",
+          "MF:L06:S28",
+          "MF:L06:S27",
+          "MF:L05:S27",
+          "MF:L05:S26",
+          "MF:L04:S26",
+          "MF:L04:S27",
+          "MF:L04:S28",
+          "MF:L04:S29",
+          "MF:L05:S29",
+          "MF:L05:S30"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G29-E5-9bd00aac094ac483",
+          "path": [
+            "MF:L05:S29",
+            "MF:L06:S29",
+            "MF:L06:S28",
+            "MF:L06:S27",
+            "MF:L05:S27",
+            "MF:L05:S26",
+            "MF:L04:S26",
+            "MF:L04:S27",
+            "MF:L04:S28",
+            "MF:L04:S29",
+            "MF:L03:S29",
+            "MF:L03:S30"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 4
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G29-E5-9bd00aac094ac483",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G30",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "b493da81e6abd51f44ce06b3647b03cf5e5d59a6344849e4c50063354196c4e4",
+        "legacyPath": [
+          "MF:L05:S30",
+          "MF:L06:S30",
+          "MF:L06:S31",
+          "MF:L06:S32",
+          "MF:L05:S32",
+          "MF:L05:S31",
+          "MF:L04:S31",
+          "MF:L04:S30",
+          "MF:L04:S31",
+          "MF:L04:S32",
+          "MF:L05:S32",
+          "MF:L05:S31"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G30-E5-59cbfe3dff2701f9",
+          "path": [
+            "MF:L05:S30",
+            "MF:L06:S30",
+            "MF:L06:S31",
+            "MF:L06:S32",
+            "MF:L05:S32",
+            "MF:L05:S31",
+            "MF:L04:S31",
+            "MF:L04:S32",
+            "MF:L04:S33",
+            "MF:L04:S34",
+            "MF:L05:S34",
+            "MF:L05:S33"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 10
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G30-E5-59cbfe3dff2701f9",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G31",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "375128edfb90c0d8a2abb48f08f7e658744fbc9c6203bc62b47c330de8a966f2",
+        "legacyPath": [
+          "MF:L05:S31",
+          "MF:L04:S31",
+          "MF:L04:S32",
+          "MF:L04:S33",
+          "MF:L04:S34",
+          "MF:L04:S35",
+          "MF:L05:S35",
+          "MF:L05:S36",
+          "MF:L06:S36",
+          "MF:L06:S37",
+          "MF:L05:S37",
+          "MF:L05:S38"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G31-E5-272958bae4aa17ec",
+          "path": [
+            "MF:L05:S31",
+            "MF:L04:S31",
+            "MF:L04:S32",
+            "MF:L04:S33",
+            "MF:L04:S34",
+            "MF:L04:S35",
+            "MF:L05:S35",
+            "MF:L05:S36",
+            "MF:L06:S36",
+            "MF:L06:S37",
+            "MF:L05:S37",
+            "MF:L05:S38"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 0,
+            "cyclicMandalaDistance": 0
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DIRECT",
+      "preferredProjectionId": "G31-E5-272958bae4aa17ec",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G32",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "44b6037a0a91ad492bbb58ed20f69075ee92ba14794f8a694e94a742f9018556",
+        "legacyPath": [
+          "MF:L05:S32",
+          "MF:L04:S32",
+          "MF:L04:S31",
+          "MF:L04:S30",
+          "MF:L04:S31",
+          "MF:L04:S30",
+          "MF:L05:S30",
+          "MF:L05:S31",
+          "MF:L06:S31",
+          "MF:L06:S32",
+          "MF:L05:S32",
+          "MF:L05:S31"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G32-E5-fa35897816f41fc9",
+          "path": [
+            "MF:L05:S32",
+            "MF:L04:S32",
+            "MF:L04:S31",
+            "MF:L04:S30",
+            "MF:L04:S29",
+            "MF:L04:S28",
+            "MF:L05:S28",
+            "MF:L05:S29",
+            "MF:L06:S29",
+            "MF:L06:S30",
+            "MF:L05:S30",
+            "MF:L05:S31"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 14
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G32-E5-fa35897816f41fc9",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G33",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "e9b9a7185086a94d6078d4d0de1a5e1a978529d9033430c7fd15a40684b9dbe9",
+        "legacyPath": [
+          "MF:L05:S33",
+          "MF:L04:S33",
+          "MF:L04:S34",
+          "MF:L04:S33",
+          "MF:L04:S34",
+          "MF:L04:S33",
+          "MF:L05:S33",
+          "MF:L05:S34",
+          "MF:L06:S34",
+          "MF:L06:S33",
+          "MF:L05:S33",
+          "MF:L05:S34"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G33-E5-84616f709a5e52b5",
+          "path": [
+            "MF:L05:S33",
+            "MF:L04:S33",
+            "MF:L04:S32",
+            "MF:L04:S31",
+            "MF:L04:S30",
+            "MF:L04:S29",
+            "MF:L05:S29",
+            "MF:L05:S30",
+            "MF:L06:S30",
+            "MF:L06:S31",
+            "MF:L05:S31",
+            "MF:L05:S32"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 30
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G33-E5-84616f709a5e52b5",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G34",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "02a4661482fa3af89f525c3e6ae58e8b0a0a0e8e32b91784360e5f76ef70bed6",
+        "legacyPath": [
+          "MF:L05:S34",
+          "MF:L04:S34",
+          "MF:L04:S33",
+          "MF:L04:S34",
+          "MF:L04:S35",
+          "MF:L04:S36",
+          "MF:L05:S36",
+          "MF:L05:S37",
+          "MF:L06:S37",
+          "MF:L06:S36",
+          "MF:L05:S36",
+          "MF:L05:S35"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G34-E5-b51de3f6de2948b1",
+          "path": [
+            "MF:L05:S34",
+            "MF:L04:S34",
+            "MF:L04:S35",
+            "MF:L04:S36",
+            "MF:L04:S37",
+            "MF:L04:S38",
+            "MF:L05:S38",
+            "MF:L05:S37",
+            "MF:L06:S37",
+            "MF:L06:S36",
+            "MF:L05:S36",
+            "MF:L05:S35"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 10
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G34-E5-b51de3f6de2948b1",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G35",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "522997f8d4e4eb155648cf8b5959065424eaef672204fad74687d5b6bba1e489",
+        "legacyPath": [
+          "MF:L05:S35",
+          "MF:L04:S35",
+          "MF:L04:S34",
+          "MF:L04:S35",
+          "MF:L04:S36",
+          "MF:L04:S35",
+          "MF:L05:S35",
+          "MF:L05:S34",
+          "MF:L06:S34",
+          "MF:L06:S35",
+          "MF:L05:S35",
+          "MF:L05:S36"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G35-E5-7379825386d2f38c",
+          "path": [
+            "MF:L05:S35",
+            "MF:L04:S35",
+            "MF:L04:S34",
+            "MF:L04:S33",
+            "MF:L04:S32",
+            "MF:L04:S31",
+            "MF:L05:S31",
+            "MF:L05:S32",
+            "MF:L06:S32",
+            "MF:L06:S33",
+            "MF:L05:S33",
+            "MF:L05:S34"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 24
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G35-E5-7379825386d2f38c",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G36",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "f213474664f2ff7838cb8348f3368218e8bafe8f68629ecf79d55a8854c1804d",
+        "legacyPath": [
+          "MF:L05:S36",
+          "MF:L04:S36",
+          "MF:L04:S37",
+          "MF:L04:S36",
+          "MF:L04:S37",
+          "MF:L04:S38",
+          "MF:L05:S38",
+          "MF:L05:S37",
+          "MF:L06:S37",
+          "MF:L06:S38",
+          "MF:L05:S38",
+          "MF:L05:S37"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G36-E5-4ecfb3349ba10058",
+          "path": [
+            "MF:L05:S36",
+            "MF:L04:S36",
+            "MF:L04:S37",
+            "MF:L04:S38",
+            "MF:L04:S39",
+            "MF:L04:S40",
+            "MF:L05:S40",
+            "MF:L05:S39",
+            "MF:L06:S39",
+            "MF:L06:S38",
+            "MF:L05:S38",
+            "MF:L05:S37"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 2,
+            "cyclicMandalaDistance": 12
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G36-E5-4ecfb3349ba10058",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G37",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "6874378e0ba4471530940f96fdfa704e0dc5fc271e39d1a9f4bbcad2d7d4d449",
+        "legacyPath": [
+          "MF:L05:S37",
+          "MF:L04:S37",
+          "MF:L04:S36",
+          "MF:L04:S35",
+          "MF:L04:S36",
+          "MF:L04:S37",
+          "MF:L05:S37",
+          "MF:L05:S36",
+          "MF:L06:S36",
+          "MF:L06:S35",
+          "MF:L05:S35",
+          "MF:L05:S36"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G37-E5-b8298ae19e4a977f",
+          "path": [
+            "MF:L05:S37",
+            "MF:L04:S37",
+            "MF:L04:S36",
+            "MF:L04:S35",
+            "MF:L04:S34",
+            "MF:L04:S33",
+            "MF:L05:S33",
+            "MF:L05:S32",
+            "MF:L06:S32",
+            "MF:L06:S31",
+            "MF:L05:S31",
+            "MF:L05:S30"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 32
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G37-E5-b8298ae19e4a977f",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G38",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "8f8b518c947a8be8489f5fa80cc017ef2873baac1e86db161356b45c97ecd6a2",
+        "legacyPath": [
+          "MF:L05:S38",
+          "MF:L04:S38",
+          "MF:L04:S39",
+          "MF:L04:S40",
+          "MF:L04:S41",
+          "MF:L04:S40",
+          "MF:L05:S40",
+          "MF:L05:S39",
+          "MF:L06:S39",
+          "MF:L06:S38",
+          "MF:L05:S38",
+          "MF:L05:S37"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G38-E5-264e1f175757cd26",
+          "path": [
+            "MF:L05:S38",
+            "MF:L04:S38",
+            "MF:L04:S39",
+            "MF:L04:S40",
+            "MF:L04:S41",
+            "MF:L04:S42",
+            "MF:L05:S42",
+            "MF:L05:S41",
+            "MF:L06:S41",
+            "MF:L06:S40",
+            "MF:L05:S40",
+            "MF:L05:S39"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 14
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G38-E5-264e1f175757cd26",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G39",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "5bff2430f6ab2cf18751efdf5e5d7d4e01c4b6e68e55eda95a204c1863ffb457",
+        "legacyPath": [
+          "MF:L05:S39",
+          "MF:L04:S39",
+          "MF:L04:S38",
+          "MF:L04:S37",
+          "MF:L04:S36",
+          "MF:L04:S37",
+          "MF:L05:S37",
+          "MF:L05:S38",
+          "MF:L06:S38",
+          "MF:L06:S39",
+          "MF:L05:S39",
+          "MF:L05:S40"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G39-E5-95baf0f9f3453815",
+          "path": [
+            "MF:L05:S39",
+            "MF:L04:S39",
+            "MF:L04:S38",
+            "MF:L04:S37",
+            "MF:L04:S36",
+            "MF:L04:S35",
+            "MF:L05:S35",
+            "MF:L05:S36",
+            "MF:L06:S36",
+            "MF:L06:S37",
+            "MF:L05:S37",
+            "MF:L05:S38"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 1,
+            "cyclicMandalaDistance": 14
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G39-E5-95baf0f9f3453815",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    },
+    {
+      "legacyIdentity": {
+        "glyphId": "G40",
+        "sourceRef": "docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json",
+        "sourceFingerprint": "7f4d584b1a11bcb0bf73dcd0c45b2c17dba626211e1e4195e2d66c4f408f586a",
+        "legacyPath": [
+          "MF:L05:S40",
+          "MF:L04:S40",
+          "MF:L04:S41",
+          "MF:L04:S42",
+          "MF:L04:S41",
+          "MF:L04:S40",
+          "MF:L05:S40",
+          "MF:L05:S41",
+          "MF:L06:S41",
+          "MF:L06:S42",
+          "MF:L05:S42",
+          "MF:L05:S41"
+        ],
+        "authority": "HNK40_LEGACY"
+      },
+      "projectionSet": [
+        {
+          "projectionId": "G40-E5-71ef986bd298da9e",
+          "path": [
+            "MF:L05:S40",
+            "MF:L04:S40",
+            "MF:L04:S41",
+            "MF:L04:S42",
+            "MF:L04:S43",
+            "MF:L04:S44",
+            "MF:L05:S44",
+            "MF:L05:S45",
+            "MF:L06:S45",
+            "MF:L06:S46",
+            "MF:L05:S46",
+            "MF:L05:S47"
+          ],
+          "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1",
+          "metrics": {
+            "directionMismatchCount": 3,
+            "cyclicMandalaDistance": 32
+          },
+          "authority": "DERIVED_STRUCTURAL",
+          "canonical": false
+        }
+      ],
+      "resolutionStatus": "DERIVED_UNIQUE",
+      "preferredProjectionId": "G40-E5-71ef986bd298da9e",
+      "resolutionEvidence": {
+        "derivationRule": "HNK40-E5-V4-DIRECTION-DISTANCE@1"
+      },
+      "acquisitionEligibility": "STRUCTURAL_TARGET_AVAILABLE"
+    }
+  ]
+}
