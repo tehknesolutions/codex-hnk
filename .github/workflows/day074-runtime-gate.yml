@@ -30,7 +30,20 @@ permissions:
   contents: read
 
 jobs:
+  runner-preflight:
+    name: Day 074 runner preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Runner alive
+        run: |
+          echo 'DAY074_RUNNER_ALIVE'
+          uname -a
+          node --version || true
+
   day074-contract:
+    name: Day 074 fail-closed contract
+    needs: runner-preflight
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -42,6 +55,7 @@ jobs:
         run: node scripts/validate-day074-runtime-integration.mjs
 
   runtime-typecheck:
+    name: Day 074 runtime typecheck
     needs: day074-contract
     runs-on: ubuntu-latest
     timeout-minutes: 10
