@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+﻿import { createHash } from 'node:crypto';
 
 const RULE = 'HNK40-E5-V4-DIRECTION-DISTANCE@1';
 const SOURCE_REF = 'docs/research/mandala/final/hnk40-e4-genesis-projection.v1.json';
@@ -69,6 +69,15 @@ function makeProjection(record,candidate) {
     metrics:{directionMismatchCount:candidate.directionMismatchCount,cyclicMandalaDistance:candidate.cyclicMandalaDistance},
     authority:'DERIVED_STRUCTURAL', canonical:false };
 }
+function expectedNeighbor(from,to,edge) {
+  const a=parseAddress(from), b=parseAddress(to);
+  if (edge==='ANGULAR_NEXT') return a.layer===b.layer && b.sector===(a.sector===72?1:a.sector+1);
+  if (edge==='ANGULAR_PREV') return a.layer===b.layer && b.sector===(a.sector===1?72:a.sector-1);
+  if (edge==='RADIAL_OUT') return b.layer===a.layer+1 && b.sector===a.sector;
+  if (edge==='RADIAL_IN') return b.layer===a.layer-1 && b.sector===a.sector;
+  return false;
+}
+
 function validateSource(source) {
   if (!source || !Array.isArray(source.records) || source.records.length!==40) throw new Error('Expected exactly 40 HNK40 records');
   const expected=Array.from({length:40},(_,i)=>`G${String(i+1).padStart(2,'0')}`);
@@ -78,6 +87,7 @@ function validateSource(source) {
     if (!Array.isArray(r.sourcePath)||r.sourcePath.length!==12) throw new Error(`${r.glyphId}: expected 12-node sourcePath`);
     if (!Array.isArray(r.sourceEdges)||r.sourceEdges.length!==11) throw new Error(`${r.glyphId}: expected 11 sourceEdges`);
     r.sourcePath.forEach(parseAddress);
+    for (let i=0;i<r.sourceEdges.length;i++) if (!expectedNeighbor(r.sourcePath[i],r.sourcePath[i+1],r.sourceEdges[i])) throw new Error(`${r.glyphId}: invalid legacy edge geometry at ${i}`);
   }
 }
 
@@ -97,3 +107,4 @@ export function generateHybridProjection(source) {
   const summary=Object.fromEntries(STATUSES.map(status=>[status,records.filter(r=>r.resolutionStatus===status).length]));
   return {schemaVersion:'1.0.0',source:{ref:SOURCE_REF,status:source.status??null},derivationRule:RULE,summary,records};
 }
+
