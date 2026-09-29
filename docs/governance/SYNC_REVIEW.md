@@ -1,0 +1,1 @@
+Review target: provenance, authority boundaries, non-duplication and compatibility with HNK_CONSTITUICAO_LUCIDEZ_V1.
