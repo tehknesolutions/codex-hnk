@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "HNK-LEXEME-GLYPH-STRUCTURAL-CANON/V1",
+  "status": "HNK_CANON_STRUCTURAL_REFERENCE",
+  "date": "2026-09-29",
+  "hnkKodeSource": {
+    "repository": "tehknesolutions/HNK-KODE",
+    "commit": "341591138d5428295c9bf23944eb8a8bd863c305",
+    "path": "data/canon/hnk-lexical-glyph-registry.v1.json"
+  },
+  "rootContract": "HNK-MANDALA-ROOT-V1@1.0.0",
+  "mathKernel": "HNK-2647892-MATH-KERNEL-V1",
+  "entries": [
+    {
+      "lexeme": "AHNUVA",
+      "glyphId": "HNK-LG-0001",
+      "mathId": "HMATH-N12-E533006473117A1B6F91",
+      "path": [
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L05:S01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "MF:L06:S71",
+        "CG:09",
+        "CG:08",
+        "CG:07",
+        "CG:06",
+        "MF:L06:S42"
+      ],
+      "structuralDigest": "faa4597de019cd4f4a5d88a00798937c872af89f80e174ff1d559b1bbf41c202"
+    },
+    {
+      "lexeme": "EMANU",
+      "glyphId": "HNK-LG-0002",
+      "mathId": "HMATH-N12-45E7FA30BFB516CB279F",
+      "path": [
+        "MF:L01:S03",
+        "MF:L02:S03",
+        "MF:L03:S03",
+        "MF:L04:S03",
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "MF:L06:S01",
+        "MF:L06:S72",
+        "CG:09",
+        "MF:L06:S68"
+      ],
+      "structuralDigest": "726738a01866c26f73da0bfb9e514d7e99f93aa90d8360ba2f8293f9f84296c2"
+    },
+    {
+      "lexeme": "HAYA",
+      "glyphId": "HNK-LG-0003",
+      "mathId": "HMATH-N12-2887530BADEAC3A6374E",
+      "path": [
+        "MF:L01:S02",
+        "MF:L02:S02",
+        "MF:L03:S02",
+        "MF:L04:S02",
+        "MF:L05:S02",
+        "MF:L05:S03",
+        "MF:L05:S04",
+        "MF:L06:S04",
+        "CG:01",
+        "CG:02",
+        "CG:03",
+        "MF:L06:S23"
+      ],
+      "structuralDigest": "e86cdfbbdf186c8ec67019950c6dc9713564b6bc416a4ccd4b06058f096a79bc"
+    },
+    {
+      "lexeme": "HODERU",
+      "glyphId": "HNK-LG-0004",
+      "mathId": "HMATH-N12-0431D17150B7E78A525F",
+      "path": [
+        "MF:L04:S03",
+        "MF:L04:S04",
+        "MF:L05:S04",
+        "MF:L05:S03",
+        "MF:L06:S03",
+        "CG:01",
+        "MF:L06:S07",
+        "MF:L06:S08",
+        "MF:L06:S09",
+        "CG:02",
+        "CG:03",
+        "MF:L06:S22"
+      ],
+      "structuralDigest": "8e7bfdebb50d905d66cae0887a2c28bec876a4efb505f9b5c92092f03801ecf0"
+    },
+    {
+      "lexeme": "KODAN",
+      "glyphId": "HNK-LG-0005",
+      "mathId": "HMATH-N12-83FAB36561ABF9BAB67A",
+      "path": [
+        "MF:L06:S04",
+        "MF:L06:S03",
+        "CG:01",
+        "CG:02",
+        "MF:L06:S15",
+        "MF:L06:S16",
+        "MF:L06:S17",
+        "MF:L06:S18",
+        "CG:03",
+        "CG:04",
+        "MF:L06:S29",
+        "MF:L06:S28"
+      ],
+      "structuralDigest": "d2256e88f68a04b6d134b60b2ef68de4b24a4379c7803634180c4eaa96724a4f"
+    }
+  ],
+  "rule": "Structural identity is authoritative for geometry; linguistic semantics remain governed by HNK-KODE."
+}
