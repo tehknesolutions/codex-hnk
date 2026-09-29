@@ -1,11 +1,11 @@
 # haKodan Project Snapshot Reference — 2026-09-29
 
 **Role:** CODEX-HNK structural/canonical reference  
-**HNK-KODE source snapshot:** `981736063e8beda43dd079cd63953ec02db6f59b`
+**HNK-KODE source snapshot:** `846664abfb47ebe0b72d5488df3d7876443c411b`
 
 The complete haKodan/VHK/Kodin language+framework project state is persisted in:
 
-`tehknesolutions/HNK-KODE@981736063e8beda43dd079cd63953ec02db6f59b`
+`tehknesolutions/HNK-KODE@846664abfb47ebe0b72d5488df3d7876443c411b`
 → `docs/canon/HAKODAN-PROJECT-SNAPSHOT-2026-09-29.md`
 
 ## CODEX-HNK authority retained here
