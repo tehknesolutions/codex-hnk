@@ -1,0 +1,1 @@
+Scope: authority map and cross-repository promotion rules only. No unrelated canon changes.
