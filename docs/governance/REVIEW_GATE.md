@@ -1,0 +1,1 @@
+Review gate: verify authority/provenance invariants before merge.
