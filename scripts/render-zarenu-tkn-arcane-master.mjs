@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+const canon=JSON.parse(fs.readFileSync('docs/research/chromatic-genesis/canon/zarenu.v1.0.json','utf8'));
+const out='docs/research/chromatic-genesis/canon/zarenu.tkn-arcane.master.svg';
+const W=1600,H=1000,cx=800,cy=475,R=[90,140,190,240,290,340];
+const parse=a=>{const m=a.match(/L(\d+):S(\d+)/);return [+m[1],+m[2]]};
+const pt=a=>{const [l,s]=parse(a),ang=((s-1)/72)*Math.PI*2-Math.PI/2,r=R[l-1];return [cx+r*Math.cos(ang),cy+r*Math.sin(ang)]};
+const pts=canon.orderedPath.map(pt);
+let grid=''; for(let r of R) grid+=`<circle cx="${cx}" cy="${cy}" r="${r}"/>`; for(let s=1;s<=72;s+=6){const a=((s-1)/72)*Math.PI*2-Math.PI/2;grid+=`<line x1="${cx+R[0]*Math.cos(a)}" y1="${cy+R[0]*Math.sin(a)}" x2="${cx+R[5]*Math.cos(a)}" y2="${cy+R[5]*Math.sin(a)}"/>`}
+const path=pts.map(p=>p.join(',')).join(' ');
+const nodes=pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="10"/><text x="${p[0]+16}" y="${p[1]-14}">${canon.orderedPath[i].replace('MF:','')}</text>`).join('');
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs><radialGradient id="bg"><stop offset="0" stop-color="#111820"/><stop offset="1" stop-color="#030506"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="100%" height="100%" fill="url(#bg)"/><style>.grid{fill:none;stroke:#56616b;stroke-width:1;opacity:.24}.glyph{fill:none;stroke:#f4e5ba;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:url(#glow)}.nodes circle{fill:#090d10;stroke:#fff2c8;stroke-width:3}.nodes text{fill:#98a4ae;font:13px monospace}.k{fill:#f5f2e9;font:700 64px Arial;letter-spacing:18px}.sub{fill:#9ba6ae;font:18px Arial;letter-spacing:7px}.meta{fill:#707b84;font:14px monospace}</style><text x="800" y="85" text-anchor="middle" class="k">ZARENU</text><text x="800" y="125" text-anchor="middle" class="sub">TKN ARCANE · ENERGY GLYPH · CANON v1.0</text><g class="grid">${grid}</g><polyline class="glyph" points="${path}"/><g class="nodes">${nodes}</g><text x="800" y="875" text-anchor="middle" class="sub">PERCEIVE · MODEL · RELATE · ORCHESTRATE</text><text x="800" y="915" text-anchor="middle" class="meta">CG-ENERGY-001 · HNK:CANON · HUMAN GATE TW-DVF · HNK40 COLLISION 0</text><text x="800" y="945" text-anchor="middle" class="meta">${canon.orderedPath.join(' → ')}</text></svg>`;
+fs.writeFileSync(out,svg); console.log(out);
