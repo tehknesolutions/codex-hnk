@@ -1,0 +1,18 @@
+{
+  "evidenceId": "CG-EVIDENCE-LEXICAL-001",
+  "subject": "cg-lexical-selections.v0.1.json",
+  "status": "PASS_WITH_PENDING_RUNTIME_AUTOMATION",
+  "checks": {
+    "semanticSlots": {"expected":10,"observed":10,"pass":true},
+    "selectedLexemes": {"expected":9,"observed":9,"pass":true},
+    "explicitUnresolved": {"semanticId":"CG-ENERGY-006","lexeme":null,"gateState":"HOLD_UNRESOLVED","pass":true},
+    "uniqueSelectedForms": {"observed":9,"unique":9,"pass":true},
+    "selectedFormsHaveGlyphIds": {"observed":9,"pass":true},
+    "selectedFormsHaveIpa": {"observed":9,"pass":true},
+    "reviewFlagRetention": {"SOLENU":true,"MALORA":true,"pass":true},
+    "canonicalAutopromotion": {"observed":false,"pass":true},
+    "provenancePointersPresent": {"observed":5,"pass":true}
+  },
+  "limitation": "This evidence records repository-level contract validation from the approved technical gate. A runnable repository validator remains to be added when execution reaches the code/test portion of Task 1; no claim is made that GitHub Actions executed this JSON artifact.",
+  "authorityState": "HNK:VALIDATION_EVIDENCE_CANDIDATE"
+}
