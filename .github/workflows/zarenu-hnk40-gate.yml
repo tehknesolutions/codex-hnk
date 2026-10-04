@@ -5,6 +5,22 @@ on:
     paths:
       - 'scripts/generate-zarenu-shortlist.mjs'
       - 'scripts/zarenu-semantic-path-score.mjs'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/generate-zarenu-shortlist.mjs'
+      - 'scripts/zarenu-semantic-path-score.mjs'
+      - 'scripts/zarenu-semantic-path-score.test.mjs'
+      - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json'
+      - '.github/workflows/zarenu-hnk40-gate.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'scripts/generate-zarenu-shortlist.mjs'
+      - 'scripts/zarenu-semantic-path-score.mjs'
+      - 'scripts/zarenu-semantic-path-score.test.mjs'
       - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json'
       - '.github/workflows/zarenu-hnk40-gate.yml'
   workflow_dispatch:

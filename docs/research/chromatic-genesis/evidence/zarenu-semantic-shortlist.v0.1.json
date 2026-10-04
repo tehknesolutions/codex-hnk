@@ -1,0 +1,1010 @@
+{
+  "version": "0.2",
+  "subject": "CG-ENERGY-001.ZARENU",
+  "authorityState": "HNK:CANDIDATE",
+  "seedDigest": "cdca5a3b94670ea1ddae8cd38a7bdf52c603d95c47386e9c28c2d2ca4dcf5347",
+  "generatedPathCount": 432,
+  "eligiblePathCount": 432,
+  "collisionGate": {
+    "hnk40BenchmarkStatus": "RESOLVED_STRUCTURAL_CANDIDATE_REGISTRY",
+    "benchmarkSource": "docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json",
+    "benchmarkCandidateCount": 40,
+    "bindingAuthority": "HNK_CANDIDATE",
+    "semanticAssignment": "NONE",
+    "exactCollisionCheckExecuted": true,
+    "exactCollisionCount": 0
+  },
+  "top12": [
+    {
+      "path": {
+        "addresses": [
+          "MF:L01:S53",
+          "MF:L02:S53",
+          "MF:L02:S52",
+          "MF:L03:S52",
+          "MF:L03:S53",
+          "MF:L04:S53",
+          "MF:L04:S52"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "0ac9208c9560f84beaba5fe2aa660997727f945c01fb335c2828d7445d04e98c"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L04:S67",
+          "MF:L04:S66",
+          "MF:L05:S66",
+          "MF:L05:S67",
+          "MF:L06:S67",
+          "MF:L06:S68",
+          "MF:L05:S68"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "0fff6b43ae3c129250262df338a22b0c1813546ebd96eb7f5fc343716ea16def"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L04:S48",
+          "MF:L04:S49",
+          "MF:L05:S49",
+          "MF:L05:S48",
+          "MF:L06:S48",
+          "MF:L06:S47",
+          "MF:L05:S47"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "1d1981ae2411de83fb2720737ea60742452115446f5c8b27bcd73e8587529ab5"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L05:S07",
+          "MF:L06:S07",
+          "MF:L06:S08",
+          "MF:L05:S08",
+          "MF:L05:S09",
+          "MF:L04:S09",
+          "MF:L04:S10"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "2f2e46106cdac1aec269deccf9f9741da77a55770134f4644ccf4947d016a848"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L03:S06",
+          "MF:L03:S07",
+          "MF:L02:S07",
+          "MF:L02:S08",
+          "MF:L01:S08",
+          "MF:L01:S09",
+          "MF:L02:S09"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "5eaa48978fd682b6f675bccc85c1638879237c7de6aa689c9d4d8f46aa47335d"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L03:S49",
+          "MF:L03:S50",
+          "MF:L04:S50",
+          "MF:L04:S49",
+          "MF:L05:S49",
+          "MF:L05:S48",
+          "MF:L04:S48"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "621db1422d8b0561e04e4368162c13c66f2b9162e59889fa7e4f3591b458c668"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L02:S69",
+          "MF:L01:S69",
+          "MF:L01:S68",
+          "MF:L02:S68",
+          "MF:L02:S67",
+          "MF:L03:S67",
+          "MF:L03:S66"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "685194f6f59994fd762f332c083023fc931dab60bca1ab67c882e284d92e0ddc"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L01:S37",
+          "MF:L01:S36",
+          "MF:L02:S36",
+          "MF:L02:S37",
+          "MF:L03:S37",
+          "MF:L03:S38",
+          "MF:L04:S38",
+          "MF:L04:S37",
+          "MF:L05:S37",
+          "MF:L05:S36",
+          "MF:L04:S36",
+          "MF:L04:S35",
+          "MF:L03:S35"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "69c61061c11ccbe846ade87b261e9b836000552016e7646191cf91e719fb6adc"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L05:S24",
+          "MF:L04:S24",
+          "MF:L04:S25",
+          "MF:L03:S25",
+          "MF:L03:S26",
+          "MF:L02:S26",
+          "MF:L02:S25"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "6a0e424bff71af1f6b21bfbd7d7cf49929b3cb0240d908dbcfb28984f555c339"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L02:S29",
+          "MF:L01:S29",
+          "MF:L01:S28",
+          "MF:L02:S28",
+          "MF:L02:S27",
+          "MF:L03:S27",
+          "MF:L03:S28"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "7b69bc284da6bb41c12ed7cb17c0a706e1657ed8a787b756a6c2a65be2b0e303"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L01:S15",
+          "MF:L01:S14",
+          "MF:L02:S14",
+          "MF:L02:S13",
+          "MF:L03:S13",
+          "MF:L03:S12",
+          "MF:L02:S12",
+          "MF:L02:S11",
+          "MF:L03:S11",
+          "MF:L03:S10",
+          "MF:L02:S10"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "857c86fa9ec6d118cdab34cf253f2b6a31ce3c9b3095c38695881ce7eece6659"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L01:S08",
+          "MF:L01:S07",
+          "MF:L02:S07",
+          "MF:L02:S06",
+          "MF:L03:S06",
+          "MF:L03:S05",
+          "MF:L02:S05"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "90f1f7aedae95f223036b93e600c5333eb1de116330306147f3a685f597da65b"
+    }
+  ],
+  "top6": [
+    {
+      "path": {
+        "addresses": [
+          "MF:L01:S53",
+          "MF:L02:S53",
+          "MF:L02:S52",
+          "MF:L03:S52",
+          "MF:L03:S53",
+          "MF:L04:S53",
+          "MF:L04:S52"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "0ac9208c9560f84beaba5fe2aa660997727f945c01fb335c2828d7445d04e98c"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L04:S67",
+          "MF:L04:S66",
+          "MF:L05:S66",
+          "MF:L05:S67",
+          "MF:L06:S67",
+          "MF:L06:S68",
+          "MF:L05:S68"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "0fff6b43ae3c129250262df338a22b0c1813546ebd96eb7f5fc343716ea16def"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L04:S48",
+          "MF:L04:S49",
+          "MF:L05:S49",
+          "MF:L05:S48",
+          "MF:L06:S48",
+          "MF:L06:S47",
+          "MF:L05:S47"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "1d1981ae2411de83fb2720737ea60742452115446f5c8b27bcd73e8587529ab5"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L05:S07",
+          "MF:L06:S07",
+          "MF:L06:S08",
+          "MF:L05:S08",
+          "MF:L05:S09",
+          "MF:L04:S09",
+          "MF:L04:S10"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "2f2e46106cdac1aec269deccf9f9741da77a55770134f4644ccf4947d016a848"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L03:S06",
+          "MF:L03:S07",
+          "MF:L02:S07",
+          "MF:L02:S08",
+          "MF:L01:S08",
+          "MF:L01:S09",
+          "MF:L02:S09"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "5eaa48978fd682b6f675bccc85c1638879237c7de6aa689c9d4d8f46aa47335d"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L03:S49",
+          "MF:L03:S50",
+          "MF:L04:S50",
+          "MF:L04:S49",
+          "MF:L05:S49",
+          "MF:L05:S48",
+          "MF:L04:S48"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "621db1422d8b0561e04e4368162c13c66f2b9162e59889fa7e4f3591b458c668"
+    }
+  ],
+  "top3": [
+    {
+      "path": {
+        "addresses": [
+          "MF:L01:S53",
+          "MF:L02:S53",
+          "MF:L02:S52",
+          "MF:L03:S52",
+          "MF:L03:S53",
+          "MF:L04:S53",
+          "MF:L04:S52"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "0ac9208c9560f84beaba5fe2aa660997727f945c01fb335c2828d7445d04e98c"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L04:S67",
+          "MF:L04:S66",
+          "MF:L05:S66",
+          "MF:L05:S67",
+          "MF:L06:S67",
+          "MF:L06:S68",
+          "MF:L05:S68"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "0fff6b43ae3c129250262df338a22b0c1813546ebd96eb7f5fc343716ea16def"
+    },
+    {
+      "path": {
+        "addresses": [
+          "MF:L04:S48",
+          "MF:L04:S49",
+          "MF:L05:S49",
+          "MF:L05:S48",
+          "MF:L06:S48",
+          "MF:L06:S47",
+          "MF:L05:S47"
+        ],
+        "edges": [
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          },
+          {
+            "edgeClass": "MF_ANGULAR"
+          },
+          {
+            "edgeClass": "MF_RADIAL"
+          }
+        ]
+      },
+      "P": 1,
+      "M": 0.46153846153846156,
+      "R": 1,
+      "O": 1,
+      "U": 1,
+      "C": 1,
+      "exactCollision": false,
+      "rejected": false,
+      "base": 0.8923076923076924,
+      "operatorModulation": 0.07307692307692308,
+      "score": 0.9653846153846154,
+      "candidateDigest": "1d1981ae2411de83fb2720737ea60742452115446f5c8b27bcd73e8587529ab5"
+    }
+  ],
+  "humanGateRequired": true,
+  "canonicalPromotion": false
+}

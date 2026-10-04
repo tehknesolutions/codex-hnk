@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "semanticId": "CG-ENERGY-001",
+  "lexeme": "ZARENU",
+  "authorityState": "HNK:CANON",
+  "semanticProgression": ["PERCEIVE", "MODEL", "RELATE", "ORCHESTRATE"],
+  "canonicalCandidate": 1,
+  "orderedPath": ["MF:L01:S53","MF:L02:S53","MF:L02:S52","MF:L03:S52","MF:L03:S53","MF:L04:S53","MF:L04:S52"],
+  "topologyImmutable": true,
+  "humanGate": {"decision":"APPROVED_CANDIDATE_01","authority":"TW-DVF","issue":377,"date":"2026-10-04"},
+  "computationalEvidence": {
+    "generatedPaths":432,"eligiblePaths":432,"hnk40BenchmarkCandidates":40,
+    "exactCollisionCheckExecuted":true,"exactCollisionCount":0,"score":0.9653846154,
+    "metrics":{"P":1,"M":0.46153846153846156,"R":1,"O":1,"U":1,"C":1},
+    "source":"../evidence/zarenu-semantic-shortlist.v0.1.json"
+  },
+  "preservedVariants":[2,3],
+  "manifestation":{"system":"TKN ARCANE","rule":"Material, light, depth, motion, typography and contextual geometry may vary; canonical ordered-path topology MUST NOT change."},
+  "hnk40SemanticPromotion":false
+}

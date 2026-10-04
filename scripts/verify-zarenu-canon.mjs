@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+const canon=JSON.parse(fs.readFileSync('docs/research/chromatic-genesis/canon/zarenu.v1.0.json','utf8'));
+const evidence=JSON.parse(fs.readFileSync('docs/research/chromatic-genesis/evidence/zarenu-semantic-shortlist.v0.1.json','utf8'));
+const expected=evidence.top3[0].path.addresses;
+const fail=m=>{throw new Error(m)};
+if(canon.authorityState!=='HNK:CANON') fail('authority drift');
+if(canon.humanGate?.decision!=='APPROVED_CANDIDATE_01') fail('human gate drift');
+if(canon.topologyImmutable!==true) fail('immutability disabled');
+if(JSON.stringify(canon.orderedPath)!==JSON.stringify(expected)) fail('ZARENU canonical topology drift');
+if(evidence.collisionGate?.exactCollisionCheckExecuted!==true||evidence.collisionGate?.exactCollisionCount!==0) fail('collision evidence invalid');
+if(canon.hnk40SemanticPromotion!==false) fail('HNK40 semantic authority leak');
+console.log(JSON.stringify({status:'PASS',lexeme:canon.lexeme,version:canon.version,path:canon.orderedPath},null,2));
