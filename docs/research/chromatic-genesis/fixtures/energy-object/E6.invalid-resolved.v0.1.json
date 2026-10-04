@@ -1,0 +1,15 @@
+{
+  "semanticId":"CG-ENERGY-006",
+  "authorityState":"HNK:CANDIDATE",
+  "resolutionState":"DERIVED_UNIQUE",
+  "provenance":["INTENTIONALLY_INVALID_TEST_FIXTURE"],
+  "forceProfile":{"tendency":"invented","intensityModel":"invented","transformationPressure":"invented","intentVector":["invented"]},
+  "formProfile":{"geometryState":"INVENTED","constraints":["invalid fixture"],"addressState":"INVENTED","vesselContext":"invalid fixture","manifestationBoundary":"invalid fixture"},
+  "chromaticField":{"role":"invented sixth color","value":"#FFFFFF","identitySufficient":false},
+  "lexicalBinding":{"state":"SELECTED_CANDIDATE","lexeme":"FAKEE6","authorityState":"HNK:CANDIDATE"},
+  "operatorBindings":[{"target":"OP_GENERATOR","relation":"invalid fabricated binding","authorityState":"HNK:CANDIDATE","resolutionState":"DERIVED_UNIQUE","evidence":[]}],
+  "mandalaBindings":[{"target":"HC","relation":"invalid fabricated binding","authorityState":"HNK:CANDIDATE","resolutionState":"DERIVED_UNIQUE","evidence":[]}],
+  "correspondences":[],
+  "manifestationRules":["this fixture must fail validation"],
+  "conflicts":["E6 is canonically held unresolved at this research stage"]
+}
