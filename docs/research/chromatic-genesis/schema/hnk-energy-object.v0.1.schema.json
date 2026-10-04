@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hnk.energy-object.v0.1",
+  "title": "HNK Chromatic Genesis Energy Object v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["semanticId","authorityState","resolutionState","provenance","forceProfile","formProfile","chromaticField","lexicalBinding","operatorBindings","mandalaBindings","correspondences","manifestationRules","conflicts"],
+  "properties": {
+    "semanticId": {"type":"string","pattern":"^CG-(ENERGY|META)-[0-9]{3}$"},
+    "authorityState": {"enum":["HNK:CANDIDATE","HNK:VALIDATED","UNRESOLVED"]},
+    "resolutionState": {"enum":["DIRECT","DERIVED_UNIQUE","DERIVED_AMBIGUOUS","NO_MAPPING","PENDING_RULE","UNRESOLVED"]},
+    "provenance": {"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+    "forceProfile": {
+      "type":"object","additionalProperties":false,
+      "required":["tendency","intensityModel","transformationPressure","intentVector"],
+      "properties": {
+        "tendency":{"type":"string","minLength":1},
+        "intensityModel":{"type":"string","minLength":1},
+        "transformationPressure":{"type":"string","minLength":1},
+        "intentVector":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}
+      }
+    },
+    "formProfile": {
+      "type":"object","additionalProperties":false,
+      "required":["geometryState","constraints","addressState","vesselContext","manifestationBoundary"],
+      "properties": {
+        "geometryState":{"type":"string","minLength":1},
+        "constraints":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+        "addressState":{"type":"string","minLength":1},
+        "vesselContext":{"type":"string","minLength":1},
+        "manifestationBoundary":{"type":"string","minLength":1}
+      }
+    },
+    "chromaticField": {
+      "type":"object","additionalProperties":false,
+      "required":["role","identitySufficient"],
+      "properties": {
+        "role":{"type":"string","minLength":1},
+        "value":{"type":["string","null"]},
+        "identitySufficient":{"const":false}
+      }
+    },
+    "lexicalBinding": {
+      "type":"object","additionalProperties":false,
+      "required":["state","lexeme","authorityState"],
+      "properties": {
+        "state":{"enum":["SELECTED_CANDIDATE","HOLD_UNRESOLVED"]},
+        "lexeme":{"type":["string","null"]},
+        "authorityState":{"enum":["HNK:CANDIDATE","UNRESOLVED"]}
+      }
+    },
+    "operatorBindings": {"type":"array","items":{"$ref":"#/$defs/edge"}},
+    "mandalaBindings": {"type":"array","items":{"$ref":"#/$defs/edge"}},
+    "correspondences": {"type":"array","items":{"$ref":"#/$defs/edge"}},
+    "manifestationRules": {"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+    "conflicts": {"type":"array","items":{"type":"string"}}
+  },
+  "$defs": {
+    "edge": {
+      "type":"object","additionalProperties":false,
+      "required":["target","relation","authorityState","resolutionState","evidence"],
+      "properties": {
+        "target":{"type":"string","minLength":1},
+        "relation":{"type":"string","minLength":1},
+        "authorityState":{"enum":["HNK:HYPOTHESIS","HNK:CANDIDATE","HNK:VALIDATED","UNRESOLVED"]},
+        "resolutionState":{"enum":["DIRECT","DERIVED_UNIQUE","DERIVED_AMBIGUOUS","NO_MAPPING","PENDING_RULE","UNRESOLVED"]},
+        "evidence":{"type":"array","items":{"type":"string"}}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties":{"semanticId":{"const":"CG-ENERGY-006"}}},
+      "then": {
+        "properties": {
+          "authorityState":{"const":"UNRESOLVED"},
+          "resolutionState":{"const":"UNRESOLVED"},
+          "lexicalBinding": {
+            "properties": {
+              "state":{"const":"HOLD_UNRESOLVED"},
+              "lexeme":{"type":"null"},
+              "authorityState":{"const":"UNRESOLVED"}
+            }
+          },
+          "mandalaBindings":{"maxItems":0},
+          "operatorBindings":{"maxItems":0}
+        }
+      }
+    }
+  ]
+}

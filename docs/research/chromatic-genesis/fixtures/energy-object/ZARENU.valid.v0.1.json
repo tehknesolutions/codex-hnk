@@ -1,0 +1,15 @@
+{
+  "semanticId":"CG-ENERGY-001",
+  "authorityState":"HNK:CANDIDATE",
+  "resolutionState":"DERIVED_AMBIGUOUS",
+  "provenance":["HNK-CG-MATRIX-003-CORRESPONDENCE-GRAPH-v0.1.md","HNK-CG-HUMAN-GATE-LEXICON-v0.1.md"],
+  "forceProfile":{"tendency":"orchestrate intelligible patterns","intensityModel":"research-variable","transformationPressure":"reduce incoherence through directed cognition","intentVector":["perceive","model","orchestrate"]},
+  "formProfile":{"geometryState":"MANDALA_PATH_PENDING","constraints":["path must be governed","no visual-only identity","HC semantics forbidden"],"addressState":"UNASSIGNED","vesselContext":"HNK/TKN research vessel","manifestationBoundary":"candidate-only"},
+  "chromaticField":{"role":"amethyst manifestation channel","value":"#130583","identitySufficient":false},
+  "lexicalBinding":{"state":"SELECTED_CANDIDATE","lexeme":"ZARENU","authorityState":"HNK:CANDIDATE"},
+  "operatorBindings":[{"target":"OP_GENERATOR","relation":"candidate cognitive-generation affinity","authorityState":"HNK:HYPOTHESIS","resolutionState":"DERIVED_AMBIGUOUS","evidence":["HNK-CG-MATRIX-003-CORRESPONDENCE-GRAPH-v0.1.md"]}],
+  "mandalaBindings":[],
+  "correspondences":[],
+  "manifestationRules":["chromatic field cannot establish identity","lexical glyph and energy glyph remain independently resolvable"],
+  "conflicts":[]
+}

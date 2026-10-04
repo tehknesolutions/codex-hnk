@@ -1,0 +1,29 @@
+{
+  "schema": "hnk.chromatic-genesis.lexical-selections.v0.1",
+  "authority": "HNK:CANDIDATE",
+  "humanGate": {
+    "authority": "TW-DVF / Creator",
+    "signal": "AS",
+    "record": "../../HNK-CG-HUMAN-GATE-LEXICON-v0.1.md"
+  },
+  "runtimeNotice": "G-ID and IPA bindings use the current HNK40 preproduction transliteration/glyph contract; encodability is not canonization.",
+  "selections": [
+    {"semanticId":"CG-ENERGY-001","lexeme":"ZARENU","glyphIds":["G32","G01","G15","G02","G12","G05"],"ipa":"/zarenu/","role":"Mind / Arcane Intelligence / Orchestration","gateState":"SELECT_CANDIDATE","reviewFlags":[],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-ENERGY-002","lexeme":"TAVERO","glyphIds":["G22","G01","G31","G02","G15","G04"],"ipa":"/tavero/","role":"Space / Architecture / Relation","gateState":"SELECT_CANDIDATE","reviewFlags":[],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-ENERGY-003","lexeme":"DURAKA","glyphIds":["G18","G05","G15","G01","G23","G01"],"ipa":"/duraka/","role":"Power / Action / Execution","gateState":"SELECT_CANDIDATE","reviewFlags":[],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-ENERGY-004","lexeme":"NAVIRA","glyphIds":["G12","G01","G31","G03","G15","G01"],"ipa":"/navira/","role":"Life / Adaptation / Evolution","gateState":"SELECT_CANDIDATE","reviewFlags":[],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-ENERGY-005","lexeme":"SOLENU","glyphIds":["G26","G04","G10","G02","G12","G05"],"ipa":"/solenu/","role":"Consciousness / Knowledge / Illumination","gateState":"SELECT_CANDIDATE_WITH_REVIEW","reviewFlags":["EXTERNAL_LANGUAGE_RESONANCE_REVIEW"],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-ENERGY-006","lexeme":null,"glyphIds":[],"ipa":null,"role":"Sixth operational force","gateState":"HOLD_UNRESOLVED","reviewFlags":["SEMANTICS_REQUIRED_BEFORE_LEXEME"],"authorityState":"UNRESOLVED"},
+    {"semanticId":"CG-META-001","lexeme":"MALORA","glyphIds":["G11","G01","G10","G04","G15","G01"],"ipa":"/malora/","role":"Manifestation / Convergence","gateState":"SELECT_CANDIDATE_WITH_REVIEW","reviewFlags":["KABBALISTIC_OR_EXTERNAL_TERM_RESONANCE_REVIEW"],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-META-002","lexeme":"TSAVERI","glyphIds":["G30","G01","G31","G02","G15","G03"],"ipa":"/tsaveri/","role":"Meta-transformation / Correspondence rewriting","gateState":"SELECT_CANDIDATE","reviewFlags":[],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-META-003","lexeme":"KETARA","glyphIds":["G23","G02","G22","G01","G15","G01"],"ipa":"/ketara/","role":"Law / Constraint / Form","gateState":"SELECT_CANDIDATE","reviewFlags":[],"authorityState":"HNK:CANDIDATE"},
+    {"semanticId":"CG-META-004","lexeme":"NOMURA","glyphIds":["G12","G04","G11","G05","G15","G01"],"ipa":"/nomura/","role":"Void / Potential / Unmanifest","gateState":"SELECT_CANDIDATE","reviewFlags":[],"authorityState":"HNK:CANDIDATE"}
+  ],
+  "provenance": [
+    "../../HNK-CG-MATRIX-004-LEXICAL-CANDIDATES-v0.1.md",
+    "../../HNK-CG-MATRIX-004-TECHNICAL-GATE-v0.1.md",
+    "../../HNK-CG-HUMAN-GATE-LEXICON-v0.1.md",
+    "../../../../packages/hnk-glyphs/src/index.mjs",
+    "../../../../packages/hnk-linguas/src/authored.mjs"
+  ]
+}
