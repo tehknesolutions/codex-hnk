@@ -1,0 +1,56 @@
+name: ZARENU HNK40 Gate
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/generate-zarenu-shortlist.mjs'
+      - 'scripts/zarenu-semantic-path-score.mjs'
+      - 'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json'
+      - '.github/workflows/zarenu-hnk40-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  zarenu-hnk40:
+    name: ZARENU exact HNK40 collision gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run ZARENU scoring tests
+        run: node --test scripts/zarenu-semantic-path-score.test.mjs
+
+      - name: Execute ZARENU shortlist generator
+        run: node scripts/generate-zarenu-shortlist.mjs
+
+      - name: Verify executed HNK40 gate and shortlist invariants
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const p='docs/research/chromatic-genesis/evidence/zarenu-semantic-shortlist.v0.1.json';
+          const x=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(x.collisionGate?.exactCollisionCheckExecuted!==true) throw new Error('exact collision gate was not executed');
+          if(x.collisionGate?.benchmarkCandidateCount!==40) throw new Error('HNK40 benchmark count is not 40');
+          if(x.collisionGate?.hnk40BenchmarkStatus!=='RESOLVED_STRUCTURAL_CANDIDATE_REGISTRY') throw new Error('HNK40 provenance is not resolved');
+          if(!Array.isArray(x.top12)||x.top12.length!==12) throw new Error('Top 12 invariant failed');
+          if(!Array.isArray(x.top6)||x.top6.length!==6) throw new Error('Top 6 invariant failed');
+          if(!Array.isArray(x.top3)||x.top3.length!==3) throw new Error('Top 3 invariant failed');
+          if(x.canonicalPromotion!==false||x.humanGateRequired!==true) throw new Error('governance invariant failed');
+          console.log(JSON.stringify({status:'PASS',collisionGate:x.collisionGate,top3:x.top3.map(c=>({score:c.score,digest:c.candidateDigest,addresses:c.path.addresses}))},null,2));
+          NODE
+
+      - name: Upload generated evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: zarenu-hnk40-evidence
+          path: docs/research/chromatic-genesis/evidence/zarenu-semantic-shortlist.v0.1.json
+          if-no-files-found: error
