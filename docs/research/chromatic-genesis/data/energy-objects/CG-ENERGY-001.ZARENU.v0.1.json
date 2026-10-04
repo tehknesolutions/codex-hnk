@@ -1,0 +1,79 @@
+{
+  "semanticId":"CG-ENERGY-001",
+  "authorityState":"HNK:CANDIDATE",
+  "resolutionState":"DERIVED_AMBIGUOUS",
+  "provenance":[
+    "../../HNK-CG-MATRIX-003-CORRESPONDENCE-GRAPH-v0.1.md",
+    "../../HNK-CG-MATRIX-004-LEXICAL-CANDIDATES-v0.1.md",
+    "../../HNK-CG-HUMAN-GATE-LEXICON-v0.1.md",
+    "../cg-lexical-selections.v0.1.json"
+  ],
+  "forceProfile":{
+    "tendency":"orchestrate intelligible patterns",
+    "intensityModel":"research-variable; intensity is contextual and cannot be inferred from chroma alone",
+    "transformationPressure":"reduce incoherence through directed cognition, pattern recognition and orchestration",
+    "intentVector":["perceive","model","relate","orchestrate"]
+  },
+  "formProfile":{
+    "geometryState":"MANDALA_PATH_PENDING",
+    "constraints":[
+      "path must be governed by semantic constraints",
+      "path must be legal in the licensed HNK/MHCM namespace",
+      "visual attractiveness cannot establish identity",
+      "HC semantics cannot participate while HC remains unresolved",
+      "lexical glyph identity and energy glyph identity remain independent"
+    ],
+    "addressState":"UNASSIGNED_PENDING_PATH_SELECTION_SPEC",
+    "vesselContext":"HNK/TKN research vessel",
+    "manifestationBoundary":"research candidate only; no canonical promotion"
+  },
+  "chromaticField":{
+    "role":"amethyst manifestation channel for the selected TKN research expression",
+    "value":"#130583",
+    "identitySufficient":false
+  },
+  "lexicalBinding":{
+    "state":"SELECTED_CANDIDATE",
+    "lexeme":"ZARENU",
+    "authorityState":"HNK:CANDIDATE"
+  },
+  "operatorBindings":[
+    {
+      "target":"OP_GENERATOR",
+      "relation":"candidate affinity: generation of models/pattern hypotheses",
+      "authorityState":"HNK:HYPOTHESIS",
+      "resolutionState":"DERIVED_AMBIGUOUS",
+      "evidence":["HNK-CG-MATRIX-003-CORRESPONDENCE-GRAPH-v0.1.md"]
+    },
+    {
+      "target":"OP_SPECIFIER",
+      "relation":"candidate affinity: cognition constraining an intelligible model",
+      "authorityState":"HNK:HYPOTHESIS",
+      "resolutionState":"DERIVED_AMBIGUOUS",
+      "evidence":["HNK-CG-MATRIX-003-CORRESPONDENCE-GRAPH-v0.1.md"]
+    }
+  ],
+  "mandalaBindings":[],
+  "correspondences":[
+    {
+      "target":"E_AMETHYST",
+      "relation":"Chromatic Genesis working visual/semantic anchor",
+      "authorityState":"HNK:CANDIDATE",
+      "resolutionState":"DERIVED_AMBIGUOUS",
+      "evidence":["HNK-CG-MATRIX-003-CORRESPONDENCE-GRAPH-v0.1.md"]
+    }
+  ],
+  "manifestationRules":[
+    "chromatic field cannot establish identity",
+    "Force and Form profiles must survive non-color rendering",
+    "lexical glyph and energy glyph must remain independently resolvable",
+    "future Composite Sigil must preserve provenance to both layers",
+    "no Marvel-derived stone identity, naming or recognizable Infinity Gauntlet topology",
+    "no HC semantic binding until an independent provenance gate resolves HC"
+  ],
+  "conflicts":[
+    "Any ordinal mapping such as E1→G01 is prohibited unless separately governed",
+    "Any claim that ZARENU is HNK_CANON is premature",
+    "Any one-energy-per-runtime-operator mapping conflicts with the current many-to-many research model"
+  ]
+}
