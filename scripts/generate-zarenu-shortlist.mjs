@@ -21,7 +21,6 @@ for(let l=1;l<=L;l++) for(let s=1;s<=S;s++){
   for(let step=0;step<targetLen;step++){
     let options=neighbors(...current).filter(([nl,ns])=>!previous||key(nl,ns)!==key(...previous));
     if(!options.length) break;
-    // Prefer the underrepresented edge class to express orchestration, with digest tie-break.
     const a=edges.filter(e=>e.edgeClass==='MF_ANGULAR').length;
     const r=edges.length-a;
     const preferred=a>r?'MF_RADIAL':r>a?'MF_ANGULAR':null;
@@ -34,9 +33,20 @@ for(let l=1;l<=L;l++) for(let s=1;s<=S;s++){
   paths.push({addresses,edges});
 }
 
-// Benchmark registry is deliberately empty until the HNK40 ordered-path source is resolved by provenance.
-// The artifact makes this limitation explicit rather than fabricating collisions.
-const ranked=rank(paths,[]);
+const benchmarkUrl=new URL('../docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json',import.meta.url);
+const benchmarkRegistry=JSON.parse(fs.readFileSync(benchmarkUrl,'utf8'));
+if(benchmarkRegistry.candidateCount!==40||benchmarkRegistry.invariants?.uniqueOrderedPaths!==40||benchmarkRegistry.invariants?.translationNormalizedUniqueShapes!==40){
+  throw new Error('HNK40 benchmark invariants failed');
+}
+if(benchmarkRegistry.bindingAuthority!=='HNK_CANDIDATE'||benchmarkRegistry.semanticAssignment!=='NONE'){
+  throw new Error('HNK40 benchmark authority contract changed');
+}
+const benchmarkPaths=benchmarkRegistry.candidates.map(c=>c.path);
+if(benchmarkPaths.length!==40||benchmarkPaths.some(p=>!Array.isArray(p)||p.length<2)) throw new Error('HNK40 ordered paths invalid');
+if(new Set(benchmarkPaths.map(p=>p.join('>'))).size!==40) throw new Error('HNK40 ordered paths are not unique');
+
+const ranked=rank(paths,benchmarkPaths);
+const exactCollisionCount=paths.filter(path=>benchmarkPaths.some(p=>p.join('>')===path.addresses.join('>'))).length;
 const top12=ranked.slice(0,12);
 const top6=[];
 for(const c of top12){
@@ -50,13 +60,21 @@ for(const c of top12){
 }
 const top3=top6.slice(0,3);
 const out={
-  version:'0.1',subject:'CG-ENERGY-001.ZARENU',authorityState:'HNK:CANDIDATE',seedDigest:seed,
+  version:'0.2',subject:'CG-ENERGY-001.ZARENU',authorityState:'HNK:CANDIDATE',seedDigest:seed,
   generatedPathCount:paths.length,eligiblePathCount:ranked.length,
-  collisionGate:{hnk40BenchmarkStatus:'PENDING_PROVENANCE_RESOLUTION',exactCollisionCheckExecuted:false,reason:'No HNK40 ordered-path benchmark file was resolved in this implementation turn; no benchmark data was invented.'},
+  collisionGate:{
+    hnk40BenchmarkStatus:'RESOLVED_STRUCTURAL_CANDIDATE_REGISTRY',
+    benchmarkSource:'docs/research/mandala/final/glyph-genesis-hnk40-candidates.v1.json',
+    benchmarkCandidateCount:benchmarkPaths.length,
+    bindingAuthority:benchmarkRegistry.bindingAuthority,
+    semanticAssignment:benchmarkRegistry.semanticAssignment,
+    exactCollisionCheckExecuted:true,
+    exactCollisionCount
+  },
   top12,top6,top3,
   humanGateRequired:true,canonicalPromotion:false
 };
 const url=new URL('../docs/research/chromatic-genesis/evidence/zarenu-semantic-shortlist.v0.1.json',import.meta.url);
 fs.mkdirSync(new URL('../docs/research/chromatic-genesis/evidence/',import.meta.url),{recursive:true});
 fs.writeFileSync(url,JSON.stringify(out,null,2)+'\n');
-console.log(JSON.stringify({status:'PASS',generated:paths.length,eligible:ranked.length,top12:top12.length,top6:top6.length,top3:top3.length,collisionGate:out.collisionGate.hnk40BenchmarkStatus},null,2));
+console.log(JSON.stringify({status:'PASS',generated:paths.length,eligible:ranked.length,top12:top12.length,top6:top6.length,top3:top3.length,collisionGate:out.collisionGate.hnk40BenchmarkStatus,exactCollisionCount},null,2));
