@@ -3,14 +3,13 @@
   "version": "0.2.0",
   "private": true,
   "packageManager": "pnpm@12.1.0",
-  "engines": {
-    "node": "22.x"
-  },
+  "engines": { "node": "22.x" },
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
+    "validate:living-book-map": "node scripts/validate-living-book-map-contract.mjs",
     "validate:day001": "node scripts/validate-day001-golden.mjs",
     "validate:day002": "node scripts/validate-day002-scalability.mjs",
     "validate:audio002": "node scripts/validate-day002-audio.mjs",
@@ -94,7 +93,5 @@
     "validate:knowledge-materialization": "node scripts/validate-hnk-knowledge-materialization-v1.mjs",
     "validate:hnk40-kg": "node scripts/validate-hnk40-kg-integrity-v1.mjs"
   },
-  "devDependencies": {
-    "turbo": "2.10.12"
-  }
+  "devDependencies": { "turbo": "2.10.12" }
 }
