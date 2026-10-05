@@ -3,6 +3,7 @@ import './globals.css';
 import '@hnk/ui/styles/kether.css';
 import { WebClientHydrationGate } from './_runtime/WebClientHydrationGate';
 import { WebHnkRuntimeProvider } from './_runtime/WebHnkRuntime';
+import { CodexShell } from './_components/CodexShell';
 
 export const metadata: Metadata = {
   title: 'HNK Codex',
@@ -14,7 +15,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="pt-BR">
       <body>
         <WebClientHydrationGate>
-          <WebHnkRuntimeProvider>{children}</WebHnkRuntimeProvider>
+          <WebHnkRuntimeProvider>
+            <CodexShell>{children}</CodexShell>
+          </WebHnkRuntimeProvider>
         </WebClientHydrationGate>
       </body>
     </html>
