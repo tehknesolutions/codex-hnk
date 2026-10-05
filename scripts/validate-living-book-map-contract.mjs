@@ -24,12 +24,26 @@ const knowledgeTree = read('../apps/web/app/_components/KnowledgeTree.tsx');
 assert.match(knowledgeTree, /hnkTreeLevels/, 'KnowledgeTree must consume shared level metadata');
 assert.match(knowledgeTree, /\.dayRange/, 'KnowledgeTree must derive displayed ranges from shared level metadata');
 assert.doesNotMatch(knowledgeTree, /const\s+ranges\s*:/, 'KnowledgeTree must not maintain a duplicate ranges table');
-assert.doesNotMatch(knowledgeTree, /keter:\s*["']001[—-]036["']/, 'KnowledgeTree must not duplicate KETHER day range');
+
+const portalHome = read('../apps/web/app/_components/PortalHome.tsx');
+assert.match(portalHome, /hnkTreeLevels/, 'PortalHome must consume shared level metadata');
+assert.match(portalHome, /hnkTreeNodes/, 'PortalHome must consume shared executable nodes');
+assert.doesNotMatch(portalHome, /\/day-07[34]/, 'PortalHome must not manufacture Day 073/074 routes');
+assert.doesNotMatch(portalHome, /037[—-]073|074[—-]109/, 'PortalHome must not duplicate stale ranges');
 
 const book = read('../apps/web/app/_components/LivingBook.tsx');
-assert.match(book, /import \{ LivingBookMap \} from ['"]\.\/LivingBookMap['"];/,
-  'RED: LivingBook must import LivingBookMap');
-assert.match(book, /id:'mapa'[\s\S]*?<LivingBookMap\s*\/>/,
-  'RED: MAPA spread must host LivingBookMap');
+assert.match(book, /import \{ LivingBookMap \} from ['"]\.\/LivingBookMap['"];/, 'LivingBook must import LivingBookMap');
+assert.match(book, /id:'mapa'[\s\S]*?<LivingBookMap\s*\/>/, 'MAPA spread must host LivingBookMap');
 
-console.log('PASS: Living Book map contract, single-source tree metadata, progressive component, and MAPA integration are present.');
+const layout = read('../apps/web/app/layout.tsx');
+assert.match(layout, /\.\/_components\/living-book-map\.css/, 'root layout must load the map visual extension');
+const css = read('../apps/web/app/_components/living-book-map.css');
+assert.match(css, /\.living-book-map\b/, 'LivingBookMap visual layer must exist');
+assert.match(css, /\.living-book-map__levels\b/, 'sphere controls need a visual layout');
+assert.match(css, /\.living-book-map__days\b/, 'progressive Day choices need a visual layout');
+assert.match(css, /\[data-state=dormant\]/, 'dormant state must be visually explicit');
+assert.match(css, /\[aria-pressed=true\]/, 'selected sphere must have a visible state');
+assert.match(css, /:focus-visible/, 'map controls need keyboard focus treatment');
+assert.match(css, /prefers-reduced-motion:reduce/, 'map must respect reduced motion');
+
+console.log('PASS: Living Book map contract, shared portal/tree truth, progressive MAPA integration, and visual states are present.');

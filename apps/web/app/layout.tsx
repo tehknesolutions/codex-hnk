@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './_components/living-book-map.css';
 import '@hnk/ui/styles/kether.css';
 import { WebClientHydrationGate } from './_runtime/WebClientHydrationGate';
 import { WebHnkRuntimeProvider } from './_runtime/WebHnkRuntime';
