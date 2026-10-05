@@ -1,72 +1,24 @@
-import type { ReactNode } from 'react';
+'use client';
 
-type BookPageProps = {
-  side: 'left' | 'right';
-  eyebrow?: string;
-  title: string;
-  children: ReactNode;
-};
+import { useEffect, useState, type ReactNode } from 'react';
 
-export function CodexPage({ side, eyebrow, title, children }: BookPageProps) {
-  return (
-    <section className="living-book__page" data-side={side}>
-      <div className="living-book__page-frame" aria-hidden="true" />
-      <header className="living-book__page-head">
-        {eyebrow ? <p>{eyebrow}</p> : null}
-        <h2>{title}</h2>
-      </header>
-      <div className="living-book__page-content">{children}</div>
-      <span className="living-book__folio" aria-hidden="true">HNK</span>
-    </section>
-  );
-}
+type PageData={eyebrow:string;title:string;body:ReactNode};
+type Spread={id:string;tab:string;left:PageData;right:PageData};
 
-export function CodexSpread({ children, label }: { children: ReactNode; label: string }) {
-  return (
-    <article className="living-book" aria-label={label}>
-      <div className="living-book__cover" aria-hidden="true" />
-      <div className="living-book__paper">
-        <div className="living-book__spread">{children}</div>
-        <div className="living-book__gutter" aria-hidden="true" />
-      </div>
-    </article>
-  );
-}
+export function CodexPage({side,eyebrow,title,children}:{side:'left'|'right';eyebrow?:string;title:string;children:ReactNode}){return <section className="living-book__page" data-side={side}><div className="living-book__page-frame" aria-hidden="true"/><header className="living-book__page-head">{eyebrow?<p>{eyebrow}</p>:null}<h2>{title}</h2></header><div className="living-book__page-content">{children}</div><span className="living-book__folio" aria-hidden="true">HNK</span></section>}
+export function CodexSpread({children,label,spreadId}:{children:ReactNode;label:string;spreadId?:string}){return <article className="living-book" aria-label={label} data-spread={spreadId}><div className="living-book__cover" aria-hidden="true"/><div className="living-book__paper"><div className="living-book__spread">{children}</div><div className="living-book__gutter" aria-hidden="true"/></div></article>}
 
-export function CodexPageTabs({ tabs }: { tabs: Array<{ label: string; href: string; active?: boolean }> }) {
-  return (
-    <nav className="living-book__tabs" aria-label="Seções desta abertura">
-      {tabs.map((tab) => (
-        <a key={tab.label} href={tab.href} aria-current={tab.active ? 'page' : undefined}>{tab.label}</a>
-      ))}
-    </nav>
-  );
-}
+const spreads:Spread[]=[
+{id:'visao',tab:'VISÃO',left:{eyebrow:'CODEX HNK · ABERTURA',title:'O Códice Vivo',body:<><p className="living-book__lead">Uma superfície para atravessar conhecimento, relações, fontes e prática sem abandonar o mesmo artefato.</p><div className="living-book__sigil" aria-hidden="true"><span>HNK</span></div><blockquote>“Todo conhecimento é um portal.”</blockquote></>},right:{eyebrow:'NAVEGAÇÃO DO SISTEMA',title:'Do mapa à manifestação',body:<><div className="living-book__routes"><a href="#arvore"><b>ÁRVORE HNK</b><span>estrutura e relações</span></a><a href="/day-001"><b>JORNADA</b><span>109 Days em prática</span></a><a href="#arquivo"><b>BIBLIOTECA</b><span>fontes e proveniência</span></a></div><p className="living-book__note">Conteúdo ainda não confirmado permanece fora do cânone.</p></>}},
+{id:'mapa',tab:'MAPA',left:{eyebrow:'ORIENTAÇÃO · SISTEMA',title:'Mapa do Codex',body:<><p className="living-book__lead">O mapa conecta as superfícies navegáveis sem transformar relações ainda não confirmadas em cânone.</p><div className="living-book__routes"><a href="#arvore"><b>ÁRVORE</b><span>explorar estrutura</span></a><a href="/day-001"><b>JORNADA</b><span>entrar no Day 001</span></a></div></>},right:{eyebrow:'TRAVESSIA',title:'Macro → Micro',body:<><p className="living-book__lead">A arquitetura prepara a travessia Pillar → Domain → conceito → relação → fonte → prática, preservando lacunas quando os dados ainda não estão confirmados.</p><p className="living-book__note">A Matriz 7×7 será conectada aqui como superfície interativa própria.</p></>}},
+{id:'fontes',tab:'FONTES',left:{eyebrow:'PROVENIÊNCIA',title:'Biblioteca',body:<><p className="living-book__lead">Fontes e evidências permanecem distinguíveis de interpretação, experimento e placeholder.</p><div className="living-book__routes"><a href="#arquivo"><b>ARQUIVO</b><span>abrir superfície atual</span></a></div></>},right:{eyebrow:'AUTORIDADE',title:'Estados do conteúdo',body:<div className="living-book__routes"><span><b>CANON</b><span>confirmado</span></span><span><b>VISUAL TARGET</b><span>experiência</span></span><span><b>EXPERIMENTAL</b><span>protótipo</span></span><span><b>PLACEHOLDER</b><span>temporário</span></span></div>}},
+{id:'pratica',tab:'PRÁTICA',left:{eyebrow:'OPERATIO',title:'Jornada',body:<><p className="living-book__lead">A prática entra no mesmo artefato: o usuário não precisa abandonar o CODEX para atravessar a Jornada.</p><div className="living-book__routes"><a href="/day-001"><b>DAY 001</b><span>abrir jornada existente</span></a></div></>},right:{eyebrow:'ADAPTER',title:'Próxima integração',body:<p className="living-book__lead">O próximo adapter transforma o conteúdo real de Day em páginas/spreads do Living Book, preservando o conteúdo canônico existente.</p>}}
+];
 
-export function LivingBookPrototype() {
-  return (
-    <div className="living-book-stage" id="living-book">
-      <CodexPageTabs tabs={[
-        { label: 'VISÃO', href: '#living-book', active: true },
-        { label: 'MAPA', href: '#arvore' },
-        { label: 'FONTES', href: '#arquivo' },
-        { label: 'PRÁTICA', href: '/day-001' },
-      ]} />
-      <CodexSpread label="Abertura inicial do Codex HNK">
-        <CodexPage side="left" eyebrow="CODEX HNK · ABERTURA" title="O Códice Vivo">
-          <p className="living-book__lead">Uma superfície para atravessar conhecimento, relações, fontes e prática sem abandonar o mesmo artefato.</p>
-          <div className="living-book__sigil" aria-hidden="true"><span>HNK</span></div>
-          <blockquote>“Todo conhecimento é um portal.”</blockquote>
-        </CodexPage>
-        <CodexPage side="right" eyebrow="NAVEGAÇÃO DO SISTEMA" title="Do mapa à manifestação">
-          <div className="living-book__routes">
-            <a href="#arvore"><b>ÁRVORE HNK</b><span>estrutura e relações</span></a>
-            <a href="/day-001"><b>JORNADA</b><span>109 Days em prática</span></a>
-            <a href="#arquivo"><b>BIBLIOTECA</b><span>fontes e proveniência</span></a>
-          </div>
-          <p className="living-book__note">Esta abertura é uma primitive estrutural M2. Conteúdo ainda não confirmado permanece fora do cânone.</p>
-        </CodexPage>
-      </CodexSpread>
-    </div>
-  );
+export function LivingBookPrototype(){
+ const [activeId,setActiveId]=useState('visao'); const index=Math.max(0,spreads.findIndex(s=>s.id===activeId)); const active=spreads[index];
+ useEffect(()=>{const q=new URLSearchParams(window.location.search).get('spread');if(q&&spreads.some(s=>s.id===q))setActiveId(q)},[]);
+ function select(id:string,scroll=true){setActiveId(id);const url=new URL(window.location.href);url.searchParams.set('spread',id);url.hash='living-book';window.history.replaceState({},'',url);if(scroll)document.getElementById('living-book')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}
+ useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='ArrowRight'&&index<spreads.length-1)select(spreads[index+1].id,false);if(e.key==='ArrowLeft'&&index>0)select(spreads[index-1].id,false)};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key)},[index]);
+ return <div className="living-book-stage" id="living-book" tabIndex={-1}><nav className="living-book__tabs" aria-label="Seções desta abertura">{spreads.map(s=><a key={s.id} href={`?spread=${s.id}#living-book`} aria-current={s.id===activeId?'page':undefined} onClick={e=>{e.preventDefault();select(s.id)}}>{s.tab}</a>)}</nav><CodexSpread label={`Abertura ${active.tab} do Codex HNK`} spreadId={active.id}><CodexPage side="left" eyebrow={active.left.eyebrow} title={active.left.title}>{active.left.body}</CodexPage><CodexPage side="right" eyebrow={active.right.eyebrow} title={active.right.title}>{active.right.body}</CodexPage></CodexSpread><nav className="living-book__pager" aria-label="Navegação entre aberturas"><button type="button" disabled={index===0} onClick={()=>select(spreads[index-1].id)}>← ABERTURA ANTERIOR</button><span>{String(index+1).padStart(2,'0')} / {String(spreads.length).padStart(2,'0')}</span><button type="button" disabled={index===spreads.length-1} onClick={()=>select(spreads[index+1].id)}>PRÓXIMA ABERTURA →</button></nav></div>
 }
