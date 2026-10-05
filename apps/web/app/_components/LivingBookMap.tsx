@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import {
   getExecutableDays,
   hnkTreeLevels,
@@ -9,8 +9,12 @@ import {
   type HnkTreeLevelId,
 } from '../../../../packages/visual-contract/src/tree';
 
-export function LivingBookMap() {
-  const [selectedLevelId, setSelectedLevelId] = useState<HnkTreeLevelId | null>(null);
+export interface LivingBookMapProps {
+  selectedLevelId: HnkTreeLevelId | null;
+  onSelectLevel: (levelId: HnkTreeLevelId) => void;
+}
+
+export function LivingBookMap({ selectedLevelId, onSelectLevel }: LivingBookMapProps) {
   const selectedNode = hnkTreeNodes.find((node) => node.levelId === selectedLevelId);
   const selectedLevel = hnkTreeLevels.find((level) => level.id === selectedLevelId);
   const days = useMemo(
@@ -29,7 +33,7 @@ export function LivingBookMap() {
               type="button"
               aria-pressed={selectedLevelId === node.levelId}
               data-state={node.state}
-              onClick={() => setSelectedLevelId(node.levelId)}
+              onClick={() => onSelectLevel(node.levelId)}
             >
               <span>{node.index}</span>
               <strong>{node.label}</strong>
