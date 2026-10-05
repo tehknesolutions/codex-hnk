@@ -20,10 +20,16 @@ assert.match(map, /aria-pressed/, 'sphere selection must expose accessible selec
 assert.match(map, /Abrir Day/, 'Day links must have explicit accessible labels');
 assert.doesNotMatch(map, /\/day-073/, 'LivingBookMap must not manufacture Day 073');
 
+const knowledgeTree = read('../apps/web/app/_components/KnowledgeTree.tsx');
+assert.match(knowledgeTree, /hnkTreeLevels/, 'KnowledgeTree must consume shared level metadata');
+assert.match(knowledgeTree, /\.dayRange/, 'KnowledgeTree must derive displayed ranges from shared level metadata');
+assert.doesNotMatch(knowledgeTree, /const\s+ranges\s*:/, 'KnowledgeTree must not maintain a duplicate ranges table');
+assert.doesNotMatch(knowledgeTree, /keter:\s*["']001[—-]036["']/, 'KnowledgeTree must not duplicate KETHER day range');
+
 const book = read('../apps/web/app/_components/LivingBook.tsx');
 assert.match(book, /import \{ LivingBookMap \} from ['"]\.\/LivingBookMap['"];/,
   'RED: LivingBook must import LivingBookMap');
 assert.match(book, /id:'mapa'[\s\S]*?<LivingBookMap\s*\/>/,
   'RED: MAPA spread must host LivingBookMap');
 
-console.log('PASS: Living Book map contract, progressive component, and MAPA integration are present.');
+console.log('PASS: Living Book map contract, single-source tree metadata, progressive component, and MAPA integration are present.');
