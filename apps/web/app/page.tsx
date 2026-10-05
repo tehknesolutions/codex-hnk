@@ -1,11 +1,6 @@
 import { PortalHome } from "./_components/PortalHome";
 import { KnowledgeTree } from "./_components/KnowledgeTree";
-
-const spheres = [
-  { n: '01', name: 'KETHER', days: '001—036', state: 'SELADA', href: '/day-001' },
-  { n: '02', name: 'CHOKHMAH', days: '037—073', state: 'SELADA', href: '/day-037' },
-  { n: '03', name: 'BINAH', days: '074—109', state: 'EM MANIFESTAÇÃO', href: '/day-074' },
-];
+import { LivingBookPrototype } from "./_components/LivingBook";
 
 export default function Home() {
   return (
@@ -30,7 +25,7 @@ export default function Home() {
           <h1 id="codex-title"><span>CODEX</span><em>HNK</em></h1>
           <p className="hero-lead">Um códice vivo. Uma arquitetura de conhecimento, prática e transformação percorrida como experiência — não como slideshow.</p>
           <div className="hero-actions">
-            <a className="primary" href="/day-001">ABRIR O CODEX <span>↗</span></a>
+            <a className="primary" href="#living-book">ABRIR O CODEX <span>↗</span></a>
             <a className="secondary" href="#arvore">VER O MAPA</a>
           </div>
         </div>
@@ -46,6 +41,7 @@ export default function Home() {
         </div>
       </section>
 
+      <LivingBookPrototype />
       <PortalHome />
       <KnowledgeTree />
 
