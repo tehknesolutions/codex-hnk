@@ -27,9 +27,15 @@ assert.doesNotMatch(knowledgeTree, /const\s+ranges\s*:/, 'KnowledgeTree must not
 assert.doesNotMatch(knowledgeTree, /keter:\s*["']001[—-]036["']/, 'KnowledgeTree must not duplicate KETHER day range');
 
 const book = read('../apps/web/app/_components/LivingBook.tsx');
-assert.match(book, /import \{ LivingBookMap \} from ['"]\.\/LivingBookMap['"];/,
-  'RED: LivingBook must import LivingBookMap');
-assert.match(book, /id:'mapa'[\s\S]*?<LivingBookMap\s*\/>/,
-  'RED: MAPA spread must host LivingBookMap');
+assert.match(book, /import \{ LivingBookMap \} from ['"]\.\/LivingBookMap['"];/, 'LivingBook must import LivingBookMap');
+assert.match(book, /id:'mapa'[\s\S]*?<LivingBookMap\s*\/>/, 'MAPA spread must host LivingBookMap');
 
-console.log('PASS: Living Book map contract, single-source tree metadata, progressive component, and MAPA integration are present.');
+const css = read('../apps/web/app/globals.css');
+assert.match(css, /\.living-book-map\b/, 'RED: LivingBookMap must use the existing global visual layer');
+assert.match(css, /\.living-book-map__levels\b/, 'RED: sphere controls need a visual layout');
+assert.match(css, /\.living-book-map__days\b/, 'RED: progressive Day choices need a visual layout');
+assert.match(css, /\[data-state=['"]?dormant['"]?\]/, 'RED: dormant state must be visually explicit');
+assert.match(css, /aria-pressed=['"]?true['"]?/, 'RED: selected sphere must have a visible state');
+assert.match(css, /\.living-book-map[^}]*:focus-visible|\.living-book-map[\s\S]*:focus-visible/, 'RED: map controls need keyboard focus treatment');
+
+console.log('PASS: Living Book map contract, single-source tree metadata, progressive component, MAPA integration, and visual states are present.');
