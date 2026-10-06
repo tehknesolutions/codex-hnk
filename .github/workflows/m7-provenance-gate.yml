@@ -1,0 +1,32 @@
+name: M7 Provenance Gate
+on:
+  pull_request:
+    paths:
+      - 'packages/provenance-*/**'
+      - 'apps/web/app/provenance/**'
+      - 'apps/web/app/_components/ProvenanceLens.tsx'
+      - 'scripts/validate-m7-provenance.mjs'
+      - '.github/workflows/m7-provenance-gate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'packages/provenance-*/**'
+      - 'apps/web/app/provenance/**'
+      - 'apps/web/app/_components/ProvenanceLens.tsx'
+      - 'scripts/validate-m7-provenance.mjs'
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.18.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @hnk/provenance-contract typecheck
+      - run: pnpm --filter @hnk/provenance-contract test
+      - run: pnpm --filter @hnk/provenance-registry typecheck
+      - run: pnpm --filter @hnk/provenance-registry test
+      - run: node scripts/validate-m7-provenance.mjs
+      - run: pnpm --filter @hnk/web typecheck
