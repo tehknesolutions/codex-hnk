@@ -1,0 +1,10 @@
+{
+  "name": "@hnk/lab-contract",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "test": "vitest run", "typecheck": "tsc --noEmit", "build": "tsc --noEmit" },
+  "dependencies": { "@hnk/journey-contract": "workspace:*", "@hnk/practice-contract": "workspace:*" },
+  "devDependencies": { "typescript": "~6.0.3", "vitest": "^3.2.4" }
+}
