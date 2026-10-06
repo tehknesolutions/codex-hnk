@@ -1,2 +1,2 @@
 export * from "./registry.js";
-export * from "./definition.js";\n
+export * from "./definition.js";\nexport * from "./session.js";\n
