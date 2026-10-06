@@ -32,7 +32,8 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "@hnk/provenance-contract": "workspace:*",
-    "@hnk/provenance-registry": "workspace:*"
+    "@hnk/provenance-registry": "workspace:*",
+    "@hnk/lab-contract": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22",
