@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "private": true,
   "packageManager": "pnpm@12.1.0",
-  "engines": { "node": "22.x" },
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
@@ -93,7 +95,10 @@
     "check": "pnpm validate:day001 && pnpm validate:scalability && pnpm validate:hnk40-kg && turbo run typecheck test",
     "materialize:knowledge": "node scripts/materialize-hnk-knowledge-v1.mjs",
     "validate:knowledge-materialization": "node scripts/validate-hnk-knowledge-materialization-v1.mjs",
-    "validate:hnk40-kg": "node scripts/validate-hnk40-kg-integrity-v1.mjs"
+    "validate:hnk40-kg": "node scripts/validate-hnk40-kg-integrity-v1.mjs",
+    "validate:m7:provenance": "node scripts/validate-m7-provenance.mjs"
   },
-  "devDependencies": { "turbo": "2.10.12" }
+  "devDependencies": {
+    "turbo": "2.10.12"
+  }
 }
