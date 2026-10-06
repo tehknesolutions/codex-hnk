@@ -1,3 +1,5 @@
+import { getJourneySlots } from "../../journey-contract/src/registry.js";
+
 export const hnkTreeLevels = [
   { id: "keter", label: "KETHER", index: "01", dayRange: "001—036", state: "acquired" },
   { id: "chokhmah", label: "CHOKHMAH", index: "02", dayRange: "037—072", state: "active" },
@@ -21,19 +23,19 @@ export interface HnkDayRoute {
   href: string;
 }
 
-const executableRanges: Partial<Record<HnkTreeLevelId, readonly [number, number]>> = {
+const levelBounds: Partial<Record<HnkTreeLevelId, readonly [number, number]>> = {
   keter: [1, 36],
   chokhmah: [37, 72],
 };
 
 export function getExecutableDays(levelId: HnkTreeLevelId): readonly HnkDayRoute[] {
-  const range = executableRanges[levelId];
-  if (!range) return [];
-  const [start, end] = range;
-  return Array.from({ length: end - start + 1 }, (_, offset) => {
-    const day = String(start + offset).padStart(3, "0");
-    return { day, href: `/day-${day}` };
-  });
+  const bounds = levelBounds[levelId];
+  if (!bounds) return [];
+  const [start, end] = bounds;
+  return getJourneySlots()
+    .slice(start - 1, end)
+    .filter((slot) => slot.status === "AVAILABLE")
+    .map((slot) => ({ day: slot.dayId, href: slot.href }));
 }
 
 export const hnkTreeNodes: readonly HnkTreeNode[] = hnkTreeLevels.map((level) => ({
