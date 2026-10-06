@@ -1,0 +1,36 @@
+name: M8 Labs Practice Gate
+on:
+  pull_request:
+    paths:
+      - 'packages/lab-contract/**'
+      - 'packages/practice-contract/**'
+      - 'packages/journey-contract/**'
+      - 'packages/completion-contract/**'
+      - 'apps/web/app/_components/labs/**'
+      - 'apps/web/app/_components/LivingBook.tsx'
+      - 'apps/mobile/src/features/labs/**'
+      - 'apps/mobile/src/app/labs.tsx'
+      - 'scripts/validate-m8-labs-practice.mjs'
+      - '.github/workflows/m8-labs-practice-gate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'packages/lab-contract/**'
+      - 'apps/web/app/_components/labs/**'
+      - 'apps/mobile/src/features/labs/**'
+      - 'scripts/validate-m8-labs-practice.mjs'
+jobs:
+  m8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 12.1.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @hnk/lab-contract typecheck
+      - run: pnpm --filter @hnk/lab-contract test
+      - run: node scripts/validate-m8-labs-practice.mjs
+      - run: pnpm --filter @hnk/web typecheck
+      - run: pnpm --filter @hnk/mobile typecheck
