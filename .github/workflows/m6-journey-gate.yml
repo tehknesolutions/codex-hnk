@@ -1,0 +1,39 @@
+name: M6 Journey Gate
+
+on:
+  push:
+    branches:
+      - feat/m6-task1-journey-registry
+  pull_request:
+    paths:
+      - 'packages/journey-contract/**'
+      - 'apps/web/app/_components/**'
+      - 'apps/mobile/src/features/journey/**'
+      - 'scripts/validate-m6-*.mjs'
+      - '.github/workflows/m6-journey-gate.yml'
+  workflow_dispatch:
+
+jobs:
+  m6-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.1.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Journey contract tests
+        run: pnpm --dir packages/journey-contract test
+      - name: Journey contract typecheck
+        run: pnpm --dir packages/journey-contract typecheck
+      - name: Web integration gate
+        run: node scripts/validate-m6-journey.mjs
+      - name: Mobile integration gate
+        run: node scripts/validate-m6-mobile.mjs
+      - name: Publication frontier gate
+        run: node scripts/validate-m6-frontier.mjs
