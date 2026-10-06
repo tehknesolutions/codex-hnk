@@ -2,6 +2,8 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 import { LivingBookMap } from './LivingBookMap';
+import { LivingBookTotalMap } from './LivingBookTotalMap';
+import type { HnkTreeLevelId } from '../../../../packages/visual-contract/src/tree';
 
 type PageData={eyebrow:string;title:string;body:ReactNode};
 type Spread={id:string;tab:string;left:PageData;right:PageData};
@@ -9,9 +11,20 @@ type Spread={id:string;tab:string;left:PageData;right:PageData};
 export function CodexPage({side,eyebrow,title,children}:{side:'left'|'right';eyebrow?:string;title:string;children:ReactNode}){return <section className="living-book__page" data-side={side}><div className="living-book__page-frame" aria-hidden="true"/><header className="living-book__page-head">{eyebrow?<p>{eyebrow}</p>:null}<h2>{title}</h2></header><div className="living-book__page-content">{children}</div><span className="living-book__folio" aria-hidden="true">HNK</span></section>}
 export function CodexSpread({children,label,spreadId}:{children:ReactNode;label:string;spreadId?:string}){return <article className="living-book" aria-label={label} data-spread={spreadId}><div className="living-book__cover" aria-hidden="true"/><div className="living-book__paper"><div className="living-book__spread">{children}</div><div className="living-book__gutter" aria-hidden="true"/></div></article>}
 
+function LivingBookMapa(){
+ const [selectedLevelId,setSelectedLevelId]=useState<HnkTreeLevelId|null>(null);
+ return <>
+  <p className="living-book__lead">Visão Total da estrutura conhecida. Selecione uma esfera para orientar a descida sem fabricar rotas além do conteúdo disponível.</p>
+  <LivingBookTotalMap selectedLevelId={selectedLevelId} onSelectLevel={setSelectedLevelId}/>
+  <div className="living-book-map__descent" aria-label="Descida progressiva da esfera selecionada">
+   <LivingBookMap selectedLevelId={selectedLevelId} onSelectLevel={setSelectedLevelId}/>
+  </div>
+ </>;
+}
+
 const spreads:Spread[]=[
 {id:'visao',tab:'VISÃO',left:{eyebrow:'CODEX HNK · ABERTURA',title:'O Códice Vivo',body:<><p className="living-book__lead">Uma superfície para atravessar conhecimento, relações, fontes e prática sem abandonar o mesmo artefato.</p><div className="living-book__sigil" aria-hidden="true"><span>HNK</span></div><blockquote>“Todo conhecimento é um portal.”</blockquote></>},right:{eyebrow:'NAVEGAÇÃO DO SISTEMA',title:'Do mapa à manifestação',body:<><div className="living-book__routes"><a href="#arvore"><b>ÁRVORE HNK</b><span>estrutura e relações</span></a><a href="/day-001"><b>JORNADA</b><span>72 Days integrados ao Living Book</span></a><a href="#arquivo"><b>BIBLIOTECA</b><span>fontes e proveniência</span></a></div><p className="living-book__note">Conteúdo ainda não confirmado permanece fora do cânone.</p></>}},
-{id:'mapa',tab:'MAPA',left:{eyebrow:'ORIENTAÇÃO · SISTEMA',title:'Mapa do Codex',body:<><p className="living-book__lead">Selecione uma esfera e atravesse progressivamente sua faixa real de câmaras, sem fabricar rotas além do conteúdo disponível.</p><LivingBookMap /></>},right:{eyebrow:'TRAVESSIA',title:'Macro → Micro',body:<><p className="living-book__lead">A travessia parte da esfera, revela apenas os Days executáveis e então abre a câmara existente. Estruturas futuras permanecem visíveis sem serem promovidas a conteúdo canônico.</p><p className="living-book__note">A visão total poderá expandir esta mesma arquitetura sem criar um segundo motor de navegação.</p></>}},
+{id:'mapa',tab:'MAPA',left:{eyebrow:'ORIENTAÇÃO · SISTEMA',title:'Mapa do Codex',body:<LivingBookMapa/>},right:{eyebrow:'TRAVESSIA',title:'Kether → Câmara',body:<><p className="living-book__lead">A Visão Total orienta a estrutura; a mesma seleção desce para a faixa real de Days e então abre a câmara existente.</p><p className="living-book__note">Territórios futuros permanecem visíveis e dormentes até existir conteúdo confirmado no contrato compartilhado.</p></>}},
 {id:'fontes',tab:'FONTES',left:{eyebrow:'PROVENIÊNCIA',title:'Biblioteca',body:<><p className="living-book__lead">Fontes e evidências permanecem distinguíveis de interpretação, experimento e placeholder.</p><div className="living-book__routes"><a href="#arquivo"><b>ARQUIVO</b><span>abrir superfície atual</span></a></div></>},right:{eyebrow:'AUTORIDADE',title:'Estados do conteúdo',body:<div className="living-book__routes"><span><b>CANON</b><span>confirmado</span></span><span><b>VISUAL TARGET</b><span>experiência</span></span><span><b>EXPERIMENTAL</b><span>protótipo</span></span><span><b>PLACEHOLDER</b><span>temporário</span></span></div>}},
 {id:'pratica',tab:'PRÁTICA',left:{eyebrow:'OPERATIO · JORNADA',title:'72 câmaras conectadas',body:<><p className="living-book__lead">A Jornada existente foi incorporada ao mesmo sistema editorial do CODEX. Cada Day abre como uma câmara do Living Book e preserva sua implementação Golden V2.</p><div className="living-book__routes"><a href="/day-001"><b>INICIAR · DAY 001</b><span>entrar no começo da jornada</span></a><a href="/day-036"><b>CENTRO · DAY 036</b><span>atravessar o núcleo do lote atual</span></a><a href="/day-072"><b>FRONTEIRA · DAY 072</b><span>última câmara disponível</span></a></div></>},right:{eyebrow:'LIVING BOOK · ADAPTER',title:'Migração concluída',body:<><p className="living-book__lead">O adapter compartilhado envolve a sequência disponível de Day 001 a Day 072 com spread, métricas e navegação contínua.</p><div className="living-book__routes"><span><b>001 → 072</b><span>sequência integrada</span></span><span><b>GOLDEN V2</b><span>conteúdo original preservado</span></span><span><b>073+</b><span>estrutura futura, sem rota executável</span></span></div><p className="living-book__note">Mapa e Jornada agora compartilham a mesma fronteira executável.</p></>}}
 ];
