@@ -1,10 +1,6 @@
 name: ZARENU HNK40 Gate
 
 on:
-  pull_request:
-    paths:
-      - 'scripts/generate-zarenu-shortlist.mjs'
-      - 'scripts/zarenu-semantic-path-score.mjs'
   push:
     branches:
       - main
