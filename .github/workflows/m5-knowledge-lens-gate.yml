@@ -1,0 +1,54 @@
+name: M5 Knowledge Lens Gate
+
+on:
+  pull_request:
+    paths:
+      - "packages/knowledge-lens/**"
+      - "packages/visual-contract/src/tree.*"
+      - "apps/web/app/_components/LivingBook.tsx"
+      - "apps/web/app/_components/LivingKnowledgeLens.tsx"
+      - "apps/web/app/_components/living-book-map.css"
+      - "scripts/validate-knowledge-lens.mjs"
+      - "scripts/validate-living-book-map-contract.mjs"
+      - "scripts/validate-living-book-total-map.mjs"
+      - "package.json"
+      - ".github/workflows/m5-knowledge-lens-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  knowledge-lens:
+    name: "M5 · Knowledge Lens"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Knowledge Lens package tests
+        run: node --test packages/knowledge-lens/test/*.test.mjs
+
+      - name: M3 Living Book map regression
+        run: pnpm validate:living-book-map
+
+      - name: M4 Total Map regression
+        run: pnpm validate:living-book-total-map
+
+      - name: M5 Knowledge Lens contract
+        run: pnpm validate:knowledge-lens
+
+      - name: Typecheck
+        run: pnpm typecheck
