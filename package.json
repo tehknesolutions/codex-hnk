@@ -96,7 +96,8 @@
     "materialize:knowledge": "node scripts/materialize-hnk-knowledge-v1.mjs",
     "validate:knowledge-materialization": "node scripts/validate-hnk-knowledge-materialization-v1.mjs",
     "validate:hnk40-kg": "node scripts/validate-hnk40-kg-integrity-v1.mjs",
-    "validate:m7:provenance": "node scripts/validate-m7-provenance.mjs"
+    "validate:m7:provenance": "node scripts/validate-m7-provenance.mjs",
+    "validate:m8:labs": "node scripts/validate-m8-labs-practice.mjs"
   },
   "devDependencies": {
     "turbo": "2.10.12"
